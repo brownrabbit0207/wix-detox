@@ -1,0 +1,7 @@
+  "target": {
+    "type": "Class",
+    "value": "java.lang.System"
+  },
+  "method": "lineSeparator",
+  "args": []
+}

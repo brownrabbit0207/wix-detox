@@ -1,0 +1,2 @@
+
+exports[`helpers methodNameToSnakeCase should return the correct snake case method name 1`] = `"actionForScrollInDirectionAmountXOriginStartPercentageYOriginStartPercentage"`;

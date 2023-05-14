@@ -1,0 +1,9 @@
+build
+DerivedData
+COSTouchVisualizer/ExampleObjC
+COSTouchVisualizer/ExampleSwift
+DetoxUserNotificationTests
+SocketRocket/TestChat
+SocketRocket/TestChatServer
+SocketRocket/Tests
+SocketRocket/TestSupport

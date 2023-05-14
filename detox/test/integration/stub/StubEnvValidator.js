@@ -1,0 +1,4 @@
+  validate() {}
+}
+
+module.exports = StubEnvValidator;

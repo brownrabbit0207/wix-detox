@@ -1,0 +1,26 @@
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '12.4'
+
+target 'example' do
+  config = use_native_modules!
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false,
+    # :flipper_configuration => FlipperConfiguration.enabled,
+  )
+
+  post_install do |installer|
+      if ENV["REACT_NATIVE_VERSION"] && ENV["REACT_NATIVE_VERSION"].match(/0.6[6,7,8,9].*/)
+        react_native_post_install(installer)
+      else
+        react_native_post_install(
+          installer,
+            # Set `mac_catalyst_enabled` to `true` in order to apply patches
+            # necessary for Mac Catalyst builds
+            :mac_catalyst_enabled => false
+        )
+      end
+  end
+end
