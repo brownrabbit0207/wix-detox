@@ -1,3 +1,4 @@
+package com.example;
 
 import android.content.pm.PackageManager;
 import android.util.Log;

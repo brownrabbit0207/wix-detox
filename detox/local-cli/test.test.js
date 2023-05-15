@@ -1,13 +1,8 @@
+// @ts-nocheck
 if (process.platform === 'win32') {
   jest.retryTimes(1); // TODO: investigate why it gets stuck for the 1st time on Windows
 }
 
-jest.mock('../src/logger/DetoxLogger');
-jest.mock('../src/devices/DeviceRegistry');
-jest.mock('../src/devices/allocation/drivers/android/genycloud/GenyDeviceRegistryFactory');
-jest.mock('./utils/jestInternals');
-
-const cp = require('child_process');
 const cpSpawn = cp.spawn;
 const os = require('os');
 const util = require('util');

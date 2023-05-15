@@ -1,3 +1,4 @@
+const AndroidDevicePathBuilder = require('./AndroidDevicePathBuilder');
 
 describe(AndroidDevicePathBuilder, () => {
   it('should generate process id dependent paths with a counter', () => {

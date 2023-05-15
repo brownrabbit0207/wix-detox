@@ -1,3 +1,4 @@
+import React from 'react';
 import Search from '@theme-original/Navbar/Search';
 import styles from './styles.module.scss';
 

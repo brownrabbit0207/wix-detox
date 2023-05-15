@@ -1,3 +1,4 @@
+const jestExpect = require('expect').default;
 
 const { expectToThrow } = require('./utils/custom-expects');
 

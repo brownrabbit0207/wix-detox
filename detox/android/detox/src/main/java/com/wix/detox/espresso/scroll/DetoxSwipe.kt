@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.scroll
 
 /**
  * Along with [FlinglessSwiper], this is based on from Espresso's implementation of Swiping

@@ -1,3 +1,4 @@
+const invoke = require('../../invoke');
 const { WebExistsAssertion, WebHasTextAssertion } = require('../actions/web');
 const EspressoWebDetoxApi = require('../espressoapi/web/EspressoWebDetox');
 const { WebAssertionInteraction } = require('../interactions/web');

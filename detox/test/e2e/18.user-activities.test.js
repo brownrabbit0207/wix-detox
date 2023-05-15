@@ -1,3 +1,4 @@
+const DetoxConstants = require('detox').DetoxConstants;
 
 describe(':ios: User Activity', () => {
   it('Init from browsing web', async () => {

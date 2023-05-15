@@ -1,3 +1,4 @@
+package com.wix.detox.espresso;
 
 import android.support.test.espresso.UiController;
 import android.support.test.espresso.ViewAction;

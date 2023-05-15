@@ -1,3 +1,4 @@
+const WholeTestRecorderPlugin = require('../templates/plugin/WholeTestRecorderPlugin');
 
 class VideoArtifactPlugin extends WholeTestRecorderPlugin {
   constructor({ api }) {

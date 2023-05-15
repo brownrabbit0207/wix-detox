@@ -1,13 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`assertEnum should create an assertion function for enums 1`] = `"speed should be one of [fast, slow], but got medium (string)"`;
 
 exports[`assertNormalized should throw for "0.5" 1`] = `"invalidNumber should be a number, but got 0.5 (string)"`;
-
-exports[`assertNormalized should throw for -0.5 1`] = `"invalidNumber should be a number [0.0, 1.0], but got -0.5 (number)"`;
-
-exports[`assertNormalized should throw for 1.01 1`] = `"invalidNumber should be a number [0.0, 1.0], but got 1.01 (number)"`;
-
-exports[`assertNormalized should throw for null 1`] = `"invalidNumber should be a number [0.0, 1.0], but got Infinity (number)"`;
 
 exports[`assertNormalized should throw for null 2`] = `"invalidNumber should be a number, but got null (object)"`;
 

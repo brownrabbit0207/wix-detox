@@ -1,13 +1,8 @@
+const DetoxRuntimeError = require('../errors/DetoxRuntimeError');
 
 function firstEntry(obj) {
   return Object.entries(obj)[0];
 }
-
-function assertType(expectedType) {
-  return function assertSpecificType(arg) {
-    const [key, value] = firstEntry(arg);
-
-    if (typeof value !== expectedType) {
       throw new DetoxRuntimeError(`${key} should be a ${expectedType}, but got ${value} (${typeof value})`);
     }
   };

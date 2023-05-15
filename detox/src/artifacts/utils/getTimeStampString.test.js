@@ -1,3 +1,4 @@
+const getTimeStampString = require('./getTimeStampString');
 
 describe(getTimeStampString.name, () => {
   it('should format date', () => {

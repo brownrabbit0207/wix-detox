@@ -1,3 +1,4 @@
+describe('Date/time utils', () => {
   let dateUtils;
   beforeEach(() => {
     dateUtils = require('./dateUtils');

@@ -1,13 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Detox server integration "app" connects first, and then disconnects 1`] = `
 Array [
   Object {
-    "cat": "ws-server,ws-session",
-    "id": 8081,
-  },
-  "connection :8000<->:8081",
-  "(begin)",
-]
 `;
 
 exports[`Detox server integration "tester" connects first, and then disconnects 1`] = `

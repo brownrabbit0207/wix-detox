@@ -1,3 +1,4 @@
+module.exports = {
   extends: '../base.json',
   artifacts: {
     rootDir: 'someRootDir',

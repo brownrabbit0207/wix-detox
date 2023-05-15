@@ -1,13 +1,8 @@
+---
 id: artifacts
 slug: api/artifacts
 title: Artifacts
 sidebar_label: Artifacts
----
-
-## Artifacts
-
-Artifacts are various recordings during tests including, but not limited to, device logs, device screenshots and screen recordings (videos).
-
 ### Enabling Artifacts
 
 Artifacts are disabled by default. To enable them, specify via **launch arguments** or a **configuration** object what artifacts you want to record.

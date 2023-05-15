@@ -1,13 +1,8 @@
+const chalk = require('chalk');
 const noop = require('lodash/noop');
 
 const { config, log, session } = require('../../../../internals');
 const { traceln } = require('../utils/stdout');
-
-const RESULT_SKIPPED = chalk.yellow('SKIPPED');
-const RESULT_FAILED = chalk.red('FAIL');
-const RESULT_PENDING = chalk.yellow('PENDING');
-const RESULT_SUCCESS = chalk.green('OK');
-const RESULT_OTHER = 'UNKNOWN';
 
 class SpecReporter {
   constructor() {

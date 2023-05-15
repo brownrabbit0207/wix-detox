@@ -1,13 +1,8 @@
+const CAF = require('caf');
 const _ = require('lodash');
 
 const Client = require('./client/Client');
 const environmentFactory = require('./environmentFactory');
-const { DetoxRuntimeErrorComposer } = require('./errors');
-const { InvocationManager } = require('./invoke');
-const symbols = require('./realms/symbols');
-const AsyncEmitter = require('./utils/AsyncEmitter');
-const uuid = require('./utils/uuid');
-
 class DetoxWorker {
   constructor(context) {
     this._context = context;

@@ -1,13 +1,8 @@
+describe('Allocation driver for Google emulators', () => {
 
   const avdName = 'mock-avd-name';
   const adbName = 'mocked-emulator:5554';
   const placeholderPort = 5554;
-  const deviceConfig = {
-    device: {
-      avdName,
-    },
-  };
-  const launchOptions = {
     headless: true,
     readonly: true,
     bootArgs: { boot: 'args' },

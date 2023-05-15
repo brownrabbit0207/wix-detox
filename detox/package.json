@@ -1,13 +1,8 @@
+{
   "name": "detox",
   "description": "E2E tests and automation for mobile",
   "version": "20.9.0",
   "bin": {
-    "detox": "local-cli/cli.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wix/Detox.git"
-  },
   "nativePackage": true,
   "bugs": {
     "url": "https://github.com/wix/Detox/issues"

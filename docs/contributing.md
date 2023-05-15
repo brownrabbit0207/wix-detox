@@ -1,13 +1,8 @@
+# Contributing
 
 <!-- markdownlint-configure-file { "header-increment": 0 } -->
 
 This guide is about contributing to our codebase.
-
-We don’t have any special guidelines - just some setup walk-through!
-
-### Environment
-
-First, complete our [Getting Started](introduction/getting-started.mdx) guide.
 
 #### Install the monorepo management tool, `lerna`
 

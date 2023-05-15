@@ -1,3 +1,4 @@
+package com.wix.detox;
 
 import org.joor.Reflect;
 import org.joor.ReflectException;

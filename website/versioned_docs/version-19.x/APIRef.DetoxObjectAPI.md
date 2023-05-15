@@ -1,13 +1,8 @@
+---
 id: detox-object-api
 slug: api/detox-object-api
 title: Detox Object API
 sidebar_label: The `detox` Object
----
-
-## The `detox` Object
-
-`detox` is globally available in every test file, though currently it is only used in the setup/init file.
-
 > NOTE: detox is test runner independent, and we encourage you to choose your own test runner, but for the sake of demonstration we will use `mocha`’s syntax.
 
 ### Methods

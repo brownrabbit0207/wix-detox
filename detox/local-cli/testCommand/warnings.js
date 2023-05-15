@@ -1,3 +1,4 @@
+const DETOX_ARGV_OVERRIDE_NOTICE = `
    _____ _____ ___________
   /  ___|_   _|  _  | ___ \\  $DETOX_ARGV_OVERRIDE is detected
   \\ '--.  | | | | | | |_/ /

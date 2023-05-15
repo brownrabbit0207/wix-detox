@@ -1,13 +1,8 @@
+/**
 
 	This code is generated.
 	For more information see generation/README.md.
 */
-
-
-
-class DetoxGenymotionManager {
-  static setLocation(lat, lon) {
-    if (typeof lat !== "number") throw new Error("lat should be a number, but got " + (lat + (" (" + (typeof lat + ")"))));
     if (typeof lon !== "number") throw new Error("lon should be a number, but got " + (lon + (" (" + (typeof lon + ")"))));
     return {
       target: {

@@ -1,3 +1,4 @@
+package com.wix.detox;
 
 import android.app.Application;
 import android.os.Bundle;

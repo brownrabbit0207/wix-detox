@@ -1,3 +1,4 @@
+package com.wix.detox
 
 import android.util.Log
 import com.github.anrwatchdog.ANRWatchDog

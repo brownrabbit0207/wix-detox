@@ -1,13 +1,8 @@
+import _ from 'lodash';
 import React, {Component} from 'react';
 import {
   StyleSheet,
   Text,
-  View,
-  ScrollView,
-  Animated,
-  TouchableOpacity
-} from 'react-native';
-
 function Block({ children }) {
   const subBlocks = _.times(30, (i) => (
     <SubBlock>{i + 1}</SubBlock>

@@ -1,13 +1,8 @@
+const custom = require('./utils/custom-it');
 const {expectToThrow} = require('./utils/custom-expects');
 
 const expectToFinishBeforeTimeout = async (block, timeout) => {
   const startTime = new Date().getTime();
-  await block();
-  const endTime = new Date().getTime();
-
-  const expiredAfter = endTime - startTime;
-  if (expiredAfter > timeout) {
-    throw new Error(`Action not expired even after a timeout, took ${expiredAfter}ms`);
   }
 }
 

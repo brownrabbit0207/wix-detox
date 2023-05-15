@@ -1,13 +1,8 @@
+const globals = require('../core/global-functions');
 
 describe('globals', () => {
   describe('sanitize_android_direction', () => {
     it('should return numbers for strings', () => {
-      expect(globals.sanitize_android_direction('left')).toBe(1);
-      expect(globals.sanitize_android_direction('right')).toBe(2);
-      expect(globals.sanitize_android_direction('up')).toBe(3);
-      expect(globals.sanitize_android_direction('down')).toBe(4);
-    });
-
     it('should fail with unknown value', () => {
       expect(() => {
         globals.sanitize_android_direction('kittens');

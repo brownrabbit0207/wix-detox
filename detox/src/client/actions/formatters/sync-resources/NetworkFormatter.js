@@ -1,3 +1,4 @@
+const { makeResourceTitle, makeResourceSubTitle } = require('./utils');
 
 function makeURLDescription(url, urlCount) {
   return makeResourceSubTitle(`URL #${urlCount}: ${url}`);

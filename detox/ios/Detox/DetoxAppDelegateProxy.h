@@ -1,13 +1,8 @@
+//
 //  DetoxAppDelegateProxy.h
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 19/01/2017.
-//  Copyright © 2017 Wix. All rights reserved.
-//
-
-@import Foundation;
-@import UIKit;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetoxAppDelegateProxy : NSObject <UIApplicationDelegate>

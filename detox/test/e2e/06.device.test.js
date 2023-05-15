@@ -1,13 +1,8 @@
+describe('Device', () => {
   it('reloadReactNative - should tap successfully', async () => {
     await device.reloadReactNative();
     await element(by.text('Sanity')).tap();
     await element(by.text('Say Hello')).tap();
-    await expect(element(by.text('Hello!!!'))).toBeVisible();
-  });
-
-  it('relaunchApp - should tap successfully', async () => {
-    await device.relaunchApp();
-    await element(by.text('Sanity')).tap();
     await element(by.text('Say Hello')).tap();
     await expect(element(by.text('Hello!!!'))).toBeVisible();
   });

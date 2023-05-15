@@ -1,13 +1,8 @@
+//
 //  DTXAssertionHandler.m
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 4/28/20.
-//  Copyright © 2020 Wix. All rights reserved.
-//
-
-#import "DTXAssertionHandler.h"
-#import "DTXAppleInternals.h"
-
 @implementation DTXTestAssertionException
 
 + (NSException *)exceptionWithReason:(nullable NSString *)reason userInfo:(nullable NSDictionary *)userInfo viewDescription:(nullable NSDictionary*)viewDescription

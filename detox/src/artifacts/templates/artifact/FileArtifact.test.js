@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const _ = require('lodash');
 const tempfile = require('tempfile');
 

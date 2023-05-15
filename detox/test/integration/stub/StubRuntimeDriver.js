@@ -1,13 +1,8 @@
+const temporaryPath = require('detox/src/artifacts/utils/temporaryPath');
 const DeviceDriverBase = require('detox/src/devices/runtime/drivers/DeviceDriverBase');
 const tempfile = require('tempfile');
 
 const {
-  sleepSomeTime,
-  sleepVeryLittle,
-  sleepALittle,
-  sleepALot,
-} = require('./stubSleeps');
-
 class StubRuntimeDriver extends DeviceDriverBase {
   /**
    * @param deps { Object }

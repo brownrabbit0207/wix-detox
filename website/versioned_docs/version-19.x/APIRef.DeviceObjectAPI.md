@@ -1,3 +1,4 @@
+---
 id: device-object-api
 slug: api/device-object-api
 title: Device Object API

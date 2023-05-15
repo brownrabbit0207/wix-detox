@@ -1,13 +1,8 @@
+//
 //  ReactNativeSupport.m
 //  Detox
 //
 //  Created by Tal Kol on 6/28/16.
-//  Copyright © 2016 Wix. All rights reserved.
-//
-
-#import "ReactNativeSupport.h"
-#import "ReactNativeHeaders.h"
-
 #include <dlfcn.h>
 #include <stdatomic.h>
 @import ObjectiveC;

@@ -1,13 +1,8 @@
+{
   "target": {
       "type": "Class",
       "value": "com.wix.detox.espresso.EspressoDetox"
     },
-    "method": "perform",
-    "args": [
-      {
-        "type": "Invocation",
-        "value": {
-          "target": {
             "type": "Class",
             "value": "android.support.test.espresso.Espresso"
           },

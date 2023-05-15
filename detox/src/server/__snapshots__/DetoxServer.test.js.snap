@@ -1,3 +1,4 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetoxServer .open() / .close() should WARN log a message upon unsuccessful server closing (error emit case) 1`] = `
 Array [

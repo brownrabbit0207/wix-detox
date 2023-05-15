@@ -1,3 +1,4 @@
+package com.wix.detox.espresso
 
 import androidx.test.espresso.ViewAction
 

@@ -1,13 +1,8 @@
+declare module 'detox/runners/jest' {
   import type NodeEnvironment from 'jest-environment-node';
 
   export function globalSetup(): Promise<void>;
   export function globalTeardown(): Promise<void>;
-
-  export type DetoxCircusListenerConstructorOpts = {
-    readonly env: DetoxCircusEnvironment;
-  }
-
-  /**
    * @example
    * class CustomListener implements DetoxCircusListener {
    *   constructor(opts: DetoxCircusListenerConstructorOpts) {

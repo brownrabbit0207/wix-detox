@@ -1,12 +1,7 @@
+describe('Genymotion-Cloud recipes service', () => {
   const givenNoRecipes = () => {
     exec.getRecipe.mockResolvedValue({
       recipes: [],
-    });
-  };
-
-  const givenRecipes = (...recipes) => {
-    exec.getRecipe.mockResolvedValue({
-      recipes: [...recipes],
     });
   };
 

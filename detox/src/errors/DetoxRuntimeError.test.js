@@ -1,3 +1,4 @@
+const DetoxRuntimeError = require('./DetoxRuntimeError');
 
 describe('DetoxRuntimeError', () => {
   it.each(varietiesOfInstantiation())('should be created with %s', (description, error) => {

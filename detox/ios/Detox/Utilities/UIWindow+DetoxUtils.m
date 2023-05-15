@@ -1,13 +1,8 @@
+//
 //  UIWindow+DetoxUtils.m
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 6/4/20.
-//  Copyright © 2020 Wix. All rights reserved.
-//
-
-#import "UIWindow+DetoxUtils.h"
-
-#import "DTXAppleInternals.h"
 #import "NSObject+DetoxUtils.h"
 #import "UIView+DetoxUtils.h"
 

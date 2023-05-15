@@ -1,13 +1,8 @@
+const path = require('path');
 const { promisify } = require('util');
 
 const glob = require('glob');
 const _ = require('lodash');
-const tempfile = require('tempfile');
-
-const { useForwardSlashes } = require('../../utils/shellUtils');
-
-const globSync = glob.sync;
-const globAsync = promisify(glob);
 const getRoot = _.once(() => path.dirname(tempfile()));
 
 function createGlobber(ext) {

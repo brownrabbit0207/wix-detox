@@ -1,3 +1,4 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Timeline integration test Flaky test should deterministically produce a timeline artifact 1`] = `
 [

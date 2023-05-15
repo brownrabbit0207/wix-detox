@@ -1,3 +1,4 @@
+const DeviceHandle = require('./DeviceHandle');
 const EmulatorTelnet = require('./EmulatorTelnet');
 
 class EmulatorHandle extends DeviceHandle {

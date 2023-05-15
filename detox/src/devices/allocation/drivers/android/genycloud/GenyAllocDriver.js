@@ -1,3 +1,4 @@
+const { DetoxRuntimeError } = require('../../../../../errors');
 const Timer = require('../../../../../utils/Timer');
 const GenycloudEmulatorCookie = require('../../../../cookies/GenycloudEmulatorCookie');
 const AllocationDriverBase = require('../../AllocationDriverBase');

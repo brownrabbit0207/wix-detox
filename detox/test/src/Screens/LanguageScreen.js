@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import { Text, View, NativeModules, Platform } from 'react-native';
 import _ from 'lodash';
 

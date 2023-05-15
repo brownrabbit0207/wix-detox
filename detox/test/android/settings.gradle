@@ -1,13 +1,8 @@
+pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
         mavenCentral()
-    }
-}
-
-rootProject.name = 'DetoxTest'
-include ':app'
-
 includeBuild('../node_modules/react-native-gradle-plugin')
 
 include ':detox'

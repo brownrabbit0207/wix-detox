@@ -1,3 +1,4 @@
+---
 id: migration
 slug: guide/migration
 title: Migration Guide

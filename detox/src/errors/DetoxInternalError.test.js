@@ -1,3 +1,4 @@
+const DetoxInternalError = require('./DetoxInternalError');
 
 describe('DetoxInternalError', () => {
   it('should append a Report-Issue hint', () => {

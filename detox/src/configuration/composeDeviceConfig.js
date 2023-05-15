@@ -1,13 +1,8 @@
+// @ts-nocheck
 const _ = require('lodash');
 
 const environmentFactory = require('../environmentFactory');
 const log = require('../utils/logger').child({ cat: 'config' });
-
-/**
- * @param {DetoxConfigErrorComposer} opts.errorComposer
- * @param {Detox.DetoxConfig} opts.globalConfig
- * @param {Detox.DetoxConfiguration} opts.localConfig
- * @param {*} opts.cliConfig
  * @returns {Detox.DetoxDeviceConfig}
  */
 function composeDeviceConfig(opts) {

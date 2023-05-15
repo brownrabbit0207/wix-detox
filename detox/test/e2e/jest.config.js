@@ -1,13 +1,8 @@
+const path = require('path');
 const { resolveConfig } = require('detox/internals');
 
 const maxWorkersMap = {
   'android.emulator': 3,
-  'android.genycloud': 5,
-  'ios.simulator': 2,
-};
-
-module.exports = async () => {
-  const config = await resolveConfig();
 
   const reporters = [
     '<rootDir>/runners/jest/reporter',

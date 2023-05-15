@@ -1,3 +1,4 @@
+const sleep = require('./sleep');
 
 const DEFAULT_INITIAL_SLEEP = 0;
 const DEFAULT_RETRIES = 9;

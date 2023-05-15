@@ -1,13 +1,8 @@
+describe('BinaryExec', () => {
   const binaryPath = '/binary/mock';
 
   let exec;
   let spawn;
-  let binaryExec;
-  beforeEach(() => {
-    jest.mock('../../../../../utils/childProcess', () => ({
-      execWithRetriesAndLogs: jest.fn().mockResolvedValue({
-        stdout: '',
-      }),
     }));
     exec = require('../../../../../utils/childProcess').execWithRetriesAndLogs;
 

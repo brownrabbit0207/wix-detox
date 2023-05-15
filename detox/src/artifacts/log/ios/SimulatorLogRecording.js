@@ -1,13 +1,8 @@
+// @ts-nocheck
 const fs = require('fs-extra');
 
 const childProcess = require('../../../utils/childProcess');
 const log = require('../../../utils/logger').child({ cat: 'artifact' });
-const sleep = require('../../../utils/sleep');
-const Artifact = require('../../templates/artifact/Artifact');
-const FileArtifact = require('../../templates/artifact/FileArtifact');
-
-class SimulatorLogRecording extends Artifact {
-  constructor({
     udid,
     bundleId,
     appleSimUtils,

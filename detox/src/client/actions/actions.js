@@ -1,13 +1,8 @@
+// @ts-nocheck
 const { DetoxInternalError, DetoxRuntimeError } = require('../../errors');
 const logger = require('../../utils/logger');
 const formatJSONStatus = require('../actions/formatters/SyncStatusFormatter');
 
-class Action {
-  constructor(type, params = {}) {
-    this.type = type;
-    this.params = params;
-    this.messageId = undefined;
-  }
 
   expectResponseOfType(response, type) {
     if (response.type !== type) {

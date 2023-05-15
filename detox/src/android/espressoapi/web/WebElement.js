@@ -1,13 +1,8 @@
+/**
 
 	This code is generated.
 	For more information see generation/README.md.
 */
-
-
-
-class WebElement {
-  static tap(element) {
-    return {
       target: element,
       method: "tap",
       args: []

@@ -1,13 +1,8 @@
+# detox test
 
 ```bash
 detox test [options] <...testFilePaths>
 ```
-
-For the most part, `detox test` is a convenience method which converts CLI arguments to environment variables and
-runs a third-party test runner one or multiple times (if `--retries` configured). All unknown flags are just
-forwarded as-is to the test runner underneath, e.g.:
-
-```plain text
 detox test -c ios.debug --showConfig
 ```
 

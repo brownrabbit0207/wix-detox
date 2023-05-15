@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.scroll
 
 import android.content.Context
 import android.content.res.Resources
