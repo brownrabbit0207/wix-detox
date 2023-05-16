@@ -3,16 +3,11 @@ const exec = require('child-process-promise').exec;
 //TODO: Ignoring the test in CI until fbsimctl supports Xcode 9
 async function isFbsimctlInstalled() {
   try {
-}
-
-describe('location', () => {
-  const lat = -80.125;
-  const lon = 66.5;
-
-  // Skipped on Android because there is no Android permissions support yet
-  it(':ios: Location should be unavailable', async () => {
-    if (!await isFbsimctlInstalled()) {
-      return;
+    await exec(`which fbsimctl`);
+    return true;
+  } catch (e) {
+    console.log(`setLocation only works through fbsimctl currently`);
+    return false;
     }
     await device.relaunchApp({ permissions: { location: 'never' } });
     await element(by.text('Location')).tap();

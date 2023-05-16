@@ -3,6 +3,12 @@
 exports[`DetoxConfigErrorComposer (from composeAppsConfig) .ambiguousAppAndApps should create an error for aliased configuration 1`] = `
 [DetoxConfigError: You can't have both "app" and "apps" defined in the "aliased" configuration.
 
+HINT: Use "app" if you have a single app to test.
+Use "apps" if you have multiple apps to test.
+
+Check your Detox config at path:
+/home/detox/myproject/.detoxrc.json
+
 {
   configurations: {
     aliased: {

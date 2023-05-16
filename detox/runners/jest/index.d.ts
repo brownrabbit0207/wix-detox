@@ -3,6 +3,12 @@ declare module 'detox/runners/jest' {
 
   export function globalSetup(): Promise<void>;
   export function globalTeardown(): Promise<void>;
+
+  export type DetoxCircusListenerConstructorOpts = {
+    readonly env: DetoxCircusEnvironment;
+  }
+
+  /**
    * @example
    * class CustomListener implements DetoxCircusListener {
    *   constructor(opts: DetoxCircusListenerConstructorOpts) {

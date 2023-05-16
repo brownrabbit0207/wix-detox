@@ -3,3 +3,4 @@
  */
 declare const assignReporter: never;
 
+export = assignReporter;

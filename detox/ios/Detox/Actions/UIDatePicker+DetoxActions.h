@@ -3,11 +3,8 @@
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 4/20/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
 
-@interface UIDatePicker (DetoxActions)
+#import <UIKit/UIKit.h>
 
-- (void)dtx_adjustToDate:(NSDate*)date;
-
-@end
-
-NS_ASSUME_NONNULL_END

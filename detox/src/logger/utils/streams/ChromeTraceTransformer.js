@@ -3,16 +3,11 @@ const { AbstractEventBuilder } = require('trace-event-lib');
 const getMainCategory = require('../getMainCategory');
 
 const JSONLStringer = require('./JSONLStringer');
-  }
+const { flatMapTransform } = require('./transformers');
 
-  /**
-   * @param {NodeJS.ReadableStream} eventStream
-   */
-  async scanThreadIDs(eventStream) {
-    const processes = await new Promise((resolve, reject) => {
-      const result = {};
-      eventStream
-        .on('end', () => resolve(result))
+class ChromeTraceTransformer {
+  constructor() {
+    /** @type {Map<string, number>} */
         .on('error', /* istanbul ignore next */ (err) => reject(err))
         .on('data', (event) => {
           const { ph, pid, tid, cat } = event;

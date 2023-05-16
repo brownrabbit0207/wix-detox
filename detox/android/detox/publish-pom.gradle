@@ -3,16 +3,11 @@
 project.ext.buildPomXmlDependencies = { pom, configurations ->
     pom.withXml {
         final rootNode = asNode().appendNode('dependencies')
-        }
-    }
-}
+        addConfigurationDependencies(rootNode, configurations.api, 'compile')
+        addConfigurationDependencies(rootNode, configurations.implementation, 'runtime')
 
-private static def addConfigurationDependencies(rootNode, Configuration configuration, String scope) {
-    configuration.dependencies.each { dep -> addChildDependency(rootNode, dep, scope) }
-}
-
-private static def addChildDependency(rootNode, Dependency dep, String scope) {
-    if (dep.group == null || dep.version == null || dep.name == null || dep.name == "unspecified")
+        // Legacy syntax
+        if (configurations.hasProperty('compile')) {
         return
 
     final childNode = rootNode.appendNode('dependency')

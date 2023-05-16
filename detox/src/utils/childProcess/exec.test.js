@@ -8,17 +8,6 @@ describe('Exec utils', () => {
     logger = require('../logger');
 
     jest.mock('child-process-promise');
-    cpp = require('child-process-promise');
-
-    exec = require('./exec');
-  });
-
-  const advanceOpsCounter = (count) => {
-    const opsCounter = require('./opsCounter');
-    for (let i = 0; i < count; i++) opsCounter.inc();
-  };
-
-  it(`exec command with no arguments ends successfully`, async () => {
     mockCppSuccessful(cpp);
     await exec.execWithRetriesAndLogs('bin');
     expect(cpp.exec).toHaveBeenCalledWith(`bin`, { timeout: 0 });

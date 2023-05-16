@@ -3,16 +3,11 @@
 //  Detox
 //
 //  Created by Leo Natan on 9/15/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
 
-+ (CGFloat)visibilityPixelAlphaThreshold {
-	return 0.5;
-}
+#import "DetoxPolicy.h"
 
-+ (NSUInteger)defaultPercentThresholdForVisibility {
-	return 75;
-}
-
-+ (NSUInteger)consecutiveTouchPointsWithSameContentOffsetThreshold {
 	return 12;
 }
 

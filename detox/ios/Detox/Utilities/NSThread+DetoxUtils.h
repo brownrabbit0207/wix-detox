@@ -3,6 +3,12 @@
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 7/16/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface NSThread (DetoxUtils)
 

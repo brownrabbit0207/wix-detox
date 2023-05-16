@@ -3,6 +3,12 @@ package com.wix.detox;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+
+import com.wix.detox.config.DetoxConfig;
+import com.wix.detox.espresso.UiControllerSpy;
+
 import androidx.annotation.NonNull;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.rule.ActivityTestRule;

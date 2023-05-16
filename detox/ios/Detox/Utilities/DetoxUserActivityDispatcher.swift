@@ -3,16 +3,11 @@
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 3/15/18.
-	static let activityType = "activityType"
-	static let userInfo = "userInfo"
-	static let webpageURL = "webpageURL"
-	static let referrerURL = "referrerURL"
-}
+//  Copyright © 2018 Wix. All rights reserved.
+//
 
-@objc(DTXUserActivityDispatcher)
-public class DetoxUserActivityDispatcher: NSObject {
-	@objc let userActivityData : [String: Any]
-	
+import UIKit
+
 	@objc(initWithUserActivityDataURL:)
 	public init(userActivityDataUrl: URL) {
 		userActivityData = DetoxUserActivityDispatcher.parseUserActivityData(url: userActivityDataUrl)

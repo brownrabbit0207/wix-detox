@@ -8,4 +8,3 @@ describe('Suite with skipped tests', () => {
   });
 
   it.todo('Check that todo tests are also traced');
-});

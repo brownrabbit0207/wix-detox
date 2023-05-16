@@ -8,17 +8,6 @@ const testHookError = () => ({ hook: 'beforeEach', error: new Error() });
 const testError = () => ({ error: new Error() });
 
 describe('ArtifactsManager', () => {
-  let proxy;
-
-  beforeEach(() => {
-    jest.mock('fs-extra');
-    jest.mock('./utils/ArtifactPathBuilder');
-    jest.mock('../utils/logger');
-
-    proxy = {
-      get ArtifactPathBuilder() {
-        return require('./utils/ArtifactPathBuilder');
-      },
       get ArtifactsManager() {
         return require('./ArtifactsManager');
       },

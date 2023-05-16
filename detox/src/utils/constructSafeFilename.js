@@ -3,16 +3,11 @@ const sanitize = require('sanitize-filename');
 const DetoxRuntimeError = require('../errors/DetoxRuntimeError');
 const MAX_FILE_LENGTH = 255;
 
- */
-function constructSafeFilename(prefix = '', trimmable = '', suffix = '') {
-  if (!trimmable) {
-    throw new DetoxRuntimeError({
-      message: 'no trimmable filename was given to constructSafeFilename(prefix, trimmable, suffix)',
-      debugInfo: 'the arguments were: ' + JSON.stringify({
-        prefix,
-        trimmable,
-        suffix,
-      }, null, 2),
+const sanitizeOptions = {
+  replacement: '_',
+};
+
+/*
     });
   }
 

@@ -3,7 +3,8 @@ const loggedErrors = new WeakSet();
 function markErrorAsLogged(error) {
   loggedErrors.add(error);
   return error;
-module.exports = {
-  markErrorAsLogged,
-  isErrorAlreadyLogged,
-};
+}
+
+function isErrorAlreadyLogged(error) {
+  return loggedErrors.has(error);
+}

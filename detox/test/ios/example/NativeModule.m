@@ -3,16 +3,11 @@
 #import <React/RCTRootView.h>
 
 static int CALL_COUNTER = 0;
-{
-  // NSLog(@"NativeModule echoWithoutResponse called");
-  CALL_COUNTER++;
-}
 
-RCT_EXPORT_METHOD(echoWithResponse:(NSString *)str
-                          resolver:(RCTPromiseResolveBlock)resolve
-                          rejecter:(RCTPromiseRejectBlock)reject)
-{
-  CALL_COUNTER++;
+@implementation NativeModule
+
+RCT_EXPORT_MODULE();
+
   resolve(str);
   // NSLog(@"NativeModule echoWithResponse called");
 }

@@ -3,16 +3,11 @@
 `detox start [options]`
 
 Runs the [`start` command](../config/apps.mdx#properties) of the app (or apps)
-| -f, --force                           | Ignore errors from the "start" scripts and continue.                                                                                                                                     |
-| --help                                | Show help                                                                                                                                                                                |
+from the specified [configuration](../config/overview.mdx#config-structure).
 
-## Examples
-
-If you have only one configuration, you can simply use:
-
-```bash
-detox start
-```
+| Option                                | Description                                                                                                                                                                              |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -C, --config-path `<configPath>`      | Specify Detox config file path. If not supplied, Detox searches for .detoxrc\[.js] or "detox" section in package.json.                                                                   |
 
 To choose a specific configuration:
 

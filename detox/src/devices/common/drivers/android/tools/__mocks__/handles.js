@@ -3,6 +3,12 @@ const mockAvdName = 'mockAvdName';
 const aDeviceHandle = (adbName, status = 'device') => ({
   adbName,
   status,
+  type: 'device',
+});
+
+const anEmulatorHandle = (adbName, status) => ({
+  ...aDeviceHandle(adbName, status),
+  type: 'emulator',
   queryName: () => Promise.resolve(mockAvdName),
 });
 

@@ -4,15 +4,10 @@ module.exports = {
     group: 'Configuration:',
     describe: 'Specify Detox config file path. If not supplied, detox searches for .detoxrc[.js] or "detox" section in package.json',
   },
-  l: {
-    alias: 'loglevel',
-    group: 'Debugging:',
-    choices: ['fatal', 'error', 'warn', 'info', 'verbose', 'debug', 'trace'],
-    describe: 'Log level',
-  },
-  R: {
-    alias: 'retries',
-    group: 'Execution:',
+  c: {
+    alias: ['configuration'],
+    group: 'Configuration:',
+    describe:
     describe: 'Re-spawn the test runner for individual failing suite files until they pass, or <N> times at least.',
     number: true,
   },

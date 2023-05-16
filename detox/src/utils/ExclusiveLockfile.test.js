@@ -3,6 +3,12 @@ jest.mock('proper-lockfile');
 const fs = require('fs-extra');
 const plock = require('proper-lockfile');
 const tempfile = require('tempfile');
+
+const ExclusiveLockFile = require('./ExclusiveLockfile');
+
+describe('ExclusiveLockFile', () => {
+  let filePath;
+
   beforeEach(() => {
     filePath = tempfile('.test');
   });

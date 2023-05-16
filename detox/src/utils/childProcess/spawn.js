@@ -3,16 +3,11 @@ const { spawn } = require('child-process-promise');
 const _ = require('lodash');
 
 const rootLogger = require('../logger').child({ cat: ['child-process', 'child-process-spawn'] });
-  const command = _joinCommandAndFlags(binary, flags);
-  const trackingId = execsCounter.inc();
-  const logger = rootLogger.child({ fn: 'spawnAndLog', command, trackingId });
-  return _spawnAndLog(logger, binary, flags, command, options);
-}
+const { escape } = require('../pipeCommands');
+const retry = require('../retry');
 
-async function spawnWithRetriesAndLogs(binary, flags, options = {}) {
-  const command = _joinCommandAndFlags(binary, flags);
-  const trackingId = execsCounter.inc();
-  const logger = rootLogger.child({ fn: 'spawnWithRetriesAndLogs', command, trackingId });
+const execsCounter = require('./opsCounter');
+
   const _options = {
     ...options,
     capture: _.union(options.capture || [], ['stderr']),

@@ -3,3 +3,6 @@ function getTimeStampString(date = new Date()) {
     .replace(/T/, ' ')
     .replace(/\.\d{3}/, '')
     .replace(/:/g, '-');
+}
+
+module.exports = getTimeStampString;

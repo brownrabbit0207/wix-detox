@@ -3,6 +3,12 @@ function traceMethods(logger, obj, methodNames) {
     const originalMethod = obj[name];
 
     obj[name] = function tracedMethod(...args) {
+      return logger.trace.complete(
+        { args },
+        name,
+        originalMethod.apply.bind(originalMethod, obj, args)
+      );
+    };
   }
 }
 

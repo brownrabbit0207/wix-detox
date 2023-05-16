@@ -8,17 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0BA16EEC4E404A69C77F4E3B /* libPods-example_ci.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2D2A7D46E170EAE3BAD452 /* libPods-example_ci.a */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3953CC0D229AA78F005DD98C /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ED920022916437005EDB56 /* JavaScriptCore.framework */; };
-		399B4DEC1ED587120098D2AC /* NativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CC17D3311D60A24300267B0C /* NativeModule.m */; };
-		399B4DED1ED587120098D2AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		399B4DEE1ED587120098D2AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		399B4DFE1ED587120098D2AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		399B4DFF1ED587120098D2AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
-		39A34C791E30F3A000BEBB59 /* Detox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B044621DAED76400431EC5 /* Detox.framework */; };
 		39B044651DAED76E00431EC5 /* Detox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39B044621DAED76400431EC5 /* Detox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39B71FCC24643AEA00CC9A88 /* exampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B71FCB24643AEA00CC9A88 /* exampleUITests.m */; };
 		39ED92302291643E005EDB56 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ED920022916437005EDB56 /* JavaScriptCore.framework */; };

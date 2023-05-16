@@ -3,6 +3,12 @@ const driver = {
     await device.reloadReactNative();
     await element(by.text('Assertions')).tap();
   },
+  get textElement() { return element(by.id('main-text')) },
+  get subtextElement() { return element(by.id('subtext-root')) },
+  get invisibleTextElement() { return element(by.id('offscreen-text')) },
+  get toggleElement() { return element(by.id('toggle')) },
+}
+
 describe('Assertions', () => {
   beforeEach(async () => {
     await driver.navToScreen();

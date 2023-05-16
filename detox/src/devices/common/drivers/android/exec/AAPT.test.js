@@ -3,16 +3,11 @@ const aaptMockResults = require('./__mocks__/aapt-results');
 describe('AAPT', () => {
   const mockAPKPath = 'path/to/app.apk';
   const mockAAPTPath = 'mockSdk/build-tools/30.0.0/aapt';
-  };
-  const execCommand = () => exec.mock.calls[0][0];
+  const mockEscapeFunc = (source) => `escaped(${source})`;
 
-  let environment;
-  let escape;
-  let exec;
-  let aapt;
-  beforeEach(() => {
-    jest.mock('../../../../../utils/environment');
-    environment = jest.requireMock('../../../../../utils/environment');
+  const givenAAPTResult = (result) => {
+    exec.mockResolvedValue({
+      stdout: result,
     environment.getAaptPath.mockResolvedValue(mockAAPTPath);
 
     jest.mock('../../../../../utils/childProcess');

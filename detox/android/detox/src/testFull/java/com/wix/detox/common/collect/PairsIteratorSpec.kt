@@ -3,16 +3,11 @@ package com.wix.detox.common.collect
 import org.assertj.core.api.Assertions.assertThat
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
-            assertThat(uut.hasNext()).isFalse()
+import kotlin.test.assertFailsWith
 
-            assertFailsWith(Exception::class) {
-                assertThat(uut.next())
-            }
-        }
-
-        it("should be sane about 2-item lists") {
-            val uut = PairsIterator(listOf("first", "second"))
-            assertThat(uut.hasNext()).isTrue()
+object PairsIteratorSpec: Spek({
+    describe("Pairs iterator") {
+        it("should be sane about empty lists") {
             assertThat(uut.next()).isEqualTo(Pair("first", "second"))
         }
 

@@ -3,6 +3,12 @@ describe('External allocator factory', () => {
     const path = '../fake/module/path';
 
     let factoryClass;
+    beforeEach(() => {
+      factoryClass = require('./external').External;
+    });
+
+    describe('given no allocation-driver class', () => {
+      it('should throw an error', () => {
         const module = {
           DeviceAllocationDriverClass: undefined,
         };

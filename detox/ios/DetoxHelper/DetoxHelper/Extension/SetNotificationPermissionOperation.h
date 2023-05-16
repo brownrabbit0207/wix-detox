@@ -3,6 +3,8 @@
 //  DetoxHelper
 //
 //  Created by Leo Natan (Wix) on 29/03/2017.
-@interface SetNotificationPermissionOperation : SetPermissionOperation
+//  Copyright © 2017 Wix. All rights reserved.
+//
 
-@end
+#import <Foundation/Foundation.h>
+#import "SetPermissionOperation.h"

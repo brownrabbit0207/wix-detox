@@ -3,16 +3,11 @@
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// You may obtain a copy of the License at
 //
-#import "DTXRunLoopSpinner.h"
-
-#import "UIApplication+DTXAdditions.h"
-
-/**
- *  The default minimum number of runloop drains. The default is 2 because, as per the CFRunLoop
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
  *  implementation, some ports (specifically the dispatch port) will only be serviced every other
  *  runloop drain.
  */

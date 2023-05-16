@@ -3,13 +3,8 @@ import {
   NativeModules,
 } from 'react-native';
 import AbstractArgsListScreen from './AbstractArgsListScreen';
-  }
 
-  async readArguments() {
-    return await NativeModule.getLaunchArguments();
-  }
+const { NativeModule } = NativeModules;
 
-  getTitle() {
-    return 'Launch Arguments';
-  }
-}
+export default class LaunchArgsScreen extends AbstractArgsListScreen {
+  constructor(props) {

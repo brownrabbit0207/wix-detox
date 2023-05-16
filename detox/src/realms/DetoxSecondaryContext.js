@@ -3,16 +3,11 @@ const fs = require('fs-extra');
 const { DetoxInternalError } = require('../errors');
 const SessionState = require('../ipc/SessionState');
 
-//#region Private symbols
-const _ipcClient = Symbol('ipcClient');
-//#endregion
+const DetoxContext = require('./DetoxContext');
+const symbols = require('./symbols');
 
-class DetoxSecondaryContext extends DetoxContext {
-  constructor() {
-    super();
-
-    /**
-     * @private
+// Protected symbols
+const { $restoreSessionState, $sessionState, $worker } = DetoxContext.protected;
      * @type {import('../ipc/IPCClient')}
      */
     this[_ipcClient] = null;

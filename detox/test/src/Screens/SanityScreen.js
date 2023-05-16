@@ -3,6 +3,12 @@ import {
   Text,
   View,
   TouchableOpacity
+} from 'react-native';
+
+export default class SanityScreen extends Component {
+
+  constructor(props) {
+    super(props);
     this.state = {
       greeting: undefined,
     };

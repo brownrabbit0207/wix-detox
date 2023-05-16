@@ -3,16 +3,11 @@
 
 @mixin h1 {
   font: 80px/96px 'Nunito Sans', sans-serif;
-@mixin h3 {
-  font: 600 40px/50px 'Nunito Sans', sans-serif;
 }
 
-@mixin h4 {
-  font: 700 30px/40px 'Nunito Sans', sans-serif;
+@mixin h2 {
+  font: 700 58px/70px 'Nunito Sans', sans-serif;
 }
-
-@mixin h5 {
-  font: 600 24px/30px 'Nunito Sans', sans-serif;
 }
 
 @mixin t1 {

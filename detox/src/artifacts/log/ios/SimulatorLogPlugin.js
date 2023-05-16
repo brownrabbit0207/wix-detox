@@ -3,6 +3,12 @@ const temporaryPath = require('../../utils/temporaryPath');
 const LogArtifactPlugin = require('../LogArtifactPlugin');
 
 const SimulatorLogRecording = require('./SimulatorLogRecording');
+
+class SimulatorLogPlugin extends LogArtifactPlugin {
+  constructor(config) {
+    super(config);
+
+    this.appleSimUtils = config.appleSimUtils;
     this.priority = 8;
   }
 

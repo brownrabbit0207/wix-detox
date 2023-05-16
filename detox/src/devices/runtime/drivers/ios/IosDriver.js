@@ -3,16 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 const DetoxRuntimeError = require('../../../../errors/DetoxRuntimeError');
-    return notificationFilePath;
-  }
+const DeviceDriverBase = require('../DeviceDriverBase');
 
-  async setURLBlacklist(blacklistURLs) {
-    await this.client.setSyncSettings({ blacklistURLs: blacklistURLs });
-  }
-
-  async enableSynchronization() {
-    await this.client.setSyncSettings({ enabled: true });
-  }
+class IosDriver extends DeviceDriverBase {
+  createPayloadFile(notification) {
+    const notificationFilePath = path.join(this.createRandomDirectory(), `payload.json`);
 
   async disableSynchronization() {
     await this.client.setSyncSettings({ enabled: false });

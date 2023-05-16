@@ -3,11 +3,8 @@
 //  ExampleApp
 //
 //  Created by Leo Natan (Wix) on 4/16/20.
-@interface NSObject (DontCrash)
+//
 
-- (id)_dtx_text;
-- (id)_dtx_placeholder;
+@import UIKit;
 
-@end
-
-NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_BEGIN

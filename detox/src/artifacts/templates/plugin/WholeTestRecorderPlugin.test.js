@@ -3,16 +3,11 @@ jest.mock('../../../utils/logger.js');
 const testSummaries = require('../../__mocks__/testSummaries.mock');
 
 const WholeTestRecorderPlugin = require('./WholeTestRecorderPlugin');
-  beforeEach(() => {
-    api = new ArtifactsApi({
-      config: {
-        enabled: false,
-        keepOnlyFailedTestsArtifacts: false,
-      },
-    });
-    plugin = new FakeWholeTestRecorderPlugin({ api });
-  });
+const ArtifactsApi = require('./__mocks__/ArtifactsApi.mock');
 
+describe('WholeTestRecorderPlugin', () => {
+  let api;
+  let plugin;
   describe('when disabled', () => {
     beforeEach(() => plugin.disable());
 

@@ -8,7 +8,3 @@ class GenyInstanceNaming {
 
   isFamilial(name) {
     return name === this.generateName();
-  }
-}
-
-module.exports = GenyInstanceNaming;

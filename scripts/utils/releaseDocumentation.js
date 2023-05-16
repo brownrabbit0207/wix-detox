@@ -3,16 +3,11 @@ const exec = shellUtils.exec;
 const fs = require('fs');
 const includes = require('lodash/includes');
 
+const docsPath = `${process.cwd()}/website`;
+const docsVersionsJsonPath = `${docsPath}/versions.json`;
 
-  try {
-    process.chdir(docsPath);
-    exec.execSync(`npm install`);
-    exec.execSync(`npm run docusaurus docs:version ${version}`);
-    exec.execSync(`git add .`);
-    exec.execSync(`git diff --staged --quiet || git commit -m "Publish docs version ${version}"`);
-    exec.execSync(`git push origin ${process.env.BUILDKITE_BRANCH}`);
-  } finally {
-    process.chdir(originalDir);
+function buildDocsForVersion(version) {
+  console.log(`Publishing documentation version: ${version}.`);
   }
 }
 

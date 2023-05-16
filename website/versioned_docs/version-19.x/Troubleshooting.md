@@ -3,10 +3,8 @@ id: troubleshooting
 slug: troubleshooting/troubleshooting
 title: Troubleshooting
 sidebar_label: Troubleshooting
-- [Building the App](Troubleshooting.BuildingTheApp.md)
+---
 
-Issues related to tests execution & runtime:
+## Troubleshooting
 
-- [Running tests](Troubleshooting.RunningTests.md)
-- [Synchronization issues](Troubleshooting.Synchronization.md)
-- [General tests stability issues](Troubleshooting.Flakiness.md)
+Issues related to building the app:

@@ -3,16 +3,11 @@ package com.wix.detox.espresso.action
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.util.Base64
-        val outStream = ByteArrayOutputStream(bitmap.allocationByteCount)
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream)
-        return outStream.toByteArray()
-    }
-    fun asBase64String(): String =
-        Base64.encodeToString(asRawBytes(), Base64.NO_WRAP or Base64.NO_PADDING)
-}
+import android.view.View
+import java.io.ByteArrayOutputStream
 
-class ViewScreenshot() {
-    fun takeOf(view: View): ScreenshotResult {
+class ScreenshotResult(private val bitmap: Bitmap) {
+    fun asBitmap() = bitmap
         val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         view.draw(Canvas(bitmap))
 

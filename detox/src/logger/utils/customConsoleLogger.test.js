@@ -3,6 +3,12 @@ describe('customConsoleLogger', () => {
   let restoreConsoleMethods;
   let fakeConsole, bunyanLogger;
 
+  beforeEach(() => {
+    overrideConsoleMethods = require('./customConsoleLogger').overrideConsoleMethods;
+    restoreConsoleMethods = require('./customConsoleLogger').restoreConsoleMethods;
+
+    fakeConsole = {
+      log: jest.fn(),
       warn: jest.fn(),
       trace: jest.fn(),
       error: jest.fn(),

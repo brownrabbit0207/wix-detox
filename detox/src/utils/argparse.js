@@ -3,6 +3,12 @@ const path = require('path');
 const _ = require('lodash');
 
 const { escape } = require('./pipeCommands');
+
+function getEnvValue(key) {
+  const envKey = _.findKey(process.env, matchesKey(
+    `DETOX_${_.snakeCase(key)}`.toUpperCase()
+  ));
+
   let value = process.env[envKey];
   if (value === 'undefined') {
     value = undefined;

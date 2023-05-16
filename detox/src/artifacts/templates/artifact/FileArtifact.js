@@ -3,6 +3,12 @@ const path = require('path');
 
 const fs = require('fs-extra');
 const tempfile = require('tempfile');
+
+const appendFile = require('../../../utils/appendFile');
+
+const Artifact = require('./Artifact');
+
+class FileArtifact extends Artifact {
   constructor(template) {
     super(template);
 

@@ -8,6 +8,3 @@ module.exports = {
     '<rootDir>/custom-reporter.js',
   ],
   testMatch: ['<rootDir>/*.test.js'],
-  testTimeout: 120000,
-  verbose: true,
-};

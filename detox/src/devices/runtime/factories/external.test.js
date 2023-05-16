@@ -3,16 +3,11 @@ describe('External runtime-device factory', () => {
     const path = '../fake/path';
 
     let factoryClass;
-        const module = {
-          RuntimeDriverClass: undefined,
-        };
-        expect(() => factoryClass.validateModule(module, path)).toThrowErrorMatchingSnapshot();
-      });
+    beforeEach(() => {
+      factoryClass = require('./external').External;
     });
 
-    describe('given a valid module', () => {
-      it('should not throw', () => {
-        const module = {
+    describe('given module with no runtime-driver class', () => {
           RuntimeDriverClass: class {},
         };
         factoryClass.validateModule(module, path);

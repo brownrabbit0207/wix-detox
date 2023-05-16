@@ -3,16 +3,11 @@ package com.wix.detox.reactnative.idlingresources.uimodule
 import android.util.Log
 import com.wix.detox.common.DetoxLog
 import org.joor.Reflect
-class DispatchCommandOperationReflected(val instance: Any?) {
-    val tag: Int?
-        get() = try {
-            Reflect.on(instance).field(FIELD_TAG).get<Int>()
-        } catch (e: ReflectException) {
-            Log.e(DetoxLog.LOG_TAG, "failed to get $FIELD_TAG ", e)
-            null
-        }
+import org.joor.ReflectException
 
-    val numRetries: Int?
+private const val FIELD_TAG = "mTag"
+private const val FIELD_NUM_RETRIES = "numRetries"
+private const val FIELD_COMMAND = "mCommand"
         get() = try {
             Reflect.on(instance).field(FIELD_NUM_RETRIES).get<Int>()
         } catch (e: ReflectException) {

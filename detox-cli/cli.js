@@ -3,6 +3,12 @@ const cp = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
+
+/**
+ * @param {string} msg
+ */
+function log(msg) {
+  console.error(chalk.red(msg));
 }
 
 function main([_$0, _detox, ...cliArgs]) {

@@ -3,16 +3,11 @@ import styles from './HomepageSubHeader.module.scss';
 
 const HomepageSubHeader = () => {
   return (
-            </div>
-          </div>
-          <div className="col col--8 flex-jc-fe">
-            <a
-              className={styles.discordButton}
-              src="../../static/img/join-us-white.svg"
-              href="https://discord.gg/CkD5QKheF5"
-              target="_blank"></a>
-            <div className={styles.twitterFrame}>
-              <iframe
+    <div className={styles.subHeader}>
+      <div className="container">
+        <div className="row">
+          <div className="col col--4">
+            <div className={styles.subText}>
                 src="https://platform.twitter.com/widgets/follow_button.html?screen_name=detoxe2e&show_screen_name=false&show_count=true&size=l"
                 title="Follow Detox on Twitter"
                 width="200"

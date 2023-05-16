@@ -3,16 +3,11 @@
 :::tip
 
 You can skip this guide if you are working solely with debug builds (`android.emu.debug`, etc.),
-Otherwise, you’ll be seeing Detox crashing or hanging up infinitely upon an attempt to run tests with your app built in **release mode**.
+but as soon as you move to the **release builds**, where the native code gets minified and obfuscated,
+you are going to have problems with Detox if you leave your ProGuard rules not configured.
 
-To fix that, you’d need to return to your app build script:
+:::
 
-```diff title="app/build.gradle"
-     buildTypes {
-     …
-// highlight-next-line
-         release { /* (1) */
-             minifyEnabled true
 
 // highlight-next-line
    /* (2) */ proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"

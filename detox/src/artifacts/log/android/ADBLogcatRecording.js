@@ -8,17 +8,6 @@ class ADBLogcatRecording extends Artifact {
   constructor({
     adb,
     deviceId,
-    pid,
-    since,
-    pathToLogOnDevice,
-  }) {
-    super();
-    this.adb = adb;
-
-    this.deviceId = deviceId;
-    this.pid = pid;
-    this.since = since;
-
     this.pathToLogOnDevice = pathToLogOnDevice;
     this.processPromise = null;
 
