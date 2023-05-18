@@ -8,6 +8,17 @@ on:
         - 'detox/**'
         - 'generation/**'
   pull_request:
+    branches: [master]
+    paths:
+        - '.github/workflows/rapid-test.yml'
+        - 'detox/**'
+        - 'generation/**'
+
+jobs:
+
+  linux:
+    name: Linux
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3

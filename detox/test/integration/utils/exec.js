@@ -8,3 +8,7 @@ const execCommand = async (cmd) => {
     cp.on('close', resolve);
   });
 }
+
+module.exports = {
+  execCommand,
+};

@@ -8,7 +8,13 @@ async function pressAnyKey() {
     process.stdin.resume();
     process.stdin.setRawMode(true);
     process.stdin.once('data', onData);
-  });
-}
 
-module.exports = pressAnyKey;
+    function onData(chunk) {
+      process.stdin.removeListener('data', onData);
+      process.stdin.setRawMode(false);
+      process.stdin.pause();
+      process.nextTick(resolve);
+
+      if (isCtrlC(chunk)) {
+        process.kill(process.pid, 'SIGINT');
+      }

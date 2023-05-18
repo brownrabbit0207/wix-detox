@@ -8,26 +8,16 @@ Note that running automated UI tests is _not the same_ as developing Android app
 
 ## Java Setup
 
+This is the most basic step in the process, as without a proper Java SDK installed, nothing Android-ish works – at least not from command-line, which is mandatory for executing `Detox`.
+
+_The bottom line is that **Android needs Java installed**. If you want to run with React Native 66 and Android 12 then it needs to be at least Java 11, otherwise you should have Java 8._
+
+To check for your real java-executable’s version, in a command-line console, run:
 
 ```bash
-java version "11.x.x"
-...
+java -version
 ```
 
-or, if you have [openjdk](https://techoral.com/blog/openjdk-developers-guide.html) installed:
-
-```bash
-openjdk version "11.0.2" 2019-01-1
-...
-```
-
-**Namely, that the version is `11.x.x`**.
-
-> Note: Do not be confused by the Java version potentially used by your browsers, etc. For `Detox`, what the command-line sees is what matters.
-
----
-
-If `java -version` yields an error, it is likely that `java` is either not in your path or not even installed at all. To try to understand which of the two is true, use [this guide](https://www.java.com/en/download/help/path.xml).
 
 If otherwise the version is simply wrong, try these course of actions:
 

@@ -18,27 +18,6 @@ class DetoxAssertion {
     return {
       target: {
         type: "Class",
-        value: "com.wix.detox.espresso.DetoxAssertion"
-      },
-      method: "assertMatcher",
-      args: [{
-        type: "Invocation",
-        value: i
-      }, {
-        type: "Invocation",
-        value: sanitize_matcher(m)
-      }]
-    };
-  }
-
-  static assertNotVisible(i) {
-    return {
-      target: {
-        type: "Class",
-        value: "com.wix.detox.espresso.DetoxAssertion"
-      },
-      method: "assertNotVisible",
-      args: [{
         type: "Invocation",
         value: i
       }]

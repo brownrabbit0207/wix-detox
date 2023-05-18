@@ -8,26 +8,16 @@ const log = detox.log.child({ cat: ['lifecycle', 'cli'] });
 class AppStartCommand {
   constructor({ cmd, passthrough = [], forceSpawn = false }) {
     this._id = Math.random();
-    log.info.begin({ id: this._id }, cmd);
+    this._cmd = cmd;
+    this._passthrough = passthrough;
+    this._forceSpawn = forceSpawn;
 
-    const onEnd = (msg, code, signal) => {
-      log.trace.end({ id: this._id, code, signal }, msg);
-      this._cpDeferred.resolve();
-    };
+    this._cpHandle = null;
+    this._cpDeferred = new Deferred();
+  }
 
-    const onError = (msg, code, signal) => {
-      const logLevel = this._forceSpawn ? 'warn' : 'error';
-      log[logLevel].end({ id: this._id, code, signal }, msg);
-      if (this._forceSpawn) {
-        this._cpDeferred.resolve();
-      } else {
-        this._cpDeferred.reject(new DetoxRuntimeError(msg));
-      }
-    };
-
-    this._cpHandle = execa.command(cmd, { stdio: 'inherit', shell: true });
-    this._cpHandle.on('error', onError);
-    this._cpHandle.on('exit', (code, signal) => {
+  execute() {
+    const cmd = [this._cmd, ...this._passthrough].join(' ');
       const reason = code == null ? `signal ${signal}` : `code ${code}`;
       const msg = `Command exited with ${reason}: ${cmd}`;
       if (signal || code === 0) {

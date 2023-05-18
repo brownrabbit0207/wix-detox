@@ -8,26 +8,16 @@ const retry = require('./retry');
 
 const DEFAULT_OPTIONS = {
   retry: { retries: 10000, interval: 5 },
-    this._options = _.defaultsDeep(options, DEFAULT_OPTIONS);
+  read: { encoding: 'utf8' },
+  getInitialState: _.constant(null),
+};
 
-    this._isLocked = false;
-    this._invalidate();
-  }
+class ExclusiveLockfile {
+  constructor(lockfile, options) {
+    if (!lockfile) {
+      throw new DetoxRuntimeError('Path to the lockfile should be a non-empty string');
+    }
 
-  get options() {
-    return this._options;
-  }
-
-  /***
-   * @async
-   * @param {Function} fn
-   * @returns {Promise<any>}
-   */
-  async exclusively(fn) {
-    await this._lock();
-
-    try {
-      return (await fn());
     } finally {
       await this._unlock();
     }

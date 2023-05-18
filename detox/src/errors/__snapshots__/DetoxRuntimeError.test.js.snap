@@ -8,6 +8,17 @@ exports[`DetoxRuntimeError should be created with message with "Command failed" 
 Command failed: jest runMyTests]
 `;
 
+exports[`DetoxRuntimeError should be created with message with debug info 1`] = `
+[DetoxRuntimeError: no filename was given to constructSafeFilename()
+
+the arguments were: {
+  "prefix": "detox - "
+}]
+`;
+
+exports[`DetoxRuntimeError should be created with message with debug info object 1`] = `
+[DetoxRuntimeError: no filename was given to constructSafeFilename()
+
 {
   prefix: 'detox - ',
   trimmable: undefined,

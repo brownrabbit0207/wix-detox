@@ -8,21 +8,13 @@ const _ = require('lodash');
  * @returns {string}
  */
 function selectConfiguration({ errorComposer, globalConfig, cliConfig }) {
-  if (!configurationName) {
-    throw errorComposer.cantChooseConfiguration();
+  const { configurations } = globalConfig;
+
+  if (_.isEmpty(configurations)) {
+    throw errorComposer.noConfigurationsInside();
   }
 
-  errorComposer.setConfigurationName(configurationName);
-
-  if (!configurations.hasOwnProperty(configurationName)) {
-    throw errorComposer.noConfigurationWithGivenName();
+  let configurationName = cliConfig.configuration || globalConfig.selectedConfiguration;
+  if (!configurationName && _.size(configurations) === 1) {
+    configurationName = _.keys(configurations)[0];
   }
-
-  if (_.isEmpty(configurations[configurationName])) {
-    throw errorComposer.configurationShouldNotBeEmpty();
-  }
-
-  return configurationName;
-}
-
-module.exports = selectConfiguration;

@@ -8,26 +8,16 @@ describe('Actions - Scroll', () => {
 
   custom.it.withFailureIf.android('should scroll for a small amount in direction', async () => {
     await expect(element(by.text('Text1'))).toBeVisible();
-    await expect(element(by.text('Text6'))).not.toBeVisible();
-    await element(by.id('ScrollView161')).scroll(220, 'down');
-    await expect(element(by.text('Text6'))).toBeVisible();
-  });
-
-  it('should scroll for a large amount in horizontal direction', async () => {
-    await expect(element(by.text('HText7'))).not.toBeVisible();
-    await element(by.id('ScrollViewH')).scroll(220, 'right');
-    await expect(element(by.text('HText7'))).toBeVisible();
-  });
-
-  it('should scroll to edge', async () => {
-    await expect(element(by.text('Text12'))).not.toBeVisible();
-    await element(by.id('ScrollView161')).scrollTo('bottom');
-    await expect(element(by.text('Text12'))).toBeVisible();
-    await element(by.id('ScrollView161')).scrollTo('top');
+    await expect(element(by.text('Text4'))).not.toBeVisible();
+    await expect(element(by.id('ScrollView161'))).toBeVisible();
+    await element(by.id('ScrollView161')).scroll(100, 'down');
+    await expect(element(by.text('Text1'))).not.toBeVisible();
+    await expect(element(by.text('Text4'))).toBeVisible();
+    await element(by.id('ScrollView161')).scroll(100, 'up');
     await expect(element(by.text('Text1'))).toBeVisible();
+    await expect(element(by.text('Text4'))).not.toBeVisible();
   });
 
-  it('should scroll horizontally to edge', async () => {
     await expect(element(by.text('HText8'))).not.toBeVisible();
     await element(by.id('ScrollViewH')).scrollTo('right');
     await expect(element(by.text('HText8'))).toBeVisible();

@@ -8,3 +8,7 @@ describe(':ios: Permissions', () => {
 
   it('Permissions denied', async () => {
     await device.launchApp({permissions: {calendar: 'NO'}, newInstance: true});
+    await element(by.text('Permissions')).tap();
+    await expect(element(by.text('denied'))).toBeVisible();
+  });
+});

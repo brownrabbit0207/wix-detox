@@ -8,6 +8,17 @@ import com.wix.detox.espresso.action.common.MotionEvents
 /**
  * A detox-swiper that, given the total expected motions, tries to swipe fast and yet avoid an
  * undesired fling, typically triggered at the end of a swipe motion over scrollable views. It mostly
+ * relies on [ViewConfiguration.getScaledMinimumFlingVelocity] (i.e. tries to keep swiping below
+ * that velocity, at least at the end).
+ *
+ * @see DetoxSwipe
+ */
+class FlinglessSwiper @JvmOverloads constructor(
+        expectedMotions: Int,
+        private val uiController: UiController,
+        viewConfig: ViewConfiguration,
+        private val motionEvents: MotionEvents = MotionEvents())
+    : DetoxSwiper {
 
     private val pixelsPerSecond = viewConfig.scaledMinimumFlingVelocity * VELOCITY_SAFETY_RATIO
     private val fastEventsCountLimit = expectedMotions * FAST_EVENTS_RATIO

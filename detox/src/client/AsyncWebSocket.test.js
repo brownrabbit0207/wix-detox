@@ -8,26 +8,16 @@ const config = require('../configuration/configurations.mock').validSession;
 
 describe('AsyncWebSocket', () => {
   let AsyncWebSocket;
-    jest.mock('ws');
-    WebSocket = require('ws');
-    WebSocket.CONNECTING = 0;
-    WebSocket.OPEN = 1;
-    WebSocket.CLOSING = 2;
-    WebSocket.CLOSED = 3;
+  let WebSocket;
+  /**
+   * @type {import('./AsyncWebSocket')}
+   */
+  let aws;
+  let log;
 
-    WebSocket.prototype._socket = { localPort: NaN };
-    WebSocket.prototype.readyState = WebSocket.CONNECTING;
-    WebSocket.prototype.mockOpen = function () {
-      this.readyState = WebSocket.OPEN;
-      this.onopen && this.onopen({ target: this });
-    };
-    WebSocket.prototype.mockError = function (error) {
-      this.onerror && this.onerror({ error });
-    };
-    WebSocket.prototype.mockMessage = function (data) {
-      this.onmessage && this.onmessage({ data: JSON.stringify(data) });
-    };
-    WebSocket.prototype.mockClose = function () {
+  const socket = permaproxy(() => _.last(WebSocket.mock.instances));
+
+  beforeEach(() => {
       this.onclose && this.onclose(null);
     };
     WebSocket.prototype.mockCloseError = function (error) {

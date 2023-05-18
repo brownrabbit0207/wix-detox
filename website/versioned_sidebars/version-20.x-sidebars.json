@@ -8,6 +8,17 @@
         "introduction/project-setup",
         "introduction/your-first-test",
         "introduction/debugging",
+        "introduction/preparing-for-ci"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Guides",
+      "items": [
+        "guide/investigating-test-failure",
+        "guide/test-id",
+        "guide/parallel-test-execution",
+        "guide/genymotion-saas",
         "guide/taking-screenshots",
         "guide/mocking",
         "guide/launch-args",

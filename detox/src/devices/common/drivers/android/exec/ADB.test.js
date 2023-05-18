@@ -18,27 +18,6 @@ describe('ADB', () => {
 
     jest.mock('../../../../../utils/encoding', () => ({
       encodeBase64: (text) => `base64(${text})`,
-    }));
-
-    jest.mock('../tools/DeviceHandle');
-    DeviceHandle = require('../tools/DeviceHandle');
-
-    jest.mock('../tools/EmulatorHandle');
-    EmulatorHandle = require('../tools/EmulatorHandle');
-
-    jest.mock('../../../../../utils/childProcess', () => ({
-      execWithRetriesAndLogs: jest.fn().mockReturnValue({ stdout: '' }),
-      spawnAndLog: jest.fn(),
-      spawnWithRetriesAndLogs: jest.fn().mockReturnValue({ stdout: '' }),
-    }));
-    execWithRetriesAndLogs = require('../../../../../utils/childProcess').execWithRetriesAndLogs;
-    spawnAndLog = require('../../../../../utils/childProcess').spawnAndLog;
-    spawnWithRetriesAndLogs = require('../../../../../utils/childProcess').spawnWithRetriesAndLogs;
-
-    ADB = require('./ADB');
-    adb = new ADB();
-  });
-
   describe('devices', () => {
     const mockDevices = [
       'MOCK_SERIAL\tdevice',

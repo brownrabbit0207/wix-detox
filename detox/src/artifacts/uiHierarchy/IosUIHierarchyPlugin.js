@@ -18,27 +18,6 @@ class IosUIHierarchyPlugin extends ArtifactPlugin {
     this._artifacts = {
       perTest: {},
       perSession: {},
-    };
-
-    client.setEventCallback('testFailed', this._onInvokeFailure.bind(this));
-  }
-
-  async onBeforeLaunchApp(event) {
-    await super.onBeforeLaunchApp(event);
-
-    if (!this.enabled && !event.launchArgs.hasOwnProperty('detoxDisableHierarchyDump')) {
-      event.launchArgs['detoxDisableHierarchyDump'] = 'YES';
-    }
-  }
-
-  async onCreateExternalArtifact(e) {
-    if (!e.artifact) {
-      throw new DetoxInternalError('Expected Artifact instance in the event');
-    }
-
-    this._registerSnapshot(e.name, e.artifact);
-  }
-
   _onInvokeFailure({ params: { viewHierarchyURL } }) {
     if (viewHierarchyURL) {
       this._registerSnapshot('ui', new FileArtifact({

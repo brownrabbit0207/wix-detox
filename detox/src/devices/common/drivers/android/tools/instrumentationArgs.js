@@ -8,14 +8,13 @@ const isReservedInstrumentationArg = (arg) => reservedInstrumentationArgs.has(ar
 function prepareInstrumentationArgs(args) {
   const usedReservedArgs = [];
   const preparedLaunchArgs = _.reduce(args, (result, value, key) => {
-  }, []);
+    const valueAsString = _.isString(value) ? value : JSON.stringify(value);
 
-  return {
-    args: preparedLaunchArgs,
-    usedReservedArgs,
-  };
-}
+    let valueEncoded = valueAsString;
+    if (isReservedInstrumentationArg(key)) {
+      usedReservedArgs.push(key);
+    } else if (!key.startsWith('detox')) {
+      valueEncoded = encodeBase64(valueAsString);
+    }
 
-module.exports = {
-  prepareInstrumentationArgs,
-};
+    result.push('-e', key, valueEncoded);

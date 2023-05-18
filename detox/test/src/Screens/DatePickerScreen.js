@@ -8,6 +8,17 @@ const shouldHideDatePicker = Platform.OS === 'android';
 
 export default class DatePickerScreen extends Component {
   constructor(props) {
+    super(props);
+
+    this.state = {
+      chosenDate: new Date(),
+      datePickerVisible: !shouldHideDatePicker,
+      datePickerDisplay: DatePickerScreen.MODES[0],
+    };
+  }
+
+  _toggleDatePicker = () => {
+    const currentIndex = DatePickerScreen.MODES.indexOf(this.state.datePickerDisplay);
     this.setState({
       datePickerDisplay: DatePickerScreen.MODES[(currentIndex + 1) % DatePickerScreen.MODES.length],
     });

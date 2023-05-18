@@ -8,6 +8,17 @@ const expectToFinishBeforeTimeout = async (block, timeout) => {
 
   const expiredAfter = endTime - startTime;
   if (expiredAfter > timeout) {
+    throw new Error(`Action not expired even after a timeout, took ${expiredAfter}ms`);
+  }
+}
+
+describe('WaitFor', () => {
+  const goButton = element(by.id('goButton'));
+  const timeout = 5000;
+
+  beforeEach(async() => {
+    await device.reloadReactNative();
+    await element(by.text('WaitFor')).tap();
   });
 
   it('should wait until an element is exists / removed in layout', async () => {

@@ -8,6 +8,17 @@
 
 import UIKit
 
+private struct DetoxUserActivityKeys {
+	static let activityType = "activityType"
+	static let userInfo = "userInfo"
+	static let webpageURL = "webpageURL"
+	static let referrerURL = "referrerURL"
+}
+
+@objc(DTXUserActivityDispatcher)
+public class DetoxUserActivityDispatcher: NSObject {
+	@objc let userActivityData : [String: Any]
+	
 	@objc(initWithUserActivityDataURL:)
 	public init(userActivityDataUrl: URL) {
 		userActivityData = DetoxUserActivityDispatcher.parseUserActivityData(url: userActivityDataUrl)

@@ -9,25 +9,15 @@ sidebar_label: Test Lifecycle
 
 Detox is test runner independent, and we encourage you to choose your own test runner, but for the sake of demonstration we will use `mocha`’s syntax.
 
-Of course, you can add any of your initializations in this phase.
+### Initial Setup
 
-### Before and After Each Test
-
-Despite being a recent and _still_ an optional formation, `detox.beforeEach` and `detox.afterEach` lifecycle functions are **highly** recommended to be called in your test setups. The newer features (including test artifacts: video recordings, screenshots, logs) are not expected to work without these calls.
-
-> **TIP**: This API is still apt to change in the future, thus to minimize the risks, you are encouraged to switch to the built-in adapters for `mocha` and `jest` like in examples here: [mocha adapter example](https://github.com/wix/Detox/tree/master/examples/demo-react-native/e2e/init.js), [jest adapter example](https://github.com/wix/Detox/tree/master/examples/demo-react-native-jest/e2e/init.js).
-
-If nevertheless you use another test runner with Detox (not `mocha` and not `jest`), then you have to implement a logic similar to the one below. Futurewise, consider refactoring it to an adapter and sharing with Detox project (e.g. adapter for `ava.js` or `tape`):
+The setup phase happens inside `detox.init()`.
+This is the phase where detox reads its configuration, starts a server, loads its expectation library and starts a simulator.
 
 ```js
-let testSummary;
-
-beforeEach(async function () {
-  testSummary = {
-    title: this.currentTest.title,
-    fullName: this.currentTest.fullTitle(),
-    status: 'running',
-  };
+before(async () => {
+  await detox.init();
+});
 
  await detox.beforeEach(testSummary);
 });

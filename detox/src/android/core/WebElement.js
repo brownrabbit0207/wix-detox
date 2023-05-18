@@ -8,26 +8,16 @@ const { ActionInteraction } = require('../interactions/web');
 const { WebMatcher } = require('./WebMatcher');
 
 const _device = Symbol('device');
-    this[_webViewElement] = webViewElement;
-    this.atIndex(0);
-  }
+const _emitter = Symbol('emitter');
+const _matcher = Symbol('matcher');
+const _invocationManager = Symbol('invocationManager');
+const _webMatcher = Symbol('webMatcher');
+const _webViewElement = Symbol('webViewElement');
 
-  atIndex(index) {
-    const webViewElementCall = this[_webViewElement]._call;
-    const webMatcherCall = this[_webMatcher]._call;
-
-    this._call = invoke.callDirectly(WebViewElementApi.element(webViewElementCall, webMatcherCall.value, index));
-    return this;
-  }
-
-  // At the moment not working on content-editable
-  async tap() {
-    return await new ActionInteraction(this[_invocationManager], new actions.WebTapAction(this)).execute();
-  }
-
-  async typeText(text, isContentEditable = false) {
-    if (isContentEditable) {
-      return await this[_device]._typeText(text);
+class WebElement {
+  constructor({ device, invocationManager, webMatcher, webViewElement }) {
+    this[_device] = device;
+    this[_invocationManager] = invocationManager;
     }
     return await new ActionInteraction(this[_invocationManager],  new actions.WebTypeTextAction(this, text)).execute();
   }

@@ -8,26 +8,16 @@ class ADBLogcatRecording extends Artifact {
   constructor({
     adb,
     deviceId,
-    this.pathToLogOnDevice = pathToLogOnDevice;
-    this.processPromise = null;
+    pid,
+    since,
+    pathToLogOnDevice,
+  }) {
+    super();
+    this.adb = adb;
 
-    this._waitUntilLogFileIsCreated = null;
-  }
-
-  async doStart() {
-    const pid = this.pid.get();
-
-    this.processPromise = this.adb.logcat(this.deviceId, {
-      file: this.pathToLogOnDevice,
-      time: this.since.get(),
-      pid: pid > 0 ? pid : 0,
-    });
-
-    this._waitUntilLogFileIsCreated = sleep(300).then(() => {
-      return retry(() => this._assertLogIsCreated());
-    });
-  }
-
+    this.deviceId = deviceId;
+    this.pid = pid;
+    this.since = since;
   async doStop() {
     try {
       await this._waitUntilLogFileIsCreated;

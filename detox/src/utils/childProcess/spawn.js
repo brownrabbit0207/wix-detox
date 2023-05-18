@@ -8,26 +8,16 @@ const retry = require('../retry');
 
 const execsCounter = require('./opsCounter');
 
-  const _options = {
-    ...options,
-    capture: _.union(options.capture || [], ['stderr']),
-  };
-  const {
-    retries = 1,
-    interval = 100,
-    ...spawnOptions
-  } = _options;
-
-  let result;
-  await retry({ retries, interval }, async (tryCount, lastError) => {
-    _logSpawnRetrying(logger, tryCount, lastError);
-    result = await _spawnAndLog(logger, binary, flags, command, spawnOptions, tryCount);
-  });
-  return result;
+function spawnAndLog(binary, flags, options) {
+  const command = _joinCommandAndFlags(binary, flags);
+  const trackingId = execsCounter.inc();
+  const logger = rootLogger.child({ fn: 'spawnAndLog', command, trackingId });
+  return _spawnAndLog(logger, binary, flags, command, options);
 }
 
-const DEFAULT_KILL_SCHEDULE = {
-  SIGINT: 0,
+async function spawnWithRetriesAndLogs(binary, flags, options = {}) {
+  const command = _joinCommandAndFlags(binary, flags);
+  const trackingId = execsCounter.inc();
 };
 
 async function interruptProcess(childProcessPromise, schedule) {

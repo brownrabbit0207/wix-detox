@@ -18,20 +18,3 @@ class ADBScreencapPlugin extends ScreenshotArtifactPlugin {
     return new Artifact({
       name: 'ADBScreencapRecording',
 
-      async start() {
-        await adb.screencap(deviceId, pathToScreenshotOnDevice);
-      },
-
-      async save(artifactPath) {
-        await adb.pull(deviceId, pathToScreenshotOnDevice, artifactPath);
-        await adb.rm(deviceId, pathToScreenshotOnDevice);
-      },
-
-      async discard() {
-        await adb.rm(deviceId, pathToScreenshotOnDevice);
-      },
-    });
-  }
-}
-
-module.exports = ADBScreencapPlugin;

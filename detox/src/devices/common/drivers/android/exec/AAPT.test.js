@@ -8,6 +8,17 @@ describe('AAPT', () => {
   const givenAAPTResult = (result) => {
     exec.mockResolvedValue({
       stdout: result,
+    });
+  };
+  const execCommand = () => exec.mock.calls[0][0];
+
+  let environment;
+  let escape;
+  let exec;
+  let aapt;
+  beforeEach(() => {
+    jest.mock('../../../../../utils/environment');
+    environment = jest.requireMock('../../../../../utils/environment');
     environment.getAaptPath.mockResolvedValue(mockAAPTPath);
 
     jest.mock('../../../../../utils/childProcess');

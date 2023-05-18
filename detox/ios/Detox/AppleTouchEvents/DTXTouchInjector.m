@@ -8,26 +8,16 @@
 //      http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
-#import "UITouch+DTXAdditions.h"
-#import "DTXAppleInternals.h"
-#import "DTXRunLoopSpinner.h"
-#import "DTXTouchInfo-Private.h"
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
 
-@implementation DTXTouchInjector
-{
-	// Window to which touches will be delivered.
-	UIWindow* _window;
-	// List of objects that aid in creation of UITouches.
-	NSMutableArray<DTXTouchInfo*>* _enqueuedTouchInfoList;
-	// A display link used for injecting touches.
-	CADisplayLink* _displayLink;
-	// Touch objects created to start the touch sequence for every
-	// touch points. It stores one UITouch object for each finger
-	// in a touch event.
-	NSMutableArray<UITouch*>* _ongoingUITouches;
-	// Current state of the injector.
-	DTXTouchInjectorState _state;
-	// The previously injected touch event. Used to determine
+#import "DTXTouchInjector.h"
+
+#import <QuartzCore/QuartzCore.h>
+#include <mach/mach_time.h>
 	// whether an injected touch needs to be stationary or not.
 	// May be nil.
 	DTXTouchInfo* _previousTouchInfo;

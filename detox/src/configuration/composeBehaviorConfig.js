@@ -8,26 +8,16 @@ const _ = require('lodash');
  */
 function composeBehaviorConfig({
   cliConfig,
-          shutdownDevice: cliConfig.cleanup ? true : undefined,
-        },
-      },
-      localConfig.behavior,
-      globalConfig.behavior,
+  globalConfig,
+  localConfig,
+}) {
+  return _.chain({})
+    .defaultsDeep(
       {
         init: {
-          exposeGlobals: true,
-          keepLockFile: false,
-          reinstallApp: undefined,
+          keepLockFile: cliConfig.keepLockFile ? true : undefined,
+          reinstallApp: cliConfig.reuse ? false : undefined,
         },
-        launchApp: 'auto',
-        cleanup: {
-          shutdownDevice: false,
-        },
-      }
-    )
-    .tap(config => {
-      if (config.init.reinstallApp === undefined) {
-        config.init.reinstallApp = config.launchApp !== 'manual';
       }
     })
     .value();

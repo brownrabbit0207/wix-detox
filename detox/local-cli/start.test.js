@@ -8,6 +8,17 @@ describe('start', () => {
     cmd = null;
 
     jest.mock('../src/utils/logger');
+    jest.mock('../internals', () => {
+      const DetoxConfigErrorComposer = require('../src/errors/DetoxConfigErrorComposer');
+
+      const config = {
+        apps: {},
+        artifacts: {},
+        behavior: {},
+        errorComposer: new DetoxConfigErrorComposer(),
+        device: {},
+        session: {}
+      };
 
       return ({
         config,

@@ -8,25 +8,15 @@ import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
 private fun anIdlingResourceCallback() = mock<IdlingResource.ResourceCallback>()
-        fun uut() = TimersIdlingResource(idleInterrogationStrategy) { choreographer }
 
-        fun givenIdleStrategy() {
-            whenever(idleInterrogationStrategy.isIdleNow()).thenReturn(true)
-        }
+object TimersIdlingResourceSpec : Spek({
+    describe("React Native timers idling-resource") {
+        lateinit var choreographer: Choreographer
+        lateinit var idleInterrogationStrategy: IdleInterrogationStrategy
 
-        fun givenBusyStrategy() {
-            whenever(idleInterrogationStrategy.isIdleNow()).thenReturn(false)
-        }
-
-        fun getChoreographerCallback(): Choreographer.FrameCallback {
-            argumentCaptor<Choreographer.FrameCallback>().apply {
-                verify(choreographer).postFrameCallback(capture())
-                return firstValue
-            }
-        }
-
-        fun invokeChoreographerCallback() {
-            getChoreographerCallback().doFrame(0L)
+        beforeEachTest {
+            idleInterrogationStrategy = mock()
+            choreographer = mock()
         }
 
         it("should return a debug-name") {

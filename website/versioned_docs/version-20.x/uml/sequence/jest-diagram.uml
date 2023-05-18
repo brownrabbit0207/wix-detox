@@ -18,23 +18,3 @@ Jest0 -> globalSetup: import
 activate globalSetup
 globalSetup -> Jest0: await
 deactivate globalSetup
-Jest0 -> jestReporter: import
-activate jestReporter
-Jest0 -> jestReporter: onRunStart()
-Jest0 -> JestN: child_process.fork()
-activate JestN
-loop every test file
-  Jest0 -> JestN: runTests()
-  JestN -> jestReporter: onTestFileResult()
-end loop
-deactivate JestN
-Jest0 -> jestReporter: onRunComplete()
-deactivate jestReporter
-Jest0 -> globalTeardown: import
-activate globalTeardown
-globalTeardown -> Jest0: await
-deactivate globalTeardown
-
-deactivate Jest0
-
-@enduml

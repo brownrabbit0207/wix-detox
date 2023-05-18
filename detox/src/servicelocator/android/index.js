@@ -8,6 +8,17 @@ const { TempFileTransfer } = require('../../devices/common/drivers/android/tools
 const AndroidServiceLocator = {
   get emulator() {
     return require('./emulatorServiceLocator');
+  },
+
+  get genycloud() {
+    return require('./genycloudServiceLocator');
+  },
+};
+
+AndroidServiceLocator.adb = new ADB();
+AndroidServiceLocator.aapt = new AAPT();
+AndroidServiceLocator.apkValidator = new ApkValidator(AndroidServiceLocator.aapt);
+AndroidServiceLocator.fileTransfer = new TempFileTransfer(AndroidServiceLocator.adb);
 AndroidServiceLocator.deviceRegistry = DeviceRegistry.forAndroid();
 AndroidServiceLocator.devicePathBuilder = new AndroidDevicePathBuilder();
 

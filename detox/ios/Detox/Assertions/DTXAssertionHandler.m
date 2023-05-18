@@ -18,27 +18,6 @@
 	return rv;
 }
 
-@end
-
-BOOL dtx_try(void (^block)(void), NSError * __nullable * __null_unspecified error)
-{
-	return [DTXAssertionHandler try:^ {
-		block();
-	} error:error];
-}
-
-@implementation DTXAssertionHandler
-
-+ (NSError*)_errorForTestAssertionException:(DTXTestAssertionException*)exception
-{
-	NSMutableDictionary* userInfo = @{NSLocalizedDescriptionKey: exception.reason, @"DetoxFailureInformation": exception.userInfo}.mutableCopy;
-	
-	if(exception.viewDescription != nil)
-	{
-		[userInfo addEntriesFromDictionary:exception.viewDescription];
-	}
-	
-	return [NSError errorWithDomain:@"DetoxErrorDomain" code:0 userInfo:userInfo];
 }
 
 #if DEBUG

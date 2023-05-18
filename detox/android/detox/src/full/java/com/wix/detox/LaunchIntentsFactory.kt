@@ -18,27 +18,6 @@ internal class LaunchIntentsFactory {
     fun activityLaunchIntent(activity: Activity)
         = Intent(activity.applicationContext,
                  activity.javaClass).apply {
-            flags = coreFlags
-        }
-
-    /**
-     * Constructs a near-empty, activity-anonymous intent, assuming an ActivityTestRule instance that would handle it
-     * and fill in all the missing details. Namely, the activity class (aka component), which is taken from activityTestRule's
-     * own activityClass data member which was set in the c'tor by the user (outside of Detox).
-     *
-     * @return The resulting intent.
-     */
-    fun cleanIntent()
-        = Intent(Intent.ACTION_MAIN)
-
-    /**
-     * Constructs an activity-anonymous intent with a URL such that the resolved activity to be launched would be an activity that has
-     * been defined to match it using an intent-filter xml tag associated with an [Intent.ACTION_VIEW] action.
-     *
-     * @param url The activity-lookup URL.
-     * @param initialLaunch Whether this is done in the context of the preliminary app launch, or midway through a running test.
-     *
-     * @return The resulting intent.
      */
     fun intentWithUrl(url: String?, initialLaunch: Boolean)
         = Intent(Intent.ACTION_VIEW).apply {

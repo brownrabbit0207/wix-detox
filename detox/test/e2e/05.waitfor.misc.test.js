@@ -18,27 +18,6 @@ describe(':android: Visibility-bug workaround for waitfor() api', () => {
   });
 
   it('should abort scrolling if element was not found', async () => {
-    await expect(scrollViewDriver.fakeItem()).not.toBeVisible();
-    await expectToThrow(() => waitFor(scrollViewDriver.fakeItem()).toBeVisible().whileElement(scrollViewDriver.byId()).scroll(1000, 'down'));
-    await expect(scrollViewDriver.fakeItem()).not.toBeVisible();
-    await expect(scrollViewDriver.lastItem()).toBeVisible();
-  });
-});
-
-/**
- * Another mini-suite providing an alternative to https://github.com/facebook/react-native/issues/23870.
- * See actions visibility workaround for more.
- */
-describe('waitFor() + atIndex()', () => {
-  beforeEach(async () => {
-    await device.reloadReactNative();
-    await element(by.text('Matchers')).tap();
-  });
-
-  /**
-   * This use case refers to this issue: https://github.com/wix/Detox/issues/2844
-   * We are making sure that .atIndex() works together with waitFor()
-   */
   it('should be able to discern elements by index', async () => {
     await waitFor(element(by.text('Index')).atIndex(1))
       .toBeVisible()

@@ -8,17 +8,13 @@ class MessageStack {
   push(context, msg) {
     const hash = this._hash(context);
 
-      return ['<no begin message>'];
+    if (this._map[hash] == null) {
+      this._map[hash] = [];
     }
 
-    return stack.pop();
+    return this._map[hash].push(msg);
   }
 
-  _hash(context) {
-    const cat = getMainCategory(context.cat);
-    const tid = context.tid;
-    return `${cat}:${tid}`;
-  }
-}
-
-module.exports = MessageStack;
+  pop(context) {
+    const hash = this._hash(context);
+    const stack = this._map[hash];

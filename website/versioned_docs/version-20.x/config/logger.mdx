@@ -8,25 +8,15 @@ The `logger` section controls how the printed logs are going to look like in you
 
 ## Location
 
-* Use `error` or `warn` when you want to make the output as silent as possible.
-* Use `debug` to control what generally is happening under the hood.
-* Use `trace` when troubleshooting specific issues.
+<Location sectionName="logger" />
 
-Please note that the log level has no effect on the [generated log files](artifacts.mdx) and their content – it filters only the messages printed to your terminal.
+## Properties
 
-## `logger.overrideConsole` \[boolean\]
+## `logger.level` \[enum\]
 
-Default: `true`.
+Default: `info`.
 
-When enabled, hijacks all the console methods (console.log, console.warn, etc) so that the messages
-printed via them are formatted and saved as Detox logs.
-
-## `logger.options` [BunyanDebugStreamOptions]
-
-Default: varies according to the `logger.level`.
-
-Since Detox is using [bunyan-debug-stream](https://github.com/jwalton/bunyan-debug-stream) for printing logs,
-we decided just to expose all its options for sake of simplicity of customization:
+Possible values in the descending severity order: `fatal`, `error`, `warn`, `info`, `debug`, `trace`.
 
 ```typescript
 export interface BunyanDebugStreamOptions {

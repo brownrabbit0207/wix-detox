@@ -18,27 +18,6 @@ describe('Device', () => {
   beforeEach(async () => {
     jest.mock('../../utils/logger');
 
-    jest.mock('./drivers/DeviceDriverBase');
-    DeviceDriverBase = require('./drivers/DeviceDriverBase');
-
-    jest.mock('../../client/Client');
-    Client = require('../../client/Client');
-
-    jest.mock('../../utils/AsyncEmitter');
-    const AsyncEmitter = require('../../utils/AsyncEmitter');
-    emitter = new AsyncEmitter({});
-    DetoxRuntimeErrorComposer = require('../../errors/DetoxRuntimeErrorComposer');
-
-    RuntimeDevice = require('./RuntimeDevice');
-  });
-
-  beforeEach(async () => {
-    client = new Client(configurationsMock.validSession);
-    await client.connect();
-
-    driverMock = new DeviceDriverMock();
-  });
-
   class DeviceDriverMock {
     constructor() {
       this.driver = new DeviceDriverBase({

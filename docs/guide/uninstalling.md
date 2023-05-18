@@ -8,26 +8,16 @@ This checklist might come in handy whenever you have to make a clean uninstallat
 
 Every install of Detox also triggers a `postinstall` script in its `package.json`, which builds (or unpacks) `Detox.framework` into `~/Library/Detox`.
 
+You can either delete the folder manually:
 
-## Test Session State
+```bash
+rm -rf ~/Library/Detox
+```
 
-On every test run, Detox rewrites a few temporary files in `DETOX_LIBRARY_ROOT_PATH`, i.e.:
+or run:
 
-1. The respective iOS and Android lockfiles to tell apart the busy and the available devices for use with multiple workers:
-   - `device.registry.state.lock`
-   - `android-device.registry.state.lock`.
-
-The location of `DETOX_LIBRARY_ROOT_PATH` may vary depending on the operating system:
-
-- macOS:
-  - `~/Library/Detox`.
-- Linux:
-  - `$XDG_DATA_HOME/Detox`, if `$XDG_DATA_HOME` is defined;
-  - `~/.local/share/Detox`, otherwise.
-- Windows:
-  - `%LOCALAPPDATA%\data\Detox`, if `%LOCALAPPDATA%` is defined;
-  - `%USERPROFILE%\Application Data\Detox`, otherwise.
-
+```bash
+detox clean-framework-cache
 ## Cloned Simulators (macOS)
 
 To support the "multiple workers" feature on iOS, Detox clones simulator instances when there aren’t enough available ones.

@@ -8,26 +8,16 @@ import {
   config,
   init,
   installWorker,
-  uninstallWorker,
-  worker,
-} from 'detox/internals';
-
-async function internalsTest() {
-  const globalOptions: DetoxInternals.DetoxInitOptions = {
-    cwd: __dirname,
-    argv: {
-      configuration: 'android.debug',
-    },
-    testRunnerArgv: {
-      bail: true
-    },
-    override: {
-      artifacts: {},
-      devices: {},
-    },
-    global,
-    workerId: Math.random() > 0.5 ? null : 'worker-1',
-  };
+  log,
+  onHookFailure,
+  onRunDescribeFinish,
+  onRunDescribeStart,
+  onTestDone,
+  onTestFnFailure,
+  onTestStart,
+  reportTestResults,
+  resolveConfig,
+  session,
 
   await resolveConfig();
   await resolveConfig({});

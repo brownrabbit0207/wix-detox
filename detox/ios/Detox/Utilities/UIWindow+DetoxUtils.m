@@ -8,6 +8,17 @@
 
 #import "UIWindow+DetoxUtils.h"
 
+#import "DTXAppleInternals.h"
+#import "NSObject+DetoxUtils.h"
+#import "UIView+DetoxUtils.h"
+
+extern NSArray* DTXChildElements(id element);
+
+static void _DTXElementDescription(NSObject<UIAccessibilityIdentification>* element, NSMutableString* storage)
+{
+	[storage appendFormat:@"<%@: %p", element.class, element];
+
+	if([element __isKindOfUIView])
 	{
 		UIView* view = (id)element;
 		CGRect frame = view.frame;

@@ -8,6 +8,17 @@ class UiDeviceProxy {
     this.getUIDevice = this.getUIDevice.bind(this);
   }
 
+  getUIDevice() {
+   return new Proxy(uiDevice, {
+      get: (target, prop) => {
+        if (target[prop] !== undefined) {
+          return async (...params) => {
+            const call = target[prop](invoke.callDirectly(uiAutomator.uiDevice()), ...params);
+            const invokeResult = await this.invocationManager.execute(call);
+            if (invokeResult && invokeResult.result) {
+                return invokeResult.result;
+            }
+          }
         }
       }
     });

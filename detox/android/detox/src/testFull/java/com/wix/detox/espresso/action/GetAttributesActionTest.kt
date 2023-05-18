@@ -8,26 +8,16 @@ import com.facebook.react.views.slider.ReactSlider
 import com.google.android.material.slider.Slider
 import com.wix.detox.reactnative.ui.getAccessibilityLabel
 import org.assertj.core.api.Assertions.assertThat
-class GetAttributesActionTest {
-    lateinit var view: View
-    lateinit var uut: GetAttributesAction
+import org.json.JSONObject
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.mockito.kotlin.any
+import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.mock
+import org.mockito.kotlin.whenever
+import org.robolectric.RobolectricTestRunner
 
-    @Before
-    fun setup() {
-        view = mock()
-        uut = GetAttributesAction()
-    }
-
-    private fun givenViewTag(value: Any?) { whenever(view.tag).doReturn(value) }
-    private fun givenNoViewTag() = givenViewTag(null)
-    private fun givenVisibility(value: Int) { whenever(view.visibility).doReturn(value) }
-    private fun givenVisibilityRectAvailability(value: Boolean) { whenever(view.getLocalVisibleRect(any())).doReturn(value) }
-    private fun givenAccessibilityLabel(value: String) { whenever(view.getAccessibilityLabel()).doReturn(value) }
-
-    private fun perform(v: View = view): JSONObject {
-        uut.perform(null, v)
-        return JSONObject(uut.getResult())
-    }
 
     @Test
     fun `should declare non-null view constraint`() {

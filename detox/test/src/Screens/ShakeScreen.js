@@ -8,26 +8,16 @@ import {
   RefreshControl,
   NativeEventEmitter,
   NativeModules
-    };
-    this.subscription = undefined;
-    this.subscription = shakeEventEmitter.addListener('ShakeEvent', () => {
-      console.log("Shake!!!");
-      this.setState({ greeting: "Shaken, not stirred" });
-    });
-  }
+} from 'react-native';
+const { ShakeEventEmitter } = NativeModules;
 
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text testID='BondJamesBond' style={{ fontSize: 25 }}>
-          {this.state.greeting}
-        </Text>
-      </View>
-    );
-  }
+const shakeEventEmitter = new NativeEventEmitter(ShakeEventEmitter);
 
-  componentWillUnmount() {
-    console.log("Unsubscribing");
+export default class ShakeScreen extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
     this.subscription.remove();
   }
 }

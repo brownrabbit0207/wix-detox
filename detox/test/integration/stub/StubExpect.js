@@ -8,26 +8,16 @@ class StubMatcher {
       'withDescendant',
       'and',
       'or',
-
-  async execute() {
-    await sleep(this._delay);
+    ].forEach((method) => {
+      this[method] = () => this;
+    });
+    this.not = this;
   }
 }
 
-class StubActionInteraction extends StubInteraction {
-  constructor() {
-    super({ delay: 100 });
-  }
-}
-
-class StubMatcherAssertionInteraction extends StubInteraction {
-}
-
-class StubWaitForInteraction extends StubInteraction {
-  constructor() {
-    super({ delay: 100 });
-    this.withTimeout = () => this.execute();
-    this.whileElement = () => ({
+class StubInteraction {
+  constructor({ delay = 10 } = {}) {
+    this._delay = delay;
       scroll: () => this.execute(),
     });
   }

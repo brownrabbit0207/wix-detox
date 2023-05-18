@@ -8,6 +8,17 @@ import kotlin.test.assertFailsWith
 object PairsIteratorSpec: Spek({
     describe("Pairs iterator") {
         it("should be sane about empty lists") {
+            val uut = PairsIterator(emptyList<Any>())
+            assertThat(uut.hasNext()).isFalse()
+
+            assertFailsWith(Exception::class) {
+                assertThat(uut.next())
+            }
+        }
+
+        it("should be sane about 2-item lists") {
+            val uut = PairsIterator(listOf("first", "second"))
+            assertThat(uut.hasNext()).isTrue()
             assertThat(uut.next()).isEqualTo(Pair("first", "second"))
         }
 

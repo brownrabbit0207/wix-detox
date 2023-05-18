@@ -18,27 +18,6 @@
               "type": "Invocation",
               "value": {
                 "target": {
-                  "type": "Class",
-                  "value": "com.wix.detox.espresso.DetoxMatcher"
-                },
-                "method": "matcherForContentDescription",
-                "args": [
-                  "Sanity"
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "type": "Invocation",
-        "value": {
-          "target": {
-            "type": "Class",
-            "value": "android.support.test.espresso.action.ViewActions"
-          },
-          "method": "click",
-          "args": []
         }
       }
     ]

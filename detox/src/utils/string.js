@@ -8,6 +8,13 @@ function capitalizeFirstLetter(string) {
 }
 
 function lowerCamelCaseJoin(array) {
-  capitalizeFirstLetter,
-  lowerCamelCaseJoin
-};
+  if (_.isEmpty(array)) {
+    return '';
+  }
+  const [first, ...rest] = array;
+  let retVal = first;
+  _.forEach(rest, (str) => {
+    retVal += capitalizeFirstLetter(str);
+  });
+  return retVal;
+}

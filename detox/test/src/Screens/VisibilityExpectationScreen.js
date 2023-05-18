@@ -18,27 +18,6 @@ export default class VisibilityExpectationScreen extends Component {
       shouldMoveElement: false
     };
   }
-
-  render() {
-    const shouldMoveElement = this.state.shouldMoveElement;
-
-    return (
-      <SafeAreaView testID='VisibilityExpectationScreen' style={styles.screen}>
-        <Text style={styles.header}>Half Visible Element</Text>
-        <Text style={styles.text}>Element should be only half-visible.</Text>
-        <View style={styles.halfVisible, { left: shouldMoveElement ? "75%" : "50%" }} testID='halfVisible'>
-          <Text>Half Visible Element</Text>
-        </View>
-
-        <Text style={styles.header}>Move Element Button</Text>
-        <Text style={styles.text}>Element should be 1/4 visible after button is pressed.</Text>
-        <Button title={"Move That Element"} testID={"moveHalfVisible"} onPress={() => { this.setState({shouldMoveElement: true}) }} />
-      </SafeAreaView>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: 'flex-start'

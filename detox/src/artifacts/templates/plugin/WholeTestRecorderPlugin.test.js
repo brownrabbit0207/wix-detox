@@ -8,6 +8,17 @@ const ArtifactsApi = require('./__mocks__/ArtifactsApi.mock');
 describe('WholeTestRecorderPlugin', () => {
   let api;
   let plugin;
+
+  beforeEach(() => {
+    api = new ArtifactsApi({
+      config: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false,
+      },
+    });
+    plugin = new FakeWholeTestRecorderPlugin({ api });
+  });
+
   describe('when disabled', () => {
     beforeEach(() => plugin.disable());
 

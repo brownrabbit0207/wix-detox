@@ -8,6 +8,17 @@ import com.facebook.react.bridge.ReactContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import okhttp3.Call;
+import okhttp3.Dispatcher;
+
 
 /**
  * Created by simonracz on 09/10/2017.

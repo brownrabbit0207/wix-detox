@@ -8,26 +8,16 @@ const { LaunchCommand } = require('../../../../common/drivers/android/emulator/e
 
 const { launchEmulatorProcess } = require('./launchEmulatorProcess');
 
-   * @param avdName { String }
-   * @param adbName { String }
-   * @param isRunning { Boolean }
-   * @param options { Object }
-   * @param options.port { Number | undefined }
-   * @param options.bootArgs { String | undefined }
-   * @param options.gpuMode { String | undefined }
-   * @param options.headless { Boolean }
-   * @param options.readonly { Boolean }
-   */
-  async launch(avdName, adbName, isRunning, options = { port: undefined }) {
-    if (!isRunning) {
-      const launchCommand = new LaunchCommand(avdName, options);
-      await retry({
-        retries: 2,
-        interval: 100,
-        conditionFn: isUnknownEmulatorError,
-      }, () => this._launchEmulator(avdName, launchCommand, adbName));
-    }
-    await this._awaitEmulatorBoot(adbName);
+const isUnknownEmulatorError = (err) => (err.message || '').includes('failed with code null');
+
+class EmulatorLauncher extends DeviceLauncher {
+  constructor({ adb, emulatorExec, eventEmitter }) {
+    super(eventEmitter);
+    this._adb = adb;
+    this._emulatorExec = emulatorExec;
+    traceMethods(log, this, ['_awaitEmulatorBoot']);
+  }
+
     await this._notifyBootEvent(adbName, avdName, !isRunning);
   }
 

@@ -18,27 +18,6 @@ class WholeTestRecorderPlugin extends ArtifactPlugin {
     if (this.enabled) {
       this.testRecording = this.createTrackedTestRecording();
       await this.testRecording.start();
-    }
-  }
-
-  async onTestDone(testSummary) {
-    await super.onTestDone(testSummary);
-
-    if (this.testRecording) {
-      const testRecording = this.testRecording;
-      await testRecording.stop();
-
-      if (this.shouldKeepArtifactOfTest(testSummary)) {
-        this._startSavingTestRecording(testRecording, testSummary);
-      } else {
-        this._startDiscardingTestRecording(testRecording);
-      }
-
-      this.testRecording = null;
-    }
-  }
-
-  /***
    * @protected
    */
   createTrackedTestRecording(config) {

@@ -8,6 +8,17 @@ describe('Emulator binary version', () => {
     '  may be copied, distributed, and modified under those terms.',
     '  This program is distributed in the hope that it will be useful,',
     '  but WITHOUT ANY WARRANTY; without even the implied warranty of',
+    '  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
+    '  GNU General Public License for more details.',
+  ].join('\n');
+  const expectedVersion = {
+    major: 30,
+    minor: 1,
+    patch: 2,
+  };
+  const expectedVersionRaw = '30.1.2.3';
+
+  let MockQueryVersionCommand;
   let emulatorExec;
   let log;
   let uut;

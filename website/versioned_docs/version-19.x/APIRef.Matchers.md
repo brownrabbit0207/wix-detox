@@ -18,27 +18,6 @@ Use [actions](APIRef.ActionsOnElement.md) to simulate use interaction with eleme
 - [`by.id()`](#byidid)
 - [`by.label()`](#bylabellabel)
 - [`by.text()`](#bytexttext)
-- [`by.type()`](#bytypeclassname)
-- [`by.traits()`](#bytraitstraits-ios-only) **iOS Only**
-- [`withAncestor()`](#withancestormatcher)
-- [`withDescendant()`](#withdescendantmatcher)
-- [`and()`](#andmatcher)
-- [`atIndex()`](#atindexindex)
-
-#### `by.id(id)`
-
-Match elements with the specified accessibility identifier. In React Native, this corresponds to the value in the [`testID`](https://reactnative.dev/docs/view.html#testid) prop.
-
-```js
-element(by.id('tap_me'));
-```
-
-#### `by.label(label)`
-
-Match elements with the specified accessibility label (iOS) or content description (Android). In React Native, this corresponds to the value in the [`accessibilityLabel`](https://reactnative.dev/docs/accessibility#accessibilitylabel) prop.
-
-```js
-element(by.label('Welcome'));
 ```
 
 #### `by.text(text)`

@@ -18,27 +18,6 @@ It is always the best idea to match your element by something unique. We recomme
   <TouchableOpacity testID="MyUniqueId123">
     <Text>Some text</Text>
   </TouchableOpacity>
-</View>
-```
-
-## Pass testID to your native components
-
-Passing a `testID` to your custom component props has no effect until you forward it down to a native component like `<View />` or `<TouchableOpacity />`
-that implements rendering it as an accessibility identifier in the native component hierarchy:
-
-![Pass testID to native component](../img/passTestID.png)
-
-For example, you have `<YourCustomComponent />` and you pass a `testID` to it:
-
-```jsx title="YourScreen.jsx"
-function YourScreen() {
-  return (
-    <YourCustomComponent testID="YourCustomComponent" />
-  );
-}
-```
-
-Make sure that your implementation passes `testID` to some React Native component that supports it:
 
 ```jsx title="YourCustomComponent.jsx"
 function YourCustomComponent(props) {

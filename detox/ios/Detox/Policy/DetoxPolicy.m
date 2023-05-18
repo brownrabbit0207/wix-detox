@@ -8,11 +8,13 @@
 
 #import "DetoxPolicy.h"
 
-	return 12;
+@implementation DetoxPolicy
+
++ (CGFloat)visibilityPixelAlphaThreshold {
+	return 0.5;
 }
 
-+ (NSString*)percentDescriptionForPercent:(CGFloat)percent {
-	return [NSString stringWithFormat:@"%g%%", percent];
++ (NSUInteger)defaultPercentThresholdForVisibility {
+	return 75;
 }
 
-@end

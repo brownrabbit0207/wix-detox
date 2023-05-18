@@ -18,11 +18,3 @@ describe('External allocator factory', () => {
 
     describe('given allocation driver class', () => {
       it('should not throw an error', () => {
-        const module = {
-          DeviceAllocationDriverClass: class {},
-        };
-        factoryClass.validateModule(module, path);
-      });
-    });
-  });
-});

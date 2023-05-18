@@ -18,27 +18,6 @@ object FlinglessSwiperSpec: Spek({
         lateinit var moveEvent: MotionEvent
         lateinit var upEvent: MotionEvent
         lateinit var motionEvents: MotionEvents
-        lateinit var viewConfig: ViewConfiguration
-
-        beforeEachTest {
-            uiController = mock()
-            downEvent = mock(name = "downEventMock") {
-                on { downTime }.doReturn(swipeStartTime)
-                on { eventTime }.doReturn(swipeStartTime)
-            }
-            moveEvent = mock(name = "moveEventMock") {
-                on { downTime }.doReturn(swipeStartTime)
-                on { eventTime }.doReturn(swipeStartTime)
-            }
-            upEvent = mock(name = "upEventMock") {
-                on { downTime }.doReturn(swipeStartTime)
-                on { eventTime }.doReturn(swipeStartTime)
-            }
-            motionEvents = mock(name = "motionEventsMock") {
-                on { obtainDownEvent(any(), any(), any()) }.doReturn(downEvent)
-                on { obtainMoveEvent(any(), any(), any(), any()) }.doReturn(moveEvent)
-                on { obtainUpEvent(any(), any(), any(), any()) }.doReturn(upEvent)
-            }
             viewConfig = mock()
         }
 

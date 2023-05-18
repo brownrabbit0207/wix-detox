@@ -18,27 +18,6 @@ const ScrollBarGradient = ({
         height: '100%',
         left: left ? margins : undefined,
         right: !left ? margins : undefined,
-      },
-      image: {
-        width,
-        height: '100%',
-        tintColor: GRADIENT_COLOR,
-        transform: left ? [{scaleX: -1}] : undefined,
-      },
-    });
-  }, [left, margins, width]);
-
-  return (
-    <View pointerEvents="none" style={styles.view}>
-      <Image
-        source={GRADIENT_IMAGE}
-        style={styles.image}
-        resizeMode={'stretch'}
-      />
-    </View>
-  );
-};
-
 ScrollBarGradient.displayName = 'IGNORE';
 
 export default ScrollBarGradient;

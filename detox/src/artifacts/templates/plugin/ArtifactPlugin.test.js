@@ -8,26 +8,16 @@ const testSuite = require('./__mocks__/testSuite.mock');
 
 class TestArtifactPlugin extends ArtifactPlugin {}
 
+describe('ArtifactPlugin', () => {
+  let api;
+  let plugin;
 
-    plugin = new TestArtifactPlugin({ api });
-  });
-
-  it('should have name', () =>
-    expect(plugin.name).toBe(TestArtifactPlugin.name));
-
-  it('should be disabled by default', () =>
-    expect(plugin.enabled).toBe(false));
-
-  describe('when enabled', () => {
-    beforeEach(() => {
-      plugin.enabled = true;
-    });
-
-    describe('when it is disabled with no reason', () => {
-      beforeEach(() => plugin.disable());
-
-      it('should gain state .enabled = false', () =>
-        expect(plugin.enabled).toBe(false));
+  beforeEach(() => {
+    api = {
+      userConfig: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false,
+      },
 
       it('should not write warnings to log', () =>
         expect(logger.warn.mock.calls.length).toBe(0));

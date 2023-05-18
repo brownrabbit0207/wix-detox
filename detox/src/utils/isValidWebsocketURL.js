@@ -8,3 +8,5 @@ function isValidWebsocketURL(url) {
     return false;
   }
 }
+
+module.exports = isValidWebsocketURL;

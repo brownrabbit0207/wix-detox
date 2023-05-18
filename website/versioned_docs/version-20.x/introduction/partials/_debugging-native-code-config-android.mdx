@@ -8,11 +8,13 @@
       }
     }
   },
-      "behavior": {
-        "launchApp": "manual"
-      }
+  "apps": {
+    "android.debug": {
+      "type": "android.apk",
+      "binaryPath": "<path to your app binary built before>"
     }
-// highlight-end
-  }
-}
-```
+  },
+  "configurations": {
+// highlight-start
+    "android.manual": {
+      "device": "emulator",

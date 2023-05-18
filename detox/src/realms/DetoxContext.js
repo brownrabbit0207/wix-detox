@@ -18,27 +18,6 @@ const $worker = Symbol('worker');
 
 class DetoxContext {
   constructor() {
-    /** @type {DetoxInternals.DetoxStatus} */
-    this[$status] = 'inactive';
-
-    const _init = this[symbols.init].bind(this);
-    this[symbols.init] = async (opts) => {
-      this[$status] = 'init';
-      await _init(opts);
-      this[$status] = 'active';
-    };
-
-    const _cleanup = this[symbols.cleanup].bind(this);
-    this[symbols.cleanup] = async () => {
-      this[$status] = 'cleanup';
-      try {
-        await _cleanup();
-      } finally {
-        this[$status] = 'inactive';
-      }
-    };
-
-    this[symbols.getStatus] = this[symbols.getStatus].bind(this);
     this[symbols.reportTestResults] = this[symbols.reportTestResults].bind(this);
     this[symbols.resolveConfig] = this[symbols.resolveConfig].bind(this);
     this[symbols.installWorker] = this[symbols.installWorker].bind(this);

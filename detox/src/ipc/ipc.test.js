@@ -8,26 +8,16 @@ const SessionState = require('./SessionState');
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 describe('IPC', () => {
+  /** @type {*} */
+  let sessionState;
 
-  beforeEach(() => {
-    const logger = require('../utils/logger');
+  /** @type {IPCServer} */
+  let ipcServer;
 
-    sessionState = {
-      id: 'session-1',
-      detoxIPCServer: 'foo',
-    };
+  /** @type {IPCClient} */
+  let ipcClient1;
 
-    ipcServer = new IPCServer({
-      logger,
-      sessionState: new SessionState(sessionState),
-    });
-
-    ipcClient1 = new IPCClient({
-      id: 'bar',
-      logger,
-      sessionState: new SessionState(sessionState),
-    });
-
+  /** @type {IPCClient} */
     ipcClient2 = new IPCClient({
       id: 'baz',
       logger,

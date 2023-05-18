@@ -8,6 +8,17 @@ const assertDirection = assertEnum(['left', 'right', 'up', 'down']);
 const assertSpeed = assertEnum(['fast', 'slow']);
 
 class Action {
+}
+
+class TapAction extends Action {
+  constructor(value) {
+    super();
+    this._call = invoke.callDirectly(value ? DetoxActionApi.tapAtLocation(value.x, value.y) : DetoxViewActionsApi.click());
+  }
+}
+
+class TapAtPointAction extends Action {
+  constructor(value) {
     super();
     this._call = invoke.callDirectly(DetoxActionApi.tapAtLocation(value.x, value.y));
   }

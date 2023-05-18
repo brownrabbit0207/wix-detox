@@ -8,6 +8,17 @@ describe('Allocation driver for Genymotion SaaS emulators', () => {
   let recipeQuerying;
   let allocationHelper;
   let instanceLauncher;
+  let GenyInstance;
+  let adb;
+
+  beforeEach(() => {
+    jest.mock('../../../../common/drivers/android/genycloud/services/GenyInstanceLookupService');
+    jest.mock('../../../../common/drivers/android/genycloud/services/GenyInstanceLifecycleService');
+
+    const RecipeQuerying = jest.genMockFromModule('./GenyRecipeQuerying');
+    recipeQuerying = new RecipeQuerying();
+
+    const InstanceAllocationHelper = jest.genMockFromModule('./GenyInstanceAllocationHelper');
     allocationHelper = new InstanceAllocationHelper();
 
     const InstanceLauncher = jest.genMockFromModule('./GenyInstanceLauncher');
