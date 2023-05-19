@@ -18,3 +18,8 @@ If you have to use [Detox Instruments](https://github.com/wix/DetoxInstruments) 
 
 ```bash
 DETOX_INSTRUMENTS_PATH="/path/to/Detox Instruments.app" detox test ...
+```
+
+> **Note:** If **Detox Instruments** had been [integrated into your project](https://github.com/wix/DetoxInstruments/blob/master/Documentation/XcodeIntegrationGuide.md), then the integrated [Detox Profiler framework](https://github.com/wix/DetoxInstruments/tree/master/Profiler) will be used when profiling with Detox.
+
+## `Ctrl+C` Does Not Clean Up Temporary Files

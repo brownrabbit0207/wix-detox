@@ -18,3 +18,16 @@ describe('iOS simulator test environment validator', () => {
   });
 
   describe('given detox framework path doesn\'t exist', () => {
+    it('should throw an error, with instruction to remedy', async () => {
+      givenFrameworkPathNotExists();
+      await expect(() => uut.validate()).rejects.toThrowError('/path/to/framework could not be found');
+    });
+  });
+
+  describe('given detox framework path exists', () => {
+    it('should not throw an error', async () => {
+      givenFrameworkPathExists();
+      await uut.validate();
+    });
+  });
+});

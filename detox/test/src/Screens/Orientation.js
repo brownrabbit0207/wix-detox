@@ -23,11 +23,3 @@ export default class Orientation extends Component {
 
   render() {
     return (
-      <View onLayout={this.detectHorizontal.bind(this)} style={{flex: 1, paddingTop: 20, justifyContent: 'flex-start', alignItems: 'center'}}>
-        <Text testID="currentOrientation" style={{fontSize: 25, marginTop: 50}}>
-          {this.state.horizontal ? 'Landscape' : 'Portrait'}
-        </Text>
-      </View>
-    );
-  }
-}

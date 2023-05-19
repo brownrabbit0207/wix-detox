@@ -18,6 +18,27 @@ class ExclusiveLockfile {
       throw new DetoxRuntimeError('Path to the lockfile should be a non-empty string');
     }
 
+    this._lockFilePath = lockfile;
+    this._options = _.defaultsDeep(options, DEFAULT_OPTIONS);
+
+    this._isLocked = false;
+    this._invalidate();
+  }
+
+  get options() {
+    return this._options;
+  }
+
+  /***
+   * @async
+   * @param {Function} fn
+   * @returns {Promise<any>}
+   */
+  async exclusively(fn) {
+    await this._lock();
+
+    try {
+      return (await fn());
     } finally {
       await this._unlock();
     }

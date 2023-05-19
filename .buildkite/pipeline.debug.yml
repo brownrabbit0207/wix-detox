@@ -23,5 +23,3 @@ steps:
           - label: "iOS Demo App RN 69"
             value: "ios_demo_app_rn_69"
 
-  - label: "Get Release Pipeline"
-    command: '.buildkite/pipeline.sh debug | buildkite-agent pipeline upload'

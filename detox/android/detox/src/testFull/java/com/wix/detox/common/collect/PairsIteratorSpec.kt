@@ -23,18 +23,3 @@ object PairsIteratorSpec: Spek({
         }
 
         it("should throw if iterating onto an uneven size") {
-            val uut = PairsIterator(listOf("first", "second", "third"))
-            uut.next()
-
-            assertThat(uut.hasNext()).isTrue()
-            assertFailsWith(IllegalStateException::class) {
-                uut.next()
-            }
-        }
-
-        it("should init using an explicit iterator") {
-            val uut = PairsIterator(emptyList<Any>().iterator())
-            assertThat(uut.hasNext()).isFalse()
-        }
-    }
-})

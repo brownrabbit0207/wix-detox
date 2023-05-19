@@ -23,6 +23,3 @@ class UiDeviceProxy {
       }
     });
   }
-}
-
-module.exports = UiDeviceProxy;

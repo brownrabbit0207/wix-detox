@@ -18,6 +18,27 @@ describe('Environment', () => {
     process.env = originalProcessEnv;
   });
 
+  describe('(android)', () => {
+    let tempSdkPath;
+
+    async function genExec(relativePath) {
+      const extension = (os.platform() === 'win32') ? '.cmd' : '';
+      const filePath = path.join(tempSdkPath, relativePath) + extension;
+
+      await fs.ensureFile(filePath);
+      await fs.chmod(filePath, 0o755);
+    }
+
+    beforeEach(async () => {
+      tempSdkPath = tempfile();
+      await fs.mkdirp(tempSdkPath);
+    });
+
+    afterEach(async () => {
+      await fs.remove(tempSdkPath);
+    });
+
+    describe('getAvdHome', () => {
       const testCases = [
         [path.join(os.homedir(), '.android', 'avd'), null, null, null],
         [path.join('homedir', '.android', 'avd'), null, null, 'homedir'],

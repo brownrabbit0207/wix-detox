@@ -23,15 +23,3 @@ class CategoryThreadDispatcher {
     }
   }
 
-  /** @returns {ThreadDispatcher} */
-  _resolveDispatcher(cat) {
-    const mainCategory = getMainCategory(cat);
-    if (!this._dispatchers[mainCategory]) {
-      this._dispatchers[mainCategory] = new ThreadDispatcher(mainCategory);
-    }
-
-    return this._dispatchers[mainCategory];
-  }
-}
-
-module.exports = CategoryThreadDispatcher;

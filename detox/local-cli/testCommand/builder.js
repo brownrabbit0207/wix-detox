@@ -23,32 +23,6 @@ module.exports = {
     number: true,
   },
   r: {
-    alias: 'reuse',
-    group: 'Execution:',
-    describe: 'Reuse existing installed app (do not delete + reinstall) for a faster run.',
-    boolean: true,
-  },
-  start: {
-    group: 'Execution:',
-    describe: 'Run app "start" scripts before running the tests. Use --no-start to disable that, and --start=force to ignore errors.',
-    default: true,
-  },
-  u: {
-    alias: 'cleanup',
-    group: 'Execution:',
-    describe: 'Shutdown simulator when test is over, useful for CI scripts, to make sure detox exits cleanly with no residue',
-    boolean: true,
-  },
-  d: {
-    alias: 'debug-synchronization',
-    group: 'Debugging:',
-    coerce(value) {
-      if (value === false || value === 'false') {
-        return 0;
-      }
-
-      if (value === true || value === 'true') {
-        return 3000;
       }
 
       return Number.isNaN(+value) ? value : +value;

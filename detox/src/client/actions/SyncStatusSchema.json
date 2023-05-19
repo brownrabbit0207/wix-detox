@@ -18,6 +18,27 @@
         "app_status":{
           "const":"busy"
         },
+        "busy_resources":{
+          "type":"array",
+          "minItems":1,
+          "items":{
+            "type":"object",
+            "anyOf":[
+              {
+                "properties":{
+                  "name":{
+                    "const":"delayed_perform_selector"
+                  },
+                  "description":{
+                    "type":"object",
+                    "properties":{
+                      "pending_selectors":{
+                        "type":"number",
+                        "minimum":1
+                      }
+                    },
+                    "required":[
+                      "pending_selectors"
                     ],
                     "additionalProperties":false
                   }

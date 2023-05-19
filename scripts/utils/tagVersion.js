@@ -18,3 +18,4 @@ function gitTag(newVersion) {
   exec.execSyncSilent(`git push --tags deploy ${newVersion} || true`);
 }
 
+module.exports = tagVersion;

@@ -18,16 +18,11 @@ fun getScrollableProbe(view: View, @MotionDir direction: Int): ScrollableProbe {
     }
 
     return when (direction) {
-
-private class ScrollableProbeVBack(view: View) : AbsScrollableProbe(view) {
-    override fun atScrollingEdge() = !view.canScrollVertically(-1)
-}
-
-private class ScrollableProbeVForward(view: View) : AbsScrollableProbe(view) {
-    override fun atScrollingEdge() = !view.canScrollVertically(1)
-}
-
-private class AbsListViewBack(val view: AbsListView) : ScrollableProbe {
+        MOTION_DIR_LEFT -> ScrollableProbeHBack(view)
+        MOTION_DIR_RIGHT -> ScrollableProbeHForward(view)
+        MOTION_DIR_UP -> ScrollableProbeVBack(view)
+        MOTION_DIR_DOWN -> ScrollableProbeVForward(view)
+        else -> throw IllegalArgumentException("Invalid direction: $direction")
     override fun atScrollingEdge(): Boolean {
         // Ported from AbsListView#canScrollList() which isn't compatible with all API levels
         val firstTop = view.getChildAt(0).top

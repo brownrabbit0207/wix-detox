@@ -18,16 +18,11 @@ describe('Genymotion-Cloud instance launcher', () => {
     instance.adbName = '0.0.0.0';
     return instance;
   };
-    expect(eventEmitter.emit).toHaveBeenCalledWith('bootDevice', {
-      coldBoot,
-      deviceId: instance.adbName,
-      type: recipeName,
-    });
-  const expectNoDeviceBootEvent = () => expect(eventEmitter.emit).not.toHaveBeenCalled();
 
-  let retry;
-  let eventEmitter;
-  let deviceCleanupRegistry;
+  const anOnlineInstance = () => {
+    const instance = anOfflineInstance();
+    instance.isOnline.mockReturnValue(true);
+    return instance;
   let instanceLookupService;
   let instanceLifecycleService;
   let GenyInstance;

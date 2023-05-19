@@ -23,32 +23,6 @@ public class WebSocketClient {
     private static final String LOG_TAG = "DetoxWSClient";
 
     private volatile boolean closing = false;
-
-    public void close() {
-        if (closing) return;
-        closing = true;
-        websocket.close(NORMAL_CLOSURE_STATUS, null);
-    }
-
-    private String url;
-    private String sessionId;
-    private WebSocket websocket = null;
-
-    private final WSEventsHandler wsEventsHandler;
-    private final WebSocketEventsListener wsEventListener = new WebSocketEventsListener();
-
-    private static final int NORMAL_CLOSURE_STATUS = 1000;
-
-    public WebSocketClient(WSEventsHandler wsEventsHandler) {
-        this.wsEventsHandler = wsEventsHandler;
-    }
-
-    public void connectToServer(String url, String sessionId) {
-        Log.i(LOG_TAG, "At connectToServer");
-
-        this.url = url;
-        this.sessionId = sessionId;
-
         final OkHttpClient client = new OkHttpClient.Builder()
                 .retryOnConnectionFailure(true)
                 .connectTimeout(1500, TimeUnit.MILLISECONDS)

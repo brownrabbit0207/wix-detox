@@ -18,3 +18,12 @@ public abstract class DetoxBaseIdlingResource implements DescriptiveIdlingResour
 
     @Override
     final public boolean isIdleNow() {
+        if (paused.get()) {
+            return true;
+        }
+        return checkIdle();
+    }
+
+    protected abstract boolean checkIdle();
+    protected abstract void notifyIdle();
+}

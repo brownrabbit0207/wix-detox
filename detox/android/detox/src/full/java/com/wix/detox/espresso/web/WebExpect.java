@@ -18,3 +18,23 @@ public class WebExpect {
         this.webElement = webElement;
     }
 
+    private Web.WebInteraction<Void> webViewInteraction() {
+        return webElement.getWebViewInteraction();
+    }
+
+    public void toNotExist() {
+        webViewInteraction().check(webMatches(webElement.matcherAtom, equalTo(Collections.<ElementReference>emptyList())));
+    }
+
+    public void toExist() {
+        webViewInteraction().check(webMatches(webElement.matcherAtom, not(equalTo(Collections.<ElementReference>emptyList()))));
+    }
+
+    public void toHaveText(String text) {
+        webViewInteraction().withElement(webElement.get()).check(webMatches(getText(), containsString(text)));
+    }
+
+    public void toNotHaveText(String text) {
+        webViewInteraction().withElement(webElement.get()).check(webMatches(getText(), not(containsString(text))));
+    }
+}

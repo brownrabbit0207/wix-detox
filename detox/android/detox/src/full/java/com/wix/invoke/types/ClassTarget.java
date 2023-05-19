@@ -18,3 +18,8 @@ public class ClassTarget extends Target {
     }
 
     @Override
+    public Object execute(Invocation invocation) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+        Log.d("Detox", String.format("%s, %s, %s", Class.forName(getValue().toString()), invocation.getMethod(),   Arrays.toString(invocation.getArgs())));
+        return MethodUtils.invokeStaticMethod(Class.forName(getValue().toString()), invocation.getMethod(), invocation.getArgs());
+    }
+}

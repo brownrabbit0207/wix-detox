@@ -18,3 +18,13 @@ const buffers = [
   'CYmsXL6FDsF1HjKFNL0LlKpf5McOmZNttMT1Y0IpC2A9yFKE7AIArfkev6BtQWz6X7w9YPop7wuGhVyUhSPXhpw9YSe6BPIr5GwQ',
   'LssnmX3DhUeTcbRneNX9Sfk6cRuDNOLJZYUYnt2aBZIZnCifn3SkgGN0IiNT5n2Bjar5MYJMlP0HTzEl12K79RhSgrpTYN81Ft3n',
   'oGVnzVMxgRXOivK0VKnT4at3RJ4mwhHGEov2lPbPY1oARSRMlzjck29TqRCPkFyAxGJAW9AHPYkoAAF61CTxClU33R22oMK2RtVp',
+  'k5NXNhUIp9iwPJfEw53rsPeyvXKO0NRlYLovg4MC4QnG8Uo9yTubsp8Ga8y33ffaYWQ90UCz8lCw11jTTUzqQSOQMX00MnV7y0P4'
+];
+
+export default function getStringByLength(chunks) {
+  let res = '';
+  for (let i = 0; i < chunks ; i++) {
+    res += buffers[i % buffers.length];
+  }
+  return res;
+}

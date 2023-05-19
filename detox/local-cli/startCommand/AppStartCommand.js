@@ -18,6 +18,27 @@ class AppStartCommand {
 
   execute() {
     const cmd = [this._cmd, ...this._passthrough].join(' ');
+
+    log.info.begin({ id: this._id }, cmd);
+
+    const onEnd = (msg, code, signal) => {
+      log.trace.end({ id: this._id, code, signal }, msg);
+      this._cpDeferred.resolve();
+    };
+
+    const onError = (msg, code, signal) => {
+      const logLevel = this._forceSpawn ? 'warn' : 'error';
+      log[logLevel].end({ id: this._id, code, signal }, msg);
+      if (this._forceSpawn) {
+        this._cpDeferred.resolve();
+      } else {
+        this._cpDeferred.reject(new DetoxRuntimeError(msg));
+      }
+    };
+
+    this._cpHandle = execa.command(cmd, { stdio: 'inherit', shell: true });
+    this._cpHandle.on('error', onError);
+    this._cpHandle.on('exit', (code, signal) => {
       const reason = code == null ? `signal ${signal}` : `code ${code}`;
       const msg = `Command exited with ${reason}: ${cmd}`;
       if (signal || code === 0) {

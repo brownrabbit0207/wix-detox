@@ -18,3 +18,10 @@ async function test1() {
 
 async function test2() {
   log.info('Test 2');
+  await device.terminateApp();
+}
+
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

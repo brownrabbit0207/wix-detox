@@ -18,3 +18,7 @@ function lowerCamelCaseJoin(array) {
   });
   return retVal;
 }
+module.exports = {
+  capitalizeFirstLetter,
+  lowerCamelCaseJoin
+};
