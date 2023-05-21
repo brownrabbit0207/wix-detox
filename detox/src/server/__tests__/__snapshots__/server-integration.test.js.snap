@@ -1,4 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Detox server integration "app" connects first, and then disconnects 1`] = `
 Array [

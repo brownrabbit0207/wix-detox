@@ -1,4 +1,3 @@
----
 id: troubleshooting
 slug: troubleshooting/troubleshooting
 title: Troubleshooting

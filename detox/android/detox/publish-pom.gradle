@@ -1,4 +1,3 @@
-// Based on https://stackoverflow.com/a/42160584/453052
 
 project.ext.buildPomXmlDependencies = { pom, configurations ->
     pom.withXml {
@@ -23,3 +22,21 @@ private static def addChildDependency(rootNode, Dependency dep, String scope) {
 
     final childNode = rootNode.appendNode('dependency')
     childNode.appendNode('groupId', dep.group)
+    childNode.appendNode('artifactId', dep.name)
+    childNode.appendNode('version', dep.version)
+    childNode.appendNode('scope', scope)
+
+    if (!dep.transitive) {
+        // If this dependency is transitive, we should force exclude all its dependencies them from the POM
+        final exclusionNode = childNode.appendNode('exclusions').appendNode('exclusion')
+        exclusionNode.appendNode('groupId', '*')
+        exclusionNode.appendNode('artifactId', '*')
+    } else if (!dep.properties.excludeRules.empty) {
+        // Otherwise add specified exclude rules
+        final exclusionNode = childNode.appendNode('exclusions').appendNode('exclusion')
+        dep.properties.excludeRules.each { ExcludeRule rule ->
+            exclusionNode.appendNode('groupId', rule.group ?: '*')
+            exclusionNode.appendNode('artifactId', rule.module ?: '*')
+        }
+    }
+}

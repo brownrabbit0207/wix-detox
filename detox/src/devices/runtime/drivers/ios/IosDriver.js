@@ -1,4 +1,3 @@
-// @ts-nocheck
 const fs = require('fs');
 const path = require('path');
 
@@ -23,3 +22,19 @@ class IosDriver extends DeviceDriverBase {
   async disableSynchronization() {
     await this.client.setSyncSettings({ enabled: false });
   }
+
+  async shake() {
+    await this.client.shake();
+  }
+
+  async setOrientation(orientation) {
+    if (!['portrait', 'landscape'].some(option => option === orientation)) throw new DetoxRuntimeError("orientation should be either 'portrait' or 'landscape', but got " + (orientation + ')'));
+    await this.client.setOrientation({ orientation });
+  }
+
+  getPlatform() {
+    return 'ios';
+  }
+}
+
+module.exports = IosDriver;

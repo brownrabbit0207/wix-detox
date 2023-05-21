@@ -1,4 +1,3 @@
-describe('Device Orientation', () => {
   beforeEach(async() => {
     await device.reloadReactNative();
     await element(by.text('Orientation')).tap();

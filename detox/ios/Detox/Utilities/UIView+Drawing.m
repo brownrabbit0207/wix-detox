@@ -1,4 +1,3 @@
-//
 //  UIView+Drawing.m
 //  Detox
 //

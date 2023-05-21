@@ -1,4 +1,3 @@
-//
 //  UIImage+DetoxUtils.m
 //  Detox
 //
@@ -23,6 +22,32 @@
 	
 	CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(cgImage));
 	dtx_defer {
+		CFRelease(pixelData);
+	};
+	const uint8_t* bytes = CFDataGetBytePtr(pixelData);
+	
+	size_t width  = CGImageGetWidth(cgImage);
+	size_t height = CGImageGetHeight(cgImage);
+	
+	size_t bpr = CGImageGetBytesPerRow(cgImage);
+	size_t bpp = CGImageGetBitsPerPixel(cgImage);
+	size_t bpc = CGImageGetBitsPerComponent(cgImage);
+	size_t bytes_per_pixel = bpp / bpc;
+	
+	CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(cgImage);
+	CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(cgImage);
+	
+	uint8_t alphaOffset;
+	if(alphaInfo == kCGImageAlphaPremultipliedFirst)
+	{
+		if((bitmapInfo & kCGBitmapByteOrderMask) == kCGBitmapByteOrder32Little)
+		{
+			alphaOffset = 3;
+		}
+		else
+		{
+			alphaOffset = 0;
+		}
 	}
 	else
 	{

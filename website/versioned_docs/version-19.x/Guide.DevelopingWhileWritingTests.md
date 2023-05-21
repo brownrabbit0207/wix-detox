@@ -1,4 +1,3 @@
----
 id: developing-while-writing-tests
 slug: guide/developing-while-writing-tests
 title: Developing Your App While Writing Tests

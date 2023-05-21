@@ -1,4 +1,3 @@
-# detox start
 
 `detox start [options]`
 
@@ -23,3 +22,20 @@ detox start
 To choose a specific configuration:
 
 ```bash
+# long alias:
+detox start --configuration yourConfiguration
+# short alias:
+detox start -c yourConfiguration
+```
+
+To forward extra arguments to the "start" script, e.g.:
+
+```bash
+detox start -c yourConfiguration -- --port 8082
+```
+
+To ignore errors from the "start" scripts and continue:
+
+```bash
+detox start -c yourConfiguration --force
+```

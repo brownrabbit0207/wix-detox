@@ -1,4 +1,3 @@
-/** @type {import('jest').Config} */
 module.exports = {
   maxWorkers: 1,
   globalSetup: "./globalSetup.ts",

@@ -1,4 +1,3 @@
-package com.wix.detox.reactnative.idlingresources.timers
 
 import com.facebook.react.bridge.NativeModule
 import org.assertj.core.api.Assertions.assertThat

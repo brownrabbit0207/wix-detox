@@ -1,4 +1,3 @@
-package com.wix.detox.reactnative.idlingresources.timers
 
 import android.view.Choreographer
 import androidx.test.espresso.IdlingResource
@@ -23,6 +22,32 @@ object TimersIdlingResourceSpec : Spek({
 
         fun givenIdleStrategy() {
             whenever(idleInterrogationStrategy.isIdleNow()).thenReturn(true)
+        }
+
+        fun givenBusyStrategy() {
+            whenever(idleInterrogationStrategy.isIdleNow()).thenReturn(false)
+        }
+
+        fun getChoreographerCallback(): Choreographer.FrameCallback {
+            argumentCaptor<Choreographer.FrameCallback>().apply {
+                verify(choreographer).postFrameCallback(capture())
+                return firstValue
+            }
+        }
+
+        fun invokeChoreographerCallback() {
+            getChoreographerCallback().doFrame(0L)
+        }
+
+        it("should return a debug-name") {
+            Assertions.assertThat(uut().getDebugName()).isEqualTo("timers")
+        }
+
+        it("should be idle if strategy says so") {
+            givenIdleStrategy()
+            Assertions.assertThat(uut().isIdleNow).isTrue()
+        }
+
         it("should be busy if strategy says so") {
             givenBusyStrategy()
             Assertions.assertThat(uut().isIdleNow).isFalse()

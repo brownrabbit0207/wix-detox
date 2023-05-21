@@ -1,4 +1,3 @@
-# Mocking Open With URL (Deep Links)
 
 <!-- markdownlint-configure-file { "header-increment": 0 } -->
 

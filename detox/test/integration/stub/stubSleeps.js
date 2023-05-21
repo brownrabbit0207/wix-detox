@@ -1,4 +1,3 @@
-const sleep = require('detox/src/utils/sleep');
 
 module.exports = {
   sleepVeryLittle: () => sleep(10),

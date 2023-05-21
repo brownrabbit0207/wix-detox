@@ -1,4 +1,3 @@
-package com.example;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;

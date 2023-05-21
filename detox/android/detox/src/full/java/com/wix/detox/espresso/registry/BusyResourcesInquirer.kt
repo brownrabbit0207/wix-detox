@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.registry
 
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.base.IdlingResourceRegistry

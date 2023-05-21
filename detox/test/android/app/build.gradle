@@ -1,4 +1,3 @@
-apply plugin: 'com.android.application'
 apply from: '../rninfo.gradle'
 
 project.ext.react = [

@@ -1,4 +1,3 @@
-# Pure Native iOS Demo Project
 
 ## Environment
 

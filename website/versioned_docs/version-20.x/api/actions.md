@@ -1,4 +1,3 @@
-# Actions
 
 Detox uses [matchers](matchers.md) to find UI elements in your app and actions to simulate user interaction with those elements.
 

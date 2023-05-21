@@ -1,4 +1,3 @@
----
 id: design-principles
 slug: introduction/design-principles
 title: Design Principles

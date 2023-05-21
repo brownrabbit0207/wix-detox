@@ -1,4 +1,3 @@
----
 id: screenshots
 slug: api/screenshots
 title: Taking Screenshots

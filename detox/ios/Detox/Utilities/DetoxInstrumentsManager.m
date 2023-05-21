@@ -1,4 +1,3 @@
-//
 //  DetoxInstrumentsManager.m
 //  Detox
 //

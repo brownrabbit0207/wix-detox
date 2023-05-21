@@ -1,4 +1,3 @@
-import { execSync } from 'child_process';
 
 import { pathExists, ensureDir } from 'fs-extra';
 

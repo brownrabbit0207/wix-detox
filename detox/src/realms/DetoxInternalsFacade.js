@@ -1,4 +1,3 @@
-const funpermaproxy = require('funpermaproxy');
 
 const symbols = require('./symbols');
 

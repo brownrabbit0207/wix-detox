@@ -1,4 +1,3 @@
-/* eslint @typescript-eslint/no-unused-vars: ["error", { "args": "none" }] */
 const _ = require('lodash');
 
 const { castLevel, defaultOptions } = require('../logger/DetoxLogger');

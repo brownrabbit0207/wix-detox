@@ -1,4 +1,3 @@
-const methods = {
   startSection(logger) {
     return (msg, args) => {
       if (args !== undefined) {

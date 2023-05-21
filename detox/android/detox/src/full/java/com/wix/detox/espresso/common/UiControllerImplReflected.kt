@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.common
 
 import com.wix.detox.espresso.action.common.utils.getUiController
 import org.joor.Reflect

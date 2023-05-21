@@ -1,4 +1,3 @@
-//
 //  Detox.h
 //  Detox
 //

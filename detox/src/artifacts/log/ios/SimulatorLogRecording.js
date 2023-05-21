@@ -1,4 +1,3 @@
-// @ts-nocheck
 const fs = require('fs-extra');
 
 const childProcess = require('../../../utils/childProcess');
@@ -23,6 +22,32 @@ class SimulatorLogRecording extends Artifact {
     this._logPath = temporaryLogPath;
     this._logContext = null;
     this._config = config;
+  }
+
+  async doStart({ udid, bundleId } = {}) {
+    if (udid) {this._udid = udid; }
+    if (bundleId) {this._bundleId = bundleId; }
+
+    await fs.ensureFile(this._logPath);
+    const fileHandle = await fs.open(this._logPath, 'a');
+
+    this._logContext = {
+      fileHandle,
+      process: this._appleSimUtils.logStream({
+        udid: this._udid,
+        processImagePath: await this._getProcessImagePath(),
+        stdout: fileHandle,
+        level: 'debug',
+        style: 'compact',
+      }),
+    };
+
+    await sleep(this._config.delayAfterStart);
+  }
+
+  async doStop() {
+    if (this._logContext) {
+      const { fileHandle, process } = this._logContext;
       await sleep(this._config.delayBeforeStop);
       await this._tryInterruptProcessGracefully(process);
       await fs.close(fileHandle);

@@ -1,4 +1,3 @@
-//
 //  ExternalLogging.h
 //  Detox
 //

@@ -1,4 +1,3 @@
----
 id: writing-first-test
 slug: introduction/writing-first-test
 title: Writing Your First Test

@@ -1,4 +1,3 @@
-class FakeDetoxWorker {
   static mock = {
     instances: [],
   };

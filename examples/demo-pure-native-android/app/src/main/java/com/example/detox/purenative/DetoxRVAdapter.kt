@@ -1,4 +1,3 @@
-package com.example.detox.purenative
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,4 +1,3 @@
-const assertions = require('./assertArgument');
 
 describe('assertEnum', () => {
   const { assertEnum } = assertions;

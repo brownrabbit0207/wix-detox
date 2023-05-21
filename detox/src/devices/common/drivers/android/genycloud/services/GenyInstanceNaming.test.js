@@ -1,4 +1,3 @@
-jest.mock('../../../../../../../internals', () => ({}));
 
 describe('Genymotion-Cloud instance unique-name strategy', () => {
   let sessionId, workerId;

@@ -1,4 +1,3 @@
-const os = require('os');
 
 const _ = require('lodash');
 

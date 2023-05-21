@@ -1,4 +1,3 @@
-// @ts-nocheck
 const _ = require('lodash');
 
 /**
@@ -23,3 +22,25 @@ function composeBehaviorConfig({
         },
       },
       localConfig.behavior,
+      globalConfig.behavior,
+      {
+        init: {
+          exposeGlobals: true,
+          keepLockFile: false,
+          reinstallApp: undefined,
+        },
+        launchApp: 'auto',
+        cleanup: {
+          shutdownDevice: false,
+        },
+      }
+    )
+    .tap(config => {
+      if (config.init.reinstallApp === undefined) {
+        config.init.reinstallApp = config.launchApp !== 'manual';
+      }
+    })
+    .value();
+}
+
+module.exports = composeBehaviorConfig;

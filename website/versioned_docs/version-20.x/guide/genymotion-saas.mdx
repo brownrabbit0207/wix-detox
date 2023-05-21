@@ -1,4 +1,3 @@
-# Using Genymotion SaaS
 
 As the number of your end-to-end tests grows, the overall test session duration might easily surpass an hour or two.
 A good idea first would be to parallelize the test execution using your test runner (e.g. for Jest that
@@ -23,6 +22,32 @@ so that you're able to see your e-mail after running this:
 
 ```bash
 gmsaas auth whoami
+# your_email@example.com
+```
+
+If you encounter errors instead, please revisit the [Genymotion SaaS tutorial] and check out their [Known Issues]
+section if your problem persists.
+
+## Configuring
+
+To run tests on a device, you need to define its properties first: OS version, screen dimensions, etc.
+This entire set of device specs is called a **recipe**. Genymotion SaaS offers you a predefined list of recipes
+to pick from, but you can create custom recipes as well. Refer to the [Basic Steps] tutorial on their website for
+more details.
+
+![](../img/genymotion/recipe.png)
+
+Each recipe item in the list can be expanded for extra details, and that's where you can find its respective _UUID_.
+Copy that UUID and use it to create a new device and a new configuration in your Detox config:
+
+```diff title=".detoxrc.js"
+ module.exports = {
+   devices: {
+     simulator: { /* ... */ },
+     emulator: { /* ... */ },
++    genycloud: {
++      type: 'android.genycloud',
++      device: {
 +        recipeUUID: '<paste your chosen recipe UUID>'
 +      },
 +    },

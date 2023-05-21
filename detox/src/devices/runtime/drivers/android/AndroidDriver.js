@@ -1,4 +1,3 @@
-/* eslint @typescript-eslint/no-unused-vars: ["error", { "args": "none" }] */
 // @ts-nocheck
 const path = require('path');
 const URL = require('url').URL;

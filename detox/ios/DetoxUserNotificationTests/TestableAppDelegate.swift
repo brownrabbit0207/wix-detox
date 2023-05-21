@@ -1,4 +1,3 @@
-//
 //  TestableAppDelegate.swift
 //  Detox
 //

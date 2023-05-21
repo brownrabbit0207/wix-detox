@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 function capitalizeFirstLetter(string) {
   if (_.isEmpty(string)) {

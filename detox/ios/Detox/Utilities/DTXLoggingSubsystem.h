@@ -1,4 +1,3 @@
-//
 //  DTXLoggingSubsystem.h
 //  Detox
 //

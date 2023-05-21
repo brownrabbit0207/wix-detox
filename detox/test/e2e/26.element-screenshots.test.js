@@ -1,4 +1,3 @@
-const fs = require('fs');
 
 describe('Element screenshots', () => {
 

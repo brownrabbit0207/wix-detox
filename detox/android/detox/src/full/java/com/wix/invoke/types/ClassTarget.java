@@ -1,4 +1,3 @@
-package com.wix.invoke.types;
 
 import android.util.Log;
 ;

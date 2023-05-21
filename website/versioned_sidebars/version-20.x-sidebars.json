@@ -1,4 +1,3 @@
-{
   "tutorialSidebar": [
     {
       "type": "category",
@@ -23,6 +22,32 @@
         "guide/mocking",
         "guide/launch-args",
         "guide/mocking-open-with-url",
+        "guide/mocking-user-notifications",
+        "guide/mocking-user-activity",
+        "guide/developing-while-writing-tests",
+        "guide/android-dev-env",
+        "guide/proguard-configuration",
+        "guide/cucumber-js-integration",
+        "guide/uninstalling"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Troubleshooting",
+      "items": [
+        "troubleshooting/building-the-app",
+        "troubleshooting/running-tests",
+        "troubleshooting/synchronization",
+        "troubleshooting/flakiness"
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "guide/migration"
+    },
+    {
+      "type": "doc",
+      "label": "Contributing",
       "id": "contributing"
     }
   ],

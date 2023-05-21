@@ -1,4 +1,3 @@
----
 id: how-detox-works
 slug: introduction/how-detox-works
 title: How Detox Works

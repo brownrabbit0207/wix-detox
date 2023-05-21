@@ -1,4 +1,3 @@
-  - label: ":ios::detox: RN .70 + iOS: Tests app"
     command:
       - "nvm install"
       - "./scripts/ci.ios.sh"

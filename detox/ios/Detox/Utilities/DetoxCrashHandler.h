@@ -1,4 +1,3 @@
-//
 //  DetoxCrashHandler.h
 //  Detox
 //

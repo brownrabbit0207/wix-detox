@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const rnMinorVer = require('./rn-consts').rnVersion.minor;
 
 const _it = {

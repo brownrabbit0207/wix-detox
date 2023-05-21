@@ -1,4 +1,3 @@
-declare var describe: (test: string, callback: () => void) => void;
 declare var beforeAll: (callback: () => void) => void;
 declare var afterAll: (callback: () => void) => void;
 declare var test: (name: string, callback: () => void) => void;

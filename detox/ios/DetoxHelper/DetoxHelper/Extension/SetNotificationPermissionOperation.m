@@ -1,4 +1,3 @@
-//
 //  SetNotificationPermissionOperation.m
 //  DetoxHelper
 //

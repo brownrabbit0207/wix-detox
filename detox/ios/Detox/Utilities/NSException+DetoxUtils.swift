@@ -1,4 +1,3 @@
-//
 //  NSException+DetoxUtils.swift
 //  Detox
 //

@@ -1,4 +1,3 @@
-const DetoxLogger = jest.requireActual('../DetoxLogger');
 
 const METHODS = [
   'trace', 'debug', 'info', 'warn', 'error', 'fatal'

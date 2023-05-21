@@ -1,4 +1,3 @@
-# ProGuard configuration
 
 :::tip
 
@@ -23,6 +22,32 @@ To fix that, you’d need to return to your app build script:
 // highlight-next-line
    /* (2) */ proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
 // highlight-next-line
++  /* (3) */ proguardFile "${rootProject.projectDir}/../node_modules/detox/android/detox/proguard-rules-app.pro"
+         }
+     }
+```
+
+1. `release` build type is typically the one to have ProGuard enabled.
+1. ProGuard files present by default in React Native projects. Check out [Android docs][ProGuard minification] to get to know more.
+1. Detox-specific [exclude list](https://github.com/wix/Detox/blob/master/detox/android/detox/proguard-rules.pro) for ProGuard.
+
+:::info
+
+In order for Detox to be able to work properly, in `proguard-rules-app.pro`, it effectively declares rules that retain most of React-Native’s code (i.e. keep it unminified, unobfuscated) in your **production** APK.
+
+:::
+
+## Obfuscation
+
+Exempting source files from the obfuscation means that their contents might be restored by unauthorized people,
+but this should not be an issue for you, because React Native is an open-source project per se.
+
+If it nevertheless bothers you, there are workarounds such as defining multiple build flavors: one for running
+end-to-end tests with Detox, and the other one for publishing to the marketplaces:
+
+```gradle title="app/build.gradle"
+    buildTypes {
+        release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 

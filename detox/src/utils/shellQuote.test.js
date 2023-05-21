@@ -1,4 +1,3 @@
-const { parse, quote } = require('./shellQuote');
 
 describe('shellQuote', () => {
   describe('.quote(argv)', () => {

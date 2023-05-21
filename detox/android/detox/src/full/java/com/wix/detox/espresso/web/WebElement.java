@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.web;
 
 import androidx.test.espresso.web.model.Atom;
 import androidx.test.espresso.web.model.Atoms;

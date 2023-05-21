@@ -1,4 +1,3 @@
-import SanityScreen from './SanityScreen';
 import MatchersScreen from './MatchersScreen';
 import ActionsScreen from './ActionsScreen';
 import IntegActionsScreen from './IntegActionsScreen';

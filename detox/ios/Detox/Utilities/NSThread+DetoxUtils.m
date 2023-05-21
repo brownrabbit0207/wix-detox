@@ -1,4 +1,3 @@
-//
 //  NSThread+DetoxUtils.m
 //  Detox
 //

@@ -1,4 +1,3 @@
-//
 //  DragDropViewController.m
 //  example
 //

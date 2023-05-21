@@ -1,4 +1,3 @@
-const logger = require('../../../../../utils/logger').child({ cat: 'device' });
 const DeviceAllocationHelper  = require('../../../../common/drivers/DeviceAllocationHelper');
 
 const DetoxEmulatorsPortRange = {

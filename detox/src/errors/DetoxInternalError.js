@@ -1,4 +1,3 @@
-const DetoxError = require('./DetoxError');
 
 class DetoxInternalError extends DetoxError {
   constructor(message) {

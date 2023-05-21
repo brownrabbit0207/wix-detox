@@ -1,4 +1,3 @@
-package com.wix.detox.espresso;
 
 import com.wix.detox.espresso.action.DetoxTypeTextAction;
 import com.wix.detox.espresso.action.RNClickAction;

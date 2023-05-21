@@ -1,4 +1,3 @@
-package com.wix.detox.genymotion;
 
 import android.content.Context;
 

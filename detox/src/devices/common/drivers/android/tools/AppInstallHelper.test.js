@@ -1,4 +1,3 @@
-const deviceId = 'mock-device-id';
 const appBinaryPath = '/mock-app-binary-path/binary.apk';
 const testBinaryPath = '/mock-test-binary-path/test/binary.apk';
 

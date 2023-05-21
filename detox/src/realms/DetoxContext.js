@@ -1,4 +1,3 @@
-const funpermaproxy = require('funpermaproxy');
 
 const temporary = require('../artifacts/utils/temporaryPath');
 const { DetoxRuntimeError } = require('../errors');

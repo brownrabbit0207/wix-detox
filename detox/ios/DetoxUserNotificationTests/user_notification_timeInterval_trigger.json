@@ -1,4 +1,3 @@
-{
 	"trigger": {
 		"type": "timeInterval",
 		"timeInterval": 30,

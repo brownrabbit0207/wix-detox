@@ -1,4 +1,3 @@
-# ProGuard configuration
 
 :::tip
 

@@ -1,4 +1,3 @@
-describe('External runtime-device factory', () => {
   describe('validation', () => {
     const path = '../fake/path';
 
@@ -23,3 +22,6 @@ describe('External runtime-device factory', () => {
         };
         factoryClass.validateModule(module, path);
       });
+    });
+  });
+});
