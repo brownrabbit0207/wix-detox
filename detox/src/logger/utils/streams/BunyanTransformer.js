@@ -1,13 +1,8 @@
+const fs = require('fs');
 const { PassThrough } = require('stream');
 
 const bunyanDebugStream = require('bunyan-debug-stream');
 const multiSort = require('multi-sort-stream');
-const pipe = require('multipipe');
-const stripAnsi = require('strip-ansi');
-
-const DetoxJSONLParser = require('./DetoxJSONLParser');
-const { mapTransform, through } = require('./transformers');
-
 class BunyanTransformer {
   /**
    * @param {Detox.Logger} log

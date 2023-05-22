@@ -1,13 +1,8 @@
+jest.mock('../src/utils/logger');
 
 const { callCli } = require('../__tests__/helpers');
 
 describe('run-server', () => {
-  it('starts the server', async () => {
-    jest.mock('../src/server/DetoxServer');
-    const DetoxServer = require('../src/server/DetoxServer');
-    await callCli('./run-server', 'run-server');
-
-    expect(DetoxServer).toHaveBeenCalledWith(expect.objectContaining({ port: 8099 }));
   });
 
   it('throws if the port number is out of range', async () => {

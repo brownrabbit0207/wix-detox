@@ -1,3 +1,4 @@
+class DeviceLauncher {
   constructor(eventEmitter) {
     this._eventEmitter = eventEmitter;
   }

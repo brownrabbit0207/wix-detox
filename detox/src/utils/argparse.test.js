@@ -1,3 +1,4 @@
+jest.unmock('process');
 
 describe('argparse', () => {
   describe('getEnvValue()', () => {

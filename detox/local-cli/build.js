@@ -1,13 +1,8 @@
+// @ts-nocheck
 const cp = require('child_process');
 const fs = require('fs');
 
 const _ = require('lodash');
-
-const detox = require('../internals');
-
-module.exports.command = 'build';
-module.exports.desc = "Runs the user-provided build command, as defined in the 'build' property of the specified configuration.";
-module.exports.builder = {
   C: {
     alias: 'config-path',
     group: 'Configuration:',

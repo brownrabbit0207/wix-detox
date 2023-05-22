@@ -1,3 +1,4 @@
+package com.wix.detox.reactnative.idlingresources
 
 import com.wix.detox.UTHelpers.yieldToOtherThreads
 import org.assertj.core.api.Assertions.assertThat

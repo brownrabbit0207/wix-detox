@@ -1,3 +1,4 @@
+function encodeBase64(stringUTF8) {
   return Buffer.from(stringUTF8, 'utf8').toString('base64');
 }
 

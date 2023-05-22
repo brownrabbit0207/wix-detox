@@ -1,3 +1,4 @@
+//
 //  UIImage+DetoxUtils.h
 //  Detox
 //

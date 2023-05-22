@@ -1,3 +1,4 @@
+async function expectToThrow(testBlock, withMessage) {
 
   try {
     await testBlock();

@@ -1,3 +1,4 @@
+class GenyAuthService {
   constructor(genyCloudExec) {
     this.genyCloudExec = genyCloudExec;
   }

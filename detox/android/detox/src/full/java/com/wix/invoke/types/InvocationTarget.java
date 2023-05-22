@@ -1,3 +1,4 @@
+package com.wix.invoke.types;
 
 import org.apache.commons.lang3.reflect.MethodUtils;
 import java.lang.reflect.InvocationTargetException;

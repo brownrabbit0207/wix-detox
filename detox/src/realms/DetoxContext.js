@@ -1,13 +1,8 @@
+const funpermaproxy = require('funpermaproxy');
 
 const temporary = require('../artifacts/utils/temporaryPath');
 const { DetoxRuntimeError } = require('../errors');
 const { DetoxLogger, DetoxLogFinalizer, installLegacyTracerInterface } = require('../logger');
-
-const DetoxConstants = require('./DetoxConstants');
-const symbols = require('./symbols');
-
-//#region Protected symbols
-const $cleanup = Symbol('cleanup');
 const $logFinalizer = Symbol('logFinalizer');
 const $restoreSessionState = Symbol('restoreSessionState');
 const $sessionState = Symbol('restoreSessionState');

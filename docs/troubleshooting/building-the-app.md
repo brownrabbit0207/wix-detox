@@ -1,13 +1,8 @@
+# Dealing With Problems With Building the App & Detox
 
 This page is about issues related to building the app, typically triggered when running `detox build` (and not `detox test`, for example).
 
 ## Android
-
-### Problem: AAPT - resource linking failure
-
-For build errors involving AAPT resource linking failure, such as this one:
-
-```plain text
 Execution failed for task ':app:processReleaseAndroidTestResources'.
 > A failure occurred while executing com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction
    > Android resource linking failed

@@ -1,3 +1,4 @@
+const JsonlParser = require('stream-json/jsonl/Parser');
 
 const { through } = require('./transformers');
 

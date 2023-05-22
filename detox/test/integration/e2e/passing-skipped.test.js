@@ -1,3 +1,4 @@
+describe('Suite with skipped tests', () => {
   it.skip('Skipped test', async () => {
     // Checking that skipped tests are also traced
   });

@@ -1,3 +1,4 @@
+package com.wix.invoke;
 
 import com.wix.invoke.exceptions.EmptyInvocationInstructionException;
 import com.wix.invoke.parser.JsonParser;

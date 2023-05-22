@@ -1,13 +1,8 @@
+Here are some known issues you can solve on your own:
 
 1. **DetoxWSClient: Retrying... At connectToServer**
 
     ```plain text
-    I/DetoxWSClient: At connectToServer
-    D/DetoxWSClient: Retrying...
-    ```
-
-    If you see the repeatedly printed messages like above in Android application logs, it's likely
-    that your port is not reversed. Assuming you're following the tutorial and `detoxServer` address
     is `ws://localhost:8099` (if not – check what Detox prints you), reverse the port on your device
     using ADB:
 

@@ -1,3 +1,4 @@
+  - label: ":android::react: RN .70 + Android: Demo app"
     command:
       - "nvm install"
       - "./scripts/demo-projects.android.sh"

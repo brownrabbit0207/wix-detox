@@ -1,3 +1,4 @@
+//
 //  Modifier.swift
 //  DetoxTestRunner
 //

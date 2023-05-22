@@ -1,13 +1,8 @@
+# Migration Guide
 
 <!-- markdownlint-configure-file { "ol-prefix": 0 } -->
 
 We are improving Detox API as we go along, sometimes these changes require us to break the API in order for it to make more sense. These migration guides refer to breaking changes. If a newer version has no entries in this document, it means it does not require special migration steps. Refer to the release notes of the latter builds to learn about their improvements and changes.
-
-## 20.0
-
-### No [Mocha] support
-
-If you were using Mocha, now you have two options:
 
 - switch to [Jest] using [`detox init`] boilerplate as a reference and [`testRunner` config];
 - wait until a third-party integration with Mocha appears.

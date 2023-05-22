@@ -1,13 +1,8 @@
+// @ts-nocheck
 jest.useFakeTimers('modern');
 
 const permaproxy = require('funpermaproxy');
 const _ = require('lodash');
-
-const config = require('../configuration/configurations.mock').validSession;
-
-describe('AsyncWebSocket', () => {
-  let AsyncWebSocket;
-  let WebSocket;
   /**
    * @type {import('./AsyncWebSocket')}
    */

@@ -1,13 +1,8 @@
+/// <reference types="node" />
 /// <reference path="index.d.ts"/>
 
 declare global {
   namespace DetoxInternals {
-    type DetoxStatus = 'inactive' | 'init' | 'active' | 'cleanup';
-
-    type Facade = {
-      //#region Initialization
-      /**
-       * Use with a caution, when you still have no config, yet need to avoid {@link Facade#init}
        */
       resolveConfig(options?: Partial<DetoxInitOptions>): Promise<RuntimeConfig>;
 

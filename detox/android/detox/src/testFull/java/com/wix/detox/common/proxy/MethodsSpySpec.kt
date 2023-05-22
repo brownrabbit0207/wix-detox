@@ -1,3 +1,4 @@
+package com.wix.detox.common.proxy
 
 import org.assertj.core.api.Assertions.assertThat
 import org.spekframework.spek2.Spek

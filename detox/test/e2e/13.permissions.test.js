@@ -1,3 +1,4 @@
+describe(':ios: Permissions', () => {
 
   it('Permissions is granted', async () => {
     await device.launchApp({permissions: {calendar: 'YES'}, newInstance: true});

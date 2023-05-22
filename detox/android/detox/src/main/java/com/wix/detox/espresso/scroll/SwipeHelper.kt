@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.scroll
 
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.action.*

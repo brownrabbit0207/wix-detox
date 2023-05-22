@@ -1,3 +1,4 @@
+import { appendFile } from 'fs/promises';
 const bundlePath = `${process.argv[2]}`;
 
 async function bloatBundle() {

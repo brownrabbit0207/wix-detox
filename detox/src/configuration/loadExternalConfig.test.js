@@ -1,13 +1,8 @@
+const os = require('os');
 const path = require('path');
 
 describe('loadExternalConfig', () => {
   const DIR_PACKAGEJSON = path.join(__dirname, '__mocks__/configuration/packagejson');
-  const DIR_PRIORITY = path.join(__dirname, '__mocks__/configuration/priority');
-  const DIR_EXTENDS = path.join(__dirname, '__mocks__/configuration/extends');
-  const DIR_BADCONFIG = path.join(__dirname, '__mocks__/configuration/badconfig');
-
-  let DetoxConfigErrorComposer;
-  /** @type {DetoxConfigErrorComposer} */
   let errorComposer;
   let loadExternalConfig;
   let logger;

@@ -1,3 +1,4 @@
+package com.wix.detox.inquiry
 
 class DetoxBusyResourceDescription private constructor(
     private val name: String,

@@ -1,13 +1,8 @@
+/**
 
 	This code is generated.
 	For more information see generation/README.md.
 */
-
-
-
-class DetoxViewActions {
-  static click() {
-    return {
       target: {
         type: "Class",
         value: "com.wix.detox.espresso.DetoxViewActions"

@@ -1,3 +1,4 @@
+jest.unmock('./DetoxLogger');
 jest.useFakeTimers({
   doNotFake: ['setTimeout', 'clearTimeout'],
   now: new Date(2023, 0, 1),

@@ -1,3 +1,4 @@
+const _ = require('lodash');
 
 const { log } = require('../../internals');
 const { getJestBooleanArgs } = require('../utils/jestInternals');

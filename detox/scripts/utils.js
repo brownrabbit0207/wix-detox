@@ -1,3 +1,4 @@
+const childProcess = require('child_process');
 
 function sh(cmdline, opts) {
   const args = cmdline.split(' ');

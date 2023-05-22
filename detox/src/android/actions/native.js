@@ -1,13 +1,8 @@
+const invoke = require('../../invoke');
 const { assertEnum, assertNormalized } = require('../../utils/assertArgument');
 const DetoxActionApi = require('../espressoapi/DetoxAction');
 const DetoxViewActionsApi = require('../espressoapi/DetoxViewActions');
 const ViewActionsApi = require('../espressoapi/ViewActions');
-
-const assertDirection = assertEnum(['left', 'right', 'up', 'down']);
-const assertSpeed = assertEnum(['fast', 'slow']);
-
-class Action {
-}
 
 class TapAction extends Action {
   constructor(value) {

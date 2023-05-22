@@ -1,13 +1,8 @@
+package com.wix.detox.adapters.server;
 
 import android.util.Log;
 
 import com.wix.detox.common.DetoxErrors;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;

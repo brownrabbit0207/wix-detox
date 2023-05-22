@@ -1,3 +1,4 @@
+const {scrollViewDriver} = require('./drivers/fs-scroll-driver');
 const {scrollingTextInputsDriver, scrollingTextsDriver} = require('./drivers/integ-actions-drivers');
 
 describe(':android: Integrative actions', () => {

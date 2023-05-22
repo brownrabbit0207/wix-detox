@@ -1,3 +1,4 @@
+package com.detox.example.detoxexample;
 
 
 import android.support.test.rule.ActivityTestRule;

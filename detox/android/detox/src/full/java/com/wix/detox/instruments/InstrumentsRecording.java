@@ -1,3 +1,4 @@
+package com.wix.detox.instruments;
 
 
 public interface InstrumentsRecording {

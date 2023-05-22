@@ -1,3 +1,4 @@
+package com.wix.detox.reactnative.utils
 
 private const val REACT_NATIVE_PACKAGE = "com.facebook.react"
 

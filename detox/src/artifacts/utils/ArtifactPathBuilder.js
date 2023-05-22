@@ -1,13 +1,8 @@
+const path = require('path');
 
 const constructSafeFilename = require('../../utils/constructSafeFilename');
 
 class ArtifactPathBuilder {
-  constructor({ rootDir }) {
-    this._rootDir = rootDir;
-  }
-
-  get rootDir() {
-    return this._rootDir;
   }
 
   buildPathForTestArtifact(artifactName, testSummary = null) {

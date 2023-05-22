@@ -1,3 +1,4 @@
+package com.wix.detox.espresso
 
 import androidx.test.platform.app.InstrumentationRegistry
 

@@ -1,13 +1,8 @@
+const Artifact = require('../templates/artifact/Artifact');
 
 class InstrumentsArtifactRecording extends Artifact {
   constructor({ client, userConfig, temporaryRecordingPath }) {
     super();
-
-    this._client = client;
-    this._userConfig = userConfig;
-    this.temporaryRecordingPath = temporaryRecordingPath;
-  }
-
   async doStart({ dry = false } = {}) {
     if (dry) {
       return; // nominal start, to preserve state change
