@@ -3,26 +3,16 @@ const _ = require('lodash');
 
 const Client = require('./client/Client');
 const environmentFactory = require('./environmentFactory');
+const { DetoxRuntimeErrorComposer } = require('./errors');
+const { InvocationManager } = require('./invoke');
+const symbols = require('./realms/symbols');
+const AsyncEmitter = require('./utils/AsyncEmitter');
+const uuid = require('./utils/uuid');
+
 class DetoxWorker {
   constructor(context) {
     this._context = context;
     this._injectedGlobalProperties = [];
-    this._config = context[symbols.config];
-    this._runtimeErrorComposer = new DetoxRuntimeErrorComposer(this._config);
-    this._client = null;
-    this._artifactsManager = null;
-    this._eventEmitter = new AsyncEmitter({
-      events: [
-        'bootDevice',
-        'beforeShutdownDevice',
-        'shutdownDevice',
-        'beforeTerminateApp',
-        'terminateApp',
-        'beforeUninstallApp',
-        'beforeLaunchApp',
-        'launchApp',
-        'appReady',
-        'createExternalArtifact',
       ],
       onError: this._onEmitError.bind(this),
     });

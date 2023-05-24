@@ -3,26 +3,16 @@
   "version": "20.9.0",
   "private": true,
   "devDependencies": {
+    "detox": "^20.9.0"
+  },
+  "detox": {
+    "specs": "",
+    "apps": {
+      "ios.debug": {
         "type": "ios.app",
         "binaryPath": "build/Build/Products/Debug-iphonesimulator/NativeExample.app",
         "build": "xcodebuild -project NativeExample.xcodeproj -UseNewBuildSystem=NO -scheme NativeExample -configuration Debug -sdk iphonesimulator -derivedDataPath build"
       },
-      "ios.release": {
-        "type": "ios.app",
-        "binaryPath": "build/Build/Products/Release-iphonesimulator/NativeExample.app",
-        "build": "xcodebuild -project NativeExample.xcodeproj -UseNewBuildSystem=NO -scheme NativeExample -configuration Release -sdk iphonesimulator -derivedDataPath build"
-      }
-    },
-    "devices": {
-      "simulator": {
-        "type": "ios.simulator",
-        "device": {
-          "type": "iPhone 11 Pro"
-        }
-      }
-    },
-    "configurations": {
-      "ios.sim.debug": {
         "device": "simulator",
         "app": "ios.release"
       },

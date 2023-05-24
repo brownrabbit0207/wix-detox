@@ -3,3 +3,8 @@ describe(":ios: Background-Foreground Transitions", () => {
 		await device.launchApp({newInstance: true});
 		await device.sendToHome();
 		await expect(element(by.text("Background"))).toBeVisible();
+		await device.launchApp({newInstance: false});
+		await expect(element(by.text("Active"))).toBeVisible();
+	});
+});
+

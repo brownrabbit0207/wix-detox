@@ -4,25 +4,15 @@
 
 Traditionally, one of the most difficult aspects of E2E testing is synchronizing the test scenario with the app. Complex operations inside the app (like accessing servers or performing animations) often take variable amount of time to complete. We can’t continue the test until they’ve completed. How can we synchronize the test with these operations?
 
+Synchronizing manually with `sleep()` commands is a bad idea. It’s flaky, complicates the tests, behaves differently on different machines and makes tests needlessly slow.
+
+Instead, Detox tries to synchronize the test with the app completely _automatically_.
+
+When this works it’s like magic. You simply execute actions one after the other without worrying about timing, and Detox waits for the app to stabilize before moving to the next test line. If there’s an in-flight request to a server, for example, the test will not move forward until the request completes.
+
 ### What operations do we try to synchronize with automatically
 
 - **Network requests** - Detox monitors in-flight requests over the network.
-
-- **Main thread (native)** - Detox monitors pending native operations on the main thread (main dispatch queue and main `NSOperationQueue`).
-
-- **Layout of UI** - Detox monitors UI layout operations. There’s also special support for React Native layout which includes the Shadow Queue where [yoga](https://github.com/facebook/yoga) runs.
-
-- **Timers** - Detox monitors timers (explicit asynchronous delays). There’s special support for JavaScript timers like `setTimeout` and `setInterval`.
-
-- **Animations** - Detox monitors active animations and transitions. There’s special support for React Native animations with the Animated library.
-
-- **React Native JavaScript thread** - Detox monitors pending operations on the JavaScript thread in RN apps.
-
-- **React Native bridge** - Detox monitors the React Native bridge and asynchronous messages sent on it.
-
-### Automatic synchronization works most of the time
-
-It’s difficult for an automatic mechanism to be correct in 100% of the cases. There are always exceptions. We are optimizing for the common case so most of your scenarios will not have to deal with synchronization issues.
 
 For the rest of this tutorial, we’ll assume the test is having some sort of synchronization issue.
 

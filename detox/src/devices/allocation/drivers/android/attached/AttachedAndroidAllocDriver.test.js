@@ -3,26 +3,16 @@ describe('Allocation driver for attached Android devices', () => {
   const adbName = 'mock-adb-name';
   const deviceConfig = {
     device: {
+      adbName: adbPattern,
+    },
+  };
+
+  let adb;
+  let deviceRegistry;
   let freeDeviceFinder;
   let attachedAndroidLauncher;
   beforeEach(() => {
     const ADB = jest.genMockFromModule('../../../../common/drivers/android/exec/ADB');
-    adb = new ADB();
-
-    const DeviceRegistry = jest.genMockFromModule('../../../../DeviceRegistry');
-    deviceRegistry = new DeviceRegistry();
-
-    const FreeDeviceFinder = jest.genMockFromModule('../../../../common/drivers/android/tools/FreeDeviceFinder');
-    freeDeviceFinder = new FreeDeviceFinder();
-
-    const AttachedAndroidLauncher = jest.genMockFromModule('./AttachedAndroidLauncher');
-    attachedAndroidLauncher = new AttachedAndroidLauncher();
-  });
-
-  let allocDriver;
-  beforeEach(() => {
-    const AttachedAndroidAllocDriver = require('./AttachedAndroidAllocDriver');
-    allocDriver = new AttachedAndroidAllocDriver({
       adb,
       deviceRegistry,
       freeDeviceFinder,

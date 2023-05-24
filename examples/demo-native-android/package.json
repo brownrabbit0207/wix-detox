@@ -3,5 +3,11 @@
   "version": "20.9.0",
   "private": true,
   "scripts": {
+    "packager": "react-native start",
+    "detox-server": "detox run-server"
+  },
+  "devDependencies": {
+    "detox": "^20.9.0"
+  },
   "detox": {}
 }

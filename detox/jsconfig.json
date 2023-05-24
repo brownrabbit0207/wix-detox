@@ -3,5 +3,11 @@
     "allowSyntheticDefaultImports": true,
     "checkJs": true,
     "target": "es2017"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*"
   ]
 }

@@ -3,26 +3,16 @@ import {
   Text,
   View,
   Button
+} from 'react-native';
+import Geolocation from '@react-native-community/geolocation';
+
+function Frame({ children }) {
+  return (
+    <View style={{ flex: 1, paddingTop: 20, justifyContent: 'center', alignItems: 'center' }}>
       {children}
     </View>
   );
 }
-
-function Label({ testID, children }) {
-  return (
-    <Text testID={testID} style={{ marginBottom: 20 }}>
-      {children}
-    </Text>
-  );
-}
-
-export default class LocationScreen extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      locationRequested: false,
-      coordinates: null,
       error: '',
     }
   }

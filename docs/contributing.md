@@ -4,25 +4,15 @@
 
 This guide is about contributing to our codebase.
 
+We don’t have any special guidelines - just some setup walk-through!
+
+### Environment
+
+First, complete our [Getting Started](introduction/getting-started.mdx) guide.
+
 #### Install the monorepo management tool, `lerna`
 
 ```bash npm2yarn
-npm install lerna@3.x.x --global
-```
-
-For all the internal projects (detox, detox-cli, demos, test) `lerna` will create symbolic links in `node_modules` instead of `npm` copying the content of the projects. This way, any change you do on any code is there immediately. There is no need to update node modules or copy files between projects.
-
-#### Install common React Native dependencies
-
-React-Native CLI:
-
-```bash npm2yarn
-npm install react-native-cli --global
-```
-
-Watchman:
-
-```bash
 brew install watchman
 ```
 

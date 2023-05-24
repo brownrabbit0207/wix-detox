@@ -3,26 +3,16 @@ const template = require('@babel/template').default;
 const { generateTypeCheck, generateIsOneOfCheck } = require('babel-generate-guard-clauses');
 
 const templateFromString = (templateStr, argValue) =>
+  template(templateStr, {
+    placeholderPattern: false,
+    placeholderWhitelist: new Set(['ARG'])
+  })({
+    ARG: argValue
+  });
 
 const isNumber = generateTypeCheck('number');
 const isString = generateTypeCheck('string');
 const isBoolean = generateTypeCheck('boolean');
-const isPoint = [
-  generateTypeCheck('object'),
-  generateTypeCheck('number', { selector: 'x' }),
-  generateTypeCheck('number', { selector: 'y' })
-];
-const isOneOf = generateIsOneOfCheck;
-function isGreyMatcher({ name }) {
-  return templateFromString(
-    `
-  if (
-    typeof ARG !== "object" ||
-    ARG.type !== "Invocation" ||
-    typeof ARG.value !== "object" ||
-    typeof ARG.value.target !== "object" ||
-    ARG.value.target.value !== "GREYMatchers"
-  ) {
     throw new Error('${name} should be a GREYMatcher, but got ' + JSON.stringify(ARG));
   }
 `,

@@ -3,26 +3,16 @@ package com.wix.detox
 import android.content.Context
 import android.util.Log
 import com.wix.detox.adapters.server.*
+import com.wix.detox.common.DetoxLog.Companion.LOG_TAG
+import com.wix.detox.instruments.DetoxInstrumentsManager
+import com.wix.detox.reactnative.ReactNativeExtension
+import com.wix.invoke.MethodInvocation
+
+private const val INIT_ACTION = "_init"
 private const val IS_READY_ACTION = "isReady"
 private const val TERMINATION_ACTION = "_terminate"
 
 object DetoxMain {
-    @JvmStatic
-    fun run(rnHostHolder: Context) {
-        val detoxServerInfo = DetoxServerInfo()
-        Log.i(LOG_TAG, "Detox server connection details: $detoxServerInfo")
-
-        val testEngineFacade = TestEngineFacade()
-        val actionsDispatcher = DetoxActionsDispatcher()
-        val externalAdapter = DetoxServerAdapter(actionsDispatcher, detoxServerInfo, IS_READY_ACTION, TERMINATION_ACTION)
-        initActionHandlers(actionsDispatcher, externalAdapter, testEngineFacade, rnHostHolder)
-        actionsDispatcher.dispatchAction(INIT_ACTION, "", 0)
-        actionsDispatcher.join()
-    }
-
-    private fun doInit(externalAdapter: DetoxServerAdapter, rnHostHolder: Context) {
-        externalAdapter.connect()
-
         initCrashHandler(externalAdapter)
         initANRListener(externalAdapter)
         initReactNativeIfNeeded(rnHostHolder)

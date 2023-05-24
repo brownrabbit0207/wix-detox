@@ -3,26 +3,16 @@ jest.mock('proper-lockfile');
 const fs = require('fs-extra');
 const plock = require('proper-lockfile');
 const tempfile = require('tempfile');
+
+const ExclusiveLockFile = require('./ExclusiveLockfile');
+
+describe('ExclusiveLockFile', () => {
+  let filePath;
+
   beforeEach(() => {
     filePath = tempfile('.test');
   });
 
-  afterEach(async () => {
-    await fs.remove(filePath);
-  });
-
-  it('should execute an arbitrary function inside an exclusive lock', async () => {
-    const lockfile = new ExclusiveLockFile(filePath, {
-      getInitialState: () => 42,
-    });
-
-    expect(plock.lockSync).not.toHaveBeenCalled();
-    const result = await lockfile.exclusively(async () => {
-      expect(plock.lockSync).toHaveBeenCalled();
-
-      expect(lockfile.read()).toBe(42);
-      lockfile.write(84);
-      expect(lockfile.read()).toBe(84);
 
       expect(plock.unlockSync).not.toHaveBeenCalled();
       return 'result';

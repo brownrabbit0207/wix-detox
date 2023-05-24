@@ -3,26 +3,16 @@ import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 
 class SelfCountingText extends Component {
   constructor(props) {
+    super(props);
+
+    this.state = {
+      taps: 0,
+    };
+    this.onTap = this.onTap.bind(this);
   }
 
   render() {
     return (
-      <TouchableOpacity {...this.props} testID={''} onPress={this.onTap}>
-        <Text testID={this.props.testID} style={{ textAlign: 'center', textAlignVertical: 'center' }}>{this.props.name}: {this.state.taps}</Text>
-      </TouchableOpacity>
-    )
-  }
-
-  onTap() {
-    this.setState({
-      taps: this.state.taps + 1,
-    });
-  }
-}
-
-export default class IntegActionsScreen extends Component {
-
-  render() {
     return (
       <View testID='integActions.root' style={{ flex: 1, paddingTop: 40, justifyContent: 'center' }}>
 

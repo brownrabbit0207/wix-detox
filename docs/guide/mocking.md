@@ -3,26 +3,16 @@
 :::info
 
 This article previously focused on the older React Native versions (`<0.59`), so if you need to access it, [follow this Git history link](https://github.com/wix/Detox/blob/01ad250fe4168502a57339b8bcab0ec5a5c89e4b/docs/Guide.Mocking.md).
+
+:::
+
+Mocking is an integral part of testing.
+You may want to use mocks to alter specific behavior of your app during tests, e.g., to:
+
 - change server endpoints to point to a mock/staging server instead of the regular production server;
 - stub a feature the simulator doesn’t support;
 - prepare mock environment data such as GPS position, Contacts/Photos found on the device, etc.
 
-This guide assumes you are testing a React Native app with Detox.
-
-Please note that you **cannot** apply mocking techniques familiar from the prior Jest experience, even though Detox runs on top of Jest, e.g.:
-
-```js
-jest.mock('./src/myModule'); // NO, THIS WON'T WORK
-```
-
-All the mocking must be conducted with the help of [Metro bundler](https://facebook.github.io/metro), which powers React Native under the hood.
-Thanks to Metro bundler, there are two modes your React Native application can run in:
-
-1. **Debug mode**. Running `npx react-native start` spawns the _Metro bundler_ on port 8081 (by default). It serves JavaScript files of your app over HTTP, expecting that the native code will request it right upon the launch on the mobile device. Thus, the native app keeps re-downloading and executing the new code every time you change the code locally.
-
-1. **Release mode**. In contrast to the debug mode, _Metro bundler_ does not need to run as a server on the side. It bundles your JavaScript code once into the native app binary file. Hence, every edit to the source code requires rebuilding the entire app binary and reinstalling it on the device before you can see the effect.
-
-There are two ways to configure the _Metro bundler_ to use your mocks: quick (**debug mode** only) and universal.
 Let's start with the quicker way.
 
 ## Quick flow

@@ -3,26 +3,16 @@ const aResponse = (exit_code = 0, exit_code_desc = 'NO_ERROR') => ({
   exit_code,
   exit_code_desc,
 });
+const anErrorResponse = (exit_code, exit_code_desc, error_desc) => ({
+  ...aResponse(exit_code, exit_code_desc),
+  error: {
+    message: `API return unexpected code: ${exit_code}. Error: {"code":"${error_desc}","message":"Oh no, mocked error has occurred!"}`,
+    details: '',
+  }
 });
 
 describe('Genymotion-cloud executable', () => {
   const successResponse = aResponse();
-  const failResponse = anErrorResponse(4, 'API_ERROR', 'TOO_MANY_RUNNING_VDS');
-  const recipeName = 'mock-recipe-name';
-  const recipeUUID = 'mock-recipe-uuid';
-  const instanceUUID = 'mock-uuid';
-  const instanceName = 'detox-instance1';
-
-  const givenSuccessResult = () => exec.mockResolvedValue({
-    stdout: JSON.stringify(successResponse),
-  });
-  const givenErrorResult = () => exec.mockRejectedValue({
-    stderr: JSON.stringify(failResponse),
-  });
-
-  let exec;
-  let uut;
-  beforeEach(() => {
     jest.mock('../../../../../../utils/childProcess');
     exec = require('../../../../../../utils/childProcess').execWithRetriesAndLogs;
 

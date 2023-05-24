@@ -3,6 +3,12 @@ const _ = require('lodash');
 const DetoxRuntimeError = require('../errors/DetoxRuntimeError');
 const logger = require('../utils/logger').child({ cat: 'ws-server,ws' });
 
+const AnonymousConnectionHandler = require('./handlers/AnonymousConnectionHandler');
+
+class DetoxConnection {
+  /**
+   * @param {{
+   *   sessionManager: import('./DetoxSessionManager');
    *   webSocket: import('ws');
    *   socket: import('net').Socket;
    * }} config

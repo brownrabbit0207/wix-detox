@@ -3,26 +3,16 @@ const MOCK_TEXT = 'Mock Text';
 
 describe(':ios: WebView', () => {
   it('should throw a runtime error on attempt to use', () => {
+    jestExpect(() => web(by.id('webview_1'))).toThrowError(/Detox does not support .* on iOS/);
+  });
+});
+
+describe(':android: WebView', () => {
+  let webview_1;
 
   beforeEach(async () => {
     await device.reloadReactNative();
     await element(by.text('WebView')).tap();
-    webview_1 = web(by.id('webview_1'));
-  });
-
-  describe('Expectations',() => {
-    it('expect element to exists', async () => {
-      await expect(webview_1.element(by.web.id('testingPar'))).toExist();
-    });
-
-    it('expect element to NOT exists', async () => {
-      await expect(webview_1.element(by.web.id('not_found'))).not.toExist();
-    });
-
-    it('expect element to have text', async () => {
-      await expect(webview_1.element(by.web.id('testingPar'))).toHaveText('Message');
-    });
-
     it('expect element to NOT have text', async () => {
       await expect(webview_1.element(by.web.id('testingPar'))).not.toHaveText(MOCK_TEXT);
     });

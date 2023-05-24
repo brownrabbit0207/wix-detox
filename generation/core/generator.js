@@ -3,6 +3,12 @@ const template = require('@babel/template').default;
 const generate = require('@babel/generator').default;
 const javaMethodParser = require('java-method-parser');
 const fs = require('fs');
+const path = require('path');
+
+const { methodNameToSnakeCase } = require('../helpers');
+let globalFunctionUsage = {};
+module.exports = function getGenerator({
+  typeCheckInterfaces,
   renameTypesMap,
   supportedTypes,
   classValue,

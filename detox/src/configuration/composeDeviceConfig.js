@@ -3,26 +3,16 @@ const _ = require('lodash');
 
 const environmentFactory = require('../environmentFactory');
 const log = require('../utils/logger').child({ cat: 'config' });
- * @returns {Detox.DetoxDeviceConfig}
- */
-function composeDeviceConfig(opts) {
-  const deviceConfig = composeDeviceConfigFromAliased(opts);
-  applyCLIOverrides(deviceConfig, opts.cliConfig);
-  deviceConfig.device = unpackDeviceQuery(deviceConfig);
-
-  return deviceConfig;
-}
 
 /**
  * @param {DetoxConfigErrorComposer} opts.errorComposer
  * @param {Detox.DetoxConfig} opts.globalConfig
  * @param {Detox.DetoxConfiguration} opts.localConfig
+ * @param {*} opts.cliConfig
  * @returns {Detox.DetoxDeviceConfig}
  */
-function composeDeviceConfigFromAliased(opts) {
-  const { errorComposer, globalConfig, localConfig } = opts;
-
-  /** @type {Detox.DetoxDeviceConfig} */
+function composeDeviceConfig(opts) {
+  const deviceConfig = composeDeviceConfigFromAliased(opts);
   let deviceConfig;
 
   const isAliased = typeof localConfig.device === 'string';

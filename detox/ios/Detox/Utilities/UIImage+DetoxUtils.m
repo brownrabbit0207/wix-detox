@@ -3,26 +3,16 @@
 //  Detox
 //
 //  Created by Leo Natan on 9/13/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
+
+#import "UIImage+DetoxUtils.h"
+
+@implementation UIImage (DetoxUtils)
 
 - (UIImage *)dtx_imageByCroppingInRect:(CGRect)rect
 {
 	rect = CGRectMake(rect.origin.x * self.scale, rect.origin.y * self.scale, rect.size.width * self.scale, rect.size.height * self.scale);
-	
-	return [UIImage imageWithCGImage:CGImageCreateWithImageInRect(self.CGImage, rect) scale:1 orientation:self.imageOrientation];
-}
-
-- (NSUInteger)dtx_numberOfVisiblePixelsWithAlphaThreshold:(CGFloat)threshold totalPixels:(NSUInteger*)totalPixels
-{
-	CGImageRef cgImage = self.CGImage;
-	
-	CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(cgImage));
-	dtx_defer {
-		CFRelease(pixelData);
-	};
-	const uint8_t* bytes = CFDataGetBytePtr(pixelData);
-	
-	size_t width  = CGImageGetWidth(cgImage);
-	size_t height = CGImageGetHeight(cgImage);
 	
 	size_t bpr = CGImageGetBytesPerRow(cgImage);
 	size_t bpp = CGImageGetBitsPerPixel(cgImage);

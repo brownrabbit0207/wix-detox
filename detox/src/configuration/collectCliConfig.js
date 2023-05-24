@@ -3,26 +3,16 @@ const _ = require('lodash');
 const argparse = require('../utils/argparse');
 
 const asBoolean = (value) => {
+  if (typeof value === 'boolean') {
+    return value;
+  }
+
+  return value != null
+    ? (value !== 'false' && value !== '0' && value !== '')
     : undefined;
 };
 
 const asNumber = (value) => {
-  if (typeof value === 'number') {
-    return value;
-  }
-
-  return value != null && value !== ''
-    ? Number(value)
-    : undefined;
-};
-
-function collectCliConfig({ argv }) {
-  const env = (key) => argparse.getEnvValue(key);
-  const get = (key, fallback) => {
-    const value = argv && Reflect.has(argv, key) ? argv[key] : env(key);
-    return value === undefined ? fallback : value;
-  };
-
   return _.omitBy({
     artifactsLocation: get('artifacts-location'),
     captureViewHierarchy: get('capture-view-hierarchy'),

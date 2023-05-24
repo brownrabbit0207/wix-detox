@@ -3,26 +3,16 @@ const _ = require('lodash');
 const DetoxRuntimeError = require('./DetoxRuntimeError');
 
 const J = s => JSON.stringify(s);
+
+class DetoxRuntimeErrorComposer {
+  constructor({ appsConfig }) {
+    this.appsConfig = appsConfig;
+  }
+
   abortedDetoxInit() {
     return new DetoxRuntimeError({
       message: 'Aborted detox.init() execution, and now running detox.cleanup()',
       hint: 'Most likely, your test runner is tearing down the suite due to the timeout error'
-    });
-  }
-
-  invalidTestSummary(methodName, testSummary) {
-    return new DetoxRuntimeError({
-      message: `Invalid test summary was passed to detox.${methodName}(testSummary)` +
-        '\nExpected to get an object of type: { title: string; fullName: string; status: "running" | "passed" | "failed"; }',
-      hint: 'Maybe you are still using an old undocumented signature detox.beforeEach(string, string, string) in init.js ?' +
-        '\nSee the article for the guidance: ' +
-        'https://wix.github.io/Detox/docs/api/test-lifecycle' +
-        '\ntestSummary was: ',
-        debugInfo: testSummary,
-    });
-  }
-
-  invalidTestSummaryStatus(methodName, testSummary) {
     return new DetoxRuntimeError({
       message: `Invalid test summary status was passed to detox.${methodName}(testSummary). Valid values are: "running", "passed", "failed"`,
       hint: "It seems like you've hit a Detox integration issue with a test runner. " +

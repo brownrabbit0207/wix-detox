@@ -4,24 +4,14 @@
 
 This guide is outdated.
 
+:::
+
+When your test suite is finally ready, it should be set up to run automatically on your CI server on every git push. This will alert you if new changes to the app break existing functionality.
+
+Running Detox on CI is not that different from running it locally. There are two main differences:
+
 - You should test a release build rather than a debug build
 - Tell Detox to shut down the simulator when test is over
-
-## Step 1: Prepare a Release Configuration for Your App
-
-We will need to create a release app configuration for Detox – follow [the previous tutorial](project-setup.mdx)
-if you haven’t completed it already.
-
-## Step 2: Add `build` and `test` Commands to Your CI Script
-
-Assuming your CI is executing some sort of shell script, add the following commands that should run inside the project root:
-
-```bash
-detox build --configuration ios.sim.release
-detox test --configuration ios.sim.release
-```
-
-:::tip
 
 Make sure to shut down the simulator when your tests are over.
 

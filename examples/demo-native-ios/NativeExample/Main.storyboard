@@ -3,26 +3,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Native Example-->
+        <scene sceneID="GPi-en-VeY">
+            <objects>
                 <navigationController title="Native Example" id="2XP-G2-4XH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4rk-y3-lg5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="nDg-vi-mtZ" kind="relationship" relationship="rootViewController" id="B2Y-Sh-cSt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dbW-uA-mFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="161" y="617"/>
-        </scene>
-        <!--Native Example-->
-        <scene sceneID="33n-VQ-hws">
-            <objects>
-                <viewController id="nDg-vi-mtZ" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W5Q-u5-Be6"/>
-                        <viewControllerLayoutGuide type="bottom" id="L8k-fn-6SM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o5Q-je-cVN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>

@@ -3,26 +3,16 @@
 exports[`DetoxLogFinalizer createEventStream should create a stream of Chrome Trace format events 1`] = `
 Array [
   Object {
-    "tid": 0,
-    "ts": 1672531200000000,
-  },
-  Object {
     "args": Object {
-      "sort_index": 0,
+      "name": "primary",
     },
-    "name": "process_sort_index",
+    "name": "process_name",
     "ph": "M",
     "pid": 1234,
     "tid": 0,
     "ts": 1672531200000000,
   },
   Object {
-    "args": Object {
-      "name": "main",
-    },
-    "name": "thread_name",
-    "ph": "M",
-    "pid": 1234,
     "tid": 0,
     "ts": 1672531200000000,
   },

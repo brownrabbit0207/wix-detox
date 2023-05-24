@@ -3,26 +3,16 @@ const _ = require('lodash');
 
 const DetoxInternalError = require('../../errors/DetoxInternalError');
 const setUniqueProperty = require('../../utils/setUniqueProperty');
+const FileArtifact = require('../templates/artifact/FileArtifact');
+const ArtifactPlugin = require('../templates/plugin/ArtifactPlugin');
+
+class IosUIHierarchyPlugin extends ArtifactPlugin {
+  /**
+   * @param {ArtifactsApi} api
    * @param {Client} client
    */
   constructor({ api, client }) {
     super({ api });
-
-    this._pendingDeletions = [];
-    this._artifacts = {
-      perTest: {},
-      perSession: {},
-    };
-
-    client.setEventCallback('testFailed', this._onInvokeFailure.bind(this));
-  }
-
-  async onBeforeLaunchApp(event) {
-    await super.onBeforeLaunchApp(event);
-
-    if (!this.enabled && !event.launchArgs.hasOwnProperty('detoxDisableHierarchyDump')) {
-      event.launchArgs['detoxDisableHierarchyDump'] = 'YES';
-    }
   }
 
   async onCreateExternalArtifact(e) {

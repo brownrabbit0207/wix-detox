@@ -3,26 +3,16 @@
 :::caution Note
 Detox supports testing web views on **Android** only. We are working on adding support for iOS apps as well.
 :::
+
+A web view is a native component that displays content not available in a native format, such as a web page or a PDF document.
+
+Elements inside web views, however, are not native components, so Detox cannot interact with them the usual way.
+That's why Detox provides a set of matchers, actions, and expectations to allow you to interact with the content inside web views.
+
 ## Locating web view elements
 
 ### `web.element(matcher)`
 
-In the most common case, you will have a single web view on the screen, so you can use `web.element()` function with [web view matchers] to reference elements inside it. After you have a reference to a web element, you can use the [web view actions] and [web view expectations] on it, e.g.:
-
-```js
-const innerElement = web.element(by.web.id('inner_element_identifier'))
-await expect(innerElement).toHaveText('Hello World!');
-```
-
-The code above finds an inner element by HTML `id` attribute, and expects it to have a specific text.
-
-### `web(nativeMatcher).element(matcher)`
-
-If you have multiple web views on the screen, you must locate a specific web view first by using a [native matcher][native matchers], e.g.:
-
-```js
-const myWebView = web(by.id('webview_identifier'));
-const innerElement = myWebView.element(by.web.id('inner_element_identifier'))
 await expect(innerElement).toHaveText('Hello World!');
 ```
 

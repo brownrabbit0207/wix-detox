@@ -3,26 +3,16 @@
 package com.wix.detox.espresso.scroll
 
 import android.annotation.SuppressLint
+import android.view.View
+import android.widget.AbsListView
+import com.wix.detox.action.common.*
+
+// TODO ViewPager?
+fun getScrollableProbe(view: View, @MotionDir direction: Int): ScrollableProbe {
     if (view is AbsListView) {
         @SuppressLint("SwitchIntDef")
         when (direction) {
             MOTION_DIR_UP -> return AbsListViewBack(view)
-            MOTION_DIR_DOWN -> return AbsListViewForward(view)
-        }
-    }
-
-    return when (direction) {
-        MOTION_DIR_LEFT -> ScrollableProbeHBack(view)
-        MOTION_DIR_RIGHT -> ScrollableProbeHForward(view)
-        MOTION_DIR_UP -> ScrollableProbeVBack(view)
-        MOTION_DIR_DOWN -> ScrollableProbeVForward(view)
-        else -> throw IllegalArgumentException("Invalid direction: $direction")
-    }
-}
-
-interface ScrollableProbe {
-    fun atScrollingEdge(): Boolean
-}
 
 private abstract class AbsScrollableProbe(val view: View) : ScrollableProbe
 

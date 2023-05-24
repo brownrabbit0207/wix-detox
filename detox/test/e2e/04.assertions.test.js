@@ -3,25 +3,15 @@ const driver = {
     await device.reloadReactNative();
     await element(by.text('Assertions')).tap();
   },
+  get textElement() { return element(by.id('main-text')) },
+  get subtextElement() { return element(by.id('subtext-root')) },
+  get invisibleTextElement() { return element(by.id('offscreen-text')) },
+  get toggleElement() { return element(by.id('toggle')) },
+}
+
 describe('Assertions', () => {
   beforeEach(async () => {
     await driver.navToScreen();
-  });
-
-  it('should assert an element is visible', async () => {
-    await expect(driver.textElement).toBeVisible();
-  });
-
-  it('should assert an element is not visible', async () => {
-    await expect(driver.invisibleTextElement).not.toBeVisible();
-  });
-
-  it('should assert an element exists', async () => {
-    await expect(driver.invisibleTextElement).toExist();
-  });
-
-  it('should assert an element does not exist', async () => {
-    await expect(element(by.id('RandomJunk959'))).not.toExist();
   });
 
   it('should assert an element has text', async () => {

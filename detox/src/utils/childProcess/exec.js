@@ -3,26 +3,16 @@ const { exec } = require('child-process-promise');
 const _ = require('lodash');
 
 const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
+const rootLogger = require('../logger').child({ cat: ['child-process', 'child-process-exec'] });
+const retry = require('../retry');
+
+const execsCounter = require('./opsCounter');
+
+async function execWithRetriesAndLogs(bin, options = {}) {
   const {
     retries = 9,
     interval = 1000,
     prefix = null,
-    args = null,
-    timeout = 0,
-    statusLogs = {},
-    verbosity = 'normal',
-  } = options;
-
-  const trackingId = execsCounter.inc();
-  const cmd = _composeCommand(bin, prefix, args);
-  const logger = rootLogger.child({ fn: 'execWithRetriesAndLogs', cmd, trackingId });
-  const logLevelSuccess = (verbosity === 'high' ? 'debug' : 'trace');
-  const logLevelFail = (verbosity === 'low' ? 'debug' : 'error');
-
-  let result;
-  try {
-    logger.debug({ event: 'EXEC_CMD' }, `${cmd}`);
-
     await retry({ retries, interval }, async (tryNumber, lastError) => {
       if (statusLogs.trying) {
         _logExecTrying(logger, statusLogs.trying, tryNumber, lastError);

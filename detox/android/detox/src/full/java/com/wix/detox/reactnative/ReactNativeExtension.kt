@@ -3,26 +3,16 @@ package com.wix.detox.reactnative
 import android.app.Activity
 import android.content.Context
 import android.util.Log
+import androidx.test.platform.app.InstrumentationRegistry
+import com.facebook.react.ReactApplication
+import com.facebook.react.ReactInstanceManager
+import com.facebook.react.bridge.ReactContext
+import com.wix.detox.LaunchArgs
+
 private const val LOG_TAG = "DetoxRNExt"
 
 object ReactNativeExtension {
     private var rnIdlingResources: ReactNativeIdlingResources? = null
-
-    /**
-     * Reloads the React Native context and thus all javascript code.
-     *
-     * It is a lot faster to reload a React Native application this way,
-     * than to reload the whole Activity or Application.
-     *
-     * @param applicationContext The app context, implicitly assumed to be a [ReactApplication] instance.
-     */
-    @JvmStatic
-    fun reloadReactNative(applicationContext: Context) {
-        if (!ReactNativeInfo.isReactNativeApp()) {
-            return
-        }
-
-        Log.i(LOG_TAG, "Reloading React Native")
 
         (applicationContext as ReactApplication).let {
             val networkSyncEnabled = rnIdlingResources?.networkSyncEnabled ?: true

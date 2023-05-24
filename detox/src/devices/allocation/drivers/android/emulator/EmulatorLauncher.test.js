@@ -3,26 +3,16 @@ describe('Emulator launcher', () => {
   const avdName = 'Pixel_Mock';
   const adbName = 'mock-emulator:1234';
 
+  let retry;
+  let eventEmitter;
+  let emulatorExec;
+  let adb;
+  let launchEmulatorProcess;
+  let uut;
   beforeEach(() => {
     jest.mock('../../../../../utils/logger');
 
     jest.mock('../../../../../utils/retry');
-    retry = require('../../../../../utils/retry');
-    retry.mockImplementation((options, func) => func());
-
-    const ADB = jest.genMockFromModule('../../../../common/drivers/android/exec/ADB');
-    adb = new ADB();
-    adb.isBootComplete.mockReturnValue(true);
-
-    const AsyncEmitter = jest.genMockFromModule('../../../../../utils/AsyncEmitter');
-    eventEmitter = new AsyncEmitter();
-
-    const { EmulatorExec } = jest.genMockFromModule('../../../../common/drivers/android/emulator/exec/EmulatorExec');
-    emulatorExec = new EmulatorExec();
-
-    jest.mock('./launchEmulatorProcess');
-    launchEmulatorProcess = require('./launchEmulatorProcess').launchEmulatorProcess;
-
     const EmulatorLauncher = require('./EmulatorLauncher');
     uut = new EmulatorLauncher({
       adb,

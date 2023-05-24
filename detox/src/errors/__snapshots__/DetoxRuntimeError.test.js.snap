@@ -3,26 +3,16 @@
 exports[`DetoxRuntimeError should be created with empty object 1`] = `[DetoxRuntimeError]`;
 
 exports[`DetoxRuntimeError should be created with message with "Command failed" error 1`] = `
+[DetoxRuntimeError: Cannot run Detox due to an internal error
+
+Command failed: jest runMyTests]
+`;
+
+exports[`DetoxRuntimeError should be created with message with debug info 1`] = `
 [DetoxRuntimeError: no filename was given to constructSafeFilename()
 
 the arguments were: {
   "prefix": "detox - "
-}]
-`;
-
-exports[`DetoxRuntimeError should be created with message with debug info object 1`] = `
-[DetoxRuntimeError: no filename was given to constructSafeFilename()
-
-{
-  prefix: 'detox - ',
-  trimmable: undefined,
-  suffix: undefined
-}]
-`;
-
-exports[`DetoxRuntimeError should be created with message with hint 1`] = `
-[DetoxRuntimeError: Detox adapter to Jest is malfunctioning.
-
 HINT: Make sure you register it as Jasmine reporter inside init.js:
 -------------------------------------------------------------
 jasmine.getEnv().addReporter(adapter);]

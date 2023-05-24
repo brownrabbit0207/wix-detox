@@ -3,26 +3,16 @@ jest.mock('../../../utils/logger.js');
 const testSummaries = require('../../__mocks__/testSummaries.mock');
 const ArtifactMock = require('../artifact/__mocks__/ArtifactMock');
 
+const StartupAndTestRecorderPlugin = require('./StartupAndTestRecorderPlugin');
+const ArtifactsApi = require('./__mocks__/ArtifactsApi.mock');
+
+describe('StartupAndTestRecorderPlugin', () => {
+  let api;
+  let plugin;
 
   beforeEach(() => {
     api = new ArtifactsApi({
       config: {
-        enabled: false,
-        keepOnlyFailedTestsArtifacts: false,
-      },
-    });
-    plugin = new FakeStartupAndTestRecorderPlugin({ api });
-  });
-
-  describe('when disabled', () => {
-    beforeEach(() => {
-      plugin.disable();
-    });
-
-    describe('onReadyToRecord', () => {
-      beforeEach(async () => {
-        await plugin.onReadyToRecord();
-      });
 
       it('should end correctly, but do nothing', expectThatNothingActuallyHappens);
     });

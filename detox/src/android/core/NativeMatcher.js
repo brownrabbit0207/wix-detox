@@ -3,26 +3,16 @@ const { inspect } = require('util');
 const { DetoxRuntimeError } = require('../../errors');
 const invoke = require('../../invoke');
 const DetoxMatcherApi = require('../espressoapi/DetoxMatcher');
+
+class NativeMatcher {
+  static _assertMatcher(matcher) {
+    if (!(matcher instanceof NativeMatcher)) {
+      throw new DetoxRuntimeError({ message: `Expected a matcher, got: ${inspect(matcher)}` });
+    }
   }
 
   constructor(call) {
     this._call = call || null;
-  }
-
-  withAncestor(matcher) {
-    NativeMatcher._assertMatcher(matcher);
-
-    const call = invoke.callDirectly(DetoxMatcherApi.matcherWithAncestor(this, matcher));
-    return new NativeMatcher(call);
-  }
-
-  withDescendant(matcher) {
-    NativeMatcher._assertMatcher(matcher);
-
-    const call = invoke.callDirectly(DetoxMatcherApi.matcherWithDescendant(this, matcher));
-    return new NativeMatcher(call);
-  }
-
   and(matcher) {
     NativeMatcher._assertMatcher(matcher);
 

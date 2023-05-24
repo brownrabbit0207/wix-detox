@@ -3,6 +3,12 @@ id: mocking-user-activity
 slug: api/mocking-user-activity
 title: Mocking User Activity
 sidebar_label: Mocking User Activity
+---
+
+## Mocking User Activity
+
+Detox supports mocking user activity for iOS apps.
+
 The user activity API is used to mock an external user activity state. The app normally uses this state to continue the activity inside the app. This API is also used for associated domains, Spotlight search handling and Siri intents.
 
 ### Mocking App Launch with a User Activity

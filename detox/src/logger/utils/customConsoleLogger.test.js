@@ -3,26 +3,16 @@ describe('customConsoleLogger', () => {
   let restoreConsoleMethods;
   let fakeConsole, bunyanLogger;
 
+  beforeEach(() => {
+    overrideConsoleMethods = require('./customConsoleLogger').overrideConsoleMethods;
+    restoreConsoleMethods = require('./customConsoleLogger').restoreConsoleMethods;
+
+    fakeConsole = {
+      log: jest.fn(),
       warn: jest.fn(),
       trace: jest.fn(),
       error: jest.fn(),
       debug: jest.fn(),
-      assert: jest.fn(),
-    };
-
-    bunyanLogger = {
-      debug: jest.fn(),
-      warn: jest.fn(),
-      info: jest.fn(),
-      error: jest.fn(),
-    };
-  });
-
-  describe('- override safety -', () => {
-    it('should override console methods, if it has no internal property __detox_log__', () => {
-      expect(overrideConsoleMethods({ ...fakeConsole }, bunyanLogger)).not.toEqual(fakeConsole);
-    });
-
     it('should not override console methods, if it has an internal property __detox_log__', () => {
       fakeConsole.__detox_log__ = {};
       expect(overrideConsoleMethods({ ...fakeConsole }, bunyanLogger)).toEqual(fakeConsole);

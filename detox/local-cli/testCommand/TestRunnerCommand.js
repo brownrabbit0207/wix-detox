@@ -3,26 +3,16 @@ const cp = require('child_process');
 const _ = require('lodash');
 const parser = require('yargs-parser');
 const unparse = require('yargs-unparser');
+
+const detox = require('../../internals');
+const log = detox.log.child({ cat: ['lifecycle', 'cli'] });
+const { printEnvironmentVariables, prependNodeModulesBinToPATH } = require('../../src/utils/envUtils');
+const { toSimplePath } = require('../../src/utils/pathUtils');
+const { escapeSpaces, useForwardSlashes } = require('../../src/utils/shellUtils');
 const sleep = require('../../src/utils/sleep');
 const AppStartCommand = require('../startCommand/AppStartCommand');
 const { markErrorAsLogged } = require('../utils/cliErrorHandling');
 
-const TestRunnerError = require('./TestRunnerError');
-
-class TestRunnerCommand {
-  /*
-    @param {object} opts
-    @param {DetoxInternals.RuntimeConfig} opts.config
-    @param {ProcessEnv} opts.env
-  */
-  constructor(opts) {
-    const cliConfig = opts.config.cli;
-    const deviceConfig = opts.config.device;
-    const runnerConfig = opts.config.testRunner;
-    const appsConfig = opts.config.apps;
-
-    this._argv = runnerConfig.args;
-    this._retries = runnerConfig.retries;
     this._envHint = this._buildEnvHint(opts.env);
     this._startCommands = this._prepareStartCommands(appsConfig, cliConfig);
     this._envFwd = {};

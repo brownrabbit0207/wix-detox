@@ -3,26 +3,16 @@ import {
   globalSetup,
   globalTeardown,
   DetoxCircusEnvironment,
+  DetoxCircusListener,
+  DetoxCircusListenerConstructorOpts
+} from 'detox/runners/jest';
+
+class NoneListener implements DetoxCircusListener {}
+
 class OmniListener implements DetoxCircusListener {
   constructor(opts: DetoxCircusListenerConstructorOpts) {
     console.log('Current test path is:', opts.env.testPath);
   }
-
-  start_describe_definition(event: Circus.Event & { name: 'start_describe_definition' }, state: Circus.State) {
-    if (state.unhandledErrors.length > 0) return;
-    console.log(event.blockName);
-  }
-
-  finish_describe_definition(event: Circus.Event & { name: 'finish_describe_definition' }, state: Circus.State) {
-    if (state.unhandledErrors.length > 0) return;
-    console.log(event.blockName);
-  }
-
-  add_hook(event: Circus.Event & { name: 'add_hook' }, state: Circus.State) {
-    if (state.unhandledErrors.length > 0) return;
-    console.log(event.hookType);
-  }
-
   add_test(event: Circus.Event & { name: 'add_test' }, state: Circus.State) {
     if (state.unhandledErrors.length > 0) return;
     console.log(event.testName);

@@ -3,26 +3,16 @@ const _ = require('lodash');
 
 const InstrumentsArtifactPlugin = require('../artifacts/instruments/InstrumentsArtifactPlugin');
 const LogArtifactPlugin = require('../artifacts/log/LogArtifactPlugin');
+const ScreenshotArtifactPlugin = require('../artifacts/screenshot/ScreenshotArtifactPlugin');
+const IosUIHierarchyPlugin = require('../artifacts/uiHierarchy/IosUIHierarchyPlugin');
+const buildDefaultArtifactsRootDirpath = require('../artifacts/utils/buildDefaultArtifactsRootDirpath');
+const VideoArtifactPlugin = require('../artifacts/video/VideoArtifactPlugin');
+
+/**
  * @param {*} cliConfig
  * @param {string} configurationName
  * @param {Detox.DetoxConfig} globalConfig
  * @param {Detox.DetoxConfiguration} localConfig
- */
-function composeArtifactsConfig({
-  cliConfig,
-  configurationName,
-  localConfig,
-  globalConfig,
-}) {
-  const artifactsConfig = _.defaultsDeep(
-    extendArtifactsConfig({
-      rootDir: cliConfig.artifactsLocation,
-      plugins: {
-        log: cliConfig.recordLogs,
-        screenshot: cliConfig.takeScreenshots,
-        video: cliConfig.recordVideos,
-        instruments: cliConfig.recordPerformance,
-        uiHierarchy: cliConfig.captureViewHierarchy,
       },
     }),
     extendArtifactsConfig(localConfig.artifacts),

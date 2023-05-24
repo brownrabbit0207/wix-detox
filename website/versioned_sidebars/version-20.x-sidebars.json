@@ -3,26 +3,16 @@
     {
       "type": "category",
       "label": "Introduction",
+      "items": [
+        "introduction/getting-started",
+        "introduction/project-setup",
+        "introduction/your-first-test",
+        "introduction/debugging",
+        "introduction/preparing-for-ci"
       ]
     },
     {
       "type": "category",
-      "label": "Guides",
-      "items": [
-        "guide/investigating-test-failure",
-        "guide/test-id",
-        "guide/parallel-test-execution",
-        "guide/genymotion-saas",
-        "guide/taking-screenshots",
-        "guide/mocking",
-        "guide/launch-args",
-        "guide/mocking-open-with-url",
-        "guide/mocking-user-notifications",
-        "guide/mocking-user-activity",
-        "guide/developing-while-writing-tests",
-        "guide/android-dev-env",
-        "guide/proguard-configuration",
-        "guide/cucumber-js-integration",
         "guide/uninstalling"
       ]
     },

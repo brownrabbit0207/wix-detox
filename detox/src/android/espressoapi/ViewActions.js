@@ -4,25 +4,15 @@
 	For more information see generation/README.md.
 */
 
+
+function sanitize_matcher(matcher) {
+  if (!matcher._call) {
+    return matcher;
+  }
+
   const originalMatcher = typeof matcher._call === 'function' ? matcher._call() : matcher._call;
   return originalMatcher.type ? originalMatcher.value : originalMatcher;
 } 
-class ViewActions {
-  static clearGlobalAssertions() {
-    return {
-      target: {
-        type: "Class",
-        value: "androidx.test.espresso.action.ViewActions"
-      },
-      method: "clearGlobalAssertions",
-      args: []
-    };
-  }
-
-  static actionWithAssertions(viewAction) {
-    return {
-      target: {
-        type: "Class",
         value: "androidx.test.espresso.action.ViewActions"
       },
       method: "actionWithAssertions",

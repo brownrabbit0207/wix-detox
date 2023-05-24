@@ -3,26 +3,16 @@ package com.wix.invoke;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 import com.wix.invoke.types.ClassTarget;
+import com.wix.invoke.types.Invocation;
+import com.wix.invoke.types.InvocationTarget;
+import com.wix.invoke.types.ObjectInstanceTarget;
+
+import org.junit.Before;
+import org.junit.Test;
 
 
 /**
  * Created by rotemm on 10/10/2016.
- */
-public class MethodInvocationTest {
-    MethodInvocation uut;
-
-    @Before
-    public void setUp() {
-        uut = new MethodInvocation();
-    }
-
-    @Test(expected = RuntimeException.class)
-    public void invokeEmptyInvocation() {
-        assertThat(invoke(new Invocation(null, null))).isNull();
-    }
-
-    @Test
-    public void invokeStaticStringValueOfInteger() {
         Invocation invocation = new Invocation(new ClassTarget("java.lang.String"), "valueOf", 0);
         assertThat(invoke(invocation)).isEqualTo("0");
     }

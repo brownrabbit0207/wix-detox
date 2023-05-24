@@ -3,6 +3,12 @@
 //  Detox
 //
 //  Created by Asaf Korem on 02/12/2021.
+//  Copyright © 2021 Wix. All rights reserved.
+//
+
+#import "UIResponder+First.h"
+
+static __weak UIResponder *_dtx_first;
 
 @implementation UIResponder (First)
 

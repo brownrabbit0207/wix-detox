@@ -3,26 +3,16 @@
 //  Detox
 //
 //  Created by Tal Kol on 6/28/16.
+//  Copyright © 2016 Wix. All rights reserved.
+//
+
+#import "ReactNativeSupport.h"
+#import "ReactNativeHeaders.h"
+
 #include <dlfcn.h>
 #include <stdatomic.h>
 @import ObjectiveC;
 @import Darwin;
-#import <DetoxSync/DTXReactNativeSupport.h>
-
-DTX_CREATE_LOG(ReactNativeSupport);
-
-static NSString *const RCTReloadNotification = @"RCTReloadNotification";
-
-@implementation ReactNativeSupport
-
-+ (BOOL)isReactNativeApp
-{
-	return [DTXReactNativeSupport hasReactNative];
-}
-
-+ (void)reloadApp
-{
-	if([DTXReactNativeSupport hasReactNative] == NO)
 	{
 		return;
 	}

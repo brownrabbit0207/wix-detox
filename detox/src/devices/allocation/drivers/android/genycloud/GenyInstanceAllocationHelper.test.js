@@ -3,26 +3,16 @@ describe('Genymotion-Cloud instance allocation helper', () => {
   const recipeName = 'mock-recipe-name';
 
   let logger;
+  let deviceRegistry;
+  let instanceLookupService;
+  let instanceLifecycleService;
+  let GenyInstance;
+  let uut;
+  beforeEach(() => {
     jest.mock('../../../../../utils/logger');
     logger = require('../../../../../utils/logger');
 
     const DeviceRegistry = jest.genMockFromModule('../../../../DeviceRegistry');
-    deviceRegistry = new DeviceRegistry();
-    deviceRegistry.allocateDevice.mockImplementation((func) => func());
-
-    const InstanceLookupService = jest.genMockFromModule('../../../../common/drivers/android/genycloud/services/GenyInstanceLookupService');
-    instanceLookupService = new InstanceLookupService();
-
-    const InstanceLifecycleService = jest.genMockFromModule('../../../../common/drivers/android/genycloud/services//GenyInstanceLifecycleService');
-    instanceLifecycleService = new InstanceLifecycleService();
-
-    GenyInstance = jest.genMockFromModule('../../../../common/drivers/android/genycloud/services//dto/GenyInstance');
-
-    const InstanceAllocationHelper = require('./GenyInstanceAllocationHelper');
-    uut = new InstanceAllocationHelper({ deviceRegistry, instanceLookupService, instanceLifecycleService });
-  });
-
-  const aRecipe = () => ({
     uuid: recipeUUID,
     name: recipeName,
     toString: () => 'mock-recipe-toString()',

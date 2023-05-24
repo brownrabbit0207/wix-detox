@@ -3,26 +3,16 @@ jest.mock('../../../utils/logger.js');
 const testSummaries = require('../../__mocks__/testSummaries.mock');
 
 const WholeTestRecorderPlugin = require('./WholeTestRecorderPlugin');
+const ArtifactsApi = require('./__mocks__/ArtifactsApi.mock');
+
+describe('WholeTestRecorderPlugin', () => {
+  let api;
+  let plugin;
+
   beforeEach(() => {
     api = new ArtifactsApi({
       config: {
         enabled: false,
-        keepOnlyFailedTestsArtifacts: false,
-      },
-    });
-    plugin = new FakeWholeTestRecorderPlugin({ api });
-  });
-
-  describe('when disabled', () => {
-    beforeEach(() => plugin.disable());
-
-    describe('onTestStart', () => {
-      beforeEach(async () => plugin.onTestStart(testSummaries.running()));
-
-      it('should not create recording onTestStart', async () =>
-        expect(plugin.createTestRecording).not.toHaveBeenCalled());
-    });
-
     describe('onTestDone', () => {
       beforeEach(async () => plugin.onTestDone(testSummaries.passed()));
 

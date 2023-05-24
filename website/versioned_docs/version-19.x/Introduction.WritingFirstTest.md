@@ -3,25 +3,15 @@ id: writing-first-test
 slug: introduction/writing-first-test
 title: Writing Your First Test
 sidebar_label: Writing Your First Test
+---
+
+## Writing Your First Test
+
+This tutorial assumes you’ve already installed Detox successfully on a working React Native project.
+
 ### Detox Recorder
 
 Check out [Detox Recorder](https://github.com/wix/DetoxRecorder), our tool for recording tests directly from your device.
-
-### Step 1: Prepare a JavaScript File to Hold Your Scenario (Spec)
-
-Every Detox test scenario is usually placed in its own JavaScript file. If you’ve followed the [installation tutorial](introduction/getting-started.md), these files are located in `/e2e/*.spec.js` under your React Native project root. Feel free to place these files wherever you like, this directory structure is just a recommendation.
-
-If you’re using Mocha as your test runner, these files will simply be executed one by one when you run your tests.
-
-If you’ve followed the installation tutorial, you should already have `firstTest.spec.js` as a placeholder to start from.
-
-### Step 2: Decide how to Reset Your App for the Beginning of the Scenario
-
-In order to start the scenario from a predictable app state and reset the state from any previous scenarios that may have been running, it’s customary to start the scenario by restarting the app.
-
-The fastest way to reset is by calling `await device.reloadReactNative();`. This is equivalent to pressing CMD+R in the simulator window - it will just reload the React Native bundle. You can find other alternatives that may be slower but more thorough [here](APIRef.DeviceObjectAPI.md).
-
-Our scenario is made from multiple different test cases (`it()` clauses). We usually want to reset before each one is running. This can be accomplished by placing the reset logic inside a `beforeEach()` clause.
 
 ### Step 3: Add `testID`s to Your App to Assist in Matching Elements
 

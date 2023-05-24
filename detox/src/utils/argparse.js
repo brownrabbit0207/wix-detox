@@ -3,26 +3,16 @@ const path = require('path');
 const _ = require('lodash');
 
 const { escape } = require('./pipeCommands');
+
+function getEnvValue(key) {
+  const envKey = _.findKey(process.env, matchesKey(
+    `DETOX_${_.snakeCase(key)}`.toUpperCase()
+  ));
+
   let value = process.env[envKey];
   if (value === 'undefined') {
     value = undefined;
   }
-
-  return value;
-}
-
-function matchesKey(key) {
-  return /* istanbul ignore next */ process.platform === 'win32'
-    ? (value, envKey) => envKey.toUpperCase() === key
-    : (value, envKey) => envKey === key;
-}
-
-const DEFAULT_JOIN_ARGUMENTS_OPTIONS = {
-  prefix: '--',
-  joiner: ' ',
-};
-
-function joinArgs(keyValues, options = DEFAULT_JOIN_ARGUMENTS_OPTIONS) {
   const { prefix, joiner } = options === DEFAULT_JOIN_ARGUMENTS_OPTIONS
     ? options
     : { ...DEFAULT_JOIN_ARGUMENTS_OPTIONS, ...options };

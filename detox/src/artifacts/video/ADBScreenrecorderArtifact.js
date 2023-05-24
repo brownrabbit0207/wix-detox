@@ -3,26 +3,16 @@ const { interruptProcess } = require('../../utils/childProcess');
 const retry = require('../../utils/retry');
 const sleep = require('../../utils/sleep');
 const Artifact = require('../templates/artifact/Artifact');
+
+class ADBVideoRecording extends Artifact {
+  constructor(config) {
+    super(config);
+
+    this.adb = config.adb;
     this.deviceId = config.deviceId;
     this.pathToVideoOnDevice = config.pathToVideoOnDevice;
     this.screenRecordOptions = config.screenRecordOptions || {};
 
-    this.processPromise = null;
-    this._waitWhileVideoIsBusy = null;
-  }
-
-  async doStart() {
-    this.processPromise = this.adb.screenrecord(this.deviceId, {
-      ...this.screenRecordOptions,
-      path: this.pathToVideoOnDevice
-    });
-
-    await sleep(300); // wait while video is most likely empty
-    await retry(() => this._assertVideoIsBeingRecorded());
-  }
-
-  async doStop() {
-    if (this.processPromise) {
       await interruptProcess(this.processPromise);
       this.processPromise = null;
 

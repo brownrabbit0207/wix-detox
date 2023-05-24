@@ -3,26 +3,16 @@
 As the number of your end-to-end tests grows, the overall test session duration might easily surpass an hour or two.
 A good idea first would be to parallelize the test execution using your test runner (e.g. for Jest that
 would be forwarding `--maxWorkers <N>`), but this approach has its limitations. Indeed, an average build agent would handle
+running a few virtual devices at once, but running a dozen devices at once would make it slow and unreliable.
+
+In other words, if you're experiencing scaling issues or struggling with managing local Android emulators,
+a good idea would be to migrate to SaaS platforms, where you can start and stop devices on demand at any scale.
+At the moment, Detox can offer you a first-class integration with
+[Genymotion SaaS], the platform that offers cloud-based Android Virtual Devices.
 
 ## Prerequisites
 
 You need to register an account in [Genymotion SaaS], so that you have valid credentials to use with their CLI tool,
-[`gmsaas`]. If you already have an account there, make sure there are available device minutes. Don't worry about
-the new accounts – they come with **2** concurrent devices and free **60** minutes out of the box.
-
-![](../img/genymotion/register.png)
-
-Next, you should get `gmsaas` CLI tool [installed and configured][Genymotion SaaS tutorial],
-so that you're able to see your e-mail after running this:
-
-```bash
-gmsaas auth whoami
-# your_email@example.com
-```
-
-If you encounter errors instead, please revisit the [Genymotion SaaS tutorial] and check out their [Known Issues]
-section if your problem persists.
-
 ## Configuring
 
 To run tests on a device, you need to define its properties first: OS version, screen dimensions, etc.

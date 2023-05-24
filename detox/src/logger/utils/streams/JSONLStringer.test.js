@@ -3,6 +3,12 @@ const JSONLStringer = require('./JSONLStringer');
 describe('JSONLStringer', () => {
   it('should serialize to JSONL', (resolve) => {
     expect.hasAssertions();
+
+    let output = '';
+    const stringer = JSONLStringer.serializeJSONL()
+      .on('data', (chunk) => { output += chunk; })
+      .on('end', () => {
+        expect(output).toEqual('{"a":1}\n{"b":2}');
         resolve();
       });
 

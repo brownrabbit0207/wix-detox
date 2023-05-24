@@ -3,20 +3,10 @@ describe('Device', () => {
     await device.reloadReactNative();
     await element(by.text('Sanity')).tap();
     await element(by.text('Say Hello')).tap();
-    await element(by.text('Say Hello')).tap();
     await expect(element(by.text('Hello!!!'))).toBeVisible();
   });
 
-  it('relaunchApp({delete: true}) - should tap successfully', async () => {
-    await device.relaunchApp({delete: true});
-    await element(by.text('Sanity')).tap();
-    await element(by.text('Say Hello')).tap();
-    await expect(element(by.text('Hello!!!'))).toBeVisible();
-  });
-
-  it('uninstall() + install() + relaunch() - should tap successfully', async () => {
-    await device.uninstallApp();
-    await device.installApp();
+  it('relaunchApp - should tap successfully', async () => {
     await device.relaunchApp();
     await element(by.text('Sanity')).tap();
     await element(by.text('Say Hello')).tap();

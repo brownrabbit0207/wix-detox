@@ -3,26 +3,16 @@ describe('BinaryExec', () => {
 
   let exec;
   let spawn;
+  let binaryExec;
+  beforeEach(() => {
+    jest.mock('../../../../../utils/childProcess', () => ({
+      execWithRetriesAndLogs: jest.fn().mockResolvedValue({
+        stdout: '',
+      }),
     }));
     exec = require('../../../../../utils/childProcess').execWithRetriesAndLogs;
 
     jest.mock('child-process-promise', () => ({
-      spawn: jest.fn()
-    }));
-    spawn = require('child-process-promise').spawn;
-
-    const { BinaryExec } = require('./BinaryExec');
-    binaryExec = new BinaryExec(binaryPath);
-  });
-
-  it('should return the binary-path as the toString()', async () => {
-    expect(binaryExec.toString()).toEqual(binaryPath);
-  });
-
-  describe('exec-command', () => {
-    it('exec-command should return args as toString()', () => {
-      const { ExecCommand } = require('./BinaryExec');
-      class MockExecCommand extends ExecCommand {
         _getArgsString() {
           return 'test args';
         }

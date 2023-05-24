@@ -4,25 +4,15 @@ import Location from './partials/_location.mdx';
 
 :::info
 
+This article is incomplete. We're looking forward to improve this article as soon as we have an opportunity to do so.
+
+:::
+
+Detox can store artifacts such as transient screenshots and device logs.
+
 ## Location
 
 <Location sectionName="artifacts" />
-
-## Example
-
-You can control artifacts collection via Detox configuration:
-
-```js
-{
-  "artifacts": {
-    "rootDir": ".artifacts",
-    "pathBuilder": "./config/pathbuilder.js",
-    "plugins": {
-      "instruments": {"enabled": false},
-      "log": {"enabled": true},
-      "uiHierarchy": "enabled",
-      "screenshot": {
-        "shouldTakeAutomaticSnapshots": true,
         "keepOnlyFailedTestsArtifacts": true,
         "takeWhen": {
           "testStart": false,

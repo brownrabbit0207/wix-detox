@@ -3,26 +3,16 @@ const { DetoxInternalError, DetoxRuntimeError } = require('../../errors');
 const logger = require('../../utils/logger');
 const formatJSONStatus = require('../actions/formatters/SyncStatusFormatter');
 
+class Action {
+  constructor(type, params = {}) {
+    this.type = type;
+    this.params = params;
+    this.messageId = undefined;
+  }
 
   expectResponseOfType(response, type) {
     if (response.type !== type) {
       throw new DetoxInternalError(`was expecting '${type}' , got ${JSON.stringify(response)}`);
-    }
-  }
-
-  /** @returns {boolean} */
-  get isAtomic() {
-    throw new DetoxInternalError(`Action.prototype.isAtomic must be defined for ${this.type}`);
-  }
-
-  /** @returns {number} */
-  get timeout() {
-    throw new DetoxInternalError(`Action.prototype.timeout getter must be defined for ${this.type}`);
-  }
-}
-
-class Login extends Action {
-  constructor(sessionId) {
     const params = {
       sessionId: sessionId,
       role: 'tester'

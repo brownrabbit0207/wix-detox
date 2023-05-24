@@ -3,26 +3,16 @@ const _ = require('lodash');
 
 describe('Global-context lifecycle handler for Genymotion SaaS emulators', () => {
   const anInstance = () => {
+    const instance = new GenyInstance();
+    instance.uuid = 'mock-instance-uuid';
+    instance.name = 'mock-instance-name';
+    instance.toString = () => 'mock-instance-toString()';
+    return instance;
+  };
 
   let GenyInstance;
   let logger;
   let deviceCleanupRegistry;
-  let instanceLifecycleService;
-  let lifecycleHandler;
-
-  beforeEach(() => {
-    jest.mock('../../utils/logger');
-    logger = require('../../utils/logger');
-
-    GenyInstance = jest.genMockFromModule('../common/drivers/android/genycloud/services/dto/GenyInstance');
-
-    const DeviceRegistry = jest.genMockFromModule('../DeviceRegistry');
-    deviceCleanupRegistry = new DeviceRegistry();
-
-    const InstanceLifecycleService = jest.genMockFromModule('../common/drivers/android/genycloud/services/GenyInstanceLifecycleService');
-    instanceLifecycleService = new InstanceLifecycleService();
-
-    const GenyGlobalLifecycleHandler = require('./GenyGlobalLifecycleHandler');
     lifecycleHandler = new GenyGlobalLifecycleHandler({ deviceCleanupRegistry, instanceLifecycleService });
   });
 

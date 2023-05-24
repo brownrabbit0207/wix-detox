@@ -3,26 +3,16 @@ const path = require('path');
 
 describe('loadExternalConfig', () => {
   const DIR_PACKAGEJSON = path.join(__dirname, '__mocks__/configuration/packagejson');
+  const DIR_PRIORITY = path.join(__dirname, '__mocks__/configuration/priority');
+  const DIR_EXTENDS = path.join(__dirname, '__mocks__/configuration/extends');
+  const DIR_BADCONFIG = path.join(__dirname, '__mocks__/configuration/badconfig');
+
+  let DetoxConfigErrorComposer;
+  /** @type {DetoxConfigErrorComposer} */
   let errorComposer;
   let loadExternalConfig;
   let logger;
 
-  beforeEach(() => {
-    jest.mock('../utils/logger');
-    logger = require('../utils/logger');
-
-    DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
-    errorComposer = new DetoxConfigErrorComposer();
-
-    loadExternalConfig = (opts) => require('./loadExternalConfig')({
-      cwd: process.cwd(),
-      errorComposer,
-      ...opts,
-    });
-  });
-
-  it('should implicitly use .detoxrc.js, even if there is package.json', async () => {
-    const { filepath, config } = await loadExternalConfig({ cwd: DIR_PRIORITY });
 
     expect(filepath).toBe(path.join(DIR_PRIORITY, '.detoxrc.js'));
     expect(config).toMatchObject({ configurations: expect.anything() });

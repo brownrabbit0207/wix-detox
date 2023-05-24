@@ -3,26 +3,16 @@ package com.wix.detox.inquiry
 import androidx.test.espresso.IdlingResource
 import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource
 import org.assertj.core.api.Assertions.assertThat
+import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.mock
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
+
+class DetoxBusyResourceSpec: Spek({
     describe("Detox busy resource") {
         data class TestCase<in T: IdlingResource>(
             val caseTitle: String,
             val idlingResource: IdlingResource,
-            val expectedDescription: DetoxBusyResourceDescription
-        )
-
-        describe("given a descriptive idling resource") {
-            val mockedDebugName = "mock:debug-name"
-
-            fun aDescriptiveIdlingResource(busyHint: Map<String, Any>?): DescriptiveIdlingResource =
-                mock() {
-                    on { getDebugName() }.doReturn(mockedDebugName)
-                    on { getBusyHint() }.doReturn(busyHint)
-                }
-
-            listOf(
-                TestCase<IdlingResource>(
-                    caseTitle = "should return a description based on debug-name and busy-hint",
-                    idlingResource = aDescriptiveIdlingResource(mapOf("mocked" to "hint", "mocked2" to "hint2")),
                     expectedDescription = DetoxBusyResourceDescription.Builder()
                         .name(mockedDebugName)
                         .addDescription("mocked", "hint")

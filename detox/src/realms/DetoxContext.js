@@ -3,26 +3,16 @@ const funpermaproxy = require('funpermaproxy');
 const temporary = require('../artifacts/utils/temporaryPath');
 const { DetoxRuntimeError } = require('../errors');
 const { DetoxLogger, DetoxLogFinalizer, installLegacyTracerInterface } = require('../logger');
+
+const DetoxConstants = require('./DetoxConstants');
+const symbols = require('./symbols');
+
+//#region Protected symbols
+const $cleanup = Symbol('cleanup');
 const $logFinalizer = Symbol('logFinalizer');
 const $restoreSessionState = Symbol('restoreSessionState');
 const $sessionState = Symbol('restoreSessionState');
 const $status = Symbol('status');
-const $worker = Symbol('worker');
-//#endregion
-
-class DetoxContext {
-  constructor() {
-    /** @type {DetoxInternals.DetoxStatus} */
-    this[$status] = 'inactive';
-
-    const _init = this[symbols.init].bind(this);
-    this[symbols.init] = async (opts) => {
-      this[$status] = 'init';
-      await _init(opts);
-      this[$status] = 'active';
-    };
-
-    const _cleanup = this[symbols.cleanup].bind(this);
     this[symbols.cleanup] = async () => {
       this[$status] = 'cleanup';
       try {

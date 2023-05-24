@@ -3,6 +3,12 @@
 :::tip
 
 You can skip this guide if you are working solely with debug builds (`android.emu.debug`, etc.),
+but as soon as you move to the **release builds**, where the native code gets minified and obfuscated,
+you are going to have problems with Detox if you leave your ProGuard rules not configured.
+
+:::
+
+Since Detox relies on [Android Reflection API] to integrate with React Native on Android, you should keep [ProGuard minification] under tight control.
 Otherwise, you’ll be seeing Detox crashing or hanging up infinitely upon an attempt to run tests with your app built in **release mode**.
 
 To fix that, you’d need to return to your app build script:

@@ -3,24 +3,14 @@
 //  example
 //
 //  Created by Leo Natan on 1/31/21.
+//  Copyright © 2021 Wix. All rights reserved.
+//
+
+#import "DragDropViewController.h"
+
+@interface DragDropViewController () <UIDragInteractionDelegate, UIDropInteractionDelegate>
 {
 	UILabel* _statusLabel;
-}
-
-@end
-
-@implementation DragDropViewController
-
-- (instancetype)init
-{
-	self = [super init];
-	
-	if(self)
-	{
-		self.modalPresentationStyle = UIModalPresentationFullScreen;
-	}
-	
-	return self;
 }
 
 - (void)viewDidLoad

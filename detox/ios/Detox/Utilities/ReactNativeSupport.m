@@ -3,6 +3,12 @@
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 7/15/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
+
+@import ObjectiveC;
+
+@interface NSObject (DTXRNFix) @end
 @implementation NSObject (DTXRNFix)
 
 //Disable live reload for Detox

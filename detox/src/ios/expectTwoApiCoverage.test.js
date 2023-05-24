@@ -3,26 +3,16 @@ describe('expectTwo API Coverage', () => {
   let e;
 
   beforeEach(() => {
+    const IosExpect = require('./expectTwo');
+
+    e = new IosExpect({
+      invocationManager: new MockExecutor(),
+    });
+  });
 
   describe('Matchers', () => {
     it(`by.accessibilityLabel`, async () => {
       await e.expect(e.element(e.by.accessibilityLabel('test'))).toBeVisible();
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).toBeVisible(25);
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).toBeNotVisible();
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).not.toBeVisible();
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).not.toBeVisible(25);
-
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).toExist();
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).toNotExist();
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).not.toExist();
-
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).toHaveText('text');
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).toNotHaveText('text');
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).not.toHaveText('text');
-
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).toHaveLabel('label');
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).toNotHaveLabel('label');
-      await e.expect(e.element(e.by.accessibilityLabel('test'))).not.toHaveLabel('label');
 
       await e.expect(e.element(e.by.accessibilityLabel('test'))).toHaveId('id');
       await e.expect(e.element(e.by.accessibilityLabel('test'))).toNotHaveId('id');

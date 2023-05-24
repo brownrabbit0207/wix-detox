@@ -3,26 +3,16 @@
 The `device` object is globally available in every test file, unless you use `exposeGlobals: false` in the behavior config,
 and even then you can import it from Detox package:
 
+```js
+const { device } = require('detox');
+```
+
+It enables control over the current attached device.
+
 ## Public Properties
 
 ### `device.id`
 
-Holds the environment-unique ID of the device - namely, the `adb` ID on Android (e.g. `emulator-5554`) and the Mac-global simulator UDID on iOS, as used by `simctl` (e.g. `AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE`).
-
-The value will be `undefined` until the device is properly _prepared_ (i.e. in `detox.init()`).
-
-### `device.name`
-
-Holds a descriptive name of the device. Example: `emulator-5554 (Pixel_API_26)`
-
-The value will be `undefined` until the device is properly _prepared_ (i.e. in `detox.init()`).
-
-### `device.appLaunchArgs`
-
-Access the launch-arguments predefined by the user in preliminary, static scopes such as the Detox [configuration file](../config/apps.mdx)
-and [command-line arguments](../cli/test.md). This access allows, through dedicated methods, for both value-querying and modification:
-
-```js
 // Modify some of the predefined arguments:
 device.appLaunchArgs.modify({
   mockServerPort: 1234,

@@ -3,26 +3,16 @@ describe('Genymotion-Cloud Instance DTO', () => {
     uuid: 'mock-uuid',
     name: 'mock-name',
     state: undefined,
+    recipe: {
+      uuid: 'mock-recipe-uuid',
+      name: 'mock-recipe-name',
+    },
+  };
+
   const disconnectedRawInstance = {
     ...rawInstance,
     state: 'ONLINE',
     adb_serial: '0.0.0.0',
-    adb_serial_port: 0,
-  };
-
-  const connectedRawInstance = {
-    ...rawInstance,
-    state: 'ONLINE',
-    adb_serial: 'localhost:7777',
-    adb_serial_port: 7777,
-  };
-
-  const bootingInstance = {
-    ...disconnectedRawInstance,
-    state: 'BOOTING',
-  };
-  const startingInstance = {
-    ...disconnectedRawInstance,
     state: 'STARTING',
   };
   const creatingInstance = {

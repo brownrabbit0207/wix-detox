@@ -3,26 +3,16 @@ const { PassThrough } = require('stream');
 
 const bunyanDebugStream = require('bunyan-debug-stream');
 const multiSort = require('multi-sort-stream');
+const pipe = require('multipipe');
+const stripAnsi = require('strip-ansi');
+
+const DetoxJSONLParser = require('./DetoxJSONLParser');
+const { mapTransform, through } = require('./transformers');
+
 class BunyanTransformer {
   /**
    * @param {Detox.Logger} log
    */
-  constructor(log) {
-    this._jsonlParser = new DetoxJSONLParser(log);
-  }
-
-  /**
-   * @param {string[]} logFilePaths
-   */
-  uniteSessionLogs(logFilePaths) {
-    const intermediate = mapTransform(BunyanTransformer.normalizeBunyanRecord);
-    const reemitError = (err) => intermediate.emit('error', err);
-
-    const jsonlStreams = logFilePaths.map(filePath => {
-      const { readable, writable } = this._jsonlParser.createTransformer();
-      fs.createReadStream(filePath)
-        .on('error', reemitError)
-        .pipe(writable);
 
       return readable;
     });

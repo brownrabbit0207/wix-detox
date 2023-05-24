@@ -3,6 +3,12 @@ id: expect
 slug: api/expect
 title: Expect
 sidebar_label: Expect
+---
+
+## Expect
+
+Detox uses [matchers](APIRef.Matchers.md) to match UI elements in your app and expectations to verify those elements are in the expected state.
+
 Use [actions](APIRef.ActionsOnElement.md) to simulate use interaction with elements.
 
 ### Methods

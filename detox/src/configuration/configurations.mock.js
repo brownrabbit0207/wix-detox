@@ -3,26 +3,16 @@ const LogArtifactPlugin = require('../artifacts/log/LogArtifactPlugin');
 const ScreenshotArtifactPlugin = require('../artifacts/screenshot/ScreenshotArtifactPlugin');
 const IosUIHierarchyPlugin = require('../artifacts/uiHierarchy/IosUIHierarchyPlugin');
 const VideoArtifactPlugin = require('../artifacts/video/VideoArtifactPlugin');
+
+const defaultArtifactsConfiguration = {
+  rootDir: 'artifacts',
+  pathBuilder: null,
+  plugins: {
+    log: 'none',
     screenshot: 'manual',
     video: 'none',
     instruments: 'none',
     uiHierarchy: 'disabled',
-  },
-};
-
-const allArtifactsConfiguration = {
-  rootDir: 'artifacts',
-  pathBuilder: null,
-  plugins: {
-    log: 'all',
-    screenshot: 'all',
-    video: 'all',
-    instruments: 'all',
-    uiHierarchy: 'enabled',
-  },
-};
-
-const pluginsDefaultsResolved = {
   log: LogArtifactPlugin.parseConfig('none'),
   screenshot: ScreenshotArtifactPlugin.parseConfig('manual'),
   video: VideoArtifactPlugin.parseConfig('none'),
