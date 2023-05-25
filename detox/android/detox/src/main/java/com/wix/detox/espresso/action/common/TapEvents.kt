@@ -13,3 +13,18 @@ import android.view.MotionEvent
  * even though for all we know 10ms is enough for any Android native / pure-RN View. The trade-off here, however, being that the more we wait, the
  * higher the chance is for a simple tap to accidentally be registered as a _long_ tap (i.e. on slow devices/emulators).
  * Lastly, With the case of _that_ specific bug, we implicitly indirectly work around it with this approach, because we highly increase
+ * the chance of allowing a frame to be drawn in between the _down_ and _up_ events.
+ */
+private const val EVENTS_TIME_GAP_MS = 30
+
+class TapEvents(private val motionEvents: MotionEvents = MotionEvents()) {
+    fun createEventsSeq(coordinates: FloatArray, precision: FloatArray)
+            = createEventsSeq(coordinates, precision, null)
+
+    fun createEventsSeq(coordinates: FloatArray, precision: FloatArray, downTimestamp: Long?): List<MotionEvent> {
+        val (x, y) = coordinates
+        val downEvent = motionEvents.obtainDownEvent(x, y, precision, downTimestamp)
+        val upEvent = motionEvents.obtainUpEvent(downEvent, downEvent.eventTime + EVENTS_TIME_GAP_MS, x, y)
+        return arrayListOf(downEvent, upEvent)
+    }
+}

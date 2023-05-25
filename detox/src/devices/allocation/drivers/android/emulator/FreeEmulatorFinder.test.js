@@ -14,5 +14,7 @@ describe('FreeEmulatorFinder', () => {
     uut = new FreeEmulatorFinder(mockAdb, mockDeviceRegistry);
   });
 
-  const mockAdbDevices = (devices) => mockAdb.devices.mockResolvedValue({ devices });
-});
+  it('should return device when it is an emulator and avdName matches', async () => {
+    mockAdbDevices([emulator5556]);
+    const result = await uut.findFreeDevice(mockAvdName);
+    expect(result).toBe(emulator5556.adbName);

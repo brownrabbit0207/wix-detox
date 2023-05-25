@@ -14,6 +14,22 @@ const isIos = Platform.OS === 'ios';
 
 const { NativeModule } = NativeModules;
 
+export default class example extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      screen: undefined,
+      screenProps: {},
+      url: undefined,
+      notification: undefined,
+    };
+
+    Linking.addEventListener('url', (params) => this._handleOpenURL(params));
+
+    this.setScreen = this.setScreen.bind(this);
+  }
+
   async componentDidMount() {
     const url = await Linking.getInitialURL();
     if (url) {

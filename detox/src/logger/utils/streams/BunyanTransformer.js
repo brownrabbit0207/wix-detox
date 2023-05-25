@@ -13,6 +13,22 @@ class BunyanTransformer {
   /**
    * @param {Detox.Logger} log
    */
+  constructor(log) {
+    this._jsonlParser = new DetoxJSONLParser(log);
+  }
+
+  /**
+   * @param {string[]} logFilePaths
+   */
+  uniteSessionLogs(logFilePaths) {
+    const intermediate = mapTransform(BunyanTransformer.normalizeBunyanRecord);
+    const reemitError = (err) => intermediate.emit('error', err);
+
+    const jsonlStreams = logFilePaths.map(filePath => {
+      const { readable, writable } = this._jsonlParser.createTransformer();
+      fs.createReadStream(filePath)
+        .on('error', reemitError)
+        .pipe(writable);
 
       return readable;
     });

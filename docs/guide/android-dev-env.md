@@ -18,27 +18,6 @@ To check for your real java-executable’s version, in a command-line console, r
 java -version
 ```
 
-What needs to be verified is that `java` is in-path and that the output contains something like this:
-
-```bash
-java version "11.x.x"
-...
-```
-
-or, if you have [openjdk](https://techoral.com/blog/openjdk-developers-guide.html) installed:
-
-```bash
-openjdk version "11.0.2" 2019-01-1
-...
-```
-
-**Namely, that the version is `11.x.x`**.
-
-> Note: Do not be confused by the Java version potentially used by your browsers, etc. For `Detox`, what the command-line sees is what matters.
-
----
-
-If `java -version` yields an error, it is likely that `java` is either not in your path or not even installed at all. To try to understand which of the two is true, use [this guide](https://www.java.com/en/download/help/path.xml).
 
 If otherwise the version is simply wrong, try these course of actions:
 

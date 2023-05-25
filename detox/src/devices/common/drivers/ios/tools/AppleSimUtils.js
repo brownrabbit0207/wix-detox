@@ -13,16 +13,11 @@ const { quote } = require('../../../../../utils/shellQuote');
 class AppleSimUtils {
   async setPermissions(udid, bundleId, permissionsObj) {
     let permissions = [];
-    const options = {
-      args: `--list ${joinArgs(query)}`,
-      retries: 1,
-      statusLogs: listOptions.trying ? { trying: listOptions.trying } : undefined,
-    };
-    const response = await this._execAppleSimUtils(options);
-    const parsed = this._parseResponseFromAppleSimUtils(response);
-    return parsed;
-  }
+    _.forEach(permissionsObj, function (shouldAllow, permission) {
+      permissions.push(permission + '=' + shouldAllow);
+    });
 
+    const options = {
   /***
    * Boots the simulator if it is not booted already.
    *

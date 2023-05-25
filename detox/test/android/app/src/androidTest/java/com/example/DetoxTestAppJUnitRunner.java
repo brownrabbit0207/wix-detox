@@ -18,4 +18,3 @@ public class DetoxTestAppJUnitRunner extends AndroidJUnitRunner {
         TestButler.teardown(getTargetContext());
         super.finish(resultCode, results);
     }
-}

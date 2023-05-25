@@ -18,27 +18,6 @@ class MotionEvents {
     fun obtainDownEvent(x: Float, y: Float, precision: FloatArray = PRECISION, _downTime: Long?): MotionEvent {
         val pointerProperties = MotionEvent.PointerProperties().apply {
             id = 0
-            toolType = MotionEvent.TOOL_TYPE_UNKNOWN
-        }
-        val pointerCoords = MotionEvent.PointerCoords().apply {
-            clear()
-            this.x = x
-            this.y = y
-            this.pressure = 0f
-            this.size = 1f
-        }
-        val downTime = _downTime ?: SystemClock.uptimeMillis()
-
-        return MotionEvent.obtain(
-                downTime,
-                downTime,
-                MotionEvent.ACTION_DOWN,
-                1,
-                arrayOf(pointerProperties),
-                arrayOf(pointerCoords),
-                0,
-                MotionEvent.BUTTON_PRIMARY,
-                precision[0],
                 precision[1],
                 0,
                 0,

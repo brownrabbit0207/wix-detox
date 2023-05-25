@@ -13,5 +13,21 @@
     "testRunner": {
       "args": {
         "config": "e2e/config.json"
+      }
+    },
+    "configurations": {
+      "plugin": {
+        "device": {
+          "type": "./driver",
+          "binaryPath": "my/random/path",
+          "device": {
+            "foo": "bar"
+          }
+        },
+        "app": {
+          "name": "plugin-example"
+        }
+      }
+    }
   }
 }

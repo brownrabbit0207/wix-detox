@@ -13,16 +13,11 @@ class FakeWebSocket {
     this._events[eventType].push(callback);
   }
 
-      messageId,
-      params: {
-        role,
-        sessionId,
-      },
-    });
-  }
+  send() {}
 
-  mockClose() {
-    this._emit('close');
+  mockMessage(obj) {
+    const arg = !(obj instanceof Buffer || typeof obj === 'string')
+      ? JSON.stringify(obj) : obj;
   }
 
   _emit(eventType, ...args) {

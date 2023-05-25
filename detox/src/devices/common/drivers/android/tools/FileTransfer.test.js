@@ -18,23 +18,3 @@ describe('File-transfer util', () => {
 
     expect(adb.shell).toHaveBeenCalledWith(deviceId, `rm -fr ${deviceDestinationDir}`);
     expect(adb.shell).toHaveBeenCalledWith(deviceId, `mkdir -p ${deviceDestinationDir}`);
-  });
-
-  it('should send a file by path', async () => {
-    const sourcePath = '/source/path/source-file.src';
-    const destFilename = 'dest-file.dst';
-
-    await uut.send(deviceId, sourcePath, destFilename);
-
-    expect(adb.push).toHaveBeenCalledWith(deviceId, sourcePath, '/mock-tmp-dir/dest-file.dst');
-  });
-
-  it('should return final destination path', async () => {
-    const sourcePath = '/source/path/source-file.src';
-    const destFilename = 'dest-file.dst';
-
-    const destPath = await uut.send(deviceId, sourcePath, destFilename);
-
-    expect(destPath).toEqual(`${deviceDestinationDir}/${destFilename}`);
-  });
-});

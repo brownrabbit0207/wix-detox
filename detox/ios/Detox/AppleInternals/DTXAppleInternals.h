@@ -14,6 +14,22 @@
 // limitations under the License.
 //
 
+/**
+ *  @file DTXAppleInternals.h
+ *  @brief Exposes interfaces, structs and methods that are otherwise private.
+ */
+
+#import <UIKit/UIKit.h>
+@import UserNotifications;
+
+@interface NSObject ()
+
+- (BOOL)__isKindOfUIView;
+
+@end
+
+@interface UNNotificationResponse ()
+
 + (instancetype)responseWithNotification:(UNNotification*)arg1 actionIdentifier:(NSString*)arg2;
 
 @end

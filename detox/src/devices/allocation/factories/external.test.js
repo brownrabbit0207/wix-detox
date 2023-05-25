@@ -13,3 +13,8 @@ describe('External allocator factory', () => {
           DeviceAllocationDriverClass: undefined,
         };
         expect(() => factoryClass.validateModule(module, path)).toThrowErrorMatchingSnapshot();
+      });
+    });
+
+    describe('given allocation driver class', () => {
+      it('should not throw an error', () => {

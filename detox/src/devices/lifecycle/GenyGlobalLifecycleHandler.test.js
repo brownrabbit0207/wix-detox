@@ -13,6 +13,22 @@ describe('Global-context lifecycle handler for Genymotion SaaS emulators', () =>
   let GenyInstance;
   let logger;
   let deviceCleanupRegistry;
+  let instanceLifecycleService;
+  let lifecycleHandler;
+
+  beforeEach(() => {
+    jest.mock('../../utils/logger');
+    logger = require('../../utils/logger');
+
+    GenyInstance = jest.genMockFromModule('../common/drivers/android/genycloud/services/dto/GenyInstance');
+
+    const DeviceRegistry = jest.genMockFromModule('../DeviceRegistry');
+    deviceCleanupRegistry = new DeviceRegistry();
+
+    const InstanceLifecycleService = jest.genMockFromModule('../common/drivers/android/genycloud/services/GenyInstanceLifecycleService');
+    instanceLifecycleService = new InstanceLifecycleService();
+
+    const GenyGlobalLifecycleHandler = require('./GenyGlobalLifecycleHandler');
     lifecycleHandler = new GenyGlobalLifecycleHandler({ deviceCleanupRegistry, instanceLifecycleService });
   });
 

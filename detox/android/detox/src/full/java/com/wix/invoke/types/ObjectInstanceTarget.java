@@ -13,3 +13,10 @@ public class ObjectInstanceTarget extends Target {
 
     public ObjectInstanceTarget(Object value) {
         super(value);
+    }
+
+    @Override
+    public Object execute(Invocation invocation) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+        return  MethodUtils.invokeExactMethod(this.value, invocation.getMethod(), invocation.getArgs());
+    }
+}

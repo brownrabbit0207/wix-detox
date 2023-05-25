@@ -13,6 +13,22 @@ class NativeMatcher {
 
   constructor(call) {
     this._call = call || null;
+  }
+
+  withAncestor(matcher) {
+    NativeMatcher._assertMatcher(matcher);
+
+    const call = invoke.callDirectly(DetoxMatcherApi.matcherWithAncestor(this, matcher));
+    return new NativeMatcher(call);
+  }
+
+  withDescendant(matcher) {
+    NativeMatcher._assertMatcher(matcher);
+
+    const call = invoke.callDirectly(DetoxMatcherApi.matcherWithDescendant(this, matcher));
+    return new NativeMatcher(call);
+  }
+
   and(matcher) {
     NativeMatcher._assertMatcher(matcher);
 

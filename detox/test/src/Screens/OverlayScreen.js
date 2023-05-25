@@ -18,27 +18,6 @@ export default class OverlayScreen extends Component {
           }}
           style={styles.button}
           testID='ShowDismissibleAlertButton'
-        >
-          <Text style={styles.text}>
-            Show Alert
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => NativeModule.presentOverlayWindow()} style={styles.button} testID='ShowOverlayWindowButton'>
-          <Text style={styles.text}>Show Overlay Window</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => NativeModule.presentOverlayView()} style={styles.button} testID='ShowOverlayViewButton'>
-          <Text style={styles.text}>Show Overlay View</Text>
-        </TouchableOpacity>
-
-        <View style={styles.item}><Text style={styles.itemText}>Text1</Text></View>
-        <View style={styles.item}><Text style={styles.itemText}>Text2</Text></View>
-        <View style={styles.item}><Text style={styles.itemText}>Text3</Text></View>
-        <View style={styles.item}><Text style={styles.itemText}>Text4</Text></View>
-        <View style={styles.item}><Text style={styles.itemText}>Text5</Text></View>
-        <View style={styles.item}><Text style={styles.itemText}>Text6</Text></View>
-        <View style={styles.item}><Text style={styles.itemText}>Text7</Text></View>
         <View style={styles.item}><Text style={styles.itemText}>Text8</Text></View>
         <View style={styles.item}><Text style={styles.itemText}>Text9</Text></View>
         <View style={styles.item}><Text style={styles.itemText}>Text10</Text></View>

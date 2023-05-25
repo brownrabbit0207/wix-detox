@@ -13,6 +13,22 @@ describe('IOS simulator driver', () => {
   let uut;
   beforeEach(() => {
     const AsyncEmitter = require('../../../../utils/AsyncEmitter');
+    eventEmitter = new AsyncEmitter({
+      events: ['beforeLaunchApp'],
+      onError: (e) => { throw e; },
+    });
+
+    const ClientMock = jest.requireMock('../../../../client/Client');
+    client = new ClientMock();
+
+    const AppleSimUtils = jest.genMockFromModule('../../../common/drivers/ios/tools/AppleSimUtils');
+    applesimutils = new AppleSimUtils();
+
+    const SimulatorLauncher = jest.genMockFromModule('../../../allocation/drivers/ios/SimulatorLauncher');
+    simulatorLauncher = new SimulatorLauncher();
+
+    const SimulatorDriver = require('./SimulatorDriver');
+    uut = new SimulatorDriver(
       { simulatorLauncher, applesimutils, client, eventEmitter },
       { udid, type, bootArgs, headless }
     );

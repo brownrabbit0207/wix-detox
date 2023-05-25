@@ -18,27 +18,6 @@ exports[`DetoxLogger - main functionality - should format messages according to 
     \\"foo\\": \\"bar\\"
   }
 00:00:00.000 detox[PID] i custom-category One more message with a payload
-  data: raw string data"
-`;
-
-exports[`DetoxLogger - main functionality - should format messages according to the log level: error 1`] = `
-"00:00:00.000 detox[PID] i BLUE SCREEN OF DEATH
-00:00:00.000 detox[PID] i An error occurred:
-  error: Error: Some test error details
-00:00:00.000 detox[PID] i An err (alias) occurred:
-  error: Error: Some test err details
-00:00:00.000 detox[PID] i Another error occurred:
-  error: Error: Error as context"
-`;
-
-exports[`DetoxLogger - main functionality - should format messages according to the log level: fatal 1`] = `"00:00:00.000 detox[PID] i BLUE SCREEN OF DEATH"`;
-
-exports[`DetoxLogger - main functionality - should format messages according to the log level: info 1`] = `
-"00:00:00.000 detox[PID] i BLUE SCREEN OF DEATH
-00:00:00.000 detox[PID] i An error occurred:
-  error: Error: Some test error details
-00:00:00.000 detox[PID] i An err (alias) occurred:
-  error: Error: Some test err details
 00:00:00.000 detox[PID] i Another error occurred:
   error: Error: Error as context
 00:00:00.000 detox[PID] i Warning message!"

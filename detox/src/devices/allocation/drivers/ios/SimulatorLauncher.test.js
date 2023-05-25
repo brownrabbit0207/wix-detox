@@ -13,6 +13,22 @@ describe('Simulator launcher (helper)', () => {
 
     const SimulatorLauncher = require('./SimulatorLauncher');
     uut = new SimulatorLauncher({ applesimutils, eventEmitter });
+  });
+
+  describe('launch', () => {
+    const type = 'mockType';
+    const bootArgs = { mock: 'boot-args' };
+    const headless = true;
+
+    const givenBootResultCold = () => applesimutils.boot.mockResolvedValue(true);
+    const givenBootResultWarm = () => applesimutils.boot.mockResolvedValue(false);
+
+    it('should boot using apple-sim-utils', async () => {
+      await uut.launch(udid, '', bootArgs, headless);
+      expect(applesimutils.boot).toHaveBeenCalledWith(udid, bootArgs, headless);
+    });
+
+    it('should fail if apple-sim-utils fails', async () => {
       const error = new Error('mock error');
       applesimutils.boot.mockRejectedValue(error);
       await expect(uut.launch(udid, '', bootArgs)).rejects.toThrowError(error);

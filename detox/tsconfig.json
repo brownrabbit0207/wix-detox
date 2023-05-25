@@ -13,3 +13,15 @@
     "skipLibCheck": true,
     "types": ["node", "jest"]
   },
+  "rootDir": ".",
+  "include": [
+    "**/*.js",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "android",
+    "coverage",
+    "ios",
+    "test"
+  ]
+}

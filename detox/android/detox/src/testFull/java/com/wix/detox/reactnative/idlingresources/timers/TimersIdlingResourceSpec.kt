@@ -19,27 +19,6 @@ object TimersIdlingResourceSpec : Spek({
             choreographer = mock()
         }
 
-        fun uut() = TimersIdlingResource(idleInterrogationStrategy) { choreographer }
-
-        fun givenIdleStrategy() {
-            whenever(idleInterrogationStrategy.isIdleNow()).thenReturn(true)
-        }
-
-        fun givenBusyStrategy() {
-            whenever(idleInterrogationStrategy.isIdleNow()).thenReturn(false)
-        }
-
-        fun getChoreographerCallback(): Choreographer.FrameCallback {
-            argumentCaptor<Choreographer.FrameCallback>().apply {
-                verify(choreographer).postFrameCallback(capture())
-                return firstValue
-            }
-        }
-
-        fun invokeChoreographerCallback() {
-            getChoreographerCallback().doFrame(0L)
-        }
-
         it("should return a debug-name") {
             Assertions.assertThat(uut().getDebugName()).isEqualTo("timers")
         }

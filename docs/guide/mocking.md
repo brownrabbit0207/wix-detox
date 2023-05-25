@@ -13,16 +13,11 @@ You may want to use mocks to alter specific behavior of your app during tests, e
 - stub a feature the simulator doesn’t support;
 - prepare mock environment data such as GPS position, Contacts/Photos found on the device, etc.
 
-Let's start with the quicker way.
+This guide assumes you are testing a React Native app with Detox.
 
-## Quick flow
+Please note that you **cannot** apply mocking techniques familiar from the prior Jest experience, even though Detox runs on top of Jest, e.g.:
 
-1. Pick a module that you are going to mock, e.g.:
-
-   ```js file=src/config.js
-   // src/config.js
-
-   export const SERVER_URL = 'https://production.mycompany.name/api';
+```js
    export const FETCH_TIMEOUT = 60000;
    ```
 

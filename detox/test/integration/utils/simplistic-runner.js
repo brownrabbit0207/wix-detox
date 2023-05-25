@@ -13,3 +13,8 @@ async function main() {
 
 async function test1() {
   log.info('Test 1');
+  await device.launchApp();
+}
+
+async function test2() {
+  log.info('Test 2');

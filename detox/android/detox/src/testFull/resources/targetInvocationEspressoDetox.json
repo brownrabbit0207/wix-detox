@@ -13,16 +13,11 @@
             "value": "android.support.test.espresso.Espresso"
           },
           "method": "onView",
-      },
-      {
-        "type": "Invocation",
-        "value": {
-          "target": {
-            "type": "Class",
-            "value": "android.support.test.espresso.action.ViewActions"
-          },
-          "method": "click",
-          "args": []
+          "args": [
+            {
+              "type": "Invocation",
+              "value": {
+                "target": {
         }
       }
     ]

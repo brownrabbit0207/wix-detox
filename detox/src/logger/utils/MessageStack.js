@@ -14,6 +14,7 @@ class MessageStack {
 
     return this._map[hash].push(msg);
   }
-}
 
-module.exports = MessageStack;
+  pop(context) {
+    const hash = this._hash(context);
+    const stack = this._map[hash];
