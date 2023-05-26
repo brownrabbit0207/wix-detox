@@ -18,6 +18,27 @@ class AppleSimUtils {
     });
 
     const options = {
+      args: `--byId ${udid} --bundle ${bundleId} --restartSB --setPermissions ${_.join(permissions, ',')}`,
+      statusLogs: {
+        trying: `Trying to set permissions...`,
+        successful: 'Permissions are set'
+      },
+      retries: 1,
+    };
+    await this._execAppleSimUtils(options);
+  }
+
+  async list(query, listOptions = {}) {
+    const options = {
+      args: `--list ${joinArgs(query)}`,
+      retries: 1,
+      statusLogs: listOptions.trying ? { trying: listOptions.trying } : undefined,
+    };
+    const response = await this._execAppleSimUtils(options);
+    const parsed = this._parseResponseFromAppleSimUtils(response);
+    return parsed;
+  }
+
   /***
    * Boots the simulator if it is not booted already.
    *

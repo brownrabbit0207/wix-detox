@@ -18,3 +18,15 @@ import CodeBlock from '@theme/CodeBlock';
     '  apps: { /* … */ },',
     '  configurations: {',
     `    'ios.sim.debug': {`,
+    `      device: 'iphone',`,
+    `      app: 'ios.debug',`,
+    '// highlight-start',
+    `      ${props.sectionName}: {`,
+    '        /* local (per-configuration) section */',
+    '      },',
+    '// highlight-end',
+    '    },',
+    '  },',
+    '};',
+  ].join('\n')}
+</CodeBlock>

@@ -18,6 +18,27 @@ describe('Artifacts', () => {
     });
 
     beforeEach(async () => {
+      // implicitly taking screenshot - beforeEach.png
+      await device.reloadReactNative();
+      await device.takeScreenshot('in main menu').then(printPNGDimensions);
+
+      await element(by.text('Actions')).tap();
+      await device.takeScreenshot('Actions').then(printPNGDimensions);
+    });
+
+    it('should take screenshots inside test', async () => {
+      await element(by.id('UniqueId819')).tap();
+      await device.takeScreenshot('taps - 1').then(printPNGDimensions);
+
+      await element(by.id('UniqueId819')).tap();
+      await device.takeScreenshot('taps - 2').then(printPNGDimensions);
+    });
+
+    afterEach(async () => {
+      await element(by.text('Tap Me')).tap();
+      await device.takeScreenshot('tap working').then(printPNGDimensions);
+
+      await device.reloadReactNative();
       // implicitly taking screenshot - afterEach.png
     });
 

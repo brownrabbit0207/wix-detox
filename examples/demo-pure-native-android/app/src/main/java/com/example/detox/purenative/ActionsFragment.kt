@@ -18,3 +18,15 @@ class ActionsFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_actions, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<RecyclerView>(R.id.actions_rvList).also {
+            it.adapter = DetoxRVAdapter()
+            it.layoutManager = LinearLayoutManager(view.context, RecyclerView.VERTICAL, false)
+        }
+    }
+}

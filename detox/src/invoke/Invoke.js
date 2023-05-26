@@ -18,6 +18,27 @@ function call(target, method, ...args) {
       target: target,
       method: method,
       args: args
+    };
+  };
+}
+
+function callDirectly(json) {
+  return {
+    type: 'Invocation',
+    value: json
+  };
+}
+
+const genericInvokeObject = new Proxy({},
+  {
+    get: (target, prop) => {
+      return (p) => {
+        return {
+          type: prop,
+          value: p
+        };
+      };
+    }
   });
 
 module.exports = {

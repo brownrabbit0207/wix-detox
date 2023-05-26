@@ -23,32 +23,6 @@ function validateConfig(deviceConfig) {
  * @returns {{ deviceAllocatorFactory: DeviceAllocatorFactory }}
  */
 function createFactories(deviceConfig) {
-  const classes = _getFactoryClasses(deviceConfig);
-  if (classes) {
-    return {
-      envValidatorFactory: new classes.envValidatorFactoryClass(),
-      artifactsManagerFactory: new classes.artifactsManagerFactoryClass(),
-      deviceAllocatorFactory: new classes.deviceAllocatorFactoryClass(),
-      matchersFactory: new classes.matchersFactoryClass(),
-      runtimeDeviceFactory: new classes.runtimeDeviceFactoryClass(),
-    };
-  }
-  return _getExternalModuleFactories(deviceConfig);
-}
-
-function createGlobalLifecycleHandler(deviceConfig) {
-  if (deviceConfig.type === 'android.genycloud') {
-    const FactoryClass = require('./devices/lifecycle/factories/GenyGlobalLifecycleHandlerFactory');
-    const factory = new FactoryClass();
-    return factory.createHandler();
-  }
-  return null;
-}
-
-function _getFactoryClasses(deviceConfig) {
-  let envValidatorFactoryClass;
-  let artifactsManagerFactoryClass;
-  let deviceAllocatorFactoryClass;
   let matchersFactoryClass;
   let runtimeDeviceFactoryClass;
 

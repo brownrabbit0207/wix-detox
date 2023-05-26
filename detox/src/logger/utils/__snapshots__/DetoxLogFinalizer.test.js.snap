@@ -23,32 +23,6 @@ Array [
     "ts": 1672531200000000,
   },
   Object {
-    "args": Object {
-      "name": "main",
-    },
-    "name": "thread_name",
-    "ph": "M",
-    "pid": 1234,
-    "tid": 0,
-    "ts": 1672531200000000,
-  },
-  Object {
-    "args": Object {
-      "sort_index": 0,
-    },
-    "name": "thread_sort_index",
-    "ph": "M",
-    "pid": 1234,
-    "tid": 0,
-    "ts": 1672531200000000,
-  },
-  Object {
-    "args": Object {
-      "level": 30,
-      "v": 0,
-    },
-    "cat": "main",
-    "name": "msg1",
     "ph": "i",
     "pid": 1234,
     "tid": 0,

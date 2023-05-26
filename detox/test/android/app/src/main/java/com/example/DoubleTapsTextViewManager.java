@@ -23,32 +23,6 @@ public class DoubleTapsTextViewManager extends SimpleViewManager<ViewGroup> {
     public String getName() {
         return "DetoxDoubleTapsTextView";
     }
-
-    @Override
-    protected ViewGroup createViewInstance(ThemedReactContext reactContext) {
-        final ViewState viewState = new ViewState();
-
-        final FrameLayout layout = new FrameLayout(reactContext);
-        layout.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-
-        final TextView textView = new TextView(reactContext);
-        textView.setTag("doubleTappableText");
-        textView.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, Gravity.CENTER));
-        textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        textView.setGravity(Gravity.CENTER);
-        textView.setText("Double-Taps: "+viewState.taps);
-        textView.setTextColor(Color.BLUE);
-
-        final GestureDetector gestureDetector = new GestureDetector(reactContext, new GestureDetector.SimpleOnGestureListener());
-        gestureDetector.setOnDoubleTapListener(new DoubleTapListenerStub() {
-            @Override
-            public boolean onDoubleTap(MotionEvent e) {
-                viewState.taps++;
-                textView.setText("Double-Taps: "+viewState.taps);
-                return true;
-            }
-        });
-        textView.setOnTouchListener((v, event) -> gestureDetector.onTouchEvent(event));
         textView.setOnClickListener(v -> {});
 
         layout.addView(textView);

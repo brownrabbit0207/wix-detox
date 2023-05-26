@@ -18,6 +18,27 @@ describe('AVD validator', () => {
     versionResolver = new EmulatorVersionResolver();
     versionResolver.resolve.mockResolvedValue('');
 
+    const AVDValidator = require('./AVDValidator');
+    uut = new AVDValidator(avdsResolver, versionResolver);
+  });
+
+  const givenExpectedAVD = () => avdsResolver.resolve.mockResolvedValue(['mock-avd-name']);
+  const givenNoAVDs = () => avdsResolver.resolve.mockResolvedValue(undefined);
+  const givenOtherAVDs = () => avdsResolver.resolve.mockResolvedValue(['other-avd', 'yet-another']);
+
+  const givenOldEmulatorVersion = () => versionResolver.resolve.mockResolvedValue({
+    major: 28,
+    minor: 999,
+    patch: 999,
+    toString: () => '28.mock.ver',
+  });
+  const givenProperEmulatorVersion = () => versionResolver.resolve.mockResolvedValue({
+    major: 29,
+    minor: 0,
+    patch: 0,
+    toString: () => '29.x.y',
+  });
+  const givenUnknownEmulatorVersion = () => versionResolver.resolve.mockResolvedValue(null);
 
   const givenMockedAvdManagerPath = () => environment.getAvdManagerPath.mockReturnValue('mock/path/avdmng');
   const givenMockedAndroidSdkPath = () => environment.getAndroidSdkManagerPath.mockReturnValue('mock/path/sdkmng');

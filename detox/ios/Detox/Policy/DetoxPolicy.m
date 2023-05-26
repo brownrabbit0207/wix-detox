@@ -18,3 +18,8 @@
 	return 75;
 }
 
++ (NSUInteger)consecutiveTouchPointsWithSameContentOffsetThreshold {
+	return 12;
+}
+
++ (NSString*)percentDescriptionForPercent:(CGFloat)percent {

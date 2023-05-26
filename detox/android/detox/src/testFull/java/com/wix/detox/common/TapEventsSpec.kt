@@ -18,6 +18,27 @@ private const val DEFAULT_EVENT_TIME = 1000L
 object TapEventsSpec: Spek({
     describe("Tap-Events wrapper") {
         lateinit var downEvent: MotionEvent
+        lateinit var upEvent: MotionEvent
+        lateinit var motionEvents: MotionEvents
+
+        beforeEachTest {
+            downEvent = mock(name = "downEventMock") {
+                on { eventTime }.doReturn(DEFAULT_EVENT_TIME)
+            }
+            upEvent = mock(name = "upEventMock")
+            motionEvents = mock {
+                on { obtainDownEvent(any(), any(), any()) }.doReturn(downEvent)
+                on { obtainDownEvent(any(), any(), any(), any()) }.doReturn(downEvent)
+                on { obtainDownEvent(any(), any(), any(), isNull()) }.doReturn(downEvent)
+                on { obtainUpEvent(eq(downEvent), any(), any(), any()) }.doReturn(upEvent)
+            }
+        }
+
+        fun uut() = TapEvents(motionEvents)
+
+        fun verifyDownEventObtained(coordinates: FloatArray, precision: FloatArray)
+                = verify(motionEvents).obtainDownEvent(coordinates[0], coordinates[1], precision, null)
+
         fun verifyDownEventObtainedWithDownTimestamp(coordinates: FloatArray, precision: FloatArray, downTimestamp: Long?)
                 = verify(motionEvents).obtainDownEvent(coordinates[0], coordinates[1], precision, downTimestamp)
 

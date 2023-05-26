@@ -23,32 +23,6 @@ import java.util.concurrent.Executors
 // Fixes: Hangs in UIThread.postFirstSync inside IRStatusInquirer.getAllBusyResources when upgrading robolectric 4.3.x -> 4.4
 // See http://robolectric.org/blog/2019/06/04/paused-looper/ (coming from https://github.com/robolectric/robolectric/releases/tag/robolectric-4.4)
 @LooperMode(LooperMode.Mode.LEGACY)
-class BusyResourcesInquirerTest {
-
-    lateinit var registry: IdlingResourceRegistry
-    lateinit var uiController: UiControllerImplReflected
-    lateinit var uut: BusyResourcesInquirer
-
-    private fun anIdleResource() = mock<IdlingResource> {
-        on { isIdleNow } doReturn true
-    }
-
-    private fun aBusyResource() = mock<IdlingResource> {
-        on { isIdleNow } doReturn false
-    }
-
-    private fun givenIdlingResources(vararg resources: IdlingResource) {
-        whenever(registry.resources).doReturn(resources.asList())
-    }
-
-    private fun givenRunningAsyncTasks() {
-        whenever(uiController.isAsyncIdleNow()).doReturn(false)
-    }
-
-    private fun givenRunningCompatAsyncTasks() {
-        whenever(uiController.isCompatIdleNow()).doReturn(false)
-    }
-
     @Before
     fun setup() {
         registry = mock()

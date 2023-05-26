@@ -23,32 +23,6 @@ describe('start', () => {
       return ({
         config,
         resolveConfig: jest.fn().mockResolvedValue(config),
-        log: require('../src/utils/logger')
-      });
-    });
-
-    detox = require('../internals');
-  });
-
-  afterEach(async () => {
-    if (cmd) {
-      await cmd.clean();
-    }
-  });
-
-  it('passes argv to resolveConfig', async () => {
-    await callCli('./start', 'start -C /etc/.detoxrc.js -c myconf');
-
-    expect(detox.resolveConfig).toHaveBeenCalledWith({
-      argv: expect.objectContaining({
-        'C': '/etc/.detoxrc.js',
-        'c': 'myconf',
-      }),
-    });
-  });
-
-  it('warns if no start commands were found', async () => {
-    await callCli('./start', 'start');
     expect(detox.log.warn).toHaveBeenCalledWith(expect.stringContaining('No "start" commands were found'));
   });
 

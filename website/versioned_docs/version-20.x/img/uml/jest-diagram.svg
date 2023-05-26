@@ -18,12 +18,8 @@ deactivate jestConfig
 Jest0 -> globalSetup: import
 activate globalSetup
 globalSetup -> Jest0: await
-
-PlantUML version 1.2022.6(Tue Jun 21 20:34:49 EEST 2022)
-(GPL source distribution)
-Java Runtime: OpenJDK Runtime Environment
-JVM: OpenJDK 64-Bit Server VM
-Default Encoding: UTF-8
-Language: en
-Country: UA
---></g></svg>
+deactivate globalSetup
+Jest0 -> jestReporter: import
+activate jestReporter
+Jest0 -> jestReporter: onRunStart()
+Jest0 -> JestN: child_process.fork()

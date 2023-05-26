@@ -18,6 +18,27 @@ npm install detox-cli --global
 ```
 
 ### Usage
+
+```sh
+detox <command> [options]
+```
+
+### Commands
+
+| Command                           | Description                                                                                                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [init](#init)                     | Create initial E2E tests folder for jest or mocha                                                                                                            |
+| [build](#build)                   | **Convenience method.** Run the command defined in 'build' property of the specified configuration.                                                          |
+| [test](#test)                     | Initiating your test suite                                                                                                                                   |
+| [run-server](#run-server)         | Starts a standalone detox server                                                                                                                             |
+| [build-framework-cache](#cache)   | **MacOS only.** Builds Detox.framework to \~/Library/Detox. The framework cache is specific for each combination of Xcode and Detox versions                 |
+| [clean-framework-cache](#cache)   | **MacOS only.** Deletes all compiled framework binaries from \~/Library/Detox, they will be rebuilt on 'npm install' or when running 'build-framework-cache' |
+| [rebuild-framework-cache](#cache) | **MacOS only.** Rebuilds the Detox cache                                                                                                                     |
+| [recorder](#recorder)             | Starts a [Detox Recorder](https://github.com/wix/DetoxRecorder) recording                                                                                    |
+
+#### Options
+
+| Options   | Description         |
 | --------- | ------------------- |
 | --version | Show version number |
 | --help    | Show help           |

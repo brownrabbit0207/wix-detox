@@ -18,6 +18,27 @@ import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 import org.robolectric.RobolectricTestRunner
 
+@RunWith(RobolectricTestRunner::class)
+class GetAttributesActionTest {
+    lateinit var view: View
+    lateinit var uut: GetAttributesAction
+
+    @Before
+    fun setup() {
+        view = mock()
+        uut = GetAttributesAction()
+    }
+
+    private fun givenViewTag(value: Any?) { whenever(view.tag).doReturn(value) }
+    private fun givenNoViewTag() = givenViewTag(null)
+    private fun givenVisibility(value: Int) { whenever(view.visibility).doReturn(value) }
+    private fun givenVisibilityRectAvailability(value: Boolean) { whenever(view.getLocalVisibleRect(any())).doReturn(value) }
+    private fun givenAccessibilityLabel(value: String) { whenever(view.getAccessibilityLabel()).doReturn(value) }
+
+    private fun perform(v: View = view): JSONObject {
+        uut.perform(null, v)
+        return JSONObject(uut.getResult())
+    }
 
     @Test
     fun `should declare non-null view constraint`() {

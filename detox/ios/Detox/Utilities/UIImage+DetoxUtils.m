@@ -18,16 +18,11 @@
 }
 
 - (NSUInteger)dtx_numberOfVisiblePixelsWithAlphaThreshold:(CGFloat)threshold totalPixels:(NSUInteger*)totalPixels
-	if(alphaInfo == kCGImageAlphaPremultipliedFirst)
-	{
-		if((bitmapInfo & kCGBitmapByteOrderMask) == kCGBitmapByteOrder32Little)
-		{
-			alphaOffset = 3;
-		}
-		else
-		{
-			alphaOffset = 0;
-		}
+{
+	CGImageRef cgImage = self.CGImage;
+	
+	CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(cgImage));
+	dtx_defer {
 	}
 	else
 	{

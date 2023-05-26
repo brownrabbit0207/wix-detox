@@ -18,3 +18,24 @@ internal class JsonConverter(private val json: JSONObject) {
                     val subObject = json.getJSONObject(key)
                     val subBundle = JsonConverter(subObject).toBundle()
                     bundle.putBundle(key, subBundle)
+                }
+                is JSONArray -> {
+                    val stringArray = parseJsonArrayAsStringsList(value)
+                    bundle.putStringArrayList(key, stringArray)
+                }
+            }
+        }
+        return bundle
+    }
+
+    private fun parseJsonArrayAsStringsList(array: JSONArray)
+            = ArrayList<String>(array.length()).apply {
+                for (i in 0 until array.length()) {
+                    val item = array[i]
+                    if (item !is String && item !is Number && item !is Boolean) {
+                        throw IllegalArgumentException("Non-string arrays not currently supported inside JSON's (failed to parse value: $item)")
+                    }
+                    add(item.toString())
+                }
+            }
+}

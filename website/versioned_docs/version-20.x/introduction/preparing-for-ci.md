@@ -18,6 +18,27 @@ Running Detox on CI is not that different from running it locally. There are two
 We will need to create a release app configuration for Detox – follow [the previous tutorial](project-setup.mdx)
 if you haven’t completed it already.
 
+## Step 2: Add `build` and `test` Commands to Your CI Script
+
+Assuming your CI is executing some sort of shell script, add the following commands that should run inside the project root:
+
+```bash
+detox build --configuration ios.sim.release
+detox test --configuration ios.sim.release
+```
+
+:::tip
+
+Make sure to shut down the simulator when your tests are over.
+
+:::
+
+## Running Android Tests on CI
+
+Setting up a CI environment capable of running Android tests isn’t as trivial.
+
+Fortunately, we’ve written all about it in a [blogpost on medium!](https://medium.com/wix-engineering/how-to-execute-android-ui-tests-on-ci-and-stay-alive-eb9089d88c1f)
+
 Also, check out the guide on how to [prepare Android emulators for CI](../guide/android-dev-env.md).
 
 ## Appendix

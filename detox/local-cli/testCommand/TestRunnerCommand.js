@@ -18,6 +18,27 @@ const TestRunnerError = require('./TestRunnerError');
 class TestRunnerCommand {
   /*
     @param {object} opts
+    @param {DetoxInternals.RuntimeConfig} opts.config
+    @param {ProcessEnv} opts.env
+  */
+  constructor(opts) {
+    const cliConfig = opts.config.cli;
+    const deviceConfig = opts.config.device;
+    const runnerConfig = opts.config.testRunner;
+    const appsConfig = opts.config.apps;
+
+    this._argv = runnerConfig.args;
+    this._retries = runnerConfig.retries;
+    this._envHint = this._buildEnvHint(opts.env);
+    this._startCommands = this._prepareStartCommands(appsConfig, cliConfig);
+    this._envFwd = {};
+
+    if (runnerConfig.forwardEnv) {
+      this._envFwd = this._buildEnvOverride(cliConfig, deviceConfig);
+      Object.assign(this._envHint, this._envFwd);
+    }
+  }
+
   async execute() {
     let runsLeft = 1 + this._retries;
     let launchError = null;

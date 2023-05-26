@@ -18,3 +18,6 @@ module.exports = {
   EspressoWeb: EspressoWeb.target,
   IOS: Invoke.genericInvokeObject,
   Android: Invoke.genericInvokeObject,
+  call: Invoke.call,
+  callDirectly: Invoke.callDirectly
+};

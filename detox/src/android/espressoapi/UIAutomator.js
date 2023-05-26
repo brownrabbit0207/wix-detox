@@ -18,3 +18,6 @@ class UiAutomator {
     };
   }
 
+}
+
+module.exports = UiAutomator;

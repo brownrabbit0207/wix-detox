@@ -19,6 +19,27 @@ class ClassNameMatcher extends WebMatcher {
 class CssSelectorMatcher extends WebMatcher {
   constructor(cssSelector) {
     super();
+    this._call = invoke.callDirectly(DetoxWebMatcherApi.matcherForCssSelector(cssSelector));
+  }
+}
+
+class NameMatcher extends WebMatcher {
+  constructor(name) {
+    super();
+    this._call = invoke.callDirectly(DetoxWebMatcherApi.matcherForName(name));
+  }
+}
+
+class XPathMatcher extends WebMatcher {
+  constructor(xpath) {
+    super();
+    this._call = invoke.callDirectly(DetoxWebMatcherApi.matcherForXPath(xpath));
+  }
+}
+
+class LinkTextMatcher extends WebMatcher {
+  constructor(linkText) {
+    super();
     this._call = invoke.callDirectly(DetoxWebMatcherApi.matcherForLinkText(linkText));
   }
 }
