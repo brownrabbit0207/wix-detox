@@ -1,4 +1,3 @@
-package com.wix.detox.espresso;
 
 import android.app.Activity;
 import android.content.Context;

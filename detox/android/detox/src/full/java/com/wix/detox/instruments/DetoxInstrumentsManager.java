@@ -1,4 +1,3 @@
-package com.wix.detox.instruments;
 
 import android.content.Context;
 

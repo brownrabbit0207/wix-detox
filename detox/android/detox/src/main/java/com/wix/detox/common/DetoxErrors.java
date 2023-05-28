@@ -1,4 +1,3 @@
-package com.wix.detox.common;
 
 public interface DetoxErrors {
     class DetoxRuntimeException extends RuntimeException {

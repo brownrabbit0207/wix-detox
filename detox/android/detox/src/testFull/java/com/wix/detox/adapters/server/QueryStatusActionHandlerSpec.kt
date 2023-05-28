@@ -1,4 +1,3 @@
-package com.wix.detox.adapters.server
 
 import com.wix.detox.TestEngineFacade
 import com.wix.detox.inquiry.DetoxBusyResource

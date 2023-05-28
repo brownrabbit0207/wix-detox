@@ -1,4 +1,3 @@
-const schemes = require('./configurations.mock');
 
 describe('composeArtifactsConfig', () => {
   let composeArtifactsConfig;

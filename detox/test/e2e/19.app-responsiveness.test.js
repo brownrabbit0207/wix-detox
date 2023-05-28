@@ -1,4 +1,3 @@
-const LogInterceptor = require('./utils/log-interceptor');
 
 describe(':android: App responsiveness', () => {
   it('should log ANR warning when app nonresponsive', async () => {

@@ -1,4 +1,3 @@
-const { IPC } = require('node-ipc');
 
 const { DetoxInternalError } = require('../errors');
 const { serializeObjectWithError } = require('../utils/errorUtils');

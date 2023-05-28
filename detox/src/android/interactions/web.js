@@ -1,4 +1,3 @@
-class WebInteraction {
   constructor(invocationManager) {
     this._call = undefined;
     this._invocationManager = invocationManager;

@@ -1,4 +1,3 @@
-package com.wix.detox
 
 import android.os.Bundle
 import com.wix.detox.common.JsonConverter

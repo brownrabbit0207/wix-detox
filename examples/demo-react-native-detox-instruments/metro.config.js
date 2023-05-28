@@ -1,4 +1,3 @@
-let createBlacklist;
 try {
   createBlacklist = require('metro-config/src/defaults/blacklist');
 } catch (ex) {

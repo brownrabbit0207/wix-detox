@@ -1,4 +1,3 @@
-describe('Attached android device driver', () => {
   const adbName = '9A291FFAZ005S9';
 
   let emitter;

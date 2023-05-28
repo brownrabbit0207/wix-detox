@@ -1,4 +1,3 @@
-const noop = () => {};
 
 const _promise = Symbol('promise');
 const _status = Symbol('status');

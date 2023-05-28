@@ -1,4 +1,3 @@
-const { PassThrough, Transform } = require('stream');
 
 function through() {
   return new PassThrough({ objectMode: true });

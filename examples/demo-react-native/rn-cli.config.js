@@ -1,4 +1,3 @@
-/*
  * This has been replaced by 'metro.config.js'. It's only here to enable running with RN<60.x
  */
 

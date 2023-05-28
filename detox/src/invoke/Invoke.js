@@ -1,4 +1,3 @@
-function call(target, method, ...args) {
   return function() {
     if (typeof target === 'function') {
       target = {

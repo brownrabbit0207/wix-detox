@@ -1,4 +1,3 @@
-//
 // Copyright 2018 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,6 +22,32 @@
  *  runloop drain.
  */
 static const NSUInteger kDefaultMinRunLoopDrains = 2;
+
+/**
+ *  No-op timer handler block.
+ */
+static void (^noopTimerHandler)(CFRunLoopTimerRef timer) = ^(CFRunLoopTimerRef timer) {
+};
+
+@implementation DTXRunLoopSpinner
+{
+	BOOL _spinning;
+}
+
+- (instancetype)init {
+	self = [super init];
+	if (self) {
+		_minRunLoopDrains = kDefaultMinRunLoopDrains;
+	}
+	return self;
+}
+
+- (BOOL)spinWithStopConditionBlock:(BOOL (NS_NOESCAPE ^)(void))stopConditionBlock {
+	NSAssert(!_spinning, @"Should not spin the same run loop spinner instance concurrently.");
+	
+	_spinning = YES;
+	CFTimeInterval timeoutTime = CACurrentMediaTime() + _timeout;
+	[self dtx_drainRunLoopInActiveModeForDrains:_minRunLoopDrains];
 	BOOL stopConditionMet = [self dtx_checkConditionInActiveMode:stopConditionBlock];
 	CFTimeInterval remainingTime = [self dtx_secondsUntilTime:timeoutTime];
 	

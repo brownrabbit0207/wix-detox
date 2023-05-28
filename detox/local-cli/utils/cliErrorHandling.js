@@ -1,4 +1,3 @@
-const loggedErrors = new WeakSet();
 
 function markErrorAsLogged(error) {
   loggedErrors.add(error);

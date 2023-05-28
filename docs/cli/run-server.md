@@ -1,4 +1,3 @@
-# detox run-server
 
 :::note
 

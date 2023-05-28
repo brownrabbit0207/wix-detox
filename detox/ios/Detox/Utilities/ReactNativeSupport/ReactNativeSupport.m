@@ -1,4 +1,3 @@
-//
 //  ReactNativeSupport.m
 //  Detox
 //

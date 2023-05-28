@@ -1,4 +1,3 @@
-const Artifact = require('../templates/artifact/Artifact');
 
 const ScreenshotArtifactPlugin = require('./ScreenshotArtifactPlugin');
 

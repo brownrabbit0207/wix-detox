@@ -1,4 +1,3 @@
-function isCtrlC(chunk) {
   const [chr1] = Array.from(chunk);
   return chr1 === 3;
 }

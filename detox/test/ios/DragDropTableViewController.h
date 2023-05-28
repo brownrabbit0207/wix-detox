@@ -1,4 +1,3 @@
-//
 //  DragDropTableViewController.h
 //  example
 //

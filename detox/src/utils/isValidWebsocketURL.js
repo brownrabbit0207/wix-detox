@@ -1,4 +1,3 @@
-const { URL } = require('url');
 
 function isValidWebsocketURL(url) {
   try {

@@ -1,4 +1,3 @@
-package com.wix.detox;
 
 import android.app.Activity;
 import android.app.Instrumentation;

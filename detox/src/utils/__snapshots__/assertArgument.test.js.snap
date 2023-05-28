@@ -1,4 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`assertEnum should create an assertion function for enums 1`] = `"speed should be one of [fast, slow], but got medium (string)"`;
 

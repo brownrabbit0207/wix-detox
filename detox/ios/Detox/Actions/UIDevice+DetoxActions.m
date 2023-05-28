@@ -1,4 +1,3 @@
-//
 //  UIDevice+DetoxActions.m
 //  Detox
 //

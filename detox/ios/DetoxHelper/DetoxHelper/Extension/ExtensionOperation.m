@@ -1,4 +1,3 @@
-//
 //  ExtensionOperation.m
 //  DetoxHelper
 //

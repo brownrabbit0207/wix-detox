@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const generateAndroidAdapters = require('./adapters/android');
 const downloadEspressoFileByClass = require('./utils/downloadEspresso');
 const downloadFile = require('./utils/downloadFile');

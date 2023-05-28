@@ -1,4 +1,3 @@
-const jestExpect = require('expect').default;
 
 describe('DatePicker', () => {
   describe.each([

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './HomepageSubHeader.module.scss';
 
 const HomepageSubHeader = () => {
@@ -23,3 +22,21 @@ const HomepageSubHeader = () => {
                 title="Follow Detox on Twitter"
                 width="200"
                 height="37"></iframe>
+              <iframe
+                className={styles.githubStar}
+                src="https://ghbtns.com/github-btn.html?user=wix&repo=detox&type=star&count=true&size=large"
+                frameBorder="0"
+                scrolling="0"
+                width="200"
+                height="37"
+                title="GitHub"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HomepageSubHeader;

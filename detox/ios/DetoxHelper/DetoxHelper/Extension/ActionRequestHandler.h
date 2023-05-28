@@ -1,4 +1,3 @@
-//
 //  ActionRequestHandler.h
 //  Extension
 //

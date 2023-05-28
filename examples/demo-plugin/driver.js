@@ -1,4 +1,3 @@
-const DeviceDriverBase = require('detox/src/devices/runtime/drivers/DeviceDriverBase');
 const Client = require('detox/src/client/Client');
 
 //

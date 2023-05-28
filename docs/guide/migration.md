@@ -1,4 +1,3 @@
-# Migration Guide
 
 <!-- markdownlint-configure-file { "ol-prefix": 0 } -->
 
@@ -23,6 +22,32 @@ If you see an error like this:
 
 ```plain text
 DetoxConfigError: Configuration "legacy" uses a deprecated all-in-one schema,
+which is not supported by Detox.
+```
+
+You have to extract device and app configs from your configuration, as shown in the example below:
+
+<table>
+<tr>
+  <th>Legacy schema</th>
+  <th>Modern schema</th>
+</tr>
+<tr>
+  <td>
+
+```json
+{
+  "configurations": {
+    "ios.sim.debug": {
+      "type": "ios.simulator",
+      "device": "iPhone 12",
+      "binaryPath": "/some/path/ios.app",
+      "build": "..."
+    },
+    "android.emu.debug": {
+      "type": "android.emulator",
+      "device": "Pixel_30_API",
+      "binaryPath": "/some/path/android.apk",
       "build": "...",
       "launchArgs": {}
     }

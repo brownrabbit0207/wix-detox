@@ -1,4 +1,3 @@
--dontwarn org.xmlpull.**
 -dontwarn sun.misc.**
 
 -dontnote android.**

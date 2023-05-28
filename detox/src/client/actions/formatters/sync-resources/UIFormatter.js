@@ -1,4 +1,3 @@
-const { makeResourceTitle, makeResourceSubTitle } = require('./utils');
 
 const propertyToDescriptionMapping = {
   'layer_animation_pending_count':  `Layer animations pending`,

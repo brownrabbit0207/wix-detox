@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.action;
 
 import android.view.View;
 
@@ -23,3 +22,17 @@ public class DetoxTypeTextAction implements ViewAction {
 
     @Override
     public Matcher<View> getConstraints() {
+        return allOf(clickAction.getConstraints(), new TypeTextAction("", true).getConstraints());
+    }
+
+    @Override
+    public String getDescription() {
+        return "Click to focus & type text ("+text+")";
+    }
+
+    @Override
+    public void perform(UiController uiController, View view) {
+        clickAction.perform(uiController, view);
+        typeTextAction.perform(uiController, view);
+    }
+}

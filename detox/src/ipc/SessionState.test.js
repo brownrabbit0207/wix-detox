@@ -1,4 +1,3 @@
-const SessionState = require('./SessionState');
 
 describe('SessionState', () => {
   /** @type {function} */

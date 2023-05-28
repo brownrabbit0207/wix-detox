@@ -1,4 +1,3 @@
-const DetoxError = require('../errors/DetoxError');
 const { asError, createErrorWithUserStack, replaceErrorStack } = require('../utils/errorUtils');
 
 function wrapWithStackTraceCutter(obj, methodNames) {

@@ -1,4 +1,3 @@
-# Expect
 
 Detox uses [matchers](matchers.md) to match UI elements in your app and expectations to verify those elements are in the expected state.
 

@@ -1,4 +1,3 @@
-package com.wix.detox.inquiry
 
 import org.assertj.core.api.Assertions
 import org.spekframework.spek2.Spek

@@ -1,4 +1,3 @@
-package com.wix.detox.espresso;
 
 import android.view.View;
 import android.os.Build;

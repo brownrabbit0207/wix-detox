@@ -1,4 +1,3 @@
-package com.wix.detox.common
 
 import android.os.Bundle
 import org.json.JSONArray

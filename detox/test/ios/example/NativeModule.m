@@ -1,4 +1,3 @@
-#import "NativeModule.h"
 #import <UIKit/UIKit.h>
 #import <React/RCTRootView.h>
 
@@ -21,6 +20,32 @@ RCT_EXPORT_METHOD(echoWithResponse:(NSString *)str
   CALL_COUNTER++;
   resolve(str);
   // NSLog(@"NativeModule echoWithResponse called");
+}
+
+RCT_EXPORT_METHOD(nativeSetTimeout:(NSTimeInterval)delay block:(RCTResponseSenderBlock)block)
+{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			block(@[]);
+		});
+	});
+}
+
+RCT_EXPORT_METHOD(switchToNativeRoot)
+{
+  dispatch_async(dispatch_get_main_queue(), ^{
+    UIViewController* newRoot = [UIViewController new];
+    newRoot.view.backgroundColor = [UIColor whiteColor];
+    UILabel* label = [UILabel new];
+    label.text = @"this is a new native root";
+    [label sizeToFit];
+    [[newRoot view] addSubview:label];
+    label.center = newRoot.view.center;
+
+    id<UIApplicationDelegate> delegate = [[UIApplication sharedApplication] delegate];
+    [[delegate window]setRootViewController:newRoot];
+    [[delegate window] makeKeyAndVisible];
+  });
 }
 
 RCT_EXPORT_METHOD(switchToMultipleReactRoots)

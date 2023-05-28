@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './StandWithUkraine.module.scss';
 import Link from '@docusaurus/Link';
 

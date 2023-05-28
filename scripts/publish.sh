@@ -1,4 +1,3 @@
-#!/bin/bash -e
 
 VERSION_TYPE="$1"
 if [ -z "$VERSION_TYPE" ]; then

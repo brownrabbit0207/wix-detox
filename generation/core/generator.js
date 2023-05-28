@@ -1,4 +1,3 @@
-const t = require('@babel/types');
 const template = require('@babel/template').default;
 const generate = require('@babel/generator').default;
 const javaMethodParser = require('java-method-parser');
@@ -23,6 +22,32 @@ module.exports = function getGenerator({
       t.classBody(
         json.methods
           .filter(filterMethodsWithUnsupportedParams)
+          .filter(filterMethodsWithBlacklistedName)
+          .reduce(handleOverloadedMethods, [])
+          .map(createMethod.bind(null, json))
+      ),
+      []
+    );
+  }
+
+  function filterMethodsWithBlacklistedName({ name }) {
+    return !blacklistedFunctionNames.find((blacklisted) => name.indexOf(blacklisted) !== -1);
+  }
+
+  function filterMethodsWithUnsupportedParams(method) {
+    return method.args.reduce((carry, methodArg) => {
+      if (methodArg === null) {
+        console.error(method);
+      }
+      return carry && supportedTypes.includes(methodArg.type);
+    }, true);
+  }
+
+  function handleOverloadedMethods(list, method) {
+    const methodInstance = {
+      args: method.args
+    };
+
     const firstDeclaration = list.find((item) => item.name === method.name);
     if (firstDeclaration) {
       firstDeclaration.instances.push(methodInstance);

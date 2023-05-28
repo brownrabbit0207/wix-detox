@@ -1,4 +1,3 @@
-//
 //  UIView+DetoxMatchers.h
 //  Detox
 //

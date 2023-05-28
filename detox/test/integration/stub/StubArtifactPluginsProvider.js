@@ -1,4 +1,3 @@
-class StubArtifactPluginsProvider {
   declareArtifactPlugins() {
     return {};
   }

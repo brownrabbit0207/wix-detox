@@ -1,4 +1,3 @@
-package com.wix.detox.actions
 
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.action.GeneralClickAction

@@ -1,4 +1,3 @@
----
 id: workflows
 slug: introduction/workflows
 title: Workflows

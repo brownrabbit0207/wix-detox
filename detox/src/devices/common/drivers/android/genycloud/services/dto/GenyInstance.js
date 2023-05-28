@@ -1,4 +1,3 @@
-const Recipe = require('./GenyRecipe');
 
 const STATE_ONLINE = 'ONLINE';
 const STATE_CREATING = 'CREATING';

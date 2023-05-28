@@ -1,4 +1,3 @@
----
 id: contributing
 slug: contributing
 title: Contributing

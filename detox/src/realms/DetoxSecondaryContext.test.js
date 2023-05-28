@@ -1,4 +1,3 @@
-const { backupProcessEnv, latestInstanceOf } = require('../../__tests__/helpers');
 
 describe('DetoxSecondaryContext', () => {
   const DETOX_CONFIG_SNAPSHOT_PATH = 'mocked/detox.json';

@@ -1,4 +1,3 @@
-package com.wix.invoke.types;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 

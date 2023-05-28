@@ -1,4 +1,3 @@
-require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 platform :ios, '12.4'
@@ -23,6 +22,32 @@ def shared_pods
       use_react_native!(
         # To enable hermes on iOS, change `false` to `true` and then install pods
         :hermes_enabled => false,
+      )
+    end
+end
+
+target 'example' do
+  shared_pods
+  pod 'react-native-slider', :path => '../node_modules/@react-native-community/slider'
+
+end
+
+target 'example_ci' do
+  shared_pods
+end
+
+post_install do |installer|
+  if ENV["REACT_NATIVE_VERSION"] && ENV["REACT_NATIVE_VERSION"].match(/0.6[6,7,8,9].*/)
+    react_native_post_install(installer)
+  else
+    react_native_post_install(
+      installer,
+        # Set `mac_catalyst_enabled` to `true` in order to apply patches
+        # necessary for Mac Catalyst builds
+        :mac_catalyst_enabled => false
+    )    
+  end
+
   # See https://github.com/wix/Detox/pull/3035#discussion_r774747705
   if !ENV["REACT_NATIVE_VERSION"] || ENV["REACT_NATIVE_VERSION"].match(/0.(66|67|68|69|70).*/)
     __apply_Xcode_12_5_M1_post_install_workaround(installer)

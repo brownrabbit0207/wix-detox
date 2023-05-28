@@ -1,4 +1,3 @@
----
 id: detox-object-api
 slug: api/detox-object-api
 title: Detox Object API
@@ -23,6 +22,32 @@ sidebar_label: The `detox` Object
 #### `detox.init()`
 
 The setup phase happens inside `detox.init()`. This is the phase where detox reads its configuration, starts a server, loads its expectation library and starts a simulator.
+
+**If you’re using _mocha_**, in your `init.js` add:
+
+```js
+const detox = require('detox');
+
+before(async () => {
+  await detox.init();
+});
+```
+
+##### Explicit imports during initialization
+
+Detox exports `device`, `expect`, `element`, `by` and `waitFor` as globals by default, if you want to control their initialization manually, set init detox with `initGlobals` set to `false`. This is useful when during E2E tests you also need to run regular expectations in node. jest `Expect` for instance, will not be overridden by Detox when this option is used.
+
+```js
+const detox = require('detox');
+
+before(async () => {
+  await detox.init(undefined, {initGlobals: false});
+});
+```
+
+Then import them manually:
+
+```js
 const {device, expect, element, by, waitFor} = require('detox');
 ```
 

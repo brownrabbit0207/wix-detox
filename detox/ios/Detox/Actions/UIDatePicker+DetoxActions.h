@@ -1,4 +1,3 @@
-//
 //  UIDatePicker+DetoxActions.h
 //  Detox
 //

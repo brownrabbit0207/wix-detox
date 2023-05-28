@@ -1,4 +1,3 @@
-const resolveFrom = require('resolve-from');
 /** @type {typeof import('@jest/reporters').VerboseReporter} */
 const JestVerboseReporter = require(resolveFrom(process.cwd(), '@jest/reporters')).VerboseReporter;
 

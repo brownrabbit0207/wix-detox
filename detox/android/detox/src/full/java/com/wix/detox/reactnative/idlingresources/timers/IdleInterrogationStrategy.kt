@@ -1,4 +1,3 @@
-package com.wix.detox.reactnative.idlingresources.timers
 
 import com.facebook.react.bridge.ReactContext
 import com.wix.detox.common.UIThread

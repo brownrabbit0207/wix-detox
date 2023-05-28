@@ -1,4 +1,3 @@
-import type { Circus } from '@jest/types';
 import {
   globalSetup,
   globalTeardown,

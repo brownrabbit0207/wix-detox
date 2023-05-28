@@ -1,4 +1,3 @@
-//
 //  DetoxUserNotificationDispatcher.swift
 //  Detox
 //

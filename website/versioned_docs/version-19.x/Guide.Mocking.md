@@ -1,4 +1,3 @@
----
 id: mocking
 slug: guide/mocking
 title: Mocking

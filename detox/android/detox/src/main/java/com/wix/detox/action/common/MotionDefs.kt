@@ -1,4 +1,3 @@
-@file:JvmName("MotionDefs")
 
 package com.wix.detox.action.common
 

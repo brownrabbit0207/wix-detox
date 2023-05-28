@@ -1,4 +1,3 @@
-# detox reset-lock-file
 
 ```bash
 detox reset-lock-file

@@ -1,4 +1,3 @@
-describe('composeRunnerConfig', () => {
   let composeRunnerConfig;
   let globalConfig, localConfig, cliConfig, testRunnerArgv;
 

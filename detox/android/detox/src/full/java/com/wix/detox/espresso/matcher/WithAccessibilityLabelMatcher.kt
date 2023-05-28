@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.matcher
 
 import android.view.View
 import com.wix.detox.reactnative.ui.getAccessibilityLabel

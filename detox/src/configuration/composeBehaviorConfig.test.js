@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 describe('composeBehaviorConfig', () => {
   let composeBehaviorConfig;

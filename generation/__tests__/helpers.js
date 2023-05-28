@@ -1,4 +1,3 @@
-const { methodNameToSnakeCase } = require('../helpers');
 
 describe('helpers', () => {
   describe('methodNameToSnakeCase', () => {

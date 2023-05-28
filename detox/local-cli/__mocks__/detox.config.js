@@ -1,4 +1,3 @@
-module.exports = {
   configurations: {
     only: {
       type: 'ios.simulator',

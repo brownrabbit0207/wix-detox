@@ -1,4 +1,3 @@
-//
 //  UIView+DetoxMatchers.m
 //  Detox
 //

@@ -1,4 +1,3 @@
-buildscript {
     ext {
         isOfficialDetoxLib = true
         kotlinVersion = '1.6.10' // Aligned with RN .69's version bump

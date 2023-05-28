@@ -1,4 +1,3 @@
-// @ts-nocheck
 const jestExpect = require('expect').default; // eslint-disable-line
 const _ = require('lodash');
 

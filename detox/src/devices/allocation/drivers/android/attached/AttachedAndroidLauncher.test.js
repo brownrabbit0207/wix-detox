@@ -1,4 +1,3 @@
-describe('Attached Android device "launcher"', () => {
   const adbName = 'mock-attached-emu';
 
   let eventEmitter;

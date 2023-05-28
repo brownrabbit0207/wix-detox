@@ -1,4 +1,3 @@
-framework module Detox {
 	umbrella header "Detox.h"
 	export *
 

@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import { TextInput, NativeModules, Platform } from 'react-native';
 
 const { NativeModule } = NativeModules;

@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.matcher
 
 import android.view.View
 import org.hamcrest.BaseMatcher
