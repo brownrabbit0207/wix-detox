@@ -1,12 +1,7 @@
+describe('APK validation', () => {
 
   const binaryPath = 'mock-bin-path';
   const testBinaryPath = 'mock-test-bin-path';
-
-  let aapt;
-  let uut;
-  beforeEach(() => {
-    const AAPT = jest.genMockFromModule('../exec/AAPT');
-    aapt = new AAPT();
 
     const ApkValidator = require('./ApkValidator');
     uut = new ApkValidator(aapt);

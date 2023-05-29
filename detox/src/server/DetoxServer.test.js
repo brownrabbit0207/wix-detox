@@ -1,13 +1,8 @@
+// @ts-nocheck
 const net = require('net');
 
 describe('DetoxServer', () => {
   let DetoxServer;
-  let DetoxSessionManager;
-  /** @type {DetoxServer} */
-  let server;
-  let options;
-  let log;
-
   beforeEach(() => {
     jest.mock('../utils/logger');
     jest.mock('./DetoxSessionManager');

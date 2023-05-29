@@ -1,12 +1,7 @@
+name: Rapid Test
 
 on:
   push:
-    branches: [master]
-    paths:
-        - '.github/workflows/rapid-test.yml'
-        - 'detox/**'
-        - 'generation/**'
-  pull_request:
     branches: [master]
     paths:
         - '.github/workflows/rapid-test.yml'

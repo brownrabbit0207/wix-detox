@@ -1,13 +1,8 @@
+const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 
 class MatchersFactory {
   createMatchers() {}
 }
-
-class Android extends MatchersFactory {
-  createMatchers({ invocationManager, runtimeDevice, eventEmitter }) {
-    const AndroidExpect = require('../../android/AndroidExpect');
-    return new AndroidExpect({ invocationManager, device: runtimeDevice, emitter: eventEmitter });
-  }
 }
 
 class Ios extends MatchersFactory {

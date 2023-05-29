@@ -1,3 +1,4 @@
+const DeviceLauncher = require('../../../../common/drivers/DeviceLauncher');
 
 class AttachedAndroidLauncher extends DeviceLauncher {
   constructor(eventEmitter) {

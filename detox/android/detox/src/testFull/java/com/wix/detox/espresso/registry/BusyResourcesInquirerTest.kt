@@ -1,13 +1,8 @@
+package com.wix.detox.espresso.registry
 
 import android.os.Looper
 import androidx.test.espresso.IdlingResource
 import androidx.test.espresso.base.IdlingResourceRegistry
-import com.wix.detox.UTHelpers
-import com.wix.detox.espresso.common.UiControllerImplReflected
-import com.wix.detox.inquiry.DetoxBusyResource
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.Before
-import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.kotlin.doAnswer
 import org.mockito.kotlin.doReturn

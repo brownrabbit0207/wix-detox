@@ -1,3 +1,4 @@
+class GenyGlobalLifecycleHandlerFactory {
   /**
    * @returns { GenyGlobalLifecycleHandler }
    */

@@ -1,13 +1,8 @@
+package com.wix.detox.espresso;
 
 import android.view.View;
 
 import com.wix.detox.common.DetoxErrors.DetoxRuntimeException;
-import com.wix.detox.common.DetoxErrors.StaleActionException;
-
-import junit.framework.AssertionFailedError;
-
-import org.hamcrest.Matcher;
-
 import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.ViewInteraction;
 

@@ -1,13 +1,8 @@
+const path = require('path');
 
 const { escapeRegExp } = require('lodash');
 const cwd = process.cwd() + path.sep;
 
-// Taken from https://github.com/sindresorhus/callsites
-function getCallSites() {
-  const _prepareStackTrace = Error.prepareStackTrace;
-  Error.prepareStackTrace = (_, stack) => stack;
-  const stack = new Error().stack.slice(1);
-  Error.prepareStackTrace = _prepareStackTrace;
   return stack;
 }
 

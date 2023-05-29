@@ -1,3 +1,4 @@
+jest.mock('../logger/DetoxLogger');
 
 describe('invocation call', () => {
   let logger;

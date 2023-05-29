@@ -1,3 +1,4 @@
+const TIMELINE_CONTEXT_TYPES = {
   TEST: 'test',
   DESCRIBE: 'describe',
   INVOCATION: 'invocation'

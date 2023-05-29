@@ -1,3 +1,4 @@
+# Parallel Test Execution
 
 Detox comes out of the box with multi-worker support thanks to ([Jest's feature](http://jestjs.io/docs/en/cli#maxworkers-num),  etc.).
 

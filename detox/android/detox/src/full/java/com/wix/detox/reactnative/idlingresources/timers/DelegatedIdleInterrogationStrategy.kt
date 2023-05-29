@@ -1,3 +1,4 @@
+
 package com.wix.detox.reactnative.idlingresources.timers
 
 import com.facebook.react.bridge.ReactContext

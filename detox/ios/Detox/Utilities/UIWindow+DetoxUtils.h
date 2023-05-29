@@ -1,3 +1,4 @@
+//
 //  UIWindow+DetoxUtils.h
 //  Detox
 //

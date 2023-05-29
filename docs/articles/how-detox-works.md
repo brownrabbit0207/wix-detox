@@ -1,3 +1,4 @@
+# How Detox Works
 
 Detox is an end-to-end testing framework. This means it runs your app on an actual device/simulator and interacts with it just like a real user would. This type of testing can give a lot of confidence in your app and help automate a manual QA process.
 

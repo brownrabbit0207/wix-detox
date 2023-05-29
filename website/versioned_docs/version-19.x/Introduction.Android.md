@@ -1,3 +1,4 @@
+---
 id: android
 slug: introduction/android
 title: Detox for Android

@@ -1,3 +1,4 @@
+package com.example.detox.purenative
 
 import android.os.Bundle
 import android.view.LayoutInflater

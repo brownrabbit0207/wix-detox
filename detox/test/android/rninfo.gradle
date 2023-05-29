@@ -1,3 +1,4 @@
+import groovy.json.JsonSlurper
 
 def rnMajorVer = getRNMajorVersion()
 println "[$project] rn-info: detected React Native version (major) $rnMajorVer"

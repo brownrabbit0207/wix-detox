@@ -1,3 +1,4 @@
+const path = require('path');
 
 const fs = require('../../utils/fsext');
 const log = require('../../utils/logger').child({ cat: 'artifacts-plugin,artifacts' });

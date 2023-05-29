@@ -1,13 +1,8 @@
+// @ts-nocheck
 jest.mock('../utils/argparse');
 
 const os = require('os');
 const path = require('path');
-
-const DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
-
-describe('composeDetoxConfig', () => {
-  let args;
-  let configuration;
 
   /** @type {DetoxConfigErrorComposer} */
   let errorComposer;

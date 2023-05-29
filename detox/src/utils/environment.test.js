@@ -1,13 +1,8 @@
+const os = require('os');
 const path = require('path');
 
 const fs = require('fs-extra');
 const _ = require('lodash');
-const tempfile = require('tempfile');
-
-describe('Environment', () => {
-  let Environment;
-  let originalProcessEnv = _.cloneDeep(process.env);
-
   beforeEach(() => {
     process.env = _.cloneDeep(originalProcessEnv);
     Environment = require('./environment');

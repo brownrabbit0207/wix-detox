@@ -1,3 +1,4 @@
+const { PassThrough } = require('stream');
 const { promisify } = require('util');
 
 const bunyan = require('bunyan');

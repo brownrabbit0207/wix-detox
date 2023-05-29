@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const shellQuote = require('shell-quote');
 
 const { autoEscape } = require('../../src/utils/shellUtils');

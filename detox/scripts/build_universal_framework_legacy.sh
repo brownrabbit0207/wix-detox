@@ -1,3 +1,4 @@
+#!/bin/bash -e
 
 PROJECT=$1
 OUTPUT_DIR=$2

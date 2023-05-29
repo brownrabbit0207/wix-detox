@@ -1,3 +1,4 @@
+module.exports = {
   actionDescription: {
     adjustSliderToPosition: (newPosition) => `adjust slider to position ${newPosition}`,
     clearText: () => 'clear input text',

@@ -1,13 +1,8 @@
+describe('Genymotion-Cloud instance-lifecycle service', () => {
   const anInstance = () => ({
     uuid: 'mock-instance-uuid',
     name: 'mock-instance-name',
     adb_serial: 'mock-serial:1111',
-    recipe: {
-      name: 'mock-recipe-name',
-    }
-  });
-
-  let exec;
   let instanceNaming;
   let uut;
   beforeEach(() => {

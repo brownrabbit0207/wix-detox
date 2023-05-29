@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.action
 
 import android.graphics.Rect
 import android.os.Build

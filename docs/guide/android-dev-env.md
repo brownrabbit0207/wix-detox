@@ -1,13 +1,8 @@
+---
 title: Setting Up an Android Development & Testing Environment
 ---
 
 This guide provides some core practices to follow in setting up a stable, reliable environment for running automated UI tests using Android emulators (using Detox, in particular) – be it on a personal, _local_ computer, or a powerful CI machine.
-
-Note that running automated UI tests is _not the same_ as developing Android apps. Hence, you may find yourself not 100% aligned with the recommendations here, and should consider being so.
-
-## Java Setup
-
-This is the most basic step in the process, as without a proper Java SDK installed, nothing Android-ish works – at least not from command-line, which is mandatory for executing `Detox`.
 
 _The bottom line is that **Android needs Java installed**. If you want to run with React Native 66 and Android 12 then it needs to be at least Java 11, otherwise you should have Java 8._
 

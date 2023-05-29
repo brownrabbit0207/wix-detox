@@ -1,13 +1,8 @@
+class FakeWebSocket {
   constructor({ localPort, remotePort }) {
     this._localPort = localPort;
     this._remotePort = remotePort;
     this._events = {};
-
-    this.send = jest.fn(this.send.bind(this));
-    this.socket = new FakeNetworkSocket(this);
-  }
-
-  on(eventType, callback) {
     this._events[eventType] = this._events[eventType] || [];
     this._events[eventType].push(callback);
   }

@@ -1,13 +1,8 @@
+import {
   AppRegistry,
   NativeModules,
 } from 'react-native';
 
-import example from './src/app';
-
-const { NativeModule } = NativeModules;
-
-class exampleAndroid extends example {
-  async componentDidMount() {
     await super.componentDidMount();
     await this._registerEarlyCrashIfNeeded();
   }

@@ -1,3 +1,4 @@
+package com.wix.detox.common
 
 import android.view.View
 import android.view.ViewGroup

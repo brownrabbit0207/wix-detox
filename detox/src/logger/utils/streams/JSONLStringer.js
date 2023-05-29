@@ -1,3 +1,4 @@
+const { Transform } = require('stream');
 
 class JSONLStringer extends Transform {
   constructor({ replacer, header, delimiter, footer }) {

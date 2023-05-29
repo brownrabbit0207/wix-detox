@@ -1,3 +1,4 @@
+class GenyRecipeQuerying {
   constructor(recipesService) {
     this.recipesService = recipesService;
   }

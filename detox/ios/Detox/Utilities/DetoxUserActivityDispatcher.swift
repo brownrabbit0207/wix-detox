@@ -1,13 +1,8 @@
+//
 //  DetoxUserActivityDispatcher.swift
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 3/15/18.
-//  Copyright © 2018 Wix. All rights reserved.
-//
-
-import UIKit
-
-private struct DetoxUserActivityKeys {
 	static let activityType = "activityType"
 	static let userInfo = "userInfo"
 	static let webpageURL = "webpageURL"

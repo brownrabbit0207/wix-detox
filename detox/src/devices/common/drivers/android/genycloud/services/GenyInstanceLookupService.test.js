@@ -1,13 +1,8 @@
+const _ = require('lodash');
 
 describe('Genymotion-Cloud instances lookup service', () => {
   let exec;
   let deviceRegistry;
-  let instanceNaming;
-  let uut;
-  beforeEach(() => {
-    const GenyCloudExec = jest.genMockFromModule('../exec/GenyCloudExec');
-    exec = new GenyCloudExec();
-
     const GenyInstanceNaming = jest.genMockFromModule('./GenyInstanceNaming');
     instanceNaming = new GenyInstanceNaming();
 

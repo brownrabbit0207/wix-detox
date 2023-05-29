@@ -1,13 +1,8 @@
+package com.wix.detox
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
-import android.os.Bundle
-
-internal class LaunchIntentsFactory {
-
-    /**
      * Constructs an intent tightly associated with a specific activity.
      *
      * @param activity The activity to launch (typically extracted from an [androidx.test.rule.ActivityTestRule]).

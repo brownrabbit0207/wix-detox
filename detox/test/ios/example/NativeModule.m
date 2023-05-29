@@ -1,13 +1,8 @@
+#import "NativeModule.h"
 #import <UIKit/UIKit.h>
 #import <React/RCTRootView.h>
 
 static int CALL_COUNTER = 0;
-
-@implementation NativeModule
-
-RCT_EXPORT_MODULE();
-
-RCT_EXPORT_METHOD(echoWithoutResponse:(NSString *)str)
 {
   // NSLog(@"NativeModule echoWithoutResponse called");
   CALL_COUNTER++;

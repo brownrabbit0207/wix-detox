@@ -1,13 +1,8 @@
+const _ = require('lodash');
 
 const errorUtils = require('./errorUtils');
 
 describe('sliceErrorStack(error, fromIndex)', () => {
-  it('should clean up error stack by N first lines containing at:', () => {
-    function innerFunction() { throw new Error('Source Error'); }
-    function outerFunction() { innerFunction(); }
-    function attemptFunction() {
-      try { outerFunction(); } catch (e) { return e; }
-    }
 
     const slicer = at => (_line) => --at < 0;
     const error0 = errorUtils.filterErrorStack(attemptFunction(), slicer(1));

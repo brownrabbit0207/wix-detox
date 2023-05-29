@@ -1,13 +1,8 @@
+jest.retryTimes(3);
 
 const { session } = require('detox/internals');
 const jestExpect = require('expect').default;
 
-const {
-  assertArtifactExists,
-  waitUntilArtifactsManagerIsIdle,
-} = require('./utils/artifactUtils');
-
-describe('jest.retryTimes() support', () => {
   let counter = 3;
 
   beforeAll(async () => {

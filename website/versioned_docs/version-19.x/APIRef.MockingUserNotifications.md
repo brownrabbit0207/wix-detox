@@ -1,3 +1,4 @@
+---
 id: mocking-user-notifications
 slug: api/mocking-user-notifications
 title: Mocking User Notifications

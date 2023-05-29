@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 jest.retryTimes(2);
 

@@ -1,13 +1,8 @@
+//
 //  NSObject+DetoxActions.m
 //  Detox
 //
 //  Created by Leo Natan on 11/16/20.
-//  Copyright © 2020 Wix. All rights reserved.
-//
-
-#import "NSObject+DetoxActions.h"
-#import "NSObject+DetoxUtils.h"
-#import "UIApplication+DTXAdditions.h"
 
 @import Darwin;
 @import AudioToolbox;

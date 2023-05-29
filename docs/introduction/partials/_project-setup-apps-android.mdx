@@ -1,13 +1,8 @@
+<!-- markdownlint-configure-file { "no-trailing-punctuation": 0 } -->
 
 import FlavorizedCodeBlock from '@site/src/components/FlavorizedCodeBlock';
 
 Check **binaryPath** and **build** configs for `android.debug` and `android.release` mode in your Detox config:
-
-```js title=".detoxrc.js"
-module.exports = {
-  apps: {
-    'android.debug': {
-      type: 'android.apk',
       // highlight-start
       binaryPath: 'android/app/build/outputs/apk/debug/app-debug.apk',
       build: 'cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug'

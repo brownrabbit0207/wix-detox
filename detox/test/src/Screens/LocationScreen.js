@@ -1,13 +1,8 @@
+import React, { Component } from 'react';
 import {
   Text,
   View,
   Button
-} from 'react-native';
-import Geolocation from '@react-native-community/geolocation';
-
-function Frame({ children }) {
-  return (
-    <View style={{ flex: 1, paddingTop: 20, justifyContent: 'center', alignItems: 'center' }}>
       {children}
     </View>
   );

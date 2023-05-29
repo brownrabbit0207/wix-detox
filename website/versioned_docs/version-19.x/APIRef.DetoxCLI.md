@@ -1,3 +1,4 @@
+---
 id: detox-cli
 slug: api/detox-cli
 title: Detox Command Line Tools

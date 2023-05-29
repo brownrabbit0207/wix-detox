@@ -1,13 +1,8 @@
+//
 //  exampleUITests.m
 //  exampleUITests
 //
 //  Created by Leo Natan (Wix) on 5/7/20.
-//  Copyright © 2020 Facebook. All rights reserved.
-//
-
-#import <XCTest/XCTest.h>
-
-@interface exampleUITests : XCTestCase
 
 @end
 

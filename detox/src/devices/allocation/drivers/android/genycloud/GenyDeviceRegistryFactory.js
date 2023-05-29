@@ -1,3 +1,4 @@
+const environment = require('../../../../../utils/environment');
 const DeviceRegistry = require('../../../../DeviceRegistry');
 
 class GenyDeviceRegistryFactory {

@@ -1,13 +1,8 @@
+import React, { Component } from 'react';
 import {
   Text,
   View,
   TouchableOpacity,
-  TextInput,
-  ScrollView,
-  RefreshControl,
-  NativeEventEmitter,
-  NativeModules
-} from 'react-native';
 const { ShakeEventEmitter } = NativeModules;
 
 const shakeEventEmitter = new NativeEventEmitter(ShakeEventEmitter);

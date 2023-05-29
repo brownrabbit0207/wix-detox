@@ -1,13 +1,8 @@
+describe('Genymotion-Cloud Recipe DTO', () => {
   const rawRecipe = {
     uuid: 'mock-uuid',
     name: 'mock-name',
   };
-
-  let Recipe;
-  beforeEach(() => {
-    Recipe = require('./GenyRecipe');
-  });
-
   it('should have a uuid', () => {
     const recipe = new Recipe(rawRecipe);
 

@@ -1,13 +1,8 @@
+const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 const { interruptProcess } = require('../../utils/childProcess');
 const retry = require('../../utils/retry');
 const sleep = require('../../utils/sleep');
 const Artifact = require('../templates/artifact/Artifact');
-
-class ADBVideoRecording extends Artifact {
-  constructor(config) {
-    super(config);
-
-    this.adb = config.adb;
     this.deviceId = config.deviceId;
     this.pathToVideoOnDevice = config.pathToVideoOnDevice;
     this.screenRecordOptions = config.screenRecordOptions || {};

@@ -1,13 +1,8 @@
+/* eslint @typescript-eslint/no-unused-vars: ["error", { "args": "none" }] */
 // @ts-nocheck
 
 /**
  * @typedef DeallocOptions
- * @property shutdown { Boolean }
- */
-
-class AllocationDriverBase {
-  /**
-   * @param deviceConfig { Object }
    * @return {Promise<DeviceCookie>}
    */
   async allocate(deviceConfig) {}

@@ -1,3 +1,4 @@
+const DetoxRuntimeError = require('../errors/DetoxRuntimeError');
 const Deferred = require('../utils/Deferred');
 
 class InflightRequest extends Deferred {

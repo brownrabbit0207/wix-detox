@@ -1,3 +1,4 @@
+//Leo: I've disabled calendar events as they are exactly the same as push in the code. You may enable them for Android if needed, but set as ":android:".
 
 const {
   userNotificationPushTrigger,

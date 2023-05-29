@@ -1,13 +1,8 @@
+package com.wix.detox.inquiry
 
 import androidx.test.espresso.IdlingResource
 import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource
 
-sealed class DetoxBusyResource {
-    abstract fun getDescription(): DetoxBusyResourceDescription
-
-    class BusyIdlingResource(val resource: IdlingResource): DetoxBusyResource() {
-        override fun getDescription() =
-            when {
                 (resource is DescriptiveIdlingResource) ->
                     getIRDescription(resource)
 

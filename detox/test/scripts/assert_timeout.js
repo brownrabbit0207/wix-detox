@@ -1,3 +1,4 @@
+// eslint-disable no-process-exit
 const cp = require('child_process');
 
 const [_0, _1, command, ...args] = process.argv;

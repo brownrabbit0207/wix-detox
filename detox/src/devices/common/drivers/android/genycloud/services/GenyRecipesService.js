@@ -1,3 +1,4 @@
+const logger = require('../../../../../../utils/logger').child({ cat: 'device' });
 
   const Recipe = require('./dto/GenyRecipe');
 

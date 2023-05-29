@@ -1,3 +1,4 @@
+const SPACE = ' ';
 const BACK_SLASH = '\\';
 const FORWARD_SLASH = '/';
 const SINGLE_QUOTE = "'";

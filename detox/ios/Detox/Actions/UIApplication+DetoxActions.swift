@@ -1,3 +1,4 @@
+//
 //  UIApplication+DetoxActions.swift
 //  Detox
 //

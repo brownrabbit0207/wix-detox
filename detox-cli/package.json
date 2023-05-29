@@ -1,3 +1,4 @@
+{
   "name": "detox-cli",
   "version": "20.0.0",
   "description": "Optional wrapper for Detox CLI, meant to be installed globally",

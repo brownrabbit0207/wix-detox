@@ -1,3 +1,4 @@
+name: Broken Links Scan
 
 on:
   workflow_dispatch:

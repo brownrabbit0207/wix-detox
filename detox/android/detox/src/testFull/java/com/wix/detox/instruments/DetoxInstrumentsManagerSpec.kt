@@ -1,3 +1,4 @@
+package com.wix.detox.instruments
 
 import android.content.Context
 import org.mockito.kotlin.*

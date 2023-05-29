@@ -1,12 +1,7 @@
+# Generation
 
 This part of the repository aims to automate the adaption of the underlying testing frameworks.
 For now, it only covers `EarlGrey`’s `GREYActions`.
-
-We chose to check the generated files into version control to have them available as documentation.
-
-To correlate changes to the generation with changes in the generated code, please make sure to run the build before every commit.
-
-## Development
 
 - `npm install`
 - `npm run build` builds every file specified in the `index.js`

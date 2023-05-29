@@ -1,13 +1,8 @@
+@import 'colors';
 
 :root {
   @include define-detox-extra-colors();
 
-  &[data-theme] {
-    --ifm-color-primary: #048fc0;
-    --ifm-color-primary-dark: #253282;
-    --ifm-color-primary-darker: #161360;
-    --ifm-color-primary-darkest: #150a51;
-    --ifm-color-primary-light: var(--detox-color-p0);
     --ifm-color-primary-lighter: var(--detox-color-p1);
     --ifm-color-primary-lightest: var(--detox-color-p2);
 

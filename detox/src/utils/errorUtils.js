@@ -1,3 +1,4 @@
+const { isError } = require('lodash');
 const { deserializeError, serializeError } = require('serialize-error');
 
 const CLEAN_AT = /\n\s*at [\s\S]*/m;
