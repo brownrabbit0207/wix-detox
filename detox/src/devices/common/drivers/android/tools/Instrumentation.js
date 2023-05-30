@@ -3,6 +3,12 @@ const _ = require('lodash');
 const { interruptProcess } = require('../../../../../utils/childProcess');
 
 const { prepareInstrumentationArgs } = require('./instrumentationArgs');
+
+class Instrumentation {
+  constructor(adb, logger, userTerminationFn = _.noop, userLogListenFn = _.noop) {
+    this.adb = adb;
+    this.logger = logger;
+    this.userTerminationFn = userTerminationFn;
     this.userLogListenFn = userLogListenFn;
     this.instrumentationProcess = null;
     this._onTerminated = this._onTerminated.bind(this);

@@ -3,6 +3,12 @@
 exports[`Android generation methods should add a sanitizer for the function with the correct name 1`] = `
 Object {
   "args": Array [
+    Object {
+      "type": "Integer",
+      "value": 4,
+    },
+    Object {
+      "type": "Double",
       "value": 42,
     },
   ],

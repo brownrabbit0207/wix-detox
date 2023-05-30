@@ -4,6 +4,12 @@
 
 Detox supports mocking user activity for iOS apps.
 
+The user activity API is used to mock an external user activity state. The app normally uses this state to continue the activity inside the app. This API is also used for associated domains, Spotlight search handling and Siri intents.
+
+### Mocking App Launch with a User Activity
+
+Using `launchApp()` with custom params will trigger the mocking mechanism.
+
 ```js
 await device.launchApp({userActivity: activity});
 ```

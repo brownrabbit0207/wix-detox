@@ -3,16 +3,11 @@
 Detox uses [matchers](matchers.md) to match UI elements in your app.
 
 Use [actions](actions.md) to simulate use interaction with elements and [expectations](expect.md) to verify element states.
-- [`by.label()`](#bylabellabel)
-- [`by.text()`](#bytexttext)
-- [`by.type()`](#bytypeclassname)
-- [`by.traits()`](#bytraitstraits-ios-only) **iOS Only**
-- [`withAncestor()`](#withancestormatcher)
-- [`withDescendant()`](#withdescendantmatcher)
-- [`and()`](#andmatcher)
-- [`atIndex()`](#atindexindex)
 
-### `by.id(id)`
+**Note:** For best results, it is recommended to match elements by unique identifiers. Matching by text or labels can introduce test flakiness when your app’s text change or when changing your app’s localization.
+
+## Methods
+
 
 Match elements with the specified accessibility identifier. In React Native, this corresponds to the value in the [`testID`](https://reactnative.dev/docs/view.html#testid) prop.
 

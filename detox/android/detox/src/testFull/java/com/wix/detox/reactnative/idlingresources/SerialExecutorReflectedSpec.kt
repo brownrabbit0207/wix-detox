@@ -3,6 +3,12 @@ package com.wix.detox.reactnative.idlingresources
 import org.assertj.core.api.Assertions.assertThat
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.verify
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
+import java.util.concurrent.Executor
+
+
+private class SerialExecutorStub(private val executeFn: (r: Runnable) -> Unit): Executor {
     val mTasks = mutableListOf<Any>()
     var mActive: Runnable? = null
 

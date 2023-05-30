@@ -3,6 +3,12 @@ package com.wix.detox.adapters.server
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import java.util.concurrent.CountDownLatch
+
+private const val LOG_TAG = "DetoxDispatcher"
+
+class DetoxActionsDispatcher {
+    private val primaryExec = ActionsExecutor("detox.primary")
     private val secondaryExec = ActionsExecutor("detox.secondary")
 
     fun associateActionHandler(type: String, actionHandler: DetoxActionHandler, isPrimary: Boolean = true) {

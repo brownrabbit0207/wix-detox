@@ -8,17 +8,6 @@ describe('composeSessionConfig', () => {
 
   beforeEach(() => {
     composeSessionConfig = require('./composeSessionConfig');
-    errorComposer = new DetoxConfigErrorComposer();
-    cliConfig = {};
-    globalConfig = {};
-    localConfig = {};
-  });
-
-  const compose = () => composeSessionConfig({
-    cliConfig,
-    globalConfig,
-    localConfig,
-    errorComposer,
   });
 
   it('should generate a default config', async () => {

@@ -8,5 +8,3 @@ if [ ! -z ${REACT_NATIVE_VERSION} ]; then
   node scripts/change_react_native_version.js "detox" ${REACT_NATIVE_VERSION} "devDependencies"
 fi
 
-run_f "lerna bootstrap --no-ci"
-run_f "lerna run build"

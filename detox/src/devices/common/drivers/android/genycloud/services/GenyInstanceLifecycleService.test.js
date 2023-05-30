@@ -3,16 +3,11 @@ describe('Genymotion-Cloud instance-lifecycle service', () => {
     uuid: 'mock-instance-uuid',
     name: 'mock-instance-name',
     adb_serial: 'mock-serial:1111',
-  let instanceNaming;
-  let uut;
-  beforeEach(() => {
-    const GenyCloudExec = jest.genMockFromModule('../exec/GenyCloudExec');
-    exec = new GenyCloudExec();
+    recipe: {
+      name: 'mock-recipe-name',
+    }
+  });
 
-    const GenyInstanceNaming = jest.genMockFromModule('./GenyInstanceNaming');
-    instanceNaming = new GenyInstanceNaming();
-
-    const GenyInstanceLifecycleService = require('./GenyInstanceLifecycleService');
     uut = new GenyInstanceLifecycleService(exec, instanceNaming);
   });
 

@@ -3,16 +3,11 @@ const assert = require('assert');
 const path = require('path');
 
 const fs = require('fs-extra');
-const log = require('../utils/logger').child({ cat: 'ws-client, ws' });
-const traceInvocationCall = require('../utils/traceInvocationCall').bind(null, log);
+const _ = require('lodash');
+const tempfile = require('tempfile');
 
-const assertDirection = assertEnum(['left', 'right', 'up', 'down']);
-const assertSpeed = assertEnum(['fast', 'slow']);
-
-class Expect {
-  constructor(invocationManager, element) {
-    this._invocationManager = invocationManager;
-    this.element = element;
+const { assertEnum, assertNormalized } = require('../utils/assertArgument');
+const { removeMilliseconds } = require('../utils/dateUtils');
     this.modifiers = [];
   }
 

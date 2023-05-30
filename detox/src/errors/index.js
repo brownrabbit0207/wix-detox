@@ -3,7 +3,8 @@ const DetoxConfigErrorComposer = require('./DetoxConfigErrorComposer');
 const DetoxError = require('./DetoxError');
 const DetoxInternalError = require('./DetoxInternalError');
 const DetoxRuntimeError = require('./DetoxRuntimeError');
-  DetoxInternalError,
-  DetoxRuntimeError,
-  DetoxRuntimeErrorComposer,
-};
+const DetoxRuntimeErrorComposer = require('./DetoxRuntimeErrorComposer');
+
+module.exports = {
+  DetoxError,
+  DetoxConfigError,

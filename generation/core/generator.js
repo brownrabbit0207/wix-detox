@@ -3,16 +3,11 @@ const template = require('@babel/template').default;
 const generate = require('@babel/generator').default;
 const javaMethodParser = require('java-method-parser');
 const fs = require('fs');
-  renameTypesMap,
-  supportedTypes,
-  classValue,
-  contentSanitizersForFunction,
-  contentSanitizersForType,
-  blacklistedFunctionNames = []
-}) {
-  function createClass(json) {
-    return t.classDeclaration(
-      t.identifier(json.name),
+const path = require('path');
+
+const { methodNameToSnakeCase } = require('../helpers');
+let globalFunctionUsage = {};
+module.exports = function getGenerator({
       null,
       t.classBody(
         json.methods

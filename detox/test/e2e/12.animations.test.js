@@ -3,6 +3,12 @@ describe('React-Native Animations', () => {
 
   async function _startTest(driver, options = {}) {
     let driverControlSegment = element(by.text(driver).withAncestor(by.id('UniqueId_AnimationsScreen_useNativeDriver')));
+    await driverControlSegment.tap();
+
+    if (options.loops !== undefined) {
+      let loopSwitch = element(by.id('UniqueId_AnimationsScreen_enableLoop'));
+      await loopSwitch.tap();
+      if (device.getPlatform() === 'ios') {
         await expect(loopSwitch).toHaveValue('1');
       }
       await element(by.id('UniqueId_AnimationsScreen_numberOfIterations')).replaceText(String(options.loops));

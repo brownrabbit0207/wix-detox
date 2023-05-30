@@ -3,6 +3,12 @@ const isUndefined = (x) => x === undefined;
 class ThreadDispatcher {
   /**
    * @param {string} name
+   */
+  constructor(name) {
+    this.name = name;
+    this.stacks = [];
+    this.threads = [];
+  }
 
   /**
    * @param {string | number} [id]

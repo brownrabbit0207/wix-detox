@@ -3,16 +3,11 @@
 //  Detox
 //
 //  Created by Leo Natan on 11/24/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
 
-- (void)_setCaretBlinkAnimationEnabled:(BOOL)arg1;
-- (void)setCaretBlinks:(BOOL)arg1;
+#import "UIView+DetoxSpeedup.h"
 
-@end
-
-@interface UIScrollView ()
-
-- (void)_hideScrollIndicators;
-- (void)_hideScrollIndicator:(id)arg1 afterDelay:(NSTimeInterval)arg2 animated:(BOOL)arg3;
 
 @end
 

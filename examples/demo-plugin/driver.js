@@ -8,17 +8,6 @@ class PluginExpect {
   constructor({ invocationManager }) {
     this._invocationManager = invocationManager;
 
-    this.by = {
-      accessibilityLabel: (value) => {},
-      label: (value) => {},
-      id: (value) => value,
-      type: (value) => {},
-      traits: (value) => {},
-      value: (value) => {},
-      text: (value) => {},
-    };
-
-    this.element = this.element.bind(this);
     this.expect = this.expect.bind(this);
     this.waitFor = this.waitFor.bind(this);
   }

@@ -3,16 +3,11 @@ const os = require('os');
 const _ = require('lodash');
 
 const log = require('../utils/logger');
- * @param {Record<string, any>} opts.testRunnerArgv
- * @param {import('../errors/DetoxConfigErrorComposer')} opts.errorComposer
- * @returns {Detox.DetoxTestRunnerConfig} opts.testRunnerArgv
- */
-function composeRunnerConfig(opts) {
-  const globalConfig = adaptLegacyRunnerConfig(opts.globalConfig);
-  if (globalConfig != null && typeof globalConfig !== 'object') {
-    throw opts.errorComposer.invalidTestRunnerProperty(true);
-  }
 
+/**
+ * @param {object} opts
+ * @param {Detox.DetoxConfig} opts.globalConfig
+ * @param {Detox.DetoxConfiguration} opts.localConfig
   const localConfig = opts.localConfig.testRunner;
   if (localConfig != null && typeof localConfig !== 'object') {
     throw opts.errorComposer.invalidTestRunnerProperty(false);

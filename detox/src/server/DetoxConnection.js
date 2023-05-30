@@ -3,16 +3,11 @@ const _ = require('lodash');
 const DetoxRuntimeError = require('../errors/DetoxRuntimeError');
 const logger = require('../utils/logger').child({ cat: 'ws-server,ws' });
 
-   *   webSocket: import('ws');
-   *   socket: import('net').Socket;
-   * }} config
-   */
-  constructor({ sessionManager, webSocket, socket }) {
-    this._onMessage = this._onMessage.bind(this);
-    this._onError = this._onError.bind(this);
-    this._onClose = this._onClose.bind(this);
+const AnonymousConnectionHandler = require('./handlers/AnonymousConnectionHandler');
 
-    this._log = logger.child({ id: socket.remotePort });
+class DetoxConnection {
+  /**
+   * @param {{
     this._log.debug.begin(`connection :${socket.localPort}<->:${socket.remotePort}`);
 
     this._sessionManager = sessionManager;

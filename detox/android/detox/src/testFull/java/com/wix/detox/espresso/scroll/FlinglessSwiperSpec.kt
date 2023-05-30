@@ -3,6 +3,12 @@ package com.wix.detox.espresso.scroll
 import android.view.MotionEvent
 import android.view.ViewConfiguration
 import androidx.test.espresso.UiController
+import com.wix.detox.espresso.action.common.MotionEvents
+import org.assertj.core.api.Assertions.assertThat
+import org.mockito.kotlin.*
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
+
 object FlinglessSwiperSpec: Spek({
     describe("Flingless Swiper") {
         val swipeStartTime = 1000L

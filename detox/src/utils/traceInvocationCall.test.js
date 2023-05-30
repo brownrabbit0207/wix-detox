@@ -8,17 +8,6 @@ describe('invocation call', () => {
     logger = require('./logger');
     traceInvocationCall = require('./traceInvocationCall').bind(null, logger);
   });
-
-  it('should trace it', async () => {
-    const sectionName = 'section-name';
-    const args = {
-      cat: 'ws-client,ws-client-invocation',
-      data: {
-        foo: 'bar'
-      },
-      stack: expect.any(String)
-    };
-
     const promise = Promise.resolve(42);
     const result = await traceInvocationCall(sectionName, { ...args.data }, promise);
     expect(result).toBe(42);

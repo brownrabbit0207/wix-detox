@@ -3,6 +3,12 @@ import {
   Text,
   View,
   TouchableOpacity,
+  Linking,
+  Platform,
+  NativeModules,
+} from 'react-native';
+import * as Screens from './Screens';
+
 const isAndroid = Platform.OS === 'android';
 const isIos = Platform.OS === 'ios';
 

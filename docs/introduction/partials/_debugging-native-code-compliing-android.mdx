@@ -3,6 +3,12 @@
     ```diff title="android/settings.gradle"
     +include ':detox'
     +project(':detox').projectDir = new File(rootProject.projectDir, '../node_modules/detox/android/detox')
+    ```
+
+1. In your _root_ build script register `google()` as a repository lookup point in all projects:
+
+    ```diff title="android/build.gradle"
+     allprojects {
          repositories {
              // ...
     +        google()

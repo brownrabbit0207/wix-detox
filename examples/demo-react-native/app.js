@@ -3,16 +3,11 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-  View,
-  TouchableOpacity
-} from 'react-native';
 
-class example extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      greeting: undefined
-    };
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
   }
   render() {
     if (this.state.greeting) return this.renderAfterButton();

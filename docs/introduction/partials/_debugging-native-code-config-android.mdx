@@ -3,16 +3,11 @@
   "devices": {
     "emulator": {
       "type": "android.emulator",
-    "android.debug": {
-      "type": "android.apk",
-      "binaryPath": "<path to your app binary built before>"
+      "device": {
+        "avdName": "<e.g., Pixel_API_28>"
+      }
     }
   },
-  "configurations": {
-// highlight-start
-    "android.manual": {
-      "device": "emulator",
-      "app": "android.debug",
       "behavior": {
         "launchApp": "manual"
       }

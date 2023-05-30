@@ -8,9 +8,3 @@ const StandWithUkraine = (props) => {
       <Link to="https://stand-with-ukraine.pp.ua" className={styles.link}>
         🇺🇦 This project is created with substantial contributions from our Ukrainian colleagues.{' '}
         <span className={styles.hashtag}>#StandWithUkraine</span>
-      </Link>
-    </div>
-  );
-};
-
-export default StandWithUkraine;

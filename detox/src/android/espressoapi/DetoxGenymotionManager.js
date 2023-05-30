@@ -3,16 +3,11 @@
 	This code is generated.
 	For more information see generation/README.md.
 */
-    if (typeof lon !== "number") throw new Error("lon should be a number, but got " + (lon + (" (" + (typeof lon + ")"))));
-    return {
-      target: {
-        type: "Class",
-        value: "com.wix.detox.genymotion.DetoxGenymotionManager"
-      },
-      method: "setLocation",
-      args: [{
-        type: "Double",
-        value: lat
+
+
+
+class DetoxGenymotionManager {
+  static setLocation(lat, lon) {
       }, {
         type: "Double",
         value: lon

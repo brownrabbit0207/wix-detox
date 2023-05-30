@@ -8,17 +8,6 @@ import com.wix.invoke.types.Target;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.InvocationTargetException;
-import org.json.JSONException;
-
-
-/**
- * Created by rotemm on 10/10/2016.
- */
-public class MethodInvocation {
-
-    public Object invoke(String invocationJson) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, JSONException {
-        return invoke(invocationJson, null);
-    }
 
     public Object invoke(String invocationJson, Class<?> extendWith) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, JSONException {
         JsonParser parser = new JsonParser();

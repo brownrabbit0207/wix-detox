@@ -3,16 +3,11 @@ package com.wix.detox.espresso.web;
 
 import androidx.test.espresso.web.model.Atom;
 import androidx.test.espresso.web.model.ElementReference;
-public class DetoxWebAtomMatcher {
+import androidx.test.espresso.web.webdriver.Locator;
 
-    private DetoxWebAtomMatcher() {
-        // static class
-    }
+import java.util.List;
 
-    public static Atom<List<ElementReference>> matcherForId(String id) {
-        return findMultipleElements(Locator.ID, id);
-    }
-
+import static androidx.test.espresso.web.webdriver.DriverAtoms.findMultipleElements;
     public static Atom<List<ElementReference>> matcherForClassName(String className) {
         return findMultipleElements(Locator.CLASS_NAME, className);
     }

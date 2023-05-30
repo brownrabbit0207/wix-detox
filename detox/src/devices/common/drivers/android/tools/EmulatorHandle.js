@@ -8,17 +8,6 @@ class EmulatorHandle extends DeviceHandle {
 
     this.port = this.adbName.split('-')[1];
   }
-
-  /* async */ queryName() {
-    if (!this._namePromise) {
-      this._namePromise = this._queryNameViaTelnet();
-    }
-    return this._namePromise;
-  }
-
-  async _queryNameViaTelnet() {
-    await this._telnet.connect(this.port);
-    try {
       return await this._telnet.avdName();
     } finally {
       await this._telnet.quit();

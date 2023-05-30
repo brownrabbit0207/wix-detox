@@ -3,16 +3,11 @@ package com.wix.detox.reactnative.ui
 import android.view.View
 import android.widget.TextView
 import com.wix.detox.common.traverseViewHierarchy
-        val subLabels = collectAccessibilityLabelsFromHierarchy(this)
-        if (subLabels.isEmpty()) null else subLabels.joinToString(" ")
-    } else {
-        getRawAccessibilityLabel(this)
-    }
+import com.wix.detox.reactnative.utils.isReactNativeObject
 
-private fun collectAccessibilityLabelsFromHierarchy(
-    rootView: View,
-    subLabels: MutableList<CharSequence> = mutableListOf(),
-): List<CharSequence> {
+fun View.getAccessibilityLabel(
+    isReactNativeObjectFn: (Any) -> Boolean = { isReactNativeObject(it) }
+): CharSequence? =
     traverseViewHierarchy(rootView) { view ->
         getRawAccessibilityLabel(view)?.let { rawLabel ->
             subLabels.add(rawLabel)

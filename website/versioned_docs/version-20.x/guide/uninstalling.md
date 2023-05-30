@@ -4,15 +4,10 @@ Installing and using Detox implies certain side effects: cloned devices, cache f
 
 This checklist might come in handy whenever you have to make a clean uninstallation after using Detox.
 
-```bash
-rm -rf ~/Library/Detox
-```
+## Detox Framework Cache
 
-or run:
+Every install of Detox also triggers a `postinstall` script in its `package.json`, which builds (or unpacks) `Detox.framework` into `~/Library/Detox`.
 
-```bash
-detox clean-framework-cache
-```
 
 ## Test Session State
 

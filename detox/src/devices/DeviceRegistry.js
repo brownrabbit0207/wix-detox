@@ -3,6 +3,12 @@ const fs = require('fs-extra');
 const _ = require('lodash');
 
 const ExclusiveLockfile = require('../utils/ExclusiveLockfile');
+const environment = require('../utils/environment');
+const safeAsync = require('../utils/safeAsync');
+
+const readOptions = {
+  encoding: 'utf8',
+};
 
 const FIELD_NAME_ID = 'id';
 const FIELD_NAME_DATA = 'data';

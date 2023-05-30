@@ -3,16 +3,11 @@ package com.example;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.Gravity;
-import android.widget.TextView;
-
-import com.facebook.react.uimanager.SimpleViewManager;
-import com.facebook.react.uimanager.ThemedReactContext;
-
-public class SluggishTextTextViewManager extends SimpleViewManager<ViewGroup> {
-    @Override
-    public String getName() {
-        return "DetoxSluggishTapsTextView";
-    }
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 
     @Override
     protected ViewGroup createViewInstance(ThemedReactContext reactContext) {

@@ -3,16 +3,11 @@ id: debugging-in-android-studio
 slug: guide/debugging-in-android-studio
 title: Debugging in Android Studio During Detox Tests
 sidebar_label: Debugging in Android Studio
-> **Don’t use it unless you have a good reason.**
+---
 
-### Setting Detox up as a compiling dependency
+## Debugging in Android Studio During Detox Tests
 
-Before you go anywhere further, follow the
-[Setting Detox up as a compiling dependency](Introduction.Android.md#setting-detox-up-as-a-compiling-dependency)
-section from the **Detox for Android** document.
-
-### Add "manual" device configurations to your `.detoxrc`
-
+> This flow is not standard and serves mostly for investigating weird crashes or
 Locate your `.detoxrc` config file or the corresponding `detox` section in your `package.json`
 and add a configuration similar to this one:
 

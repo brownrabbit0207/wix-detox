@@ -3,6 +3,12 @@
 The `device` object is globally available in every test file, unless you use `exposeGlobals: false` in the behavior config,
 and even then you can import it from Detox package:
 
+```js
+const { device } = require('detox');
+```
+
+It enables control over the current attached device.
+
 ## Public Properties
 
 ### `device.id`

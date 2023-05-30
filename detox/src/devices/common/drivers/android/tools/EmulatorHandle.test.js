@@ -3,6 +3,12 @@ describe('Emulator handle', () => {
   let EmulatorHandle;
   let EmulatorTelnet;
   beforeEach(() => {
+    jest.mock('./EmulatorTelnet');
+    EmulatorTelnet = require('./EmulatorTelnet');
+    EmulatorHandle = require('./EmulatorHandle');
+  });
+
+  const emulatorHandle = (adbName, status) => new EmulatorHandle(`${adbName}\t${status}`);
 
   it('should extract the name and status', () => {
     const uut = emulatorHandle('emulator-6667', 'mock-status');

@@ -3,16 +3,11 @@ const logger = jest.requireMock('../../../utils/logger');
 const testSummaries = require('../../__mocks__/testSummaries.mock');
 const FileArtifact = require('../artifact/FileArtifact');
 
-  let api;
-  let plugin;
+const ArtifactPlugin = require('./ArtifactPlugin');
+const testSuite = require('./__mocks__/testSuite.mock');
 
-  beforeEach(() => {
-    api = {
-      userConfig: {
-        enabled: false,
-        keepOnlyFailedTestsArtifacts: false,
-      },
-    };
+class TestArtifactPlugin extends ArtifactPlugin {}
+
 
     plugin = new TestArtifactPlugin({ api });
   });

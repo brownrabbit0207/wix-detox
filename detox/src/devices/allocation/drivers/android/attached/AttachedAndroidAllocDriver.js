@@ -8,17 +8,6 @@ class AttachedAndroidAllocDriver extends AllocationDriverBase {
    * @param deviceRegistry { DeviceRegistry }
    * @param freeDeviceFinder { FreeDeviceFinder }
    * @param attachedAndroidLauncher { AttachedAndroidLauncher }
-   */
-  constructor({ adb, deviceRegistry, freeDeviceFinder, attachedAndroidLauncher }) {
-    super();
-    this._adb = adb;
-    this._deviceRegistry = deviceRegistry;
-    this._freeDeviceFinder = freeDeviceFinder;
-    this._attachedAndroidLauncher = attachedAndroidLauncher;
-  }
-
-  /**
-   * @param deviceConfig
    * @return {Promise<AndroidDeviceCookie>}
    */
   async allocate(deviceConfig) {

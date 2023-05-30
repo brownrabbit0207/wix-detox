@@ -3,6 +3,12 @@ const path = require('path');
 
 const _ = require('lodash');
 
+const DetoxRuntimeError = require('../../../../../errors/DetoxRuntimeError');
+const { joinArgs } = require('../../../../../utils/argparse');
+const childProcess = require('../../../../../utils/childProcess');
+const environment = require('../../../../../utils/environment');
+const log = require('../../../../../utils/logger').child({ cat: 'device' });
+const { quote } = require('../../../../../utils/shellQuote');
 
 class AppleSimUtils {
   async setPermissions(udid, bundleId, permissionsObj) {

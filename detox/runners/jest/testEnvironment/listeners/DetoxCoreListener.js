@@ -3,16 +3,11 @@ const _ = require('lodash');
 
 const detox = require('../../../..');
 const detoxInternals = require('../../../../internals');
-class DetoxCoreListener {
-  constructor({ env }) {
-    this._startedTests = new Set();
-    this._skippedTests = new Set();
-    this._testsFailedBeforeStart = new Set();
-    this._env = env;
-    this._circusRetryTimes = 1;
-  }
+const { getFullTestName, hasTimedOut } = require('../utils');
 
-  async setup() {
+const RETRY_TIMES = Symbol.for('RETRY_TIMES');
+
+const log = detoxInternals.log.child({ cat: 'lifecycle,jest-environment' });
     // Workaround to override Jest's expect
     if (detoxInternals.config.behavior.init.exposeGlobals) {
       this._env.global.expect = detox.expect;

@@ -3,16 +3,11 @@ import {
   Text,
   View,
   TouchableOpacity,
-const { ShakeEventEmitter } = NativeModules;
-
-const shakeEventEmitter = new NativeEventEmitter(ShakeEventEmitter);
-
-export default class ShakeScreen extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      greeting: "Shake it, baby"
+  TextInput,
+  ScrollView,
+  RefreshControl,
+  NativeEventEmitter,
+  NativeModules
     };
     this.subscription = undefined;
     this.subscription = shakeEventEmitter.addListener('ShakeEvent', () => {

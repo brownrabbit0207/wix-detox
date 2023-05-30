@@ -3,6 +3,12 @@
 There are a few tricks and tools that can help you to understand the reason for test failures, even before you resort to debugging.
 
 ## Using Detox test artifacts
+
+Artifacts are very powerful tool to understand your test failure, you can easily make a screenshot, video or even hierarchy of your app under test,
+e.g.:
+
+```sh
+detox test -c <configuration> --take-screenshots failing --record-videos failing
 ```
 
 Learn more about [configuration](../config/artifacts.mdx) of Detox test artifacts and available [CLI options](../cli/test.md).

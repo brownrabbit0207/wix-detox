@@ -3,6 +3,12 @@
 Detox comes with built-in support for running on Android and iOS by choosing a driver type in your Detox configurations.
 For example, the following configuration uses the "ios.simulator" driver.
 
+```json
+{
+  "ios.sim": {
+    "type": "ios.simulator",
+    "device": "...",
+    "app": {
       "type": "ios.app",
       "binaryPath": "bin/YourApp.app"
     }

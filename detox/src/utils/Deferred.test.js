@@ -3,16 +3,11 @@ const Deferred = require('./Deferred');
 describe('Deferred', () => {
   /** @type {Deferred} */
   let deferred;
-      expect(Deferred.RESOLVED).toBe('resolved'));
 
-    it('should have "rejected" status', () =>
-      expect(Deferred.REJECTED).toBe('rejected'));
-  });
+  describe('static properties', () => {
+    it('should have "pending" status', () =>
+      expect(Deferred.PENDING).toBe('pending'));
 
-  describe('when created', () => {
-    beforeEach(() => {
-      deferred = new Deferred();
-    });
 
     it('should have pending status', () =>
       expect(deferred.status).toBe(Deferred.PENDING));

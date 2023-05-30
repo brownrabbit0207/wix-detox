@@ -8,17 +8,6 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import java.util.concurrent.Executors
-
-@RunWith(RobolectricTestRunner::class)
-class NetworkIdlingResourcesTest {
-    lateinit var dispatcher: Dispatcher
-    lateinit var uut: NetworkIdlingResource
-
-    @Before
-    fun setup() {
-        dispatcher = Dispatcher()
-        uut = NetworkIdlingResource(dispatcher)
     }
 
     // Note: Ideally, we should test that the list of busy resources is protected,

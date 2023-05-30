@@ -3,16 +3,11 @@ import {
   NativeModules,
 } from 'react-native';
 
-    await super.componentDidMount();
-    await this._registerEarlyCrashIfNeeded();
-  }
+import example from './src/app';
 
-  async _registerEarlyCrashIfNeeded() {
-    const launchArguments = await NativeModule.getLaunchArguments();
-    if (launchArguments.simulateEarlyCrash) {
-      console.warn('simulateEarlyCrash=true detected: Will crash in a few seconds from now (all-the-while keeping the app busy)...');
-      this._setupBusyFutureCrash();
-    }
+const { NativeModule } = NativeModules;
+
+class exampleAndroid extends example {
   }
 
   /**

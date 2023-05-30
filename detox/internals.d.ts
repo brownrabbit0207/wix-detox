@@ -3,16 +3,11 @@
 
 declare global {
   namespace DetoxInternals {
-       */
-      resolveConfig(options?: Partial<DetoxInitOptions>): Promise<RuntimeConfig>;
+    type DetoxStatus = 'inactive' | 'init' | 'active' | 'cleanup';
 
+    type Facade = {
+      //#region Initialization
       /**
-       * Returns one of statuses depending on what’s going with the current Detox context:
-       *
-       * `inactive` – before `init()` and after `cleanup()` is called.
-       * `init` – while `init()` is executing.
-       * `active` – after `init()` and before `cleanup()` is called.
-       * `cleanup` – while `cleanup()` is executing.
        */
       getStatus(): DetoxStatus;
 

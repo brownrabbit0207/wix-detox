@@ -3,6 +3,12 @@ const os = require('os');
 const _ = require('lodash');
 
 const { getAndroidEmulatorPath } = require('../../../../../../utils/environment');
+const {
+  BinaryExec,
+  ExecCommand,
+} = require('../../exec/BinaryExec');
+
+class EmulatorExec extends BinaryExec {
   constructor() {
     super(getAndroidEmulatorPath());
   }

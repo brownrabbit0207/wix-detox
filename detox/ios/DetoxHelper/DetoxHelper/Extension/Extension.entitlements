@@ -3,3 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.bulletinboard.settings</key>
+	<true/>
+</dict>
+</plist>

@@ -3,16 +3,11 @@ const vm = require('vm');
 const cycle = require('json-cycle');
 
 const context = vm.createContext({ require }, {
-    detoxConfig = null,
-    detoxIPCServer = '',
-    testResults = [],
-    testSessionIndex = 0,
-    workersCount = 0
-  }) {
-    this.id = id;
-    this.detoxConfig = detoxConfig;
-    this.detoxIPCServer = detoxIPCServer;
-    this.testResults = testResults;
+  name: 'VM User Context',
+});
+
+class SessionState {
+  constructor({
     this.testSessionIndex = testSessionIndex;
     this.workersCount = workersCount;
   }

@@ -8,6 +8,3 @@ Traditionally, end-to-end tests on mobile are riddled with inherent issues, maki
 
 - **Detox synchronizes with your app’s activity** — By being aware of what your app is doing and synchronizing with it, Detox times its actions, by default, to run only when your app is idle, meaning it has determined that your app has finished its work, such as animations, network requests, React Native load, etc. You can further read on this [here](../troubleshooting/synchronization.md)
 
-- **Built from the ground up for mobile apps, has first-class React Native support** — Detox is built from the ground up for native mobile and has a first-class support for React Native apps
-
-- **Expectations run on the app, not the tester process** — Traditionally, test frameworks evaluate expectations in the test script, running on Node.js. Detox evaluates expectations directly in the tested app, running on device; this enables operations that were impossible before due to performance reasons

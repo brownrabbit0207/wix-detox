@@ -3,6 +3,12 @@ const path = require('path');
 
 const ini = require('ini');
 
+const DetoxRuntimeError = require('../../../../../errors/DetoxRuntimeError');
+const environment = require('../../../../../utils/environment');
+const log = require('../../../../../utils/logger');
+
+const EMU_BIN_STABLE_SKIN_VER = 28;
+
 async function patchAvdSkinConfig(avdName, binaryVersion) {
   if (!binaryVersion) {
     log.warn({ event: 'EMU_SKIN_CFG_PATCH' }, [

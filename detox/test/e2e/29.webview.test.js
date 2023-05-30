@@ -3,6 +3,12 @@ const MOCK_TEXT = 'Mock Text';
 
 describe(':ios: WebView', () => {
   it('should throw a runtime error on attempt to use', () => {
+    jestExpect(() => web(by.id('webview_1'))).toThrowError(/Detox does not support .* on iOS/);
+  });
+});
+
+describe(':android: WebView', () => {
+  let webview_1;
 
   beforeEach(async () => {
     await device.reloadReactNative();

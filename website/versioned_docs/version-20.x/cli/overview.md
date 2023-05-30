@@ -4,6 +4,12 @@ Detox CLI lets you operate Detox from command line.
 
 ## Installation
 
+Install `detox-cli` globally via [npm](http://npmjs.org/detox-cli):
+
+```bash npm2yarn
+npm install detox-cli --global
+```
+
 ## Usage
 
 ```bash

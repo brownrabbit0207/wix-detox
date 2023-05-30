@@ -8,17 +8,6 @@ module.exports.command = 'run-server';
 module.exports.desc = 'Start a standalone Detox server';
 module.exports.builder = {
   l: {
-    alias: 'loglevel',
-    describe: 'Log level',
-    group: 'Configuration:',
-    choices: ['fatal', 'error', 'warn', 'info', 'verbose', 'trace'],
-  },
-  p: {
-    alias: 'port',
-    describe: 'Port number',
-    group: 'Configuration:',
-    number: true,
-    default: 8099
   },
   'no-color': {
     describe: 'Disable colorful logs',

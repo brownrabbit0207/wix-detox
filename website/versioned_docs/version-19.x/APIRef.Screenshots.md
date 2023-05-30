@@ -3,6 +3,12 @@ id: screenshots
 slug: api/screenshots
 title: Taking Screenshots
 sidebar_label: Taking Screenshots
+---
+
+## Taking Screenshots
+
+Detox supports taking in-test screenshots of the device, making the result immediately available in the form of an image file.
+
 Screenshots can be taken in two levels:
 
 - **Device-level:** taking a screenshot of the entire screen.

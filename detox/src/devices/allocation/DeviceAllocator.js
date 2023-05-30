@@ -3,16 +3,11 @@ const log = require('../../utils/logger').child({ cat: 'device' });
 const traceMethods = require('../../utils/traceMethods');
 
 class DeviceAllocator {
-  }
-
   /**
-   * @param deviceConfig { Object }
-   * @return {Promise<DeviceCookie>}
+   * @param allocationDriver { AllocationDriverBase }
    */
-  allocate(deviceConfig) {
-    return this._driver.allocate(deviceConfig);
-  }
-
+  constructor(allocationDriver) {
+    this._driver = allocationDriver;
   /**
    * @param {DeviceCookie} deviceCookie
    * @return {Promise<unknown>}

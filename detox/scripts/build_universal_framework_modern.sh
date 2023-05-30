@@ -3,16 +3,11 @@
 PROJECT=$1
 OUTPUT_DIR=$2
 CONFIGURATION=Release
+PROJECT_NAME=Detox
 
-# Step 0. Xcode version
+# Make sure the output directory exists
 
-USE_NEW_BUILD_SYSTEM="YES"
-echo "Using -UseNewBuildSystem=${USE_NEW_BUILD_SYSTEM}"
-
-# Step 1. Build Device and Simulator versions
-
-BUILD_SIM=`xcodebuild -project "${PROJECT}" -scheme "Detox" -UseNewBuildSystem=${USE_NEW_BUILD_SYSTEM} -configuration "${CONFIGURATION}" -sdk iphonesimulator -destination "generic/platform=iOS Simulator" build -showBuildSettings  | awk -F= '/TARGET_BUILD_DIR/{x=$NF; gsub(/^[ \t]+|[ \t]+$/,"",x); print x}'`
-
+mkdir -p "${OUTPUT_DIR}"
 echo ${BUILD_SIM}
 
 xcodebuild -project "${PROJECT}" -scheme "Detox" -UseNewBuildSystem=${USE_NEW_BUILD_SYSTEM} -configuration "${CONFIGURATION}" -sdk iphonesimulator -destination "generic/platform=iOS Simulator" build -quiet

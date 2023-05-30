@@ -3,6 +3,12 @@
 :::caution Note
 Detox supports testing web views on **Android** only. We are working on adding support for iOS apps as well.
 :::
+
+A web view is a native component that displays content not available in a native format, such as a web page or a PDF document.
+
+Elements inside web views, however, are not native components, so Detox cannot interact with them the usual way.
+That's why Detox provides a set of matchers, actions, and expectations to allow you to interact with the content inside web views.
+
 ## Locating web view elements
 
 ### `web.element(matcher)`

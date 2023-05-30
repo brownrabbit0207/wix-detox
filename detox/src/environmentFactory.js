@@ -3,16 +3,11 @@ const artifactsManagerFactories = require('./artifacts/factories');
 const deviceAllocationFactories = require('./devices/allocation/factories');
 const runtimeDeviceFactories = require('./devices/runtime/factories');
 const matchersFactories = require('./matchers/factories');
-    const modulePath = deviceConfig.type;
-    const module = resolveModuleFromPath(modulePath);
+const resolveModuleFromPath = require('./utils/resolveModuleFromPath');
+const envValidationFactories = require('./validation/factories');
 
-    deviceAllocationFactories.External.validateModule(module, modulePath);
-    matchersFactories.External.validateModule(module, modulePath);
-    runtimeDeviceFactories.External.validateModule(module, modulePath);
-  }
-}
-
-/**
+function validateConfig(deviceConfig) {
+  const classes = _getFactoryClasses(deviceConfig);
  * @param deviceConfig
  * @returns {{ deviceAllocatorFactory: DeviceAllocatorFactory }}
  */

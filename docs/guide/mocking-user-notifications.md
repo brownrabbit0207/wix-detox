@@ -8,17 +8,6 @@ Detox supports mocking user notifications.
 
 ### Mocking App Launch With a Notification
 
-`launchApp()` with custom parameters (i.e. `userNotification`) will trigger the mocking mechanism.
-
-```js
-await device.launchApp({newInstance: true, userNotification: notification});
-```
-
-#### Example
-
-```js
-describe('Launch with push notification', () => {
-  it('should handle the notification', async () => {
     await device.launchApp({
       newInstance: true,
       userNotification: userNotificationPushTrigger,

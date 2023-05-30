@@ -3,3 +3,4 @@
  */
 declare const adapter: never;
 
+export = adapter;

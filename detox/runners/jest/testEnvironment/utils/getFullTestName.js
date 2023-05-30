@@ -8,5 +8,3 @@ function getFullTestName(test, separator = ' ') {
   testName += test.name;
   return testName;
 }
-
-module.exports = getFullTestName;

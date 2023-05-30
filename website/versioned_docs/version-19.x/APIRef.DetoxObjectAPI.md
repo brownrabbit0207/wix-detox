@@ -3,16 +3,11 @@ id: detox-object-api
 slug: api/detox-object-api
 title: Detox Object API
 sidebar_label: The `detox` Object
-> NOTE: detox is test runner independent, and we encourage you to choose your own test runner, but for the sake of demonstration we will use `mocha`’s syntax.
+---
 
-### Methods
+## The `detox` Object
 
-- [`detox.init()`](#detoxinit)
-- [`detox.beforeEach()`](#detoxbeforeeach)
-- [`detox.afterEach()`](#detoxaftereach)
-- [`detox.cleanup()`](#detoxcleanup)
-- [`detox.traceCall()`](#detoxtracecall)
-- [`detox.trace.startSection(), detox.trace.endSection()`](#detoxtracestartsection-detoxtraceendsection)
+`detox` is globally available in every test file, though currently it is only used in the setup/init file.
 
 #### `detox.init()`
 

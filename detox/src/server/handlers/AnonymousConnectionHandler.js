@@ -3,16 +3,11 @@ const DetoxInternalError = require('../../errors/DetoxInternalError');
 const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 
 const AppConnectionHandler = require('./AppConnectionHandler');
+const TesterConnectionHandler = require('./TesterConnectionHandler');
 
-  handle(action) {
-    switch (action.type) {
-      case 'login': return this._handleLoginAction(action);
-      case 'ready': return this._handleEarlyReadyAction(action);
-      default: return this._handleUnknownAction(action);
-    }
-  }
-
-  onError(error, _action) {
+class AnonymousConnectionHandler {
+  constructor({ api }) {
+    this._api = api;
     throw error;
   }
 

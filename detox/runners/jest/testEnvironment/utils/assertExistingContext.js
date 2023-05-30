@@ -3,16 +3,11 @@ const { DetoxRuntimeError } = require('../../../../src/errors/DetoxRuntimeError'
 const { filterErrorStack } = require('../../../../src/utils/errorUtils');
 
 function findUserConstructor() {
-        wasInBaseClass = true;
-      }
+  let wasInBaseClass = false;
+  let wasInUserClass = false;
 
-      return false;
-    }
-
-    if (!wasInUserClass && /^\s*at new/.test(line)) {
-      wasInUserClass = true;
-    }
-
+  return function (line) {
+    if (!wasInBaseClass) {
     return wasInUserClass;
   };
 }

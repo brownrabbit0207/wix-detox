@@ -3,16 +3,11 @@ const { asError, createErrorWithUserStack, replaceErrorStack } = require('../uti
 
 function wrapWithStackTraceCutter(obj, methodNames) {
   for (const methodName of methodNames) {
-        return await originalMethod.apply(obj, arguments);
-      } catch (err) {
-        if (err instanceof DetoxError) {
-          throw replaceErrorStack(errorWithUserStack, asError(err));
-        } else {
-          throw err;
-        }
-      }
-    };
-  }
+    const originalMethod = obj[methodName];
+
+    obj[methodName] = async function stackTraceWrapper() {
+      const errorWithUserStack = createErrorWithUserStack();
+
 }
 
 module.exports = wrapWithStackTraceCutter;

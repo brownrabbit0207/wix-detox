@@ -3,6 +3,12 @@
 //  example
 //
 //  Created by Leo Natan on 1/31/21.
+//  Copyright © 2021 Wix. All rights reserved.
+//
+
+#import "DragDropViewController.h"
+
+@interface DragDropViewController () <UIDragInteractionDelegate, UIDropInteractionDelegate>
 {
 	UILabel* _statusLabel;
 }

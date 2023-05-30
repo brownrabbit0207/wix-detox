@@ -8,17 +8,6 @@ steps:
         default: "true"
         hint: "A corresponding pre-release prefix will be added to published version name, with the npm tag of this version (for instance, `19.5.0-preminor.0`)."
         options:
-          - label: "Yes, this is a PRE-release version."
-            value: "true"
-          - label: "No, this is a REAL release version."
-            value: "false"
-
-      - select: "VERSION TYPE"
-        key: "release-version-type"
-        hint: "A successful build will be released with a version update according to the selected type. `Bump pre-release version` will bump the pre-release version number (for instance, `19.5.0-preminor.1`)."
-        options:
-          - label: "Patch"
-            value: "patch"
           - label: "Minor"
             value: "minor"
           - label: "Major"

@@ -3,16 +3,11 @@
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+// You may obtain a copy of the License at
 //
-
-#import <UIKit/UIKit.h>
-
-/**
- *  An enum for what phase of a touch action a @c DTXTouchInfo object is in.
- */
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
 typedef NS_ENUM(NSUInteger, DTXTouchInfoPhase) {
   DTXTouchInfoPhaseTouchBegan,
   DTXTouchInfoPhaseTouchMoved,

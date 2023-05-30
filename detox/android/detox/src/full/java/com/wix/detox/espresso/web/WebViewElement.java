@@ -3,6 +3,12 @@ package com.wix.detox.espresso.web;
 import android.view.View;
 import android.webkit.WebView;
 
+import androidx.test.espresso.web.model.Atom;
+import androidx.test.espresso.web.model.ElementReference;
+import androidx.test.espresso.web.sugar.Web;
+
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.Matcher;
 
 import java.util.List;
 

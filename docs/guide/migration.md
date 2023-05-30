@@ -4,14 +4,9 @@
 
 We are improving Detox API as we go along, sometimes these changes require us to break the API in order for it to make more sense. These migration guides refer to breaking changes. If a newer version has no entries in this document, it means it does not require special migration steps. Refer to the release notes of the latter builds to learn about their improvements and changes.
 
-- switch to [Jest] using [`detox init`] boilerplate as a reference and [`testRunner` config];
-- wait until a third-party integration with Mocha appears.
+## 20.0
 
-### Jest 27.2.5 and higher
-
-You have to upgrade your Jest version to at least 27.2.5 or higher. The recommended choice is 28.x or 29.x.
-
-### All-in-one configs
+### No [Mocha] support
 
 If you see an error like this:
 

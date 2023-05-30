@@ -3,6 +3,12 @@ const log = require('../../../../../utils/logger').child({ cat: 'device' });
 const DEVICE_LOOKUP_LOG_EVT = 'DEVICE_LOOKUP';
 
 class FreeDeviceFinder {
+  constructor(adb, deviceRegistry) {
+    this.adb = adb;
+    this.deviceRegistry = deviceRegistry;
+  }
+
+  async findFreeDevice(deviceQuery) {
     const { devices } = await this.adb.devices();
     for (const candidate of devices) {
       if (await this._isDeviceFreeAndMatching(candidate, deviceQuery)) {
