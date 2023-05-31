@@ -8,6 +8,17 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Detox',
   tagline: 'Gray box end-to-end testing and automation framework for React Native apps',
+  url: 'https://wix.github.io',
+  baseUrl: '/Detox/',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: '/img/favicon.ico',
+  organizationName: 'wix',
+  projectName: 'Detox',
+  plugins: ['docusaurus-plugin-sass'],
+
+  presets: [
+    [
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({

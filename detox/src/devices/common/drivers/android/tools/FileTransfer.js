@@ -8,3 +8,8 @@ class FileTransfer {
 
   async prepareDestinationDir(deviceId) {
     await this._adb.shell(deviceId, `rm -fr ${this._dir}`);
+    await this._adb.shell(deviceId, `mkdir -p ${this._dir}`);
+  }
+
+  async send(deviceId, sourcePath, destinationFilename) {
+    const destinationPath = path.posix.join(this._dir, destinationFilename);

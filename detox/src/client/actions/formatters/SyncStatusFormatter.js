@@ -8,6 +8,17 @@ const bgThreadFormatter = require('./sync-resources/BgThreadFormatter');
 const delayedPerformSelectorFormatter = require('./sync-resources/DelayedPerformSelectorFormatter');
 const dispatchQueueFormatter = require('./sync-resources/DispatchQueueFormatter');
 const jsTimersFormatter = require('./sync-resources/JavaScriptTimersFormatter');
+const looperFormatter = require('./sync-resources/LooperFormatter');
+const networkFormatter = require('./sync-resources/NetworkFormatter');
+const oneTimeEventsFormatter = require('./sync-resources/OneTimeEventsFormatter');
+const runLoopFormatter = require('./sync-resources/RunLoopFormatter');
+const timersFormatter = require('./sync-resources/TimersFormatter');
+const uiFormatter = require('./sync-resources/UIFormatter');
+const unknownResourceFormatter = require('./sync-resources/UnknownResourceFormatter');
+const { makeResourceTitle } = require('./sync-resources/utils');
+
+const ajv = new Ajv();
+const isValidJSONStatus = ajv.compile(statusSchema);
 
 function formatJSONStatus(jsonStatus) {
   if (!isValidJSONStatus(jsonStatus)) {

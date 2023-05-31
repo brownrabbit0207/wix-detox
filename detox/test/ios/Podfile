@@ -8,16 +8,11 @@ def shared_pods
   config = use_native_modules!
 
     if !ENV["REACT_NATIVE_VERSION"] || ENV["REACT_NATIVE_VERSION"].match(/0.(68|69|70).*/)
-    else
-      use_react_native!(
-        # To enable hermes on iOS, change `false` to `true` and then install pods
-        :hermes_enabled => false,
-      )
-    end
-end
+      # Flags change depending on the env values.
+      flags = get_default_flags()
 
-target 'example' do
-  shared_pods
+      use_react_native!(
+        :path => config[:reactNativePath],
   pod 'react-native-slider', :path => '../node_modules/@react-native-community/slider'
 
 end

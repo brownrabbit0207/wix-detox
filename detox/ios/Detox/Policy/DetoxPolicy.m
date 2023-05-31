@@ -8,6 +8,17 @@
 
 #import "DetoxPolicy.h"
 
+@implementation DetoxPolicy
+
++ (CGFloat)visibilityPixelAlphaThreshold {
+	return 0.5;
+}
+
++ (NSUInteger)defaultPercentThresholdForVisibility {
+	return 75;
+}
+
++ (NSUInteger)consecutiveTouchPointsWithSameContentOffsetThreshold {
 	return 12;
 }
 

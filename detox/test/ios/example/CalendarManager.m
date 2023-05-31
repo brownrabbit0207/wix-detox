@@ -13,11 +13,3 @@ RCT_EXPORT_METHOD(getAuthorizationStatus:(RCTPromiseResolveBlock)resolve rejecte
         permission = @"granted";
 	}
     else
-	{
-        permission = @"denied";
-	}
-
-    resolve(permission);
-}
-
-@end

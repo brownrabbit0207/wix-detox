@@ -8,16 +8,11 @@ sidebar_label: Debugging in Android Studio
 ## Debugging in Android Studio During Detox Tests
 
 > This flow is not standard and serves mostly for investigating weird crashes or
-Locate your `.detoxrc` config file or the corresponding `detox` section in your `package.json`
-and add a configuration similar to this one:
+> when contributing to Detox itself.\
+> **Don’t use it unless you have a good reason.**
 
-```json
-{
-  "devices": {
-    "emulator": {
-      "type": "android.emulator",
-      "device": {
-        "avdName": "<e.g., Pixel_API_28>"
+### Setting Detox up as a compiling dependency
+
       }
     }
   },

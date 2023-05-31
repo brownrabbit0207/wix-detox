@@ -13,22 +13,6 @@ const VideoArtifactPlugin = require('../artifacts/video/VideoArtifactPlugin');
  * @param {string} configurationName
  * @param {Detox.DetoxConfig} globalConfig
  * @param {Detox.DetoxConfiguration} localConfig
- */
-function composeArtifactsConfig({
-  cliConfig,
-  configurationName,
-  localConfig,
-  globalConfig,
-}) {
-  const artifactsConfig = _.defaultsDeep(
-    extendArtifactsConfig({
-      rootDir: cliConfig.artifactsLocation,
-      plugins: {
-        log: cliConfig.recordLogs,
-        screenshot: cliConfig.takeScreenshots,
-        video: cliConfig.recordVideos,
-        instruments: cliConfig.recordPerformance,
-        uiHierarchy: cliConfig.captureViewHierarchy,
       },
     }),
     extendArtifactsConfig(localConfig.artifacts),

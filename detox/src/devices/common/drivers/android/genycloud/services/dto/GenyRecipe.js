@@ -8,3 +8,6 @@ class GenyRecipe {
   toString() {
     return this._description;
   }
+}
+
+module.exports = GenyRecipe;

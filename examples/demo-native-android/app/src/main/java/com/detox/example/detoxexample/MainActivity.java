@@ -8,6 +8,17 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView mTextView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_test);
+        Button helloButton = (Button) findViewById(R.id.helloButton);
+        Button worldButton = (Button) findViewById(R.id.worldButton);
+        mTextView = (TextView) findViewById(R.id.textView);
+
+        setOnClickListener(helloButton, getString(R.string.hello));
         setOnClickListener(worldButton, getString(R.string.world));
     }
 

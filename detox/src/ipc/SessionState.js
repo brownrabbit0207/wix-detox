@@ -8,16 +8,11 @@ const context = vm.createContext({ require }, {
 
 class SessionState {
   constructor({
-    this.testSessionIndex = testSessionIndex;
-    this.workersCount = workersCount;
-  }
-
-  patch(state) {
-    Object.assign(this, state);
-  }
-
-  stringify() {
-    return cycle.stringify(this, SessionState._stringifier);
+    id = '',
+    detoxConfig = null,
+    detoxIPCServer = '',
+    testResults = [],
+    testSessionIndex = 0,
   }
 
   /**

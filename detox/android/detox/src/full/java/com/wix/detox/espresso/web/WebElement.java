@@ -13,22 +13,6 @@ import java.util.List;
 
 public class WebElement {
 
-    final WebViewElement webViewElement;
-    final Atom<List<ElementReference>> matcherAtom;
-    final int index;
-
-    WebElement(WebViewElement webViewElement, Atom<List<ElementReference>> matcherAtom, int index) {
-        this.webViewElement = webViewElement;
-        this.matcherAtom = matcherAtom;
-        this.index = index;
-    }
-
-    Web.WebInteraction<Void> getWebViewInteraction() {
-        return webViewElement.webViewInteraction;
-    }
-
-    ElementReference get() {
-        List<ElementReference> elements = getWebViewInteraction().perform(matcherAtom).get();
 
         if (elements == null || elements.size() == 0 || index >= elements.size()) {
             throw new RuntimeException(String.format("element was not found at index: %d", index));

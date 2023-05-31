@@ -8,3 +8,13 @@
       },
       "method": "valueOf",
       "args": [
+        {
+          "type": "Float",
+          "value": 1.0
+        }
+      ]
+    }
+  },
+  "method": "length",
+  "args": []
+}

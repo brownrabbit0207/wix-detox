@@ -14,22 +14,6 @@ describe('Assertions', () => {
     await driver.navToScreen();
   });
 
-  it('should assert an element is visible', async () => {
-    await expect(driver.textElement).toBeVisible();
-  });
-
-  it('should assert an element is not visible', async () => {
-    await expect(driver.invisibleTextElement).not.toBeVisible();
-  });
-
-  it('should assert an element exists', async () => {
-    await expect(driver.invisibleTextElement).toExist();
-  });
-
-  it('should assert an element does not exist', async () => {
-    await expect(element(by.id('RandomJunk959'))).not.toExist();
-  });
-
   it('should assert an element has text', async () => {
     await expect(driver.textElement).toHaveText('I contain some text');
   });

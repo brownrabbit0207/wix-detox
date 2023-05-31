@@ -13,18 +13,3 @@ class SpyingInvocationHandler(private val target: Any, private val spy: MethodsS
             result = m.invoke(target, *args)
         } catch (e: InvocationTargetException) {
             throw e.targetException
-        } finally {
-            spy.onAfterCall(m.name)
-        }
-        return result
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(obj: Any, journal: MethodsSpy) =
-            Proxy.newProxyInstance(
-                    obj.javaClass.classLoader,
-                    obj.javaClass.interfaces,
-                    SpyingInvocationHandler(obj, journal))
-    }
-}

@@ -8,6 +8,17 @@ module.exports = {
     alias: ['configuration'],
     group: 'Configuration:',
     describe:
+      'Select a device configuration from your defined configurations, if not supplied, and there\'s only one configuration, detox will default to it',
+  },
+  l: {
+    alias: 'loglevel',
+    group: 'Debugging:',
+    choices: ['fatal', 'error', 'warn', 'info', 'verbose', 'debug', 'trace'],
+    describe: 'Log level',
+  },
+  R: {
+    alias: 'retries',
+    group: 'Execution:',
     describe: 'Re-spawn the test runner for individual failing suite files until they pass, or <N> times at least.',
     number: true,
   },

@@ -8,6 +8,17 @@ import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
 private fun anIdlingResourceCallback() = mock<IdlingResource.ResourceCallback>()
+
+object TimersIdlingResourceSpec : Spek({
+    describe("React Native timers idling-resource") {
+        lateinit var choreographer: Choreographer
+        lateinit var idleInterrogationStrategy: IdleInterrogationStrategy
+
+        beforeEachTest {
+            idleInterrogationStrategy = mock()
+            choreographer = mock()
+        }
+
         fun uut() = TimersIdlingResource(idleInterrogationStrategy) { choreographer }
 
         fun givenIdleStrategy() {

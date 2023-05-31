@@ -8,16 +8,11 @@ export DETOX_RETRIES=0
 platform=$1
 
 copy_coverage_to() {
-unset DETOX_LOGLEVEL
+    if [ -n "$CI" ]; then
+      cp coverage/lcov.info "$1"
+    fi
+}
 
-echo "Running early syntax error test..."
-node scripts/assert_timeout.js npm run "e2e:$platform" -- e2e-unhappy/early-syntax-error.test.js
-copy_coverage_to "../../coverage/e2e-early-syntax-error-$platform-ci.lcov"
-
-echo "Running e2e stack trace mangling test..."
-runnerOutput="$(npm run "e2e:$platform" -- -H e2e-unhappy/failing-matcher.test.js 2>&1 | tee /dev/stdout)"
-
-if grep -q "await.*element.*supercalifragilisticexpialidocious" <<< "$runnerOutput" ;
 then
     echo "Stack trace mangling for Client.js passed OK."
     copy_coverage_to "../../coverage/e2e-$platform-error-stack-client-js.lcov"

@@ -8,6 +8,17 @@
 			"day": 1,
 			"hour": 0,
 			"minute": 0,
+			"second": 0,
+			"weekday": 0,
+			"weekdayOrdinal": 0,
+			"quarter": 1,
+			"weekOfMonth": 1,
+			"weekOfYear": 1,
+			"leapMonth": false
+		},
+		"repeats": true
+	},
+	"title": "From calendar",
 	"subtitle": "Subtitle",
 	"body": "Body",
 	"badge": 1,

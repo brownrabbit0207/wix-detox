@@ -13,22 +13,6 @@ describe('loadExternalConfig', () => {
   let loadExternalConfig;
   let logger;
 
-  beforeEach(() => {
-    jest.mock('../utils/logger');
-    logger = require('../utils/logger');
-
-    DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
-    errorComposer = new DetoxConfigErrorComposer();
-
-    loadExternalConfig = (opts) => require('./loadExternalConfig')({
-      cwd: process.cwd(),
-      errorComposer,
-      ...opts,
-    });
-  });
-
-  it('should implicitly use .detoxrc.js, even if there is package.json', async () => {
-    const { filepath, config } = await loadExternalConfig({ cwd: DIR_PRIORITY });
 
     expect(filepath).toBe(path.join(DIR_PRIORITY, '.detoxrc.js'));
     expect(config).toMatchObject({ configurations: expect.anything() });

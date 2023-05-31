@@ -8,16 +8,11 @@
   "detox": {
     "specs": "",
     "apps": {
-    "devices": {
-      "simulator": {
-        "type": "ios.simulator",
-        "device": {
-          "type": "iPhone 11 Pro"
-        }
-      }
-    },
-    "configurations": {
-      "ios.sim.debug": {
+      "ios.debug": {
+        "type": "ios.app",
+        "binaryPath": "build/Build/Products/Debug-iphonesimulator/NativeExample.app",
+        "build": "xcodebuild -project NativeExample.xcodeproj -UseNewBuildSystem=NO -scheme NativeExample -configuration Debug -sdk iphonesimulator -derivedDataPath build"
+      },
         "device": "simulator",
         "app": "ios.release"
       },

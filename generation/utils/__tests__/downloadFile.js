@@ -8,16 +8,11 @@ describe("download-file util", () => {
   beforeEach(() => {
     jest.mock("os", () => ({
       tmpdir: jest.fn(),
+    }));
+    require("os").tmpdir.mockReturnValue(OS_TMP_DIR);
 
-    downloadFile = require("../downloadFile");
-  });
-
-  it("should save content to the temp dir file", () => {
-    mockDownloadedContent = 'can haz teh c0dez';
-
-    downloadFile("foo.bar" /*, encoding = "none" */);
-
-    expect(fs.writeFileSync).toHaveBeenCalled();
+    jest.mock("fs", () => ({
+      writeFileSync: jest.fn(),
     const call = fs.writeFileSync.mock.calls[0];
     expect(call[0]).toContain(OS_TMP_DIR);
     expect(call[0]).toContain(".java");

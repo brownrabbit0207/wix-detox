@@ -8,3 +8,7 @@ class AndroidDevicePathBuilder {
   buildTemporaryArtifactPath(extension) {
     return `/sdcard/${this.prefix}_${this.counter++}${extension}`;
   }
+}
+
+module.exports = AndroidDevicePathBuilder;
+

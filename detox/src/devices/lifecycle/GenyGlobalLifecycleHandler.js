@@ -8,6 +8,17 @@ class GenyGlobalLifecycleHandler {
   constructor({ deviceCleanupRegistry, instanceLifecycleService }) {
     /** @private */
     this._deviceCleanupRegistry = deviceCleanupRegistry;
+    /** @private */
+    this._instanceLifecycleService = instanceLifecycleService;
+  }
+
+  async globalInit() {}
+
+  emergencyCleanup() {
+    const { rawDevices } = this._deviceCleanupRegistry.readRegisteredDevicesUNSAFE();
+    const instanceHandles = rawDevicesToInstanceHandles(rawDevices);
+    if (instanceHandles.length) {
+      reportGlobalCleanupSummary(instanceHandles);
     }
   }
 

@@ -8,3 +8,8 @@ function traceln(message) {
   if (message) {
     trace(message);
   }
+
+  trace(EOL);
+}
+
+module.exports = {

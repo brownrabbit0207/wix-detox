@@ -8,10 +8,8 @@ PROJECT_NAME=Detox
 # Make sure the output directory exists
 
 mkdir -p "${OUTPUT_DIR}"
-echo ${BUILD_SIM}
+rm -fr "${OUTPUT_DIR}/${PROJECT_NAME}.framework"
 
-xcodebuild -project "${PROJECT}" -scheme "Detox" -UseNewBuildSystem=${USE_NEW_BUILD_SYSTEM} -configuration "${CONFIGURATION}" -sdk iphonesimulator -destination "generic/platform=iOS Simulator" build -quiet
+# Step 0. Xcode version
 
-# Step 2. Copy the framework to output folder
-
-cp -fR "${BUILD_SIM}/${PROJECT_NAME}.framework" "${OUTPUT_DIR}"/
+USE_NEW_BUILD_SYSTEM="YES"

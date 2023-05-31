@@ -13,22 +13,6 @@ const defaultArtifactsConfiguration = {
     video: 'none',
     instruments: 'none',
     uiHierarchy: 'disabled',
-  },
-};
-
-const allArtifactsConfiguration = {
-  rootDir: 'artifacts',
-  pathBuilder: null,
-  plugins: {
-    log: 'all',
-    screenshot: 'all',
-    video: 'all',
-    instruments: 'all',
-    uiHierarchy: 'enabled',
-  },
-};
-
-const pluginsDefaultsResolved = {
   log: LogArtifactPlugin.parseConfig('none'),
   screenshot: ScreenshotArtifactPlugin.parseConfig('manual'),
   video: VideoArtifactPlugin.parseConfig('none'),

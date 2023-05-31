@@ -8,16 +8,11 @@ import {
 } from 'react-native';
 
 export default class VisibilityScreen extends Component {
-          <Text style={styles.text}>An attempt to tap Button 1 should fail and produce artifacts.</Text>
-          <View style={styles.buttonOverlayContainer}>
-            <Text style={styles.absoluteButton}>Button 1</Text>
-            <Text style={styles.absoluteButton}>Button 2</Text>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    );
+  constructor(props) {
+    super(props);
+
+    this.state = {};
   }
-}
 
 const styles = StyleSheet.create({
   screen: {

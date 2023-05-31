@@ -8,6 +8,17 @@ const AllocationDriverBase = require('../AllocationDriverBase');
 class SimulatorAllocDriver extends AllocationDriverBase {
   /**
    * @param deviceRegistry { DeviceRegistry }
+   * @param applesimutils { AppleSimUtils }
+   * @param simulatorLauncher { SimulatorLauncher }
+   */
+  constructor({ deviceRegistry, applesimutils, simulatorLauncher }) {
+    super();
+    this._deviceRegistry = deviceRegistry;
+    this._applesimutils = applesimutils;
+    this._simulatorLauncher = simulatorLauncher;
+    this._launchInfo = {};
+  }
+
   /**
    * @param deviceConfig { Object }
    * @return {Promise<IosSimulatorCookie>}

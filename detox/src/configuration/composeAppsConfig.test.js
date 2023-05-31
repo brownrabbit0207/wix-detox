@@ -8,6 +8,17 @@ const {
 
 describe('composeAppsConfig', () => {
   let composeAppsConfig;
+
+  /** @type {*} */
+  let cliConfig;
+  /** @type {string} */
+  let configurationName;
+  /** @type {Detox.DetoxDeviceConfig} */
+  let deviceConfig;
+  /** @type {Detox.DetoxConfiguration} */
+  let localConfig;
+  /** @type {Detox.DetoxConfig} */
+  let globalConfig;
   /** @type {DetoxConfigErrorComposer} */
   let errorComposer;
 

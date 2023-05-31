@@ -8,6 +8,17 @@ describe('appendFile', () => {
 
   beforeEach(() => {
     src = tempfile();
+    dest = tempfile();
+  });
+
+  afterEach(async () => {
+    await Promise.all([src, dest].map(f => fs.remove(f)));
+  });
+
+  it('should throw error if source file does not exist', async () => {
+    await expect(appendFile(tempfile(), dest)).rejects.toThrowError(/ENOENT/);
+  });
+
   it('should append source file contents to destination file contents', async () => {
     await fs.writeFile(dest, 'Begin\n');
     await fs.writeFile(src, 'End');

@@ -8,16 +8,11 @@ describe('AAPT', () => {
   const givenAAPTResult = (result) => {
     exec.mockResolvedValue({
       stdout: result,
-    environment.getAaptPath.mockResolvedValue(mockAAPTPath);
+    });
+  };
+  const execCommand = () => exec.mock.calls[0][0];
 
-    jest.mock('../../../../../utils/childProcess');
-    exec = require('../../../../../utils/childProcess').execWithRetriesAndLogs;
-    givenAAPTResult('');
-
-    jest.mock('../../../../../utils/pipeCommands');
-    escape = jest.requireMock('../../../../../utils/pipeCommands').escape.inQuotedString;
-    escape.mockImplementation(mockEscapeFunc);
-
+  let environment;
     const AAPT = require('./AAPT');
     aapt = new AAPT();
   });

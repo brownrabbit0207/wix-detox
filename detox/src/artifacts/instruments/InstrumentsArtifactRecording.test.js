@@ -8,6 +8,17 @@ describe('InstrumentsArtifactRecording', () => {
     mockedClient = {
       startInstrumentsRecording: jest.fn(),
       stopInstrumentsRecording: jest.fn()
+    };
+  });
+
+  describe('isClientConnected', () => {
+    it('should be connected with real connection', () => {
+      const recording = new InstrumentsArtifactRecording({
+        pluginContext: mockedPluginContext,
+        client: mockedClient,
+      });
+      mockedClient.isConnected = true;
+      expect(recording._isClientConnected()).toBe(true);
     });
 
     it('should be disconnected without real connection', () => {

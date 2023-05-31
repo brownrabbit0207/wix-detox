@@ -8,6 +8,17 @@ function assertType(expectedType) {
   return function assertSpecificType(arg) {
     const [key, value] = firstEntry(arg);
 
+    if (typeof value !== expectedType) {
+      throw new DetoxRuntimeError(`${key} should be a ${expectedType}, but got ${value} (${typeof value})`);
+    }
+  };
+}
+
+const assertNumber = assertType('number');
+const assertString = assertType('string');
+
+function assertNormalized(arg) {
+  assertNumber(arg);
 
   const [key, value] = firstEntry(arg);
   if (value < 0 || value > 1) {

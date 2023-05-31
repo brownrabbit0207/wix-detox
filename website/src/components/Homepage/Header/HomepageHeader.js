@@ -13,16 +13,3 @@ const HomepageHeader = () => {
           <div className="col">
             <h1 className={styles.heroBanner.h1}>{siteConfig.title}</h1>
             <h2 className={styles.heroBanner.h2}>{siteConfig.tagline}</h2>
-            <div className={styles.buttons}>
-              <Link className="button button--secondary button--lg" href="/docs/introduction/getting-started" target="_blank">
-                Getting Started <strong>with Detox</strong>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
-};
-
-export default HomepageHeader;

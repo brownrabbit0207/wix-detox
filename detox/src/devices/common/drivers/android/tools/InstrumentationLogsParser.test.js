@@ -8,6 +8,17 @@ describe('Instrumentation logs parser', () => {
 
     it('should query stacktrace for false for a no-string', () => {
       const logsDump = '';
+      uut.parse(logsDump);
+      expect(uut.containsStackTraceLog()).toEqual(false);
+    });
+
+    it('should query stacktrace for true for a log matching the stacktrace prefix', () => {
+      const logsDump = 'INSTRUMENTATION_STATUS: stack=\n\n';
+      uut.parse(logsDump);
+      expect(uut.containsStackTraceLog()).toEqual(true);
+    });
+
+    it('should query stacktrace for true for a log that holds the stacktrace prefix alongside other stuff', () => {
       const logsDump = [
         'INSTRUMENTATION_STATUS: stream=\ncom.example.DetoxTest\n',
         'INSTRUMENTATION_STATUS: stack=stackFrame1\n\tstackFrame2\n\n',

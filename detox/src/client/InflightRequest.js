@@ -8,6 +8,17 @@ class InflightRequest extends Deferred {
     this._timeoutHandle = null;
     this.message = message;
   }
+
+  resolve(value) {
+    this.clearTimeout();
+    return super.resolve(value);
+  }
+
+  reject(reason) {
+    this.clearTimeout();
+
+    const { messageId, type } = this.message;
+    return super.reject(new DetoxRuntimeError({
       message: `The pending request #${messageId} ("${type}") has been rejected due to the following error:`,
       debugInfo: reason,
     }));
