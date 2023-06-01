@@ -13,3 +13,4 @@ describe('Initialization (context) tests', () => {
     const handle = execa.commandSync(cmd, { stdio: 'inherit', shell: true });
     expect(handle.exitCode).toBe(0);
   });
+});

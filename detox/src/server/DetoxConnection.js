@@ -18,27 +18,6 @@ class DetoxConnection {
     this._onError = this._onError.bind(this);
     this._onClose = this._onClose.bind(this);
 
-    this._log = logger.child({ id: socket.remotePort });
-    this._log.debug.begin(`connection :${socket.localPort}<->:${socket.remotePort}`);
-
-    this._sessionManager = sessionManager;
-    this._webSocket = webSocket;
-    this._webSocket.on('message', this._onMessage);
-    this._webSocket.on('error', this._onError);
-    this._webSocket.on('close', this._onClose);
-
-    // eslint-disable-next-line unicorn/no-this-assignment
-    const self = this;
-    this._handler = new AnonymousConnectionHandler({
-      api: {
-        get log() { return self._log; },
-        appendLogDetails: (details) => { this._log = this._log.child(details); },
-
-        registerSession: (params) => this._sessionManager.registerSession(this, params),
-        setHandler: (handler) => { this._handler = handler; },
-        sendAction: (action) => this.sendAction(action),
-      },
-    });
   }
 
   sendAction(action) {

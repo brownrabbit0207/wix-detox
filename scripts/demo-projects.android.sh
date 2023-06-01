@@ -13,15 +13,10 @@ source $SCRIPTS_PATH/demo-projects.sh
 pushd detox
 run_f "npm run build:android"
 popd
-  run_f "npm run test:plugin"
-popd
 
-# Detox Native
-##
-
-pushd detox
-  run_f "npm run build:android-native"
-popd
+pushd examples/demo-react-native
+  run_f "npm run build:android-debug"
+  run_f "npm run test:android-debug"
 
 pushd examples/demo-pure-native-android
   export ANDROID_SERIAL=`adb devices | grep emulator | head -1 | awk '{print $1}'`

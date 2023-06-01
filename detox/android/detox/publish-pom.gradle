@@ -13,15 +13,10 @@ project.ext.buildPomXmlDependencies = { pom, configurations ->
     }
 }
 
-        final exclusionNode = childNode.appendNode('exclusions').appendNode('exclusion')
-        exclusionNode.appendNode('groupId', '*')
-        exclusionNode.appendNode('artifactId', '*')
-    } else if (!dep.properties.excludeRules.empty) {
-        // Otherwise add specified exclude rules
-        final exclusionNode = childNode.appendNode('exclusions').appendNode('exclusion')
-        dep.properties.excludeRules.each { ExcludeRule rule ->
-            exclusionNode.appendNode('groupId', rule.group ?: '*')
-            exclusionNode.appendNode('artifactId', rule.module ?: '*')
-        }
+private static def addConfigurationDependencies(rootNode, Configuration configuration, String scope) {
+    configuration.dependencies.each { dep -> addChildDependency(rootNode, dep, scope) }
+}
+
+private static def addChildDependency(rootNode, Dependency dep, String scope) {
     }
 }

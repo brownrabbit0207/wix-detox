@@ -14,15 +14,10 @@
 {
 	rect = CGRectMake(rect.origin.x * self.scale, rect.origin.y * self.scale, rect.size.width * self.scale, rect.size.height * self.scale);
 	
-	size_t bpr = CGImageGetBytesPerRow(cgImage);
-	size_t bpp = CGImageGetBitsPerPixel(cgImage);
-	size_t bpc = CGImageGetBitsPerComponent(cgImage);
-	size_t bytes_per_pixel = bpp / bpc;
-	
-	CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(cgImage);
-	CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(cgImage);
-	
-	uint8_t alphaOffset;
+	return [UIImage imageWithCGImage:CGImageCreateWithImageInRect(self.CGImage, rect) scale:1 orientation:self.imageOrientation];
+}
+
+- (NSUInteger)dtx_numberOfVisiblePixelsWithAlphaThreshold:(CGFloat)threshold totalPixels:(NSUInteger*)totalPixels
 	if(alphaInfo == kCGImageAlphaPremultipliedFirst)
 	{
 		if((bitmapInfo & kCGBitmapByteOrderMask) == kCGBitmapByteOrder32Little)

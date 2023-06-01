@@ -13,3 +13,4 @@ class UiControllerImplReflected {
 
     fun isCompatIdleNow(): Boolean =
         Reflect.on(getUiController()).field(FIELD_COMPAT_IDLE).call(METHOD_IS_IDLE_NOW).get()
+}

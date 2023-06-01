@@ -18,27 +18,6 @@ describe('composeLoggerConfig', () => {
 
   it('should return a default behavior if nothing is set', () => {
     expect(composed()).toEqual({
-      level: 'info',
-      overrideConsole: true,
-      options: {
-        showDate: expect.any(Function),
-        showLoggerName: true,
-        showPid: true,
-        showLevel: false,
-        showMetadata: false,
-        showPrefixes: expect.any(Function),
-        basepath: expect.any(String),
-        prefixers: {
-          'ph': expect.any(Function),
-        },
-        stringifiers: {
-          'args': expect.any(Function),
-          'data': expect.any(Function),
-          'error': expect.any(Function),
-        },
-      },
-    });
-  });
 
   it('should never return "options" as a function', () => {
     expect(composed().options).not.toBeInstanceOf(Function);

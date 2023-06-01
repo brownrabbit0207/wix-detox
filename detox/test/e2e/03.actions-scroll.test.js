@@ -13,16 +13,11 @@ describe('Actions - Scroll', () => {
     await element(by.id('ScrollView161')).scroll(100, 'down');
     await expect(element(by.text('Text1'))).not.toBeVisible();
     await expect(element(by.text('Text4'))).toBeVisible();
-
-  it('should scroll to edge', async () => {
-    await expect(element(by.text('Text12'))).not.toBeVisible();
-    await element(by.id('ScrollView161')).scrollTo('bottom');
-    await expect(element(by.text('Text12'))).toBeVisible();
-    await element(by.id('ScrollView161')).scrollTo('top');
+    await element(by.id('ScrollView161')).scroll(100, 'up');
     await expect(element(by.text('Text1'))).toBeVisible();
+    await expect(element(by.text('Text4'))).not.toBeVisible();
   });
 
-  it('should scroll horizontally to edge', async () => {
     await expect(element(by.text('HText8'))).not.toBeVisible();
     await element(by.id('ScrollViewH')).scrollTo('right');
     await expect(element(by.text('HText8'))).toBeVisible();

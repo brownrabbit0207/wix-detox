@@ -13,6 +13,22 @@ const anErrorResponse = (exit_code, exit_code_desc, error_desc) => ({
 
 describe('Genymotion-cloud executable', () => {
   const successResponse = aResponse();
+  const failResponse = anErrorResponse(4, 'API_ERROR', 'TOO_MANY_RUNNING_VDS');
+  const recipeName = 'mock-recipe-name';
+  const recipeUUID = 'mock-recipe-uuid';
+  const instanceUUID = 'mock-uuid';
+  const instanceName = 'detox-instance1';
+
+  const givenSuccessResult = () => exec.mockResolvedValue({
+    stdout: JSON.stringify(successResponse),
+  });
+  const givenErrorResult = () => exec.mockRejectedValue({
+    stderr: JSON.stringify(failResponse),
+  });
+
+  let exec;
+  let uut;
+  beforeEach(() => {
     jest.mock('../../../../../../utils/childProcess');
     exec = require('../../../../../../utils/childProcess').execWithRetriesAndLogs;
 

@@ -13,3 +13,4 @@ open class ReactNativeReLoader(
             rnInstanceManager.recreateReactContextInBackground()
         }
     }
+}

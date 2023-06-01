@@ -13,6 +13,22 @@ export default class DatePickerScreen extends Component {
     this.state = {
       chosenDate: new Date(),
       datePickerVisible: !shouldHideDatePicker,
+      datePickerDisplay: DatePickerScreen.MODES[0],
+    };
+  }
+
+  _toggleDatePicker = () => {
+    const currentIndex = DatePickerScreen.MODES.indexOf(this.state.datePickerDisplay);
+    this.setState({
+      datePickerDisplay: DatePickerScreen.MODES[(currentIndex + 1) % DatePickerScreen.MODES.length],
+    });
+  }
+
+  _openDatePicker = () => {
+    this.setState({ datePickerVisible: true });
+  }
+
+  setDate = (e, newDate) => {
     this.setState({
       chosenDate: newDate,
       datePickerVisible: !shouldHideDatePicker,

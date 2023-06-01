@@ -18,27 +18,6 @@ for jarfile in glob(['libs/*.jar']):
     binary_jar = jarfile,
   )
 
-for aarfile in glob(['libs/*.aar']):
-  name = 'aars__' + aarfile[aarfile.rindex('/') + 1: aarfile.rindex('.aar')]
-  lib_deps.append(':' + name)
-  android_prebuilt_aar(
-    name = name,
-    aar = aarfile,
-  )
-
-android_library(
-  name = 'all-libs',
-  exported_deps = lib_deps
-)
-
-android_library(
-  name = 'app-code',
-  srcs = glob([
-    'src/main/java/**/*.java',
-  ]),
-  deps = [
-    ':all-libs',
-    ':build_config',
     ':res',
   ],
 )

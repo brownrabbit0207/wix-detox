@@ -13,6 +13,22 @@ const { $restoreSessionState, $sessionState, $worker } = DetoxContext.protected;
 const _ipcClient = Symbol('ipcClient');
 //#endregion
 
+class DetoxSecondaryContext extends DetoxContext {
+  constructor() {
+    super();
+
+    /**
+     * @private
+     * @type {import('../ipc/IPCClient')}
+     */
+    this[_ipcClient] = null;
+  }
+
+  //#region Internal members
+  async [symbols.reportTestResults](testResults) {
+    if (this[_ipcClient]) {
+      await this[_ipcClient].reportTestResults(testResults);
+    } else {
       throw new DetoxInternalError('Detected an attempt to report failed tests using a non-initialized context.');
     }
   }

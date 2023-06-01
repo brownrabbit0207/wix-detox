@@ -13,6 +13,22 @@ At the moment, Detox can offer you a first-class integration with
 ## Prerequisites
 
 You need to register an account in [Genymotion SaaS], so that you have valid credentials to use with their CLI tool,
+[`gmsaas`]. If you already have an account there, make sure there are available device minutes. Don't worry about
+the new accounts – they come with **2** concurrent devices and free **60** minutes out of the box.
+
+![](../img/genymotion/register.png)
+
+Next, you should get `gmsaas` CLI tool [installed and configured][Genymotion SaaS tutorial],
+so that you're able to see your e-mail after running this:
+
+```bash
+gmsaas auth whoami
+# your_email@example.com
+```
+
+If you encounter errors instead, please revisit the [Genymotion SaaS tutorial] and check out their [Known Issues]
+section if your problem persists.
+
 ## Configuring
 
 To run tests on a device, you need to define its properties first: OS version, screen dimensions, etc.

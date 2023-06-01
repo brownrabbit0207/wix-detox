@@ -13,6 +13,22 @@ import androidx.annotation.Nullable;
 
 /**
  * Created by simonracz on 01/06/2017.
+ */
+
+/**
+ * <p>
+ * IdlingResource for Espresso, which monitors the traffic of
+ * React Native's JS bridge.
+ * </p>
+ */
+public class BridgeIdlingResource extends DetoxBaseIdlingResource implements NotThreadSafeBridgeIdleDebugListener {
+    private static final String LOG_TAG = "Detox";
+    private final ReactContext reactContext;
+
+    private AtomicBoolean idleNow = new AtomicBoolean(true);
+    private ResourceCallback callback = null;
+
+    public BridgeIdlingResource(ReactContext reactContext) {
         this.reactContext = reactContext;
         this.reactContext.getCatalystInstance().addBridgeIdleDebugListener(this);
     }

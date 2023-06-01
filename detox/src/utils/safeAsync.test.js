@@ -13,3 +13,7 @@ describe('safeAsync', () => {
     await expect(safeAsync(async () => 5)).resolves.toEqual(5);
   });
 
+  it(`should handle sync function errors in the async way`, async() => {
+    await expect(safeAsync( () => { throw 'error'; })).rejects.toEqual('error');
+  });
+});

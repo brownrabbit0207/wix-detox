@@ -13,6 +13,22 @@ describe('WholeTestRecorderPlugin', () => {
     api = new ArtifactsApi({
       config: {
         enabled: false,
+        keepOnlyFailedTestsArtifacts: false,
+      },
+    });
+    plugin = new FakeWholeTestRecorderPlugin({ api });
+  });
+
+  describe('when disabled', () => {
+    beforeEach(() => plugin.disable());
+
+    describe('onTestStart', () => {
+      beforeEach(async () => plugin.onTestStart(testSummaries.running()));
+
+      it('should not create recording onTestStart', async () =>
+        expect(plugin.createTestRecording).not.toHaveBeenCalled());
+    });
+
     describe('onTestDone', () => {
       beforeEach(async () => plugin.onTestDone(testSummaries.passed()));
 

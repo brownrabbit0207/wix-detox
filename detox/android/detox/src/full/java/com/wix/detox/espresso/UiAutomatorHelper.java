@@ -13,6 +13,22 @@ import org.joor.ReflectException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+import androidx.test.platform.app.InstrumentationRegistry;
+
+/**
+ * Created by simonracz on 19/07/2017.
+ */
+
+public class UiAutomatorHelper {
+    private static final String LOG_TAG = "detox";
+
+    private static final String METHOD_LOOP_UNTIL_IDLE = "loopMainThreadUntilIdle";
+    private static final String METHOD_LOOP_AT_LEAST = "loopMainThreadForAtLeast";
+
+    /**
+     * This triggers a full Espresso sync. It's intended use is to sync UIAutomator calls.
+     */
+    public static void espressoSync() {
         // I want to invoke Espresso's sync mechanism manually.
         // This turned out to be amazingly difficult. This below is the
         // nicest solution I could come up with.

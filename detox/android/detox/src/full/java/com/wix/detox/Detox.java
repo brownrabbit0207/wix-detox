@@ -13,6 +13,22 @@ import androidx.annotation.NonNull;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.rule.ActivityTestRule;
 
+/**
+ * <p>Static class.</p>
+ *
+ * <p>To start Detox tests, call runTests() from a JUnit test.
+ * This test must use AndroidJUnitRunner or a subclass of it, as Detox uses Espresso internally.
+ * All non-standard async code must be wrapped in an Espresso
+ * <a href="https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/">IdlingResource</a>.</p>
+ *
+ * Example usage
+ * <pre>{@code
+ *@literal @runWith(AndroidJUnit4.class)
+ *@literal @LargeTest
+ * public class DetoxTest {
+ *  @literal @Rule
+ *   //The Activity that controls React Native.
+ *   public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule(MainActivity.class);
  *
  *  @literal @Before
  *   public void setUpCustomEspressoIdlingResources() {

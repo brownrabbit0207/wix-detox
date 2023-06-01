@@ -13,6 +13,22 @@
     --ifm-color-primary-lightest: var(--detox-color-p2);
 
     --ifm-color-secondary-contrast-background: var(--detox-color-u4a);
+    --ifm-color-secondary-contrast-foreground: var(--detox-color-a0);
+    --ifm-color-secondary-dark: var(--detox-color-u0);
+    --ifm-color-danger-contrast-background: var(--detox-color-r4a);
+    --ifm-color-danger-dark: var(--detox-color-r0);
+    --ifm-color-warning-contrast-background: var(--detox-color-y4a);
+    --ifm-color-warning-dark: var(--detox-color-y0);
+    --ifm-color-success-contrast-background: var(--detox-color-e4a);
+    --ifm-color-success-dark: var(--detox-color-e0);
+    --ifm-color-info-contrast-background: var(--detox-color-b4a);
+    --ifm-color-info-dark: var(--detox-color-b0);
+
+    --ifm-code-font-size: 95%;
+  }
+
+  &[data-theme='light'] {
+    @include define-detox-light-colors();
     --docusaurus-highlighted-code-line-bg: #d9e5f6;
   }
 

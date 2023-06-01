@@ -13,3 +13,12 @@ module.exports = function(properties) {
     return makeResourceTitle(`There are enqueued timers.`);
   }
 
+  let timerCount = 0;
+  let timersDescriptions = [];
+  for (const timer of properties.timers) {
+    timerCount++;
+    timersDescriptions.push(makeTimerDescription(timer, timerCount));
+  }
+
+  return `${makeResourceTitle(`${timerCount} enqueued native timers:`)}\n${timersDescriptions.join('\n')}`;
+};

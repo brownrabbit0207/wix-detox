@@ -18,27 +18,6 @@ describe('Attributes', () => {
     if ('elements' in result) {
       attributesArray = result.elements;
     } else {
-      attributes = await result;
-    }
-  }
-
-  beforeAll(async () => {
-    await device.reloadReactNative();
-    await element(by.text('Attributes')).tap();
-  });
-
-  describe('of a view', () => {
-    beforeAll(() => useMatcher(by.id('viewId')));
-
-    it('should have the corresponding shape', () =>
-      expect(attributes).toMatchObject({
-        identifier: 'viewId',
-        enabled: true,
-        visible: true,
-      }));
-
-    it(':ios: should have the corresponding shape', () =>
-      expect(attributes).toMatchObject({
         ...shapes.IosElementAttribute(),
         hittable: true,
       }));

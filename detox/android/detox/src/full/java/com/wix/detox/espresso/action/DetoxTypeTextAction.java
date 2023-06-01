@@ -18,22 +18,3 @@ public class DetoxTypeTextAction implements ViewAction {
     public DetoxTypeTextAction(String text) {
         this.text = text;
         clickAction = new RNClickAction();
-        typeTextAction = new TypeTextAction(text, false);
-    }
-
-    @Override
-    public Matcher<View> getConstraints() {
-        return allOf(clickAction.getConstraints(), new TypeTextAction("", true).getConstraints());
-    }
-
-    @Override
-    public String getDescription() {
-        return "Click to focus & type text ("+text+")";
-    }
-
-    @Override
-    public void perform(UiController uiController, View view) {
-        clickAction.perform(uiController, view);
-        typeTextAction.perform(uiController, view);
-    }
-}

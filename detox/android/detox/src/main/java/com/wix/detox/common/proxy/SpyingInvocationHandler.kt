@@ -13,3 +13,8 @@ class SpyingInvocationHandler(private val target: Any, private val spy: MethodsS
             result = m.invoke(target, *args)
         } catch (e: InvocationTargetException) {
             throw e.targetException
+        } finally {
+            spy.onAfterCall(m.name)
+        }
+        return result
+    }

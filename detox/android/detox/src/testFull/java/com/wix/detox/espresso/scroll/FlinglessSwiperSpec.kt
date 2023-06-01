@@ -13,16 +13,11 @@ object FlinglessSwiperSpec: Spek({
     describe("Flingless Swiper") {
         val swipeStartTime = 1000L
 
-            }
-            upEvent = mock(name = "upEventMock") {
-                on { downTime }.doReturn(swipeStartTime)
-                on { eventTime }.doReturn(swipeStartTime)
-            }
-            motionEvents = mock(name = "motionEventsMock") {
-                on { obtainDownEvent(any(), any(), any()) }.doReturn(downEvent)
-                on { obtainMoveEvent(any(), any(), any(), any()) }.doReturn(moveEvent)
-                on { obtainUpEvent(any(), any(), any(), any()) }.doReturn(upEvent)
-            }
+        lateinit var uiController: UiController
+        lateinit var downEvent: MotionEvent
+        lateinit var moveEvent: MotionEvent
+        lateinit var upEvent: MotionEvent
+        lateinit var motionEvents: MotionEvents
             viewConfig = mock()
         }
 

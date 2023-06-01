@@ -13,6 +13,22 @@ import android.widget.TextView;
 import com.example.utils.DoubleTapListenerStub;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
+
+public class DoubleTapsTextViewManager extends SimpleViewManager<ViewGroup> {
+    private static class ViewState {
+        int taps = 0;
+    }
+
+    @Override
+    public String getName() {
+        return "DetoxDoubleTapsTextView";
+    }
+
+    @Override
+    protected ViewGroup createViewInstance(ThemedReactContext reactContext) {
+        final ViewState viewState = new ViewState();
+
+        final FrameLayout layout = new FrameLayout(reactContext);
         layout.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 
         final TextView textView = new TextView(reactContext);

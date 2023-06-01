@@ -13,6 +13,22 @@ Use [actions](actions.md) to simulate use interaction with elements.
 - [`.toHaveLabel()`](#tohavelabellabel)
 - [`.toHaveId()`](#tohaveidid)
 - [`.toHaveValue()`](#tohavevaluevalue)
+- [`.toHaveSliderPosition()`](#tohavesliderpositionnormalizedposition-tolerance)
+- [`.toHaveToggleValue()`](#tohavetogglevaluevalue)
+- [`.not`](#not)
+- [`.withTimeout()`](#withtimeouttimeout)
+
+### `toBeVisible()`
+
+Expects the view to be at least N% visible on the screen.
+Accepts an optional parameter of percent threshold of element visibility, integer ranging from 1 to 100, that determines whether the element is visible or not. If no number is provided then defaults to 75%.
+
+Negating this expectation with a `not` expression expects the view’s visible area to be lower than N%.
+
+On iOS, visibility is defined by having the view, or one of its subviews, be topmost at the view’s activation point on screen.
+
+```js
+await expect(element(by.id('subtitle'))).toBeVisible();
 await expect(element(by.id('mainTitle'))).toBeVisible(35);
 ```
 

@@ -18,21 +18,3 @@ const Showcase = () => {
   return cards.length > 0 ? _makeCardsContainer(cards) : _makeLoadingSpinner();
 };
 
-const _makeShuffledCardList = (cardList) => {
-  const partition = _.partition(cardList, 'shouldStayOnTop');
-  return partition[0].concat(_.shuffle(partition[1]));
-};
-
-const _makeCard = (props) => <Card key={props.title} {...props} />;
-
-const _makeCardsContainer = (cards) => (
-  <section className={clsx('container', styles.container)}>
-    <ul className={clsx('col', 'col--12', styles.list)}>{cards}</ul>
-  </section>
-);
-
-const _makeLoadingSpinner = () => (
-  <TailSpin height="60" width="60" color="#dddddd" ariaLabel="loading" radius="2" wrapperClass={styles.spinner} visible={true} />
-);
-
-export default Showcase;

@@ -14,6 +14,22 @@ When this works it’s like magic. You simply execute actions one after the othe
 
 - **Network requests** - Detox monitors in-flight requests over the network.
 
+- **Main thread (native)** - Detox monitors pending native operations on the main thread (main dispatch queue and main `NSOperationQueue`).
+
+- **Layout of UI** - Detox monitors UI layout operations. There’s also special support for React Native layout which includes the Shadow Queue where [yoga](https://github.com/facebook/yoga) runs.
+
+- **Timers** - Detox monitors timers (explicit asynchronous delays). There’s special support for JavaScript timers like `setTimeout` and `setInterval`.
+
+- **Animations** - Detox monitors active animations and transitions. There’s special support for React Native animations with the Animated library.
+
+- **React Native JavaScript thread** - Detox monitors pending operations on the JavaScript thread in RN apps.
+
+- **React Native bridge** - Detox monitors the React Native bridge and asynchronous messages sent on it.
+
+### Automatic synchronization works most of the time
+
+It’s difficult for an automatic mechanism to be correct in 100% of the cases. There are always exceptions. We are optimizing for the common case so most of your scenarios will not have to deal with synchronization issues.
+
 For the rest of this tutorial, we’ll assume the test is having some sort of synchronization issue.
 
 ### Are we waiting too much or not waiting enough?

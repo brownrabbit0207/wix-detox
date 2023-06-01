@@ -13,3 +13,8 @@ class WithAccessibilityLabelMatcher(private val textMatcher: Matcher<String>): T
                 if (!matched) {
                     mismatchDescription.appendText("view.getAccessibilityLabel() ")
                     textMatcher.describeMismatch(contentDescription, mismatchDescription)
+                }
+            }
+        }
+
+    override fun describeTo(description: Description) {

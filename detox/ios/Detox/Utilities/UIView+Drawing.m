@@ -18,27 +18,6 @@
 
 @end
 
-@interface CALayer (BackdropDrawingUtils) @end
-@implementation CALayer (BackdropDrawingUtils)
-
-static BOOL __currentlyDrawing = NO;
-static BOOL __subviewFound = NO;
-static UIView* __subview = nil;
-
-static void (*__orig_VKMapView_renderInContext)(id self, SEL _cmd, CGContextRef ctx);
-+ (void)_dtx_applyDrawingFixes
-{
-	[CALayer _fixupRenderingOnce];
-	
-	__currentlyDrawing = YES;
-	__subviewFound = NO;
-	
-	Class cls = NSClassFromString(@"VKMapView");
-	if(cls != nil)
-	{
-		Method m = class_getInstanceMethod(cls, @selector(renderInContext:));
-		__orig_VKMapView_renderInContext = (void*)method_getImplementation(m);
-		method_setImplementation(m, (void*)_dtx_map_renderInContext);
 	}
 }
 

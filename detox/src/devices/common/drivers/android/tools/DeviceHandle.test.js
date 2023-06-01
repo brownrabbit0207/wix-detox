@@ -13,4 +13,8 @@ describe('Device-handle', () => {
   });
 
   it('should extract the device status', () => {
-});
+    const uut = deviceHandle('mockdevice', 'mockstatus');
+    expect(uut.status).toEqual('mockstatus');
+  });
+
+  it('should deduce: device-type = emulator', () => {

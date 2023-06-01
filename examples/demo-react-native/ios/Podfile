@@ -18,10 +18,3 @@ target 'example' do
       else
         react_native_post_install(
           installer,
-            # Set `mac_catalyst_enabled` to `true` in order to apply patches
-            # necessary for Mac Catalyst builds
-            :mac_catalyst_enabled => false
-        )
-      end
-  end
-end

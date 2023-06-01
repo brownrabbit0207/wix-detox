@@ -13,15 +13,10 @@ class DeviceAllocator {
 
   /**
    * @param deviceConfig { Object }
-  }
-
-  /**
-   * @param cookie { DeviceCookie }
-   * @param options { DeallocOptions }
-   * @return {Promise<void>}
+   * @return {Promise<DeviceCookie>}
    */
-  free(cookie, options) {
-    return this._driver.free(cookie, options);
+  allocate(deviceConfig) {
+    return this._driver.allocate(deviceConfig);
   }
 }
 

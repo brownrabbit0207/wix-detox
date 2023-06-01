@@ -13,3 +13,4 @@ describe('Test suite 1', () => {
     await element(by.id('hello_button')).tap();
     await expect(element(by.text('Hello!!!'))).toBeVisible();
   });
+});

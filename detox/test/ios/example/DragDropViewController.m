@@ -13,6 +13,22 @@
 	UILabel* _statusLabel;
 }
 
+@end
+
+@implementation DragDropViewController
+
+- (instancetype)init
+{
+	self = [super init];
+	
+	if(self)
+	{
+		self.modalPresentationStyle = UIModalPresentationFullScreen;
+	}
+	
+	return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
