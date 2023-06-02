@@ -18,11 +18,8 @@ function constructSafeFilename(prefix = '', trimmable = '', suffix = '') {
         prefix,
         trimmable,
         suffix,
-  const trimmed = trimmable.slice(-MAX_FILE_LENGTH + nonTrimmableLength);
-  const unsafe = prefix + trimmed + suffix;
-  const sanitized = sanitize(unsafe, sanitizeOptions);
+      }, null, 2),
+    });
+  }
 
-  return sanitized;
-}
-
-module.exports = constructSafeFilename;
+  const nonTrimmableLength = prefix.length + suffix.length;

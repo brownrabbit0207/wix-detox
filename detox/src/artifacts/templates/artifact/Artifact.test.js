@@ -18,6 +18,27 @@ describe('Artifact', () => {
     beforeEach(() => {
       ArifactExtensionTest = class extends Artifact {
         constructor() {
+          super();
+
+          this.doStart = jest.fn().mockImplementation(() => super.doStart());
+          this.doStop = jest.fn().mockImplementation(() => super.doStop());
+          this.doSave = jest.fn().mockImplementation(() => super.doSave());
+          this.doDiscard = jest.fn().mockImplementation(() => super.doDiscard());
+        }
+      };
+
+      artifact = new ArifactExtensionTest();
+    });
+
+    it('should have a name', () => {
+      expect(artifact.name).toBe(ArifactExtensionTest.name);
+    });
+
+    it('should pass a regular save flow', async () => {
+      expect(artifact.doStart).not.toHaveBeenCalled();
+      await artifact.start();
+      expect(artifact.doStart).toHaveBeenCalled();
+
       expect(artifact.doStop).not.toHaveBeenCalled();
       await artifact.stop();
       expect(artifact.doStop).toHaveBeenCalled();

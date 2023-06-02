@@ -18,6 +18,27 @@ If some steps don't look applicable to your project, please adapt them according
 look for other file locations, use custom build commands and so on.
 
 If you're using **Expo**, please refer to the [setup guide] from their documentation website instead.
+The setup for Expo projects is different and is not covered in this article.
+
+:::
+
+## Step 1: Bootstrap
+
+<Tabs groupId="appType">
+  <TabItem value="start-rn" label="React Native" default>
+    <PrepareBootstrapRN />
+  </TabItem>
+  <TabItem value="start-other" label="Native iOS">
+    <PrepareBootstrapOther />
+  </TabItem>
+</Tabs>
+
+Now, when all the dependencies are installed, initialize Detox in your project:
+
+```bash
+detox init
+```
+
 Normally you should see an output like:
 
 ```plain text

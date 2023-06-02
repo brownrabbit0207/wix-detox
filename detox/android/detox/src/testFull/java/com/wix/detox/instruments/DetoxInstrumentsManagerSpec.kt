@@ -18,6 +18,27 @@ object DetoxInstrumentsManagerSpec : Spek({
         val mockAdditionalInfo = "MockAdditionalInfo"
         val mockStatus = "MockStatus"
         val mockPath = "/mock"
+        val mockSamplingInterval = 100500L
+
+        beforeEachTest {
+            appContext = mock()
+            instruments = mock()
+            instrumentsManager = DetoxInstrumentsManager(appContext, instruments)
+        }
+
+        it("should start recording when instruments installed with default params") {
+            whenever(instruments.installed()).thenReturn(true)
+            instrumentsManager.startRecordingAtLocalPath(mockPath, mockSamplingInterval)
+
+            verify(instruments).installed()
+            verify(instruments).startRecording(appContext, true, mockSamplingInterval, File(mockPath), false)
+        }
+
+        describe("proxy events") {
+            lateinit var recording: InstrumentsRecording
+
+            beforeEachTest {
+                recording = mock()
                 whenever(instruments.installed()).thenReturn(true)
                 whenever(instruments.startRecording(any(), any(), any(), any(), any())).thenReturn(recording)
             }

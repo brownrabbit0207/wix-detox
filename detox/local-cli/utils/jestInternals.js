@@ -18,6 +18,27 @@ function getJestLocation() {
   if (!resolveFrom.silent(cwd, 'jest')) {
     throw new DetoxRuntimeError({
       message: 'Could not resolve "jest" package from the current working directory.\n\n' +
+        'This means that Detox could not find it in any of the following locations:\n' +
+        getNodeModulePaths(cwd).map(p => `* ${p}`).join('\n'),
+      hint: `Try installing "jest": npm install jest --save-dev`,
+    });
+  }
+
+  return path.dirname(resolveFrom(cwd, 'jest/package.json'));
+}
+
+function resolveJestDependency(jestLocation, dependencyName) {
+  const result = resolveFrom.silent(jestLocation, dependencyName);
+  if (!result) {
+    throw new DetoxRuntimeError({
+      message: `Could not resolve "${dependencyName}" package from the "jest" npm package directory.\n\n` +
+        'This means that Detox could not find it in any of the following locations:\n' +
+        getNodeModulePaths(jestLocation).map(p => `* ${p}`).join('\n'),
+      hint: 'Consider reporting this as an issue at: https://github.com/wix/Detox/issues'
+    });
+  }
+
+  return result;
 }
 
 function requireJestDependency(jestLocation, dependencyName) {

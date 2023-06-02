@@ -18,6 +18,27 @@ describe('IPC', () => {
   let ipcClient1;
 
   /** @type {IPCClient} */
+  let ipcClient2;
+
+  beforeEach(() => {
+    const logger = require('../utils/logger');
+
+    sessionState = {
+      id: 'session-1',
+      detoxIPCServer: 'foo',
+    };
+
+    ipcServer = new IPCServer({
+      logger,
+      sessionState: new SessionState(sessionState),
+    });
+
+    ipcClient1 = new IPCClient({
+      id: 'bar',
+      logger,
+      sessionState: new SessionState(sessionState),
+    });
+
     ipcClient2 = new IPCClient({
       id: 'baz',
       logger,

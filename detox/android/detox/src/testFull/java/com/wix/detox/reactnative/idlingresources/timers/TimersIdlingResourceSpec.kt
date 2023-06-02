@@ -19,15 +19,10 @@ object TimersIdlingResourceSpec : Spek({
             choreographer = mock()
         }
 
-        it("should return a debug-name") {
-            Assertions.assertThat(uut().getDebugName()).isEqualTo("timers")
-        }
+        fun uut() = TimersIdlingResource(idleInterrogationStrategy) { choreographer }
 
-        it("should be idle if strategy says so") {
-            givenIdleStrategy()
-            Assertions.assertThat(uut().isIdleNow).isTrue()
-        }
-
+        fun givenIdleStrategy() {
+            whenever(idleInterrogationStrategy.isIdleNow()).thenReturn(true)
         it("should be busy if strategy says so") {
             givenBusyStrategy()
             Assertions.assertThat(uut().isIdleNow).isFalse()

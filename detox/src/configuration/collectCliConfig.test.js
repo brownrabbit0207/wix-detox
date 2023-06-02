@@ -18,6 +18,27 @@ describe('collectCliConfig', () => {
     collectCliConfig = require('./collectCliConfig');
     logger = require('../utils/logger');
   });
+
+  afterEach(() => {
+    process.env = __env__;
+  });
+
+  function multiplyTest(testCase, pairs) {
+    return pairs.map(([input, expected]) => [...testCase, input, expected]);
+  }
+
+  function asString(testCase) {
+    return multiplyTest(testCase, [
+      [undefined, undefined],
+      ['', ''],
+      ['some', 'some'],
+    ]);
+  }
+
+  function asNumber(testCase) {
+    return multiplyTest(testCase, [
+      [undefined, undefined],
+      [null, undefined],
       ['', undefined],
       ['some', NaN],
       ['0', 0],

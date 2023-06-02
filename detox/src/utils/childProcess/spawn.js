@@ -18,16 +18,11 @@ function spawnAndLog(binary, flags, options) {
 async function spawnWithRetriesAndLogs(binary, flags, options = {}) {
   const command = _joinCommandAndFlags(binary, flags);
   const trackingId = execsCounter.inc();
-};
-
-async function interruptProcess(childProcessPromise, schedule) {
-  const childProcess = childProcessPromise.childProcess;
-  const cpid = childProcess.pid;
-  const spawnargs = childProcess.spawnargs.join(' ');
-  const log = rootLogger.child({ event: 'SPAWN_KILL', pid: cpid });
-
-  const handles = _.mapValues({ ...DEFAULT_KILL_SCHEDULE, ...schedule }, (ms, signal) => {
-    return setTimeout(() => {
+  const logger = rootLogger.child({ fn: 'spawnWithRetriesAndLogs', command, trackingId });
+  const _options = {
+    ...options,
+    capture: _.union(options.capture || [], ['stderr']),
+  };
       log.trace({ signal }, `sending ${signal} to: ${spawnargs}`);
       childProcess.kill(signal);
     }, ms);

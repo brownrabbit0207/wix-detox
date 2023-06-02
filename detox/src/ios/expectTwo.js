@@ -23,32 +23,6 @@ class Expect {
   }
 
   toBeVisible(percent) {
-    if (percent !== undefined && (!Number.isSafeInteger(percent) || percent < 1 || percent > 100)) {
-      throw new Error('`percent` must be an integer between 1 and 100, but got '
-                      + (percent + (' (' + (typeof percent + ')'))));
-    }
-
-    const traceDescription = expectDescription.toBeVisible(percent);
-    return this.expect('toBeVisible', traceDescription, percent);
-  }
-
-  toBeNotVisible() {
-    return this.not.toBeVisible();
-  }
-
-  toBeFocused() {
-    const traceDescription = expectDescription.toBeFocused();
-    return this.expect('toBeFocused', traceDescription);
-  }
-
-  toBeNotFocused() {
-    return this.not.toBeFocused();
-  }
-
-  toExist() {
-    const traceDescription = expectDescription.toExist();
-    return this.expect('toExist', traceDescription);
-  }
 
   toNotExist() {
     return this.not.toExist();

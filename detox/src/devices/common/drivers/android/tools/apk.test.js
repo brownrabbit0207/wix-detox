@@ -23,8 +23,3 @@ describe('APK utils', () => {
 
     it('should properly resolve given a gradle build with multiple flavors', async () => {
       const inputApkPath = path.join(rootPath, 'build/outputs/apk/pocPlayStore/debug/app-poc-playStore-debug.apk');
-      const expectedTestApkPath = path.join(rootPath, 'build/outputs/apk/androidTest/pocPlayStore/debug/app-poc-playStore-debug-androidTest.apk');
-      expect(apkUtils.getTestApkPath(inputApkPath)).toEqual(expectedTestApkPath);
-    });
-  });
-});

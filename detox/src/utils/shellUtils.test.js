@@ -23,32 +23,6 @@ describe('shellUtils', function() {
     test.each([
       ['test string', 'test string'],
       ['^tes\\t[ ]*.string$', '\\^tes\\\\t\\[ \\]\\*\\.string\\$'],
-    ])('should transform [ %s ] to [ %s ]', (input, expected) => {
-      expect(escapeInDoubleQuotedRegexp(input)).toBe(expected);
-    });
-  });
-
-  describe('escapeWithSingleQuotedString', () => {
-    test.each([
-      ['test string', `'test string'`],
-      ["d'Artagnan", `'d'"'"'Artagnan'`],
-    ])('should transform [ %s ] to [ %s ]', (input, expected) => {
-      expect(escapeWithSingleQuotedString(input)).toBe(expected);
-    });
-  });
-
-  describe('escapeWithDoubleQuotedString', () => {
-    test.each([
-      ['test string', '"test string"'],
-      ['"test string"', `"\\"test string\\""`],
-    ])('should transform [ %s ] to [ %s ]', (input, expected) => {
-      expect(escapeWithDoubleQuotedString(input)).toBe(expected);
-    });
-  });
-
-  describe('isRunningInCMDEXE', () => {
-    test('should return a boolean value', () => {
-      expect(typeof isRunningInCMDEXE()).toBe('boolean');
     });
   });
 

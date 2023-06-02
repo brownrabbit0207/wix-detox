@@ -18,6 +18,8 @@ export default class ShakeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    this.subscription.remove();
-  }
-}
+      greeting: "Shake it, baby"
+    };
+    this.subscription = undefined;
+    this.subscription = shakeEventEmitter.addListener('ShakeEvent', () => {
+      console.log("Shake!!!");

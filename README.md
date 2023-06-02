@@ -18,6 +18,27 @@
 
 <img src="https://user-images.githubusercontent.com/1962469/89655670-1c235c80-d8d3-11ea-9320-0f865767ef5d.png" alt="" height=24 width=1> [![NPM Version](https://img.shields.io/npm/v/detox.svg?style=flat)](https://www.npmjs.com/package/detox) [![NPM Downloads](https://img.shields.io/npm/dm/detox.svg?style=flat)](https://www.npmjs.com/package/detox) [![Build status](https://badge.buildkite.com/39afde30a964a6763de9753762bc80264ba141e1c1f41fc878.svg)](https://buildkite.com/wix-mobile-oss/detox) [![Coverage Status](https://coveralls.io/repos/github/wix/Detox/badge.svg?branch=master)](https://coveralls.io/github/wix/Detox?branch=master) [![Detox is released under the MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![PR's welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://wix.github.io/Detox/docs/contributing) [![Discord](https://img.shields.io/discord/957617863550697482?color=%235865F2\&label=discord)](https://discord.gg/CkD5QKheF5) [![Twitter Follow](https://img.shields.io/twitter/follow/detoxe2e?label=Follow\&style=social)](https://twitter.com/detoxe2e)
 
+## What Does a Detox Test Look Like?
+
+This is a test for a login screen, it runs on a device/simulator like an actual user:
+
+```js
+describe('Login flow', () => {
+  it('should login successfully', async () => {
+    await device.reloadReactNative();
+
+    await element(by.id('email')).typeText('john@example.com');
+    await element(by.id('password')).typeText('123456');
+    await element(by.text('Login')).tap();
+
+    await expect(element(by.text('Welcome'))).toBeVisible();
+    await expect(element(by.id('email'))).toNotExist();
+  });
+});
+```
+
+[Get started with Detox now!](https://wix.github.io/Detox/docs/introduction/getting-started)
+
 ## About
 
 High velocity native mobile development requires us to adopt continuous integration workflows, which means our reliance on manual QA has to drop significantly. Detox tests your mobile app while it’s running in a real device/simulator, interacting with it just like a real user.

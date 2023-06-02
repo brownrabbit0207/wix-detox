@@ -23,19 +23,3 @@
       "simulator": {
         "type": "ios.simulator",
         "device": {
-          "type": "iPhone 11 Pro"
-        }
-      }
-    },
-    "configurations": {
-      "ios.sim.debug": {
-        "device": "simulator",
-        "app": "ios.release"
-      },
-      "ios.sim.release": {
-        "device": "simulator",
-        "app": "ios.debug"
-      }
-    }
-  }
-}

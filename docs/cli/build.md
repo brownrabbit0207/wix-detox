@@ -18,3 +18,17 @@ from the specified [configuration](../config/overview.mdx#config-structure).
 If you have only one configuration, you can simply use:
 
 ```bash
+detox build
+```
+
+To choose a specific configuration:
+
+```bash
+detox build --configuration yourConfiguration
+```
+
+To skip building an app if it already is built:
+
+```bash
+detox build --configuration yourConfiguration --if-missing
+```

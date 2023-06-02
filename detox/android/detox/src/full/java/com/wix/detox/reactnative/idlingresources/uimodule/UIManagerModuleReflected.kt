@@ -18,6 +18,27 @@ private const val FIELD_NON_BATCHED_OPS_LOCK = "mNonBatchedOperationsLock"
 
 class UIManagerModuleReflected(private val reactContext: ReactContext) {
 
+    fun getUIOpsCount(): Int = (viewCommandOperations()?.size ?: 0)
+    fun getNextUIOpReflected() = viewCommandOperations()?.firstCommandReflected()
+
+    fun nativeViewHierarchyManager(): NativeHierarchyManagerReflected? =
+            getUIOperationQueue()?.let {
+                NativeHierarchyManagerReflected(it)
+            }
+
+    fun isRunnablesListEmpty(): Boolean =
+        getUIOperationQueue()?.let {
+            synchronized(Reflect.on(it).field(FIELD_DISPATCH_RUNNABLES_LOCK).get())  {
+                Reflect.on(it)
+                    .field(FIELD_DISPATCH_RUNNABLES)
+                    .call(METHOD_IS_EMPTY).get<Boolean>()
+            }
+        } ?: true
+
+    fun isNonBatchOpsEmpty(): Boolean =
+        getUIOperationQueue()?.let {
+            synchronized(Reflect.on(it).field(FIELD_NON_BATCHED_OPS_LOCK).get()) {
+                Reflect.on(it)
                         .field(FIELD_NON_BATCHED_OPS)
                         .call(METHOD_IS_EMPTY).get<Boolean>()
             }

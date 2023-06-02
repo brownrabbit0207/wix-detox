@@ -23,32 +23,6 @@ static void _DTXElementDescription(NSObject<UIAccessibilityIdentification>* elem
 		UIView* view = (id)element;
 		CGRect frame = view.frame;
 		[storage appendFormat:@"; frame = (%g %g; %g %g)", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height];
-	}
-	else
-	{
-		CGRect axFrame = [element dtx_bounds];
-		[storage appendFormat:@"; ax.frame = (%g %g; %g %g)", axFrame.origin.x, axFrame.origin.y, axFrame.size.width, axFrame.size.height];
-	}
-
-	NSString* identifier = [element respondsToSelector:@selector(accessibilityIdentifier)] ? [element accessibilityIdentifier] : nil;
-	if(identifier.length > 0)
-	{
-		[storage appendFormat:@"; ax.id = \"%@\"", identifier];
-	}
-
-	NSString* text = [[element dtx_text] stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-	if(text.length > 0)
-	{
-		[storage appendFormat:@"; text = \"%@\"", text];
-	}
-
-	NSString* label = [[element accessibilityLabel] stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-	if(label.length > 0)
-	{
-		[storage appendFormat:@"; ax.label = \"%@\"", label];
-	}
-
-	NSString* value = [[element accessibilityValue] stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
 	if(value.length > 0)
 	{
 		[storage appendFormat:@"; ax.value = \"%@\"", value];

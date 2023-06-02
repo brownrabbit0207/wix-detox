@@ -23,7 +23,3 @@
     "coverage",
     "e2e/**/*.js",
     "e2e-unhappy/**/*.js",
-    "integration/**/*.js",
-    "types/*.ts"
-  ]
-}
