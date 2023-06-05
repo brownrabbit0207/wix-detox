@@ -3,12 +3,6 @@ import {Image, StyleSheet, View} from 'react-native';
 
 const GRADIENT_IMAGE = require('../assets/gradientOverlay.png');
 const GRADIENT_COLOR = '#fff';
-
-const ScrollBarGradient = ({
-  left,
-  width = 76,
-  margins = 0,
-}) => {
   const styles = useMemo(() => {
     return StyleSheet.create({
       view: {

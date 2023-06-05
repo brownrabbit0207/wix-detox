@@ -3,12 +3,6 @@ const fs = require('fs');
 const {exec} = require('shell-utils');
 
 const {
-  log, logSection, isRelease, getPackagesFromPreviousBuilds
-} = require('./utils/releaseArgs');
-const publishNewVersion = require('./utils/publishNewVersion');
-
-function run() {
-  logSection('Script started');
   assertCI();
 
   log('Configuring stuff...');

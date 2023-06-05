@@ -3,12 +3,6 @@ const logger = jest.requireMock('../../../utils/logger');
 const testSummaries = require('../../__mocks__/testSummaries.mock');
 const FileArtifact = require('../artifact/FileArtifact');
 
-const ArtifactPlugin = require('./ArtifactPlugin');
-const testSuite = require('./__mocks__/testSuite.mock');
-
-class TestArtifactPlugin extends ArtifactPlugin {}
-
-describe('ArtifactPlugin', () => {
   let api;
   let plugin;
 
@@ -23,6 +17,32 @@ describe('ArtifactPlugin', () => {
     plugin = new TestArtifactPlugin({ api });
   });
 
+  it('should have name', () =>
+    expect(plugin.name).toBe(TestArtifactPlugin.name));
+
+  it('should be disabled by default', () =>
+    expect(plugin.enabled).toBe(false));
+
+  describe('when enabled', () => {
+    beforeEach(() => {
+      plugin.enabled = true;
+    });
+
+    describe('when it is disabled with no reason', () => {
+      beforeEach(() => plugin.disable());
+
+      it('should gain state .enabled = false', () =>
+        expect(plugin.enabled).toBe(false));
+
+      it('should not write warnings to log', () =>
+        expect(logger.warn.mock.calls.length).toBe(0));
+    });
+
+    describe('if it is disabled with a reason', () => {
+      beforeEach(() => plugin.disable('a reason why it is disabled'));
+
+      it('should gain state .enabled = false', () =>
+        expect(plugin.enabled).toBe(false));
 
       it('should log warning to log with that reason', () => {
         expect(logger.warn.mock.calls).toHaveLength(1);

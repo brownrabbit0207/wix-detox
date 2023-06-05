@@ -3,12 +3,6 @@ import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 
 class SelfCountingText extends Component {
   constructor(props) {
-    super(props);
-
-    this.state = {
-      taps: 0,
-    };
-    this.onTap = this.onTap.bind(this);
   }
 
   render() {

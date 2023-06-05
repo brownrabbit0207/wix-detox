@@ -3,12 +3,6 @@ const _ = require('lodash');
 
 const { castLevel, defaultOptions } = require('../logger/DetoxLogger');
 
-/**
- * @param {object} opts
- * @param {Detox.DetoxConfig} opts.globalConfig
- * @param {Detox.DetoxConfiguration} opts.localConfig
- * @param {*} opts.cliConfig
- */
 function composeLoggerConfig(opts) {
   const { globalConfig, localConfig, cliConfig } = opts;
 

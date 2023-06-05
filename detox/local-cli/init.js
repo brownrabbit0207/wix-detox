@@ -3,12 +3,6 @@ const path = require('path');
 const util = require('util');
 
 const detox = require('../internals');
-
-const jestTemplates = require('./templates/jest');
-
-let exitCode = 0;
-
-module.exports.command = 'init';
 module.exports.desc = 'Creates template files to get you started with Detox';
 module.exports.builder = {};
 
@@ -23,6 +17,32 @@ function createFolder(dir, files) {
     return reportError(`Failed to create ${dir} folder, because it already exists at path: ${path.resolve(dir)}`);
   }
 
+  try {
+    fs.mkdirSync(dir);
+  } catch (err) {
+    return reportError({ err }, `Failed to create ${dir} folder due to an error:`);
+  }
+
+  for (const entry of Object.entries(files)) {
+    const [filename, content] = entry;
+    createFile(path.join(dir, filename), content);
+  }
+}
+
+function createFile(filename, content) {
+  if (fs.existsSync(filename)) {
+    return reportError(
+      `Failed to create ${filename} file, ` +
+      `because it already exists at path: ${path.resolve(filename)}`
+    );
+  }
+
+  try {
+    fs.writeFileSync(filename, content);
+    detox.log.info(`Created a file at path: ${filename}`);
+  } catch (err) {
+    reportError({ err }, `Failed to create a file at path: ${filename}`);
+  }
 }
 
 function createJestFolderE2E() {

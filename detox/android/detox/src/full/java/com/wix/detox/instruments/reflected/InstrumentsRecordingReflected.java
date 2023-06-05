@@ -3,12 +3,6 @@ package com.wix.detox.instruments.reflected;
 import com.wix.detox.instruments.DetoxInstrumentsException;
 import com.wix.detox.instruments.InstrumentsRecording;
 
-import java.lang.reflect.Method;
-
-public class InstrumentsRecordingReflected implements InstrumentsRecording {
-    private static Method methodStopRecording;
-    private static Method methodEventBeginInterval;
-    private static Method methodEventEndInterval;
     private static Method methodEventMark;
 
     static {
@@ -23,6 +17,32 @@ public class InstrumentsRecordingReflected implements InstrumentsRecording {
                     String.class,//id
                     String.class,//additionalInfo
                     String.class//stackTrace
+            );
+            methodEventEndInterval = profilerClass.getDeclaredMethod("eventEndInterval",
+                    String.class,//id
+                    String.class,//eventStatus
+                    String.class//additionalInfo
+            );
+            methodEventMark = profilerClass.getDeclaredMethod("eventMark",
+                    String.class,//category
+                    String.class,//name
+                    String.class,//id
+                    String.class,//eventStatus
+                    String.class//additionalInfo
+            );
+        } catch (Exception e) {
+            methodStopRecording = null;
+            methodEventBeginInterval = null;
+            methodEventEndInterval = null;
+            methodEventMark = null;
+        }
+    }
+
+    private final Object profilerInstance;
+    private final InstrumentsReflected instruments;
+
+    public InstrumentsRecordingReflected(Object profilerInstance, InstrumentsReflected instruments) {
+        this.profilerInstance = profilerInstance;
         this.instruments = instruments;
     }
 

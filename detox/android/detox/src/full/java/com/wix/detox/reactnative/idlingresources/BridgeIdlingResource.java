@@ -3,12 +3,6 @@ package com.wix.detox.reactnative.idlingresources;
 import android.util.Log;
 
 import com.facebook.react.bridge.NotThreadSafeBridgeIdleDebugListener;
-import com.facebook.react.bridge.ReactContext;
-
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**

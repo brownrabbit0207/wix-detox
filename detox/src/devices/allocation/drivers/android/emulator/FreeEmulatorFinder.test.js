@@ -3,12 +3,6 @@ const { emulator5556, localhost5555, mockAvdName } = require('../../../../common
 describe('FreeEmulatorFinder', () => {
   const mockAdb = { devices: jest.fn() };
 
-  let mockDeviceRegistry;
-  let uut;
-  beforeEach(() => {
-    const DeviceRegistry = jest.genMockFromModule('../../../../DeviceRegistry');
-    mockDeviceRegistry = new DeviceRegistry();
-    mockDeviceRegistry.includes.mockReturnValue(false);
 
     const FreeEmulatorFinder = require('./FreeEmulatorFinder');
     uut = new FreeEmulatorFinder(mockAdb, mockDeviceRegistry);

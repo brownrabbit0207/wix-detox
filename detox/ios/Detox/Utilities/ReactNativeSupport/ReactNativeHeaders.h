@@ -3,12 +3,6 @@
 //  Detox
 //
 //  Created by Tal Kol on 8/15/16.
-//  Copyright © 2016 Wix. All rights reserved.
-//
-
-#ifndef ReactNativeHeaders_h
-#define ReactNativeHeaders_h
-
 #import <Foundation/Foundation.h>
 
 // we don't want detox to have a direct dependency on ReactNative

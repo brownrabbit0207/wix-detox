@@ -3,12 +3,6 @@ describe('Emulator binary version', () => {
     'Android emulator version 30.1.2.3 (build_id 6306047) (CL:N/A)',
     'Copyright (C) 2006-2017 The Android Open Source Project and many others.',
     'This program is a derivative of the QEMU CPU emulator (www.qemu.org).',
-    '  This software is licensed under the terms of the GNU General Public',
-    '  License version 2, as published by the Free Software Foundation, and',
-    '  may be copied, distributed, and modified under those terms.',
-    '  This program is distributed in the hope that it will be useful,',
-    '  but WITHOUT ANY WARRANTY; without even the implied warranty of',
-    '  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the',
     '  GNU General Public License for more details.',
   ].join('\n');
   const expectedVersion = {
@@ -23,6 +17,32 @@ describe('Emulator binary version', () => {
   let log;
   let uut;
   beforeEach(() => {
+    MockQueryVersionCommand = jest.genMockFromModule('../../../../common/drivers/android/emulator/exec/EmulatorExec').QueryVersionCommand;
+    jest.mock('../../../../common/drivers/android/emulator/exec/EmulatorExec', () => ({
+      QueryVersionCommand: MockQueryVersionCommand,
+    }));
+
+    emulatorExec = {
+      exec: jest.fn().mockResolvedValue(versionResult),
+    };
+
+    jest.mock('../../../../../utils/logger');
+    log = require('../../../../../utils/logger').child();
+
+    const EmulatorVersionResolver = require('./EmulatorVersionResolver');
+    uut = new EmulatorVersionResolver(emulatorExec);
+  });
+
+  it('should query the emulator', async () => {
+    await uut.resolve();
+    expect(emulatorExec.exec).toHaveBeenCalledWith(expect.any(MockQueryVersionCommand));
+    expect(MockQueryVersionCommand).toHaveBeenCalledWith({ headless: false });
+  });
+
+  it('should apply headless arg', async () => {
+    await uut.resolve(true);
+    expect(MockQueryVersionCommand).toHaveBeenCalledWith({ headless: true });
+  });
 
   it('should extract version from common log', async () => {
     const version = await uut.resolve();

@@ -3,12 +3,6 @@ id: running-on-ci
 slug: guide/running-on-ci
 title: Running on CI
 sidebar_label: Running on CI
----
-
-## Running on CI
-
-> Disclaimer: This guide is focused on iOS (i.e. lacking info about Android) and is generally out of date.
-
 When your test suite is finally ready, it should be set up to run automatically on your CI server on every git push. This will alert you if new changes to the app break existing functionality.
 
 Running Detox on CI is not that different from running it locally. There are two main differences:

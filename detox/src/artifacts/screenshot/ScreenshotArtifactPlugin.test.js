@@ -3,12 +3,6 @@ const ScreenshotArtifactPlugin = require('./ScreenshotArtifactPlugin');
 describe('ScreenshotArtifactPlugin', () => {
   describe('default options', () => {
     it('should have takeAutomaticSnapshots.appReady = true', () => {
-      const plugin = new ScreenshotArtifactPlugin({
-        api: {
-          userConfig: {
-            takeWhen: {},
-          },
-        }
       });
 
       expect(plugin.takeAutomaticSnapshots.appNotReady).toBe(true);

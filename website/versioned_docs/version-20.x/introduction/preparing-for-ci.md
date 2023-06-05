@@ -4,12 +4,6 @@
 
 This guide is outdated.
 
-:::
-
-When your test suite is finally ready, it should be set up to run automatically on your CI server on every git push. This will alert you if new changes to the app break existing functionality.
-
-Running Detox on CI is not that different from running it locally. There are two main differences:
-
 - You should test a release build rather than a debug build
 - Tell Detox to shut down the simulator when test is over
 

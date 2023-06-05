@@ -3,12 +3,6 @@ id: debugging-in-android-studio
 slug: guide/debugging-in-android-studio
 title: Debugging in Android Studio During Detox Tests
 sidebar_label: Debugging in Android Studio
----
-
-## Debugging in Android Studio During Detox Tests
-
-> This flow is not standard and serves mostly for investigating weird crashes or
-> when contributing to Detox itself.\
 > **Don’t use it unless you have a good reason.**
 
 ### Setting Detox up as a compiling dependency
@@ -23,6 +17,32 @@ Locate your `.detoxrc` config file or the corresponding `detox` section in your 
 and add a configuration similar to this one:
 
 ```json
+{
+  "devices": {
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "<e.g., Pixel_API_28>"
+      }
+    }
+  },
+  "apps": {
+    "android.debug": {
+      "type": "android.apk",
+      "binaryPath": "<path to your app binary built before>"
+    }
+  },
+  "configurations": {
+    "android.manual": {
+      "device": "emulator",
+      "app": "android.debug",
+      "behavior": {
+        "launchApp": "manual"
+      }
+    }
+  }
+}
+```
 
 While the `behavior` section is a **mandatory** thing to include, there are a few more optional
 parameters to disable various side effects and make life easier when debugging:

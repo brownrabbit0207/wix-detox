@@ -3,12 +3,6 @@
 Detox uses [matchers](matchers.md) to find UI elements in your app and actions to simulate user interaction with those elements.
 
 Use [expectations](expect.md) to verify element states.
-
-## Methods
-
-- [`.tap()`](#tappoint)
-- [`.multiTap()`](#multitaptimes)
-- [`.longPress()`](#longpressduration)
 - [`.longPressAndDrag()`](#longpressanddragduration-normalizedpositionx-normalizedpositiony-targetelement-normalizedtargetpositionx-normalizedtargetpositiony-speed-holdduration--ios-only) **iOS only**
 - [`.swipe()`](#swipedirection-speed-normalizedoffset-normalizedstartingpointx-normalizedstartingpointy)
 - [`.pinch()`](#pinchscale-speed-angle--ios-only) **iOS only**

@@ -3,12 +3,6 @@ const assert = require('assert');
 const path = require('path');
 
 const fs = require('fs-extra');
-const _ = require('lodash');
-const tempfile = require('tempfile');
-
-const { assertEnum, assertNormalized } = require('../utils/assertArgument');
-const { removeMilliseconds } = require('../utils/dateUtils');
-const { actionDescription, expectDescription } = require('../utils/invocationTraceDescriptions');
 const log = require('../utils/logger').child({ cat: 'ws-client, ws' });
 const traceInvocationCall = require('../utils/traceInvocationCall').bind(null, log);
 
@@ -23,6 +17,32 @@ class Expect {
   }
 
   toBeVisible(percent) {
+    if (percent !== undefined && (!Number.isSafeInteger(percent) || percent < 1 || percent > 100)) {
+      throw new Error('`percent` must be an integer between 1 and 100, but got '
+                      + (percent + (' (' + (typeof percent + ')'))));
+    }
+
+    const traceDescription = expectDescription.toBeVisible(percent);
+    return this.expect('toBeVisible', traceDescription, percent);
+  }
+
+  toBeNotVisible() {
+    return this.not.toBeVisible();
+  }
+
+  toBeFocused() {
+    const traceDescription = expectDescription.toBeFocused();
+    return this.expect('toBeFocused', traceDescription);
+  }
+
+  toBeNotFocused() {
+    return this.not.toBeFocused();
+  }
+
+  toExist() {
+    const traceDescription = expectDescription.toExist();
+    return this.expect('toExist', traceDescription);
+  }
 
   toNotExist() {
     return this.not.toExist();

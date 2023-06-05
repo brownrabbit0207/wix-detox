@@ -3,12 +3,6 @@
 
 actor User
 boundary "Jest (main)" as Jest0
-participant "DetoxPrimaryContext" as Pri
-participant "DetoxCircusEnvironment" as Env
-
-User -> Jest0 : jest - -runInBand
-activate Jest0
-Jest0 -> Pri: require('detox')
 activate Pri
 Jest0 -> Pri: resolveConfig()
 Jest0 -> Pri: init()

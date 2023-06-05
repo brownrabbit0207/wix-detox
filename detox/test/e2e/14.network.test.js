@@ -3,12 +3,6 @@ const MockServer = require('../mock-server/mock-server');
 describe('Network Synchronization', () => {
   const mockServer = new MockServer();
 
-  beforeAll(async () => {
-    mockServer.init();
-    await device.reverseTcpPort(mockServer.port);
-  });
-
-  afterAll(async () => {
     await mockServer.close();
   });
 

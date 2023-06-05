@@ -3,12 +3,6 @@ const ArtifactsManager = require('../ArtifactsManager');
 const {
   AndroidArtifactPluginsProvider,
   IosArtifactPluginsProvider,
-  IosSimulatorArtifactPluginsProvider,
-  EmptyProvider,
-} = require('../providers');
-
-class ArtifactsManagerFactory {
-  /**
    * @param provider { ArtifactPluginsProvider }
    */
   constructor(provider) {

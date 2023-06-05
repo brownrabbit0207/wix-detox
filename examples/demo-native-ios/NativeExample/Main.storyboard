@@ -3,12 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-    </dependencies>
-    <scenes>
-        <!--Native Example-->
-        <scene sceneID="GPi-en-VeY">
-            <objects>
                 <navigationController title="Native Example" id="2XP-G2-4XH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4rk-y3-lg5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

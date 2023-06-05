@@ -3,12 +3,6 @@ describe('BinaryExec', () => {
 
   let exec;
   let spawn;
-  let binaryExec;
-  beforeEach(() => {
-    jest.mock('../../../../../utils/childProcess', () => ({
-      execWithRetriesAndLogs: jest.fn().mockResolvedValue({
-        stdout: '',
-      }),
     }));
     exec = require('../../../../../utils/childProcess').execWithRetriesAndLogs;
 

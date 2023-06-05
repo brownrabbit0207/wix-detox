@@ -3,12 +3,6 @@
 const path = require('path');
 const URL = require('url').URL;
 
-const fs = require('fs-extra');
-const _ = require('lodash');
-
-const DetoxApi = require('../../../../android/espressoapi/Detox');
-const EspressoDetoxApi = require('../../../../android/espressoapi/EspressoDetox');
-const UiDeviceProxy = require('../../../../android/espressoapi/UiDeviceProxy');
 const temporaryPath = require('../../../../artifacts/utils/temporaryPath');
 const DetoxRuntimeError = require('../../../../errors/DetoxRuntimeError');
 const getAbsoluteBinaryPath = require('../../../../utils/getAbsoluteBinaryPath');

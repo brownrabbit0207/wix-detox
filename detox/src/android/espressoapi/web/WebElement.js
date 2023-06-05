@@ -3,12 +3,6 @@
 	This code is generated.
 	For more information see generation/README.md.
 */
-
-
-
-class WebElement {
-  static tap(element) {
-    return {
       target: element,
       method: "tap",
       args: []
@@ -23,6 +17,32 @@ class WebElement {
       args: [text]
     };
   }
+
+  static replaceText(element, text) {
+    if (typeof text !== "string") throw new Error("text should be a string, but got " + (text + (" (" + (typeof text + ")"))));
+    return {
+      target: element,
+      method: "replaceText",
+      args: [text]
+    };
+  }
+
+  static clearText(element) {
+    return {
+      target: element,
+      method: "clearText",
+      args: []
+    };
+  }
+
+  static scrollToView(element) {
+    return {
+      target: element,
+      method: "scrollToView",
+      args: []
+    };
+  }
+
   static getText(element) {
     return {
       target: element,

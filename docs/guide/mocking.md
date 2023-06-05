@@ -3,12 +3,6 @@
 :::info
 
 This article previously focused on the older React Native versions (`<0.59`), so if you need to access it, [follow this Git history link](https://github.com/wix/Detox/blob/01ad250fe4168502a57339b8bcab0ec5a5c89e4b/docs/Guide.Mocking.md).
-
-:::
-
-Mocking is an integral part of testing.
-You may want to use mocks to alter specific behavior of your app during tests, e.g., to:
-
 - change server endpoints to point to a mock/staging server instead of the regular production server;
 - stub a feature the simulator doesn’t support;
 - prepare mock environment data such as GPS position, Contacts/Photos found on the device, etc.

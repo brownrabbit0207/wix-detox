@@ -3,12 +3,6 @@ const invoke = require('../../invoke');
 const { NativeMatcher } = require('../core/NativeMatcher');
 const DetoxMatcherApi = require('../espressoapi/DetoxMatcher');
 
-class LabelMatcher extends NativeMatcher {
-  constructor(value) {
-    super();
-    this._call = invoke.callDirectly(DetoxMatcherApi.matcherForAccessibilityLabel(value));
-  }
-}
 
 class ShallowLabelMatcher extends NativeMatcher {
   constructor(value) {
@@ -21,6 +15,32 @@ class IdMatcher extends NativeMatcher {
   constructor(value) {
     super();
     this._call = invoke.callDirectly(DetoxMatcherApi.matcherForTestId(value));
+  }
+}
+
+class TypeMatcher extends NativeMatcher {
+  constructor(value) {
+    super();
+    this._call = invoke.callDirectly(DetoxMatcherApi.matcherForClass(value));
+  }
+}
+
+class VisibleMatcher extends NativeMatcher {
+  constructor(pct = 75) {
+    super();
+
+    if (pct !== undefined && (!Number.isSafeInteger(pct) || pct < 1 || pct > 100)) {
+      throw new DetoxRuntimeError('VisibleMatcher argument must be an integer between 1 and 100');
+    }
+
+    this._call = invoke.callDirectly(DetoxMatcherApi.matcherForSufficientlyVisible(pct));
+  }
+}
+
+class ExistsMatcher extends NativeMatcher {
+  constructor() {
+    super();
+    this._call = invoke.callDirectly(DetoxMatcherApi.matcherForNotNull());
   }
 }
 

@@ -3,12 +3,6 @@ package com.wix.detox.espresso.action;
 import android.view.InputDevice;
 import android.view.MotionEvent;
 import android.view.View;
-
-import com.wix.detox.reactnative.ReactNativeExtension;
-
-import org.hamcrest.Matcher;
-
-import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.action.CoordinatesProvider;
 import androidx.test.espresso.action.GeneralClickAction;

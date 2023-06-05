@@ -3,12 +3,6 @@
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
@@ -23,6 +17,32 @@ typedef NS_ENUM(NSUInteger, DTXTouchInfoPhase) {
   DTXTouchInfoPhaseTouchBegan,
   DTXTouchInfoPhaseTouchMoved,
   DTXTouchInfoPhaseTouchEnded,
+};
+
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ *  An object to encapsulate essential information about a touch.
+ */
+@interface DTXTouchInfo : NSObject
+
+/**
+ *  Points where touch should be delivered.
+ */
+@property(nonatomic, readonly) NSArray *points;
+
+/**
+ *  The phase (began, moved etc) of the touch object.
+ */
+@property(nonatomic, assign) DTXTouchInfoPhase phase;
+
+/**
+ *  Delays this touch for specified value since the last touch delivery.
+ */
+@property(nonatomic, readonly) NSTimeInterval deliveryTimeDeltaSinceLastTouch;
+/**
+ *  Indicates that this touch can be dropped if system delivering the touches experiences a
+ *  lag causing it to miss the expected delivery time.
  */
 @property(nonatomic, readonly, getter=isExpendable) BOOL expendable;
 

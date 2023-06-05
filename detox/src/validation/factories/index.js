@@ -3,12 +3,6 @@ class EnvValidatorFactory {
 }
 
 class Genycloud extends EnvValidatorFactory {
-  createValidator() {
-    const serviceLocator = require('../../servicelocator/android');
-    const exec = serviceLocator.genycloud.exec;
-
-    const GenyAuthService = require('../../devices/common/drivers/android/genycloud/services/GenyAuthService');
-    const authService = new GenyAuthService(exec);
 
     const GenycloudEnvValidator = require('../android/GenycloudEnvValidator');
     return new GenycloudEnvValidator({ authService, exec });

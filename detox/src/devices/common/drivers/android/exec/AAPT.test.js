@@ -3,12 +3,6 @@ const aaptMockResults = require('./__mocks__/aapt-results');
 describe('AAPT', () => {
   const mockAPKPath = 'path/to/app.apk';
   const mockAAPTPath = 'mockSdk/build-tools/30.0.0/aapt';
-  const mockEscapeFunc = (source) => `escaped(${source})`;
-
-  const givenAAPTResult = (result) => {
-    exec.mockResolvedValue({
-      stdout: result,
-    });
   };
   const execCommand = () => exec.mock.calls[0][0];
 
@@ -23,6 +17,32 @@ describe('AAPT', () => {
 
     jest.mock('../../../../../utils/childProcess');
     exec = require('../../../../../utils/childProcess').execWithRetriesAndLogs;
+    givenAAPTResult('');
+
+    jest.mock('../../../../../utils/pipeCommands');
+    escape = jest.requireMock('../../../../../utils/pipeCommands').escape.inQuotedString;
+    escape.mockImplementation(mockEscapeFunc);
+
+    const AAPT = require('./AAPT');
+    aapt = new AAPT();
+  });
+
+  describe('Reading package name', () => {
+    it('should execute the AAPT command with proper args', async () => {
+      await aapt.getPackageName(mockAPKPath);
+      expect(execCommand()).toMatchSnapshot();
+    });
+
+    it('should execute the command with retries', async () => {
+      await aapt.getPackageName(mockAPKPath);
+      expect(exec).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ retries: 1 }));
+    });
+
+    it('should extract the package name', async () => {
+      givenAAPTResult(aaptMockResults.dumpBadging);
+
+      const pacakageName = await aapt.getPackageName('path/to/file.apk');
+      expect(pacakageName).toEqual('com.wix.detox.test');
     });
 
     it(`should configure aaptBin only once`, async () => {

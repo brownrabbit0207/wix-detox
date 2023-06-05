@@ -3,12 +3,6 @@ describe('ADB', () => {
   const deviceId = 'mockEmulator';
   const adbBinPath = `/Android/sdk-mock/platform-tools/adb`;
 
-  let ADB;
-  let adb;
-  let DeviceHandle;
-  let EmulatorHandle;
-  let execWithRetriesAndLogs;
-  let spawnAndLog;
   let spawnWithRetriesAndLogs;
 
   beforeEach(() => {

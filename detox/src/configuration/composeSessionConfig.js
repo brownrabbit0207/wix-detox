@@ -3,12 +3,6 @@ const isValidWebsocketURL = require('../utils/isValidWebsocketURL');
 /**
  * @param {{
  *  cliConfig: Record<string, any>;
- *  globalConfig: Detox.DetoxConfig;
- *  localConfig: Detox.DetoxConfiguration;
- *  errorComposer: import('../errors/DetoxConfigErrorComposer');
- * }} options
- */
-async function composeSessionConfig(options) {
   const { errorComposer, cliConfig, globalConfig, localConfig } = options;
 
   const session = {

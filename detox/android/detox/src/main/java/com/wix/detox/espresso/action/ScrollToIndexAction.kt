@@ -3,12 +3,6 @@ package com.wix.detox.espresso.action
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.UiController
-import androidx.test.espresso.ViewAction
-import androidx.test.espresso.matcher.ViewMatchers
-import com.facebook.react.views.scroll.ReactHorizontalScrollView
-import com.facebook.react.views.scroll.ReactScrollView
-import com.wix.detox.action.common.MOTION_DIR_DOWN
-import com.wix.detox.action.common.MOTION_DIR_LEFT
 import com.wix.detox.action.common.MOTION_DIR_RIGHT
 import com.wix.detox.action.common.MOTION_DIR_UP
 import com.wix.detox.espresso.scroll.ScrollEdgeException

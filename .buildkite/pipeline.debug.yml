@@ -3,12 +3,6 @@ steps:
     prompt: "Detox your mind"
     if: 'build.message =~ /^debug\$/i'
     fields:
-      - select: "Ingridients"
-        key: "debug-builds"
-        multiple: true
-        hint: "hey Chef, what are we cooking today?"
-        options:
-          - label: "iOS RN 68"
             value: "ios_rn_68"
           - label: "iOS RN 69"
             value: "ios_rn_69"
@@ -23,3 +17,5 @@ steps:
           - label: "iOS Demo App RN 69"
             value: "ios_demo_app_rn_69"
 
+  - label: "Get Release Pipeline"
+    command: '.buildkite/pipeline.sh debug | buildkite-agent pipeline upload'

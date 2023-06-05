@@ -3,12 +3,6 @@ package com.wix.detox.espresso.utils
 import com.wix.detox.common.DetoxErrors
 import com.wix.detox.action.common.MOTION_DIR_DOWN
 import com.wix.detox.action.common.MOTION_DIR_LEFT
-import com.wix.detox.action.common.MOTION_DIR_RIGHT
-import com.wix.detox.action.common.MOTION_DIR_UP
-import kotlin.math.floor
-import kotlin.math.max
-import kotlin.math.min
-
 private fun frac(value: Double): Double =
     if (value < 0) -frac(-value) else (value - floor(value))
 

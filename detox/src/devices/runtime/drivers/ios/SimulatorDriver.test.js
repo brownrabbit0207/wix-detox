@@ -3,12 +3,6 @@ describe('IOS simulator driver', () => {
   const udid = 'UD-1D-MOCK';
   const type = 'Chika';
   const bundleId = 'bundle-id-mock';
-  const bootArgs = { boot: 'args' };
-  const headless = true;
-
-  let client;
-  let eventEmitter;
-  let applesimutils;
   let simulatorLauncher;
   let uut;
   beforeEach(() => {

@@ -3,12 +3,6 @@ package com.wix.detox.reactnative.idlingresources;
 import android.util.Log;
 import android.view.Choreographer;
 
-import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource;
-import com.wix.detox.reactnative.ReactNativeInfo;
-
-import org.joor.Reflect;
-import org.joor.ReflectException;
-
 import java.util.HashMap;
 import java.util.Map;
 

@@ -3,12 +3,6 @@
 //  example
 //
 //  Created by Tyrone Trevorrow on 26/4/21.
-//  Copyright © 2021 Wix. All rights reserved.
-//
-
-#import "CustomKeyboardViewController.h"
-
-@class CustomKeyboardView;
 @protocol CustomKeyboardDelegate
 - (void) customKeyboardTappedButton: (CustomKeyboardView*) sender;
 @end
@@ -23,6 +17,32 @@
 - (void) loadView
 {
 	UIButton* kbButton = [UIButton buttonWithType: UIButtonTypeCustom];
+	kbButton.translatesAutoresizingMaskIntoConstraints = NO;
+	[kbButton setTitle: @"Hello" forState: UIControlStateNormal];
+	[kbButton addTarget: self action: @selector(buttonTapped:) forControlEvents: UIControlEventTouchUpInside];
+	kbButton.accessibilityIdentifier = @"keyboardHelloButton";
+	
+	[self addSubview: kbButton];
+	
+	[NSLayoutConstraint activateConstraints: @[
+		[kbButton.widthAnchor constraintGreaterThanOrEqualToConstant:44],
+		[kbButton.heightAnchor constraintEqualToConstant:44],
+		[kbButton.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:20],
+		[kbButton.topAnchor constraintEqualToAnchor:self.topAnchor constant:20]
+	]];
+}
+
+- (void) buttonTapped: (id) sender
+{
+	if (self.delegate) {
+		[self.delegate customKeyboardTappedButton: self];
+	}
+}
+
+@end
+
+@interface CustomKeyboardViewController () <CustomKeyboardDelegate>
+@property (nonatomic, strong) UITextField* textField;
 @end
 
 @implementation CustomKeyboardViewController

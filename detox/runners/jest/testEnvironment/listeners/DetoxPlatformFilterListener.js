@@ -3,12 +3,6 @@ const _ = require('lodash');
 const { device } = require('../../../..');
 
 const PLATFORM_REGEXP = /^:([^:]+):/;
-
-class DetoxPlatformFilterListener {
-  setup() {
-    this._platform = device.getPlatform();
-  }
-
   start_describe_definition(event, state) {
     const match = event.blockName.match(PLATFORM_REGEXP);
     if (match && match[1] !== this._platform) {

@@ -3,12 +3,6 @@ const os = require('os');
 const _ = require('lodash');
 
 const log = require('../utils/logger');
-
-/**
- * @param {object} opts
- * @param {Detox.DetoxConfig} opts.globalConfig
- * @param {Detox.DetoxConfiguration} opts.localConfig
- * @param {DetoxInternals.CLIConfig} opts.cliConfig
  * @param {Record<string, any>} opts.testRunnerArgv
  * @param {import('../errors/DetoxConfigErrorComposer')} opts.errorComposer
  * @returns {Detox.DetoxTestRunnerConfig} opts.testRunnerArgv
@@ -23,6 +17,32 @@ function composeRunnerConfig(opts) {
   if (localConfig != null && typeof localConfig !== 'object') {
     throw opts.errorComposer.invalidTestRunnerProperty(false);
   }
+
+  const cliConfig = opts.cliConfig;
+
+  /** @type {Detox.DetoxTestRunnerConfig} */
+  const merged = _.merge(
+    {
+      retries: 0,
+      inspectBrk: inspectBrkHookDefault,
+      forwardEnv: false,
+      bail: false,
+      jest: {
+        setupTimeout: 300000,
+        teardownTimeout: 30000,
+        retryAfterCircusRetries: false,
+        reportSpecs: undefined,
+        reportWorkerAssign: true,
+      },
+      args: {
+        $0: 'jest',
+        _: [],
+      },
+    },
+    globalConfig,
+    localConfig,
+    cliConfig.retries != null ? { retries: cliConfig.retries } : null,
+    cliConfig.jestReportSpecs != null ? { jest: { reportSpecs: cliConfig.jestReportSpecs } } : null,
     {
       args: _.omitBy(opts.testRunnerArgv, hasEmptyPositionalArgs)
     }

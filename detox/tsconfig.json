@@ -3,12 +3,6 @@
     "module": "commonjs",
     "lib": ["es2018"],
     "target": "ES2018",
-    "allowJs": true,
-    "checkJs": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "types": ["node", "jest"]
@@ -23,3 +17,5 @@
     "coverage",
     "ios",
     "test"
+  ]
+}

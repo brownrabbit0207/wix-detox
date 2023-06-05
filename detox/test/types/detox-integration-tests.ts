@@ -3,12 +3,6 @@ import {
   globalSetup,
   globalTeardown,
   DetoxCircusEnvironment,
-  DetoxCircusListener,
-  DetoxCircusListenerConstructorOpts
-} from 'detox/runners/jest';
-
-class NoneListener implements DetoxCircusListener {}
-
 class OmniListener implements DetoxCircusListener {
   constructor(opts: DetoxCircusListenerConstructorOpts) {
     console.log('Current test path is:', opts.env.testPath);

@@ -3,12 +3,6 @@ declare var beforeAll: (callback: () => void) => void;
 declare var afterAll: (callback: () => void) => void;
 declare var test: (name: string, callback: () => void) => void;
 
-import { by, device, element, expect, waitFor, log, trace, traceCall } from 'detox';
-
-describe('Test', () => {
-  beforeAll(async () => {
-    await device.reloadReactNative();
-    await device.launchApp({
       newInstance: false,
       permissions: {
         location: 'always',

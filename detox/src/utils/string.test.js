@@ -3,12 +3,6 @@ describe('string', () => {
 
   beforeEach(() => {
     string = require('./string');
-  });
-
-  describe('lowerCamelCaseJoin', () => {
-    it(`should capitalize first letter of each array item after the first`, () => {
-      expect(string.lowerCamelCaseJoin(['foo', 'bar'])).toBe('fooBar');
-    });
     it(`should gracefully handle an empty array`, () => {
       expect(string.lowerCamelCaseJoin([])).toBe('');
     });

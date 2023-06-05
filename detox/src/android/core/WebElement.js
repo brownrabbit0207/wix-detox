@@ -3,12 +3,6 @@ const invoke = require('../../invoke');
 const actions = require('../actions/web');
 const EspressoWebDetoxApi = require('../espressoapi/web/EspressoWebDetox');
 const WebViewElementApi = require('../espressoapi/web/WebViewElement');
-const { ActionInteraction } = require('../interactions/web');
-
-const { WebMatcher } = require('./WebMatcher');
-
-const _device = Symbol('device');
-const _emitter = Symbol('emitter');
 const _matcher = Symbol('matcher');
 const _invocationManager = Symbol('invocationManager');
 const _webMatcher = Symbol('webMatcher');
@@ -23,6 +17,32 @@ class WebElement {
     this.atIndex(0);
   }
 
+  atIndex(index) {
+    const webViewElementCall = this[_webViewElement]._call;
+    const webMatcherCall = this[_webMatcher]._call;
+
+    this._call = invoke.callDirectly(WebViewElementApi.element(webViewElementCall, webMatcherCall.value, index));
+    return this;
+  }
+
+  // At the moment not working on content-editable
+  async tap() {
+    return await new ActionInteraction(this[_invocationManager], new actions.WebTapAction(this)).execute();
+  }
+
+  async typeText(text, isContentEditable = false) {
+    if (isContentEditable) {
+      return await this[_device]._typeText(text);
+    }
+    return await new ActionInteraction(this[_invocationManager],  new actions.WebTypeTextAction(this, text)).execute();
+  }
+
+  // At the moment not working on content-editable
+  async replaceText(text) {
+    return await new ActionInteraction(this[_invocationManager],  new actions.WebReplaceTextAction(this, text)).execute();
+  }
+
+  // At the moment not working on content-editable
   async clearText() {
     return await new ActionInteraction(this[_invocationManager],  new actions.WebClearTextAction(this)).execute();
   }

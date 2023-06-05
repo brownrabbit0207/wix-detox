@@ -3,12 +3,6 @@ const debug = require('../../utils/debug'); // debug utils, leave here even if u
 const log = require('../../utils/logger').child({ cat: 'device' });
 const traceMethods = require('../../utils/traceMethods');
 const wrapWithStackTraceCutter = require('../../utils/wrapWithStackTraceCutter');
-
-const LaunchArgsEditor = require('./utils/LaunchArgsEditor');
-
-class RuntimeDevice {
-  constructor({
-    appsConfig,
     behaviorConfig,
     deviceConfig,
     eventEmitter,
@@ -23,6 +17,32 @@ class RuntimeDevice {
       'installApp',
       'installUtilBinaries',
       'launchApp',
+      'matchFace',
+      'matchFinger',
+      'openURL',
+      'pressBack',
+      'relaunchApp',
+      'reloadReactNative',
+      'resetContentAndSettings',
+      'resetStatusBar',
+      'reverseTcpPort',
+      'selectApp',
+      'sendToHome',
+      'sendUserActivity',
+      'sendUserNotification',
+      'setBiometricEnrollment',
+      'setLocation',
+      'setOrientation',
+      'setStatusBar',
+      'setURLBlacklist',
+      'shake',
+      'takeScreenshot',
+      'terminateApp',
+      'uninstallApp',
+      'unmatchFace',
+      'unmatchFinger',
+      'unreverseTcpPort',
+    ];
 
     traceMethods(log, this, methodNames);
     wrapWithStackTraceCutter(this, methodNames);

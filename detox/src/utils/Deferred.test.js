@@ -3,12 +3,6 @@ const Deferred = require('./Deferred');
 describe('Deferred', () => {
   /** @type {Deferred} */
   let deferred;
-
-  describe('static properties', () => {
-    it('should have "pending" status', () =>
-      expect(Deferred.PENDING).toBe('pending'));
-
-    it('should have "resolved" status', () =>
       expect(Deferred.RESOLVED).toBe('resolved'));
 
     it('should have "rejected" status', () =>
@@ -23,6 +17,32 @@ describe('Deferred', () => {
     it('should have pending status', () =>
       expect(deferred.status).toBe(Deferred.PENDING));
 
+    it('should indicate an isPending=true, other statuses as false', () => {
+      expect(deferred.isPending()).toEqual(true);
+      expect(deferred.isResolved()).toEqual(false);
+      expect(deferred.isRejected()).toEqual(false);
+    });
+
+    it('should have promise', () =>
+      expect(deferred.promise).toBeInstanceOf(Promise));
+
+    it('can be resolved', () =>
+      expect(() => deferred.resolve()).not.toThrowError());
+
+    it('can be rejected', () =>
+      expect(() => deferred.reject()).not.toThrowError());
+
+    describe('and resolved', () => {
+      beforeEach(() => deferred.resolve(42));
+
+      it('should have a resolved status', () =>
+        expect(deferred.status).toBe(Deferred.RESOLVED));
+
+      it('should indicate an isResolved=true, other statuses as false', () => {
+        expect(deferred.isResolved()).toEqual(true);
+        expect(deferred.isPending()).toEqual(false);
+        expect(deferred.isRejected()).toEqual(false);
+      });
 
       it('should have a resolved promise', () =>
         expect(deferred.promise).resolves.toBe(42));

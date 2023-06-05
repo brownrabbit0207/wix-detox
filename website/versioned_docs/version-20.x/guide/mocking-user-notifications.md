@@ -4,12 +4,6 @@
 
 Detox supports mocking user notifications.
 
-> **Note:** The mocking mechanism will not mimic the UI of a user notification. Instead, it will only simulate a user interaction with the notification - namely, the "opening" of it (equivalent to a user’s tap/swipe on it in the notification center).
-
-### Mocking App Launch With a Notification
-
-`launchApp()` with custom parameters (i.e. `userNotification`) will trigger the mocking mechanism.
-
 ```js
 await device.launchApp({newInstance: true, userNotification: notification});
 ```
@@ -23,6 +17,32 @@ describe('Launch with push notification', () => {
       newInstance: true,
       userNotification: userNotificationPushTrigger,
     });
+    await expect(element(by.text('From push'))).toBeVisible();
+  });
+});
+```
+
+### Mocking Notification Reception on a Running App
+
+Use the `sendUserNotification()` method to send notification to **running** app. Notifications can be sent to an active or a background app.
+
+> Note: while the name `sendUserNotification()` is not very idiomatic on Android, as notification data is not "sent" to apps (rather, it is bundled into an Activity/Service launch Intent as Intent-extras), this unified API is used, for the time being, for both platforms equivalently. With [plans of a more extensive support](https://github.com/wix/Detox/issues/2141) for Android, we estimate it would be deprecated when the time comes.
+
+```js
+await device.sendUserNotification(notification);
+```
+
+**Example:**
+
+```js
+describe('Foreground user notifications', () => {
+  it('should handle the local notification from inside the app', async () => {
+    await device.launchApp();
+    await device.sendUserNotification(localNotification);
+    await expect(element(by.text('from local notification'))).toBeVisible();
+   });
+});
+```
 
 ### Notification JSON Format
 

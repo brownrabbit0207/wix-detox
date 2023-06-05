@@ -3,12 +3,6 @@ describe('Allocation driver for attached Android devices', () => {
   const adbName = 'mock-adb-name';
   const deviceConfig = {
     device: {
-      adbName: adbPattern,
-    },
-  };
-
-  let adb;
-  let deviceRegistry;
   let freeDeviceFinder;
   let attachedAndroidLauncher;
   beforeEach(() => {

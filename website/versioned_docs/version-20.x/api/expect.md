@@ -3,12 +3,6 @@
 Detox uses [matchers](matchers.md) to match UI elements in your app and expectations to verify those elements are in the expected state.
 
 Use [actions](actions.md) to simulate use interaction with elements.
-
-## Methods
-
-- [`.toBeVisible()`](#tobevisible)
-- [`.toExist()`](#toexist)
-- [`.toBeFocused()`](#tobefocused)
 - [`.toHaveText()`](#tohavetexttext)
 - [`.toHaveLabel()`](#tohavelabellabel)
 - [`.toHaveId()`](#tohaveidid)
@@ -23,6 +17,32 @@ Use [actions](actions.md) to simulate use interaction with elements.
 Expects the view to be at least N% visible on the screen.
 Accepts an optional parameter of percent threshold of element visibility, integer ranging from 1 to 100, that determines whether the element is visible or not. If no number is provided then defaults to 75%.
 
+Negating this expectation with a `not` expression expects the view’s visible area to be lower than N%.
+
+On iOS, visibility is defined by having the view, or one of its subviews, be topmost at the view’s activation point on screen.
+
+```js
+await expect(element(by.id('subtitle'))).toBeVisible();
+await expect(element(by.id('mainTitle'))).toBeVisible(35);
+```
+
+### `toExist()`
+
+Expects the element to exist within the app’s current UI hierarchy.
+
+```js
+await expect(element(by.id('okButton'))).toExist();
+```
+
+### `toBeFocused()`
+
+Expects the element to be the focused element.
+
+```js
+await expect(element(by.id('emailInput'))).toBeFocused();
+```
+
+### `toHaveText(text)`
 
 Expects the element to have the specified text.
 

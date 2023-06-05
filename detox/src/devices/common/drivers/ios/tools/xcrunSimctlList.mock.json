@@ -3,12 +3,6 @@
     {
       "name" : "iPhone 4s",
       "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-4s"
-    },
-    {
-      "name" : "iPhone 5",
-      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-5"
-    },
-    {
       "name" : "iPhone 5s",
       "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-5s"
     },
@@ -23,6 +17,32 @@
     {
       "name" : "iPhone 6s",
       "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-6s"
+    },
+    {
+      "name" : "iPhone 6s Plus",
+      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus"
+    },
+    {
+      "name" : "iPhone 7",
+      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-7"
+    },
+    {
+      "name" : "iPhone 7 Plus",
+      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus"
+    },
+    {
+      "name" : "iPhone 8",
+      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-8"
+    },
+    {
+      "name" : "iPhone 8 Plus",
+      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-8-Plus"
+    },
+    {
+      "name" : "iPhone SE",
+      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE"
+    },
+    {
       "name" : "iPhone X",
       "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-X"
     },

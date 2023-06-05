@@ -3,4 +3,3 @@ module.exports = {
   AttachedAndroidDeviceCookie: require('./AttachedAndroidDeviceCookie'),
   AndroidEmulatorCookie: require('./AndroidEmulatorCookie'),
   GenycloudEmulatorCookie: require('./GenycloudEmulatorCookie'),
-};

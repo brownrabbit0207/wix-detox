@@ -3,12 +3,6 @@
 		"type": "timeInterval",
 		"timeInterval": 30,
 		"repeats": false
-	},
-	"title": "Title",
-	"subtitle": "Subtitle",
-	"body": "Body",
-	"badge": 1,
-	"payload": {
 		"key1": "value1",
 		"key2": "value2"
 	},

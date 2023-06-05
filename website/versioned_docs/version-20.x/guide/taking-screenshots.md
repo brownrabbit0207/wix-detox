@@ -3,12 +3,6 @@
 Detox supports taking in-test screenshots of the device, making the result immediately available in the form of an image file.
 
 Screenshots can be taken in two levels:
-
-- **Device-level:** taking a screenshot of the entire screen.
-- **Element-level:** taking a screenshot of a specific element (and the view-hierarchy associated with it), currently appearing on the screen.
-
-In both cases, the concept is mainly useful for verifying the proper visual structure and layout of elements appearing on the device’s screen, in the form of a snapshot-test. Namely, by following these conceptual steps:
-
 1. Taking a screenshot, once, and manually verifying it, visually.
 1. Storing it as an E2E test asset (i.e. the _snapshot_).
 1. Using it as the point-of-reference for comparison against screenshots taken in consequent tests, from that point on.

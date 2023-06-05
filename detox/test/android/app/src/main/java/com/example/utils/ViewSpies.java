@@ -3,12 +3,6 @@ package com.example.utils;
 import android.view.View;
 
 import com.facebook.react.uimanager.util.ReactFindViewUtil;
-
-import java.util.HashSet;
-import java.util.Set;
-
-public interface ViewSpies {
-
     /**
      * Implementation note: For this purpose, a simpler RN API exists in the same class -
      * {@link ReactFindViewUtil#addViewListener(ReactFindViewUtil.OnViewFoundListener)}.

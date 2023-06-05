@@ -3,12 +3,6 @@ const {expectToThrow} = require('./utils/custom-expects');
 
 const expectToFinishBeforeTimeout = async (block, timeout) => {
   const startTime = new Date().getTime();
-  await block();
-  const endTime = new Date().getTime();
-
-  const expiredAfter = endTime - startTime;
-  if (expiredAfter > timeout) {
-    throw new Error(`Action not expired even after a timeout, took ${expiredAfter}ms`);
   }
 }
 
@@ -23,6 +17,32 @@ describe('WaitFor', () => {
 
   it('should wait until an element is exists / removed in layout', async () => {
     let testElement = element(by.id('changeExistenceByToggle'));
+    await expect(testElement).not.toExist();
+
+    await goButton.tap();
+
+    await expectToFinishBeforeTimeout(async () => {
+      await waitFor(testElement).toExist().withTimeout(timeout);
+    }, timeout);
+
+    await goButton.tap();
+
+    await expectToFinishBeforeTimeout(async () => {
+      await waitFor(testElement).not.toExist().withTimeout(timeout);
+    }, timeout);
+  });
+
+  it('should wait until an element is focused / unfocused', async () => {
+    let testElement = element(by.id('changeFocusByToggle'));
+    await expect(testElement).not.toBeFocused();
+
+    await goButton.tap();
+
+    await expectToFinishBeforeTimeout(async () => {
+      await waitFor(testElement).toBeFocused().withTimeout(timeout);
+    }, timeout);
+
+    await goButton.tap();
 
     await expectToFinishBeforeTimeout(async () => {
       await waitFor(testElement).not.toBeFocused().withTimeout(timeout);

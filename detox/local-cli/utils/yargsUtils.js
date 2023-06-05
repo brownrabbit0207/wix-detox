@@ -3,12 +3,6 @@
  * @returns {Set<string>}
  */
 function extractKnownKeys(yargsBuilder) {
-  return Object.entries(yargsBuilder).reduce(
-    (set, [key, option]) => {
-      if (option.alias) {
-        if (Array.isArray(option.alias)) {
-          for (const value of option.alias) {
-            set.add(value);
           }
         } else {
           set.add(option.alias);

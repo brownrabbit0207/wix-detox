@@ -3,12 +3,6 @@ import {
   Text,
   View,
   ScrollView,
-  StyleSheet,
-  SafeAreaView
-} from 'react-native';
-
-export default class VisibilityScreen extends Component {
-  constructor(props) {
     super(props);
 
     this.state = {};
@@ -23,6 +17,32 @@ export default class VisibilityScreen extends Component {
           <View style={styles.buttonOverlayContainer}>
             <Text style={styles.absoluteButton}>Button 1</Text>
             <Text style={styles.absoluteButton}>Button 2</Text>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    justifyContent: 'flex-start'
+  },
+  header: {
+    fontSize: 18,
+    paddingLeft: 18,
+    marginTop: 18,
+    marginBottom: 0,
+  },
+  text: {
+    fontSize: 12,
+    paddingLeft: 18,
+    marginVertical: 12,
+  },
+  buttonOverlayContainer: {
+    flexDirection: 'row',
+    paddingVertical: 6,
     justifyContent: 'center',
   },
   absoluteButton: {

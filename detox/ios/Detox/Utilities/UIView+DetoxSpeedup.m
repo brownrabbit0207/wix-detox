@@ -3,12 +3,6 @@
 //  Detox
 //
 //  Created by Leo Natan on 11/24/20.
-//  Copyright © 2020 Wix. All rights reserved.
-//
-
-#import "UIView+DetoxSpeedup.h"
-
-@interface NSObject ()
 
 - (void)_setCaretBlinkAnimationEnabled:(BOOL)arg1;
 - (void)setCaretBlinks:(BOOL)arg1;
@@ -23,6 +17,32 @@
 @end
 
 @implementation UIView (DetoxSpeedup)
+
++ (void)load
+{
+	@autoreleasepool {
+		NSError* error;
+		if(@available(iOS 14.0, *))
+		{
+			//Under iOS 14, this is necessary.
+			DTXSwizzleMethod(NSClassFromString(@"UITextSelectionView"), @selector(_setCaretBlinkAnimationEnabled:), @selector(_dtx_setCaretBlinkAnimationEnabled:), &error);
+		}
+		else
+		{
+			if([NSUserDefaults.standardUserDefaults boolForKey:@"detoxDisableAnimationSpeedup"] == NO)
+			{
+				DTXSwizzleMethod(NSClassFromString(@"UITextSelectionView"), @selector(setCaretBlinks:), @selector(_dtx_setCaretBlinks:), &error);
+			}
+		}
+	}
+}
+
+- (void)_dtx_setCaretBlinkAnimationEnabled:(BOOL)arg1
+{
+	[self _dtx_setCaretBlinkAnimationEnabled:NO];
+}
+
+- (void)_dtx_setCaretBlinks:(BOOL)arg1
 {
 	[self _dtx_setCaretBlinks:NO];
 }

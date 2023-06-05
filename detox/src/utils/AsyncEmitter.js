@@ -3,12 +3,6 @@ const _ = require('lodash');
 const DetoxRuntimeError = require('../errors/DetoxRuntimeError');
 
 class AsyncEmitter {
-  constructor({ events, onError }) {
-    this.emit = this.emit.bind(this);
-    this.off = this.off.bind(this);
-    this.on = this.on.bind(this);
-
-    this._listeners = {};
     for (const eventName of events) {
       this._listeners[eventName] = [];
     }

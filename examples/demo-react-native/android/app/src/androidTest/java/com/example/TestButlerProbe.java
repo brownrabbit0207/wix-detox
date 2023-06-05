@@ -4,12 +4,6 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 import android.view.Surface;
 
-import com.linkedin.android.testbutler.TestButler;
-
-import androidx.test.platform.app.InstrumentationRegistry;
-
-class TestButlerProbe {
-
     private static final String LOG_TAG = TestButlerProbe.class.getSimpleName();
     private static final String TEST_BUTLER_PACKAGE_NAME = "com.linkedin.android.testbutler";
 

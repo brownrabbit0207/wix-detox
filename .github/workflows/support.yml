@@ -3,12 +3,6 @@ name: 'Support Requests'
 on:
   issues:
     types: [labeled, unlabeled, reopened]
-
-permissions:
-  issues: write
-
-jobs:
-  action:
     runs-on: ubuntu-latest
     steps:
       - uses: dessant/support-requests@v2

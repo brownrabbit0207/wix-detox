@@ -4,12 +4,6 @@ const DetoxActionApi = require('../espressoapi/DetoxAction');
 const DetoxViewActionsApi = require('../espressoapi/DetoxViewActions');
 const ViewActionsApi = require('../espressoapi/ViewActions');
 
-const assertDirection = assertEnum(['left', 'right', 'up', 'down']);
-const assertSpeed = assertEnum(['fast', 'slow']);
-
-class Action {
-}
-
 class TapAction extends Action {
   constructor(value) {
     super();
@@ -23,6 +17,32 @@ class TapAtPointAction extends Action {
     this._call = invoke.callDirectly(DetoxActionApi.tapAtLocation(value.x, value.y));
   }
 }
+
+class LongPressAction extends Action {
+  constructor() {
+    super();
+    this._call = invoke.callDirectly(ViewActionsApi.longClick());
+  }
+}
+
+class MultiClickAction extends Action {
+  constructor(times) {
+    super();
+    this._call = invoke.callDirectly(DetoxActionApi.multiClick(times));
+  }
+}
+
+class PressKeyAction extends Action {
+  constructor(value) {
+    super();
+    this._call = invoke.callDirectly(ViewActionsApi.pressKey(value));
+  }
+}
+
+class TypeTextAction extends Action {
+  constructor(value) {
+    super();
+    this._call = invoke.callDirectly(DetoxViewActionsApi.typeText(value));
   }
 }
 

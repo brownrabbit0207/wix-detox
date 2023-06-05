@@ -3,12 +3,6 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '12.4'
 
-target 'example' do
-  config = use_native_modules!
-  use_react_native!(
-    :path => config[:reactNativePath],
-    # to enable hermes on iOS, change `false` to `true` and then install pods
-    :hermes_enabled => false,
     # :flipper_configuration => FlipperConfiguration.enabled,
   )
 
@@ -23,3 +17,5 @@ target 'example' do
             :mac_catalyst_enabled => false
         )
       end
+  end
+end

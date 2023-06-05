@@ -4,12 +4,6 @@
 
 We are improving Detox API as we go along, sometimes these changes require us to break the API in order for it to make more sense. These migration guides refer to breaking changes. If a newer version has no entries in this document, it means it does not require special migration steps. Refer to the release notes of the latter builds to learn about their improvements and changes.
 
-## 20.0
-
-### No [Mocha] support
-
-If you were using Mocha, now you have two options:
-
 - switch to [Jest] using [`detox init`] boilerplate as a reference and [`testRunner` config];
 - wait until a third-party integration with Mocha appears.
 
@@ -23,6 +17,32 @@ If you see an error like this:
 
 ```plain text
 DetoxConfigError: Configuration "legacy" uses a deprecated all-in-one schema,
+which is not supported by Detox.
+```
+
+You have to extract device and app configs from your configuration, as shown in the example below:
+
+<table>
+<tr>
+  <th>Legacy schema</th>
+  <th>Modern schema</th>
+</tr>
+<tr>
+  <td>
+
+```json
+{
+  "configurations": {
+    "ios.sim.debug": {
+      "type": "ios.simulator",
+      "device": "iPhone 12",
+      "binaryPath": "/some/path/ios.app",
+      "build": "..."
+    },
+    "android.emu.debug": {
+      "type": "android.emulator",
+      "device": "Pixel_30_API",
+      "binaryPath": "/some/path/android.apk",
       "build": "...",
       "launchArgs": {}
     }

@@ -3,12 +3,6 @@ package com.wix.detox.espresso.utils
 import com.wix.detox.action.common.MOTION_DIR_DOWN
 import com.wix.detox.action.common.MOTION_DIR_LEFT
 import com.wix.detox.action.common.MOTION_DIR_RIGHT
-import com.wix.detox.action.common.MOTION_DIR_UP
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
-import kotlin.test.assertEquals
-
-object Vector2DSpec: Spek({
     describe("Vector2DSpec") {
         it("should have x, y coordinates") {
             val vector = Vector2D(3.0, 4.0)

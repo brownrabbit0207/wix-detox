@@ -3,12 +3,6 @@ id: developing-while-writing-tests
 slug: guide/developing-while-writing-tests
 title: Developing Your App While Writing Tests
 sidebar_label: Developing Your App While Writing Tests
----
-
-## Developing Your App While Writing Tests
-
-> If your app requires active development, such as adding testID fields for tests, this is a good workflow. It allows you to work both on your app and your tests at the same time.
-
 The main idea behind this workflow is to run your app in debug with Detox on a simulator. Once the app is up and running, it will still be connected to the React Native packager. This means that you’ll be able to do JavaScript code modifications in your app codebase and press CMD+R to reload the bundle inside the Detox simulator.
 
 ### Step 1: Build Your App in Debug

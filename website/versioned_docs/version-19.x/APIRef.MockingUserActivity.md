@@ -3,12 +3,6 @@ id: mocking-user-activity
 slug: api/mocking-user-activity
 title: Mocking User Activity
 sidebar_label: Mocking User Activity
----
-
-## Mocking User Activity
-
-Detox supports mocking user activity for iOS apps.
-
 The user activity API is used to mock an external user activity state. The app normally uses this state to continue the activity inside the app. This API is also used for associated domains, Spotlight search handling and Siri intents.
 
 ### Mocking App Launch with a User Activity
@@ -23,6 +17,32 @@ await device.launchApp({userActivity: activity});
 
 ```js
 describe('Background user activity', () => {
+  it('Launch with user activity', async () => {
+    await device.launchApp({userActivity: activity})
+    await expect(element(by.text('From user activity'))).toBeVisible();
+  });
+});
+```
+
+### Sending User Activity to a Running App
+
+Use the `sendUserActivity()` method.
+
+```js
+await device.sendUserActivity(activity)
+```
+
+**Example:**
+
+```js
+ 
+describe('Foreground user activity', () => {
+
+beforeEach(async () => {
+  await device.launchApp({newInstance: true});
+});
+
+it('User activity from inside the app', async () => {
   await device.sendUserActivity(activity);
   await expect(element(by.text('From user activity'))).toBeVisible();
  });

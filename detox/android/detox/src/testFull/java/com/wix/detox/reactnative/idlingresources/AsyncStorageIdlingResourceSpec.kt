@@ -3,12 +3,6 @@ package com.wix.detox.reactnative.idlingresources
 import androidx.test.espresso.IdlingResource
 import com.facebook.react.bridge.NativeModule
 import com.wix.detox.UTHelpers.yieldToOtherThreads
-import org.assertj.core.api.Assertions.assertThat
-import org.mockito.kotlin.*
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
-import java.util.concurrent.Executor
-import java.util.concurrent.Executors
 
 private class AsyncStorageModuleStub: NativeModule {
     val executor: Executor = mock(name = "native-module's executor")

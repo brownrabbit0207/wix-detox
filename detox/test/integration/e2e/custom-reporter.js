@@ -3,12 +3,6 @@ const { tracing } = require('detox/internals');
 class CustomReporter {
   async onRunComplete() {
     let counts = {};
-    await new Promise((resolve, reject) => {
-      tracing.createEventStream()
-        .on('error', reject)
-        .on('end', resolve)
-        .on('data', function (e) {
-          counts[e.ph] = (counts[e.ph] || 0) + 1;
         });
     });
 

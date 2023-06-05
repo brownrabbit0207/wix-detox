@@ -3,12 +3,6 @@ import { View } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 export default class WebViewScreen extends Component {
-  render() {
-    // const debugSource = require('../assets/html/test.html');
-    // const releaseSourcePrefix = Platform.OS === 'android' ? 'file:///android_asset' : './assets';
-    // const releaseSource = { uri: `${releaseSourcePrefix}/assets/html/test.html` };
-    // const webViewSource = Image.resolveAssetSource(global.__DEV__ ? debugSource : releaseSource);
-    return (
         <View style={{flex: 1,flexDirection: 'column' ,backgroundColor:'blue'}}>
           <View style={{flex: 8}}>
             <WebView testID={'webview_1'} source={{html: webpageSource}}/>

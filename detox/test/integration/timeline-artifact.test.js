@@ -3,12 +3,6 @@ const path = require('path');
 const _ = require('lodash');
 const tempfile = require('tempfile');
 const fs = require('fs-extra');
-const { promisify } = require('util');
-const { execCommand } = require('./utils/exec');
-
-const TMPDIR = path.dirname(tempfile());
-const readFile = promisify(fs.readFile);
-const remove = promisify(fs.remove);
 
 describe('Timeline integration test', () => {
   const artifactsDirectory = 'integration_artifacts/'

@@ -3,12 +3,6 @@ const LogArtifactPlugin = require('../LogArtifactPlugin');
 
 const ADBLogcatRecording = require('./ADBLogcatRecording');
 
-class ADBLogcatPlugin extends LogArtifactPlugin {
-  constructor(config) {
-    super(config);
-
-    this._adb = config.adb;
-    this._devicePathBuilder = config.devicePathBuilder;
     this._lastTimestamp = '';
   }
 

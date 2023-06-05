@@ -3,12 +3,6 @@ describe('Android emulator allocation helper', () => {
   const avdName = 'mock-AVD-name';
 
   let logger;
-  let deviceRegistry;
-  let freeDeviceFinder;
-  let randomFunc;
-  let uut;
-  beforeEach(() => {
-    jest.mock('../../../../../utils/logger');
     logger = require('../../../../../utils/logger');
 
     const DeviceRegistry = jest.genMockFromModule('../../../../../devices/DeviceRegistry');
@@ -23,6 +17,32 @@ describe('Android emulator allocation helper', () => {
     const EmulatorAllocationHelper = require('./EmulatorAllocationHelper');
     uut = new EmulatorAllocationHelper(deviceRegistry, freeDeviceFinder, randomFunc);
   });
+
+  const givenFreeDevice = (adbName) => freeDeviceFinder.findFreeDevice.mockResolvedValue(adbName);
+  const givenNoFreeDevices = () => freeDeviceFinder.findFreeDevice.mockResolvedValue(null);
+  const givenRandomFuncResult = (result) => randomFunc.mockReturnValue(result);
+
+  describe('allocation', () => {
+    it('should return a free device', async () => {
+      givenFreeDevice(adbName);
+
+      const result = await uut.allocateDevice(avdName);
+      expect(result.adbName).toEqual(adbName);
+    });
+
+    it('should register an allocated device', async () => {
+      givenFreeDevice(adbName);
+      deviceRegistry.allocateDevice.mockImplementation(async (func) => {
+        const result = await func();
+        expect(result).toEqual(adbName);
+        return result;
+      });
+
+      await uut.allocateDevice(avdName);
+      expect(deviceRegistry.allocateDevice).toHaveBeenCalled();
+    });
+
+    it('should look-up a free device *inside* inter-locked registry callback', async () => {
       givenFreeDevice(adbName);
       deviceRegistry.allocateDevice.mockImplementation(async (func) => {
         expect(freeDeviceFinder.findFreeDevice).not.toHaveBeenCalled();

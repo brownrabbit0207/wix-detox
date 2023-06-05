@@ -3,12 +3,6 @@ describe('Emulator launcher', () => {
   const avdName = 'Pixel_Mock';
   const adbName = 'mock-emulator:1234';
 
-  let retry;
-  let eventEmitter;
-  let emulatorExec;
-  let adb;
-  let launchEmulatorProcess;
-  let uut;
   beforeEach(() => {
     jest.mock('../../../../../utils/logger');
 

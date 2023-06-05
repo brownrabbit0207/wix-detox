@@ -3,12 +3,6 @@ const _ = require('lodash');
 
 const DetoxInternalError = require('../../errors/DetoxInternalError');
 const setUniqueProperty = require('../../utils/setUniqueProperty');
-const FileArtifact = require('../templates/artifact/FileArtifact');
-const ArtifactPlugin = require('../templates/plugin/ArtifactPlugin');
-
-class IosUIHierarchyPlugin extends ArtifactPlugin {
-  /**
-   * @param {ArtifactsApi} api
    * @param {Client} client
    */
   constructor({ api, client }) {

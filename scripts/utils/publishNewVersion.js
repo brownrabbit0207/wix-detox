@@ -3,12 +3,6 @@ const exec = require('shell-utils').exec;
 
 const {
   log,
-  logSection,
-  getReleaseNpmTag,
-  getReleaseVersionType,
-  getVersionSafe,
-  isDryRun,
-  isSkipNpm
 } = require('./releaseArgs');
 
 const {removeDocsForVersion, buildDocsForVersion} = require('./releaseDocumentation');

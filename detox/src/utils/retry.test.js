@@ -3,12 +3,6 @@ describe('retry', () => {
   let retry;
 
   const mockFailingUserFn = () => jest.fn().mockReturnValue(Promise.reject(new Error('a thing')));
-  const mockFailingOnceUserFn = () => jest.fn()
-    .mockReturnValueOnce(Promise.reject())
-    .mockReturnValueOnce(Promise.resolve());
-  const mockFailingTwiceUserFn = () => jest.fn()
-    .mockReturnValueOnce(Promise.reject(new Error('once')))
-    .mockReturnValueOnce(Promise.reject(new Error('twice')))
     .mockReturnValueOnce(Promise.resolve());
 
   beforeEach(() => {

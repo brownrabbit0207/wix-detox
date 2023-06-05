@@ -3,12 +3,6 @@
 	This code is generated.
 	For more information see generation/README.md.
 */
-
-
-function sanitize_android_edge(edge) {
-  switch (edge) {
-    case 'left':
-      return 1;
     case 'right':
       return 2;
     case 'top':

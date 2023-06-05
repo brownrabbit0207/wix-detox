@@ -3,12 +3,6 @@ describe('Genymotion-cloud authentication service', () => {
   let uut;
   beforeEach(() => {
     const GenyCloudExec = jest.genMockFromModule('../exec/GenyCloudExec');
-    exec = new GenyCloudExec();
-
-    const GenyAuthService = require('./GenyAuthService');
-    uut = new GenyAuthService(exec);
-  });
-
   const givenLoginEmail = (email) => exec.whoAmI.mockResolvedValue({
     auth: {
       email,

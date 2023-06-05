@@ -3,12 +3,6 @@ const { serializeError } = require('serialize-error');
 
 const DetoxInternalError = require('../../errors/DetoxInternalError');
 
-class RegisteredConnectionHandler {
-  constructor({ api, role, session }) {
-    this._api = api;
-    this._api.appendLogDetails({
-      trackingId: role,
-      sessionId: session.id,
       role,
     });
 

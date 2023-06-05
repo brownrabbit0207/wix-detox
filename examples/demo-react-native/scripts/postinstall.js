@@ -3,12 +3,6 @@ const rnVersion = function() {
   return rnPackageJson.version;
 }();
 
-function patchHermesLocationForRN60Android() {
-  const semver = require('semver');
-  const fs = require('fs-extra');
-  const path = require('path');
-
-  if (semver.minor(rnVersion) === 60) {
     console.log('Detox post-install: Detected RN .60...');
 
     const HERMES_PATH_ROOT = path.join('node_modules', 'hermesvm');

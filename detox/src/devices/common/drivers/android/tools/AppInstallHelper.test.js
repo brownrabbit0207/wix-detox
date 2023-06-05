@@ -3,12 +3,6 @@ const appBinaryPath = '/mock-app-binary-path/binary.apk';
 const testBinaryPath = '/mock-test-binary-path/test/binary.apk';
 
 describe('Android app installation helper', () => {
-  let adb;
-
-  beforeEach(() => {
-    const ADBMock = jest.genMockFromModule('../exec/ADB');
-    adb = new ADBMock();
-  });
 
   let fileTransfer;
   let uut;

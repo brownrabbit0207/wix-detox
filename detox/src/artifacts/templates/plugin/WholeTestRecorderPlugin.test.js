@@ -3,12 +3,6 @@ jest.mock('../../../utils/logger.js');
 const testSummaries = require('../../__mocks__/testSummaries.mock');
 
 const WholeTestRecorderPlugin = require('./WholeTestRecorderPlugin');
-const ArtifactsApi = require('./__mocks__/ArtifactsApi.mock');
-
-describe('WholeTestRecorderPlugin', () => {
-  let api;
-  let plugin;
-
   beforeEach(() => {
     api = new ArtifactsApi({
       config: {
@@ -23,6 +17,32 @@ describe('WholeTestRecorderPlugin', () => {
     beforeEach(() => plugin.disable());
 
     describe('onTestStart', () => {
+      beforeEach(async () => plugin.onTestStart(testSummaries.running()));
+
+      it('should not create recording onTestStart', async () =>
+        expect(plugin.createTestRecording).not.toHaveBeenCalled());
+    });
+
+    describe('onTestDone', () => {
+      beforeEach(async () => plugin.onTestDone(testSummaries.passed()));
+
+      it('should not create recording', async () =>
+        expect(plugin.createTestRecording).not.toHaveBeenCalled());
+
+      it('should not do request idle callbacks', async () =>
+        expect(api.requestIdleCallback).not.toHaveBeenCalled());
+    });
+  });
+
+  describe('onTestStart', () => {
+    beforeEach(async () => plugin.onTestStart(testSummaries.running()));
+
+    it('should create artifact', async () => {
+      expect(plugin.createTestRecording).toHaveBeenCalled();
+    });
+
+    it('should start recording artifact', async () => {
+      expect(plugin.createdArtifacts[0].start).toHaveBeenCalledTimes(1);
     });
 
     it('should not stop recording artifact', async () => {

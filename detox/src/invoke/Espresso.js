@@ -3,6 +3,3 @@ const target = {
   value: 'androidx.test.espresso.Espresso'
 };
 
-module.exports = {
-  target
-};

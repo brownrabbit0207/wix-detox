@@ -3,12 +3,6 @@ package com.wix.invoke;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.reflect.MethodUtils;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/**
- * Created by rotemm on 26/10/2016.
- */
 
 public class MethodUtilsExt extends MethodUtils {
 

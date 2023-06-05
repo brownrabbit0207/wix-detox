@@ -3,12 +3,6 @@ package com.wix.detox
 import android.content.Context
 import android.util.Log
 import com.wix.detox.adapters.server.*
-import com.wix.detox.common.DetoxLog.Companion.LOG_TAG
-import com.wix.detox.instruments.DetoxInstrumentsManager
-import com.wix.detox.reactnative.ReactNativeExtension
-import com.wix.invoke.MethodInvocation
-
-private const val INIT_ACTION = "_init"
 private const val IS_READY_ACTION = "isReady"
 private const val TERMINATION_ACTION = "_terminate"
 

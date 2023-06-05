@@ -3,12 +3,6 @@
 Detox uses [matchers](matchers.md) to match UI elements in your app.
 
 Use [actions](actions.md) to simulate use interaction with elements and [expectations](expect.md) to verify element states.
-
-**Note:** For best results, it is recommended to match elements by unique identifiers. Matching by text or labels can introduce test flakiness when your app’s text change or when changing your app’s localization.
-
-## Methods
-
-- [`by.id()`](#byidid)
 - [`by.label()`](#bylabellabel)
 - [`by.text()`](#bytexttext)
 - [`by.type()`](#bytypeclassname)
@@ -21,6 +15,32 @@ Use [actions](actions.md) to simulate use interaction with elements and [expecta
 ### `by.id(id)`
 
 Match elements with the specified accessibility identifier. In React Native, this corresponds to the value in the [`testID`](https://reactnative.dev/docs/view.html#testid) prop.
+
+```js
+element(by.id('tap_me'));
+```
+
+### `by.label(label)`
+
+Match elements with the specified accessibility label (iOS) or content description (Android). In React Native, this corresponds to the value in the [`accessibilityLabel`](https://reactnative.dev/docs/accessibility#accessibilitylabel) prop.
+
+```js
+element(by.label('Welcome'));
+```
+
+### `by.text(text)`
+
+Match elements with the specified text.
+
+```js
+element(by.text('Tap Me'));
+```
+
+### `by.type(className)`
+
+Matches elements whose class is, or inherits from, the specified class name. On Android, provide the class canonical name.
+
+**Note:** iOS and Android class names differ.
 
 ```js
 element(by.type('RCTImageView')); //iOS class name

@@ -3,12 +3,6 @@ package com.wix.detox.espresso.assertion;
 import androidx.annotation.NonNull;
 import android.view.View;
 
-import org.hamcrest.Matcher;
-import org.hamcrest.StringDescription;
-
-import androidx.test.espresso.NoMatchingViewException;
-import androidx.test.espresso.ViewAssertion;
-
 import static androidx.test.espresso.core.internal.deps.guava.base.Preconditions.checkNotNull;
 import static androidx.test.espresso.matcher.ViewMatchers.assertThat;
 

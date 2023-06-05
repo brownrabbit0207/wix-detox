@@ -3,12 +3,6 @@
 :::note Community resource
 
 This is an article generously contributed [by the community][initial PR].
-Feel free to [contribute to it][Contributing] by submitting a pull request
-if you find any errors or have suggestions for improvements.
-If you have any questions, please get in touch with the author directly.
-
-:::
-
 [Cucumber] is a tool for running automated tests written in plain language.
 It can be integrated with Detox to run end-to-end tests for mobile applications
 if you manage [Detox Internals API] from [Cucumber.js hooks].

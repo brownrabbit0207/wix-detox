@@ -4,12 +4,6 @@ jest.mock('../utils/argparse');
 const os = require('os');
 const path = require('path');
 
-const DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
-
-describe('composeDetoxConfig', () => {
-  let args;
-  let configuration;
-
   /** @type {DetoxConfigErrorComposer} */
   let errorComposer;
 
@@ -23,6 +17,32 @@ describe('composeDetoxConfig', () => {
   });
 
   describe('composeDetoxConfig', () => {
+    it('should throw an error if no config is found in package.json', async () => {
+      await expect(configuration.composeDetoxConfig({})).rejects.toThrowError(
+        /external .detoxrc.json configuration/
+      );
+    });
+
+    it('should throw an error if empty config is found at path', async () => {
+      await expect(configuration.composeDetoxConfig({
+        argv: {
+          'config-path': path.join(__dirname, '__mocks__/configuration/priority/empty.js'),
+        },
+      })).rejects.toThrowError(/are no configurations in/);
+    });
+
+    it('should throw an error if no config is found at all', async () => {
+      await expect(configuration.composeDetoxConfig({
+        cwd: os.homedir(),
+      })).rejects.toThrowError(errorComposer.noConfigurationSpecified());
+    });
+
+    it('should throw an error if the local config has the old schema', async () => {
+      try {
+        await configuration.composeDetoxConfig({
+          cwd: path.join(__dirname, '__mocks__/configuration/oldschema'),
+          errorComposer,
+        });
       } catch (e) {
         // NOTE: we want errorComposer to be mutated, that's why we assert inside try-catch
         expect(e).toEqual(errorComposer.configurationShouldNotUseLegacyFormat());

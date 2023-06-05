@@ -3,5 +3,3 @@
    version = "1.0">
    <FileRef
       location = "group:DetoxTester/DetoxTesterApp.xcodeproj">
-   </FileRef>
-</Workspace>
