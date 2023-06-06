@@ -3,16 +3,11 @@ describe('Genymotion-Cloud instance launcher', () => {
   const recipeName = 'mock-recipe-name';
 
   const anInstance = () => {
-  };
-
-  const anOfflineInstance = () => {
-    const instance = anInstance();
-    instance.isAdbConnected.mockReturnValue(false);
-    instance.isOnline.mockReturnValue(false);
-    instance.adbName = '0.0.0.0';
-    return instance;
-  };
-
+    const instance = new GenyInstance();
+    instance.uuid = 'mock-instance-uuid';
+    instance.name = 'mock-instance-name';
+    instance.recipeName = recipeName;
+    instance.toString = () => 'mock-instance-toString()';
   const anOnlineInstance = () => {
     const instance = anOfflineInstance();
     instance.isOnline.mockReturnValue(true);

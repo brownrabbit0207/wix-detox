@@ -3,16 +3,11 @@
 title "jest --runInBand"
 actor User
 boundary "Jest (main)" as Jest0
-activate Jest0
-Jest0 -> jestConfig: import
-activate jestConfig
-jestConfig -> Jest0: await
-deactivate jestConfig
-Jest0 -> globalSetup: import
-activate globalSetup
-globalSetup -> Jest0: await
-deactivate globalSetup
-Jest0 -> jestReporter: import
+participant "jest.config.js" as jestConfig
+participant "globalSetup" as globalSetup
+participant "reporters" as jestReporter
+participant "globalTeardown.js" as globalTeardown
+
 activate jestReporter
 Jest0 -> jestReporter: onRunStart()
 loop every test file

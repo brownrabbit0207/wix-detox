@@ -8,15 +8,4 @@ export default function ShowcasePage() {
   return (
     <>
       <Head>
-        <title>Showcase | Detox</title>
-      </Head>
-      <StandWithUkraine />
-      <Layout>
-        <main>
-          <Showcase.Hero />
-          <Showcase.List />
-        </main>
-      </Layout>
-    </>
-  );
 }

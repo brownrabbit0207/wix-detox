@@ -8,17 +8,6 @@ import {
 
 export default class TimeoutsScreen extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      greeting: undefined,
-    };
-  }
-
-  render() {
-    if (this.state.greeting) return this.renderAfterButton();
-    return (
-      <View style={{flex: 1, paddingTop: 20, justifyContent: 'center', alignItems: 'center'}}>
 
         <TouchableOpacity onPress={this.onTimeoutButtonPress.bind(this, 'Short Timeout Working', 600)}>
           <Text testID='TimeoutShort' style={{color: 'blue', marginBottom: 20}}>Short Timeout</Text>

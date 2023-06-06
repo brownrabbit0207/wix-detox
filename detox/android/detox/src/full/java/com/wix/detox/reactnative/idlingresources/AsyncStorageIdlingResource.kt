@@ -8,17 +8,6 @@ import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource
 import com.wix.detox.reactnative.helpers.RNHelpers
 import org.joor.Reflect
 import java.util.concurrent.Executor
-
-private typealias SExecutorReflectedGenFnType = (executor: Executor) -> SerialExecutorReflected
-private val defaultSExecutorReflectedGenFn: SExecutorReflectedGenFnType = { executor: Executor -> SerialExecutorReflected(executor) }
-
-private class ModuleReflected(module: NativeModule, sexecutorReflectedGen: SExecutorReflectedGenFnType) {
-    private val executorReflected: SerialExecutorReflected
-
-    init {
-        val reflected = Reflect.on(module)
-        val executor: Executor = reflected.field("executor").get()
-        executorReflected = sexecutorReflectedGen(executor)
     }
 
     val sexecutor: SerialExecutorReflected

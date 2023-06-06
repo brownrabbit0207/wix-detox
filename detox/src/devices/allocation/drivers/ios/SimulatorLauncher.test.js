@@ -3,16 +3,11 @@ describe('Simulator launcher (helper)', () => {
 
   let eventEmitter;
   let applesimutils;
-    applesimutils = new AppleSimUtils();
+  let uut;
+  beforeEach(() => {
+    const AsyncEmitter = jest.genMockFromModule('../../../../utils/AsyncEmitter');
+    eventEmitter = new AsyncEmitter();
 
-    const SimulatorLauncher = require('./SimulatorLauncher');
-    uut = new SimulatorLauncher({ applesimutils, eventEmitter });
-  });
-
-  describe('launch', () => {
-    const type = 'mockType';
-    const bootArgs = { mock: 'boot-args' };
-    const headless = true;
 
     const givenBootResultCold = () => applesimutils.boot.mockResolvedValue(true);
     const givenBootResultWarm = () => applesimutils.boot.mockResolvedValue(false);

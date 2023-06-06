@@ -8,6 +8,3 @@
 
 #import "SetPermissionOperation.h"
 
-@implementation SetPermissionOperation
-
-@end

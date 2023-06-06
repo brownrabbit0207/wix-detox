@@ -8,17 +8,6 @@ import java.io.File;
 
 public class DetoxInstrumentsManager {
 
-    private final Context context;
-    private final Instruments instruments;
-    private InstrumentsRecording recording;
-
-    public DetoxInstrumentsManager(Context context) {
-        this(context, getDefaultInstruments());
-    }
-
-    public DetoxInstrumentsManager(Context context, Instruments instruments) {
-        this.context = context;
-        this.instruments = instruments;
         this.recording = instruments.getActiveRecording();
     }
 

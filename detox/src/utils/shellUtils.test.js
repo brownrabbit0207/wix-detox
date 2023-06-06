@@ -3,16 +3,11 @@ const {
   escapeInDoubleQuotedRegexp,
   escapeInDoubleQuotedString,
   escapeWithDoubleQuotedString,
-describe('shellUtils', function() {
-  describe('escapeInDoubleQuotedString', () => {
-    test.each([
-      ['test string', 'test string'],
-      ['"test string"', `\\"test string\\"`],
-    ])('should transform [ %s ] to [ %s ]', (input, expected) => {
-      expect(escapeInDoubleQuotedString(input)).toBe(expected);
-    });
-  });
-
+  escapeWithSingleQuotedString,
+  hasUnsafeChars,
+  isRunningInCMDEXE,
+  useForwardSlashes,
+} = require('./shellUtils');
   describe('escapeInDoubleQuotedRegexp', () => {
     test.each([
       ['test string', 'test string'],

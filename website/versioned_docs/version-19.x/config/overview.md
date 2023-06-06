@@ -8,17 +8,6 @@ title: Configuration Options
 ### Configuration File
 
 In order for Detox to know what device & app to use (and a lot more, actually), it needs some configuration to be statically available in a configuration file. It supports both standalone configuration files, and a configuration bundling inside the project’s `package.json`.
-
-In essence, Detox scans for the configuration to use, through multiple files. It starts from the current working directory, and runs over the following options, in this order:
-
-1. `.detoxrc.js`
-1. `.detoxrc.json`
-1. `.detoxrc`
-1. `detox.config.js`
-1. `detox.config.json`
-1. `package.json` (`"detox"` section)
-
-Options 1-5 allow for a standalone Detox configuration in either a `json` format or using JavaScript syntax.
 Option 6 means the configuration is available in `json` format inside the project’s `package.json`, which is more suitable if you like having all of your project’s configurations in one place.
 
 Please find the [Detox example app](https://github.com/wix/Detox/blob/master/examples/demo-react-native/detox.config.js) as a working reference. Also, look at

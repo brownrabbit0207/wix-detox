@@ -3,16 +3,11 @@ const {expectToThrow} = require('./utils/custom-expects');
 
 const expectToFinishBeforeTimeout = async (block, timeout) => {
   const startTime = new Date().getTime();
-  }
-}
+  await block();
+  const endTime = new Date().getTime();
 
-describe('WaitFor', () => {
-  const goButton = element(by.id('goButton'));
-  const timeout = 5000;
-
-  beforeEach(async() => {
-    await device.reloadReactNative();
-    await element(by.text('WaitFor')).tap();
+  const expiredAfter = endTime - startTime;
+  if (expiredAfter > timeout) {
   });
 
   it('should wait until an element is exists / removed in layout', async () => {

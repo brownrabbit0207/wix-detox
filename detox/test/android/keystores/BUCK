@@ -3,3 +3,6 @@ keystore(
     properties = "debug.keystore.properties",
     store = "debug.keystore",
     visibility = [
+        "PUBLIC",
+    ],
+)

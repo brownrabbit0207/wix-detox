@@ -3,16 +3,11 @@ import {
   Text,
   View,
   TouchableOpacity
-    this.state = {
-      horizontal: false
-    };
-    console.log('Orientation react component constructed (console.log test)');
-  }
+} from 'react-native';
 
-  detectHorizontal({nativeEvent: {layout: {width, height,x,y}}}) {
-    this.setState({
-      horizontal: width > height
-    });
+export default class Orientation extends Component {
+
+  constructor(props) {
   }
 
   render() {

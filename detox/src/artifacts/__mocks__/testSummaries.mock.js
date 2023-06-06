@@ -4,6 +4,12 @@ const running = () => ({
   status: 'running',
 });
 
+const passed = () => ({
+  title: 'test',
+  fullName: 'Suite test',
+  status: 'passed',
+});
+
 const failed = () => ({
   title: 'test',
   fullName: 'Suite test',

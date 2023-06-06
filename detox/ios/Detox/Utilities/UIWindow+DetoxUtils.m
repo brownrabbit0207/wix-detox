@@ -3,16 +3,11 @@
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 6/4/20.
-#import "NSObject+DetoxUtils.h"
-#import "UIView+DetoxUtils.h"
+//  Copyright © 2020 Wix. All rights reserved.
+//
 
-extern NSArray* DTXChildElements(id element);
+#import "UIWindow+DetoxUtils.h"
 
-static void _DTXElementDescription(NSObject<UIAccessibilityIdentification>* element, NSMutableString* storage)
-{
-	[storage appendFormat:@"<%@: %p", element.class, element];
-
-	if([element __isKindOfUIView])
 	{
 		UIView* view = (id)element;
 		CGRect frame = view.frame;

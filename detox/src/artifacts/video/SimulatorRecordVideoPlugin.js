@@ -3,16 +3,11 @@ const fs = require('fs-extra');
 const { interruptProcess } = require('../../utils/childProcess');
 const log = require('../../utils/logger').child({ cat: 'artifacts-plugin,artifact' });
 const Artifact = require('../templates/artifact/Artifact');
-  constructor(config) {
-    super(config);
+const FileArtifact = require('../templates/artifact/FileArtifact');
+const temporaryPath = require('../utils/temporaryPath');
 
-    this.appleSimUtils = config.appleSimUtils;
-  }
+const VideoArtifactPlugin = require('./VideoArtifactPlugin');
 
-  createTestRecording() {
-    const { api, context, appleSimUtils } = this;
-    const temporaryFilePath = temporaryPath.for.mp4();
-    let processPromise = null;
 
     return new Artifact({
       name: 'SimulatorVideoRecording',

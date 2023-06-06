@@ -3,6 +3,12 @@
 exports[`AsyncWebSocket .close() should throw on a consequent attempt to close the socket 1`] = `
 "Detected an attempt to close an already closing or closed web socket.
 Please report this issue on our GitHub tracker:
+https://github.com/wix/Detox/issues"
+`;
+
+exports[`AsyncWebSocket .close() should throw on a sync socket.close() error 1`] = `
+"Failed to close a connection to the Detox server.
+
 Error: TestError"
 `;
 

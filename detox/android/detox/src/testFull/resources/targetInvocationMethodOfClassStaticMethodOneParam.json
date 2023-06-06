@@ -3,12 +3,8 @@
     "type": "Invocation",
     "value": {
       "target": {
-          "type": "Float",
-          "value": 1.0
-        }
-      ]
-    }
-  },
-  "method": "length",
-  "args": []
-}
+        "type": "Class",
+        "value": "java.lang.String"
+      },
+      "method": "valueOf",
+      "args": [

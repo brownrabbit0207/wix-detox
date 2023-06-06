@@ -8,17 +8,6 @@ class JSONLStringer extends Transform {
     this._header = header;
     this._delimiter = delimiter;
     this._footer = footer;
-  }
-
-  _transform(chunk, _, callback) {
-    if (this._header) {
-      this.push(this._header);
-    }
-
-    this.push(JSON.stringify(chunk, this._replacer));
-    this._transform = this._nextTransform;
-    callback(null);
-  }
 
   _nextTransform(chunk, _, callback) {
     this.push(this._delimiter + JSON.stringify(chunk, this._replacer));

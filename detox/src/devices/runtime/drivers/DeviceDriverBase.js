@@ -3,6 +3,12 @@ const os = require('os');
 const path = require('path');
 
 const fs = require('fs-extra');
+
+const log = require('../../../utils/logger').child({ cat: 'device' });
+
+/**
+ * @typedef DeviceDriverDeps
+ * @property client { Client }
  * @property eventEmitter { AsyncEmitter }
  */
 

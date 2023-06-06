@@ -3,10 +3,8 @@ const { worker } = require('detox/internals')
 
 class CustomDetoxEnvironment extends DetoxCircusEnvironment {
   async setup() {
-}
+    await super.setup();
 
-process.on('unhandledRejection', (reason, p) => {
-  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
-});
-
-module.exports = CustomDetoxEnvironment;
+    this.global.__waitUntilArtifactsManagerIsIdle__ = () => {
+      return worker._artifactsManager._idlePromise;
+    };

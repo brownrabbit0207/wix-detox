@@ -8,17 +8,6 @@ const AndroidDriver = require('../AndroidDriver');
 
 /**
  * @typedef GenycloudDriverProps
- * @property instance { GenyInstance } The DTO associated with the cloud instance
- */
-
-class GenyCloudDriver extends AndroidDriver {
-  /**
-   * @param deps { GenycloudDriverDeps }
-   * @param props { GenycloudDriverProps }
-   */
-  constructor(deps, { instance }) {
-    super(deps, { adbName: instance.adbName });
-    this.instance = instance;
   }
 
   getDeviceName() {

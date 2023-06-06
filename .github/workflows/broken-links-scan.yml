@@ -8,13 +8,3 @@ on:
 jobs:
   remark:
     name: Remark
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-      - uses: bahmutov/npm-install@v1
-        with:
-          useLockFile: false
-      - run: npx remark -r .remarkrc.nightly.mjs .

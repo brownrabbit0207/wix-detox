@@ -3,16 +3,11 @@ describe('Attached Android device "launcher"', () => {
 
   let eventEmitter;
   let uut;
-  });
+  beforeEach(() => {
+    const AsyncEmitter = jest.genMockFromModule('../../../../../utils/AsyncEmitter');
+    eventEmitter = new AsyncEmitter();
 
-  const expectDeviceBootEvent = () =>
-    expect(eventEmitter.emit).toHaveBeenCalledWith('bootDevice', {
-      deviceId: adbName,
-      coldBoot: false,
-      type: 'device',
-    });
-
-  it('should emit a boot event', async () => {
+    const AttachedAndroidLauncher = require('./AttachedAndroidLauncher');
     await uut.notifyLaunchCompleted(adbName);
     expectDeviceBootEvent();
   });

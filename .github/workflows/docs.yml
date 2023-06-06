@@ -3,6 +3,12 @@ name: Doclint
 on:
   push:
     branches: [master]
+    paths:
+      - '.github/workflows/docs.yml'
+      - '.markdownlintrc'
+      - '.remarkignore'
+      - '.remarkrc.mjs'
+      - '.retext-spell.dic'
       - 'package.json'
       - 'docs/**'
       - '**.md'

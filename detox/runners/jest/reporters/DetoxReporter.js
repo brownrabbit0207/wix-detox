@@ -3,6 +3,12 @@ const resolveFrom = require('resolve-from');
 const JestVerboseReporter = require(resolveFrom(process.cwd(), '@jest/reporters')).VerboseReporter;
 
 const { config, reportTestResults } = require('../../../internals');
+
+class DetoxReporter extends JestVerboseReporter {
+  /**
+   * @param {import('@jest/test-result').AggregatedResult} results
+   */
+  // @ts-ignore
   async onRunComplete(_contexts, results) {
     // @ts-ignore
     await super.onRunComplete(_contexts, results);

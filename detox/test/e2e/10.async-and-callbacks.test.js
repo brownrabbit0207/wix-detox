@@ -3,15 +3,10 @@ describe('Async and Callbacks', () => {
     await device.reloadReactNative();
     await element(by.text('Sanity')).tap();
   });
-    });
-  });
 
-  it('should handle async await', async () => {
-    await timeout(1);
-    await expect(element(by.text('Welcome'))).toBeVisible();
-  });
-});
-
-function timeout(ms) {
+  it('should handle done() callback', (done) => {
+    expect(element(by.text('Welcome'))).toBeVisible().then(() => {
+      setTimeout(() => {
+        done();
   return new Promise((resolve) => setTimeout(resolve, ms));
 }

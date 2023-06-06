@@ -3,16 +3,11 @@ package com.wix.detox.reactnative.idlingresources;
 import android.util.Log;
 import android.view.Choreographer;
 
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
+import com.facebook.react.bridge.ReactContext;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import okhttp3.Call;
-import okhttp3.Dispatcher;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Created by simonracz on 09/10/2017.

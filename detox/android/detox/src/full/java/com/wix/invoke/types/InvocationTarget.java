@@ -8,11 +8,3 @@ import java.lang.reflect.InvocationTargetException;
 public class InvocationTarget extends Target {
 
     public InvocationTarget(Invocation value) {
-        super(value);
-    }
-
-    @Override
-    public Object execute(Invocation invocation) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-        return  MethodUtils.invokeMethod(invocation.getTarget().getValue(), invocation.getMethod(), invocation.getArgs());
-    }
-}

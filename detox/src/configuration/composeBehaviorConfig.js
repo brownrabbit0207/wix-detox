@@ -3,16 +3,11 @@ const _ = require('lodash');
 
 /**
  * @param {*} cliConfig
-  localConfig,
-}) {
-  return _.chain({})
-    .defaultsDeep(
-      {
-        init: {
-          keepLockFile: cliConfig.keepLockFile ? true : undefined,
-          reinstallApp: cliConfig.reuse ? false : undefined,
-        },
-        cleanup: {
+ * @param {Detox.DetoxConfig} globalConfig
+ * @param {Detox.DetoxConfiguration} localConfig
+ */
+function composeBehaviorConfig({
+  cliConfig,
           shutdownDevice: cliConfig.cleanup ? true : undefined,
         },
       },

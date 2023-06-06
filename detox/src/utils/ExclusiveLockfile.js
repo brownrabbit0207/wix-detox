@@ -8,17 +8,6 @@ const retry = require('./retry');
 
 const DEFAULT_OPTIONS = {
   retry: { retries: 10000, interval: 5 },
-  read: { encoding: 'utf8' },
-  getInitialState: _.constant(null),
-};
-
-class ExclusiveLockfile {
-  constructor(lockfile, options) {
-    if (!lockfile) {
-      throw new DetoxRuntimeError('Path to the lockfile should be a non-empty string');
-    }
-
-    this._lockFilePath = lockfile;
     this._options = _.defaultsDeep(options, DEFAULT_OPTIONS);
 
     this._isLocked = false;

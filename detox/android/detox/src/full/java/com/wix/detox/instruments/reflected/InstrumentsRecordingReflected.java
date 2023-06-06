@@ -3,16 +3,11 @@ package com.wix.detox.instruments.reflected;
 import com.wix.detox.instruments.DetoxInstrumentsException;
 import com.wix.detox.instruments.InstrumentsRecording;
 
-    private static Method methodEventMark;
+import java.lang.reflect.Method;
 
-    static {
-        try {
-            final String basePackageName = "com.wix.detoxprofiler";
-            final Class<?> profilerClass = Class.forName(basePackageName + ".DTXProfiler");
-
-            methodStopRecording = profilerClass.getDeclaredMethod("stopProfiling");
-            methodEventBeginInterval = profilerClass.getDeclaredMethod("eventBeginInterval",
-                    String.class,//category
+public class InstrumentsRecordingReflected implements InstrumentsRecording {
+    private static Method methodStopRecording;
+    private static Method methodEventBeginInterval;
                     String.class,//name
                     String.class,//id
                     String.class,//additionalInfo

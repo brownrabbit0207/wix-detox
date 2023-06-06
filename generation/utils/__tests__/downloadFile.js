@@ -3,16 +3,11 @@ describe("download-file util", () => {
 
   let mockDownloadedContent;
   let fs;
-    require("os").tmpdir.mockReturnValue(OS_TMP_DIR);
+  let downloadFile;
 
-    jest.mock("fs", () => ({
-      writeFileSync: jest.fn(),
-    }));
-    fs = require("fs");
-
-    jest.mock("child_process", () => ({
-      execFileSync: () => mockDownloadedContent
-    }));
+  beforeEach(() => {
+    jest.mock("os", () => ({
+      tmpdir: jest.fn(),
 
     downloadFile = require("../downloadFile");
   });

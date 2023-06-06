@@ -8,5 +8,3 @@ class GenyAuthService {
     return whoAmI.auth.email;
   }
 }
-
-module.exports = GenyAuthService;

@@ -3,16 +3,11 @@
 import FlavorizedCodeBlock from '@site/src/components/FlavorizedCodeBlock';
 
 Open your Detox config and replace `YOUR_APP` placeholder with the actual app name, e.g.:
->
-  {(conf) => `\
-     'ios.${conf.toLowerCase()}': {
-       type: 'ios.app',
--      binaryPath: 'ios/build/Build/Products/${conf}-iphonesimulator/YOUR_APP.app',
-+      binaryPath: 'ios/build/Build/Products/${conf}-iphonesimulator/example.app',
--      build: 'xcodebuild -workspace ios/YOUR_APP.xcworkspace -scheme YOUR_APP -configuration ${conf} -sdk iphonesimulator -derivedDataPath ios/build'
-+      build: 'xcodebuild -workspace ios/example.xcworkspace -scheme example -configuration ${conf} -sdk iphonesimulator -derivedDataPath ios/build'
-     },`}
-</FlavorizedCodeBlock>
+
+<FlavorizedCodeBlock
+  language="diff"
+  title={'.detoxrc.js'}
+  header={'   apps: {\n'}
 
 :::info
 

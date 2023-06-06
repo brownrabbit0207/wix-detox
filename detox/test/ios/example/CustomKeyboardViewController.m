@@ -3,16 +3,11 @@
 //  example
 //
 //  Created by Tyrone Trevorrow on 26/4/21.
-@protocol CustomKeyboardDelegate
-- (void) customKeyboardTappedButton: (CustomKeyboardView*) sender;
-@end
+//  Copyright © 2021 Wix. All rights reserved.
+//
 
-@interface CustomKeyboardView : UIView
-@property (nonatomic, weak) id<CustomKeyboardDelegate> delegate;
-- (void) loadView;
-@end
+#import "CustomKeyboardViewController.h"
 
-@implementation CustomKeyboardView
 
 - (void) loadView
 {

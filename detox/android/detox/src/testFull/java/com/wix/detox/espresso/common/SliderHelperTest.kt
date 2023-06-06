@@ -3,6 +3,12 @@ package com.wix.detox.espresso.common
 import com.facebook.react.views.slider.ReactSlider
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.mock
+import org.mockito.kotlin.whenever
+import org.robolectric.RobolectricTestRunner
 
 /**
  * Note: This only tests against the react *legacy* (non-community) slider in order

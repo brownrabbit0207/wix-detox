@@ -3,16 +3,11 @@ const debug = require('../../utils/debug'); // debug utils, leave here even if u
 const log = require('../../utils/logger').child({ cat: 'device' });
 const traceMethods = require('../../utils/traceMethods');
 const wrapWithStackTraceCutter = require('../../utils/wrapWithStackTraceCutter');
-    behaviorConfig,
-    deviceConfig,
-    eventEmitter,
-    sessionConfig,
-    runtimeErrorComposer,
-  }, deviceDriver) {
-    const methodNames = [
-      'captureViewHierarchy',
-      'clearKeychain',
-      'disableSynchronization',
+
+const LaunchArgsEditor = require('./utils/LaunchArgsEditor');
+
+class RuntimeDevice {
+  constructor({
       'enableSynchronization',
       'installApp',
       'installUtilBinaries',

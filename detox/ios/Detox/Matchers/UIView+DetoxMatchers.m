@@ -3,6 +3,12 @@
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 4/19/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
+
+#import "UIView+DetoxMatchers.h"
+#import "UIView+DetoxUtils.h"
+#import "DTXAppleInternals.h"
 #import "UIWindow+DetoxUtils.h"
 
 @implementation UIView (DetoxMatchers)

@@ -9,17 +9,6 @@ class External extends DeviceAllocatorFactory {
       throw new DetoxRuntimeError(`The custom driver at '${path}' does not export the DeviceAllocationDriverClass property`);
     }
   }
-
-  constructor(module, path) {
-    super();
-    External.validateModule(module, path);
-
-    this._module = module;
-  }
-
-  _createDriver(deps) {
-    return new this._module.DeviceAllocationDriverClass(deps);
-  }
 }
 
 module.exports = { External };

@@ -8,17 +8,6 @@
 
 class DetoxWebAtomMatcher {
   static matcherForId(id) {
-    if (typeof id !== "string") throw new Error("id should be a string, but got " + (id + (" (" + (typeof id + ")"))));
-    return {
-      target: {
-        type: "Class",
-        value: "com.wix.detox.espresso.web.DetoxWebAtomMatcher"
-      },
-      method: "matcherForId",
-      args: [id]
-    };
-  }
-
   static matcherForClassName(className) {
     if (typeof className !== "string") throw new Error("className should be a string, but got " + (className + (" (" + (typeof className + ")"))));
     return {

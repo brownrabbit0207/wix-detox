@@ -8,6 +8,3 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSBundle (TestsFix)
-
-@end

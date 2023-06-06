@@ -3,16 +3,11 @@
 //  Detox
 //
 //  Created by Leo Natan (Wix) on 7/15/20.
-@implementation NSObject (DTXRNFix)
+//  Copyright © 2020 Wix. All rights reserved.
+//
 
-//Disable live reload for Detox
-- (void)__detox_sync__reloadWithDefaults:(NSDictionary *)defaultValues
-{
-	NSMutableDictionary* dv = [defaultValues mutableCopy];
-	dv[@"hotLoadingEnabled"] = @NO;
-	
-	[self __detox_sync__reloadWithDefaults:defaultValues];
-	
+@import ObjectiveC;
+
 	NSMutableDictionary* _settings = [self valueForKey:@"_settings"];
 	_settings[@"hotLoadingEnabled"] = @NO;
 	[NSUserDefaults.standardUserDefaults setObject:_settings forKey:@"RCTDevMenu"];

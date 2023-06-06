@@ -3,6 +3,12 @@ describe('Genymotion-Cloud instance allocation helper', () => {
   const recipeName = 'mock-recipe-name';
 
   let logger;
+  let deviceRegistry;
+  let instanceLookupService;
+  let instanceLifecycleService;
+  let GenyInstance;
+  let uut;
+  beforeEach(() => {
     jest.mock('../../../../../utils/logger');
     logger = require('../../../../../utils/logger');
 

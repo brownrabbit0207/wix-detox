@@ -4,15 +4,10 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Button, Platform } from 'react-native';
 import { default as DatePicker } from "@react-native-community/datetimepicker";
 
-    this.state = {
-      chosenDate: new Date(),
-      datePickerVisible: !shouldHideDatePicker,
-      datePickerDisplay: DatePickerScreen.MODES[0],
-    };
-  }
+const shouldHideDatePicker = Platform.OS === 'android';
 
-  _toggleDatePicker = () => {
-    const currentIndex = DatePickerScreen.MODES.indexOf(this.state.datePickerDisplay);
+export default class DatePickerScreen extends Component {
+  constructor(props) {
     this.setState({
       datePickerDisplay: DatePickerScreen.MODES[(currentIndex + 1) % DatePickerScreen.MODES.length],
     });

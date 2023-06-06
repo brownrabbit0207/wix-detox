@@ -3,4 +3,8 @@
       - "nvm install"
       - "./scripts/demo-projects.android.sh"
     env:
-      - "/Users/builder/work/artifacts*.tar.gz"
+      REACT_NATIVE_VERSION: 0.68.5
+      REACT_NATIVE_COMPAT_TEST: true
+      DETOX_DISABLE_POD_INSTALL: true
+      DETOX_DISABLE_POSTINSTALL: true
+    artifact_paths:

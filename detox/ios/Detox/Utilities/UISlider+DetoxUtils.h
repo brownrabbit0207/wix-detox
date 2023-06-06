@@ -8,12 +8,3 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface UISlider (DetoxUtils)
-
-@property (nonatomic, getter=dtx_normalizedSliderPosition, setter=dtx_setNormalizedSliderPosition:) double dtx_normalizedSliderPosition;
-
-@end
-
-NS_ASSUME_NONNULL_END

@@ -3,8 +3,8 @@ package com.wix.detox.reactnative
 import android.app.Instrumentation
 import com.facebook.react.ReactApplication
 
-        instrumentation.runOnMainSync {
-            rnInstanceManager.recreateReactContextInBackground()
-        }
-    }
-}
+open class ReactNativeReLoader(
+        private val instrumentation: Instrumentation,
+        private val rnApplication: ReactApplication) {
+
+    fun reloadInBackground() {

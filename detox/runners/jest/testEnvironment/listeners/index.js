@@ -8,6 +8,3 @@ module.exports = {
   DetoxCoreListener,
   DetoxInitErrorListener,
   DetoxPlatformFilterListener,
-  SpecReporter,
-  WorkerAssignReporter,
-};

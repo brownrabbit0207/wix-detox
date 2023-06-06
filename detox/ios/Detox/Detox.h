@@ -3,7 +3,8 @@
 //  Detox
 //
 //  Created by Tal Kol on 6/15/16.
-FOUNDATION_EXPORT double DetoxVersionNumber;
+//  Copyright © 2016 Wix. All rights reserved.
+//
 
-//! Project version string for Detox.
-FOUNDATION_EXPORT const unsigned char DetoxVersionString[];
+@import Foundation;
+

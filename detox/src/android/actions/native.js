@@ -4,15 +4,10 @@ const DetoxActionApi = require('../espressoapi/DetoxAction');
 const DetoxViewActionsApi = require('../espressoapi/DetoxViewActions');
 const ViewActionsApi = require('../espressoapi/ViewActions');
 
-class TapAction extends Action {
-  constructor(value) {
-    super();
-    this._call = invoke.callDirectly(value ? DetoxActionApi.tapAtLocation(value.x, value.y) : DetoxViewActionsApi.click());
-  }
-}
+const assertDirection = assertEnum(['left', 'right', 'up', 'down']);
+const assertSpeed = assertEnum(['fast', 'slow']);
 
-class TapAtPointAction extends Action {
-  constructor(value) {
+class Action {
     super();
     this._call = invoke.callDirectly(DetoxActionApi.tapAtLocation(value.x, value.y));
   }

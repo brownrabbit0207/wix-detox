@@ -3,6 +3,12 @@
 actor User
 boundary "Detox CLI" as CLI
 participant "DetoxPrimaryContext" as Pri
+boundary "Jest (main)" as Jest0
+participant "DetoxSecondaryContext.0" as Sec0
+boundary "Jest (worker N)" as JestN
+participant "DetoxSecondaryContext.N" as SecN
+participant "DetoxCircusEnvironment.N" as Env
+
 User -> CLI: detox test
 activate CLI
 CLI -> Pri: require('detox')

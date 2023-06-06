@@ -3,16 +3,11 @@ const rootPath = process.platform === 'win32' ? 'C:\\Users\\SomeUser' : '~/someP
 
 describe('APK utils', () => {
 
-    it('should properly resolve a simple path', async () => {
-      const inputApkPath = path.join(rootPath, 'build/outputs/apk/debug/app-debug.apk');
-      const expectedTestApkPath = path.join(rootPath, 'build/outputs/apk/androidTest/debug/app-debug-androidTest.apk');
-      expect(apkUtils.getTestApkPath(inputApkPath)).toEqual(expectedTestApkPath);
-    });
+  let apkUtils;
+  beforeEach(() => {
+    apkUtils = require('./apk');
+  });
 
-    it('should properly resolve given a gradle build flavor', async () => {
-      const inputApkPath = path.join(rootPath, 'build/outputs/apk/development/debug/app-development-debug.apk');
-      const expectedTestApkPath = path.join(rootPath, 'build/outputs/apk/androidTest/development/debug/app-development-debug-androidTest.apk');
-      expect(apkUtils.getTestApkPath(inputApkPath)).toEqual(expectedTestApkPath);
     });
 
     it('should properly resolve given a gradle build with multiple flavors', async () => {

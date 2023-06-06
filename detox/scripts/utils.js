@@ -8,4 +8,3 @@ function sh(cmdline, opts) {
 
 module.exports = {
   sh
-};
