@@ -13,9 +13,3 @@ public interface Instruments {
 
     InstrumentsRecording startRecording(
             Context context,
-            boolean recordPerformance,
-            long samplingInterval,
-            File recordingFile,
-            boolean recordReactNativeTimersAsEvents
-    );
-}

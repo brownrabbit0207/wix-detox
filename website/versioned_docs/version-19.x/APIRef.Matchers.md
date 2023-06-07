@@ -13,22 +13,6 @@ Use [actions](APIRef.ActionsOnElement.md) to simulate use interaction with eleme
 
 **Note:** For best results, it is recommended to match elements by unique identifiers. Matching by text or labels can introduce test flakiness when your app’s text change or when changing your app’s localization.
 
-### Methods
-
-- [`by.id()`](#byidid)
-- [`by.label()`](#bylabellabel)
-- [`by.text()`](#bytexttext)
-- [`by.type()`](#bytypeclassname)
-- [`by.traits()`](#bytraitstraits-ios-only) **iOS Only**
-- [`withAncestor()`](#withancestormatcher)
-- [`withDescendant()`](#withdescendantmatcher)
-- [`and()`](#andmatcher)
-- [`atIndex()`](#atindexindex)
-
-#### `by.id(id)`
-
-Match elements with the specified accessibility identifier. In React Native, this corresponds to the value in the [`testID`](https://reactnative.dev/docs/view.html#testid) prop.
-
 ```js
 element(by.id('tap_me'));
 ```

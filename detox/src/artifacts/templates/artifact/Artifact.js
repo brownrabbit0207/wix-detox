@@ -8,16 +8,11 @@ class Artifact {
     if (template) {
       const { name, start, stop, save, discard, ...misc } = template;
 
-      if (typeof save === 'function') {
-        this.doSave = save.bind(template);
-      }
+      Object.assign(this, misc);
+      this._name = name;
 
-      if (typeof discard === 'function') {
-        this.doDiscard = discard.bind(template);
-      }
-    }
-
-    this._startPromise = null;
+      if (typeof start === 'function') {
+        this.doStart = start.bind(this);
     this._stopPromise = null;
     this._savePromise = null;
     this._discardPromise = null;

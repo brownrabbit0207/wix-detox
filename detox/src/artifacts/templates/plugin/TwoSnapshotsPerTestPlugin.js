@@ -8,6 +8,17 @@ const ArtifactPlugin = require('./ArtifactPlugin');
  * @abstract
  */
 class TwoSnapshotsPerTestPlugin extends ArtifactPlugin {
+  constructor({ api }) {
+    super({ api });
+
+    this.shouldTakeAutomaticSnapshots = this.api.userConfig.shouldTakeAutomaticSnapshots;
+    this.keepOnlyFailedTestsArtifacts = this.api.userConfig.keepOnlyFailedTestsArtifacts;
+
+    this.takeAutomaticSnapshots = this.api.userConfig.takeWhen
+      ? {
+        testStart: false,
+        testFailure: true,
+        testDone: false,
         ...this.api.userConfig.takeWhen
       }
       : {

@@ -13,4 +13,3 @@
 @property NSString *greeting;
 @property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
 
-@end

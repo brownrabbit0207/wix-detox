@@ -8,3 +8,6 @@ describe('helpers', () => {
 
     it('should return the correct snake case method name', () => {
       expect(methodNameToSnakeCase('actionForScrollInDirection:amount:xOriginStartPercentage:yOriginStartPercentage:')).toMatchSnapshot();
+    });
+  });
+});

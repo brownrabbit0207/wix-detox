@@ -8,3 +8,5 @@ try {
 module.exports = {
   resolver: {
     blacklistRE: createBlacklist([/test\/.*/, /detox\/node_modules\/.*/]),
+  },
+};

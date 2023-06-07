@@ -8,6 +8,17 @@
 
 #import "DTXDurationFormatter.h"
 
+@implementation DTXDurationFormatter
+{
+	NSNumberFormatter* _numberFormatter;
+}
+
+- (instancetype)init
+{
+	self = [super init];
+	if(self)
+	{
+		_numberFormatter = [NSNumberFormatter new];
 		_numberFormatter.maximumFractionDigits = 2;
 	}
 	

@@ -8,16 +8,11 @@ We are improving Detox API as we go along, sometimes these changes require us to
 
 ### No [Mocha] support
 
-If you see an error like this:
+If you were using Mocha, now you have two options:
 
-```plain text
-DetoxConfigError: Configuration "legacy" uses a deprecated all-in-one schema,
-which is not supported by Detox.
-```
+- switch to [Jest] using [`detox init`] boilerplate as a reference and [`testRunner` config];
+- wait until a third-party integration with Mocha appears.
 
-You have to extract device and app configs from your configuration, as shown in the example below:
-
-<table>
 <tr>
   <th>Legacy schema</th>
   <th>Modern schema</th>

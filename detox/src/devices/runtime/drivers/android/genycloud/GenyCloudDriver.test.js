@@ -14,22 +14,6 @@ describe('Genymotion-cloud driver', () => {
   let instrumentation;
   let detoxGenymotionManager;
 
-  beforeEach(() => {
-    jest.mock('../../../../common/drivers/android/exec/AAPT');
-    const AAPT = jest.requireMock('../../../../common/drivers/android/exec/AAPT');
-    aapt = new AAPT();
-    aapt.isTestAPK
-      .mockResolvedValueOnce(false)
-      .mockResolvedValueOnce(true);
-
-    jest.mock('../../../../../utils/getAbsoluteBinaryPath');
-
-    const Emitter = jest.genMockFromModule('../../../../../utils/AsyncEmitter');
-    eventEmitter = new Emitter();
-
-    const { InvocationManager } = jest.genMockFromModule('../../../../../invoke');
-    invocationManager = new InvocationManager();
-
     jest.mock('../../../../common/drivers/android/tools/AppUninstallHelper');
 
     jest.mock('../../../../common/drivers/android/tools/AppInstallHelper');

@@ -8,3 +8,8 @@ detox build-framework-cache
 
 Detox stores a cached version of its framework in `~/Library/Detox/ios/*` in unique folders, where the folder name
 is a hash of Xcode and Detox version:
+
+```plain text
+├── ios
+│   ├── 197a0586bd006583562a5916c969d158133a8c50
+│   ├── …

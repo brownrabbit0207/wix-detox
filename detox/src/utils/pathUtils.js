@@ -8,3 +8,4 @@ function toSimplePath(filePath, cwd = process.cwd()) {
 
 module.exports = {
   toSimplePath,
+};

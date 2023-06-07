@@ -8,16 +8,11 @@ const yargs = require('yargs');
 function callCli(modulePath, cmd) {
   return new Promise((resolve, reject) => {
     const originalModule = require(path.join(__dirname, '../local-cli', modulePath));
-      }
-    };
-
-    return yargs
-      .scriptName('detox')
-      .parserConfiguration({
-        'boolean-negation': true,
-        'camel-case-expansion': false,
-        'dot-notation': false,
-        'duplicate-arguments-array': false,
+    const originalHandler = originalModule.handler;
+    const spiedModule = {
+      ...originalModule,
+      handler: async program => {
+        try {
         'populate--': true,
       })
       .command(spiedModule)

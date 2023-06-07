@@ -8,6 +8,17 @@ const LaunchArgsEditor = require('./utils/LaunchArgsEditor');
 
 class RuntimeDevice {
   constructor({
+    appsConfig,
+    behaviorConfig,
+    deviceConfig,
+    eventEmitter,
+    sessionConfig,
+    runtimeErrorComposer,
+  }, deviceDriver) {
+    const methodNames = [
+      'captureViewHierarchy',
+      'clearKeychain',
+      'disableSynchronization',
       'enableSynchronization',
       'installApp',
       'installUtilBinaries',

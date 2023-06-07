@@ -13,22 +13,6 @@ private class SerialExecutorStub(private val executeFn: (r: Runnable) -> Unit): 
     var mActive: Runnable? = null
 
     override fun execute(r: Runnable) = executeFn(r)
-}
-
-object SerialExecutorReflectedSpec : Spek({
-    describe("Serial-executor") {
-        lateinit var serialExecutor: SerialExecutorStub
-        lateinit var uut: SerialExecutorReflected
-        lateinit var executeFn: (r: Runnable) -> Unit
-
-        beforeEachTest {
-            executeFn = mock()
-            serialExecutor = SerialExecutorStub(executeFn)
-            uut = SerialExecutorReflected(serialExecutor)
-        }
-
-        it("should query pending tasks on empty executor") {
-            assertThat(uut.hasPendingTasks()).isFalse()
         }
 
         it("should query pending tasks on an executor with pending jobs") {

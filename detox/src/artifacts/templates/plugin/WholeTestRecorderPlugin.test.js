@@ -8,16 +8,11 @@ const ArtifactsApi = require('./__mocks__/ArtifactsApi.mock');
 describe('WholeTestRecorderPlugin', () => {
   let api;
   let plugin;
-  describe('when disabled', () => {
-    beforeEach(() => plugin.disable());
 
-    describe('onTestStart', () => {
-      beforeEach(async () => plugin.onTestStart(testSummaries.running()));
-
-      it('should not create recording onTestStart', async () =>
-        expect(plugin.createTestRecording).not.toHaveBeenCalled());
-    });
-
+  beforeEach(() => {
+    api = new ArtifactsApi({
+      config: {
+        enabled: false,
     describe('onTestDone', () => {
       beforeEach(async () => plugin.onTestDone(testSummaries.passed()));
 

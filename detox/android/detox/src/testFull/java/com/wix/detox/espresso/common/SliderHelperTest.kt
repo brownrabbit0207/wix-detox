@@ -13,22 +13,6 @@ import org.robolectric.RobolectricTestRunner
 /**
  * Note: This only tests against the react *legacy* (non-community) slider in order
  * to avoid having to install the community slider under node_modules just for this.
- */
-@RunWith(RobolectricTestRunner::class)
-class SliderHelperTest {
-    lateinit var slider: ReactSlider
-    lateinit var uut: SliderHelper
-
-    @Before
-    fun setup() {
-        slider = mock()
-        uut = SliderHelper.create(slider)
-    }
-
-    private fun givenNativeProgressTraits(current: Int, max: Int) {
-        whenever(slider.progress).doReturn(current)
-        whenever(slider.max).doReturn(max)
-    }
 
     @Test
     fun `should properly calculate current progress, in percentage`() {

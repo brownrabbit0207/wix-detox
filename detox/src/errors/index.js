@@ -8,3 +8,8 @@ const DetoxRuntimeErrorComposer = require('./DetoxRuntimeErrorComposer');
 module.exports = {
   DetoxError,
   DetoxConfigError,
+  DetoxConfigErrorComposer,
+  DetoxInternalError,
+  DetoxRuntimeError,
+  DetoxRuntimeErrorComposer,
+};

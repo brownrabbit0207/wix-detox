@@ -8,6 +8,17 @@ exports[`Timeline integration test Flaky test should deterministically produce a
       "data": {},
       "level": 10,
       "v": 0,
+    },
+    "cat": "lifecycle",
+    "name": "detox test -c stub --config integration/e2e/config.js -a integration_artifacts/ -R 1 flaky",
+    "ph": "B",
+    "pid": 0,
+    "tid": 0,
+    "ts": 0,
+  },
+  {
+    "args": {
+      "level": 10,
       "v": 0,
     },
     "cat": "lifecycle",

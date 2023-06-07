@@ -8,16 +8,11 @@ const getTimeStampString = require('../utils/getTimeStampString');
  * @abstract
  */
 class LogArtifactPlugin extends StartupAndTestRecorderPlugin {
-          this.api.preparePathForArtifact(`detox_pid_${process.pid}.log`),
-        ]);
-
-        await Promise.all([
-          new FileArtifact({ temporaryPath: logger.jsonFileStreamPath }).save(jsonLogPath, { append: true }),
-          new FileArtifact({ temporaryPath: logger.plainFileStreamPath }).save(plainLogPath, { append: true })
-        ]);
-      });
-    }
+  constructor({ api }) {
+    super({ api });
   }
+
+  async onBeforeCleanup() {
 
   async onBeforeShutdownDevice(event) {
     await super.onBeforeShutdownDevice(event);

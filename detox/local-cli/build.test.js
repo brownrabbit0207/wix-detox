@@ -8,6 +8,17 @@ describe('build', () => {
   beforeEach(() => {
     jest.mock('child_process');
     execSync = require('child_process').execSync;
+
+    jest.mock('../src/utils/logger');
+    jest.mock('../internals', () => {
+      const DetoxConfigErrorComposer = require('../src/errors/DetoxConfigErrorComposer');
+
+      const config = {
+        apps: {},
+        artifacts: {},
+        behavior: {},
+        errorComposer: new DetoxConfigErrorComposer(),
+        device: {},
         session: {}
       };
 

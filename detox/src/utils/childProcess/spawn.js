@@ -8,16 +8,11 @@ const retry = require('../retry');
 
 const execsCounter = require('./opsCounter');
 
-  const _options = {
-    ...options,
-    capture: _.union(options.capture || [], ['stderr']),
-  };
-  const {
-    retries = 1,
-    interval = 100,
-    ...spawnOptions
-  } = _options;
-
+function spawnAndLog(binary, flags, options) {
+  const command = _joinCommandAndFlags(binary, flags);
+  const trackingId = execsCounter.inc();
+  const logger = rootLogger.child({ fn: 'spawnAndLog', command, trackingId });
+  return _spawnAndLog(logger, binary, flags, command, options);
   let result;
   await retry({ retries, interval }, async (tryCount, lastError) => {
     _logSpawnRetrying(logger, tryCount, lastError);

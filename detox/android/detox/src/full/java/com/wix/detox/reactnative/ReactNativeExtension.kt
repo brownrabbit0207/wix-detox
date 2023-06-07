@@ -14,22 +14,6 @@ private const val LOG_TAG = "DetoxRNExt"
 object ReactNativeExtension {
     private var rnIdlingResources: ReactNativeIdlingResources? = null
 
-    /**
-     * Reloads the React Native context and thus all javascript code.
-     *
-     * It is a lot faster to reload a React Native application this way,
-     * than to reload the whole Activity or Application.
-     *
-     * @param applicationContext The app context, implicitly assumed to be a [ReactApplication] instance.
-     */
-    @JvmStatic
-    fun reloadReactNative(applicationContext: Context) {
-        if (!ReactNativeInfo.isReactNativeApp()) {
-            return
-        }
-
-        Log.i(LOG_TAG, "Reloading React Native")
-
         (applicationContext as ReactApplication).let {
             val networkSyncEnabled = rnIdlingResources?.networkSyncEnabled ?: true
             clearIdlingResources()

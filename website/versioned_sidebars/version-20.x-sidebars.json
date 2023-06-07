@@ -8,16 +8,11 @@
         "introduction/project-setup",
         "introduction/your-first-test",
         "introduction/debugging",
-        "guide/taking-screenshots",
-        "guide/mocking",
-        "guide/launch-args",
-        "guide/mocking-open-with-url",
-        "guide/mocking-user-notifications",
-        "guide/mocking-user-activity",
-        "guide/developing-while-writing-tests",
-        "guide/android-dev-env",
-        "guide/proguard-configuration",
-        "guide/cucumber-js-integration",
+        "introduction/preparing-for-ci"
+      ]
+    },
+    {
+      "type": "category",
         "guide/uninstalling"
       ]
     },

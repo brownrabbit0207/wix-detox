@@ -8,16 +8,11 @@ const { getFullTestName, hasTimedOut } = require('../utils');
 const RETRY_TIMES = Symbol.for('RETRY_TIMES');
 
 const log = detoxInternals.log.child({ cat: 'lifecycle,jest-environment' });
-    // Workaround to override Jest's expect
-    if (detoxInternals.config.behavior.init.exposeGlobals) {
-      this._env.global.expect = detox.expect;
-    }
-  }
 
-  async run_describe_start({ describeBlock }) {
-    if (describeBlock.children.length) {
-      log.trace.begin(describeBlock.parent ? describeBlock.name : 'run the tests');
-      await detoxInternals.onRunDescribeStart({
+class DetoxCoreListener {
+  constructor({ env }) {
+    this._startedTests = new Set();
+    this._skippedTests = new Set();
         name: describeBlock.name,
       });
     }

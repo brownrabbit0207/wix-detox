@@ -13,22 +13,6 @@ import java.util.List;
 public class NativeModulePackage implements ReactPackage {
 
     @Override
-    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.asList(
-                new com.example.NativeModule(reactContext)
-        );
-    }
-
-    @Override
-    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Arrays.asList(
-                new AnimationViewManager(),
-                new DoubleTapsTextViewManager(),
-                new SluggishTextTextViewManager()
-        );
-    }
-
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }
 }

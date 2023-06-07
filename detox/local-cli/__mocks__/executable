@@ -13,22 +13,6 @@ function main() {
             return acc;
         }, {});
 
-    const output = JSON.stringify({ env, argv }) + '\n';
-
-    if (process.env.CLI_TEST_STDOUT) {
-        fs.appendFileSync(process.env.CLI_TEST_STDOUT, output);
-    } else {
-        process.stdout.write(output);
-    }
-
-    if (process.env.CLI_EXIT_CODE) {
-        process.exit(+process.env.CLI_EXIT_CODE);
-    } else {
-        process.exit(0);
-    }
-}
-
-if (process.env.CLI_SLEEP > 0) {
     setTimeout(main, +process.env.CLI_SLEEP);
 } else {
     main();

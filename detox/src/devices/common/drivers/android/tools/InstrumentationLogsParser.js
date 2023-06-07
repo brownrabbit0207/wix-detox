@@ -13,22 +13,6 @@ class InstrumentationLogsParser {
   parse(logsDump) {
     this._analyzeLogs(logsDump);
   }
-
-  containsStackTraceLog() {
-    return !_.isUndefined(this._stackTrace);
-  }
-
-  getStackTrace() {
-    return this._stackTrace || '';
-  }
-
-  _analyzeLogs(_logsDump) {
-    const logsDump = this._partialLog ? this._partialLog.concat(_logsDump) : _logsDump;
-    const logs = logsDump.split(START_WITH_PREFIX);
-    this._extractStackTraceLogIfExists(logs);
-    this._keepPartialLogIfNeeded(logs);
-  }
-
   _extractStackTraceLogIfExists(logs) {
     const stackTraceLogs = logs.filter(this._verifyStackTraceLog);
     if (!_.isEmpty(stackTraceLogs)) {

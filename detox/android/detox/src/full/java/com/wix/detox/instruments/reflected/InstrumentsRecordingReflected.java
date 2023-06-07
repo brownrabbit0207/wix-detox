@@ -8,6 +8,17 @@ import java.lang.reflect.Method;
 public class InstrumentsRecordingReflected implements InstrumentsRecording {
     private static Method methodStopRecording;
     private static Method methodEventBeginInterval;
+    private static Method methodEventEndInterval;
+    private static Method methodEventMark;
+
+    static {
+        try {
+            final String basePackageName = "com.wix.detoxprofiler";
+            final Class<?> profilerClass = Class.forName(basePackageName + ".DTXProfiler");
+
+            methodStopRecording = profilerClass.getDeclaredMethod("stopProfiling");
+            methodEventBeginInterval = profilerClass.getDeclaredMethod("eventBeginInterval",
+                    String.class,//category
                     String.class,//name
                     String.class,//id
                     String.class,//additionalInfo

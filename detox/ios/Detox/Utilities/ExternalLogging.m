@@ -13,5 +13,3 @@ DTX_CREATE_LOG(External)
 
 void __dtx_send_external_log(const char* log)
 {
-	dtx_log_info(@"%s", log);
-}

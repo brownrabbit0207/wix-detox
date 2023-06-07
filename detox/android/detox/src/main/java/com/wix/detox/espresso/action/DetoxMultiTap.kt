@@ -13,22 +13,6 @@ import com.wix.detox.espresso.action.common.DetoxViewConfigurations.getLongTapMi
 import com.wix.detox.espresso.action.common.DetoxViewConfigurations.getPostTapCoolDownTime
 import com.wix.detox.espresso.action.common.TapEvents
 
-/**
- * An implementation that is an alternative to Espresso's implementations, namely
- * [androidx.test.espresso.action.Tap.SINGLE] and [androidx.test.espresso.action.Tap.DOUBLE].
- *
- * The main difference is: Instead of injecting distinct idle-waiting events (down, then up, etc.), here,
- * [UiController.injectMotionEventSequence] is used in order to inject all events in one go, such that no
- * idle-wait is employed in between.
- *
- * The main goal here is to fix timing problems where, for example - in a single tap, the gap between
- * the tap's 'down' and 'up' actions becomes too long to the point where the tap gets registered as a
- * long tap (true story!). As for double-taps, a different problem addressed here is where the wait in
- * between taps becomes too long, such that eventually the system registers two distinct taps instead
- * of a single double-tap gesture.
- *
- * This should be Espresso's default implementation IMO.
- */
 open class DetoxMultiTap
     @JvmOverloads constructor(
             private val times: Int,

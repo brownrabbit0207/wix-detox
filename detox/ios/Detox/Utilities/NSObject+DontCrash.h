@@ -8,3 +8,8 @@
 @import UIKit;
 
 NS_ASSUME_NONNULL_BEGIN
+
+@interface NSObject (DontCrash)
+
+- (id)_dtx_text;
+- (id)_dtx_placeholder;

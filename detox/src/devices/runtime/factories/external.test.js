@@ -8,10 +8,8 @@ describe('External runtime-device factory', () => {
     });
 
     describe('given module with no runtime-driver class', () => {
-          RuntimeDriverClass: class {},
+      it('should throw an error', () => {
+        const module = {
+          RuntimeDriverClass: undefined,
         };
-        factoryClass.validateModule(module, path);
-      });
-    });
-  });
-});
+        expect(() => factoryClass.validateModule(module, path)).toThrowErrorMatchingSnapshot();

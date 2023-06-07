@@ -8,16 +8,11 @@ describe('start', () => {
     cmd = null;
 
     jest.mock('../src/utils/logger');
+    jest.mock('../internals', () => {
+      const DetoxConfigErrorComposer = require('../src/errors/DetoxConfigErrorComposer');
 
-      return ({
-        config,
-        resolveConfig: jest.fn().mockResolvedValue(config),
-        log: require('../src/utils/logger')
-      });
-    });
-
-    detox = require('../internals');
-  });
+      const config = {
+        apps: {},
 
   afterEach(async () => {
     if (cmd) {

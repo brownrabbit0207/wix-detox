@@ -8,16 +8,11 @@ import org.mockito.kotlin.mock
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
-            fun aDescriptiveIdlingResource(busyHint: Map<String, Any>?): DescriptiveIdlingResource =
-                mock() {
-                    on { getDebugName() }.doReturn(mockedDebugName)
-                    on { getBusyHint() }.doReturn(busyHint)
-                }
-
-            listOf(
-                TestCase<IdlingResource>(
-                    caseTitle = "should return a description based on debug-name and busy-hint",
-                    idlingResource = aDescriptiveIdlingResource(mapOf("mocked" to "hint", "mocked2" to "hint2")),
+class DetoxBusyResourceSpec: Spek({
+    describe("Detox busy resource") {
+        data class TestCase<in T: IdlingResource>(
+            val caseTitle: String,
+            val idlingResource: IdlingResource,
                     expectedDescription = DetoxBusyResourceDescription.Builder()
                         .name(mockedDebugName)
                         .addDescription("mocked", "hint")

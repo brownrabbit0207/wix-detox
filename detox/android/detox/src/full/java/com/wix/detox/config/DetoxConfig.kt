@@ -8,3 +8,7 @@ class DetoxConfig {
         idlePolicyConfig.apply()
     }
 
+    companion object {
+        lateinit var CONFIG: DetoxConfig
+    }
+}

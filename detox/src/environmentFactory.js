@@ -8,6 +8,17 @@ const envValidationFactories = require('./validation/factories');
 
 function validateConfig(deviceConfig) {
   const classes = _getFactoryClasses(deviceConfig);
+  if (!classes) {
+    const modulePath = deviceConfig.type;
+    const module = resolveModuleFromPath(modulePath);
+
+    deviceAllocationFactories.External.validateModule(module, modulePath);
+    matchersFactories.External.validateModule(module, modulePath);
+    runtimeDeviceFactories.External.validateModule(module, modulePath);
+  }
+}
+
+/**
  * @param deviceConfig
  * @returns {{ deviceAllocatorFactory: DeviceAllocatorFactory }}
  */

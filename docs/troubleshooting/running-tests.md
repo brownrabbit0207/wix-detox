@@ -8,16 +8,11 @@ It’s a good idea to get as much information as possible about what’s going o
 
 ```bash
 detox test --loglevel trace
-
-**Issue:** A while after running Detox, you get a message about failure to connect to the running app, in the logs:
-
-```plain text
-Detox can’t seem to connect to the test app(s)!
 ```
 
-This can be a result of various reasons. It is generally up to you to debug and find the root cause. In any case, below are the common ones.
+## No simulators found (iOS)
 
-### If you do not see your app running on the device
+In order to run tests on a simulator, you need to have simulator images installed on your machine. This process is performed by Xcode itself. You can list all available simulators using `simctl` by typing `xcrun simctl list` in terminal.
 
 - You might have forgotten to run `device.launchApp()` in the beginning of your test.
 - The app might have crashed before Detox has had a chance to connect to it. To get the crash details, you can run Detox tests with `--record-logs all` CLI option and then inspect the device logs in the artifacts' folder.
