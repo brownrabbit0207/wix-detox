@@ -13,16 +13,11 @@ class IosUIHierarchyPlugin extends ArtifactPlugin {
    */
   constructor({ api, client }) {
     super({ api });
-  }
 
-  async onCreateExternalArtifact(e) {
-    if (!e.artifact) {
-      throw new DetoxInternalError('Expected Artifact instance in the event');
-    }
-
-    this._registerSnapshot(e.name, e.artifact);
-  }
-
+    this._pendingDeletions = [];
+    this._artifacts = {
+      perTest: {},
+      perSession: {},
   _onInvokeFailure({ params: { viewHierarchyURL } }) {
     if (viewHierarchyURL) {
       this._registerSnapshot('ui', new FileArtifact({

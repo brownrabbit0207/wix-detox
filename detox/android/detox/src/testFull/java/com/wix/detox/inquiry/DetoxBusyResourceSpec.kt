@@ -13,6 +13,22 @@ class DetoxBusyResourceSpec: Spek({
         data class TestCase<in T: IdlingResource>(
             val caseTitle: String,
             val idlingResource: IdlingResource,
+            val expectedDescription: DetoxBusyResourceDescription
+        )
+
+        describe("given a descriptive idling resource") {
+            val mockedDebugName = "mock:debug-name"
+
+            fun aDescriptiveIdlingResource(busyHint: Map<String, Any>?): DescriptiveIdlingResource =
+                mock() {
+                    on { getDebugName() }.doReturn(mockedDebugName)
+                    on { getBusyHint() }.doReturn(busyHint)
+                }
+
+            listOf(
+                TestCase<IdlingResource>(
+                    caseTitle = "should return a description based on debug-name and busy-hint",
+                    idlingResource = aDescriptiveIdlingResource(mapOf("mocked" to "hint", "mocked2" to "hint2")),
                     expectedDescription = DetoxBusyResourceDescription.Builder()
                         .name(mockedDebugName)
                         .addDescription("mocked", "hint")

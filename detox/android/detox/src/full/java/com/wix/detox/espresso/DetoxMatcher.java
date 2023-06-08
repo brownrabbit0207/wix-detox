@@ -18,27 +18,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static androidx.test.espresso.matcher.ViewMatchers.withTagValue;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static com.wix.detox.espresso.matcher.ViewMatchers.isMatchingAtIndex;
-import static com.wix.detox.espresso.matcher.ViewMatchers.isOfClassName;
-import static com.wix.detox.espresso.matcher.ViewMatchers.toHaveSliderPosition;
-import static com.wix.detox.espresso.matcher.ViewMatchers.withAccessibilityLabel;
-import static com.wix.detox.espresso.matcher.ViewMatchers.withShallowAccessibilityLabel;
-import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.anyOf;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-import static org.hamcrest.Matchers.notNullValue;
-import static org.hamcrest.Matchers.nullValue;
-
-/**
- * Created by simonracz on 10/07/2017.
- */
-
-public class DetoxMatcher {
-
-    private DetoxMatcher() {
-        // static class
-    }
 
     public static Matcher<View> matcherForText(String text) {
         // return anyOf(withText(text), withContentDescription(text));

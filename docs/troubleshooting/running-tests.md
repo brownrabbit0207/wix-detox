@@ -14,6 +14,22 @@ detox test --loglevel trace
 
 In order to run tests on a simulator, you need to have simulator images installed on your machine. This process is performed by Xcode itself. You can list all available simulators using `simctl` by typing `xcrun simctl list` in terminal.
 
+If you’re missing a simulator, make sure Xcode is installed and use it to download the simulator. Take a look at the Preferences screen, some screenshots can be seen [here](http://stackoverflow.com/questions/33738113/how-to-install-ios-9-1-simulator-in-xcode-version-7-1-1-7b1005).
+
+Once the desired simulator is installed and returned by `xcrun simctl list`, double check its name in the list and make sure this name is found in the `detox` configuration entry in `package.json`. The reference for the configuration options is available [here](../config/devices.mdx).
+
+## Tests execution hangs
+
+**Issue:** A while after running Detox, you get a message about failure to connect to the running app, in the logs:
+
+```plain text
+Detox can’t seem to connect to the test app(s)!
+```
+
+This can be a result of various reasons. It is generally up to you to debug and find the root cause. In any case, below are the common ones.
+
+### If you do not see your app running on the device
+
 - You might have forgotten to run `device.launchApp()` in the beginning of your test.
 - The app might have crashed before Detox has had a chance to connect to it. To get the crash details, you can run Detox tests with `--record-logs all` CLI option and then inspect the device logs in the artifacts' folder.
 - **On Android**, there might be a problem with the native test code in the `DetoxTest.java` file. Revisit the [associated section](../introduction/project-setup.mdx#step-4-additional-android-configuration) in the setup guide.

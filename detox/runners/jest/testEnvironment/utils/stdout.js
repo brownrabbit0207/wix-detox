@@ -13,3 +13,6 @@ function traceln(message) {
 }
 
 module.exports = {
+  trace,
+  traceln,
+};

@@ -18,27 +18,6 @@
   font-weight: 300;
 }
 
-[data-theme='dark'] .navbar__item {
-  padding: 5px;
-  font-weight: 300;
-}
-/*===========*/
-
-/* Restyle logo & hamburger button */
-
-.navbar {
-  height: 70px;
-
-  &__items {
-    &--right {
-      position: relative;
-    }
-  }
-
-  &__logo {
-    height: 26px;
-    margin: 0 10px 0 8px;
-  }
 
   &__toggle {
     width: 40px;

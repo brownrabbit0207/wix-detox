@@ -13,6 +13,8 @@ import java.util.List;
 public class NativeModulePackage implements ReactPackage {
 
     @Override
-        return Collections.emptyList();
+    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+        return Arrays.asList(
+                new com.example.NativeModule(reactContext)
+        );
     }
-}

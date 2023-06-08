@@ -13,6 +13,22 @@
 
 @implementation UIView (DetoxMatchers)
 
+NSArray* DTXChildElements(id element)
+{
+	NSCParameterAssert(element != nil);
+	
+	NSMutableOrderedSet<id> *immediateChildren = [[NSMutableOrderedSet alloc] init];
+	
+	if ([element isKindOfClass:[UIView class]])
+	{
+		// Grab all subviews so that we continue traversing the entire hierarchy.
+		// Add the objects in reverse order to make sure that objects on top get matched first.
+		NSArray<id> *subviews = [element subviews];
+		if ([subviews count] > 0)
+		{
+			for (UIView *subview in [subviews reverseObjectEnumerator])
+			{
+				[immediateChildren addObject:subview];
 			}
 		}
 	}

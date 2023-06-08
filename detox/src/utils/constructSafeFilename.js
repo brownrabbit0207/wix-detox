@@ -13,16 +13,11 @@ const sanitizeOptions = {
 function constructSafeFilename(prefix = '', trimmable = '', suffix = '') {
   if (!trimmable) {
     throw new DetoxRuntimeError({
-        prefixLength: prefix.length,
+      message: 'no trimmable filename was given to constructSafeFilename(prefix, trimmable, suffix)',
+      debugInfo: 'the arguments were: ' + JSON.stringify({
+        prefix,
         trimmable,
-        trimmableLength: trimmable.length,
         suffix,
-        suffixLength: suffix.length,
-        nonTrimmableLength,
-      }, null, 2),
-    });
-  }
-
   const trimmed = trimmable.slice(-MAX_FILE_LENGTH + nonTrimmableLength);
   const unsafe = prefix + trimmed + suffix;
   const sanitized = sanitize(unsafe, sanitizeOptions);

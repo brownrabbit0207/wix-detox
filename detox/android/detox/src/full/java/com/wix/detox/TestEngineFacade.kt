@@ -13,3 +13,10 @@ class TestEngineFacade {
         Log.i(LOG_TAG, "Wait is over: App is now idle!")
         null
     }
+    fun syncIdle() = UiAutomatorHelper.espressoSync() // TODO Check whether this can be replaced with #awaitIdle()
+    fun getAllBusyResources() = BusyResourcesInquirer.INSTANCE.getAllBusyResources()
+
+    // TODO Refactor RN related stuff away
+    fun reloadReactNative(appContext: Context) = ReactNativeExtension.reloadReactNative(appContext)
+    fun resetReactNative() = ReactNativeExtension.clearAllSynchronization()
+}

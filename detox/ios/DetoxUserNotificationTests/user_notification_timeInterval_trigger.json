@@ -13,3 +13,7 @@
 		"key2": "value2"
 	},
 	"category": "com.example.category",
+	"user-text": "Hi there!",
+	"content-available": 0,
+	"action-identifier": "default2"
+}

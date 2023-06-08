@@ -18,6 +18,3 @@ class AppInstallHelper {
     const binaryPathOnTarget = await this._fileTransfer.send(deviceId, binaryPath, binaryFilenameOnTarget);
     await this._adb.remoteInstall(deviceId, binaryPathOnTarget);
   }
-}
-
-module.exports = AppInstallHelper;

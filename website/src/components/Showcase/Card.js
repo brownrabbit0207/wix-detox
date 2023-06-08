@@ -13,11 +13,8 @@ function Card({ className, title, titleFontSize, image, linkGoogle, linkApple, l
       <div>
         {linkGoogle && (
           <Link className={styles.storeButton} href={linkGoogle}>
+            Google Play
           </Link>
         )}
-      </div>
-    </li>
-  );
-}
-
-export default Card;
+        {linkApple && (
+          <Link className={styles.storeButton} href={linkApple}>

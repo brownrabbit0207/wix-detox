@@ -13,16 +13,11 @@ function Frame({ children }) {
     </View>
   );
 }
-      error: '',
-    }
-  }
 
-  onLocationReceived = (position) => {
-    this.setState({
-      coordinates: position.coords,
-      error: '',
-    });
-  };
+function Label({ testID, children }) {
+  return (
+    <Text testID={testID} style={{ marginBottom: 20 }}>
+      {children}
 
   onLocationError = (error) => {
     this.setState({

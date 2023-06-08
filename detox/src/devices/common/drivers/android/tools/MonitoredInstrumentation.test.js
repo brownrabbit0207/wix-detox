@@ -18,27 +18,6 @@ describe('Monitored instrumentation', () => {
   let InstrumentationLogsParserClass;
   beforeEach(() => {
     jest.mock('./Instrumentation');
-    InstrumentationClass = require('./Instrumentation');
-
-    jest.mock('./InstrumentationLogsParser');
-    InstrumentationLogsParserClass = require('./InstrumentationLogsParser').InstrumentationLogsParser;
-    InstrumentationLogsParserClass.mockImplementation(() => {
-      const instances = InstrumentationLogsParserClass.mock.instances;
-      const _this = instances[instances.length - 1];
-      _this.getStackTrace.mockReturnValue(INSTRUMENTATION_STACKTRACE_MOCK);
-    });
-  });
-
-  const instrumentationObj = () => InstrumentationClass.mock.instances[0];
-  const instrumentationLogsParserObj = () => InstrumentationLogsParserClass.mock.instances[0];
-
-  let uut;
-  beforeEach(() => {
-    const MonitoredInstrumentation = require('./MonitoredInstrumentation');
-    uut = new MonitoredInstrumentation(adb);
-  });
-
-  it('should properly init the underlying instrumentation', () => {
     expect(InstrumentationClass).toHaveBeenCalledWith(adb, logger, expect.any(Function), expect.any(Function));
   });
 

@@ -13,16 +13,11 @@ Use [actions](actions.md) to simulate use interaction with elements and [expecta
 - [`by.text()`](#bytexttext)
 - [`by.type()`](#bytypeclassname)
 - [`by.traits()`](#bytraitstraits-ios-only) **iOS Only**
+- [`withAncestor()`](#withancestormatcher)
+- [`withDescendant()`](#withdescendantmatcher)
+- [`and()`](#andmatcher)
+- [`atIndex()`](#atindexindex)
 
-```js
-element(by.label('Welcome'));
-```
-
-### `by.text(text)`
-
-Match elements with the specified text.
-
-```js
 element(by.text('Tap Me'));
 ```
 

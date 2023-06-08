@@ -13,3 +13,9 @@ public class DoubleTapListenerStub implements GestureDetector.OnDoubleTapListene
     public boolean onDoubleTap(MotionEvent e) {
         return false;
     }
+
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent e) {
+        return false;
+    }
+}

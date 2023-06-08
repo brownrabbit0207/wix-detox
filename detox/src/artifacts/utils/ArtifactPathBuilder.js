@@ -13,6 +13,22 @@ class ArtifactPathBuilder {
 
   buildPathForTestArtifact(artifactName, testSummary = null) {
     if (!testSummary) {
+      return this._buildPathForRunArtifact(artifactName);
+    }
+
+    const testArtifactPath = path.join(
+      this._rootDir,
+      this._constructDirectoryNameForCurrentRunningTest(testSummary),
+      constructSafeFilename('', artifactName),
+    );
+
+    return testArtifactPath;
+  }
+
+  _buildPathForRunArtifact(artifactName) {
+    return path.join(
+      this._rootDir,
+      constructSafeFilename('', artifactName),
     );
   }
 

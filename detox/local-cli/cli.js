@@ -18,27 +18,6 @@ yargs
     'duplicate-arguments-array': false,
     'populate--': true,
   })
-  .commandDir('./', {
-    exclude: function(path) {
-      // This is a test file
-      return /\.test\.js$/.test(path);
-    }
-  })
-  .demandCommand()
-  .recommendCommands()
-  .help()
-  .wrap(yargs.terminalWidth() * 0.9)
-  .fail(function(msg, err, program) {
-    if (err) {
-      if (!isErrorAlreadyLogged(err)) {
-        logger.error(DetoxError.format(err));
-        process.stderr.write('\n');
-      }
-
-      // @ts-ignore
-      _.attempt(() => fs.unlinkSync(logger.file));
-      // eslint-disable-next-line no-process-exit
-      process.exit(1);
     }
 
     if (msg) {

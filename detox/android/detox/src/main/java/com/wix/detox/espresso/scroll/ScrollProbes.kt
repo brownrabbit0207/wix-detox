@@ -13,16 +13,11 @@ fun getScrollableProbe(view: View, @MotionDir direction: Int): ScrollableProbe {
         @SuppressLint("SwitchIntDef")
         when (direction) {
             MOTION_DIR_UP -> return AbsListViewBack(view)
+            MOTION_DIR_DOWN -> return AbsListViewForward(view)
+        }
+    }
 
-private abstract class AbsScrollableProbe(val view: View) : ScrollableProbe
-
-private class ScrollableProbeHBack(view: View) : AbsScrollableProbe(view) {
-    override fun atScrollingEdge() = !view.canScrollHorizontally(-1)
-}
-
-private class ScrollableProbeHForward(view: View) : AbsScrollableProbe(view) {
-    override fun atScrollingEdge() = !view.canScrollHorizontally(1)
-}
+    return when (direction) {
 
 private class ScrollableProbeVBack(view: View) : AbsScrollableProbe(view) {
     override fun atScrollingEdge() = !view.canScrollVertically(-1)

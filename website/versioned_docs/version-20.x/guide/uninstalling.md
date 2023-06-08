@@ -14,6 +14,22 @@ You can either delete the folder manually:
 rm -rf ~/Library/Detox
 ```
 
+or run:
+
+```bash
+detox clean-framework-cache
+```
+
+## Test Session State
+
+On every test run, Detox rewrites a few temporary files in `DETOX_LIBRARY_ROOT_PATH`, i.e.:
+
+1. The respective iOS and Android lockfiles to tell apart the busy and the available devices for use with multiple workers:
+   - `device.registry.state.lock`
+   - `android-device.registry.state.lock`.
+
+The location of `DETOX_LIBRARY_ROOT_PATH` may vary depending on the operating system:
+
 - macOS:
   - `~/Library/Detox`.
 - Linux:

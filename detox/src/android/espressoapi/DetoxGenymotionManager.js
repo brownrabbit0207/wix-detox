@@ -13,6 +13,22 @@ class DetoxGenymotionManager {
     return {
       target: {
         type: "Class",
+        value: "com.wix.detox.genymotion.DetoxGenymotionManager"
+      },
+      method: "setLocation",
+      args: [{
+        type: "Double",
+        value: lat
+      }, {
+        type: "Double",
+        value: lon
+      }]
+    };
+  }
+
+  static getGenymotionManager() {
+    return {
+      target: {
         type: "Class",
         value: "com.wix.detox.genymotion.DetoxGenymotionManager"
       },

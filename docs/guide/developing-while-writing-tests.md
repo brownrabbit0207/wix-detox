@@ -13,6 +13,22 @@ Since we want a build that’s connected to the live React Native packager (to u
 we’re going to need a _debug_ build:
 
 ```bash
+detox build -c ios.sim.debug # or android.emu.debug
+```
+
+Check out [Introduction > Building with Detox](../introduction/project-setup.mdx) for more details.
+
+### Step 2: Make Sure Your React-Native Packager is Running
+
+If you can’t see a React Native packager instance running in a terminal, you can run it manually by typing:
+
+```bash
+npx react-native start
+```
+
+The packager instance will reload the JavaScript bundle of your app when you press CMD+R in the simulator window.
+This will allow you to make modifications in your app codebase.
+
 ### Step 3: Run Detox Tests
 
 Type the following inside your project root:

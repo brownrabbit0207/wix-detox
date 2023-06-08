@@ -13,3 +13,4 @@ class SerialExecutorReflected(executor: Any) {
 
     private fun pendingTasks() = reflected.field("mTasks").get<Collection<Any>>()
     private fun activeTask() = reflected.field("mActive").get<Runnable?>()
+}

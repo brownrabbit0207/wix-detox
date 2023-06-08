@@ -13,3 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSURL (DetoxUtils)
 
 + (NSURL*)temporaryPath:(NSString *)subFolder;
++ (NSURL*)visibilityFailingScreenshotsPath;
++ (NSURL*)visibilityFailingRectsPath;
++ (NSURL*)elementsScreenshotPath;
+
+@end
+
+NS_ASSUME_NONNULL_END

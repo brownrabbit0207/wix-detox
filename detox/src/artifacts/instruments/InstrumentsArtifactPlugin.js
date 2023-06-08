@@ -13,16 +13,11 @@ class InstrumentsArtifactPlugin extends WholeTestRecorderPlugin {
 
   async onBeforeTerminateApp(event) {
     await super.onBeforeTerminateApp(event);
-
-    if (this.testRecording) {
-      await this.testRecording.start({ dry: true }); // start nominally, to set a correct recording state
-    }
+    await this._stopRecordingIfExists();
   }
 
-  /** @param {string} config */
-  static parseConfig(config) {
-    switch (config) {
-      case 'all':
+  async onBeforeShutdownDevice(event) {
+    await super.onBeforeShutdownDevice(event);
         return {
           enabled: true,
           keepOnlyFailedTestsArtifacts: false,

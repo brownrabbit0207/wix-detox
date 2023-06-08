@@ -18,27 +18,6 @@ describe('AndroidInstrumentsPlugin', () => {
         return 'test123';
       }
     };
-    pluginConfig = {
-      api: {
-        ...mockedApi,
-        userConfig: {
-          enabled: true
-        }
-      },
-      client: mockedClient,
-      devicePathBuilder: mockedDevicePathBuilder
-    };
-  });
-
-  it('should not build launchArgs without started test', async () => {
-    const plugin = new AndroidInstrumentsPlugin(pluginConfig);
-    const event = {
-      launchArgs: {}
-    };
-    await plugin.onBeforeLaunchApp(event);
-    expect(event.launchArgs).toEqual({});
-  });
-
   it('should build launchArgs with started test and empty config', async () => {
     const plugin = new AndroidInstrumentsPlugin(pluginConfig);
     const event = {

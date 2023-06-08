@@ -13,3 +13,16 @@ describe('External runtime-device factory', () => {
           RuntimeDriverClass: undefined,
         };
         expect(() => factoryClass.validateModule(module, path)).toThrowErrorMatchingSnapshot();
+      });
+    });
+
+    describe('given a valid module', () => {
+      it('should not throw', () => {
+        const module = {
+          RuntimeDriverClass: class {},
+        };
+        factoryClass.validateModule(module, path);
+      });
+    });
+  });
+});
