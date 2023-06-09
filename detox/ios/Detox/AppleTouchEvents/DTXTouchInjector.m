@@ -18,6 +18,27 @@
 
 #import <QuartzCore/QuartzCore.h>
 #include <mach/mach_time.h>
+
+#import "UITouch+DTXAdditions.h"
+#import "DTXAppleInternals.h"
+#import "DTXRunLoopSpinner.h"
+#import "DTXTouchInfo-Private.h"
+
+@implementation DTXTouchInjector
+{
+	// Window to which touches will be delivered.
+	UIWindow* _window;
+	// List of objects that aid in creation of UITouches.
+	NSMutableArray<DTXTouchInfo*>* _enqueuedTouchInfoList;
+	// A display link used for injecting touches.
+	CADisplayLink* _displayLink;
+	// Touch objects created to start the touch sequence for every
+	// touch points. It stores one UITouch object for each finger
+	// in a touch event.
+	NSMutableArray<UITouch*>* _ongoingUITouches;
+	// Current state of the injector.
+	DTXTouchInjectorState _state;
+	// The previously injected touch event. Used to determine
 	// whether an injected touch needs to be stationary or not.
 	// May be nil.
 	DTXTouchInfo* _previousTouchInfo;

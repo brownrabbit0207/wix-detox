@@ -18,6 +18,27 @@ describe('BunyanTransformer', () => {
     transformer = new BunyanTransformer(logger);
   });
 
+  afterEach(async () => {
+    await Promise.all(temporaryFiles.map(filepath => fs.remove(filepath)));
+    temporaryFiles = [];
+  });
+
+  it('should merge log files according to the timestamp', async () => {
+    const fileA = saveAsFile(toJSONLString([
+      { time: '2000-01-01T00:00:00.001Z', msg: 'a1' },
+      { time: '2000-01-01T00:00:00.002Z', msg: 'a2' },
+      { time: '2000-01-01T00:00:00.004Z', msg: 'a3' },
+    ]));
+
+    const fileB = saveAsFile(toJSONLString([
+      { time: '2000-01-01T00:00:00.000Z', msg: 'b1' },
+      { time: '2000-01-01T00:00:00.003Z', msg: 'b2' },
+      { time: '2000-01-01T00:00:00.005Z', msg: 'b3' },
+    ]));
+
+    const result = transformer.uniteSessionLogs([fileA, fileB]);
+    await expect(toObjects(result)).resolves.toEqual([
+      { time: new Date('2000-01-01T00:00:00.000Z'), msg: 'b1' },
       { time: new Date('2000-01-01T00:00:00.001Z'), msg: 'a1' },
       { time: new Date('2000-01-01T00:00:00.002Z'), msg: 'a2' },
       { time: new Date('2000-01-01T00:00:00.003Z'), msg: 'b2' },

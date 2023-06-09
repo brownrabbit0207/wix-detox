@@ -23,32 +23,6 @@ There’s more than one way to install Node.js:
 - Use `nvm` - if you need to allow for several versions to be installed on a single machine
 
 The simplest way is to use Homebrew:
-
-```sh
-brew install node
-```
-
-> Tip: Verify installation succeeded by typing in `node -v` in the terminal to output current node version.
-
-### Install Detox Command Line Tools (`detox-cli`)
-
-This package makes it easier to operate Detox from the command line. `detox-cli` should be installed globally, enabling usage of the command line tools outside your npm scripts. `detox-cli` is merely a script that passes commands through to a command line tool shipped inside `detox` package (in `node_modules/.bin/detox`).
-
-```bash npm2yarn
-npm install detox-cli --global
-```
-
-### Install Platform-specific Dependencies, Tools and SDKs
-
-Depending on the platform/s you’re aiming at (iOS, Android), take the time to run through these environment setup guides:
-
-- [Android](../Introduction.AndroidDevEnv.md)
-- [iOS](../Introduction.iOSDevEnv.md)
-
-## Step 2: Add Detox to Your Project
-
-### Install the Detox Node-module
-
 If you have a React Native project, go to its root folder (where `package.json` is found) and type the following command:
 
 ```bash npm2yarn

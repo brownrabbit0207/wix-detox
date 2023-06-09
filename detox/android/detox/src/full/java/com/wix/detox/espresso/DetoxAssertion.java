@@ -24,32 +24,6 @@ import static org.hamcrest.Matchers.not;
 
 public class DetoxAssertion {
 
-    private DetoxAssertion() {
-        // static class
-    }
-
-    public static ViewInteraction assertMatcher(ViewInteraction i, Matcher<View> m) {
-        return i.check(matches(m));
-    }
-
-    public static ViewInteraction assertNotVisible(ViewInteraction i) {
-        ViewInteraction ret;
-        try {
-            ret = i.check(doesNotExist());
-            return ret;
-        } catch (AssertionFailedError e) {
-            ret = i.check(matches(not(isDisplayed())));
-            return ret;
-        }
-    }
-
-    public static ViewInteraction assertNotExists(ViewInteraction i) {
-        return i.check(doesNotExist());
-    }
-
-    public static void waitForAssertMatcher(final ViewInteraction i, final Matcher<View> m, double timeoutSeconds) {
-        final long originTime = System.nanoTime();
-
         while (true) {
             long currentTime = System.nanoTime();
             long elapsed = currentTime - originTime;

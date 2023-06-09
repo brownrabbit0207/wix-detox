@@ -18,6 +18,27 @@ describe('DetoxSecondaryContext', () => {
 
   /** @type {jest.Mock<import('../DetoxWorker')>} */
   let DetoxWorker;
+
+  const detoxWorker = () => latestInstanceOf(DetoxWorker);
+  const ipcClient = () => latestInstanceOf(IPCClient);
+
+  backupProcessEnv();
+
+  beforeEach(() => {
+    Object.assign(process.env, { DETOX_CONFIG_SNAPSHOT_PATH });
+  });
+
+  beforeEach(_initMocks);
+
+  beforeEach(() => {
+    const DetoxSecondaryContext = require('./DetoxSecondaryContext');
+    const DetoxInternalsFacade = require('./DetoxInternalsFacade');
+
+    const context = new DetoxSecondaryContext();
+    facade = new DetoxInternalsFacade(context);
+  });
+
+  describe('when not initialized', () => {
     it('should be inactive', () => {
       expect(facade.getStatus()).toBe('inactive');
     });

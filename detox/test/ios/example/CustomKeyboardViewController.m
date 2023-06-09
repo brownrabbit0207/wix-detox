@@ -18,16 +18,11 @@
 - (void) loadView;
 @end
 
+@implementation CustomKeyboardView
+
+- (void) loadView
 {
-	if (self.delegate) {
-		[self.delegate customKeyboardTappedButton: self];
-	}
-}
-
-@end
-
-@interface CustomKeyboardViewController () <CustomKeyboardDelegate>
-@property (nonatomic, strong) UITextField* textField;
+	UIButton* kbButton = [UIButton buttonWithType: UIButtonTypeCustom];
 @end
 
 @implementation CustomKeyboardViewController

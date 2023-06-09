@@ -23,32 +23,6 @@ class DetoxSecondaryContext extends DetoxContext {
      */
     this[_ipcClient] = null;
   }
-
-  //#region Internal members
-  async [symbols.reportTestResults](testResults) {
-    if (this[_ipcClient]) {
-      await this[_ipcClient].reportTestResults(testResults);
-    } else {
-      throw new DetoxInternalError('Detected an attempt to report failed tests using a non-initialized context.');
-    }
-  }
-
-  async [symbols.resolveConfig]() {
-    return this[symbols.config];
-  }
-
-  /** @override */
-  async [symbols.init](opts = {}) {
-    const IPCClient = require('../ipc/IPCClient');
-
-    this[_ipcClient] = new IPCClient({
-      id: `secondary-${process.pid}`,
-      sessionState: this[$sessionState],
-      logger: this[symbols.logger],
-    });
-
-    await this[_ipcClient].init();
-
     if (opts.workerId !== null) {
       await this[symbols.installWorker](opts);
     }

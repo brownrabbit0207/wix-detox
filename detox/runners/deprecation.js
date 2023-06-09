@@ -19,6 +19,7 @@ function centerText(text, maxWidth = getMaxWidth(text)) {
     .join('\n');
 }
 
-const error = new Error('\nPlease follow the migration guide:\nhttps://wix.github.io/Detox/docs/guide/migration\n\n');
-error.stack = '';
-throw error;
+const header = `\
+=========================  THE NEW JOURNEY BEGINS  =============================`;
+
+console.error(centerText(`\

@@ -18,3 +18,7 @@ describe('run-server', () => {
 
     await expect(callCli('./run-server', 'run-server -p PORT')).rejects.toThrowErrorMatchingSnapshot();
     await expect(callCli('./run-server', 'run-server -p 0')).rejects.toThrowErrorMatchingSnapshot();
+    await expect(callCli('./run-server', 'run-server -p 100000')).rejects.toThrowErrorMatchingSnapshot();
+    expect(DetoxServer).not.toHaveBeenCalled();
+  });
+});

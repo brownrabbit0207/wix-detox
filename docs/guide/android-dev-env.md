@@ -18,16 +18,11 @@ To check for your real java-executable’s version, in a command-line console, r
 java -version
 ```
 
+What needs to be verified is that `java` is in-path and that the output contains something like this:
 
-If otherwise the version is simply wrong, try these course of actions:
-
-- On MacOS, in particular, Java comes from both the OS _and_ possibly other installers such as `homebrew`. That can really get things tangled up. To mitigate:
-  - Use one of the options suggested in this [Stack Overflow post](https://stackoverflow.com/questions/52524112/how-do-i-install-java-on-mac-osx-allowing-version-switching/52524114#52524114).
-  - Install OpenJDK 11 on top of the existing versions ([how to check?](https://medium.com/notes-for-geeks/java-home-and-java-home-on-macos-f246cab643bd)): <https://techoral.com/blog/java/install-openjdk-11-on-mac.html>. Consider employing the `JAVA_HOME` variable to get things to work right. _Note: This is more suitable if your environment is fairly clean, and does not contain versions from 3rd-party installers (e.g. `homebrew`)._
-- Use these refs, which might be useful:
-  - <https://java.com/en/download/faq/java_mac.xml#version>
-  - <https://www.java.com/en/download/help/version_manual.xml>
-
+```bash
+java version "11.x.x"
+...
 ## Android SDK
 
 If you have Android Studio installed - as most of us do, then the SDK should be available for you somewhere on your machine<sup>\*</sup>. However, for CI agents – possibly running with no GUI, or if you simply don’t want the somewhat bloated piece of software on your computer, it is possible to simply download the SDK and tool-set, purely. Both cases are covered in Google’s [Android guide about Android Studio](https://developer.android.com/studio/). For the pure-tools option, refer to the `Command line tools only` section at the bottom.

@@ -18,3 +18,10 @@ class DetoxPlatformFilterListener {
 
   add_test(event, state) {
     const match = event.testName.match(PLATFORM_REGEXP);
+    if (match && match[1] !== this._platform) {
+      _.last(state.currentDescribeBlock.children).mode = 'skip';
+    }
+  }
+}
+
+module.exports = DetoxPlatformFilterListener;

@@ -23,32 +23,6 @@ describe('Emulator binary version', () => {
   let log;
   let uut;
   beforeEach(() => {
-    MockQueryVersionCommand = jest.genMockFromModule('../../../../common/drivers/android/emulator/exec/EmulatorExec').QueryVersionCommand;
-    jest.mock('../../../../common/drivers/android/emulator/exec/EmulatorExec', () => ({
-      QueryVersionCommand: MockQueryVersionCommand,
-    }));
-
-    emulatorExec = {
-      exec: jest.fn().mockResolvedValue(versionResult),
-    };
-
-    jest.mock('../../../../../utils/logger');
-    log = require('../../../../../utils/logger').child();
-
-    const EmulatorVersionResolver = require('./EmulatorVersionResolver');
-    uut = new EmulatorVersionResolver(emulatorExec);
-  });
-
-  it('should query the emulator', async () => {
-    await uut.resolve();
-    expect(emulatorExec.exec).toHaveBeenCalledWith(expect.any(MockQueryVersionCommand));
-    expect(MockQueryVersionCommand).toHaveBeenCalledWith({ headless: false });
-  });
-
-  it('should apply headless arg', async () => {
-    await uut.resolve(true);
-    expect(MockQueryVersionCommand).toHaveBeenCalledWith({ headless: true });
-  });
 
   it('should extract version from common log', async () => {
     const version = await uut.resolve();

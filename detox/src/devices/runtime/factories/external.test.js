@@ -23,6 +23,3 @@ describe('External runtime-device factory', () => {
         };
         factoryClass.validateModule(module, path);
       });
-    });
-  });
-});

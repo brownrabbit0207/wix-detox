@@ -18,6 +18,27 @@ class DetoxSessionManager {
   /**
    * @param {WebSocket} ws
    * @param {Socket} socket
+   */
+  registerConnection(webSocket, socket) {
+    if (!this._assertWebSocketIsNotUsed(webSocket)) {
+      return;
+    }
+
+    const connection = new DetoxConnection({
+      sessionManager: this,
+      webSocket,
+      socket,
+    });
+
+    this._connectionsByWs.set(webSocket, connection);
+  }
+
+  /**
+   * @param {DetoxConnection} connection
+   * @param {'tester' | 'app'} role
+   * @param {string} sessionId
+   * @returns {DetoxSession}
+   */
   registerSession(connection, { role, sessionId }) {
     let session;
 

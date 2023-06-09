@@ -18,14 +18,9 @@ Use [actions](actions.md) to simulate use interaction with elements and [expecta
 - [`and()`](#andmatcher)
 - [`atIndex()`](#atindexindex)
 
-element(by.text('Tap Me'));
-```
+### `by.id(id)`
 
-### `by.type(className)`
-
-Matches elements whose class is, or inherits from, the specified class name. On Android, provide the class canonical name.
-
-**Note:** iOS and Android class names differ.
+Match elements with the specified accessibility identifier. In React Native, this corresponds to the value in the [`testID`](https://reactnative.dev/docs/view.html#testid) prop.
 
 ```js
 element(by.type('RCTImageView')); //iOS class name

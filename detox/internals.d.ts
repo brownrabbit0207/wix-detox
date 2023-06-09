@@ -23,32 +23,6 @@ declare global {
       getStatus(): DetoxStatus;
 
       /**
-       * Starts a new Detox test session with the provided configuration.
-       * See {@link https://wix.github.io/Detox/docs/api/internals} for more details.
-       */
-      init(options?: Partial<DetoxInitOptions>): Promise<void>;
-
-      /**
-       * This is the phase where Detox loads its expectation library and boots a device.
-       * You don't need to call it separately unless you use `init({ workerId: null })` override.
-       */
-      installWorker(options?: Partial<DetoxInstallWorkerOptions>): Promise<void>;
-
-      /**
-       * Deallocates the device.
-       * Most Client API (device, by, element, expect) will stop working, except for the logger.
-       */
-      uninstallWorker(): Promise<void>;
-
-      /**
-       * This method should be called when the main or child process is about to exit.
-       * See {@link https://wix.github.io/Detox/docs/api/internals} for more details.
-       */
-      cleanup(): Promise<void>;
-      //#endregion
-
-      //#region Lifecycle
-      /**
        * Reports that the test runner started executing a test suite, e.g. a `beforeAll` hook or a first test.
        */
       onRunDescribeStart(event: {

@@ -18,5 +18,8 @@ private static def addConfigurationDependencies(rootNode, Configuration configur
 }
 
 private static def addChildDependency(rootNode, Dependency dep, String scope) {
-    }
-}
+    if (dep.group == null || dep.version == null || dep.name == null || dep.name == "unspecified")
+        return
+
+    final childNode = rootNode.appendNode('dependency')
+    childNode.appendNode('groupId', dep.group)

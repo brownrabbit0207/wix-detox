@@ -18,6 +18,27 @@ const sanitizeBunyanContext = require('./utils/sanitizeBunyanContext');
  * @property {Detox.DetoxLoggerConfig} [userConfig]
  * @property {CategoryThreadDispatcher} [dispatcher]
  * @property {BunyanLogger} [bunyan]
+ * @property {MessageStack} [messageStack]
+ * @property {boolean} [unsafeMode] Disables sanitization of user input, used for integration tests.
+ */
+
+class DetoxLogger {
+  /**
+   * @param {SharedLoggerConfig} sharedConfig
+   * @param {object} [context]
+   */
+  constructor(sharedConfig, context) {
+    /**
+     * @type {SharedLoggerConfig}
+     * IMPORTANT: all instances of {@link DetoxLogger} must share the same object instance of this._sharedConfig.
+     */
+    this._sharedConfig = sharedConfig;
+
+    /** @type {object | undefined} */
+    this._context = context;
+
+    /** @public */
+    this.fatal = this._setupLogMethod('fatal');
     /** @public */
     this.error = this._setupLogMethod('error');
     /** @public */

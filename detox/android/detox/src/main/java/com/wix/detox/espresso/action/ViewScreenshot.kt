@@ -23,5 +23,3 @@ class ViewScreenshot() {
         view.draw(Canvas(bitmap))
 
         return ScreenshotResult(bitmap)
-    }
-}

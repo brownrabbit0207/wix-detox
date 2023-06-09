@@ -18,3 +18,8 @@ public class DetoxTypeTextAction implements ViewAction {
     public DetoxTypeTextAction(String text) {
         this.text = text;
         clickAction = new RNClickAction();
+        typeTextAction = new TypeTextAction(text, false);
+    }
+
+    @Override
+    public Matcher<View> getConstraints() {

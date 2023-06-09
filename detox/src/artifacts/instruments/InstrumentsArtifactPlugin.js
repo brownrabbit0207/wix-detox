@@ -18,16 +18,11 @@ class InstrumentsArtifactPlugin extends WholeTestRecorderPlugin {
 
   async onBeforeShutdownDevice(event) {
     await super.onBeforeShutdownDevice(event);
-        return {
-          enabled: true,
-          keepOnlyFailedTestsArtifacts: false,
-        };
-      case 'none':
-      default:
-        return {
-          enabled: false,
-          keepOnlyFailedTestsArtifacts: false,
-        };
+    await this._stopRecordingIfExists();
+  }
+
+  async _stopRecordingIfExists() {
+    if (this.testRecording) {
     }
   }
 }
