@@ -1,4 +1,3 @@
-const { config, session } = require('detox/internals');
 const { default: expect } = require('expect');
 
 describe('Sandbox', () => {

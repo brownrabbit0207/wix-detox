@@ -1,4 +1,3 @@
-const GenyDeviceRegistryFactory = require('../../devices/allocation/drivers/android/genycloud/GenyDeviceRegistryFactory');
 
 class GenycloudServiceLocator {
   constructor() {

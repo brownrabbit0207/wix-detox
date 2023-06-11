@@ -1,4 +1,3 @@
-const { makeResourceTitle, makeResourceSubTitle, makeResourceSubSubTitle } = require('./utils');
 
 function makeTimerDescription(timer, timerCount) {
   return `${makeResourceSubTitle(`Timer #${timerCount}:`)}\n` +

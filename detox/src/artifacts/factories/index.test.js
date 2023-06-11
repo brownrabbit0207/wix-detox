@@ -1,4 +1,3 @@
-describe('Artifacts manager factory', () => {
   const config = {
     mock: 'config',
   };

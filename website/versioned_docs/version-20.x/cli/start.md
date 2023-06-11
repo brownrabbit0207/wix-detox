@@ -1,4 +1,3 @@
-# detox start
 
 `detox start [options]`
 

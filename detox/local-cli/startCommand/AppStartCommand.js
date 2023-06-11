@@ -1,4 +1,3 @@
-const execa = require('execa');
 
 const detox = require('../../internals');
 const { DetoxRuntimeError } = require('../../src/errors');

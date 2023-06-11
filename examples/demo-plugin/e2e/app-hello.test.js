@@ -1,4 +1,3 @@
-describe('Example (hello)', () => {
   beforeAll(async () => {
     await device.launchApp();
   });

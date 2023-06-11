@@ -1,4 +1,3 @@
-import detox from 'detox/internals.js';
 
 function printVariousMessages() {
   process.stdout.write('=== START OF THE TEST ===\n\n')

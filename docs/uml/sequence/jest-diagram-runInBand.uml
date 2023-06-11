@@ -1,4 +1,3 @@
-@startuml
 
 title "jest --runInBand"
 actor User
@@ -23,3 +22,15 @@ activate jestReporter
 Jest0 -> jestReporter: onRunStart()
 loop every test file
   Jest0 -> Jest0: runTests()
+  Jest0 -> jestReporter: onTestFileResult()
+end loop
+Jest0 -> jestReporter: onRunComplete()
+deactivate jestReporter
+Jest0 -> globalTeardown: import
+activate globalTeardown
+globalTeardown -> Jest0: await
+deactivate globalTeardown
+
+deactivate Jest0
+
+@enduml

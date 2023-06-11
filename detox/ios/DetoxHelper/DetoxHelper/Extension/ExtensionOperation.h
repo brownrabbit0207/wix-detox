@@ -1,4 +1,3 @@
-//
 //  ExtensionOperation.h
 //  DetoxHelper
 //

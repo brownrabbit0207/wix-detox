@@ -1,4 +1,3 @@
-class LogInterceptor {
   constructor() {
     this._stderrWrite = null;
     this._stderrData = [];

@@ -1,4 +1,3 @@
----
 id: test-lifecycle
 slug: api/test-lifecycle
 title: Test Lifecycle

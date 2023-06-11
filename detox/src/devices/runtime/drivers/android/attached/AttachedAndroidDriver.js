@@ -1,4 +1,3 @@
-const AndroidDriver = require('../AndroidDriver');
 
 class AttachedAndroidDriver extends AndroidDriver {
   getDeviceName() {

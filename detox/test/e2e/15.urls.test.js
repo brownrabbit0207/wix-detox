@@ -1,4 +1,3 @@
-describe('Open URLs', () => {
   afterAll(async () => {
     await device.launchApp({
       newInstance: true,

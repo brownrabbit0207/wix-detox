@@ -1,4 +1,3 @@
-# Matchers
 
 Detox uses [matchers](matchers.md) to match UI elements in your app.
 

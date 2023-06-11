@@ -1,4 +1,3 @@
-const selectElementContents = `
 function selectElementContents(el) {
   el.focus();
   if (el.contentEditable) {

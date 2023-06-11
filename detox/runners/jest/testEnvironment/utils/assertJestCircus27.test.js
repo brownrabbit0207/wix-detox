@@ -1,4 +1,3 @@
-const { assertSupportedVersion } = require('./assertJestCircus27');
 
 describe('assertSupportedVersion', () => {
   test.each([

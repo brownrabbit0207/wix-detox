@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 const DetoxRuntimeError = require('../errors/DetoxRuntimeError');
 const logger = require('../utils/logger').child({ cat: 'ws-server,ws' });
@@ -23,6 +22,32 @@ class DetoxConnection {
 
     this._sessionManager = sessionManager;
     this._webSocket = webSocket;
+    this._webSocket.on('message', this._onMessage);
+    this._webSocket.on('error', this._onError);
+    this._webSocket.on('close', this._onClose);
+
+    // eslint-disable-next-line unicorn/no-this-assignment
+    const self = this;
+    this._handler = new AnonymousConnectionHandler({
+      api: {
+        get log() { return self._log; },
+        appendLogDetails: (details) => { this._log = this._log.child(details); },
+
+        registerSession: (params) => this._sessionManager.registerSession(this, params),
+        setHandler: (handler) => { this._handler = handler; },
+        sendAction: (action) => this.sendAction(action),
+      },
+    });
+  }
+
+  sendAction(action) {
+    const messageAsString = JSON.stringify(action);
+    this._log.trace({ data: action }, 'send');
+    this._webSocket.send(messageAsString + '\n ');
+  }
+
+  _onMessage(rawData) {
+    const data = _.isString(rawData) ? rawData : rawData.toString('utf8');
     this._log.trace({ data }, 'get');
 
     try {

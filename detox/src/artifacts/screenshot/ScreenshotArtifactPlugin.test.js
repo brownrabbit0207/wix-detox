@@ -1,4 +1,3 @@
-const ScreenshotArtifactPlugin = require('./ScreenshotArtifactPlugin');
 
 describe('ScreenshotArtifactPlugin', () => {
   describe('default options', () => {

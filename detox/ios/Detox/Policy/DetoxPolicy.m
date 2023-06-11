@@ -1,4 +1,3 @@
-//
 //  DetoxPolicy.m
 //  Detox
 //
@@ -23,3 +22,7 @@
 }
 
 + (NSString*)percentDescriptionForPercent:(CGFloat)percent {
+	return [NSString stringWithFormat:@"%g%%", percent];
+}
+
+@end

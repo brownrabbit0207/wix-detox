@@ -1,4 +1,3 @@
-/* tslint:disable: no-console */
 const exec = require('shell-utils').exec;
 
 const {

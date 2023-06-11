@@ -1,4 +1,3 @@
-//
 //  AppDelegate.m
 //  DetoxHelper
 //

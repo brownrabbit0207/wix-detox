@@ -1,4 +1,3 @@
-//
 //  DetoxInstrumentsManager.h
 //  Detox
 //

@@ -1,4 +1,3 @@
-function _getCallStackTrace() {
   return new Error().stack
     .split('\n')
     .slice(1) // Ignore Error message

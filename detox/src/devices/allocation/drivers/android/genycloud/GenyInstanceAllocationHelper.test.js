@@ -1,4 +1,3 @@
-describe('Genymotion-Cloud instance allocation helper', () => {
   const recipeUUID = 'mock-recipe-uuid';
   const recipeName = 'mock-recipe-name';
 

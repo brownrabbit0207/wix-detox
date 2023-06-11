@@ -1,4 +1,3 @@
-# Uninstalling Detox
 
 Installing and using Detox implies certain side effects: cloned devices, cache files, state files, temporary files, etc.
 

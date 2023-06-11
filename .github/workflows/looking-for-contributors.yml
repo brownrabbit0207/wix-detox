@@ -1,4 +1,3 @@
-name: Looking for Contributors
 on:
     issues:
         types:

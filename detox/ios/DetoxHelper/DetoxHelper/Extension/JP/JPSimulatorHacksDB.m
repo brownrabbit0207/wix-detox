@@ -1,4 +1,3 @@
-//
 //  JPSimulatorHacksDB.m
 //  JPSimulatorHacks
 //

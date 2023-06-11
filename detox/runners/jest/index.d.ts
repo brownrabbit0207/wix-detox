@@ -1,4 +1,3 @@
-declare module 'detox/runners/jest' {
   import type NodeEnvironment from 'jest-environment-node';
 
   export function globalSetup(): Promise<void>;

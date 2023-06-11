@@ -1,4 +1,3 @@
-describe('Genymotion-Cloud recipes service', () => {
   const givenNoRecipes = () => {
     exec.getRecipe.mockResolvedValue({
       recipes: [],
@@ -23,6 +22,32 @@ describe('Genymotion-Cloud recipes service', () => {
 
   let logger;
   let exec;
+  let uut;
+  beforeEach(() => {
+    jest.mock('../../../../../../utils/logger');
+    logger = require('../../../../../../utils/logger');
+
+    const GenyCloudExec = jest.genMockFromModule('../exec/GenyCloudExec');
+    exec = new GenyCloudExec();
+
+    const GenyRecipesService = require('./GenyRecipesService');
+    uut = new GenyRecipesService(exec);
+  });
+
+  describe('getting a recipe by name', () => {
+    it('should return null if no recipes found', async () => {
+      givenNoRecipes();
+      expect(await uut.getRecipeByName('mock-name')).toEqual(null);
+    });
+
+    it('should return 1st match if there are some recipes', async () => {
+      const recipe = aRecipe();
+      const recipe2 = anotherRecipe();
+      givenRecipes(recipe, recipe2);
+
+      const result = await uut.getRecipeByName(recipe.name);
+
+      expect(result.uuid).toEqual(recipe.uuid);
     });
 
     it('should return a recipe DTO', async () => {

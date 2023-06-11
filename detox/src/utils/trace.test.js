@@ -1,4 +1,3 @@
-jest.mock('../logger/DetoxLogger');
 
 describe('Trace util', () => {
   let trace;

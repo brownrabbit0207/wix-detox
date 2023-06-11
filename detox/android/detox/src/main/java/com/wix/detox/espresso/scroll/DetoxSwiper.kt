@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.scroll
 
 interface DetoxSwiper {
     fun startAt(touchX: Float, touchY: Float)

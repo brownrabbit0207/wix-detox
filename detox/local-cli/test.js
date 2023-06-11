@@ -1,4 +1,3 @@
-const detox = require('../internals');
 
 const TestRunnerCommand = require('./testCommand/TestRunnerCommand');
 

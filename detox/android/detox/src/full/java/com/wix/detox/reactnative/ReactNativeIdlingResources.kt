@@ -1,4 +1,3 @@
-package com.wix.detox.reactnative
 
 import android.os.Looper
 import android.util.Log

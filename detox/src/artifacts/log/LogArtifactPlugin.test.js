@@ -1,4 +1,3 @@
-const LogArtifactPlugin = require('./LogArtifactPlugin');
 
 describe('LogArtifactPlugin', () => {
     describe('static parseConfig(config)', () => {

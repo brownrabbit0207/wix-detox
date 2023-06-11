@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.assertion;
 
 import androidx.annotation.NonNull;
 import android.view.View;

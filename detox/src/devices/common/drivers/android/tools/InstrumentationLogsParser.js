@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 const LOG_PREFIX = 'INSTRUMENTATION_STATUS';
 const START_WITH_PREFIX = new RegExp(`^${LOG_PREFIX}(?:_[A-Z]+)*:[\\s]+`, 'm');

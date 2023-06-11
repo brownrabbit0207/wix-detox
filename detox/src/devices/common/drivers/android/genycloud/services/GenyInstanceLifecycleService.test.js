@@ -1,4 +1,3 @@
-describe('Genymotion-Cloud instance-lifecycle service', () => {
   const anInstance = () => ({
     uuid: 'mock-instance-uuid',
     name: 'mock-instance-name',
@@ -23,6 +22,32 @@ describe('Genymotion-Cloud instance-lifecycle service', () => {
   });
 
   describe('device instance creation', () => {
+    const givenInstanceBirthName = (name) => instanceNaming.generateName.mockReturnValue(name);
+    const givenResultedInstance = (instance) => exec.startInstance.mockResolvedValue({ instance });
+
+    it('should exec instance creation according to recipe', async () => {
+      const instance = anInstance();
+      givenInstanceBirthName(instance.name);
+      givenResultedInstance(instance);
+
+      await uut.createInstance(instance.recipe.uuid);
+      expect(exec.startInstance).toHaveBeenCalledWith(instance.recipe.uuid, instance.name);
+    });
+
+    it('should return the newly created instance', async () => {
+      const instance = anInstance();
+      givenInstanceBirthName(instance.name);
+      givenResultedInstance(instance);
+
+      const result = await uut.createInstance(instance.recipe.name);
+      expect(result).toBeDefined();
+      expect(result.uuid).toEqual(instance.uuid);
+      expect(result.name).toEqual(instance.name);
+      expect(result.recipeUUID).toEqual(instance.recipe.uuid);
+      expect(result.constructor.name).toContain('Instance');
+    });
+  });
+
   describe('device adb-connect setup', () => {
     const givenAdbConnectResult = (instance) => exec.adbConnect.mockResolvedValue({ instance });
 

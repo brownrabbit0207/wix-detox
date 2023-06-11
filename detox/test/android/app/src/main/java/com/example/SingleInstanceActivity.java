@@ -1,4 +1,3 @@
-package com.example;
 
 /**
  * A flavor of the {@link MainActivity} the is set in the manifest to run at a 'single-instance' launchMode,

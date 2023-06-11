@@ -1,4 +1,3 @@
-const uiDevice = require('./UIDevice');
 const uiAutomator = require('./UIAutomator');
 const invoke = require('../../invoke');
 
@@ -23,3 +22,6 @@ class UiDeviceProxy {
       }
     });
   }
+}
+
+module.exports = UiDeviceProxy;

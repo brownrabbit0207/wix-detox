@@ -1,4 +1,3 @@
-const safeAsync = require('./safeAsync');
 
 describe('safeAsync', () => {
   it(`should wrap value into a promise`, async() => {

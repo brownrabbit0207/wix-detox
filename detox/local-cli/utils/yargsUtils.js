@@ -1,4 +1,3 @@
-/**
  * @param {Record<string, Record<string, *>>} yargsBuilder
  * @returns {Set<string>}
  */

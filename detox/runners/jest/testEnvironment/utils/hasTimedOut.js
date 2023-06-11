@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 function hasTimedOut(test) {
   const { errors } = test;

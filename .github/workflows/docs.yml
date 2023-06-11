@@ -1,4 +1,3 @@
-name: Doclint
 
 on:
   push:

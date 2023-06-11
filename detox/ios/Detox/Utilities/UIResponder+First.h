@@ -1,4 +1,3 @@
-//
 //  UIResponder+First.h
 //  Detox
 //

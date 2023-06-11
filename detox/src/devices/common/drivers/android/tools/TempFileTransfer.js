@@ -1,4 +1,3 @@
-const FileTransfer = require('./FileTransfer');
 
 const FILE_PATH = '/data/local/tmp/detox';
 

@@ -1,4 +1,3 @@
-const failedToReachTheApp = require('../../errors/longreads/failedToReachTheApp');
 
 const RegisteredConnectionHandler = require('./RegisteredConnectionHandler');
 

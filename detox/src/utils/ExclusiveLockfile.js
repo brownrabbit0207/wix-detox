@@ -1,4 +1,3 @@
-const fs = require('fs-extra');
 const _ = require('lodash');
 const plockfile = require('proper-lockfile');
 

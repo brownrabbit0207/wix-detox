@@ -1,4 +1,3 @@
-const { session } = require('detox/internals');
 const log = detox.log.child({ cat: 'lifecycle' });
 
 describe('Flaky', () => {

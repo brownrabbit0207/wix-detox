@@ -1,4 +1,3 @@
-const tempfile = require('tempfile');
 
 const { callCli } = require('../__tests__/helpers');
 

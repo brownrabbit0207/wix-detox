@@ -1,4 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Android driver App installation should throw if auto test-binary path resolves an invalid file: testApkPathOf(absolutePathOf(mock-bin-path)) 1`] = `
 "The test APK could not be found at path: 'testApkPathOf(absolutePathOf(mock-bin-path))'

@@ -1,4 +1,3 @@
-const { EOL } = require('os');
 
 function trace(message) {
   process.stdout.write(message);

@@ -1,4 +1,3 @@
-//
 //  GreetingViewController.h
 //  NativeExample
 //

@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 class DetoxInitErrorListener {
   add_hook(event, { unhandledErrors, currentDescribeBlock, rootDescribeBlock }) {

@@ -1,4 +1,3 @@
-describe('BinaryExec', () => {
   const binaryPath = '/binary/mock';
 
   let exec;

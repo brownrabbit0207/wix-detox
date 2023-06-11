@@ -1,4 +1,3 @@
-const util = require('util');
 
 const callsites = require('../../utils/callsites');
 

@@ -1,4 +1,3 @@
-const jestExpect = require('expect').default;
 const MOCK_TEXT = 'Mock Text';
 
 describe(':ios: WebView', () => {

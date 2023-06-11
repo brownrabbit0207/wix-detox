@@ -1,4 +1,3 @@
-package com.wix.detox;
 
 import android.os.Bundle;
 import android.util.Base64;

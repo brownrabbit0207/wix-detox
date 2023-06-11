@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.scroll
 
 import android.view.MotionEvent
 import android.view.ViewConfiguration

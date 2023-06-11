@@ -1,4 +1,3 @@
-describe('Device-handle', () => {
 
   let DeviceHandle;
   beforeEach(() => {

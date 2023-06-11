@@ -1,4 +1,3 @@
-package com.wix.invoke.parser;
 
 import org.json.JSONObject;
 import org.json.JSONException;

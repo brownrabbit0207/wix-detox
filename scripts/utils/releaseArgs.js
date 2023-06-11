@@ -1,4 +1,3 @@
-/* tslint:disable: no-console */
 const semver = require('semver');
 const fs = require('fs');
 const chalk = require('chalk');

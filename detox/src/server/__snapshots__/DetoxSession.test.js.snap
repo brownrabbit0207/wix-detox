@@ -1,4 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetoxSession edge cases should warn on (already) empty app deassignment 1`] = `
 "DetoxInternalError: no app is connected to the session aSession
@@ -20,6 +19,18 @@ https://github.com/wix/Detox/issues"
 
 exports[`DetoxSession edge cases should warn on .disconnect(null) 1`] = `
 "DetoxInternalError: DetoxSession(aSession).prototype.disconnect(connection) expects a non-null argument.
+Please report this issue on our GitHub tracker:
+https://github.com/wix/Detox/issues"
+`;
+
+exports[`DetoxSession edge cases should warn on non-empty app assignment 1`] = `
+"DetoxInternalError: the app is already connected to the session aSession
+Please report this issue on our GitHub tracker:
+https://github.com/wix/Detox/issues"
+`;
+
+exports[`DetoxSession edge cases should warn on non-empty tester assignment 1`] = `
+"DetoxInternalError: the tester is already connected to the session aSession
 Please report this issue on our GitHub tracker:
 https://github.com/wix/Detox/issues"
 `;

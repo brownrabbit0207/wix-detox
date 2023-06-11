@@ -1,4 +1,3 @@
-// @ts-nocheck
 const net = require('net');
 
 describe('DetoxServer', () => {

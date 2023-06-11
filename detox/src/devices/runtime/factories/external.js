@@ -1,4 +1,3 @@
-const RuntimeDeviceFactory = require('./base');
 
 class External extends RuntimeDeviceFactory {
   static validateModule(module, path) {

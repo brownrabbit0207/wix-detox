@@ -1,4 +1,3 @@
-describe('Allocation driver for Google emulators', () => {
 
   const avdName = 'mock-avd-name';
   const adbName = 'mocked-emulator:5554';

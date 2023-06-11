@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 describe('Genymotion-Cloud instances lookup service', () => {
   let exec;

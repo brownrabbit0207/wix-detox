@@ -1,4 +1,3 @@
-const custom = require('./utils/custom-it');
 
 describe('Actions - Scroll', () => {
   beforeEach(async () => {
@@ -23,6 +22,32 @@ describe('Actions - Scroll', () => {
     await element(by.id('ScrollView161')).scroll(220, 'down');
     await expect(element(by.text('Text6'))).toBeVisible();
   });
+
+  it('should scroll for a large amount in horizontal direction', async () => {
+    await expect(element(by.text('HText7'))).not.toBeVisible();
+    await element(by.id('ScrollViewH')).scroll(220, 'right');
+    await expect(element(by.text('HText7'))).toBeVisible();
+  });
+
+  it('should scroll to edge', async () => {
+    await expect(element(by.text('Text12'))).not.toBeVisible();
+    await element(by.id('ScrollView161')).scrollTo('bottom');
+    await expect(element(by.text('Text12'))).toBeVisible();
+    await element(by.id('ScrollView161')).scrollTo('top');
+    await expect(element(by.text('Text1'))).toBeVisible();
+  });
+
+  it('should scroll horizontally to edge', async () => {
+    await expect(element(by.text('HText8'))).not.toBeVisible();
+    await element(by.id('ScrollViewH')).scrollTo('right');
+    await expect(element(by.text('HText8'))).toBeVisible();
+    await element(by.id('ScrollViewH')).scrollTo('left');
+    await expect(element(by.text('HText1'))).toBeVisible();
+  });
+
+  it('should scroll from a custom start-position ratio', async () => {
+    await expect(element(by.text('Text12'))).not.toBeVisible();
+    await element(by.id('toggleScrollOverlays')).tap();
     await element(by.id('ScrollView161')).scroll(550, 'down', 0.8, 0.6);
     await element(by.id('toggleScrollOverlays')).tap();
     await expect(element(by.text('Text12'))).toBeVisible();

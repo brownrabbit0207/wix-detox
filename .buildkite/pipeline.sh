@@ -1,4 +1,3 @@
-#!/bin/bash -e
 
 if [[ "$1" == 'start' ]];then
   if [[ $(echo $BUILDKITE_MESSAGE | tr '[:upper:]' '[:lower:]') =~ ^release$ ]];then

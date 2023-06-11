@@ -1,4 +1,3 @@
-package com.wix.detox.reactnative.idlingresources.uimodule
 
 import android.util.Log
 import android.view.View

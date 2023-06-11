@@ -1,4 +1,3 @@
-//
 //  DetoxPolicy.h
 //  Detox
 //

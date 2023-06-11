@@ -1,4 +1,3 @@
-//
 //  AppDelegate.h
 //  NativeExample
 //

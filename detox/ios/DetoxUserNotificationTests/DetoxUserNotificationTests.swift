@@ -1,4 +1,3 @@
-//
 //  DetoxUserNotificationTests.swift
 //  DetoxUserNotificationTests
 //
