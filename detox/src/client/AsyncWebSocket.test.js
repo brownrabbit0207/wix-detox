@@ -1,3 +1,4 @@
+// @ts-nocheck
 jest.useFakeTimers('modern');
 
 const permaproxy = require('funpermaproxy');
@@ -7,17 +8,6 @@ const config = require('../configuration/configurations.mock').validSession;
 
 describe('AsyncWebSocket', () => {
   let AsyncWebSocket;
-  let WebSocket;
-  /**
-   * @type {import('./AsyncWebSocket')}
-   */
-  let aws;
-  let log;
-
-  const socket = permaproxy(() => _.last(WebSocket.mock.instances));
-
-  beforeEach(() => {
-    jest.mock('../utils/logger');
     jest.mock('ws');
     WebSocket = require('ws');
     WebSocket.CONNECTING = 0;

@@ -1,3 +1,4 @@
+const Espresso = require('./invoke/Espresso');
 const EspressoWeb = require('./invoke/EspressoWeb');
 const Invoke = require('./invoke/Invoke');
 

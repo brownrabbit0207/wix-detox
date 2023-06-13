@@ -1,3 +1,4 @@
+package com.wix.detox.reactnative.idlingresources
 
 import androidx.test.espresso.IdlingResource
 import com.facebook.react.bridge.NativeModule

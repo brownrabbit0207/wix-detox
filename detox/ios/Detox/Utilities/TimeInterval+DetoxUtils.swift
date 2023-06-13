@@ -1,3 +1,4 @@
+//
 //  TimeInterval+DetoxUtils.swift
 //  Detox
 //

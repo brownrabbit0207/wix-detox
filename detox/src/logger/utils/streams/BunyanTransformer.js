@@ -1,3 +1,4 @@
+const fs = require('fs');
 const { PassThrough } = require('stream');
 
 const bunyanDebugStream = require('bunyan-debug-stream');

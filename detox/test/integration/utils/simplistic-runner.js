@@ -1,3 +1,4 @@
+const detox = require('detox/internals');
 const log = detox.log.child({ cat: ['lifecycle'] });
 
 async function main() {

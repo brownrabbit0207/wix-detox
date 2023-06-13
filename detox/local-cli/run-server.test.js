@@ -1,3 +1,4 @@
+jest.mock('../src/utils/logger');
 
 const { callCli } = require('../__tests__/helpers');
 

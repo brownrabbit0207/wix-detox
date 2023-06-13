@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.web;
 
 import android.view.View;
 import android.webkit.WebView;

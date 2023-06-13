@@ -1,3 +1,4 @@
+//
 //  UIApplication+MockedSharedApplication.h
 //  DetoxUserNotificationTests
 //
@@ -7,10 +8,3 @@
 
 #import <UIKit/UIKit.h>
 
-extern void DTXApplicationMock(NSString * _Nullable principalClassName, NSString * _Nullable delegateClassName);
-
-@interface UIApplication (MockedSharedApplication)
-
-@property(nonatomic,readwrite) UIApplicationState applicationState;
-
-@end

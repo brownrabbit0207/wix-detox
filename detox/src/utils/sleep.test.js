@@ -1,3 +1,4 @@
+describe('sleep', () => {
   let sleep;
   let setTimeoutMock;
 

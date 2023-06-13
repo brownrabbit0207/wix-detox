@@ -1,3 +1,4 @@
+@startuml
 
 actor User
 boundary "Detox CLI" as CLI

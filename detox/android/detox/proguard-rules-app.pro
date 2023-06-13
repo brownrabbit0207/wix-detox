@@ -1,3 +1,4 @@
+-keepattributes InnerClasses, Exceptions
 
 -keep class com.facebook.react.modules.** { *; }
 -keep class com.facebook.react.uimanager.** { *; }

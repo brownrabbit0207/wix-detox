@@ -1,3 +1,4 @@
+const RuntimeDeviceFactory = require('./base');
 
 class RuntimeDriverFactoryIos extends RuntimeDeviceFactory {
   _createDriverDependencies(commonDeps) {

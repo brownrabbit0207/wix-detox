@@ -1,3 +1,4 @@
+const rootId = 'View7990';
 
 const driver = {
   tapsElement: {

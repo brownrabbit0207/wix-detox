@@ -1,3 +1,4 @@
+# Migration Guide
 
 <!-- markdownlint-configure-file { "ol-prefix": 0 } -->
 
@@ -6,17 +7,6 @@ We are improving Detox API as we go along, sometimes these changes require us to
 ## 20.0
 
 ### No [Mocha] support
-
-If you were using Mocha, now you have two options:
-
-- switch to [Jest] using [`detox init`] boilerplate as a reference and [`testRunner` config];
-- wait until a third-party integration with Mocha appears.
-
-### Jest 27.2.5 and higher
-
-You have to upgrade your Jest version to at least 27.2.5 or higher. The recommended choice is 28.x or 29.x.
-
-### All-in-one configs
 
 If you see an error like this:
 

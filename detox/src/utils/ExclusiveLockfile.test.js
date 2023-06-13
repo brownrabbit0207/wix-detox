@@ -1,3 +1,4 @@
+jest.mock('proper-lockfile');
 
 const fs = require('fs-extra');
 const plock = require('proper-lockfile');

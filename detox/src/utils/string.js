@@ -1,3 +1,4 @@
+const _ = require('lodash');
 
 function capitalizeFirstLetter(string) {
   if (_.isEmpty(string)) {
@@ -7,17 +8,6 @@ function capitalizeFirstLetter(string) {
 }
 
 function lowerCamelCaseJoin(array) {
-  if (_.isEmpty(array)) {
-    return '';
-  }
-  const [first, ...rest] = array;
-  let retVal = first;
-  _.forEach(rest, (str) => {
-    retVal += capitalizeFirstLetter(str);
-  });
-  return retVal;
-}
-module.exports = {
   capitalizeFirstLetter,
   lowerCamelCaseJoin
 };

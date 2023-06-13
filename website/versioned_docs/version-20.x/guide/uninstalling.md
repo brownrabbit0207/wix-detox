@@ -1,3 +1,4 @@
+# Uninstalling Detox
 
 Installing and using Detox implies certain side effects: cloned devices, cache files, state files, temporary files, etc.
 
@@ -7,17 +8,6 @@ This checklist might come in handy whenever you have to make a clean uninstallat
 
 Every install of Detox also triggers a `postinstall` script in its `package.json`, which builds (or unpacks) `Detox.framework` into `~/Library/Detox`.
 
-You can either delete the folder manually:
-
-```bash
-rm -rf ~/Library/Detox
-```
-
-or run:
-
-```bash
-detox clean-framework-cache
-```
 
 ## Test Session State
 

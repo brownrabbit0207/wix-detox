@@ -1,3 +1,4 @@
+// @ts-nocheck
 const { spawn } = require('child-process-promise');
 const _ = require('lodash');
 
@@ -7,17 +8,6 @@ const retry = require('../retry');
 
 const execsCounter = require('./opsCounter');
 
-function spawnAndLog(binary, flags, options) {
-  const command = _joinCommandAndFlags(binary, flags);
-  const trackingId = execsCounter.inc();
-  const logger = rootLogger.child({ fn: 'spawnAndLog', command, trackingId });
-  return _spawnAndLog(logger, binary, flags, command, options);
-}
-
-async function spawnWithRetriesAndLogs(binary, flags, options = {}) {
-  const command = _joinCommandAndFlags(binary, flags);
-  const trackingId = execsCounter.inc();
-  const logger = rootLogger.child({ fn: 'spawnWithRetriesAndLogs', command, trackingId });
   const _options = {
     ...options,
     capture: _.union(options.capture || [], ['stderr']),

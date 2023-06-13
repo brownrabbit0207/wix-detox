@@ -1,3 +1,4 @@
+describe('Sanity', () => {
   beforeEach(async () => {
     await device.reloadReactNative();
     await detox.traceCall('Navigate to sanity', element(by.text('Sanity')).tap());

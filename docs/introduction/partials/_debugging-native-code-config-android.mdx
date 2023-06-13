@@ -1,3 +1,4 @@
+```json
 {
   "devices": {
     "emulator": {
@@ -7,17 +8,6 @@
       }
     }
   },
-  "apps": {
-    "android.debug": {
-      "type": "android.apk",
-      "binaryPath": "<path to your app binary built before>"
-    }
-  },
-  "configurations": {
-// highlight-start
-    "android.manual": {
-      "device": "emulator",
-      "app": "android.debug",
       "behavior": {
         "launchApp": "manual"
       }

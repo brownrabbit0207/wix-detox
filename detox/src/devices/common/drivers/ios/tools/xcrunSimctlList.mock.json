@@ -1,3 +1,4 @@
+{
   "devicetypes" : [
     {
       "name" : "iPhone 4s",
@@ -7,17 +8,6 @@
       "name" : "iPhone 5",
       "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-5"
     },
-    {
-      "name" : "iPhone 5s",
-      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-5s"
-    },
-    {
-      "name" : "iPhone 6",
-      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-6"
-    },
-    {
-      "name" : "iPhone 6 Plus",
-      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-6-Plus"
     },
     {
       "name" : "iPhone 6s",

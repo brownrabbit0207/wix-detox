@@ -1,3 +1,4 @@
+const generator = require('../core/generator');
 const { callGlobal } = require('../helpers');
 
 const { isNumber, isString, isBoolean, isArray, isDefined } = require('../core/type-checks');

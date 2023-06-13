@@ -1,3 +1,4 @@
+describe('Genymotion-cloud recipe-query', () => {
 
   let recipesService;
   let uut;

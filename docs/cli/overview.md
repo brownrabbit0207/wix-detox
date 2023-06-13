@@ -1,3 +1,4 @@
+# detox
 
 Detox CLI lets you operate Detox from command line.
 

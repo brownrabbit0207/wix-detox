@@ -1,3 +1,4 @@
+module.exports = {
   actionDescription: {
     adjustSliderToPosition: (newPosition) => `adjust slider to position ${newPosition}`,
     clearText: () => 'clear input text',
@@ -7,17 +8,6 @@
       `long press and drag from ${startX}, ${startY} to ${endX}, ${endY} with speed ${speed} and hold duration ${holdDuration}`,
     multiTap: (times) => `tap ${times} times`,
     performAccessibilityAction: (actionName) => `perform ${actionName} accessibilityAction`,
-    pinch: (scale, speed, angle) => `pinch with scale ${scale}, speed ${speed}, and angle ${angle}`,
-    pinchWithAngle: (direction, speed, angle) => `pinch with direction ${direction}, speed ${speed}, and angle ${angle}`,
-    replaceText: (value) => `replace input text: "${value}"`,
-    scroll: (amount, direction, startPositionX, startPositionY) =>
-      `scroll ${amount} pixels ${direction}${startPositionX !== undefined && startPositionY !== undefined ? ` from normalized position (${startPositionX}, ${startPositionY})` : ''}`,
-    scrollTo: (edge) => `scroll to ${edge}`,
-    scrollToIndex: (index) => `scroll to index #${index}`,
-    setColumnToValue: (column, value) => `set column ${column} to value ${value}`,
-    setDatePickerDate: (dateString, dateFormat) => `set date picker date to ${dateString} using format ${dateFormat}`,
-    swipe: (direction, speed, normalizedSwipeOffset, normalizedStartingPointX, normalizedStartingPointY) =>
-      `swipe ${direction} ${speed} with offset ${normalizedSwipeOffset}
       ${!isNaN(normalizedStartingPointX) && !isNaN(normalizedStartingPointY) ? ` from normalized position (${normalizedStartingPointX}, ${normalizedStartingPointY})` : ''}`,
     takeScreenshot: (screenshotName) => `take screenshot${screenshotName !== undefined ? ` with name "${screenshotName}"` : ''}`,
     tapAtPoint: (value) => `tap${value !== undefined ? ` at ${JSON.stringify(value)}` : ''}`,

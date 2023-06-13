@@ -1,3 +1,4 @@
+const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 const invoke = require('../../invoke');
 const actions = require('../actions/web');
 const EspressoWebDetoxApi = require('../espressoapi/web/EspressoWebDetox');
@@ -7,17 +8,6 @@ const { ActionInteraction } = require('../interactions/web');
 const { WebMatcher } = require('./WebMatcher');
 
 const _device = Symbol('device');
-const _emitter = Symbol('emitter');
-const _matcher = Symbol('matcher');
-const _invocationManager = Symbol('invocationManager');
-const _webMatcher = Symbol('webMatcher');
-const _webViewElement = Symbol('webViewElement');
-
-class WebElement {
-  constructor({ device, invocationManager, webMatcher, webViewElement }) {
-    this[_device] = device;
-    this[_invocationManager] = invocationManager;
-    this[_webMatcher] = webMatcher;
     this[_webViewElement] = webViewElement;
     this.atIndex(0);
   }

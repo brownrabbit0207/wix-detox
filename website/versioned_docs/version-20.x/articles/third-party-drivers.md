@@ -1,3 +1,4 @@
+# Third-Party Drivers
 
 Detox comes with built-in support for running on Android and iOS by choosing a driver type in your Detox configurations.
 For example, the following configuration uses the "ios.simulator" driver.

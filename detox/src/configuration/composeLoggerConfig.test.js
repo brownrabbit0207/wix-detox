@@ -1,3 +1,4 @@
+describe('composeLoggerConfig', () => {
   let composeLoggerConfig;
   let cliConfig, localConfig, globalConfig;
 

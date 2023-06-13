@@ -1,3 +1,4 @@
+const { callCli, buildMockCommand } = require('../__tests__/helpers');
 
 describe('start', () => {
   let cmd;
@@ -7,17 +8,6 @@ describe('start', () => {
     cmd = null;
 
     jest.mock('../src/utils/logger');
-    jest.mock('../internals', () => {
-      const DetoxConfigErrorComposer = require('../src/errors/DetoxConfigErrorComposer');
-
-      const config = {
-        apps: {},
-        artifacts: {},
-        behavior: {},
-        errorComposer: new DetoxConfigErrorComposer(),
-        device: {},
-        session: {}
-      };
 
       return ({
         config,

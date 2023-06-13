@@ -1,3 +1,4 @@
+{
   "target": {
     "type": "Invocation",
     "value": {
@@ -7,17 +8,6 @@
       },
       "method": "onView",
       "args": [{
-        "type": "Invocation",
-        "value": {
-          "target": {
-            "type": "Class",
-            "value": "com.wix.detox.espresso.DetoxMatcher"
-          },
-          "method": "matcherForContentDescription",
-          "args": ["Sanity"]
-        }
-      }]
-    }
   },
   "method": "perform",
   "args": [{

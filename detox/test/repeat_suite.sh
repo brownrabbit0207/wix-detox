@@ -1,3 +1,4 @@
+#!/bin/bash
 
 echo "Building Detox.framework"
 detox clean-framework-cache && detox build-framework-cache &> /dev/null

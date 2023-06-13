@@ -1,3 +1,4 @@
+describe('Allocation driver for attached Android devices', () => {
   const adbPattern = '9A291FFAZ005S9';
   const adbName = 'mock-adb-name';
   const deviceConfig = {

@@ -1,3 +1,4 @@
+const _ = require('lodash');
 
 const environment = require('../../../../../utils/environment');
 

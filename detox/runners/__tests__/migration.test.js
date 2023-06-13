@@ -1,3 +1,4 @@
+describe('file migration', () => {
   let logger;
 
   beforeEach(() => {

@@ -1,3 +1,4 @@
+{
   "name": "detox-demo-native-android",
   "version": "20.9.0",
   "private": true,
@@ -7,6 +8,3 @@
   },
   "devDependencies": {
     "detox": "^20.9.0"
-  },
-  "detox": {}
-}

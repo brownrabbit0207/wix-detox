@@ -1,3 +1,4 @@
+class AppUninstallHelper {
   constructor(adb) {
     this._adb = adb;
   }

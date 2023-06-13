@@ -1,3 +1,4 @@
+import React from 'react';
 export default function IconMenu({ width = 19, height = 12, className, ...restProps }) {
   return (
     <svg className={className} width={width} height={height} viewBox="0 0 19 12" fill="currentColor" aria-hidden="true" {...restProps}>

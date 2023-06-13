@@ -1,3 +1,4 @@
+package com.wix.detox.common
 
 import org.assertj.core.api.Assertions.assertThat
 import org.json.JSONArray
@@ -7,17 +8,6 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import kotlin.test.assertFailsWith
 
-@RunWith(RobolectricTestRunner::class)
-class JsonConverterTest {
-
-    @Test
-    fun `should convert an empty json to an empty bundle`() {
-        val uut = JsonConverter(JSONObject())
-        assertThat(uut.toBundle().isEmpty).isTrue()
-    }
-
-    @Test
-    fun `should convert a boolean`() {
         val json = aJsonWithAFlag()
 
         val uut = JsonConverter(json)

@@ -1,3 +1,4 @@
+// @ts-nocheck
 const DetoxInternalError = require('../../errors/DetoxInternalError');
 const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 
@@ -7,17 +8,6 @@ const TesterConnectionHandler = require('./TesterConnectionHandler');
 class AnonymousConnectionHandler {
   constructor({ api }) {
     this._api = api;
-  }
-
-  handle(action) {
-    switch (action.type) {
-      case 'login': return this._handleLoginAction(action);
-      case 'ready': return this._handleEarlyReadyAction(action);
-      default: return this._handleUnknownAction(action);
-    }
-  }
-
-  onError(error, _action) {
     throw error;
   }
 

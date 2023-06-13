@@ -1,3 +1,4 @@
+# detox test
 
 ```bash
 detox test [options] <...testFilePaths>

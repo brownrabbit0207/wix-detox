@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './HomepageHeader.module.scss';

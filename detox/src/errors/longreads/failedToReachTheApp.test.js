@@ -1,3 +1,4 @@
+const failedToReachTheApp = require('./failedToReachTheApp');
 
 describe('failedToReachTheApp', () => {
   test('.evenThoughAppWasLaunched()', () => {

@@ -1,3 +1,4 @@
+//
 //  SetPermissionOperation.m
 //  DetoxHelper
 //
@@ -7,6 +8,3 @@
 
 #import "SetPermissionOperation.h"
 
-@implementation SetPermissionOperation
-
-@end

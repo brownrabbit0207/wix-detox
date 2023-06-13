@@ -1,3 +1,4 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetoxLogger - main functionality - should format messages according to the log level: debug 1`] = `
 "00:00:00.000 detox[PID] i  BLUE SCREEN OF DEATH
@@ -7,17 +8,6 @@ exports[`DetoxLogger - main functionality - should format messages according to 
 00:00:00.000 detox[PID] i  An err (alias) occurred:
   error: Error: Some test err details
   origin: module2
-00:00:00.000 detox[PID] i  Another error occurred:
-  error: Error: Error as context
-00:00:00.000 detox[PID] i  Warning message!
-  stack: at index.js:30:73
-  origin: some-module/index.js
-00:00:00.000 detox[PID] i custom-category:MESSAGE A message with a payload
-  data: {
-    \\"foo\\": \\"bar\\"
-  }
-00:00:00.000 detox[PID] i custom-category One more message with a payload
-  data: raw string data"
 `;
 
 exports[`DetoxLogger - main functionality - should format messages according to the log level: error 1`] = `

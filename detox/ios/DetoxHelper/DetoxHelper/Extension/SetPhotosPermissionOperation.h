@@ -1,3 +1,4 @@
+//
 //  SetPhotosPermissionOperation.h
 //  DetoxHelper
 //

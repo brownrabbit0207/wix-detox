@@ -1,3 +1,4 @@
+## Detox Documentation
 
 ### Introduction
 
@@ -7,17 +8,6 @@
 - [Detox for iOS](Introduction.iOS.md)
 - [Detox for Android](Introduction.Android.md)
 - [Writing Your First Test](Introduction.WritingFirstTest.md)
-- [How Detox Works](Introduction.HowDetoxWorks.md)
-- [Detox Design Principles](Introduction.DesignPrinciples.md)
-- [Workflows](Introduction.Workflows.md)
-
-### API Reference
-
-- [Detox Command Line Tools](APIRef.DetoxCLI.md)
-- [Configuration](config/overview.md)
-- [The `detox` Object](APIRef.DetoxObjectAPI.md)
-- [The `device` Object](APIRef.DeviceObjectAPI.md)
-- [Test Lifecycle](APIRef.TestLifecycle.md)
 - [Matchers](APIRef.Matchers.md)
 - [Actions](APIRef.ActionsOnElement.md)
 - [Expectations](APIRef.Expect.md)

@@ -1,3 +1,4 @@
+const isValidWebsocketURL = require('../utils/isValidWebsocketURL');
 
 /**
  * @param {{

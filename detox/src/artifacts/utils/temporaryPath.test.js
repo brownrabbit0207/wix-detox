@@ -1,3 +1,4 @@
+const path = require('path');
 
 const fs = require('fs-extra');
 const tempfile = require('tempfile');
@@ -7,17 +8,6 @@ const temporaryPath = require('./temporaryPath');
 describe('temporaryPath', () => {
   describe.each([
     ['json'],
-    ['jsonl'],
-    ['png'],
-    ['log'],
-    ['mp4'],
-    ['dtxrec'],
-    ['viewhierarchy'],
-  ])('for.%s', (ext) => {
-    it(`should generate a temporary path with the correct extension`, () => {
-      expect(path.dirname(temporaryPath.for[ext]())).toBe(path.dirname(tempfile()));
-      expect(temporaryPath.for[ext]()).toMatch(new RegExp(`.+\\.detox\\.${ext}$`));
-    });
 
     it(`should generate a temporary path with specified name and correct extension`, () => {
       const basename = Math.random().toString(36).slice(2);

@@ -1,3 +1,4 @@
+const temporaryPath = require('detox/src/artifacts/utils/temporaryPath');
 const DeviceDriverBase = require('detox/src/devices/runtime/drivers/DeviceDriverBase');
 const tempfile = require('tempfile');
 

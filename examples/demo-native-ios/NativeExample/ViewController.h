@@ -1,3 +1,4 @@
+//
 //  ViewController.h
 //  NativeExample
 //
@@ -6,8 +7,4 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
-@end
 

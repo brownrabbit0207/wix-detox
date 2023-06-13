@@ -1,3 +1,4 @@
+// @ts-nocheck
 const logger = require('../../../../../utils/logger').child({ cat: 'device' });
 const DeviceAllocationHelper = require('../../../../common/drivers/DeviceAllocationHelper');
 
@@ -7,17 +8,6 @@ class AllocationResult {
   constructor(instance, isNew) {
     this.instance = instance;
     this.isNew = isNew;
-  }
-}
-
-class GenyInstanceAllocationHelper extends DeviceAllocationHelper {
-  constructor({ deviceRegistry, instanceLookupService, instanceLifecycleService }) {
-    super(deviceRegistry, logger);
-
-    this._instanceLookupService = instanceLookupService;
-    this._instanceLifecycleService = instanceLifecycleService;
-  }
-
   /**
    * @param recipe { GenyRecipe }
    * @return { Promise<AllocationResult> }

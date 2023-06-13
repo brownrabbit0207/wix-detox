@@ -1,3 +1,4 @@
+#
 # Most needed rules come from React Native's proguard-rules.pro (either .aar or source) -- hence
 # the lean configuration file.
 ###

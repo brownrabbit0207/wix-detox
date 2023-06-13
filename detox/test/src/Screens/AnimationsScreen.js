@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import {
   Text,
   View,
@@ -7,17 +8,6 @@ import {
   Switch,
   TextInput
 } from 'react-native';
-import SegmentedControl from '../Views/SegmentedControl.js';
-
-class AnimationsComponent extends Component {
-  constructor(props) {
-    super(props);
-
-    this._fadeInValue = new Animated.Value(0);
-    this.state = {
-      showAfterAnimationText: false
-    };
-  }
 
   componentDidMount() {
     const fadeInAnimation = Animated.timing(this._fadeInValue, {

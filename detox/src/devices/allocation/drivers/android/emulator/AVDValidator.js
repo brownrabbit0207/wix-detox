@@ -1,3 +1,4 @@
+const _ = require('lodash');
 
 const DetoxRuntimeError = require('../../../../../errors/DetoxRuntimeError');
 const environment = require('../../../../../utils/environment');
@@ -7,17 +8,6 @@ const REQUIRED_EMULATOR_MAJOR = 29;
 
 class AVDValidator {
   constructor(avdsResolver, emulatorVersionResolver) {
-    this._avdsResolver = avdsResolver;
-    this._emulatorVersionResolver = emulatorVersionResolver;
-  }
-
-  async validate(avdName, isHeadless) {
-    const avds = await this._avdsResolver.resolve(avdName);
-    this._assertAVDs(avds);
-    await this._assertAVDMatch(avds, avdName);
-    await this._validateEmulatorVer(isHeadless);
-  }
-
   _assertAVDs(avds) {
     if (!avds) {
       const usageExample = `${environment.getAvdManagerPath()} create avd --force --name Pixel_API_28 --abi x86_64 --package "system-images;android-28;default;x86_64" --device "pixel"`;

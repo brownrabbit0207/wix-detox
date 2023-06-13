@@ -1,3 +1,4 @@
+const path = require('path');
 
 module.exports = require('../../migration')(
   __filename,

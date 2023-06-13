@@ -1,3 +1,4 @@
+```plain text
 18:26:07.024 detox[45214] i Waiting for you to manually launch your app in Xcode.
 Make sure to pass the launch arguments listed below:
   -detoxServer ws://localhost:8099
@@ -7,17 +8,6 @@ Press any key to continue...
 ```
 
 You’ll need to run your app with the said arguments from Xcode:
-
-![Xcode - Edit Schema - Arguments tab](../../img/xcode/edit-schema-arguments.png)
-
-Before you launch the app, make sure to [put breakpoints](https://developer.apple.com/documentation/xcode/setting-breakpoints-to-pause-your-running-app) at the points of interest, e.g.:
-
-![put a breakpoint in the native code](../../img/xcode/putting-a-breakpoint.png)
-
-Launch the app with the debugger attached:
-
-![launching the app](../../img/xcode/launch-app-with-debugger.png)
-
 The moment you see the app is idle, go back to the Terminal where Detox is running
 and press any key. If you wish to terminate the process for some reason, use Ctrl+C.
 In a couple of seconds you are expected to see a confirmation from Detox, e.g.:

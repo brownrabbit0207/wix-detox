@@ -1,3 +1,4 @@
+function create() {
   const context = require('./index');
   const DetoxInternalsFacade = require('./src/realms/DetoxInternalsFacade');
 

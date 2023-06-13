@@ -1,3 +1,4 @@
+jest.unmock('./DetoxLogger');
 jest.useFakeTimers({
   doNotFake: ['setTimeout', 'clearTimeout'],
   now: new Date(2023, 0, 1),
@@ -7,17 +8,6 @@ const os = require('os');
 
 const fs = require('fs-extra');
 const _ = require('lodash');
-const tempfile = require('tempfile');
-
-const sleep = require('../utils/sleep');
-
-jest.retryTimes(2);
-
-describe('DetoxLogger', () => {
-  //#region --- Setup ---
-
-  /** @type {typeof import('./DetoxLogger')} */
-  let DetoxLogger;
   /** @type {import('./DetoxLogger')[]} */
   let _loggerInstances = [];
   /** @type {string} */

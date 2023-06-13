@@ -1,3 +1,4 @@
+const DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
 
 const { androidEmulator, apkWithBinary } = require('./configurations.mock');
 

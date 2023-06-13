@@ -1,3 +1,4 @@
+describe('Emulator handle', () => {
 
   let EmulatorHandle;
   let EmulatorTelnet;

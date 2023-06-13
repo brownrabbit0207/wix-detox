@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 class SelfCountingText extends Component {

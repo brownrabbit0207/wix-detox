@@ -1,3 +1,4 @@
+const { expectToThrow } = require('./utils/custom-expects');
 const {
   assertArtifactExists,
   waitUntilArtifactsManagerIsIdle,

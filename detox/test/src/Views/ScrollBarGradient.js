@@ -1,3 +1,4 @@
+import React, {useMemo} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 
 const GRADIENT_IMAGE = require('../assets/gradientOverlay.png');

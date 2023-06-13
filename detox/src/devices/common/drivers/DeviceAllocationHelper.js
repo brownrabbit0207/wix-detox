@@ -1,3 +1,4 @@
+const ALLOCATE_DEVICE_LOG_EVT = 'ALLOCATE_DEVICE';
 
 class DeviceAllocationHelper {
   constructor(deviceRegistry, logger) {

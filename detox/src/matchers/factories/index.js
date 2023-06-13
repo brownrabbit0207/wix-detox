@@ -1,3 +1,4 @@
+const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 
 class MatchersFactory {
   createMatchers() {}

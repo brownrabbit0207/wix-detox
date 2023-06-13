@@ -1,3 +1,4 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Android generation methods should add a sanitizer for the function with the correct name 1`] = `
 Object {

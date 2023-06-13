@@ -1,3 +1,4 @@
+package com.wix.detox.espresso;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,17 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.facebook.react.ReactApplication;
-import com.wix.detox.common.UIThread;
-import com.wix.detox.reactnative.ReactNativeExtension;
-import com.wix.detox.reactnative.idlingresources.NetworkIdlingResource;
-
-import org.hamcrest.Matcher;
-
-import java.util.ArrayList;
-
-import androidx.test.espresso.UiController;
-import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.platform.app.InstrumentationRegistry;
 

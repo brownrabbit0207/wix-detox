@@ -1,3 +1,4 @@
+package com.wix.detox.uiautomator;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.uiautomator.UiDevice;

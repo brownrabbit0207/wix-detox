@@ -1,3 +1,4 @@
+describe('AVD validator', () => {
   let logger;
   let environment;
   let avdsResolver;

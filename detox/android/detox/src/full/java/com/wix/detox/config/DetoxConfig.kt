@@ -1,3 +1,4 @@
+package com.wix.detox.config
 
 class DetoxConfig {
     @JvmField var idlePolicyConfig: DetoxIdlePolicyConfig = DetoxIdlePolicyConfig()
@@ -7,7 +8,3 @@ class DetoxConfig {
         idlePolicyConfig.apply()
     }
 
-    companion object {
-        lateinit var CONFIG: DetoxConfig
-    }
-}

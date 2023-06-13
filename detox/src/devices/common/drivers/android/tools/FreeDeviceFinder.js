@@ -1,3 +1,4 @@
+const log = require('../../../../../utils/logger').child({ cat: 'device' });
 
 const DEVICE_LOOKUP_LOG_EVT = 'DEVICE_LOOKUP';
 

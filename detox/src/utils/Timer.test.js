@@ -1,3 +1,4 @@
+jest.useFakeTimers();
 
 const Deferred = require('./Deferred');
 const Timer = require('./Timer');
@@ -7,17 +8,6 @@ describe('Timer', () => {
     await expect(new Timer().expired).toBe(false);
   });
 
-  it('should throw on attempt to run when uninitialized', async () => {
-    await expect(new Timer().run('', () => {})).rejects.toThrow(/Cannot run a timer action/);
-  });
-
-  it('should run action in time', async () => {
-    const timer = new Timer().schedule(1000);
-    await expect(timer.run('running test', () => 5)).resolves.toBe(5);
-  });
-
-  it('should throw if an action takes longer', async () => {
-    const timer = new Timer().schedule(999);
 
     jest.advanceTimersByTime(1000);
     await expect(timer.run('running this test', () => {}))

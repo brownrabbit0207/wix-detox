@@ -1,3 +1,4 @@
+package com.wix.detox.reactnative.idlingresources;
 
 import android.util.Log;
 

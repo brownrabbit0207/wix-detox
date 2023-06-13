@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.common
 
 import com.facebook.react.views.slider.ReactSlider
 import org.assertj.core.api.Assertions.assertThat

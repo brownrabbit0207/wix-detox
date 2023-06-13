@@ -1,3 +1,4 @@
+describe('Main environment factory', () => {
   const mockFakeModule = {
     fake: 'module',
   };

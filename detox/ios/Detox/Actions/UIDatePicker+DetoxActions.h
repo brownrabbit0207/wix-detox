@@ -1,3 +1,4 @@
+//
 //  UIDatePicker+DetoxActions.h
 //  Detox
 //
@@ -7,12 +8,3 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface UIDatePicker (DetoxActions)
-
-- (void)dtx_adjustToDate:(NSDate*)date;
-
-@end
-
-NS_ASSUME_NONNULL_END

@@ -1,3 +1,4 @@
+# Generation
 
 This part of the repository aims to automate the adaption of the underlying testing frameworks.
 For now, it only covers `EarlGrey`’s `GREYActions`.

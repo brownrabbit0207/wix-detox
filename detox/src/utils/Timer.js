@@ -1,3 +1,4 @@
+const { DetoxRuntimeError, DetoxInternalError } = require('../errors');
 
 const Deferred = require('./Deferred');
 

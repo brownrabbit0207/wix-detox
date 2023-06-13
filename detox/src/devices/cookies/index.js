@@ -1,3 +1,4 @@
+module.exports = {
   IosSimulatorCookie: require('./IosSimulatorCookie'),
   AttachedAndroidDeviceCookie: require('./AttachedAndroidDeviceCookie'),
   AndroidEmulatorCookie: require('./AndroidEmulatorCookie'),

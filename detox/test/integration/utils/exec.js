@@ -1,3 +1,4 @@
+const { exec } = require('child_process');
 
 const execCommand = async (cmd) => {
   const cp = exec(cmd);
@@ -7,7 +8,3 @@ const execCommand = async (cmd) => {
     cp.on('close', resolve);
   });
 }
-
-module.exports = {
-  execCommand,
-};

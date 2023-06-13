@@ -1,3 +1,4 @@
+/* tslint:disable: no-console */
 const fs = require('fs');
 const {exec} = require('shell-utils');
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 trap 'kill $RN_PID' EXIT
 

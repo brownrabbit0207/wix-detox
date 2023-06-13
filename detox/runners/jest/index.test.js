@@ -1,3 +1,4 @@
+describe('detox/runners/jest', () => {
   it('should lazily require the exported modules', () => {
     const index = jest.requireActual('./index');
 

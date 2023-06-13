@@ -1,3 +1,4 @@
+const {
   autoEscape,
   escapeInDoubleQuotedRegexp,
   escapeInDoubleQuotedString,
@@ -7,17 +8,6 @@
   isRunningInCMDEXE,
   useForwardSlashes,
 } = require('./shellUtils');
-
-describe('shellUtils', function() {
-  describe('escapeInDoubleQuotedString', () => {
-    test.each([
-      ['test string', 'test string'],
-      ['"test string"', `\\"test string\\"`],
-    ])('should transform [ %s ] to [ %s ]', (input, expected) => {
-      expect(escapeInDoubleQuotedString(input)).toBe(expected);
-    });
-  });
-
   describe('escapeInDoubleQuotedRegexp', () => {
     test.each([
       ['test string', 'test string'],

@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
@@ -7,17 +8,6 @@ export default class PickerViewScreen extends Component {
 
     this.state = {
       chosenValue: "com.wix.detox.a"
-    };
-
-    this.setValue = this.setValue.bind(this);
-  }
-
-  setValue(newValue) {
-    this.setState({
-      chosenValue: newValue
-    });
-  }
-
   render() {
     return (
       <View style={styles.container}>

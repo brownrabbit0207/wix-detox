@@ -1,3 +1,4 @@
+package com.wix.detox.common.proxy
 
 import android.util.Log
 import java.util.*
@@ -7,17 +8,6 @@ data class CallInfo(var inTime: Long? = null, var outTime: Long? = null) {
         this.inTime = inTime
         this.outTime = null
         return this
-    }
-
-    fun close(outTime: Long = System.currentTimeMillis()): CallInfo {
-        this.outTime = outTime
-        return this
-    }
-
-    operator fun minus(other: CallInfo): Long? {
-        val inTime = other.inTime
-        val outTime = this.outTime
-        if (outTime != null && inTime != null) {
             return outTime - inTime
         }
         return null

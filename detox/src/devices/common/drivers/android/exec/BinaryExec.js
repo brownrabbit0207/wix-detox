@@ -1,3 +1,4 @@
+// @ts-nocheck
 const spawn = require('child-process-promise').spawn;
 
 const exec = require('../../../../../utils/childProcess').execWithRetriesAndLogs;
@@ -7,17 +8,6 @@ class ExecCommand {
     return this._getArgsString();
   }
 
-  _getArgs() {
-    return [];
-  }
-
-  _getArgsString() {
-    return this._getArgs().join(' ');
-  }
-}
-
-class BinaryExec {
-  constructor(binary) {
     this.binary = binary;
   }
 

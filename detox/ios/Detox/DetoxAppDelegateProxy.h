@@ -1,3 +1,4 @@
+//
 //  DetoxAppDelegateProxy.h
 //  Detox
 //

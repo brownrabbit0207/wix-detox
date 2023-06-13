@@ -1,3 +1,4 @@
+---
 id: test-lifecycle
 slug: api/test-lifecycle
 title: Test Lifecycle
@@ -7,17 +8,6 @@ sidebar_label: Test Lifecycle
 ## Test Lifecycle
 
 Detox is test runner independent, and we encourage you to choose your own test runner, but for the sake of demonstration we will use `mocha`’s syntax.
-
-### Initial Setup
-
-The setup phase happens inside `detox.init()`.
-This is the phase where detox reads its configuration, starts a server, loads its expectation library and starts a simulator.
-
-```js
-before(async () => {
-  await detox.init();
-});
-```
 
 Of course, you can add any of your initializations in this phase.
 

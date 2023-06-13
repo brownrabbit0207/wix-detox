@@ -1,3 +1,4 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetoxInternalError .from(message) should wrap the error message  1`] = `
 "DetoxInternalError: Should do better

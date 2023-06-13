@@ -1,3 +1,4 @@
+//
 //  ViewController.h
 //  DetoxHelper
 //
@@ -6,9 +7,4 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
-
-@end
 
