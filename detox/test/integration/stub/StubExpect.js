@@ -8,6 +8,17 @@ class StubMatcher {
       'withDescendant',
       'and',
       'or',
+    ].forEach((method) => {
+      this[method] = () => this;
+    });
+    this.not = this;
+  }
+}
+
+class StubInteraction {
+  constructor({ delay = 10 } = {}) {
+    this._delay = delay;
+  }
 
   async execute() {
     await sleep(this._delay);

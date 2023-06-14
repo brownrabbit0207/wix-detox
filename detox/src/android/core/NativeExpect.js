@@ -8,6 +8,17 @@ class NativeExpect {
   }
 
   get not() {
+    this._notCondition = true;
+    return this;
+  }
+}
+
+class NativeExpectElement extends NativeExpect {
+  constructor(invocationManager, element) {
+    super(invocationManager);
+    this._element = element;
+  }
+
   async toBeVisible(pct) {
     const matcher = new matchers.VisibleMatcher(pct);
     const traceDescription = expectDescription.toBeVisible(pct);

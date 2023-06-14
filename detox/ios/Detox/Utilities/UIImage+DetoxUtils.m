@@ -8,16 +8,11 @@
 
 #import "UIImage+DetoxUtils.h"
 
-	CGImageRef cgImage = self.CGImage;
-	
-	CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(cgImage));
-	dtx_defer {
-		CFRelease(pixelData);
-	};
-	const uint8_t* bytes = CFDataGetBytePtr(pixelData);
-	
-	size_t width  = CGImageGetWidth(cgImage);
-	size_t height = CGImageGetHeight(cgImage);
+@implementation UIImage (DetoxUtils)
+
+- (UIImage *)dtx_imageByCroppingInRect:(CGRect)rect
+{
+	rect = CGRectMake(rect.origin.x * self.scale, rect.origin.y * self.scale, rect.size.width * self.scale, rect.size.height * self.scale);
 	
 	size_t bpr = CGImageGetBytesPerRow(cgImage);
 	size_t bpp = CGImageGetBitsPerPixel(cgImage);

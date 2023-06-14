@@ -13,7 +13,3 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIPickerView (DetoxActions)
 
 - (void)dtx_setComponent:(NSInteger)component toValue:(id)value;
-
-@end
-
-NS_ASSUME_NONNULL_END

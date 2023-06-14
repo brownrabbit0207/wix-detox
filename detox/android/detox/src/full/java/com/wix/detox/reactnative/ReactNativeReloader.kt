@@ -8,3 +8,8 @@ open class ReactNativeReLoader(
         private val rnApplication: ReactApplication) {
 
     fun reloadInBackground() {
+        val rnInstanceManager = rnApplication.reactNativeHost.reactInstanceManager
+        instrumentation.runOnMainSync {
+            rnInstanceManager.recreateReactContextInBackground()
+        }
+    }

@@ -8,16 +8,11 @@ const TesterConnectionHandler = require('./TesterConnectionHandler');
 class AnonymousConnectionHandler {
   constructor({ api }) {
     this._api = api;
-    throw error;
   }
 
-  _handleLoginAction(action) {
-    if (!action.params) {
-      throw new DetoxRuntimeError({
-        message: `Invalid login action received, it has no .params`,
-        hint: DetoxInternalError.reportIssue,
-        debugInfo: action,
-      });
+  handle(action) {
+    switch (action.type) {
+      case 'login': return this._handleLoginAction(action);
     }
 
     if (action.params.role !== 'app' && action.params.role !== 'tester') {

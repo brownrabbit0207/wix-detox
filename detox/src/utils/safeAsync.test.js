@@ -8,3 +8,8 @@ describe('safeAsync', () => {
   it(`should call sync function and return its result as a promise`, async() => {
     await expect(safeAsync(() => 5)).resolves.toEqual(5);
   });
+
+  it(`should call async function into a promise`, async() => {
+    await expect(safeAsync(async () => 5)).resolves.toEqual(5);
+  });
+

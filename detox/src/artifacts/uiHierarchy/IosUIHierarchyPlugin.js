@@ -13,22 +13,6 @@ class IosUIHierarchyPlugin extends ArtifactPlugin {
    */
   constructor({ api, client }) {
     super({ api });
-
-    this._pendingDeletions = [];
-    this._artifacts = {
-      perTest: {},
-      perSession: {},
-    };
-
-    client.setEventCallback('testFailed', this._onInvokeFailure.bind(this));
-  }
-
-  async onBeforeLaunchApp(event) {
-    await super.onBeforeLaunchApp(event);
-
-    if (!this.enabled && !event.launchArgs.hasOwnProperty('detoxDisableHierarchyDump')) {
-      event.launchArgs['detoxDisableHierarchyDump'] = 'YES';
-    }
   }
 
   async onCreateExternalArtifact(e) {

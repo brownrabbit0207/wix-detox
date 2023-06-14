@@ -8,3 +8,6 @@
   },
   "devDependencies": {
     "detox": "^20.9.0"
+  },
+  "detox": {}
+}

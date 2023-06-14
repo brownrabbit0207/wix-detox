@@ -8,16 +8,11 @@ class InstrumentsArtifactPlugin extends WholeTestRecorderPlugin {
 
   async onBeforeUninstallApp(event) {
     await super.onBeforeUninstallApp(event);
+    await this._stopRecordingIfExists();
   }
 
-  async _stopRecordingIfExists() {
-    if (this.testRecording) {
-      await this.testRecording.stop();
-    }
-  }
-
-  async onLaunchApp(event) {
-    await super.onLaunchApp(event);
+  async onBeforeTerminateApp(event) {
+    await super.onBeforeTerminateApp(event);
 
     if (this.testRecording) {
       await this.testRecording.start({ dry: true }); // start nominally, to set a correct recording state

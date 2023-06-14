@@ -8,6 +8,17 @@ function wrapWithStackTraceCutter(obj, methodNames) {
     obj[methodName] = async function stackTraceWrapper() {
       const errorWithUserStack = createErrorWithUserStack();
 
+      try {
+        return await originalMethod.apply(obj, arguments);
+      } catch (err) {
+        if (err instanceof DetoxError) {
+          throw replaceErrorStack(errorWithUserStack, asError(err));
+        } else {
+          throw err;
+        }
+      }
+    };
+  }
 }
 
 module.exports = wrapWithStackTraceCutter;

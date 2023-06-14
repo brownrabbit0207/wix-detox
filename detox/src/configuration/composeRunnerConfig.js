@@ -8,16 +8,11 @@ const log = require('../utils/logger');
  * @param {object} opts
  * @param {Detox.DetoxConfig} opts.globalConfig
  * @param {Detox.DetoxConfiguration} opts.localConfig
-  const localConfig = opts.localConfig.testRunner;
-  if (localConfig != null && typeof localConfig !== 'object') {
-    throw opts.errorComposer.invalidTestRunnerProperty(false);
-  }
-
-  const cliConfig = opts.cliConfig;
-
-  /** @type {Detox.DetoxTestRunnerConfig} */
-  const merged = _.merge(
-    {
+ * @param {DetoxInternals.CLIConfig} opts.cliConfig
+ * @param {Record<string, any>} opts.testRunnerArgv
+ * @param {import('../errors/DetoxConfigErrorComposer')} opts.errorComposer
+ * @returns {Detox.DetoxTestRunnerConfig} opts.testRunnerArgv
+ */
       retries: 0,
       inspectBrk: inspectBrkHookDefault,
       forwardEnv: false,

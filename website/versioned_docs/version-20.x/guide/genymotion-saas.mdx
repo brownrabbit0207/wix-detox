@@ -8,16 +8,11 @@ running a few virtual devices at once, but running a dozen devices at once would
 In other words, if you're experiencing scaling issues or struggling with managing local Android emulators,
 a good idea would be to migrate to SaaS platforms, where you can start and stop devices on demand at any scale.
 At the moment, Detox can offer you a first-class integration with
-so that you're able to see your e-mail after running this:
+[Genymotion SaaS], the platform that offers cloud-based Android Virtual Devices.
 
-```bash
-gmsaas auth whoami
-# your_email@example.com
-```
+## Prerequisites
 
-If you encounter errors instead, please revisit the [Genymotion SaaS tutorial] and check out their [Known Issues]
-section if your problem persists.
-
+You need to register an account in [Genymotion SaaS], so that you have valid credentials to use with their CLI tool,
 ## Configuring
 
 To run tests on a device, you need to define its properties first: OS version, screen dimensions, etc.

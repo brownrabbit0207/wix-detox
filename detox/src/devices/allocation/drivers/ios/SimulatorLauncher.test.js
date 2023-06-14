@@ -8,16 +8,11 @@ describe('Simulator launcher (helper)', () => {
     const AsyncEmitter = jest.genMockFromModule('../../../../utils/AsyncEmitter');
     eventEmitter = new AsyncEmitter();
 
+    const AppleSimUtils = jest.genMockFromModule('../../../common/drivers/ios/tools/AppleSimUtils');
+    applesimutils = new AppleSimUtils();
 
-    const givenBootResultCold = () => applesimutils.boot.mockResolvedValue(true);
-    const givenBootResultWarm = () => applesimutils.boot.mockResolvedValue(false);
-
-    it('should boot using apple-sim-utils', async () => {
-      await uut.launch(udid, '', bootArgs, headless);
-      expect(applesimutils.boot).toHaveBeenCalledWith(udid, bootArgs, headless);
-    });
-
-    it('should fail if apple-sim-utils fails', async () => {
+    const SimulatorLauncher = require('./SimulatorLauncher');
+    uut = new SimulatorLauncher({ applesimutils, eventEmitter });
       const error = new Error('mock error');
       applesimutils.boot.mockRejectedValue(error);
       await expect(uut.launch(udid, '', bootArgs)).rejects.toThrowError(error);

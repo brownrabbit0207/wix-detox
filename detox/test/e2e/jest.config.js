@@ -13,22 +13,6 @@ module.exports = async () => {
   const reporters = [
     '<rootDir>/runners/jest/reporter',
     ['jest-allure2-reporter', {
-      getEnvironmentInfo: false,
-      overwriteResultsDir: !process.env.CI,
-    }]
-  ];
-
-  if (process.env.DISABLE_JUNIT_REPORTER !== '1') {
-    reporters.push('<rootDir>/test/node_modules/jest-junit');
-  }
-
-  return {
-    'rootDir': path.join(__dirname, '../..'),
-    'testEnvironment': './test/e2e/testEnvironment.js',
-    'testRunner': './test/node_modules/jest-circus/runner',
-    'testMatch': [
-      '<rootDir>/test/e2e/**/*.test.{js,ts}',
-      '<rootDir>/test/e2e-unhappy/**/*.test.{js,ts}',
     ],
     'setupFilesAfterEnv': ['./test/e2e/setup.js'],
     'globalSetup': '<rootDir>/runners/jest/globalSetup',

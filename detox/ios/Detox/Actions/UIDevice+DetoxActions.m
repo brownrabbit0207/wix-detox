@@ -8,6 +8,17 @@
 
 #import "UIDevice+DetoxActions.h"
 #import "DTXAppleInternals.h"
+#import "UIWindow+DetoxUtils.h"
+
+@implementation UIDevice (DetoxActions)
+
++ (void)dtx_setOrientation:(UIDeviceOrientation)deviceOrientation
+{
+	NSParameterAssert(NSThread.isMainThread);
+	DTXAssert(UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone || [[NSBundle.mainBundle objectForInfoDictionaryKey:@"UIRequiresFullScreen"] boolValue] == YES, @"Setting device orientation is only supported for iPhone devices, or for apps declared as requiring full screen on iPad.");
+	[[UIDevice currentDevice] setOrientation:deviceOrientation animated:YES];
+}
+
 + (void)dtx_shake
 {
 	NSParameterAssert(NSThread.isMainThread);

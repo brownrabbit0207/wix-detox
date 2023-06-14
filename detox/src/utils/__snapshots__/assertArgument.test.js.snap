@@ -13,11 +13,3 @@ exports[`assertNormalized should throw for null 1`] = `"invalidNumber should be 
 exports[`assertNormalized should throw for null 2`] = `"invalidNumber should be a number, but got null (object)"`;
 
 exports[`assertNormalized should throw for undefined 1`] = `"invalidNumber should be a number, but got undefined (undefined)"`;
-
-exports[`assertNumber should throw for "42" 1`] = `"invalidNumber should be a number, but got 42 (string)"`;
-
-exports[`assertNumber should throw for false 1`] = `"invalidNumber should be a number, but got false (boolean)"`;
-
-exports[`assertString should throw for 123 1`] = `"invalidString should be a string, but got 123 (number)"`;
-
-exports[`assertString should throw for undefined 1`] = `"invalidString should be a string, but got undefined (undefined)"`;

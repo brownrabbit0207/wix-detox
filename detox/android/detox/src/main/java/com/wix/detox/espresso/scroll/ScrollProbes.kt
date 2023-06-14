@@ -8,16 +8,11 @@ import android.widget.AbsListView
 import com.wix.detox.action.common.*
 
 // TODO ViewPager?
-        MOTION_DIR_RIGHT -> ScrollableProbeHForward(view)
-        MOTION_DIR_UP -> ScrollableProbeVBack(view)
-        MOTION_DIR_DOWN -> ScrollableProbeVForward(view)
-        else -> throw IllegalArgumentException("Invalid direction: $direction")
-    }
-}
-
-interface ScrollableProbe {
-    fun atScrollingEdge(): Boolean
-}
+fun getScrollableProbe(view: View, @MotionDir direction: Int): ScrollableProbe {
+    if (view is AbsListView) {
+        @SuppressLint("SwitchIntDef")
+        when (direction) {
+            MOTION_DIR_UP -> return AbsListViewBack(view)
 
 private abstract class AbsScrollableProbe(val view: View) : ScrollableProbe
 

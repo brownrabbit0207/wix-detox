@@ -13,22 +13,6 @@ class StubRuntimeDriver extends DeviceDriverBase {
   /**
    * @param deps { Object }
    * @param deviceCookie { StubCookie }
-   */
-  constructor(deps, deviceCookie) {
-    super(deps);
-    this._deviceId = deviceCookie.id;
-  }
-
-  getExternalId() {
-    return this._deviceId;
-  }
-
-  getDeviceName() {
-    return `Stub #${this._deviceId}`;
-  }
-
-  getPlatform() {
-    return 'stub';
   }
 
   async installApp() {

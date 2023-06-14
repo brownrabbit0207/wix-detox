@@ -8,3 +8,4 @@ if (process.platform === 'darwin' && !process.env.DETOX_DISABLE_POD_INSTALL) {
     cwd: path.join(process.cwd(), 'detox/test/ios'),
     stdio: 'inherit'
   });
+}

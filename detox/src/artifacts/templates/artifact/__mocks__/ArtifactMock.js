@@ -13,10 +13,3 @@ class ArtifactMock extends Artifact {
     this.type = type;
 
     jest.spyOn(this, 'start');
-    jest.spyOn(this, 'stop');
-    jest.spyOn(this, 'save');
-    jest.spyOn(this, 'discard');
-  }
-}
-
-module.exports = ArtifactMock;

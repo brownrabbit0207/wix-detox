@@ -8,16 +8,11 @@ sealed class DetoxBusyResource {
 
     class BusyIdlingResource(val resource: IdlingResource): DetoxBusyResource() {
         override fun getDescription() =
-        private fun getIRDescription(resource: DescriptiveIdlingResource) =
-            DetoxBusyResourceDescription.Builder()
-                .name(resource.getDebugName())
-                .apply {
-                    resource.getBusyHint()?.let {
-                        it.forEach { hint -> addDescription(hint.key, hint.value) }
-                    }
-                }
-                .build()
+            when {
+                (resource is DescriptiveIdlingResource) ->
+                    getIRDescription(resource)
 
+                (resource.javaClass.name.contains("LooperIdlingResource")) ->
         private fun getLooperResourceDescriptionByName(resourceName: String) =
             when {
                 isJSCodeExecution(resourceName) -> {

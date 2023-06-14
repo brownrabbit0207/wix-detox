@@ -8,6 +8,17 @@
 
 #import "CustomKeyboardViewController.h"
 
+@class CustomKeyboardView;
+@protocol CustomKeyboardDelegate
+- (void) customKeyboardTappedButton: (CustomKeyboardView*) sender;
+@end
+
+@interface CustomKeyboardView : UIView
+@property (nonatomic, weak) id<CustomKeyboardDelegate> delegate;
+- (void) loadView;
+@end
+
+@implementation CustomKeyboardView
 
 - (void) loadView
 {

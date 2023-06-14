@@ -8,6 +8,17 @@ const testSuite = require('./__mocks__/testSuite.mock');
 
 class TestArtifactPlugin extends ArtifactPlugin {}
 
+describe('ArtifactPlugin', () => {
+  let api;
+  let plugin;
+
+  beforeEach(() => {
+    api = {
+      userConfig: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false,
+      },
+    };
 
     plugin = new TestArtifactPlugin({ api });
   });

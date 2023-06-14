@@ -8,16 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
-    @Override
-    public String getName() {
-        return "DetoxDoubleTapsTextView";
-    }
+import android.widget.TextView;
 
-    @Override
-    protected ViewGroup createViewInstance(ThemedReactContext reactContext) {
-        final ViewState viewState = new ViewState();
-
-        final FrameLayout layout = new FrameLayout(reactContext);
+import com.example.utils.DoubleTapListenerStub;
+import com.facebook.react.uimanager.SimpleViewManager;
+import com.facebook.react.uimanager.ThemedReactContext;
         layout.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 
         final TextView textView = new TextView(reactContext);

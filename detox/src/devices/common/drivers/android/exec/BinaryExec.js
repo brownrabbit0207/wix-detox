@@ -8,6 +8,17 @@ class ExecCommand {
     return this._getArgsString();
   }
 
+  _getArgs() {
+    return [];
+  }
+
+  _getArgsString() {
+    return this._getArgs().join(' ');
+  }
+}
+
+class BinaryExec {
+  constructor(binary) {
     this.binary = binary;
   }
 

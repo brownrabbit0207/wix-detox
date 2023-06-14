@@ -8,4 +8,8 @@ import org.json.JSONException;
  */
 public class JsonParser {
 
-}
+    public JsonParser() {
+    }
+
+    public JSONObject parse(String jsonData) {
+        try {

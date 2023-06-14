@@ -13,22 +13,6 @@ const { quote } = require('../../../../../utils/shellQuote');
 class AppleSimUtils {
   async setPermissions(udid, bundleId, permissionsObj) {
     let permissions = [];
-    _.forEach(permissionsObj, function (shouldAllow, permission) {
-      permissions.push(permission + '=' + shouldAllow);
-    });
-
-    const options = {
-      args: `--byId ${udid} --bundle ${bundleId} --restartSB --setPermissions ${_.join(permissions, ',')}`,
-      statusLogs: {
-        trying: `Trying to set permissions...`,
-        successful: 'Permissions are set'
-      },
-      retries: 1,
-    };
-    await this._execAppleSimUtils(options);
-  }
-
-  async list(query, listOptions = {}) {
     const options = {
       args: `--list ${joinArgs(query)}`,
       retries: 1,

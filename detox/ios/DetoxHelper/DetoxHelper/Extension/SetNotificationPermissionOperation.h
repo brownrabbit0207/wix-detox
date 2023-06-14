@@ -8,3 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SetPermissionOperation.h"
+
+@interface SetNotificationPermissionOperation : SetPermissionOperation
+
+@end

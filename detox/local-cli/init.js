@@ -8,6 +8,17 @@ const jestTemplates = require('./templates/jest');
 
 let exitCode = 0;
 
+module.exports.command = 'init';
+module.exports.desc = 'Creates template files to get you started with Detox';
+module.exports.builder = {};
+
+module.exports.handler = async function init() {
+  createDetoxConfig();
+  createJestFolderE2E();
+  process.exit(exitCode); // eslint-disable-line
+};
+
+function createFolder(dir, files) {
   if (fs.existsSync(dir)) {
     return reportError(`Failed to create ${dir} folder, because it already exists at path: ${path.resolve(dir)}`);
   }

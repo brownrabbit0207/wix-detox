@@ -13,22 +13,6 @@ function Card({ className, title, titleFontSize, image, linkGoogle, linkApple, l
       <div>
         {linkGoogle && (
           <Link className={styles.storeButton} href={linkGoogle}>
-            Google Play
-          </Link>
-        )}
-        {linkApple && (
-          <Link className={styles.storeButton} href={linkApple}>
-            App Store
-          </Link>
-        )}
-        {linkGitHub && (
-          <Link className={styles.storeButton} href={linkGitHub}>
-            GitHub
-          </Link>
-        )}
-        {linkWebsite && (
-          <Link className={styles.storeButton} href={linkWebsite}>
-            Website
           </Link>
         )}
       </div>

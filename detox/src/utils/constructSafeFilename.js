@@ -8,16 +8,11 @@ const sanitizeOptions = {
 };
 
 /*
-    });
-  }
-
-  const nonTrimmableLength = prefix.length + suffix.length;
-
-  if (nonTrimmableLength >= MAX_FILE_LENGTH) {
+  Escape filename and trim it to match filesystem limits (usually, not longer than 255 chars)
+ */
+function constructSafeFilename(prefix = '', trimmable = '', suffix = '') {
+  if (!trimmable) {
     throw new DetoxRuntimeError({
-      message: `cannot trim filename to match filesystem limits because prefix and/or suffix are exceed ${MAX_FILE_LENGTH} chars limit`,
-      debugInfo: JSON.stringify({
-        prefix,
         prefixLength: prefix.length,
         trimmable,
         trimmableLength: trimmable.length,

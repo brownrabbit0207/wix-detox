@@ -8,6 +8,17 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import kotlin.test.assertFailsWith
 
+@RunWith(RobolectricTestRunner::class)
+class JsonConverterTest {
+
+    @Test
+    fun `should convert an empty json to an empty bundle`() {
+        val uut = JsonConverter(JSONObject())
+        assertThat(uut.toBundle().isEmpty).isTrue()
+    }
+
+    @Test
+    fun `should convert a boolean`() {
         val json = aJsonWithAFlag()
 
         val uut = JsonConverter(json)

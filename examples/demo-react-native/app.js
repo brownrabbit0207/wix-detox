@@ -8,16 +8,11 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  }
-  render() {
-    if (this.state.greeting) return this.renderAfterButton();
-    return (
-      <View testID='welcome' style={{flex: 1, paddingTop: 20, justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={{fontSize: 25, marginBottom: 30}}>
-          Welcome
-        </Text>
-        <TouchableOpacity testID='hello_button' onPress={this.onButtonPress.bind(this, 'Hello')}>
-          <Text style={{color: 'blue', marginBottom: 20}}>Say Hello</Text>
+  Text,
+  View,
+  TouchableOpacity
+} from 'react-native';
+
         </TouchableOpacity>
         <TouchableOpacity testID='world_button' onPress={this.onButtonPress.bind(this, 'World')}>
           <Text style={{color: 'blue', marginBottom: 20}}>Say World</Text>

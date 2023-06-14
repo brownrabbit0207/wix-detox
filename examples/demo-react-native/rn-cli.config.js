@@ -13,4 +13,3 @@ module.exports = {
   getBlacklistRE: function() {
     return metroBundler.createBlacklist([/test\/.*/, /detox\/node_modules\/.*/]);
   }
-};

@@ -8,6 +8,17 @@ interface OutboundServerAdapter {
 }
 
 class DetoxServerAdapter(
+        private val actionsDispatcher: DetoxActionsDispatcher,
+        private val detoxServerInfo: DetoxServerInfo,
+        private val readyActionType: String,
+        private val terminationActionType: String)
+    : WebSocketClient.WSEventsHandler, OutboundServerAdapter {
+
+    private val wsClient = WebSocketClient(this)
+
+    fun connect() {
+        Log.i(DetoxLog.LOG_TAG, "Connecting to server...")
+        wsClient.connectToServer(detoxServerInfo.serverUrl, detoxServerInfo.sessionId)
     }
 
     fun teardown() {

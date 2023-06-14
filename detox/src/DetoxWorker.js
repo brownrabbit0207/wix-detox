@@ -13,22 +13,6 @@ class DetoxWorker {
   constructor(context) {
     this._context = context;
     this._injectedGlobalProperties = [];
-    this._config = context[symbols.config];
-    this._runtimeErrorComposer = new DetoxRuntimeErrorComposer(this._config);
-    this._client = null;
-    this._artifactsManager = null;
-    this._eventEmitter = new AsyncEmitter({
-      events: [
-        'bootDevice',
-        'beforeShutdownDevice',
-        'shutdownDevice',
-        'beforeTerminateApp',
-        'terminateApp',
-        'beforeUninstallApp',
-        'beforeLaunchApp',
-        'launchApp',
-        'appReady',
-        'createExternalArtifact',
       ],
       onError: this._onEmitError.bind(this),
     });

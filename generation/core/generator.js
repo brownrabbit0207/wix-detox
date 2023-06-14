@@ -8,6 +8,17 @@ const path = require('path');
 const { methodNameToSnakeCase } = require('../helpers');
 let globalFunctionUsage = {};
 module.exports = function getGenerator({
+  typeCheckInterfaces,
+  renameTypesMap,
+  supportedTypes,
+  classValue,
+  contentSanitizersForFunction,
+  contentSanitizersForType,
+  blacklistedFunctionNames = []
+}) {
+  function createClass(json) {
+    return t.classDeclaration(
+      t.identifier(json.name),
       null,
       t.classBody(
         json.methods

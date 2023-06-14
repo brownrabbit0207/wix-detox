@@ -13,22 +13,6 @@
 #include <stdatomic.h>
 @import ObjectiveC;
 @import Darwin;
-#import <DetoxSync/DTXReactNativeSupport.h>
-
-DTX_CREATE_LOG(ReactNativeSupport);
-
-static NSString *const RCTReloadNotification = @"RCTReloadNotification";
-
-@implementation ReactNativeSupport
-
-+ (BOOL)isReactNativeApp
-{
-	return [DTXReactNativeSupport hasReactNative];
-}
-
-+ (void)reloadApp
-{
-	if([DTXReactNativeSupport hasReactNative] == NO)
 	{
 		return;
 	}

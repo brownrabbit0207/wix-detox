@@ -8,6 +8,17 @@ import {
 
 export default class MatchersScreen extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      greeting: undefined,
+    };
+  }
+
+  render() {
+    if (this.state.greeting) return this.renderAfterButton();
+    return (
+      <View style={{flex: 1, paddingTop: 20, justifyContent: 'center', alignItems: 'center'}}>
 
         <TouchableOpacity onPress={this.onButtonPress.bind(this, 'Label Working')}>
           <Text style={{color: 'blue', marginBottom: 20}} accessibilityLabel={'Label'}>Label</Text>

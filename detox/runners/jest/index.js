@@ -8,3 +8,9 @@ module.exports = {
 
   get globalSetup() {
     return require('./globalSetup');
+  },
+
+  get globalTeardown() {
+    return require('./globalTeardown');
+  },
+};

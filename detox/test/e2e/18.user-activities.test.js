@@ -8,6 +8,17 @@ describe(':ios: User Activity', () => {
   });
 
   it('Background searchable item', async () => {
+    await device.launchApp({newInstance: true});
+    await device.sendToHome();
+    await device.launchApp({newInstance: false, userActivity: userActivitySearchableItem});
+    await expect(element(by.text('com.test.itemId'))).toBeVisible();
+  });
+
+  it('Foreground browsing web', async () => {
+    await device.launchApp({newInstance: true});
+    await device.sendUserActivity(userActivityBrowsingWeb);
+    await expect(element(by.text('https://my.deeplink.dtx'))).toBeVisible();
+  });
 });
 
 const userActivityBrowsingWeb = {

@@ -8,6 +8,17 @@ pack() {
   local CONTEXT=$3
 
   if [ $CI ]; then
+    ARTIFACTS_NAME="${BASE_NAME}_${BUILDKITE_BUILD_NUMBER}_${CONTEXT}_${DATE}.tar.gz"
+  else
+    ARTIFACTS_NAME="${BASE_NAME}_${TRAVIS_BUILD_ID}_${CONTEXT}_${DATE}.tar.gz"
+  fi
+
+  if [ -d "$ARTIFACTS_DIR" ]; then
+    echo "Packing ${BASE_NAME}... (${CONTEXT})"
+    tar cvzf "${ARTIFACTS_NAME}" ${ARTIFACTS_DIR}
+  fi
+}
+
 generate_allure_report() {
   local ROOT_DIR=$1
 

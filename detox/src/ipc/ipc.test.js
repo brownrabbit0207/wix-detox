@@ -8,6 +8,17 @@ const SessionState = require('./SessionState');
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 describe('IPC', () => {
+  /** @type {*} */
+  let sessionState;
+
+  /** @type {IPCServer} */
+  let ipcServer;
+
+  /** @type {IPCClient} */
+  let ipcClient1;
+
+  /** @type {IPCClient} */
+  let ipcClient2;
 
   beforeEach(() => {
     const logger = require('../utils/logger');

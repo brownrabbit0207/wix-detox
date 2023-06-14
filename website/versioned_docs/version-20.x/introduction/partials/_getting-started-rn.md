@@ -13,4 +13,3 @@ Please [submit an issue](https://github.com/wix/Detox/issues/new/choose) if you 
 
 For support for React Native 0.71.x, please track [this issue](https://github.com/wix/Detox/issues/3884).
 
-:::

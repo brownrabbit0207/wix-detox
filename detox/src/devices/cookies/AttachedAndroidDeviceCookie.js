@@ -8,3 +8,5 @@ class AttachedAndroidDeviceCookie extends AndroidDeviceCookie {
     super(adbName);
   }
 }
+
+module.exports = AttachedAndroidDeviceCookie;

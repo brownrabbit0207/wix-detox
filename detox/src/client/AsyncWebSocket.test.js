@@ -8,16 +8,11 @@ const config = require('../configuration/configurations.mock').validSession;
 
 describe('AsyncWebSocket', () => {
   let AsyncWebSocket;
-    jest.mock('ws');
-    WebSocket = require('ws');
-    WebSocket.CONNECTING = 0;
-    WebSocket.OPEN = 1;
-    WebSocket.CLOSING = 2;
-    WebSocket.CLOSED = 3;
-
-    WebSocket.prototype._socket = { localPort: NaN };
-    WebSocket.prototype.readyState = WebSocket.CONNECTING;
-    WebSocket.prototype.mockOpen = function () {
+  let WebSocket;
+  /**
+   * @type {import('./AsyncWebSocket')}
+   */
+  let aws;
       this.readyState = WebSocket.OPEN;
       this.onopen && this.onopen({ target: this });
     };

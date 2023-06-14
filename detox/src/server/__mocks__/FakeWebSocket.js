@@ -13,22 +13,6 @@ class FakeWebSocket {
     this._events[eventType].push(callback);
   }
 
-  send() {}
-
-  mockMessage(obj) {
-    const arg = !(obj instanceof Buffer || typeof obj === 'string')
-      ? JSON.stringify(obj) : obj;
-
-    this._emit('message', arg);
-  }
-
-  mockError(err) {
-    this._emit('error', err);
-  }
-
-  mockLogin({ role, messageId, sessionId = 'aSession' }) {
-    return this.mockMessage({
-      type: 'login',
       messageId,
       params: {
         role,
