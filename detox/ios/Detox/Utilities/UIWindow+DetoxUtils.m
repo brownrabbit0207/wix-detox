@@ -14,6 +14,22 @@
 
 extern NSArray* DTXChildElements(id element);
 
+static void _DTXElementDescription(NSObject<UIAccessibilityIdentification>* element, NSMutableString* storage)
+{
+	[storage appendFormat:@"<%@: %p", element.class, element];
+
+	if([element __isKindOfUIView])
+	{
+		UIView* view = (id)element;
+		CGRect frame = view.frame;
+		[storage appendFormat:@"; frame = (%g %g; %g %g)", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height];
+	}
+	else
+	{
+		CGRect axFrame = [element dtx_bounds];
+		[storage appendFormat:@"; ax.frame = (%g %g; %g %g)", axFrame.origin.x, axFrame.origin.y, axFrame.size.width, axFrame.size.height];
+	}
+
 	NSString* identifier = [element respondsToSelector:@selector(accessibilityIdentifier)] ? [element accessibilityIdentifier] : nil;
 	if(identifier.length > 0)
 	{

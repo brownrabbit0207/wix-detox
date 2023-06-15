@@ -13,15 +13,10 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-#       Busybox and similar reduced shells will NOT work, because this script
-#       requires all of these POSIX shell features:
-#         * functions;
-#         * expansions «$var», «${var}», «${var:-default}», «${var+SET}»,
-#           «${var#prefix}», «${var%suffix}», and «$( cmd )»;
-#         * compound commands having a testable exit status, especially «case»;
-#         * various built-in commands including «command», «set», and «ulimit».
+# limitations under the License.
 #
-#   Important for patching:
+
+##############################################################################
 #
 #   (2) This script targets any POSIX shell, so it avoids extensions provided
 #       by Bash, Ksh, etc; in particular arrays are avoided.

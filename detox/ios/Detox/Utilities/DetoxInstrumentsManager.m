@@ -18,27 +18,6 @@ DTX_CREATE_LOG(DetoxInstrumentsManager)
 @interface NSObject ()
 
 //DTXProfilingConfiguration
-@property (class, nonatomic, strong, readonly) id defaultProfilingConfiguration;
-@property (nonatomic, readwrite) NSTimeInterval samplingInterval;
-@property (nonatomic, readwrite) BOOL recordEvents;
-@property (nonatomic, readwrite) BOOL recordNetwork;
-@property (nonatomic, readwrite) BOOL recordLocalhostNetwork;
-@property (nonatomic, readwrite) BOOL profileReactNative;
-@property (nonatomic, readwrite) BOOL recordInternalReactNativeEvents;
-@property (nonatomic, readwrite) BOOL recordThreadInformation;
-@property (nonatomic, readwrite) BOOL collectStackTraces;
-@property (nonatomic, readwrite) BOOL symbolicateStackTraces;
-@property (atomic, assign, readonly, getter=isRecording) BOOL recording;
-@property (nonatomic, copy, null_resettable, readwrite) NSURL* recordingFileURL;
-
-//DTXProfiler
-- (void)startProfilingWithConfiguration:(id)configuration;
-- (void)continueProfilingWithConfiguration:(id)configuration;
-- (void)stopProfilingWithCompletionHandler:(void(^ __nullable)(NSError* __nullable error))completionHandler;
-@property (atomic, copy, readonly, nullable) id profilingConfiguration;
-
-@end
-
 typedef NS_ENUM(NSUInteger, __DTXEventStatus) {
 	__DTXEventStatusCompleted,
 	__DTXEventStatusError,

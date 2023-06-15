@@ -13,3 +13,5 @@ describe('Base 64 util', () => {
 
   it('should decode base-64', () => {
     expect(uut.decodeBase64(base64Text)).toEqual(utf8Text);
+  });
+});

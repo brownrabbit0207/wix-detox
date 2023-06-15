@@ -13,3 +13,4 @@ const Features = ({ Svg, title, description }) => {
   );
 };
 
+export default Features;

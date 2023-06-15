@@ -13,16 +13,11 @@
 
 + (NSException *)exceptionWithReason:(nullable NSString *)reason userInfo:(nullable NSDictionary *)userInfo viewDescription:(nullable NSDictionary*)viewDescription
 {
-+ (NSError*)_errorForTestAssertionException:(DTXTestAssertionException*)exception
-{
-	NSMutableDictionary* userInfo = @{NSLocalizedDescriptionKey: exception.reason, @"DetoxFailureInformation": exception.userInfo}.mutableCopy;
-	
-	if(exception.viewDescription != nil)
-	{
-		[userInfo addEntriesFromDictionary:exception.viewDescription];
-	}
-	
-	return [NSError errorWithDomain:@"DetoxErrorDomain" code:0 userInfo:userInfo];
+	DTXTestAssertionException* rv = (id)[super exceptionWithName:@"DetoxException" reason:reason userInfo:userInfo];
+	rv.viewDescription = viewDescription;
+	return rv;
+}
+
 }
 
 #if DEBUG

@@ -13,6 +13,22 @@ sealed class DetoxBusyResource {
                     getIRDescription(resource)
 
                 (resource.javaClass.name.contains("LooperIdlingResource")) ->
+                    getLooperResourceDescriptionByName(resource.name)
+
+                else ->
+                    getUnspecifiedResourceDescription(resource)
+            }
+
+        private fun getIRDescription(resource: DescriptiveIdlingResource) =
+            DetoxBusyResourceDescription.Builder()
+                .name(resource.getDebugName())
+                .apply {
+                    resource.getBusyHint()?.let {
+                        it.forEach { hint -> addDescription(hint.key, hint.value) }
+                    }
+                }
+                .build()
+
         private fun getLooperResourceDescriptionByName(resourceName: String) =
             when {
                 isJSCodeExecution(resourceName) -> {

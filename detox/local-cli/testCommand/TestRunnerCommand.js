@@ -13,16 +13,11 @@ const sleep = require('../../src/utils/sleep');
 const AppStartCommand = require('../startCommand/AppStartCommand');
 const { markErrorAsLogged } = require('../utils/cliErrorHandling');
 
-    this._envHint = this._buildEnvHint(opts.env);
-    this._startCommands = this._prepareStartCommands(appsConfig, cliConfig);
-    this._envFwd = {};
+const TestRunnerError = require('./TestRunnerError');
 
-    if (runnerConfig.forwardEnv) {
-      this._envFwd = this._buildEnvOverride(cliConfig, deviceConfig);
-      Object.assign(this._envHint, this._envFwd);
-    }
-  }
-
+class TestRunnerCommand {
+  /*
+    @param {object} opts
   async execute() {
     let runsLeft = 1 + this._retries;
     let launchError = null;

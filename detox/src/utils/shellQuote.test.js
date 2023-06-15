@@ -13,4 +13,8 @@ describe('shellQuote', () => {
         : `'("${pattern.source}")'`;
 
       expect(quote(['--detoxURLBlacklistRegex', `("${pattern.source}")`])).toBe(`--detoxURLBlacklistRegex ${expectedEscaping}`);
-});
+    });
+  });
+
+  describe('.parse(str)', () => {
+    it('should parse command line calls', () => {

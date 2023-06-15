@@ -18,12 +18,3 @@ elif [[ "$1" == 'release' ]];then
     cat .buildkite/pipeline.release.fast.yml
   fi
 
-elif [[ "$1" == 'debug' ]];then
-  stepsList=$(buildkite-agent meta-data get debug-builds)
-  steps=($(echo $stepsList| tr ";" "\n"))
-  echo "steps:"
-  for step in "${steps[@]}"
-  do
-      cat .buildkite/jobs/pipeline.$step.yml
-  done
-fi

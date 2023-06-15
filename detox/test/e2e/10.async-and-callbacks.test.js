@@ -13,3 +13,11 @@ describe('Async and Callbacks', () => {
   });
 
   it('should handle async await', async () => {
+    await timeout(1);
+    await expect(element(by.text('Welcome'))).toBeVisible();
+  });
+});
+
+function timeout(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

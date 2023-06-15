@@ -13,15 +13,10 @@ Running Detox on CI is not that different from running it locally. There are two
 - You should test a release build rather than a debug build
 - Tell Detox to shut down the simulator when test is over
 
-Make sure to shut down the simulator when your tests are over.
+## Step 1: Prepare a Release Configuration for Your App
 
-:::
-
-## Running Android Tests on CI
-
-Setting up a CI environment capable of running Android tests isn’t as trivial.
-
-Fortunately, we’ve written all about it in a [blogpost on medium!](https://medium.com/wix-engineering/how-to-execute-android-ui-tests-on-ci-and-stay-alive-eb9089d88c1f)
+We will need to create a release app configuration for Detox – follow [the previous tutorial](project-setup.mdx)
+if you haven’t completed it already.
 
 Also, check out the guide on how to [prepare Android emulators for CI](../guide/android-dev-env.md).
 

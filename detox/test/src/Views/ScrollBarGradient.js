@@ -13,16 +13,11 @@ const ScrollBarGradient = ({
     return StyleSheet.create({
       view: {
         opacity: 1,
-    <View pointerEvents="none" style={styles.view}>
-      <Image
-        source={GRADIENT_IMAGE}
-        style={styles.image}
-        resizeMode={'stretch'}
-      />
-    </View>
-  );
-};
-
+        position: 'absolute',
+        width: width,
+        height: '100%',
+        left: left ? margins : undefined,
+        right: !left ? margins : undefined,
 ScrollBarGradient.displayName = 'IGNORE';
 
 export default ScrollBarGradient;

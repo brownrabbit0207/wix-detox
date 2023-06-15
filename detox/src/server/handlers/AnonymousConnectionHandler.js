@@ -13,6 +13,22 @@ class AnonymousConnectionHandler {
   handle(action) {
     switch (action.type) {
       case 'login': return this._handleLoginAction(action);
+      case 'ready': return this._handleEarlyReadyAction(action);
+      default: return this._handleUnknownAction(action);
+    }
+  }
+
+  onError(error, _action) {
+    throw error;
+  }
+
+  _handleLoginAction(action) {
+    if (!action.params) {
+      throw new DetoxRuntimeError({
+        message: `Invalid login action received, it has no .params`,
+        hint: DetoxInternalError.reportIssue,
+        debugInfo: action,
+      });
     }
 
     if (action.params.role !== 'app' && action.params.role !== 'tester') {

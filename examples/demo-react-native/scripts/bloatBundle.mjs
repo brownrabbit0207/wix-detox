@@ -18,4 +18,3 @@ try {
 } catch (error) {
   console.error('Bundle bloat failed', error);
   process.exit(1);
-}

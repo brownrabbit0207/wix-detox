@@ -13,6 +13,22 @@
     "package:ios": "scripts/ci.ios-release.sh",
     "postinstall": "node scripts/postinstall.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wix/Detox.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "chalk": "^4.0.0",
+    "dictionary-en": "^3.1.0",
+    "lerna": "3.22.1",
+    "lodash": "4.17.x",
+    "markdownlint-cli": "^0.29.0",
+    "remark": "^14.0.1",
+    "remark-cli": "^10.0.0",
+    "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "remark-github": "^11.2.2",
     "remark-lint-no-dead-urls": "^1.1.0",

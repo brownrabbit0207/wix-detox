@@ -18,14 +18,3 @@ class GenyRecipesService {
       logger.warn(
         { event: 'GENYCLOUD_RECIPE_LOOKUP' },
         `More than one Genymotion-Cloud recipe found for recipe name ${recipeName}:\n${recipesInfoList}\nFalling back to ${recipes[0].name}`
-      );
-    }
-    return new Recipe(recipes[0]);
-  }
-
-  async getRecipeByUUID(uuid) {
-    return new Recipe({ uuid });
-  }
-}
-
-module.exports = GenyRecipesService;

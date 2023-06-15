@@ -18,27 +18,6 @@ class DetoxWebAtomMatcher {
       args: [id]
     };
   }
-
-  static matcherForClassName(className) {
-    if (typeof className !== "string") throw new Error("className should be a string, but got " + (className + (" (" + (typeof className + ")"))));
-    return {
-      target: {
-        type: "Class",
-        value: "com.wix.detox.espresso.web.DetoxWebAtomMatcher"
-      },
-      method: "matcherForClassName",
-      args: [className]
-    };
-  }
-
-  static matcherForCssSelector(cssSelector) {
-    if (typeof cssSelector !== "string") throw new Error("cssSelector should be a string, but got " + (cssSelector + (" (" + (typeof cssSelector + ")"))));
-    return {
-      target: {
-        type: "Class",
-        value: "com.wix.detox.espresso.web.DetoxWebAtomMatcher"
-      },
-      method: "matcherForCssSelector",
       args: [cssSelector]
     };
   }

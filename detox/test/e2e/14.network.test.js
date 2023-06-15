@@ -13,6 +13,22 @@ describe('Network Synchronization', () => {
   });
 
   beforeEach(async () => {
+    await device.reloadReactNative();
+    await element(by.text('Network')).tap();
+  });
+
+  it('Sync with short network requests - 100ms', async () => {
+    await driver.shortRequest.sendButton.tap();
+    await driver.shortRequest.expectReplied();
+  });
+
+  it('Sync with long network requests - 3000ms', async () => {
+    await driver.longRequest.sendButton.tap();
+    await driver.longRequest.expectReplied();
+  });
+
+  it('disableSynchronization() should disable sync', async () => {
+    await device.disableSynchronization();
     await waitFor(driver.longRequest.sendButton).toBeVisible().withTimeout(4000);
 
     await driver.longRequest.sendButton.tap();

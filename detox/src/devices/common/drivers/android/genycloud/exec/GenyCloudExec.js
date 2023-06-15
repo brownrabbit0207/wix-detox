@@ -18,27 +18,6 @@ class GenyCloudExec {
   getRecipe(name) {
     return this._exec(`recipes list --name "${name}"`);
   }
-
-  getInstance(instanceUUID) {
-    return this._exec(`instances get ${instanceUUID}`);
-  }
-
-  getInstances() {
-    return this._exec('instances list -q');
-  }
-
-  startInstance(recipeUUID, instanceName) {
-    return this._exec(`instances start --no-wait ${recipeUUID} "${instanceName}"`, { retries: 0 });
-  }
-
-  adbConnect(instanceUUID) {
-    return this._exec(`instances adbconnect ${instanceUUID}`);
-  }
-
-  stopInstance(instanceUUID) {
-    const options = {
-      retries: 3,
-    };
     return this._exec(`instances stop ${instanceUUID}`, options);
   }
 
