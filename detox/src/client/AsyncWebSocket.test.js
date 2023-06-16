@@ -18,16 +18,11 @@ describe('AsyncWebSocket', () => {
   const socket = permaproxy(() => _.last(WebSocket.mock.instances));
 
   beforeEach(() => {
-      this.onclose && this.onclose(null);
-    };
-    WebSocket.prototype.mockCloseError = function (error) {
-      this.close.mockImplementation(() => { throw error; });
-    };
-
-    AsyncWebSocket = require('./AsyncWebSocket');
-    aws = new AsyncWebSocket(config.server);
-    log = require('../utils/logger');
-  });
+    jest.mock('../utils/logger');
+    jest.mock('ws');
+    WebSocket = require('ws');
+    WebSocket.CONNECTING = 0;
+    WebSocket.OPEN = 1;
 
   afterEach(() => {
     jest.clearAllTimers();

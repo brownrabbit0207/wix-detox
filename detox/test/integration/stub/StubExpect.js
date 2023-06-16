@@ -18,6 +18,27 @@ class StubMatcher {
 class StubInteraction {
   constructor({ delay = 10 } = {}) {
     this._delay = delay;
+  }
+
+  async execute() {
+    await sleep(this._delay);
+  }
+}
+
+class StubActionInteraction extends StubInteraction {
+  constructor() {
+    super({ delay: 100 });
+  }
+}
+
+class StubMatcherAssertionInteraction extends StubInteraction {
+}
+
+class StubWaitForInteraction extends StubInteraction {
+  constructor() {
+    super({ delay: 100 });
+    this.withTimeout = () => this.execute();
+    this.whileElement = () => ({
       scroll: () => this.execute(),
     });
   }

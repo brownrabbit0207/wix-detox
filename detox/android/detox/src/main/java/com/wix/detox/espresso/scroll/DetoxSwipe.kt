@@ -18,6 +18,27 @@ class DetoxSwipe(
         private val endX: Float,
         private val endY: Float,
         private val motionCount: Int,
+        private val swiper: DetoxSwiper) {
+
+    fun perform() {
+        with(swiper) {
+            startAt(startX, startY)
+
+            try {
+                val stepSizeX = (endX - startX) / (motionCount + 2f)
+                val stepSizeY = (endY - startY) / (motionCount + 2f)
+
+                var targetX = startX
+                var targetY = startY
+                for (step in 1..motionCount) {
+                    targetX += stepSizeX
+                    targetY += stepSizeY
+
+                    if (!moveTo(targetX, targetY)) {
+                        return
+                    }
+                }
+            } finally {
                 finishAt(endX, endY)
             }
         }

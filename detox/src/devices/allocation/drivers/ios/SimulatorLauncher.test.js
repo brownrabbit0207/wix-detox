@@ -23,32 +23,6 @@ describe('Simulator launcher (helper)', () => {
     const givenBootResultCold = () => applesimutils.boot.mockResolvedValue(true);
     const givenBootResultWarm = () => applesimutils.boot.mockResolvedValue(false);
 
-    it('should boot using apple-sim-utils', async () => {
-      await uut.launch(udid, '', bootArgs, headless);
-      expect(applesimutils.boot).toHaveBeenCalledWith(udid, bootArgs, headless);
-    });
-
-    it('should fail if apple-sim-utils fails', async () => {
-      const error = new Error('mock error');
-      applesimutils.boot.mockRejectedValue(error);
-      await expect(uut.launch(udid, '', bootArgs)).rejects.toThrowError(error);
-    });
-
-    it('should emit boot event', async () => {
-      givenBootResultWarm();
-      await uut.launch(udid, type, {}, headless);
-      expect(eventEmitter.emit).toHaveBeenCalledWith(
-        'bootDevice',
-        expect.objectContaining({ deviceId: udid, type, coldBoot: false, headless })
-      );
-    });
-
-    it('should emit cold-boot status in boot event', async () => {
-      givenBootResultCold();
-      await uut.launch(udid, type, {}, headless);
-      expect(eventEmitter.emit).toHaveBeenCalledWith(
-        'bootDevice',
-        expect.objectContaining({ deviceId: udid, type, coldBoot: true, headless })
       );
     });
 

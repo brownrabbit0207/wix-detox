@@ -18,16 +18,11 @@ await device.launchApp({newInstance: true, userNotification: notification});
 
 ```js
 describe('Launch with push notification', () => {
-
-```js
-describe('Foreground user notifications', () => {
-  it('should handle the local notification from inside the app', async () => {
-    await device.launchApp();
-    await device.sendUserNotification(localNotification);
-    await expect(element(by.text('from local notification'))).toBeVisible();
-   });
-});
-```
+  it('should handle the notification', async () => {
+    await device.launchApp({
+      newInstance: true,
+      userNotification: userNotificationPushTrigger,
+    });
 
 ### Notification JSON Format
 

@@ -18,6 +18,27 @@ const defaultArtifactsConfiguration = {
 
 const allArtifactsConfiguration = {
   rootDir: 'artifacts',
+  pathBuilder: null,
+  plugins: {
+    log: 'all',
+    screenshot: 'all',
+    video: 'all',
+    instruments: 'all',
+    uiHierarchy: 'enabled',
+  },
+};
+
+const pluginsDefaultsResolved = {
+  log: LogArtifactPlugin.parseConfig('none'),
+  screenshot: ScreenshotArtifactPlugin.parseConfig('manual'),
+  video: VideoArtifactPlugin.parseConfig('none'),
+  instruments: InstrumentsArtifactPlugin.parseConfig('none'),
+  uiHierarchy: IosUIHierarchyPlugin.parseConfig('disabled'),
+};
+
+const pluginsFailingResolved = {
+  log: LogArtifactPlugin.parseConfig('failing'),
+  screenshot: ScreenshotArtifactPlugin.parseConfig('failing'),
   video: VideoArtifactPlugin.parseConfig('failing'),
 };
 

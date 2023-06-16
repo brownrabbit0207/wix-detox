@@ -18,6 +18,27 @@ Below we’ll be listing all the public properties and methods of the logger.
 `fatal`, `error`, `warn`, `info`, `debug`, `trace`.
 
 ## Methods
+
+### `log.*([event,] ...msg)`
+
+Logs an instant message with an optional [event metadata].
+There are six methods for producing log messages varying by log level:
+
+* `log.fatal([event,] ...msg)`
+* `log.error([event,] ...msg)`
+* `log.warn([event,] ...msg)`
+* `log.info([event,] ...msg)`
+* `log.debug([event,] ...msg)`
+* `log.trace([event,] ...msg)`
+
+Example:
+
+```js
+const { log } = require('detox');
+
+log.info('Some message');
+// detox[2020] i Some message
+
 log.error({ err: new Error('Test') }, 'An error message');
 // detox[2020] i An error message
 //   err: Test

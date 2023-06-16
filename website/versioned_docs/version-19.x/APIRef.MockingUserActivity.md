@@ -23,32 +23,6 @@ await device.launchApp({userActivity: activity});
 
 ```js
 describe('Background user activity', () => {
-  it('Launch with user activity', async () => {
-    await device.launchApp({userActivity: activity})
-    await expect(element(by.text('From user activity'))).toBeVisible();
-  });
-});
-```
-
-### Sending User Activity to a Running App
-
-Use the `sendUserActivity()` method.
-
-```js
-await device.sendUserActivity(activity)
-```
-
-**Example:**
-
-```js
- 
-describe('Foreground user activity', () => {
-
-beforeEach(async () => {
-  await device.launchApp({newInstance: true});
-});
-
-it('User activity from inside the app', async () => {
   await device.sendUserActivity(activity);
   await expect(element(by.text('From user activity'))).toBeVisible();
  });

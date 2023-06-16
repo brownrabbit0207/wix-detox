@@ -18,16 +18,11 @@ describe('ArtifactPlugin', () => {
         enabled: false,
         keepOnlyFailedTestsArtifacts: false,
       },
+    };
 
-      it('should not write warnings to log', () =>
-        expect(logger.warn.mock.calls.length).toBe(0));
-    });
+    plugin = new TestArtifactPlugin({ api });
+  });
 
-    describe('if it is disabled with a reason', () => {
-      beforeEach(() => plugin.disable('a reason why it is disabled'));
-
-      it('should gain state .enabled = false', () =>
-        expect(plugin.enabled).toBe(false));
 
       it('should log warning to log with that reason', () => {
         expect(logger.warn.mock.calls).toHaveLength(1);

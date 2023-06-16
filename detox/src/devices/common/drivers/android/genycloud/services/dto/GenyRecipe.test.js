@@ -18,3 +18,20 @@ describe('Genymotion-Cloud Recipe DTO', () => {
 
   it('should allow for anonymous (name-less) recipes', () => {
     const recipe = new Recipe({
+      uuid: rawRecipe.uuid,
+    });
+    expect(recipe.name).toEqual('Anonymous GMSaaS Recipe');
+  });
+
+  it('should override toString()', () => {
+    const recipe = new Recipe(rawRecipe);
+    expect(recipe.toString()).toEqual('mock-name (mock-uuid)');
+  });
+
+  it('should implement toString() for anonymous recipes', () => {
+    const recipe = new Recipe({
+      uuid: rawRecipe.uuid,
+    });
+    expect(recipe.toString()).toEqual('Recipe of mock-uuid');
+  });
+});

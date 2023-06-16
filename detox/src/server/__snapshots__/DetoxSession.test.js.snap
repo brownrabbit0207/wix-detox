@@ -23,15 +23,3 @@ exports[`DetoxSession edge cases should warn on .disconnect(null) 1`] = `
 Please report this issue on our GitHub tracker:
 https://github.com/wix/Detox/issues"
 `;
-
-exports[`DetoxSession edge cases should warn on non-empty app assignment 1`] = `
-"DetoxInternalError: the app is already connected to the session aSession
-Please report this issue on our GitHub tracker:
-https://github.com/wix/Detox/issues"
-`;
-
-exports[`DetoxSession edge cases should warn on non-empty tester assignment 1`] = `
-"DetoxInternalError: the tester is already connected to the session aSession
-Please report this issue on our GitHub tracker:
-https://github.com/wix/Detox/issues"
-`;

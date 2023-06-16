@@ -18,3 +18,8 @@ describe('jest.retryTimes() support', () => {
 
     await device.launchApp({ newInstance: true });
   });
+
+  it('should fail twice and pass once', async () => {
+    const matcher = --counter > 0
+      ? by.text('Not existing')
+      : by.text('Sanity');

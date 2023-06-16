@@ -18,3 +18,6 @@ class WithAccessibilityLabelMatcher(private val textMatcher: Matcher<String>): T
         }
 
     override fun describeTo(description: Description) {
+        description.appendText("view.getAccessibilityLabel() ").appendDescriptionOf(textMatcher)
+    }
+}

@@ -18,6 +18,27 @@ gets translated to:
 DETOX_CONFIGURATION=ios.debug jest --showConfig
 ```
 
+You can freely take the CLI command it prints and run it independently, without the help of Detox CLI.
+
+If there is a name conflict for some option (both the test runner and `detox test` have a CLI argument with the same
+name), you can pass it explicitly after the reserved `--` sequence:
+
+```plain text
+detox test -c ios.debug -- --help
+↓
+DETOX_CONFIGURATION=ios.debug jest --help
+```
+
+## Options
+
+| Option                                        | Description                                                                                                                                                                                                                                                                                             |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -C, --config-path `<configPath>`              | Specify Detox config file path. If not supplied, detox searches for .detoxrc\[.js] or "detox" section in package.json                                                                                                                                                                                   |
+| -c, --configuration `<device config>`         | Select a device configuration from your defined configurations, if not supplied, and there’s only one configuration, detox will default to it                                                                                                                                                           |
+| -n, --device-name \[name]                     | Override the device name specified in a configuration. Useful for running a single build configuration on multiple devices.                                                                                                                                                                             |
+| -l, --loglevel \[value]                       | Log level: fatal, error, warn, info, verbose, trace                                                                                                                                                                                                                                                     |
+| -d, --debug-synchronization `<value>`         | Customize how long an action/expectation can take to complete before Detox starts querying the app why it is busy. By default, the app status will be printed if the action takes more than 10s to complete.                                                                                            |
+| -a, --artifacts-location `<path>`             | Artifacts (logs, screenshots, etc) root directory.[^1]                                                                                                                                                                                                                                                  |
 | --record-logs \[failing/all/none]             | Save logs during each test to artifacts directory. Pass "failing" to save logs of failing tests only. The default value is **none**.                                                                                                                                                                    |
 | --take-screenshots \[manual/failing/all/none] | Save screenshots before and after each test to artifacts directory. Pass "failing" to save screenshots of failing tests only. The default value is **manual**.                                                                                                                                          |
 | --record-videos \[failing/all/none]           | Save screen recordings of each test to artifacts directory. Pass "failing" to save recordings of failing tests only. The default value is **none**.                                                                                                                                                     |

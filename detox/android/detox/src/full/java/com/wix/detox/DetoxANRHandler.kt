@@ -18,3 +18,8 @@ class DetoxANRHandler(private val outboundServerAdapter: OutboundServerAdapter) 
 
     companion object {
         private val LOG_TAG: String = DetoxANRHandler::class.java.simpleName
+
+        private const val ACTION_NAME = "AppNonresponsiveDetected"
+        private const val MESSAGE_ID = -10001L
+    }
+}

@@ -18,16 +18,11 @@ class WebElement {
   constructor({ device, invocationManager, webMatcher, webViewElement }) {
     this[_device] = device;
     this[_invocationManager] = invocationManager;
-    }
-    return await new ActionInteraction(this[_invocationManager],  new actions.WebTypeTextAction(this, text)).execute();
+    this[_webMatcher] = webMatcher;
+    this[_webViewElement] = webViewElement;
+    this.atIndex(0);
   }
 
-  // At the moment not working on content-editable
-  async replaceText(text) {
-    return await new ActionInteraction(this[_invocationManager],  new actions.WebReplaceTextAction(this, text)).execute();
-  }
-
-  // At the moment not working on content-editable
   async clearText() {
     return await new ActionInteraction(this[_invocationManager],  new actions.WebClearTextAction(this)).execute();
   }

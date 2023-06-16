@@ -18,3 +18,8 @@ class MessageStack {
   pop(context) {
     const hash = this._hash(context);
     const stack = this._map[hash];
+    if (stack == null || stack.length === 0) {
+      return ['<no begin message>'];
+    }
+
+    return stack.pop();

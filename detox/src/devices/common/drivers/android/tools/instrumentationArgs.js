@@ -18,3 +18,8 @@ function prepareInstrumentationArgs(args) {
     }
 
     result.push('-e', key, valueEncoded);
+    return result;
+  }, []);
+
+  return {
+    args: preparedLaunchArgs,

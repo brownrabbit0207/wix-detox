@@ -18,16 +18,11 @@ describe('Genymotion-Cloud instance-lifecycle service', () => {
     const GenyInstanceNaming = jest.genMockFromModule('./GenyInstanceNaming');
     instanceNaming = new GenyInstanceNaming();
 
-
-      const result = await uut.createInstance(instance.recipe.name);
-      expect(result).toBeDefined();
-      expect(result.uuid).toEqual(instance.uuid);
-      expect(result.name).toEqual(instance.name);
-      expect(result.recipeUUID).toEqual(instance.recipe.uuid);
-      expect(result.constructor.name).toContain('Instance');
-    });
+    const GenyInstanceLifecycleService = require('./GenyInstanceLifecycleService');
+    uut = new GenyInstanceLifecycleService(exec, instanceNaming);
   });
 
+  describe('device instance creation', () => {
   describe('device adb-connect setup', () => {
     const givenAdbConnectResult = (instance) => exec.adbConnect.mockResolvedValue({ instance });
 
