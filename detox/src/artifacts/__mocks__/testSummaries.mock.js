@@ -1,4 +1,3 @@
-const running = () => ({
   title: 'test',
   fullName: 'Suite test',
   status: 'running',

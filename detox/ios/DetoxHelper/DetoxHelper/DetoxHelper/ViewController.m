@@ -1,4 +1,3 @@
-//
 //  ViewController.m
 //  DetoxHelper
 //

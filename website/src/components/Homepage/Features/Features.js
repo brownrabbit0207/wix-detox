@@ -1,4 +1,3 @@
-import React from 'react';
 import './Features.scss';
 
 const Features = ({ Svg, title, description }) => {

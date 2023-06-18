@@ -1,4 +1,3 @@
-const { AbstractEventBuilder } = require('trace-event-lib');
 
 const getMainCategory = require('../getMainCategory');
 
@@ -23,6 +22,32 @@ class ChromeTraceTransformer {
         .on('data', (event) => {
           const { ph, pid, tid, cat } = event;
           if (ph === 'B' || ph === 'i') {
+            const categories = (result[pid] = result[pid] || {});
+            const mainCategory = String(cat).split(',')[0];
+            const tids = (categories[mainCategory] = categories[mainCategory] || []);
+            if (!tids.includes(tid)) {
+              tids.push(tid);
+            }
+          }
+        });
+    });
+
+    const tidArray = Object.entries(processes).flatMap(([pid, categories]) => {
+      return Object.entries(categories).flatMap(([category, tids]) => {
+        return tids.map(tid => `${pid}:${category}:${tid}`);
+      });
+    });
+
+    this._globalThreadMap = new Map(tidArray.map((hash, index) => [hash, index]));
+  }
+
+  /**
+   * @returns {module:stream.internal.Transform}
+   */
+  createStream() {
+    const transformFn = this._transformBunyanRecord.bind(this, {
+      primaryPid: NaN,
+      knownPids: new Set(),
       knownTids: new Set(),
     });
 

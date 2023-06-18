@@ -1,4 +1,3 @@
-import {LaunchArguments} from 'react-native-launch-arguments';
 import example from './src/app';
 import { LogBox } from 'react-native';
 

@@ -1,4 +1,3 @@
----
 id: android-dev-env
 slug: introduction/android-dev-env
 title: Setting Up an Android Development & Testing Environment

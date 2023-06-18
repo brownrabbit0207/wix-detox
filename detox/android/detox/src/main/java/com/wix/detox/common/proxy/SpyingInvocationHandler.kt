@@ -1,4 +1,3 @@
-package com.wix.detox.common.proxy
 
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.InvocationTargetException

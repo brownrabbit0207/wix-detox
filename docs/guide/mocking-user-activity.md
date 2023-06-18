@@ -1,4 +1,3 @@
-# Mocking User Activity
 
 <!-- markdownlint-configure-file { "header-increment": 0 } -->
 

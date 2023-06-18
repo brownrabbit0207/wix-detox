@@ -1,4 +1,3 @@
-package com.wix.detox.common.proxy
 
 import android.util.Log
 import java.util.*

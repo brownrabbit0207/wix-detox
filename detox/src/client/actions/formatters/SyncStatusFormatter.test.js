@@ -1,4 +1,3 @@
-const format = require('./SyncStatusFormatter');
 
 describe('Sync Status Formatter', () => {
   describe('assertions', () => {

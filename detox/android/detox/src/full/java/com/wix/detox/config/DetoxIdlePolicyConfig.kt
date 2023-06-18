@@ -1,4 +1,3 @@
-package com.wix.detox.config
 
 import androidx.test.espresso.IdlingPolicies
 import java.util.concurrent.TimeUnit

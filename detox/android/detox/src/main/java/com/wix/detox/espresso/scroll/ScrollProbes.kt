@@ -1,4 +1,3 @@
-@file:JvmName("ScrollProbes")
 
 package com.wix.detox.espresso.scroll
 
@@ -23,6 +22,32 @@ fun getScrollableProbe(view: View, @MotionDir direction: Int): ScrollableProbe {
         MOTION_DIR_UP -> ScrollableProbeVBack(view)
         MOTION_DIR_DOWN -> ScrollableProbeVForward(view)
         else -> throw IllegalArgumentException("Invalid direction: $direction")
+    }
+}
+
+interface ScrollableProbe {
+    fun atScrollingEdge(): Boolean
+}
+
+private abstract class AbsScrollableProbe(val view: View) : ScrollableProbe
+
+private class ScrollableProbeHBack(view: View) : AbsScrollableProbe(view) {
+    override fun atScrollingEdge() = !view.canScrollHorizontally(-1)
+}
+
+private class ScrollableProbeHForward(view: View) : AbsScrollableProbe(view) {
+    override fun atScrollingEdge() = !view.canScrollHorizontally(1)
+}
+
+private class ScrollableProbeVBack(view: View) : AbsScrollableProbe(view) {
+    override fun atScrollingEdge() = !view.canScrollVertically(-1)
+}
+
+private class ScrollableProbeVForward(view: View) : AbsScrollableProbe(view) {
+    override fun atScrollingEdge() = !view.canScrollVertically(1)
+}
+
+private class AbsListViewBack(val view: AbsListView) : ScrollableProbe {
     override fun atScrollingEdge(): Boolean {
         // Ported from AbsListView#canScrollList() which isn't compatible with all API levels
         val firstTop = view.getChildAt(0).top

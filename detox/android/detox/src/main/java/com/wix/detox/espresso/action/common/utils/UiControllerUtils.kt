@@ -1,4 +1,3 @@
-@file:JvmName("UiControllerUtils")
 
 package com.wix.detox.espresso.action.common.utils
 

@@ -1,4 +1,3 @@
-const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 const debug = require('../../utils/debug'); // debug utils, leave here even if unused
 const log = require('../../utils/logger').child({ cat: 'device' });
 const traceMethods = require('../../utils/traceMethods');
@@ -23,6 +22,32 @@ class RuntimeDevice {
       'installApp',
       'installUtilBinaries',
       'launchApp',
+      'matchFace',
+      'matchFinger',
+      'openURL',
+      'pressBack',
+      'relaunchApp',
+      'reloadReactNative',
+      'resetContentAndSettings',
+      'resetStatusBar',
+      'reverseTcpPort',
+      'selectApp',
+      'sendToHome',
+      'sendUserActivity',
+      'sendUserNotification',
+      'setBiometricEnrollment',
+      'setLocation',
+      'setOrientation',
+      'setStatusBar',
+      'setURLBlacklist',
+      'shake',
+      'takeScreenshot',
+      'terminateApp',
+      'uninstallApp',
+      'unmatchFace',
+      'unmatchFinger',
+      'unreverseTcpPort',
+    ];
 
     traceMethods(log, this, methodNames);
     wrapWithStackTraceCutter(this, methodNames);

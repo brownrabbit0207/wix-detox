@@ -1,4 +1,3 @@
-#!/bin/bash -e
 
 rm -rf Detox-ios-src.tbz
 rm -rf Detox-ios.tbz

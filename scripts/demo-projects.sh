@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 
 source $(dirname "$0")/logger.sh
 source $(dirname "$0")/install.sh

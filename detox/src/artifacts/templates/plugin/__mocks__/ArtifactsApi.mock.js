@@ -1,4 +1,3 @@
-class ArtifactsApiMock {
   constructor({ config }) {
     this.userConfig = config;
 

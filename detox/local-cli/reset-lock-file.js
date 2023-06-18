@@ -1,4 +1,3 @@
-const { log } = require('../internals');
 const DeviceRegistry = require('../src/devices/DeviceRegistry');
 const { getDetoxLibraryRootPath } = require('../src/utils/environment');
 

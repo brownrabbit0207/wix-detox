@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Card from './Card';
 import cardList from '@site/showcase.json';

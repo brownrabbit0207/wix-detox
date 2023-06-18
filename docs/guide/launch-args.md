@@ -1,4 +1,3 @@
-# Using Launch Arguments
 
 <!-- markdownlint-configure-file { "header-increment": 0 } -->
 

@@ -1,4 +1,3 @@
-//
 //  Bridging-Header.h
 //  Detox
 //

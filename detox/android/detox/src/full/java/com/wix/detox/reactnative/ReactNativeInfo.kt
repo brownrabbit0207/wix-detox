@@ -1,4 +1,3 @@
-package com.wix.detox.reactnative
 
 import org.joor.Reflect
 import java.util.Map

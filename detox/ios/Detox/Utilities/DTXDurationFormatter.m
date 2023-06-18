@@ -1,4 +1,3 @@
-//
 //  DTXDurationFormatter.m
 //  Detox
 //

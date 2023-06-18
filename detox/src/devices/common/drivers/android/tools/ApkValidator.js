@@ -1,4 +1,3 @@
-const DetoxRuntimeError = require('../../../../../errors/DetoxRuntimeError');
 
 const setupGuideHint = 'For further assistance, visit the Android setup guide: https://github.com/wix/Detox/blob/master/docs/Introduction.Android.md';
 

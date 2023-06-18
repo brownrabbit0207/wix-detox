@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.scroll
 
 import org.mockito.AdditionalMatchers
 import org.mockito.kotlin.*

@@ -1,4 +1,3 @@
-import { by, device, element, expect } from 'detox';
 
 describe('Test suite 1', () => {
   beforeAll(async () => {

@@ -1,4 +1,3 @@
-const constructSafeFilename = require('./constructSafeFilename');
 
 describe('constructSafeFilename', () => {
   it('should throw if no arguments passed', () => {

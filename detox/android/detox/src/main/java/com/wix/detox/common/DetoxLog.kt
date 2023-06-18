@@ -1,4 +1,3 @@
-@file:JvmName("DetoxLog")
 
 package com.wix.detox.common
 

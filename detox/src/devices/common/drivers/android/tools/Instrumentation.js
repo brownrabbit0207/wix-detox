@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 const { interruptProcess } = require('../../../../../utils/childProcess');
 

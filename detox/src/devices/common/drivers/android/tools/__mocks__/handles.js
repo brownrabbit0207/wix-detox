@@ -1,4 +1,3 @@
-const mockAvdName = 'mockAvdName';
 
 const aDeviceHandle = (adbName, status = 'device') => ({
   adbName,

@@ -1,4 +1,3 @@
-const FreeDeviceFinder = require('./FreeDeviceFinder');
 const { deviceOffline, emulator5556, ip5557, localhost5555 } = require('./__mocks__/handles');
 
 describe('FreeDeviceFinder', () => {

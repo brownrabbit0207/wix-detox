@@ -1,4 +1,3 @@
-const { exec } = require('child_process');
 
 const execCommand = async (cmd) => {
   const cp = exec(cmd);

@@ -1,4 +1,3 @@
- const StubCookie = require('./StubCookie');
 const { sleepSomeTime, sleepALittle } = require('./stubSleeps');
 
 class StubDeviceAllocationDriver {

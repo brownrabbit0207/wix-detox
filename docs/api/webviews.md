@@ -1,4 +1,3 @@
-# Web views
 
 :::caution Note
 Detox supports testing web views on **Android** only. We are working on adding support for iOS apps as well.

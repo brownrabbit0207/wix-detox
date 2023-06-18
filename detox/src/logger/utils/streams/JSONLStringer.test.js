@@ -1,4 +1,3 @@
-const JSONLStringer = require('./JSONLStringer');
 
 describe('JSONLStringer', () => {
   it('should serialize to JSONL', (resolve) => {

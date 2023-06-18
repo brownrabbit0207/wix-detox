@@ -1,4 +1,3 @@
-const invoke = require('../../invoke');
 const { assertEnum, assertNormalized } = require('../../utils/assertArgument');
 const DetoxActionApi = require('../espressoapi/DetoxAction');
 const DetoxViewActionsApi = require('../espressoapi/DetoxViewActions');
@@ -23,6 +22,32 @@ class TapAtPointAction extends Action {
     this._call = invoke.callDirectly(DetoxActionApi.tapAtLocation(value.x, value.y));
   }
 }
+
+class LongPressAction extends Action {
+  constructor() {
+    super();
+    this._call = invoke.callDirectly(ViewActionsApi.longClick());
+  }
+}
+
+class MultiClickAction extends Action {
+  constructor(times) {
+    super();
+    this._call = invoke.callDirectly(DetoxActionApi.multiClick(times));
+  }
+}
+
+class PressKeyAction extends Action {
+  constructor(value) {
+    super();
+    this._call = invoke.callDirectly(ViewActionsApi.pressKey(value));
+  }
+}
+
+class TypeTextAction extends Action {
+  constructor(value) {
+    super();
+    this._call = invoke.callDirectly(DetoxViewActionsApi.typeText(value));
   }
 }
 

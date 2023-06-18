@@ -1,4 +1,3 @@
-const globals = require('../core/global-functions');
 
 describe('globals', () => {
   describe('sanitize_android_direction', () => {

@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 const DetoxRuntimeError = require('../../../../../errors/DetoxRuntimeError');
 const environment = require('../../../../../utils/environment');

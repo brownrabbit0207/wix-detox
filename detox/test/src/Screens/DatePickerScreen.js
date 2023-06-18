@@ -1,4 +1,3 @@
-import upperFirst from 'lodash/upperFirst';
 import moment from 'moment';
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Button, Platform } from 'react-native';
@@ -23,6 +22,32 @@ export default class DatePickerScreen extends Component {
       datePickerDisplay: DatePickerScreen.MODES[(currentIndex + 1) % DatePickerScreen.MODES.length],
     });
   }
+
+  _openDatePicker = () => {
+    this.setState({ datePickerVisible: true });
+  }
+
+  setDate = (e, newDate) => {
+    this.setState({
+      chosenDate: newDate,
+      datePickerVisible: !shouldHideDatePicker,
+    });
+  };
+
+  getTimeLocal() {
+    return moment(this.state.chosenDate).format("h:mm A");
+  }
+
+  getDateLocal() {
+    return moment(this.state.chosenDate).format("MMM Do, YYYY");
+  }
+
+  getTimeUTC() {
+    return moment(this.state.chosenDate).utc().format("h:mm A");
+  }
+
+  getDateUTC() {
+    return moment(this.state.chosenDate).utc().format("MMM Do, YYYY");
   }
 
   render() {

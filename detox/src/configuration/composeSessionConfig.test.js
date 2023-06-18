@@ -1,4 +1,3 @@
-const DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
 
 describe('composeSessionConfig', () => {
   let composeSessionConfig;

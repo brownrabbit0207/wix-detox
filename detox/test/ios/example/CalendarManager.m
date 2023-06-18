@@ -1,4 +1,3 @@
-#import "CalendarManager.h"
 #import <EventKit/EventKit.h>
 
 @implementation CalendarManager

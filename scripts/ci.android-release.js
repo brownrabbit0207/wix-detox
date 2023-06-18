@@ -1,4 +1,3 @@
-const exec = require('shell-utils').exec;
 const {log, logSection, getVersionSafe, getReleaseNpmTag, getReleaseVersionType} = require('./utils/releaseArgs');
 
 function run() {

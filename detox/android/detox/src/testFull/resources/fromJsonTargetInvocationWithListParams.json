@@ -1,4 +1,3 @@
-{
   "target": {
     "type": "Class",
     "value": "com.wix.detox.espresso.EspressoDetox"

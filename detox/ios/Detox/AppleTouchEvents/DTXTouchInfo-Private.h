@@ -1,4 +1,3 @@
-//
 //  DTXTouchInfo-Private.h
 //  Detox
 //

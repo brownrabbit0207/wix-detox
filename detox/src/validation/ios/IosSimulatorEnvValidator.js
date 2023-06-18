@@ -1,4 +1,3 @@
-const fs = require('fs');
 
 const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 const environment = require('../../utils/environment');

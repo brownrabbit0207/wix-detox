@@ -1,4 +1,3 @@
-# React Native Demo Project
 
 **IMPORTANT:** Get your environment properly set up, as explained in our [contribution guide](../../docs/contributing.md).
 

@@ -1,4 +1,3 @@
-class DeviceHandle {
   constructor(deviceString) {
     const [adbName, status] = deviceString.split('\t');
     this.type = this._inferDeviceType(adbName);

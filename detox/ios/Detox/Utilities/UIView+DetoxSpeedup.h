@@ -1,4 +1,3 @@
-//
 //  UIView+DetoxSpeedup.h
 //  Detox
 //

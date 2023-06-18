@@ -1,4 +1,3 @@
-const path = require('path');
 
 const { escapeRegExp } = require('lodash');
 const cwd = process.cwd() + path.sep;

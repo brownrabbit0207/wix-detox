@@ -1,4 +1,3 @@
-module.exports = {
   EnvironmentValidatorClass: require('./StubEnvValidator'),
   ArtifactPluginsProviderClass: require('./StubArtifactPluginsProvider'),
   DeviceAllocationDriverClass: require('./StubDeviceAllocationDriver'),

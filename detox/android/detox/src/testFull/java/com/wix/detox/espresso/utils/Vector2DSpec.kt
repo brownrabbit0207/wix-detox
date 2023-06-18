@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.utils
 
 import com.wix.detox.action.common.MOTION_DIR_DOWN
 import com.wix.detox.action.common.MOTION_DIR_LEFT

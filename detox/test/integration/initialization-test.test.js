@@ -1,4 +1,3 @@
-const execa = require('execa');
 
 describe('Initialization (context) tests', () => {
   test.each([

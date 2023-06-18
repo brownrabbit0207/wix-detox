@@ -1,4 +1,3 @@
-const Instance = require('./dto/GenyInstance');
 
 class GenyInstanceLookupService {
   constructor(genyCloudExec, instanceNaming, genyCloudDeviceRegistry) {

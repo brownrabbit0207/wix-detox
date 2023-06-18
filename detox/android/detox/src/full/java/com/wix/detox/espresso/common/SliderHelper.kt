@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.common
 
 import android.view.View
 import androidx.appcompat.widget.AppCompatSeekBar

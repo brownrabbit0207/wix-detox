@@ -1,4 +1,3 @@
-// @ts-nocheck
 const { DetoxRuntimeError } = require('../../../../../errors');
 const log = require('../../../../../utils/logger').child({ cat: 'device' });
 const retry = require('../../../../../utils/retry');

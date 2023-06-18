@@ -1,4 +1,3 @@
-/** @type {Detox.DetoxConfig} */
 module.exports = {
   logger: {
     level: process.env.CI ? 'debug' : undefined,

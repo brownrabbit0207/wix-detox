@@ -1,4 +1,3 @@
-//
 //  String+LocalizedError.swift
 //  Detox
 //

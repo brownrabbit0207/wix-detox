@@ -1,4 +1,3 @@
-const path = require('path');
 
 function printEnvironmentVariables(envObject) {
   return Object.entries(envObject).reduce((cli, [key, value]) => {

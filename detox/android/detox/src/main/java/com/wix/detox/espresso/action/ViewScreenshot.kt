@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.action
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -23,3 +22,5 @@ class ViewScreenshot() {
         view.draw(Canvas(bitmap))
 
         return ScreenshotResult(bitmap)
+    }
+}

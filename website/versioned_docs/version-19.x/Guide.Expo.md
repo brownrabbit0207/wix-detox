@@ -1,4 +1,3 @@
----
 id: expo
 slug: guide/expo
 title: Expo

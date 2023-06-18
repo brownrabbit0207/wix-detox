@@ -1,4 +1,3 @@
-const CAF = require('caf');
 const _ = require('lodash');
 
 const Client = require('./client/Client');

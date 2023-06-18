@@ -1,4 +1,3 @@
-package com.wix.detox.inquiry
 
 import androidx.test.espresso.IdlingResource
 import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource
@@ -23,6 +22,32 @@ class DetoxBusyResourceSpec: Spek({
                 mock() {
                     on { getDebugName() }.doReturn(mockedDebugName)
                     on { getBusyHint() }.doReturn(busyHint)
+                }
+
+            listOf(
+                TestCase<IdlingResource>(
+                    caseTitle = "should return a description based on debug-name and busy-hint",
+                    idlingResource = aDescriptiveIdlingResource(mapOf("mocked" to "hint", "mocked2" to "hint2")),
+                    expectedDescription = DetoxBusyResourceDescription.Builder()
+                        .name(mockedDebugName)
+                        .addDescription("mocked", "hint")
+                        .addDescription("mocked2", "hint2")
+                        .build()
+                ),
+                TestCase(
+                    caseTitle = "should return a description even without a busy-hint",
+                    idlingResource = aDescriptiveIdlingResource(busyHint = null),
+                    expectedDescription = DetoxBusyResourceDescription.Builder()
+                        .name(mockedDebugName)
+                        .build()
+                ),
+            ).forEach { (caseTitle, idlingResource, expectedDescription)  ->
+                it(caseTitle) {
+                    val uut = DetoxBusyResource.BusyIdlingResource(idlingResource)
+
+                    assertThat(uut.resource).isEqualTo(idlingResource)
+                    assertThat(uut.getDescription()).isEqualTo(expectedDescription)
+                }
             }
         }
 

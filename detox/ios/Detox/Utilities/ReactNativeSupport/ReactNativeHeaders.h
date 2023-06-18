@@ -1,4 +1,3 @@
-//
 //  ReactNativeHeaders.h
 //  Detox
 //

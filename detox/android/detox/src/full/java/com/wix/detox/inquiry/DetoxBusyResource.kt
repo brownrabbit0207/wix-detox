@@ -1,4 +1,3 @@
-package com.wix.detox.inquiry
 
 import androidx.test.espresso.IdlingResource
 import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource
@@ -23,6 +22,32 @@ sealed class DetoxBusyResource {
             DetoxBusyResourceDescription.Builder()
                 .name(resource.getDebugName())
                 .apply {
+                    resource.getBusyHint()?.let {
+                        it.forEach { hint -> addDescription(hint.key, hint.value) }
+                    }
+                }
+                .build()
+
+        private fun getLooperResourceDescriptionByName(resourceName: String) =
+            when {
+                isJSCodeExecution(resourceName) -> {
+                    getLooperResourceDesc(
+                        thread = "\"${resourceName}\" (JS Thread)",
+                        executionType = "JavaScript code"
+                    )
+                }
+                isNativeCodeExecution(resourceName) -> {
+                    getLooperResourceDesc(
+                        thread = "\"${resourceName}\" (Native Modules Thread)",
+                        executionType = "native module calls"
+                    )
+                }
+                else -> {
+                    getLooperResourceDesc(
+                        thread = "\"${resourceName}\""
+                    )
+                }
+            }
 
         private fun getUnspecifiedResourceDescription(resource: IdlingResource) =
             DetoxBusyResourceDescription.Builder()

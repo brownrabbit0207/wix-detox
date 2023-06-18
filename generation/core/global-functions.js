@@ -1,4 +1,3 @@
-// Globally declared helpers
 // Each function needs to end with }// END function_name so that it can be
 // dynamically included while generating
 

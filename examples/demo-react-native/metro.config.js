@@ -1,4 +1,3 @@
-let createBlacklist;
 try {
   // RN .64
   createBlacklist = require('metro-config/src/defaults/exclusionList');

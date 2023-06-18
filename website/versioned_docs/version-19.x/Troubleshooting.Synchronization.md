@@ -1,4 +1,3 @@
----
 id: synchronization
 slug: troubleshooting/synchronization
 title: Dealing With Synchronization Issues in Tests

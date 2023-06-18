@@ -1,4 +1,3 @@
-package com.detox.example.detoxexample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
