@@ -1,3 +1,4 @@
+const { tracing } = require('detox/internals');
 
 class CustomReporter {
   async onRunComplete() {

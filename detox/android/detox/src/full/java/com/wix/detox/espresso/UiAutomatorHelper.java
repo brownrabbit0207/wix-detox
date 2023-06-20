@@ -1,3 +1,4 @@
+package com.wix.detox.espresso;
 
 import android.os.Handler;
 import android.util.Log;

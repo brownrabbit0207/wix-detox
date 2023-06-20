@@ -1,3 +1,4 @@
+module.exports = {
   'ios.simulator': ['ios.app'],
   'android.attached': ['android.apk'],
   'android.emulator': ['android.apk'],

@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.action
 
 import android.view.MotionEvent
 import androidx.test.espresso.UiController

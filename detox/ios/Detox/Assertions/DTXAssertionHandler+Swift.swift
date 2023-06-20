@@ -1,3 +1,4 @@
+//
 //  DTXAssertionHandler+Swift.swift
 //  Detox
 //
@@ -6,17 +7,6 @@
 //
 
 import UIKit
-
-@inline(__always)
-func dtx_try_nothrow(_ block: () -> Void) -> Bool {
-	do {
-		try DTXAssertionHandler.__try(block)
-		return true
-	}
-	catch {
-		return false
-	}
-}
 
 @inline(__always)
 func dtx_try(_ block: () -> Void) throws {

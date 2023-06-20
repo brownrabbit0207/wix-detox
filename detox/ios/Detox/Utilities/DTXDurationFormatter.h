@@ -1,3 +1,4 @@
+//
 //  DTXDurationFormatter.h
 //  Detox
 //

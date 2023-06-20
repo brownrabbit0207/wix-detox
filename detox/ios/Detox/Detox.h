@@ -1,3 +1,4 @@
+//
 //  Detox.h
 //  Detox
 //
@@ -7,8 +8,3 @@
 
 @import Foundation;
 
-//! Project version number for Detox.
-FOUNDATION_EXPORT double DetoxVersionNumber;
-
-//! Project version string for Detox.
-FOUNDATION_EXPORT const unsigned char DetoxVersionString[];

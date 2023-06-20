@@ -1,3 +1,4 @@
+{
   "name": "detox-test",
   "version": "20.9.0",
   "private": true,
@@ -7,17 +8,6 @@
   "scripts": {
     "lint": "eslint .",
     "test:types": "tsc -p types/tsconfig.json",
-    "test": "npm run lint && npm run test:types",
-    "postinstall": "node scripts/postinstall.js",
-    "start": "react-native start",
-    "packager": "react-native start",
-    "detox-server": "detox run-server",
-    "e2e:ios": "detox test -c ios.sim.release",
-    "e2e:android": "detox test -c android.emu.release",
-    "e2e:android:genycloud": "detox test -c android.genycloud.release",
-    "e2e:android:debug": "detox test -c android.emu.debug",
-    "e2e-unhappy:ios": "scripts/ci_unhappy.sh ios",
-    "e2e-unhappy:android": "scripts/ci_unhappy.sh android",
     "integration": "jest --clearCache && jest --config integration/jest.config.js",
     "integration:console": "node integration/utils/printConsole.mjs info",
     "integration-update-snapshots": "npm run integration -- -u",

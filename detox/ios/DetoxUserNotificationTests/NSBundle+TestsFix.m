@@ -1,3 +1,4 @@
+//
 //  NSBundle+TestsFix.m
 //  Detox
 //

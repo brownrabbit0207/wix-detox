@@ -1,3 +1,4 @@
+const DetoxRuntimeError = require('./DetoxRuntimeError');
 
 describe('DetoxRuntimeError', () => {
   it.each(varietiesOfInstantiation())('should be created with %s', (description, error) => {
@@ -7,17 +8,6 @@ describe('DetoxRuntimeError', () => {
   it('should format string as well, similar to Error', () => {
     expect(new DetoxRuntimeError('Test')).toEqual(new DetoxRuntimeError({
       message: 'Test'
-    }));
-  });
-
-  it('should format any object to an error message', () => {
-    expect(DetoxRuntimeError.format({})).toBe('{}');
-
-    const err = new Error('Command failed: echo Hello world');
-    expect(DetoxRuntimeError.format(err)).toBe(err.message);
-
-    err.message = 'Other error message';
-    expect(DetoxRuntimeError.format(err)).toBe(err.stack);
 
     delete err.stack;
     expect(DetoxRuntimeError.format(err)).toBe(err.toString());

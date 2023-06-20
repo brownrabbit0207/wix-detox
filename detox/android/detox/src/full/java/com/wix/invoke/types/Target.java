@@ -1,3 +1,4 @@
+package com.wix.invoke.types;
 
 import java.lang.reflect.InvocationTargetException;
 import org.json.JSONObject;

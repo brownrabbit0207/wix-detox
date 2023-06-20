@@ -1,3 +1,4 @@
+/// <reference types="node" />
 /// <reference path="index.d.ts"/>
 
 declare global {
@@ -7,17 +8,6 @@ declare global {
     type Facade = {
       //#region Initialization
       /**
-       * Use with a caution, when you still have no config, yet need to avoid {@link Facade#init}
-       */
-      resolveConfig(options?: Partial<DetoxInitOptions>): Promise<RuntimeConfig>;
-
-      /**
-       * Returns one of statuses depending on what’s going with the current Detox context:
-       *
-       * `inactive` – before `init()` and after `cleanup()` is called.
-       * `init` – while `init()` is executing.
-       * `active` – after `init()` and before `cleanup()` is called.
-       * `cleanup` – while `cleanup()` is executing.
        */
       getStatus(): DetoxStatus;
 

@@ -1,3 +1,4 @@
+package com.example.detox.purenative.utils
 
 import android.graphics.Color
 

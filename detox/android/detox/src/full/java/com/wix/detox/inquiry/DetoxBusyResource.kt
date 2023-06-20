@@ -1,3 +1,4 @@
+package com.wix.detox.inquiry
 
 import androidx.test.espresso.IdlingResource
 import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource
@@ -7,17 +8,6 @@ sealed class DetoxBusyResource {
 
     class BusyIdlingResource(val resource: IdlingResource): DetoxBusyResource() {
         override fun getDescription() =
-            when {
-                (resource is DescriptiveIdlingResource) ->
-                    getIRDescription(resource)
-
-                (resource.javaClass.name.contains("LooperIdlingResource")) ->
-                    getLooperResourceDescriptionByName(resource.name)
-
-                else ->
-                    getUnspecifiedResourceDescription(resource)
-            }
-
         private fun getIRDescription(resource: DescriptiveIdlingResource) =
             DetoxBusyResourceDescription.Builder()
                 .name(resource.getDebugName())

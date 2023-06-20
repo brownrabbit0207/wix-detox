@@ -1,3 +1,4 @@
+// @ts-nocheck
 const _ = require('lodash');
 
 /**
@@ -7,17 +8,6 @@ const _ = require('lodash');
  * @returns {string}
  */
 function selectConfiguration({ errorComposer, globalConfig, cliConfig }) {
-  const { configurations } = globalConfig;
-
-  if (_.isEmpty(configurations)) {
-    throw errorComposer.noConfigurationsInside();
-  }
-
-  let configurationName = cliConfig.configuration || globalConfig.selectedConfiguration;
-  if (!configurationName && _.size(configurations) === 1) {
-    configurationName = _.keys(configurations)[0];
-  }
-
   if (!configurationName) {
     throw errorComposer.cantChooseConfiguration();
   }

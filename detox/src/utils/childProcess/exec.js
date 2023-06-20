@@ -1,3 +1,4 @@
+// @ts-nocheck
 const { exec } = require('child-process-promise');
 const _ = require('lodash');
 

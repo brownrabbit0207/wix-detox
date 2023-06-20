@@ -1,3 +1,4 @@
+//
 //  WebSocket.swift
 //  Detox
 //

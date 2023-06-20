@@ -1,3 +1,4 @@
+<!-- markdownlint-configure-file { "first-line-heading": 0 } -->
 
 <p align="center">
  <img alt="Detox" width=380 src="https://raw.githubusercontent.com/wix/Detox/master/docs/img/DetoxLogo.png"/>

@@ -1,3 +1,4 @@
+describe('AVDs resolver', () => {
   let MockListAVDsCommand;
   let emulatorExec;
   let uut;

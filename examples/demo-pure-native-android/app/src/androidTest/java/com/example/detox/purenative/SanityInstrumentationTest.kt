@@ -1,3 +1,4 @@
+package com.example.detox.purenative
 
 import android.view.View
 import androidx.test.espresso.Espresso.onView

@@ -1,3 +1,4 @@
+package com.wix.detox.reactnative.idlingresources
 
 import org.assertj.core.api.Assertions.assertThat
 import org.mockito.kotlin.mock

@@ -1,3 +1,4 @@
+const VideoArtifactPlugin = require('./VideoArtifactPlugin');
 
 describe('VideoArtifactPlugin', () => {
   describe('static parseConfig(config)', () => {

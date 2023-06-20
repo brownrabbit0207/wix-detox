@@ -1,3 +1,4 @@
+//
 //  NSObject+DontCrash.h
 //  ExampleApp
 //
@@ -7,12 +8,3 @@
 @import UIKit;
 
 NS_ASSUME_NONNULL_BEGIN
-
-@interface NSObject (DontCrash)
-
-- (id)_dtx_text;
-- (id)_dtx_placeholder;
-
-@end
-
-NS_ASSUME_NONNULL_END

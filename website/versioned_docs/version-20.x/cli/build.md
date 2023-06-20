@@ -1,3 +1,4 @@
+# detox build
 
 `detox build [options]`
 

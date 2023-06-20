@@ -1,3 +1,4 @@
+package com.wix.detox.adapters.server
 
 import android.os.Handler
 import android.os.Looper

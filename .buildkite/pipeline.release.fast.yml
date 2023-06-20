@@ -1,3 +1,4 @@
+  - wait
   - label: ":ios: Package iOS"
     key: 'ios_package'
     command:

@@ -1,3 +1,4 @@
+const inspect = require('util').inspect;
 
 jest.mock('../utils/logger');
 

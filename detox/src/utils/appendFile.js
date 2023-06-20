@@ -1,3 +1,4 @@
+const fs = require('fs');
 
 async function appendFile(src, dest) {
   const writeStream = fs.createWriteStream(dest, { flags: 'a' });

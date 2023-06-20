@@ -1,3 +1,4 @@
+//
 //  UIApplication+MockedSharedApplication.m
 //  DetoxUserNotificationTests
 //

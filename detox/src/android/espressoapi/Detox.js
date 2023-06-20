@@ -1,3 +1,4 @@
+/**
 
 	This code is generated.
 	For more information see generation/README.md.
@@ -7,17 +8,6 @@
 
 class Detox {
   static setUpCustomEspressoIdlingResources(element) {
-    return {
-      target: element,
-      method: "setUpCustomEspressoIdlingResources",
-      args: []
-    };
-  }
-
-  static runDetoxTests(element) {
-    return {
-      target: element,
-      method: "runDetoxTests",
       args: []
     };
   }

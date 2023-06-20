@@ -1,3 +1,4 @@
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 def _kotlinMinVersion = '1.2.0'
@@ -7,17 +8,6 @@ def _ext = rootProject.ext
 def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion : 31
 def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 31
 def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '31.0.0'
-def _minSdkVersion = _ext.has('minSdkVersion') ? _ext.minSdkVersion : 21
-def _kotlinVersion = _ext.has('detoxKotlinVersion') ? _ext.detoxKotlinVersion : _kotlinMinVersion
-def _kotlinStdlib = _ext.has('detoxKotlinStdlib') ? _ext.detoxKotlinStdlib : 'kotlin-stdlib-jdk8'
-
-android {
-    compileSdkVersion _compileSdkVersion
-    buildToolsVersion _buildToolsVersion
-
-    defaultConfig {
-        minSdkVersion _minSdkVersion
-        targetSdkVersion _targetSdkVersion
         versionCode 1
         versionName '1.0'
 

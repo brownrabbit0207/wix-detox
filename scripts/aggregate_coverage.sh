@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 if [ -d aggregated-coverage ]; then
   npm install --no-save --no-package-lock "lcov-result-merger@3.x.x" "coveralls@3.x.x"

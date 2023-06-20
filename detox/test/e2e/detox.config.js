@@ -1,3 +1,4 @@
+const launchArgs = {
   app: 'le',
   goo: 'gle?',
   micro: 'soft',
@@ -7,17 +8,6 @@
 const config = {
   logger: {
     level: process.env.CI ? 'debug' : undefined,
-  },
-
-  testRunner: {
-    args: {
-      $0: 'nyc jest',
-      config: 'e2e/jest.config.js',
-      _: ['e2e/']
-    },
-    retries: process.env.CI ? 1 : undefined,
-    jest: {
-      setupTimeout: +`${process.env.DETOX_JEST_SETUP_TIMEOUT || 300000}`,
       reportSpecs: process.env.CI ? true : undefined,
     },
   },

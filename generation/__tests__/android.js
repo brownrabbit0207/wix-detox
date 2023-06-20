@@ -1,3 +1,4 @@
+const fs = require('fs');
 const remove = require('remove');
 const androidGenerator = require('../adapters/android');
 

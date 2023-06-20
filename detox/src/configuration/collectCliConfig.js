@@ -1,3 +1,4 @@
+const _ = require('lodash');
 
 const argparse = require('../utils/argparse');
 
@@ -7,17 +8,6 @@ const asBoolean = (value) => {
   }
 
   return value != null
-    ? (value !== 'false' && value !== '0' && value !== '')
-    : undefined;
-};
-
-const asNumber = (value) => {
-  if (typeof value === 'number') {
-    return value;
-  }
-
-  return value != null && value !== ''
-    ? Number(value)
     : undefined;
 };
 

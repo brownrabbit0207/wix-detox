@@ -1,3 +1,4 @@
+const dumpBadingResult = `package: name='com.wix.detox.test' versionCode='1' versionName='1.0' platformBuildVersionName='7.1.1'
 sdkVersion:'18'
 targetSdkVersion:'25'
 uses-permission: name='android.permission.INTERNET'

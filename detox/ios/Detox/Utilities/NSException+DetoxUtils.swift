@@ -1,3 +1,4 @@
+//
 //  NSException+DetoxUtils.swift
 //  Detox
 //
@@ -7,10 +8,3 @@
 
 import Foundation
 
-@objc
-extension NSException {
-	@objc(dtx_demangledCallStackSymbols)
-	open var demangledCallStackSymbols : String {
-		return Thread.demangledCallStackSymbols(forReturnAddresses: callStackReturnAddresses, startIndex: 0)
-	}
-}

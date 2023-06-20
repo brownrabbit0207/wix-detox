@@ -1,3 +1,4 @@
+const native = require('./native');
 const web = require('./web');
 
 module.exports = {

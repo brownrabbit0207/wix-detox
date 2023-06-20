@@ -1,3 +1,4 @@
+const { URL } = require('url');
 
 const fs = require('fs-extra');
 const onSignalExit = require('signal-exit');

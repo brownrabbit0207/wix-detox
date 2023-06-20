@@ -1,3 +1,4 @@
+---
 title: Getting Started
 ---
 
@@ -7,17 +8,6 @@ title: Getting Started
 
 In this guide, we will walk you through setting Detox up in your project, one step at a time.
 
-You will find that some steps are longer than the others: some are just one-paragraph long, while for others we have a dedicated multistep guide worked out. Bear with us - it is all necessary, and once set-up, it is easy to move forward with writing tests very rapidly.
-
-## Step 1: Environment Setup
-
-### Install [Node.js](https://nodejs.org/en/)
-
-`Node.js` is the JavaScript runtime Detox will run on. **Install Node.js `v12.0` or above**.
-
-There’s more than one way to install Node.js:
-
-- Download from the [official download page](https://nodejs.org/en/download/)
 - Use [Homebrew](https://formulae.brew.sh/formula/node)
 - Use `nvm` - if you need to allow for several versions to be installed on a single machine
 

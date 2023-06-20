@@ -1,3 +1,4 @@
+const AndroidDeviceCookie = require('./AndroidDeviceCookie');
 
 class AttachedAndroidDeviceCookie extends AndroidDeviceCookie {
   /**
@@ -7,5 +8,3 @@ class AttachedAndroidDeviceCookie extends AndroidDeviceCookie {
     super(adbName);
   }
 }
-
-module.exports = AttachedAndroidDeviceCookie;

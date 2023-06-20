@@ -1,3 +1,4 @@
+describe('customConsoleLogger', () => {
   let overrideConsoleMethods;
   let restoreConsoleMethods;
   let fakeConsole, bunyanLogger;

@@ -1,3 +1,4 @@
+---
 id: building-the-app
 slug: troubleshooting/building-the-app
 title: Dealing With Problems With Building the App & Detox

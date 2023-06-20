@@ -1,3 +1,4 @@
+const { isPromise, isPromiseLike } = require('./isPromise');
 
 describe('isPromise', () => {
   it.each([

@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.action
 
 import android.view.View
 import android.widget.CheckBox
@@ -7,17 +8,6 @@ import com.facebook.react.views.slider.ReactSlider
 import com.google.android.material.slider.Slider
 import com.wix.detox.reactnative.ui.getAccessibilityLabel
 import org.assertj.core.api.Assertions.assertThat
-import org.json.JSONObject
-import org.junit.Before
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.kotlin.any
-import org.mockito.kotlin.doReturn
-import org.mockito.kotlin.mock
-import org.mockito.kotlin.whenever
-import org.robolectric.RobolectricTestRunner
-
-@RunWith(RobolectricTestRunner::class)
 class GetAttributesActionTest {
     lateinit var view: View
     lateinit var uut: GetAttributesAction

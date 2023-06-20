@@ -1,3 +1,4 @@
+package com.wix.detox;
 
 import org.joor.Reflect;
 import org.joor.ReflectException;
@@ -7,17 +8,6 @@ import java.lang.reflect.Method;
 
 /**
  * Created by simonracz on 29/05/2017.
-
- * <p>
- * Helper class for InvocationHandlers, which delegates equals, hashCode and toString
- * calls to Object.
- * </p>
- *
- * <p>
- * Copied from here
- * <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html">Delegator</a>
- * </p>
- */
 public class Delegator implements InvocationHandler {
 
     private static Method hashCodeMethod;

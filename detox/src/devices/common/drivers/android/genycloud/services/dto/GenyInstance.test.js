@@ -1,3 +1,4 @@
+describe('Genymotion-Cloud Instance DTO', () => {
   const rawInstance = {
     uuid: 'mock-uuid',
     name: 'mock-name',

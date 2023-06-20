@@ -1,3 +1,4 @@
+const { DetoxError } = require('../../src/errors');
 
 class TestRunnerError extends DetoxError {
   constructor({ command, code, signal }) {
@@ -7,6 +8,3 @@ class TestRunnerError extends DetoxError {
     this.signal = signal;
     this.name = 'TestRunnerError';
   }
-}
-
-module.exports = TestRunnerError;

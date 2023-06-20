@@ -1,3 +1,4 @@
+package com.wix.invoke.types;
 
 import org.apache.commons.lang3.reflect.MethodUtils;
 import java.lang.reflect.InvocationTargetException;
@@ -7,11 +8,3 @@ import java.lang.reflect.InvocationTargetException;
 public class InvocationTarget extends Target {
 
     public InvocationTarget(Invocation value) {
-        super(value);
-    }
-
-    @Override
-    public Object execute(Invocation invocation) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-        return  MethodUtils.invokeMethod(invocation.getTarget().getValue(), invocation.getMethod(), invocation.getArgs());
-    }
-}

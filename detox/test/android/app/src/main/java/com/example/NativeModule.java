@@ -1,3 +1,4 @@
+package com.example;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,17 +8,6 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.TextView;
-
-import com.example.utils.ReactNativeExtensionReflected;
-import com.example.utils.ViewSpies;
-import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.Callback;
-import com.facebook.react.bridge.Promise;
-import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
 
 public class NativeModule extends ReactContextBaseJavaModule {

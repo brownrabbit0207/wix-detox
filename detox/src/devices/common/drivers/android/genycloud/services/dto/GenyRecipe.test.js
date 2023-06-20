@@ -1,3 +1,4 @@
+describe('Genymotion-Cloud Recipe DTO', () => {
   const rawRecipe = {
     uuid: 'mock-uuid',
     name: 'mock-name',

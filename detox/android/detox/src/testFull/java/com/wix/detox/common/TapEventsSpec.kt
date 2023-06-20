@@ -1,3 +1,4 @@
+package com.wix.detox.common
 
 import android.view.MotionEvent
 import com.wix.detox.espresso.action.common.MotionEvents

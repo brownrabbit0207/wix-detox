@@ -1,3 +1,4 @@
+describe('Genymotion-cloud authentication service', () => {
   let exec;
   let uut;
   beforeEach(() => {

@@ -1,3 +1,4 @@
+# ProGuard configuration
 
 :::tip
 
@@ -7,17 +8,6 @@ you are going to have problems with Detox if you leave your ProGuard rules not c
 
 :::
 
-Since Detox relies on [Android Reflection API] to integrate with React Native on Android, you should keep [ProGuard minification] under tight control.
-Otherwise, you’ll be seeing Detox crashing or hanging up infinitely upon an attempt to run tests with your app built in **release mode**.
-
-To fix that, you’d need to return to your app build script:
-
-```diff title="app/build.gradle"
-     buildTypes {
-     …
-// highlight-next-line
-         release { /* (1) */
-             minifyEnabled true
 
 // highlight-next-line
    /* (2) */ proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"

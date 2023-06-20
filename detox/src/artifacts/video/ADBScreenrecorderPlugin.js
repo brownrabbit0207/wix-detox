@@ -1,3 +1,4 @@
+const ADBScreenrecorderArtifact = require('./ADBScreenrecorderArtifact');
 const VideoArtifactPlugin = require('./VideoArtifactPlugin');
 
 class ADBScreenrecorderPlugin extends VideoArtifactPlugin {

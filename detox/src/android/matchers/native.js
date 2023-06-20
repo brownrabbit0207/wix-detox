@@ -1,3 +1,4 @@
+const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 const invoke = require('../../invoke');
 const { NativeMatcher } = require('../core/NativeMatcher');
 const DetoxMatcherApi = require('../espressoapi/DetoxMatcher');
@@ -7,17 +8,6 @@ class LabelMatcher extends NativeMatcher {
     super();
     this._call = invoke.callDirectly(DetoxMatcherApi.matcherForAccessibilityLabel(value));
   }
-}
-
-class ShallowLabelMatcher extends NativeMatcher {
-  constructor(value) {
-    super();
-    this._call = invoke.callDirectly(DetoxMatcherApi.matcherForShallowAccessibilityLabel(value));
-  }
-}
-
-class IdMatcher extends NativeMatcher {
-  constructor(value) {
     super();
     this._call = invoke.callDirectly(DetoxMatcherApi.matcherForTestId(value));
   }

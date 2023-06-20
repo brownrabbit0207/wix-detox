@@ -1,3 +1,4 @@
+//
 //  ReactNativeSupport.m
 //  Detox
 //
@@ -7,17 +8,6 @@
 
 @import ObjectiveC;
 
-@interface NSObject (DTXRNFix) @end
-@implementation NSObject (DTXRNFix)
-
-//Disable live reload for Detox
-- (void)__detox_sync__reloadWithDefaults:(NSDictionary *)defaultValues
-{
-	NSMutableDictionary* dv = [defaultValues mutableCopy];
-	dv[@"hotLoadingEnabled"] = @NO;
-	
-	[self __detox_sync__reloadWithDefaults:defaultValues];
-	
 	NSMutableDictionary* _settings = [self valueForKey:@"_settings"];
 	_settings[@"hotLoadingEnabled"] = @NO;
 	[NSUserDefaults.standardUserDefaults setObject:_settings forKey:@"RCTDevMenu"];

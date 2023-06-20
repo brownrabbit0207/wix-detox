@@ -1,3 +1,4 @@
+const path = require('path');
 
 const fs = require('fs-extra');
 
@@ -7,17 +8,6 @@ const { BunyanTransformer, ChromeTraceTransformer } = require('./streams');
 
 /**
  * @typedef DetoxLogFinalizerConfig
- * @property {import('../../ipc/SessionState')} session
- * @property {import('../DetoxLogger')} logger
- */
-
-class DetoxLogFinalizer {
-  /** @param {DetoxLogFinalizerConfig} config */
-  constructor(config) {
-    this._session = config.session;
-    this._bunyanTransformer = new BunyanTransformer(
-      config.logger.child({ cat: 'logger' }),
-    );
     this._chromeTransformer = new ChromeTraceTransformer();
   }
 

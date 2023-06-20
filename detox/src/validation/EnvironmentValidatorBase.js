@@ -1,3 +1,4 @@
+class EnvironmentValidatorBase {
   validate() {}
 }
 

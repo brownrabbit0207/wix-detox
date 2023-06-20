@@ -1,3 +1,4 @@
+---
 id: actions-on-element
 slug: api/actions-on-element
 title: Actions
@@ -7,17 +8,6 @@ sidebar_label: Actions
 ## Actions
 
 Detox uses [matchers](APIRef.Matchers.md) to find UI elements in your app and actions to simulate user interaction with those elements.
-
-Use [expectations](APIRef.Expect.md) to verify element states.
-
-### Methods
-
-- [`.tap()`](#tappoint)
-- [`.multiTap()`](#multitaptimes)
-- [`.longPress()`](#longpressduration)
-- [`.longPressAndDrag()`](#longpressanddragduration-normalizedpositionx-normalizedpositiony-targetelement-normalizedtargetpositionx-normalizedtargetpositiony-speed-holdduration--ios-only) **iOS only**
-- [`.swipe()`](#swipedirection-speed-normalizedoffset-normalizedstartingpointx-normalizedstartingpointy)
-- [`.pinch()`](#pinchscale-speed-angle--ios-only) **iOS only**
 - [`.scrollToIndex()`](#scrolltoindexindex--android-only) **Android only**
 - [`.scroll()`](#scrolloffset-direction-startpositionx-startpositiony)
   - [`whileElement()`](#whileelementelement)

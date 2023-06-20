@@ -1,3 +1,4 @@
+describe('Stub2', () => {
   beforeEach(async () => {
     await device.reloadReactNative();
     await element(by.text('Sanity')).tap();

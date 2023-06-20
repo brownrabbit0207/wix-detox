@@ -1,3 +1,4 @@
+const { uniqBy } = require('lodash');
 const { IPC } = require('node-ipc');
 
 const { serializeObjectWithError } = require('../utils/errorUtils');

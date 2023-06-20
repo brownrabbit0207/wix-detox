@@ -1,3 +1,4 @@
+---
 id: mocking-open-with-url
 slug: api/mocking-open-with-url
 title: Mocking Open With URL (Deep Links)

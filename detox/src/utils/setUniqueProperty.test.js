@@ -1,3 +1,4 @@
+const setUniqueProperty = require('./setUniqueProperty');
 
 describe('setUniqueProperty(obj, key, value', () => {
   it('should set obj[key] = value', () => {

@@ -1,3 +1,4 @@
+package com.wix.detox.common
 
 import android.os.Handler
 import android.os.Looper

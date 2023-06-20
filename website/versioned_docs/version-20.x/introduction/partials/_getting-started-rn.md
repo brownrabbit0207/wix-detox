@@ -1,3 +1,4 @@
+<!-- markdownlint-configure-file { "first-line-h1": 0 } -->
 
 :::info Note
 

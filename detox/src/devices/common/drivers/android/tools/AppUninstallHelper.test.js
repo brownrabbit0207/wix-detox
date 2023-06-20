@@ -1,3 +1,4 @@
+const deviceId = 'mock-device-id';
 const bundleId = 'mock-bundle-id';
 const testBundleId = 'mock-bundle-id.test';
 
@@ -7,17 +8,6 @@ describe('Android app uninstall helper', () => {
     const ADBClass = jest.genMockFromModule('../exec/ADB');
     adb = new ADBClass();
     adb.isPackageInstalled.mockResolvedValue(true);
-  });
-
-  let uut;
-  beforeEach(() => {
-    const AppUninstallHelper = require('./AppUninstallHelper');
-    uut = new AppUninstallHelper(adb);
-  });
-
-  it('should uninstall the app\'s binary using adb', async () => {
-    await uut.uninstall(deviceId, bundleId);
-    expect(adb.uninstall).toHaveBeenCalledWith(deviceId, bundleId);
   });
 
   it('should fail if app uninstall fails', async () => {

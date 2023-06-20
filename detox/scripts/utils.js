@@ -1,3 +1,4 @@
+const childProcess = require('child_process');
 
 function sh(cmdline, opts) {
   const args = cmdline.split(' ');
@@ -7,4 +8,3 @@ function sh(cmdline, opts) {
 
 module.exports = {
   sh
-};

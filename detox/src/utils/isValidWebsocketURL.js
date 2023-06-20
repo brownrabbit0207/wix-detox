@@ -1,3 +1,4 @@
+const { URL } = require('url');
 
 function isValidWebsocketURL(url) {
   try {
@@ -7,5 +8,3 @@ function isValidWebsocketURL(url) {
     return false;
   }
 }
-
-module.exports = isValidWebsocketURL;

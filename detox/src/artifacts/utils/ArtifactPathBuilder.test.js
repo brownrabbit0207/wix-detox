@@ -1,3 +1,4 @@
+const path = require('path');
 
 const ArtifactPathBuilder = require('./ArtifactPathBuilder');
 
@@ -7,17 +8,6 @@ describe(ArtifactPathBuilder, () => {
   describe('precise tests', () => {
     beforeEach(() => {
       pathBuilder = new ArtifactPathBuilder({
-        rootDir: '/tmp'
-      });
-    });
-
-    it('should give paths inside a timestamp-based subdirectory inside artifacts root', () => {
-      expect(pathBuilder.rootDir).toBe('/tmp');
-    });
-
-    it('should provide path for unique (per test runner run) artifacts', () => {
-      const artifactPath1 = pathBuilder.buildPathForTestArtifact('before-tests-began.log');
-      const expectedPath1 = path.join(pathBuilder.rootDir, 'before-tests-began.log');
 
       expect(artifactPath1).toBe(expectedPath1);
     });

@@ -1,3 +1,4 @@
+// @ts-nocheck
 const log = require('../../../utils/logger').child({ cat: 'artifact' });
 
 class Artifact {
@@ -6,17 +7,6 @@ class Artifact {
 
     if (template) {
       const { name, start, stop, save, discard, ...misc } = template;
-
-      Object.assign(this, misc);
-      this._name = name;
-
-      if (typeof start === 'function') {
-        this.doStart = start.bind(this);
-      }
-
-      if (typeof stop === 'function') {
-        this.doStop = stop.bind(template);
-      }
 
       if (typeof save === 'function') {
         this.doSave = save.bind(template);

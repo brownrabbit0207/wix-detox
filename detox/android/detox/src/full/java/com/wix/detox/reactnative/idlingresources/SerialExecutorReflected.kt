@@ -1,3 +1,4 @@
+package com.wix.detox.reactnative.idlingresources
 
 import org.joor.Reflect
 import java.util.concurrent.Executor

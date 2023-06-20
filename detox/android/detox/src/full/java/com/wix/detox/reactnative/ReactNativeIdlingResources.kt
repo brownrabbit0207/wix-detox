@@ -1,3 +1,4 @@
+package com.wix.detox.reactnative
 
 import android.os.Looper
 import android.util.Log
@@ -7,17 +8,6 @@ import androidx.test.espresso.base.IdlingResourceRegistry
 import com.facebook.react.bridge.ReactContext
 import com.wix.detox.LaunchArgs
 import com.wix.detox.reactnative.idlingresources.*
-import com.wix.detox.reactnative.idlingresources.timers.TimersIdlingResource
-import com.wix.detox.reactnative.idlingresources.timers.getInterrogationStrategy
-import com.wix.detox.reactnative.idlingresources.uimodule.UIModuleIdlingResource
-import org.joor.Reflect
-import org.joor.ReflectException
-
-private const val LOG_TAG = "DetoxRNIdleRes"
-
-private class MQThreadsReflector(private val reactContext: ReactContext) {
-    fun getQueue(queueName: String): MQThreadReflected? {
-        try {
             val queue = Reflect.on(reactContext).field(queueName).get() as Any?
             return MQThreadReflected(queue, queueName)
         } catch (e: ReflectException) {

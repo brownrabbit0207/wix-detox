@@ -1,3 +1,4 @@
+describe('React-Native Animations', () => {
   const _delay = ms => new Promise(res => setTimeout(res, ms));
 
   async function _startTest(driver, options = {}) {

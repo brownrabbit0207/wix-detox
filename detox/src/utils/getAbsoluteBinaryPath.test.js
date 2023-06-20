@@ -1,3 +1,4 @@
+const path = require('path');
 
 const getAbsoluteBinaryPath = require('./getAbsoluteBinaryPath');
 

@@ -1,3 +1,4 @@
+const TestRunnerError = require('./TestRunnerError');
 
 describe('TestRunnerError', () => {
   let error;

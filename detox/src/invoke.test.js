@@ -1,3 +1,4 @@
+// @ts-nocheck
 const invoke = require('./invoke');
 
 describe('invoke', () => {
@@ -7,17 +8,6 @@ describe('invoke', () => {
     jest.mock('./client/Client');
     jest.mock('./invoke/Invoke');
     Client = require('./client/Client');
-  });
-
-  it(`execute() should trigger executionHandler.execute()`, () => {
-    const invocationManager = new invoke.InvocationManager(new Client(''));
-    invocationManager.execute();
-    expect(invocationManager.executionHandler.execute).toHaveBeenCalled();
-  });
-
-  it(`execute should return execution result`, async () => {
-    const client = new Client('');
-    const someResult = 'some_result';
     client.execute.mockReturnValue(someResult);
     const invocationManager = new invoke.InvocationManager(client);
     const result = await invocationManager.execute();

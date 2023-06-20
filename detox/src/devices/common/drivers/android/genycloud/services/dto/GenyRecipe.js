@@ -1,3 +1,4 @@
+class GenyRecipe {
   constructor(rawRecipe) {
     this.uuid = rawRecipe.uuid;
     this.name = rawRecipe.name || 'Anonymous GMSaaS Recipe';
@@ -7,6 +8,3 @@
   toString() {
     return this._description;
   }
-}
-
-module.exports = GenyRecipe;

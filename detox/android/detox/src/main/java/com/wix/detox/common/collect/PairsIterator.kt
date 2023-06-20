@@ -1,3 +1,4 @@
+package com.wix.detox.common.collect
 
 import java.lang.IllegalStateException
 

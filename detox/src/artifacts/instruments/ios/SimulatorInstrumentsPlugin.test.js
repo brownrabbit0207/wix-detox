@@ -1,3 +1,4 @@
+// @ts-nocheck
 const temporaryPath = require('../../utils/temporaryPath');
 
 const SimulatorInstrumentsPlugin = require('./SimulatorInstrumentsPlugin');
@@ -7,17 +8,6 @@ jest.mock('../../utils/temporaryPath');
 describe('SimulatorInstrumentsPlugin', () => {
   const testSummary = 'TestSummary';
   const testPath = 'TestPath';
-
-  let pluginConfig;
-
-  beforeEach(() => {
-    const mockedApi = {
-      trackArtifact: jest.fn(),
-      untrackArtifact: jest.fn()
-    };
-    const mockedClient = {
-      isConnected: true,
-      startInstrumentsRecording: jest.fn(),
     };
     pluginConfig = {
       api: {

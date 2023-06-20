@@ -1,3 +1,4 @@
+class FakeWebSocket {
   constructor({ localPort, remotePort }) {
     this._localPort = localPort;
     this._remotePort = remotePort;

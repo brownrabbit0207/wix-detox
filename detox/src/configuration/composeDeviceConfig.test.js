@@ -1,3 +1,4 @@
+// @ts-nocheck
 const _ = require('lodash');
 
 const DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
@@ -7,17 +8,6 @@ describe('composeDeviceConfig', () => {
   let composeDeviceConfig;
   /** @type {*} */
   let cliConfig;
-  /** @type {Detox.DetoxConfiguration} */
-  let localConfig;
-  /** @type {Detox.DetoxDeviceConfig} */
-  let deviceConfig;
-  /** @type {Detox.DetoxConfig} */
-  let globalConfig;
-  /** @type {DetoxConfigErrorComposer} */
-  let errorComposer;
-  /** @type { { validateConfig: Function } */
-  let environmentFactory;
-
   /** @type {Logger} */
   let logger;
 

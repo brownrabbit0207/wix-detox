@@ -1,3 +1,4 @@
+class GenyAuthService {
   constructor(genyCloudExec) {
     this.genyCloudExec = genyCloudExec;
   }
@@ -7,5 +8,3 @@
     return whoAmI.auth.email;
   }
 }
-
-module.exports = GenyAuthService;

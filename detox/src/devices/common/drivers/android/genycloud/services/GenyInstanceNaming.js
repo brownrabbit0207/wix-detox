@@ -1,3 +1,4 @@
+const internals = () => require('../../../../../../../internals');
 
 class GenyInstanceNaming {
   generateName() {
@@ -7,7 +8,3 @@ class GenyInstanceNaming {
 
   isFamilial(name) {
     return name === this.generateName();
-  }
-}
-
-module.exports = GenyInstanceNaming;

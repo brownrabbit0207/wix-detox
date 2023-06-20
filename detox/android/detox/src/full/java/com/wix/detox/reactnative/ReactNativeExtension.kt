@@ -1,3 +1,4 @@
+package com.wix.detox.reactnative
 
 import android.app.Activity
 import android.content.Context

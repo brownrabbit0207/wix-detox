@@ -1,3 +1,4 @@
+/**
  * @type {{
  *   readonly cleanup: unique symbol;
  *   readonly config: unique symbol;

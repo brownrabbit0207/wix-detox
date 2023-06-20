@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-unused-vars: ["error", { "args": "none" }] */
 const RuntimeDevice = require('../RuntimeDevice');
 
 class RuntimeDeviceFactory {

@@ -1,3 +1,4 @@
+package com.wix.detox.inquiry
 
 import androidx.test.espresso.IdlingResource
 import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource
@@ -6,17 +7,6 @@ import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
-
-class DetoxBusyResourceSpec: Spek({
-    describe("Detox busy resource") {
-        data class TestCase<in T: IdlingResource>(
-            val caseTitle: String,
-            val idlingResource: IdlingResource,
-            val expectedDescription: DetoxBusyResourceDescription
-        )
-
-        describe("given a descriptive idling resource") {
-            val mockedDebugName = "mock:debug-name"
 
             fun aDescriptiveIdlingResource(busyHint: Map<String, Any>?): DescriptiveIdlingResource =
                 mock() {

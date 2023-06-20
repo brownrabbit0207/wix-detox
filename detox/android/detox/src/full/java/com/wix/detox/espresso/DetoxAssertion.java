@@ -1,3 +1,4 @@
+package com.wix.detox.espresso;
 
 import android.view.View;
 
@@ -7,17 +8,6 @@ import com.wix.detox.common.DetoxErrors.StaleActionException;
 import junit.framework.AssertionFailedError;
 
 import org.hamcrest.Matcher;
-
-import androidx.test.espresso.ViewAction;
-import androidx.test.espresso.ViewInteraction;
-
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static com.wix.detox.espresso.assertion.ViewAssertions.matches;
-import static org.hamcrest.Matchers.not;
-
-/**
  * Created by simonracz on 10/07/2017.
  */
 

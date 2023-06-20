@@ -1,3 +1,4 @@
+const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 const { interruptProcess } = require('../../utils/childProcess');
 const retry = require('../../utils/retry');
 const sleep = require('../../utils/sleep');

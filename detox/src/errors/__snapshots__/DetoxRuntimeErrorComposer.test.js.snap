@@ -1,3 +1,4 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetoxRuntimeErrorComposer abortedDetoxInit 1`] = `
 [DetoxRuntimeError: Aborted detox.init() execution, and now running detox.cleanup()

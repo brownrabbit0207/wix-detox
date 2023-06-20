@@ -1,3 +1,4 @@
+const DeviceCookie = require('detox/src/devices/cookies/DeviceCookie');
 
 class StubCookie extends DeviceCookie {
   constructor(stubId) {
@@ -7,7 +8,3 @@ class StubCookie extends DeviceCookie {
 
   get platform() {
     return 'stub';
-  }
-}
-
-module.exports = StubCookie;

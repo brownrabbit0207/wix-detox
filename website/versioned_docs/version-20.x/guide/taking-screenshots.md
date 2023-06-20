@@ -1,3 +1,4 @@
+# Taking Screenshots
 
 Detox supports taking in-test screenshots of the device, making the result immediately available in the form of an image file.
 

@@ -1,3 +1,4 @@
+const { expectToThrow } = require('./utils/custom-expects');
 const custom = require('./utils/custom-it');
 
 describe(':ios: Overlay', () => {

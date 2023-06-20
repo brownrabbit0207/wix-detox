@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const _ = require('lodash');
 const tempfile = require('tempfile');
 
@@ -7,17 +8,6 @@ describe('FileArtifact', () => {
   beforeEach(async () => {
     jest.mock('../../../utils/logger');
     logger = require('../../../utils/logger');
-    FileArtifact = require('./FileArtifact');
-    fileArtifact = null;
-    temporaryPath = tempfile('.artifact');
-    destinationPath = tempfile('.artifact');
-    temporaryData = 'Just a usual string to be saved to the file';
-  });
-
-  afterEach(async () => {
-    await Promise.all([
-      fs.remove(temporaryPath),
-      fs.remove(destinationPath)
     ]);
   });
 

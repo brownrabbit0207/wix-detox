@@ -1,3 +1,4 @@
+import { Event } from 'trace-event-lib';
 
 declare function random<T>(): T
 declare function assert<T>(x: T): void;
@@ -7,17 +8,6 @@ import {
   config,
   init,
   installWorker,
-  log,
-  onHookFailure,
-  onRunDescribeFinish,
-  onRunDescribeStart,
-  onTestDone,
-  onTestFnFailure,
-  onTestStart,
-  reportTestResults,
-  resolveConfig,
-  session,
-  tracing,
   uninstallWorker,
   worker,
 } from 'detox/internals';

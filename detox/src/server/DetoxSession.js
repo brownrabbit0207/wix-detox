@@ -1,3 +1,4 @@
+// @ts-nocheck
 const DetoxInternalError = require('../errors/DetoxInternalError');
 const log = require('../utils/logger').child({ cat: 'ws-server,ws-session' });
 
@@ -7,17 +8,6 @@ class DetoxSession {
    */
   constructor(id) {
     this._id = id;
-    /** @type {DetoxConnection} */
-    this._tester = null;
-    /** @type {DetoxConnection} */
-    this._app = null;
-    /** @type {boolean | null} */
-    this._pendingAppStatus = null;
-    /** @type {boolean | null} */
-    this._pendingTesterStatus = null;
-
-    log.trace(`created session ${id}`);
-  }
 
   get id() {
     return this._id;

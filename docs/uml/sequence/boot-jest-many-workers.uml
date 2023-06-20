@@ -1,3 +1,4 @@
+@startuml
 
 actor User
 boundary "Jest (main)" as Jest0

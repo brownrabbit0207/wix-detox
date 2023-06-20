@@ -1,3 +1,4 @@
+@file:JvmName("ViewMatchers")
 
 package com.wix.detox.espresso.matcher
 
@@ -7,17 +8,6 @@ import androidx.test.espresso.matcher.BoundedMatcher
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import com.wix.detox.espresso.common.SliderHelper
-import org.hamcrest.*
-import org.hamcrest.Matchers.*
-import kotlin.math.abs
-
-/*
- * An extension of [androidx.test.espresso.matcher.ViewMatchers].
- */
-
-fun withAccessibilityLabel(text: String) =
-    WithAccessibilityLabelMatcher(`is`(text))
-
 fun withShallowAccessibilityLabel(label: String): Matcher<View>
     = anyOf(ViewMatchers.withContentDescription(label), ViewMatchers.withText(label))
 

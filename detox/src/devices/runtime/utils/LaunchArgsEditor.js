@@ -1,3 +1,4 @@
+const _ = require('lodash');
 
 const ScopedLaunchArgsEditor = require('./ScopedLaunchArgsEditor');
 

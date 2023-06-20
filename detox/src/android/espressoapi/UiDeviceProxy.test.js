@@ -1,3 +1,4 @@
+const someCall = 'some_call';
 const someInstance = 'some_instance';
 const someDisplayHeight = 1920;
 const invocationManager = {

@@ -1,3 +1,4 @@
+const Instance = require('./dto/GenyInstance');
 
 class GenyInstanceLifecycleService {
   constructor(genyCloudExec, instanceNaming) {

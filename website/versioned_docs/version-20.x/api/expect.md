@@ -1,3 +1,4 @@
+# Expect
 
 Detox uses [matchers](matchers.md) to match UI elements in your app and expectations to verify those elements are in the expected state.
 
@@ -7,17 +8,6 @@ Use [actions](actions.md) to simulate use interaction with elements.
 
 - [`.toBeVisible()`](#tobevisible)
 - [`.toExist()`](#toexist)
-- [`.toBeFocused()`](#tobefocused)
-- [`.toHaveText()`](#tohavetexttext)
-- [`.toHaveLabel()`](#tohavelabellabel)
-- [`.toHaveId()`](#tohaveidid)
-- [`.toHaveValue()`](#tohavevaluevalue)
-- [`.toHaveSliderPosition()`](#tohavesliderpositionnormalizedposition-tolerance)
-- [`.toHaveToggleValue()`](#tohavetogglevaluevalue)
-- [`.not`](#not)
-- [`.withTimeout()`](#withtimeouttimeout)
-
-### `toBeVisible()`
 
 Expects the view to be at least N% visible on the screen.
 Accepts an optional parameter of percent threshold of element visibility, integer ranging from 1 to 100, that determines whether the element is visible or not. If no number is provided then defaults to 75%.

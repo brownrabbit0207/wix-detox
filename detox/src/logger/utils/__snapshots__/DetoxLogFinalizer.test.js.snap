@@ -1,3 +1,4 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetoxLogFinalizer createEventStream should create a stream of Chrome Trace format events 1`] = `
 Array [
@@ -7,17 +8,6 @@ Array [
     },
     "name": "process_name",
     "ph": "M",
-    "pid": 1234,
-    "tid": 0,
-    "ts": 1672531200000000,
-  },
-  Object {
-    "args": Object {
-      "sort_index": 0,
-    },
-    "name": "process_sort_index",
-    "ph": "M",
-    "pid": 1234,
     "tid": 0,
     "ts": 1672531200000000,
   },
