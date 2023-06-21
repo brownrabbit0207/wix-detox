@@ -8,6 +8,17 @@ const J = s => JSON.stringify(s);
 
 class DetoxConfigErrorComposer {
   constructor() {
+    this.setConfigurationName();
+    this.setDetoxConfigPath();
+    this.setDetoxConfig();
+    this.setExtends();
+  }
+
+  clone() {
+    return new DetoxConfigErrorComposer()
+      .setConfigurationName(this.configurationName)
+      .setDetoxConfigPath(this.filepath)
+      .setDetoxConfig(this.contents)
       .setExtends(this._extends);
   }
 

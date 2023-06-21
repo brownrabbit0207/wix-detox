@@ -8,16 +8,11 @@ project.ext.buildPomXmlDependencies = { pom, configurations ->
 
         // Legacy syntax
         if (configurations.hasProperty('compile')) {
-        return
+            addConfigurationDependencies(rootNode, configurations.compile, 'compile')
+        }
+    }
+}
 
-    final childNode = rootNode.appendNode('dependency')
-    childNode.appendNode('groupId', dep.group)
-    childNode.appendNode('artifactId', dep.name)
-    childNode.appendNode('version', dep.version)
-    childNode.appendNode('scope', scope)
-
-    if (!dep.transitive) {
-        // If this dependency is transitive, we should force exclude all its dependencies them from the POM
         final exclusionNode = childNode.appendNode('exclusions').appendNode('exclusion')
         exclusionNode.appendNode('groupId', '*')
         exclusionNode.appendNode('artifactId', '*')

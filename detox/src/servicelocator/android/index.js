@@ -8,7 +8,8 @@ const { TempFileTransfer } = require('../../devices/common/drivers/android/tools
 const AndroidServiceLocator = {
   get emulator() {
     return require('./emulatorServiceLocator');
-AndroidServiceLocator.deviceRegistry = DeviceRegistry.forAndroid();
-AndroidServiceLocator.devicePathBuilder = new AndroidDevicePathBuilder();
+  },
 
-module.exports = AndroidServiceLocator;
+  get genycloud() {
+    return require('./genycloudServiceLocator');
+  },

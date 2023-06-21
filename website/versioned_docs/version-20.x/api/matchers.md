@@ -8,6 +8,17 @@ Use [actions](actions.md) to simulate use interaction with elements and [expecta
 
 ## Methods
 
+- [`by.id()`](#byidid)
+- [`by.label()`](#bylabellabel)
+- [`by.text()`](#bytexttext)
+- [`by.type()`](#bytypeclassname)
+- [`by.traits()`](#bytraitstraits-ios-only) **iOS Only**
+- [`withAncestor()`](#withancestormatcher)
+- [`withDescendant()`](#withdescendantmatcher)
+- [`and()`](#andmatcher)
+- [`atIndex()`](#atindexindex)
+
+### `by.id(id)`
 
 Match elements with the specified accessibility identifier. In React Native, this corresponds to the value in the [`testID`](https://reactnative.dev/docs/view.html#testid) prop.
 

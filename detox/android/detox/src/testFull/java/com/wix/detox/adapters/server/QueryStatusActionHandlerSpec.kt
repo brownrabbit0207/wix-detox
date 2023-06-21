@@ -13,22 +13,6 @@ import org.spekframework.spek2.style.specification.describe
 object QueryStatusActionHandlerSpec : Spek({
     describe("Query Status Action Handler") {
         val params = "{\"mock\": \"params\"}"
-        val messageId = 666L
-
-        lateinit var outboundServerAdapter: OutboundServerAdapter
-        lateinit var testEngineFacade: TestEngineFacade
-
-        beforeEachTest {
-            outboundServerAdapter = mock()
-
-            testEngineFacade = mock()
-            whenever(testEngineFacade.awaitIdle()).then {
-                synchronized(testEngineFacade) {}
-            }
-            whenever(testEngineFacade.syncIdle()).then {
-                synchronized(testEngineFacade) {}
-            }
-        }
 
         fun uut() = QueryStatusActionHandler(outboundServerAdapter, testEngineFacade)
 

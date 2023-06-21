@@ -8,3 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@interface ReactNativeSupport : NSObject
+
+@property (nonatomic, class, readonly) BOOL isReactNativeApp;
+
++ (void)reloadApp;
++ (void)waitForReactNativeLoadWithCompletionHandler:(void(^)(void))handler;
+
+@end
+

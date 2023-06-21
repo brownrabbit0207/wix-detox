@@ -8,16 +8,11 @@ import kotlin.test.assertFailsWith
 object PairsIteratorSpec: Spek({
     describe("Pairs iterator") {
         it("should be sane about empty lists") {
-            assertThat(uut.next()).isEqualTo(Pair("first", "second"))
-        }
+            val uut = PairsIterator(emptyList<Any>())
+            assertThat(uut.hasNext()).isFalse()
 
-        it("should throw if iterating onto an uneven size") {
-            val uut = PairsIterator(listOf("first", "second", "third"))
-            uut.next()
-
-            assertThat(uut.hasNext()).isTrue()
-            assertFailsWith(IllegalStateException::class) {
-                uut.next()
+            assertFailsWith(Exception::class) {
+                assertThat(uut.next())
             }
         }
 

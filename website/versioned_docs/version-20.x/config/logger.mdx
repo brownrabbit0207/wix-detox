@@ -8,6 +8,17 @@ The `logger` section controls how the printed logs are going to look like in you
 
 ## Location
 
+<Location sectionName="logger" />
+
+## Properties
+
+## `logger.level` \[enum\]
+
+Default: `info`.
+
+Possible values in the descending severity order: `fatal`, `error`, `warn`, `info`, `debug`, `trace`.
+
+* Use `info` by default.
 * Use `error` or `warn` when you want to make the output as silent as possible.
 * Use `debug` to control what generally is happening under the hood.
 * Use `trace` when troubleshooting specific issues.

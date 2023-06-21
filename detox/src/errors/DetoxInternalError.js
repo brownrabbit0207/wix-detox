@@ -8,3 +8,7 @@ class DetoxInternalError extends DetoxError {
 
   static from(message) {
     return new DetoxInternalError(message).toString();
+  }
+}
+
+module.exports = DetoxInternalError;

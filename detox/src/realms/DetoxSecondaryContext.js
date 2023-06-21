@@ -8,16 +8,11 @@ const symbols = require('./symbols');
 
 // Protected symbols
 const { $restoreSessionState, $sessionState, $worker } = DetoxContext.protected;
-     * @type {import('../ipc/IPCClient')}
-     */
-    this[_ipcClient] = null;
-  }
 
-  //#region Internal members
-  async [symbols.reportTestResults](testResults) {
-    if (this[_ipcClient]) {
-      await this[_ipcClient].reportTestResults(testResults);
-    } else {
+//#region Private symbols
+const _ipcClient = Symbol('ipcClient');
+//#endregion
+
       throw new DetoxInternalError('Detected an attempt to report failed tests using a non-initialized context.');
     }
   }

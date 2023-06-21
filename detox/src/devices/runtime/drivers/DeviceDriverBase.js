@@ -13,22 +13,6 @@ const log = require('../../../utils/logger').child({ cat: 'device' });
  */
 
 class DeviceDriverBase {
-  /**
-   * @param deps { DeviceDriverDeps }
-   */
-  constructor({ client, eventEmitter }) {
-    this.client = client;
-    this.emitter = eventEmitter;
-  }
-
-  /**
-   * @returns { String | undefined }
-   */
-  getExternalId() {
-    return undefined;
-  }
-
-  /**
    * @returns { String | undefined }
    */
   getDeviceName() {

@@ -8,6 +8,17 @@
 
 #import "UIView+DetoxSpeedup.h"
 
+@interface NSObject ()
+
+- (void)_setCaretBlinkAnimationEnabled:(BOOL)arg1;
+- (void)setCaretBlinks:(BOOL)arg1;
+
+@end
+
+@interface UIScrollView ()
+
+- (void)_hideScrollIndicators;
+- (void)_hideScrollIndicator:(id)arg1 afterDelay:(NSTimeInterval)arg2 animated:(BOOL)arg3;
 
 @end
 

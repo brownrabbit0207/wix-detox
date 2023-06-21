@@ -8,9 +8,8 @@ import java.io.ByteArrayOutputStream
 
 class ScreenshotResult(private val bitmap: Bitmap) {
     fun asBitmap() = bitmap
-        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
-        view.draw(Canvas(bitmap))
-
-        return ScreenshotResult(bitmap)
+    fun asRawBytes(): ByteArray {
+        val outStream = ByteArrayOutputStream(bitmap.allocationByteCount)
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream)
+        return outStream.toByteArray()
     }
-}

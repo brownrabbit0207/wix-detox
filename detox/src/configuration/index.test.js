@@ -8,6 +8,17 @@ const DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
 
 describe('composeDetoxConfig', () => {
   let args;
+  let configuration;
+
+  /** @type {DetoxConfigErrorComposer} */
+  let errorComposer;
+
+  beforeEach(() => {
+    errorComposer = new DetoxConfigErrorComposer();
+
+    args = {};
+
+    require('../utils/argparse').getEnvValue.mockImplementation(key => args[key]);
     configuration = require('./index');
   });
 

@@ -8,3 +8,6 @@ describe('Focused', () => {
   });
 
   it('Skipped test', async () => {
+    // Causes issue in the previous implementation
+  });
+});

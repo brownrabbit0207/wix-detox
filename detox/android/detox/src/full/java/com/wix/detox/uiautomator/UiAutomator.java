@@ -13,4 +13,3 @@ public class UiAutomator {
     public static UiDevice uiDevice() {
         return UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
     }
-}

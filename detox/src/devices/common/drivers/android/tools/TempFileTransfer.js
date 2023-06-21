@@ -8,3 +8,7 @@ class TempFileTransfer extends FileTransfer {
   }
 }
 
+module.exports = {
+  TempFileTransfer,
+  FILE_PATH
+};

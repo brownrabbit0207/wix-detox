@@ -8,16 +8,11 @@ class DeviceAllocator {
    */
   constructor(allocationDriver) {
     this._driver = allocationDriver;
-  /**
-   * @param {DeviceCookie} deviceCookie
-   * @return {Promise<unknown>}
-   */
-  postAllocate(deviceCookie) {
-    if (typeof this._driver.postAllocate !== 'function') {
-      return Promise.resolve();
-    }
+    traceMethods(log, this, ['allocate', 'postAllocate', 'free']);
+  }
 
-    return this._driver.postAllocate(deviceCookie);
+  /**
+   * @param deviceConfig { Object }
   }
 
   /**

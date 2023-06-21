@@ -8,6 +8,17 @@ import java.util.List;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 
+public class LaunchArgs {
+    private static final String DETOX_SERVER_URL_ARG = "detoxServer";
+    private static final String DETOX_SESSION_ID_ARG_KEY = "detoxSessionId";
+    private static final String DETOX_NOTIFICATION_PATH_ARG = "detoxUserNotificationDataURL";
+    private static final String DETOX_BLACKLIST_URLS_ARG = "detoxURLBlacklistRegex";
+    private static final String DETOX_URL_OVERRIDE_ARG = "detoxURLOverride";
+    private static final String DETOX_ENABLE_SYNCHRONIZATION = "detoxEnableSynchronization";
+    private static final List<String> RESERVED_INSTRUMENTATION_ARGS = Arrays.asList("class", "package", "func", "unit", "size", "perf", "debug", "log", "emma", "coverageFile");
+
+    public boolean hasNotificationPath() {
+        return InstrumentationRegistry.getArguments().containsKey(DETOX_NOTIFICATION_PATH_ARG);
     }
 
     public String getNotificationPath() {

@@ -8,6 +8,17 @@
 
 class EspressoDetox {
   static perform(interaction, action) {
+    return {
+      target: {
+        type: "Class",
+        value: "com.wix.detox.espresso.EspressoDetox"
+      },
+      method: "perform",
+      args: [{
+        type: "Invocation",
+        value: interaction
+      }, action]
+    };
   }
 
   static changeOrientation(orientation) {

@@ -8,6 +8,17 @@ function launchEmulatorProcess(emulatorName, emulatorExec, emulatorLaunchCommand
   let childProcessOutput;
   const portName = emulatorLaunchCommand.port ? `-${emulatorLaunchCommand.port}` : '';
   const tempLog = `./${emulatorName}${portName}.log`;
+  const stdout = fs.openSync(tempLog, 'a');
+  const stderr = fs.openSync(tempLog, 'a');
+
+  function detach() {
+    if (childProcessOutput) {
+      return;
+    }
+
+    childProcessOutput = fs.readFileSync(tempLog, 'utf8');
+
+    fs.closeSync(stdout);
     fs.closeSync(stderr);
     fs.unlink(tempLog, _.noop);
   }

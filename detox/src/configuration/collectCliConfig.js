@@ -8,16 +8,11 @@ const asBoolean = (value) => {
   }
 
   return value != null
+    ? (value !== 'false' && value !== '0' && value !== '')
     : undefined;
 };
 
-function collectCliConfig({ argv }) {
-  const env = (key) => argparse.getEnvValue(key);
-  const get = (key, fallback) => {
-    const value = argv && Reflect.has(argv, key) ? argv[key] : env(key);
-    return value === undefined ? fallback : value;
-  };
-
+const asNumber = (value) => {
   return _.omitBy({
     artifactsLocation: get('artifacts-location'),
     captureViewHierarchy: get('capture-view-hierarchy'),

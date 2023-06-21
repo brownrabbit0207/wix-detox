@@ -13,22 +13,6 @@ const log = require('../utils/logger').child({ cat: 'config' });
  */
 function composeDeviceConfig(opts) {
   const deviceConfig = composeDeviceConfigFromAliased(opts);
-  applyCLIOverrides(deviceConfig, opts.cliConfig);
-  deviceConfig.device = unpackDeviceQuery(deviceConfig);
-
-  return deviceConfig;
-}
-
-/**
- * @param {DetoxConfigErrorComposer} opts.errorComposer
- * @param {Detox.DetoxConfig} opts.globalConfig
- * @param {Detox.DetoxConfiguration} opts.localConfig
- * @returns {Detox.DetoxDeviceConfig}
- */
-function composeDeviceConfigFromAliased(opts) {
-  const { errorComposer, globalConfig, localConfig } = opts;
-
-  /** @type {Detox.DetoxDeviceConfig} */
   let deviceConfig;
 
   const isAliased = typeof localConfig.device === 'string';

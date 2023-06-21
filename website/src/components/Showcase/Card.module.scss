@@ -8,6 +8,17 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  border: 1px solid rgb(239, 239, 239);
+  border-radius: 5%;
+  padding: 20px;
+
+  transition: box-shadow 0.25s ease-in-out;
+
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: normal;
+}
+
 .card:hover {
   box-shadow: 0px 12px 12px #00000006;
 }

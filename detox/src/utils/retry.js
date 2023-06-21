@@ -8,6 +8,17 @@ const DEFAULT_BACKOFF_MODE = 'linear';
 const backoffModes = {
   'linear': () => ({ interval, totalTries }) => totalTries * interval,
   'none': () => ({ interval }) => interval,
+};
+
+async function retry(optionsOrFunc, func) {
+  let options = optionsOrFunc;
+  if (typeof optionsOrFunc === 'function') {
+    func = optionsOrFunc;
+    options = {};
+  }
+
+  const {
+    retries = DEFAULT_RETRIES,
     interval = DEFAULT_INTERVAL,
     backoff = DEFAULT_BACKOFF_MODE,
     conditionFn = DEFAULT_CONDITION_FN,

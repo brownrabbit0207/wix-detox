@@ -8,3 +8,14 @@ class AndroidTextInput extends Component {
     super(props);
     NativeModule.spyLongTaps(props.testID);
   }
+
+  render() {
+    return <TextInput {...this.props} nativeID={this.props.testID} />
+  }
+}
+
+if (Platform.OS === 'android') {
+  module.exports = AndroidTextInput;
+} else {
+  module.exports = TextInput;
+}

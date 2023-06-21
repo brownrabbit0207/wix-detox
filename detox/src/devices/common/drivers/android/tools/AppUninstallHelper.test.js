@@ -10,6 +10,17 @@ describe('Android app uninstall helper', () => {
     adb.isPackageInstalled.mockResolvedValue(true);
   });
 
+  let uut;
+  beforeEach(() => {
+    const AppUninstallHelper = require('./AppUninstallHelper');
+    uut = new AppUninstallHelper(adb);
+  });
+
+  it('should uninstall the app\'s binary using adb', async () => {
+    await uut.uninstall(deviceId, bundleId);
+    expect(adb.uninstall).toHaveBeenCalledWith(deviceId, bundleId);
+  });
+
   it('should fail if app uninstall fails', async () => {
     adb.uninstall.mockRejectedValue(new Error('mocked error in adb.uninstall'));
     await expect(uut.uninstall(deviceId, bundleId)).rejects.toThrowError();

@@ -8,6 +8,17 @@ describe('FreeDeviceFinder', () => {
   let uut;
   beforeEach(() => {
     const DeviceRegistry = jest.genMockFromModule('../../../../DeviceRegistry');
+    mockDeviceRegistry = new DeviceRegistry();
+    mockDeviceRegistry.includes.mockReturnValue(false);
+
+    uut = new FreeDeviceFinder(mockAdb, mockDeviceRegistry);
+  });
+
+  it('should return the only device when it matches, is online and not already taken by other workers', async () => {
+    mockAdbDevices([emulator5556]);
+
+    const result = await uut.findFreeDevice(emulator5556.adbName);
+    expect(result).toEqual(emulator5556.adbName);
   });
 
   it('should return null when there are no devices', async () => {

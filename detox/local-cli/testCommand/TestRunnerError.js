@@ -8,3 +8,6 @@ class TestRunnerError extends DetoxError {
     this.signal = signal;
     this.name = 'TestRunnerError';
   }
+}
+
+module.exports = TestRunnerError;

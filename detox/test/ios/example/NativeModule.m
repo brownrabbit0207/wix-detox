@@ -8,16 +8,11 @@ static int CALL_COUNTER = 0;
 
 RCT_EXPORT_MODULE();
 
-  resolve(str);
-  // NSLog(@"NativeModule echoWithResponse called");
-}
-
-RCT_EXPORT_METHOD(nativeSetTimeout:(NSTimeInterval)delay block:(RCTResponseSenderBlock)block)
+RCT_EXPORT_METHOD(echoWithoutResponse:(NSString *)str)
 {
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		dispatch_async(dispatch_get_main_queue(), ^{
-			block(@[]);
-		});
+  // NSLog(@"NativeModule echoWithoutResponse called");
+  CALL_COUNTER++;
+}
 	});
 }
 

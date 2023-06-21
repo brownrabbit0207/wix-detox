@@ -8,15 +8,10 @@ sidebar_label: Uninstalling Detox
 ## Uninstalling Detox
 
 Installing and using Detox implies certain side effects: cloned devices, cache files, state files, temporary files, etc.
-```
 
-or run:
+This checklist might come in handy whenever you have to make a clean uninstallation after using Detox.
 
-```sh
-detox clean-framework-cache
-```
-
-### Test Session State
+### Detox Framework Cache
 
 On every test run, Detox rewrites a few temporary files in `DETOX_LIBRARY_ROOT_PATH`, i.e.:
 

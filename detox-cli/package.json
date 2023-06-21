@@ -8,6 +8,17 @@
   },
   "bin": {
     "detox": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wix/detox.git"
+  },
+  "keywords": [
+    "detox",
+    "cli"
+  ],
+  "author": "Yaroslav Serhieiev <yaroslavs@wix.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wix/Detox/issues"
   },

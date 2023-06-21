@@ -8,3 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@interface ExtensionOperation : NSOperation
+
+- (void)executeAsyncWithCompletionHandler:(void(^)(void))handler;
+
+@end

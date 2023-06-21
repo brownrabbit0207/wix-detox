@@ -8,6 +8,17 @@ const DetoxAssertionApi = require('../espressoapi/DetoxAssertion');
 const EspressoDetoxApi = require('../espressoapi/EspressoDetox');
 
 function call(maybeAFunction) {
+  return maybeAFunction instanceof Function ? maybeAFunction() : maybeAFunction;
+}
+
+class Interaction {
+  constructor(invocationManager, traceDescription) {
+    this._call = undefined;
+    this._traceDescription = traceDescription;
+    this._invocationManager = invocationManager;
+  }
+
+  async execute() {
     return traceInvocationCall(this._traceDescription, this._call,
       this._invocationManager.execute(this._call).then((resultObj) => resultObj ? resultObj.result : undefined));
   }

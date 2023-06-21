@@ -8,16 +8,11 @@ import com.wix.detox.common.DetoxErrors.StaleActionException;
 import junit.framework.AssertionFailedError;
 
 import org.hamcrest.Matcher;
- * Created by simonracz on 10/07/2017.
- */
 
-public class DetoxAssertion {
+import androidx.test.espresso.ViewAction;
+import androidx.test.espresso.ViewInteraction;
 
-    private DetoxAssertion() {
-        // static class
-    }
-
-    public static ViewInteraction assertMatcher(ViewInteraction i, Matcher<View> m) {
+import static androidx.test.espresso.Espresso.onView;
         return i.check(matches(m));
     }
 

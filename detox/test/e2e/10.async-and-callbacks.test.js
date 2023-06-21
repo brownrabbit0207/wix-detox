@@ -8,5 +8,8 @@ describe('Async and Callbacks', () => {
     expect(element(by.text('Welcome'))).toBeVisible().then(() => {
       setTimeout(() => {
         done();
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+      }, 1000);
+    });
+  });
+
+  it('should handle async await', async () => {

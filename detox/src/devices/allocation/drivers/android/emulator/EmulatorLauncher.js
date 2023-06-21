@@ -8,6 +8,17 @@ const { LaunchCommand } = require('../../../../common/drivers/android/emulator/e
 
 const { launchEmulatorProcess } = require('./launchEmulatorProcess');
 
+const isUnknownEmulatorError = (err) => (err.message || '').includes('failed with code null');
+
+class EmulatorLauncher extends DeviceLauncher {
+  constructor({ adb, emulatorExec, eventEmitter }) {
+    super(eventEmitter);
+    this._adb = adb;
+    this._emulatorExec = emulatorExec;
+    traceMethods(log, this, ['_awaitEmulatorBoot']);
+  }
+
+  /**
    * @param avdName { String }
    * @param adbName { String }
    * @param isRunning { Boolean }

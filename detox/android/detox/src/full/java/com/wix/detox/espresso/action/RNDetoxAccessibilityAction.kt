@@ -8,6 +8,17 @@ import com.facebook.react.bridge.ReactContext
 import com.facebook.react.bridge.WritableMap
 import com.facebook.react.uimanager.UIManagerHelper
 import com.facebook.react.uimanager.events.Event
+import com.wix.detox.espresso.DetoxMatcher
+import org.hamcrest.Matcher
+
+class RNDetoxAccessibilityAction(private val mActionName: String) : ViewAction {
+
+    override fun getConstraints(): Matcher<View?>? = DetoxMatcher.matcherForNotNull()
+
+    override fun getDescription(): String = "Dispatch an Accessibility Action"
+
+    override fun perform(uiController: UiController?, view: View?) {
+        val reactContext = view?.context as? ReactContext ?: return
         val reactTag = view.id
 
         UIManagerHelper.getEventDispatcherForReactTag(reactContext, reactTag)

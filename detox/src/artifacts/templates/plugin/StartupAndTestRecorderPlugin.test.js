@@ -13,22 +13,6 @@ describe('StartupAndTestRecorderPlugin', () => {
   beforeEach(() => {
     api = new ArtifactsApi({
       config: {
-        enabled: false,
-        keepOnlyFailedTestsArtifacts: false,
-      },
-    });
-    plugin = new FakeStartupAndTestRecorderPlugin({ api });
-  });
-
-  describe('when disabled', () => {
-    beforeEach(() => {
-      plugin.disable();
-    });
-
-    describe('onReadyToRecord', () => {
-      beforeEach(async () => {
-        await plugin.onReadyToRecord();
-      });
 
       it('should end correctly, but do nothing', expectThatNothingActuallyHappens);
     });

@@ -13,22 +13,6 @@ Array [
 
 exports[`Detox server integration "tester" connects first, and then disconnects 1`] = `
 Array [
-  Object {
-    "cat": "ws-server,ws-session",
-    "id": 8081,
-  },
-  "connection :8000<->:8081",
-  "(begin)",
-]
-`;
-
-exports[`Detox server integration edge cases .registerSession - calling twice 1`] = `
-Array [
-  Object {
-    "cat": "ws-server,ws-session",
-    "id": 10,
-    "role": "app",
-    "sessionId": "aSession",
     "trackingId": "app",
   },
   "DetoxInternalError: Cannot login the same WebSocket instance twice into the same session.

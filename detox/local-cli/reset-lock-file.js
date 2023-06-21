@@ -13,4 +13,3 @@ module.exports.handler = async function resetLockFile() {
   ]);
 
   log.info(`Cleaned lock files from: ${getDetoxLibraryRootPath()}`);
-};

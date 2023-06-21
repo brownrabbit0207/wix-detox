@@ -8,6 +8,17 @@ export default class PickerViewScreen extends Component {
 
     this.state = {
       chosenValue: "com.wix.detox.a"
+    };
+
+    this.setValue = this.setValue.bind(this);
+  }
+
+  setValue(newValue) {
+    this.setState({
+      chosenValue: newValue
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
