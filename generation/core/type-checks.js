@@ -13,16 +13,11 @@ const templateFromString = (templateStr, argValue) =>
 const isNumber = generateTypeCheck('number');
 const isString = generateTypeCheck('string');
 const isBoolean = generateTypeCheck('boolean');
-    throw new Error('${name} should be a GREYMatcher, but got ' + JSON.stringify(ARG));
-  }
-`,
-    t.identifier(name)
-  );
-}
-
-function isGreyAction({ name }) {
-  return templateFromString(
-    `
+const isPoint = [
+  generateTypeCheck('object'),
+  generateTypeCheck('number', { selector: 'x' }),
+  generateTypeCheck('number', { selector: 'y' })
+];
   if (
     typeof ARG !== "object" ||
     ARG.type !== "Invocation" ||

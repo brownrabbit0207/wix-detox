@@ -13,6 +13,22 @@ describe('Android emulator allocation helper', () => {
 
     const DeviceRegistry = jest.genMockFromModule('../../../../../devices/DeviceRegistry');
     deviceRegistry = new DeviceRegistry();
+    deviceRegistry.allocateDevice.mockImplementation((func) => func());
+
+    const FreeDeviceFinder = jest.genMockFromModule('./FreeEmulatorFinder');
+    freeDeviceFinder = new FreeDeviceFinder();
+
+    randomFunc = jest.fn().mockReturnValue(1);
+
+    const EmulatorAllocationHelper = require('./EmulatorAllocationHelper');
+    uut = new EmulatorAllocationHelper(deviceRegistry, freeDeviceFinder, randomFunc);
+  });
+
+  const givenFreeDevice = (adbName) => freeDeviceFinder.findFreeDevice.mockResolvedValue(adbName);
+  const givenNoFreeDevices = () => freeDeviceFinder.findFreeDevice.mockResolvedValue(null);
+  const givenRandomFuncResult = (result) => randomFunc.mockReturnValue(result);
+
+  describe('allocation', () => {
     it('should return a free device', async () => {
       givenFreeDevice(adbName);
 

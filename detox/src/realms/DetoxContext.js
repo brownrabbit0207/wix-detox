@@ -13,16 +13,11 @@ const $logFinalizer = Symbol('logFinalizer');
 const $restoreSessionState = Symbol('restoreSessionState');
 const $sessionState = Symbol('restoreSessionState');
 const $status = Symbol('status');
-    this[symbols.cleanup] = async () => {
-      this[$status] = 'cleanup';
-      try {
-        await _cleanup();
-      } finally {
-        this[$status] = 'inactive';
-      }
-    };
+const $worker = Symbol('worker');
+//#endregion
 
-    this[symbols.getStatus] = this[symbols.getStatus].bind(this);
+class DetoxContext {
+  constructor() {
     this[symbols.reportTestResults] = this[symbols.reportTestResults].bind(this);
     this[symbols.resolveConfig] = this[symbols.resolveConfig].bind(this);
     this[symbols.installWorker] = this[symbols.installWorker].bind(this);

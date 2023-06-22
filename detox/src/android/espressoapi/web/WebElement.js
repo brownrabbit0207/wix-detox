@@ -13,6 +13,22 @@ class WebElement {
       method: "tap",
       args: []
     };
+  }
+
+  static typeText(element, text) {
+    if (typeof text !== "string") throw new Error("text should be a string, but got " + (text + (" (" + (typeof text + ")"))));
+    return {
+      target: element,
+      method: "typeText",
+      args: [text]
+    };
+  }
+
+  static replaceText(element, text) {
+    if (typeof text !== "string") throw new Error("text should be a string, but got " + (text + (" (" + (typeof text + ")"))));
+    return {
+      target: element,
+      method: "replaceText",
       args: [text]
     };
   }

@@ -13,6 +13,22 @@ describe('start', () => {
 
       const config = {
         apps: {},
+        artifacts: {},
+        behavior: {},
+        errorComposer: new DetoxConfigErrorComposer(),
+        device: {},
+        session: {}
+      };
+
+      return ({
+        config,
+        resolveConfig: jest.fn().mockResolvedValue(config),
+        log: require('../src/utils/logger')
+      });
+    });
+
+    detox = require('../internals');
+  });
 
   afterEach(async () => {
     if (cmd) {

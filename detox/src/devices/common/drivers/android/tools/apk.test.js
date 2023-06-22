@@ -13,3 +13,18 @@ describe('APK utils', () => {
       const inputApkPath = path.join(rootPath, 'build/outputs/apk/debug/app-debug.apk');
       const expectedTestApkPath = path.join(rootPath, 'build/outputs/apk/androidTest/debug/app-debug-androidTest.apk');
       expect(apkUtils.getTestApkPath(inputApkPath)).toEqual(expectedTestApkPath);
+    });
+
+    it('should properly resolve given a gradle build flavor', async () => {
+      const inputApkPath = path.join(rootPath, 'build/outputs/apk/development/debug/app-development-debug.apk');
+      const expectedTestApkPath = path.join(rootPath, 'build/outputs/apk/androidTest/development/debug/app-development-debug-androidTest.apk');
+      expect(apkUtils.getTestApkPath(inputApkPath)).toEqual(expectedTestApkPath);
+    });
+
+    it('should properly resolve given a gradle build with multiple flavors', async () => {
+      const inputApkPath = path.join(rootPath, 'build/outputs/apk/pocPlayStore/debug/app-poc-playStore-debug.apk');
+      const expectedTestApkPath = path.join(rootPath, 'build/outputs/apk/androidTest/pocPlayStore/debug/app-poc-playStore-debug-androidTest.apk');
+      expect(apkUtils.getTestApkPath(inputApkPath)).toEqual(expectedTestApkPath);
+    });
+  });
+});

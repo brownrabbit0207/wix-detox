@@ -13,3 +13,7 @@ module.exports.handler = async function cleanFrameworkCache() {
     const frameworkPath = path.join(os.homedir(), '/Library/Detox');
     detox.log.info(`Removing framework binaries from ${frameworkPath}`);
     await fs.remove(frameworkPath);
+  } else {
+    detox.log.info(`The command is supported only on macOS, skipping the execution.`);
+  }
+};

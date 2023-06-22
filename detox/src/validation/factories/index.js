@@ -13,6 +13,22 @@ class Genycloud extends EnvValidatorFactory {
     const GenycloudEnvValidator = require('../android/GenycloudEnvValidator');
     return new GenycloudEnvValidator({ authService, exec });
   }
+}
+
+class IosSimulator extends EnvValidatorFactory {
+  createValidator() {
+    const IosSimulatorEnvValidator = require('../ios/IosSimulatorEnvValidator');
+    return new IosSimulatorEnvValidator();
+  }
+}
+
+class Noop extends EnvValidatorFactory {
+  createValidator() {
+    const EnvironmentValidatorBase = require('../EnvironmentValidatorBase');
+    return new EnvironmentValidatorBase();
+  }
+}
+
 class External extends EnvValidatorFactory {
   constructor(module) {
     super();

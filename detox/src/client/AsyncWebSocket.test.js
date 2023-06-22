@@ -13,16 +13,11 @@ describe('AsyncWebSocket', () => {
    * @type {import('./AsyncWebSocket')}
    */
   let aws;
-      this.readyState = WebSocket.OPEN;
-      this.onopen && this.onopen({ target: this });
-    };
-    WebSocket.prototype.mockError = function (error) {
-      this.onerror && this.onerror({ error });
-    };
-    WebSocket.prototype.mockMessage = function (data) {
-      this.onmessage && this.onmessage({ data: JSON.stringify(data) });
-    };
-    WebSocket.prototype.mockClose = function () {
+  let log;
+
+  const socket = permaproxy(() => _.last(WebSocket.mock.instances));
+
+  beforeEach(() => {
       this.onclose && this.onclose(null);
     };
     WebSocket.prototype.mockCloseError = function (error) {

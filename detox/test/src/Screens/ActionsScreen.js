@@ -13,6 +13,22 @@ import {
   SafeAreaView,
   requireNativeComponent,
 } from 'react-native';
+import TextInput from '../Views/TextInput';
+import Slider from '@react-native-community/slider';
+
+const DoubleTapsText = requireNativeComponent('DetoxDoubleTapsTextView');
+const SluggishTapsText = requireNativeComponent('DetoxSluggishTapsTextView');
+
+const { width } = Dimensions.get('window');
+
+// Calc horizontal item size to have exactly 5 items visible
+const hItemWidth = (width / 5) - 20;
+
+const styles = StyleSheet.create({
+  item: { height: 30, backgroundColor: '#e8e8f8', padding: 5, margin: 10 },
+  horizItem: { width: hItemWidth, backgroundColor: '#e8e8f8', margin: 10, textAlign: 'center', textAlignVertical: 'center' },
+});
+
 const isIos = Platform.OS === 'ios';
 const isAndroid = Platform.OS === 'android';
 

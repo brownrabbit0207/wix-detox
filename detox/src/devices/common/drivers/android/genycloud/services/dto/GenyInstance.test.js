@@ -13,6 +13,22 @@ describe('Genymotion-Cloud Instance DTO', () => {
     ...rawInstance,
     state: 'ONLINE',
     adb_serial: '0.0.0.0',
+    adb_serial_port: 0,
+  };
+
+  const connectedRawInstance = {
+    ...rawInstance,
+    state: 'ONLINE',
+    adb_serial: 'localhost:7777',
+    adb_serial_port: 7777,
+  };
+
+  const bootingInstance = {
+    ...disconnectedRawInstance,
+    state: 'BOOTING',
+  };
+  const startingInstance = {
+    ...disconnectedRawInstance,
     state: 'STARTING',
   };
   const creatingInstance = {

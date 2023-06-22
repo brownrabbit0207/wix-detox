@@ -18,27 +18,6 @@ Execution failed for task ':app:processReleaseAndroidTestResources'.
 Ensure that the following line appears in your app build script in the `dependencies` section:
 
 ```gradle title="android/app/build.gradle"
-dependencies {
-    // ...
-    implementation 'androidx.appcompat:appcompat:1.1.0' // (check what the latest version is!)
-}
-```
-
-### Problem: minSdkVersion mismatch
-
-For Gradle errors involving `minSdkVersion` mismatches resembling this one:
-
-```text
-uses-sdk:minSdkVersion 18 cannot be smaller than version 21 declared in library [com.facebook.react:react-native:0.64.3] /Users/janedoe/.gradle/caches/transforms-3/6a9cd4eeeb285f80b9e6f413ecd78d0d/transformed/jetified-react-native-0.64.3/AndroidManifest.xml as the library might be using APIs not available in 18
-        Suggestion: use a compatible library with a minSdk of at most 18,
-                or increase this project's minSdk version to at least 21,
-                or use tools:overrideLibrary="com.facebook.react" to force usage (may lead to runtime failures)
-```
-
-Try applying the solution suggested in [this Stack-overflow](https://stackoverflow.com/questions/21032271/how-to-inject-android-configuration-to-each-subproject-with-gradle) post, namely adding this to your root-project's `build.gradle` file (replace `21` those matching your app's `build.gradle`):
-
-```gradle title="android/build.gradle"
-allprojects {
     afterEvaluate {
         if (it.hasProperty('android')){
             android {

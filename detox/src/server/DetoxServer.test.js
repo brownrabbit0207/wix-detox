@@ -13,6 +13,22 @@ describe('DetoxServer', () => {
     jest.mock('../utils/logger');
     jest.mock('./DetoxSessionManager');
     log = require('../utils/logger');
+    DetoxServer = require('./DetoxServer');
+    DetoxSessionManager = require('./DetoxSessionManager');
+  });
+
+  afterEach(async () => {
+    if (server) {
+      await server.close();
+    }
+  });
+
+  describe('.open() / .close()', () => {
+    beforeEach(async () => {
+      options = { port: 0 };
+    });
+
+    it('should start listening on specified port (on open) and stop (on close)', async () => {
       let port;
 
       try {

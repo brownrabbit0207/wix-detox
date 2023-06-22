@@ -13,6 +13,22 @@ const {
 
 const {removeDocsForVersion, buildDocsForVersion} = require('./releaseDocumentation');
 
+function publishNewVersion() {
+  validatePrerequisites();
+  projectSetup();
+
+  const releaseTag = getReleaseNpmTag();
+  const currentVersion = queryNpmVersionByTag(releaseTag);
+  log(`    current published version on tag ${releaseTag}: ${currentVersion || 'N/A'}`);
+
+  publishToNpm(releaseTag);
+
+  const newVersion = getVersionSafe();
+  log(`    new published version on tag ${releaseTag}: ${newVersion}`);
+
+  if (releaseTag === 'latest') {
+    releaseDocsVersion(newVersion, currentVersion);
+  }
 }
 
 function validatePrerequisites() {

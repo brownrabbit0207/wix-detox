@@ -13,3 +13,9 @@ class FileTransfer {
 
   async send(deviceId, sourcePath, destinationFilename) {
     const destinationPath = path.posix.join(this._dir, destinationFilename);
+    await this._adb.push(deviceId, sourcePath, destinationPath);
+    return destinationPath;
+  }
+}
+
+module.exports = FileTransfer;

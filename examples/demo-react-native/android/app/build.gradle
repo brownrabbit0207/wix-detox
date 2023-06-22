@@ -18,27 +18,6 @@ android {
         versionCode 1
         versionName '1.0'
         ndk {
-            abiFilters 'armeabi-v7a', 'x86', 'x86_64', 'arm64-v8a'
-        }
-
-        testBuildType System.getProperty('testBuildType', 'debug')
-        testInstrumentationRunner 'com.example.DetoxTestAppJUnitRunner'
-    }
-    splits {
-        abi {
-            reset()
-            enable false
-            universalApk false  // If true, also generate a universal APK
-            include 'armeabi-v7a', 'x86', 'x86_64', 'arm64-v8a'
-        }
-    }
-    signingConfigs {
-        release {
-            storeFile file("keystore.jks")
-            storePassword "12345678"
-            keyAlias "key0"
-            keyPassword "12345678"
-        }
     }
     buildTypes {
         release {

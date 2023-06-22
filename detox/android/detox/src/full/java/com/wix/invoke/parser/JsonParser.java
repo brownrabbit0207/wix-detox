@@ -13,3 +13,10 @@ public class JsonParser {
 
     public JSONObject parse(String jsonData) {
         try {
+            JSONObject obj = new JSONObject(jsonData);
+            return obj;
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

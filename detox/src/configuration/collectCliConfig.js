@@ -13,6 +13,22 @@ const asBoolean = (value) => {
 };
 
 const asNumber = (value) => {
+  if (typeof value === 'number') {
+    return value;
+  }
+
+  return value != null && value !== ''
+    ? Number(value)
+    : undefined;
+};
+
+function collectCliConfig({ argv }) {
+  const env = (key) => argparse.getEnvValue(key);
+  const get = (key, fallback) => {
+    const value = argv && Reflect.has(argv, key) ? argv[key] : env(key);
+    return value === undefined ? fallback : value;
+  };
+
   return _.omitBy({
     artifactsLocation: get('artifacts-location'),
     captureViewHierarchy: get('capture-view-hierarchy'),

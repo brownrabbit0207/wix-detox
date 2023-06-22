@@ -13,6 +13,22 @@ class Artifact {
 
       if (typeof start === 'function') {
         this.doStart = start.bind(this);
+      }
+
+      if (typeof stop === 'function') {
+        this.doStop = stop.bind(template);
+      }
+
+      if (typeof save === 'function') {
+        this.doSave = save.bind(template);
+      }
+
+      if (typeof discard === 'function') {
+        this.doDiscard = discard.bind(template);
+      }
+    }
+
+    this._startPromise = null;
     this._stopPromise = null;
     this._savePromise = null;
     this._discardPromise = null;

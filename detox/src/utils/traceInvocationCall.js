@@ -18,4 +18,3 @@ function invocationCall(logger, sectionName, invocation, action) {
   }, sectionName, action);
 }
 
-module.exports = invocationCall;

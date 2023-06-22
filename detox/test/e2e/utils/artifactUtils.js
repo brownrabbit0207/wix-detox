@@ -18,27 +18,6 @@ function getLatestArtifactsDir() {
 }
 
 function assertDirExists(dirPath) {
-  if (!fs.statSync(dirPath).isDirectory()) {
-    throw new Error('Expected to find a directory at path: ' + dirPath);
-  }
-}
-
-function assertArtifactExists(pattern) {
-  const artifactsRootDir = getLatestArtifactsDir();
-  const matchingArtifacts = glob.sync(pattern, { cwd: artifactsRootDir });
-  if (matchingArtifacts.length === 0) {
-    throw new Error('Assertion failed.\nFailed to find artifacts matching: ' + path.join(artifactsRootDir, pattern));
-  }
-}
-
-async function waitUntilArtifactsManagerIsIdle() {
-  if (typeof __waitUntilArtifactsManagerIsIdle__ !== 'undefined') {
-    await __waitUntilArtifactsManagerIsIdle__();
-  } else {
-    console.warn('!!! waitUntilArtifactsManagerIsIdle NOT FOUND !!!');
-  }
-}
-
 module.exports = {
   getLatestArtifactsDir,
   assertArtifactExists,

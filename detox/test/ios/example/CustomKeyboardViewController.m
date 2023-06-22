@@ -18,27 +18,6 @@
 - (void) loadView;
 @end
 
-@implementation CustomKeyboardView
-
-- (void) loadView
-{
-	UIButton* kbButton = [UIButton buttonWithType: UIButtonTypeCustom];
-	kbButton.translatesAutoresizingMaskIntoConstraints = NO;
-	[kbButton setTitle: @"Hello" forState: UIControlStateNormal];
-	[kbButton addTarget: self action: @selector(buttonTapped:) forControlEvents: UIControlEventTouchUpInside];
-	kbButton.accessibilityIdentifier = @"keyboardHelloButton";
-	
-	[self addSubview: kbButton];
-	
-	[NSLayoutConstraint activateConstraints: @[
-		[kbButton.widthAnchor constraintGreaterThanOrEqualToConstant:44],
-		[kbButton.heightAnchor constraintEqualToConstant:44],
-		[kbButton.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:20],
-		[kbButton.topAnchor constraintEqualToAnchor:self.topAnchor constant:20]
-	]];
-}
-
-- (void) buttonTapped: (id) sender
 {
 	if (self.delegate) {
 		[self.delegate customKeyboardTappedButton: self];

@@ -18,4 +18,3 @@ class SimulatorLauncher extends DeviceLauncher {
   }
 }
 
-module.exports = SimulatorLauncher;

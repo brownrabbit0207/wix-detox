@@ -13,16 +13,11 @@ describe('Genymotion-Cloud instance-lifecycle service', () => {
   let uut;
   beforeEach(() => {
     const GenyCloudExec = jest.genMockFromModule('../exec/GenyCloudExec');
-      givenResultedInstance(instance);
+    exec = new GenyCloudExec();
 
-      await uut.createInstance(instance.recipe.uuid);
-      expect(exec.startInstance).toHaveBeenCalledWith(instance.recipe.uuid, instance.name);
-    });
+    const GenyInstanceNaming = jest.genMockFromModule('./GenyInstanceNaming');
+    instanceNaming = new GenyInstanceNaming();
 
-    it('should return the newly created instance', async () => {
-      const instance = anInstance();
-      givenInstanceBirthName(instance.name);
-      givenResultedInstance(instance);
 
       const result = await uut.createInstance(instance.recipe.name);
       expect(result).toBeDefined();

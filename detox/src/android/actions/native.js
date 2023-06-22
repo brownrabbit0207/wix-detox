@@ -13,6 +13,22 @@ class Action {
 class TapAction extends Action {
   constructor(value) {
     super();
+    this._call = invoke.callDirectly(value ? DetoxActionApi.tapAtLocation(value.x, value.y) : DetoxViewActionsApi.click());
+  }
+}
+
+class TapAtPointAction extends Action {
+  constructor(value) {
+    super();
+    this._call = invoke.callDirectly(DetoxActionApi.tapAtLocation(value.x, value.y));
+  }
+}
+
+class LongPressAction extends Action {
+  constructor() {
+    super();
+    this._call = invoke.callDirectly(ViewActionsApi.longClick());
+  }
 }
 
 class MultiClickAction extends Action {

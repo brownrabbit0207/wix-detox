@@ -13,6 +13,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
+
+#import <UIKit/UIKit.h>
+
+/**
+ *  An enum for what phase of a touch action a @c DTXTouchInfo object is in.
+ */
+typedef NS_ENUM(NSUInteger, DTXTouchInfoPhase) {
+  DTXTouchInfoPhaseTouchBegan,
+  DTXTouchInfoPhaseTouchMoved,
+  DTXTouchInfoPhaseTouchEnded,
+};
+
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ *  An object to encapsulate essential information about a touch.
  */
 @interface DTXTouchInfo : NSObject
 

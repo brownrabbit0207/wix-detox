@@ -18,27 +18,6 @@ await device.launchApp({newInstance: true, userNotification: notification});
 
 ```js
 describe('Launch with push notification', () => {
-  it('should handle the notification', async () => {
-    await device.launchApp({
-      newInstance: true,
-      userNotification: userNotificationPushTrigger,
-    });
-    await expect(element(by.text('From push'))).toBeVisible();
-  });
-});
-```
-
-### Mocking Notification Reception on a Running App
-
-Use the `sendUserNotification()` method to send notification to **running** app. Notifications can be sent to an active or a background app.
-
-> Note: while the name `sendUserNotification()` is not very idiomatic on Android, as notification data is not "sent" to apps (rather, it is bundled into an Activity/Service launch Intent as Intent-extras), this unified API is used, for the time being, for both platforms equivalently. With [plans of a more extensive support](https://github.com/wix/Detox/issues/2141) for Android, we estimate it would be deprecated when the time comes.
-
-```js
-await device.sendUserNotification(notification);
-```
-
-**Example:**
 
 ```js
 describe('Foreground user notifications', () => {

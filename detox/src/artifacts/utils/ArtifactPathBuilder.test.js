@@ -18,27 +18,6 @@ describe(ArtifactPathBuilder, () => {
 
     it('should provide path for unique (per test runner run) artifacts', () => {
       const artifactPath1 = pathBuilder.buildPathForTestArtifact('before-tests-began.log');
-      const expectedPath1 = path.join(pathBuilder.rootDir, 'before-tests-began.log');
-
-      expect(artifactPath1).toBe(expectedPath1);
-    });
-
-    it('should provide nested path for test artifact', () => {
-      const test1 = { title: 'test 1', fullName: 'some test 1', status: 'running' };
-      const artifactPath1 = pathBuilder.buildPathForTestArtifact('1.log', test1);
-      const expectedPath1 = path.join(pathBuilder.rootDir, test1.fullName, '1.log');
-
-      expect(artifactPath1).toBe(expectedPath1);
-    });
-  });
-
-  describe('snapshot tests', () => {
-    beforeEach(() => {
-      pathBuilder = new ArtifactPathBuilder({
-        rootDir: '/tmp/subdir',
-      });
-    });
-
     it('should defend against accidental resolving outside of root directory', () => {
       const maliciousName = 'some/../../../../../../home/build-server';
 

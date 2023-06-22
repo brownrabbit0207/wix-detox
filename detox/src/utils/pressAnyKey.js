@@ -18,8 +18,3 @@ async function pressAnyKey() {
       if (isCtrlC(chunk)) {
         process.kill(process.pid, 'SIGINT');
       }
-    }
-  });
-}
-
-module.exports = pressAnyKey;

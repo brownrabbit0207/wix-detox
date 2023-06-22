@@ -18,27 +18,6 @@ Use [expectations](expect.md) to verify element states.
 - [`.scrollTo()`](#scrolltoedge)
 - [`.typeText()`](#typetexttext)
 - [`.replaceText()`](#replacetexttext)
-- [`.clearText()`](#cleartext)
-- [`.tapReturnKey()`](#tapreturnkey)
-- [`.tapBackspaceKey()`](#tapbackspacekey)
-- [`.setColumnToValue()`](#setcolumntovaluecolumn-value--ios-only) **iOS only**
-- [`.setDatePickerDate()`](#setdatepickerdatedatestring-dateformat)
-- [`.adjustSliderToPosition()`](#adjustslidertopositionnormalizedposition)
-- [`.getAttributes()`](#getattributes)
-- [`.takeScreenshot(name)`](#takescreenshotname)
-- [`.performAccessibilityAction()`](#performaccessibilityactionactionname)
-
-### `tap(point)`
-
-Simulates a tap on the element at the specified point, or at element’s activation point if no point is specified.
-
-`point`—a point in the element’s coordinate space (optional, valid input: object with x and y numerical values, default is `null`)
-
-**Note:** Special care should be applied when specifying a point with this method. Elements may have different dimensions when displayed on different device screen sizes, different text sizes, etc.
-
-```js
-await element(by.id('tappable')).tap();
-await element(by.id('tappable')).tap({x:5, y:10});
 ```
 
 ### `multiTap(times)`

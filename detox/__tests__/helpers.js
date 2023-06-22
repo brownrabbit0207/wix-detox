@@ -13,6 +13,22 @@ function callCli(modulePath, cmd) {
       ...originalModule,
       handler: async program => {
         try {
+          return await originalHandler(program);
+        } catch (e) {
+          reject(e);
+        } finally {
+          resolve();
+        }
+      }
+    };
+
+    return yargs
+      .scriptName('detox')
+      .parserConfiguration({
+        'boolean-negation': true,
+        'camel-case-expansion': false,
+        'dot-notation': false,
+        'duplicate-arguments-array': false,
         'populate--': true,
       })
       .command(spiedModule)

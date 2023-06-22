@@ -18,27 +18,6 @@ Be sure to set up either an iOS simulator or a proper Android AVD emulator match
 
 Prebuild Detox as an Android archive (a `.aar` file), locally:
 
-```sh
-cd detox
-npm run build:android
-```
-
-> On success, the result is a set of maven artifacts published in subdirectories under `detox/Detox-android/`. That includes `detox-999.999.999.aar` (i.e. Detox' native code packaged with the fake version `999.999.999`).
-
-#### iOS
-
-Install the necessary pods:
-
-```sh
-cd detox
-npm run podInstall:ios
-```
-
-### Step 1: Build
-
-Build the demo project using one of the `npm` scripts.
-
-```sh
 npm run build:ios-release
 -or-
 npm run build:android-release

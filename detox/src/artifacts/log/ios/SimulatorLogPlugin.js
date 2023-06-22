@@ -13,6 +13,22 @@ class SimulatorLogPlugin extends LogArtifactPlugin {
   }
 
   async onBeforeLaunchApp(event) {
+    await super.onBeforeLaunchApp(event);
+    await this.onReadyToRecord();
+
+    if (this.currentRecording) {
+      await this.currentRecording.start({
+        udid: event.deviceId,
+        bundleId: event.bundleId,
+      });
+    }
+  }
+
+  createStartupRecording() {
+    return this.createTestRecording();
+  }
+
+  createTestRecording() {
     return new SimulatorLogRecording({
       udid: this.context.deviceId,
       bundleId: this.context.bundleId,

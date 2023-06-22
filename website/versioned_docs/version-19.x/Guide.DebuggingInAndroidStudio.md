@@ -13,6 +13,22 @@ sidebar_label: Debugging in Android Studio
 
 ### Setting Detox up as a compiling dependency
 
+Before you go anywhere further, follow the
+[Setting Detox up as a compiling dependency](Introduction.Android.md#setting-detox-up-as-a-compiling-dependency)
+section from the **Detox for Android** document.
+
+### Add "manual" device configurations to your `.detoxrc`
+
+Locate your `.detoxrc` config file or the corresponding `detox` section in your `package.json`
+and add a configuration similar to this one:
+
+```json
+{
+  "devices": {
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "<e.g., Pixel_API_28>"
       }
     }
   },

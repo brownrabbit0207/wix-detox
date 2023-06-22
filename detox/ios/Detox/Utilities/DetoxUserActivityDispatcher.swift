@@ -13,6 +13,22 @@ private struct DetoxUserActivityKeys {
 	static let userInfo = "userInfo"
 	static let webpageURL = "webpageURL"
 	static let referrerURL = "referrerURL"
+}
+
+@objc(DTXUserActivityDispatcher)
+public class DetoxUserActivityDispatcher: NSObject {
+	@objc let userActivityData : [String: Any]
+	
+	@objc(initWithUserActivityDataURL:)
+	public init(userActivityDataUrl: URL) {
+		userActivityData = DetoxUserActivityDispatcher.parseUserActivityData(url: userActivityDataUrl)
+		
+		super.init()
+	}
+	
+	private class func parseUserActivityData(url: URL) -> [String: Any] {
+		guard let data = try? Data.init(contentsOf: url) else {
+			Swift.fatalError("Unable to read user activity data file.")
 		}
 		
 		guard let jsonObject = try? (JSONSerialization.jsonObject(with: data, options: .init(rawValue: 0)) as! [String: Any]) else {

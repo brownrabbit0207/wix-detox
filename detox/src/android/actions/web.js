@@ -19,27 +19,6 @@ class WebTypeTextAction extends WebAction {
   }
 }
 
-class WebReplaceTextAction extends WebAction {
-  constructor(element, text) {
-    super();
-    this._call = WebElementApi.replaceText(element._call, text);
-  }
-}
-
-class WebClearTextAction extends WebAction {
-  constructor(element) {
-    super();
-    this._call = WebElementApi.clearText(element._call);
-  }
-}
-
-class WebScrollToViewAction extends WebAction {
-  constructor(element) {
-    super();
-    this._call = WebElementApi.scrollToView(element._call);
-  }
-}
-
 class WebGetTextAction extends WebAction {
   constructor(element) {
     super();
