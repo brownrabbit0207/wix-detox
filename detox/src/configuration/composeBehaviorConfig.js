@@ -18,9 +18,8 @@ function composeBehaviorConfig({
           keepLockFile: cliConfig.keepLockFile ? true : undefined,
           reinstallApp: cliConfig.reuse ? false : undefined,
         },
-      }
-    })
-    .value();
-}
-
-module.exports = composeBehaviorConfig;
+        cleanup: {
+          shutdownDevice: cliConfig.cleanup ? true : undefined,
+        },
+      },
+      localConfig.behavior,

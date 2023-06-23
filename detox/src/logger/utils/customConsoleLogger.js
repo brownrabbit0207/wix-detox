@@ -18,6 +18,27 @@ function getOrigin() {
   const userCallSite = callsites.getCallSites()[USER_STACK_FRAME_INDEX];
   return callsites.getOrigin(userCallSite);
 }
+
+function getStackDump() {
+  return callsites.getStackDump(USER_STACK_FRAME_INDEX);
+}
+
+function proxyLog(bunyanLoggerFn) {
+  return (...args) => {
+    bunyanLoggerFn({ cat: 'user', origin: getOrigin() }, util.format(...args));
+  };
+}
+
+function proxyTracing(bunyanLoggerFn) {
+  return (...args) => {
+    bunyanLoggerFn({ cat: 'user', origin: getOrigin(), stack: getStackDump() }, util.format(...args));
+  };
+}
+
+function proxyAssert(bunyanLoggerFn) {
+  return (condition, ...args) => {
+    if (!condition) {
+      bunyanLoggerFn({ cat: 'user', origin: getOrigin() }, 'AssertionError:', util.format(...args));
     }
   };
 }

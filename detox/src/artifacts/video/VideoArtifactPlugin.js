@@ -18,3 +18,18 @@ class VideoArtifactPlugin extends WholeTestRecorderPlugin {
           keepOnlyFailedTestsArtifacts: true,
         };
       case 'all':
+        return {
+          enabled: true,
+          keepOnlyFailedTestsArtifacts: false,
+        };
+      case 'none':
+      default:
+        return {
+          enabled: false,
+          keepOnlyFailedTestsArtifacts: false,
+        };
+    }
+  }
+}
+
+module.exports = VideoArtifactPlugin;

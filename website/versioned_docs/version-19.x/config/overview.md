@@ -18,6 +18,27 @@ In essence, Detox scans for the configuration to use, through multiple files. It
 1. `detox.config.json`
 1. `package.json` (`"detox"` section)
 
+Options 1-5 allow for a standalone Detox configuration in either a `json` format or using JavaScript syntax.
+Option 6 means the configuration is available in `json` format inside the project’s `package.json`, which is more suitable if you like having all of your project’s configurations in one place.
+
+Please find the [Detox example app](https://github.com/wix/Detox/blob/master/examples/demo-react-native/detox.config.js) as a working reference. Also, look at
+[the typings file](https://github.com/wix/Detox/blob/master/detox/index.d.ts) provided by Detox.
+
+#### Extending configurations
+
+Since Detox [18.9.0](https://github.com/wix/Detox/releases/tag/18.9.0), you can also define base Detox configurations,
+distribute them as `npm` modules for reuse across multiple projects, e.g.:
+
+```js
+{
+  "extends": "@my-org/detox-preset",
+  "runnerConfig": "e2e/jest.config.some-override.js"
+}
+```
+
+Please note that `extends` has to be a valid Node module path. Relative module paths will be resolved relatively
+to the Detox config file which contains that specific `extends` property, e.g.:
+
 ```js
 // given: ~/Projects/my-project/.detoxrc.json
 { extends: "./e2e/detox-base-config" }

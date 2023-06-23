@@ -18,3 +18,16 @@ describe('Flaky', () => {
       detox.trace.endSection('Asserting various texts');
     }
 
+    if (session.testSessionIndex === 0) {
+      throw new Error(`I'm only here to make things interesting!`);
+    }
+  });
+
+  async function navigateToSanity() {
+    log.trace('Reloading app');
+    await device.reloadReactNative();
+    log.trace('Tap on Sanity');
+    await element(by.text('Sanity')).tap();
+    log.trace('I am on Sanity screen');
+  }
+});

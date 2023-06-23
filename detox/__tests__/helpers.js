@@ -23,32 +23,6 @@ function callCli(modulePath, cmd) {
     };
 
     return yargs
-      .scriptName('detox')
-      .parserConfiguration({
-        'boolean-negation': true,
-        'camel-case-expansion': false,
-        'dot-notation': false,
-        'duplicate-arguments-array': false,
-        'populate--': true,
-      })
-      .command(spiedModule)
-      .wrap(null)
-      .exitProcess(false)
-      .fail((msg, err) => reject(err || msg))
-      .parse(cmd, (err) => err && reject(err));
-  });
-}
-
-function buildMockCommand(options = {}) {
-  if (!options.stdout) {
-    options.stdout = tempfile('.txt');
-  }
-
-  return {
-    get cmd() {
-      const env = [
-        options.exitCode ? `CLI_EXIT_CODE=${options.exitCode}` : undefined,
-        options.sleep ? `CLI_SLEEP=${options.sleep}` : undefined,
         `CLI_TEST_STDOUT=${options.stdout}`,
       ].filter(Boolean).join(' ');
 

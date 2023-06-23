@@ -18,6 +18,27 @@ describe('Android generation', () => {
 
     console.log('==> loading android files');
     // Load
+    ExampleClass = require('./generated-android/example.js');
+    exampleContent = fs.readFileSync('./__tests__/generated-android/example.js', 'utf8');
+  });
+
+  afterAll(() => {
+    // Clean up
+    remove.removeSync('./__tests__/generated-android');
+  });
+
+  describe('methods', () => {
+    it('should expose the functions', () => {
+      expect(ExampleClass.multiClick).toBeInstanceOf(Function);
+    });
+
+    it('should generate type checks', () => {
+      expect(() => {
+        ExampleClass.multiClick('FOO');
+      }).toThrowErrorMatchingSnapshot();
+    });
+
+    it('should return adapter calls', () => {
       const result = ExampleClass.multiClick(3);
       expect(result.method).toBe('multiClick');
       expect(result.target.value).toBe('com.wix.detox.espresso.DetoxAction');

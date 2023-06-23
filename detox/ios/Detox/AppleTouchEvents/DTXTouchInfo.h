@@ -23,32 +23,6 @@ typedef NS_ENUM(NSUInteger, DTXTouchInfoPhase) {
   DTXTouchInfoPhaseTouchBegan,
   DTXTouchInfoPhaseTouchMoved,
   DTXTouchInfoPhaseTouchEnded,
-};
-
-NS_ASSUME_NONNULL_BEGIN
-
-/**
- *  An object to encapsulate essential information about a touch.
- */
-@interface DTXTouchInfo : NSObject
-
-/**
- *  Points where touch should be delivered.
- */
-@property(nonatomic, readonly) NSArray *points;
-
-/**
- *  The phase (began, moved etc) of the touch object.
- */
-@property(nonatomic, assign) DTXTouchInfoPhase phase;
-
-/**
- *  Delays this touch for specified value since the last touch delivery.
- */
-@property(nonatomic, readonly) NSTimeInterval deliveryTimeDeltaSinceLastTouch;
-/**
- *  Indicates that this touch can be dropped if system delivering the touches experiences a
- *  lag causing it to miss the expected delivery time.
  */
 @property(nonatomic, readonly, getter=isExpendable) BOOL expendable;
 

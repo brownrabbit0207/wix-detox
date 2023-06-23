@@ -18,6 +18,8 @@ class DeviceAllocator {
   allocate(deviceConfig) {
     return this._driver.allocate(deviceConfig);
   }
-}
 
-module.exports = DeviceAllocator;
+  /**
+   * @param {DeviceCookie} deviceCookie
+   * @return {Promise<unknown>}
+   */

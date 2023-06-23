@@ -18,16 +18,11 @@ class DetoxConnection {
     this._onError = this._onError.bind(this);
     this._onClose = this._onClose.bind(this);
 
-  }
+    this._log = logger.child({ id: socket.remotePort });
+    this._log.debug.begin(`connection :${socket.localPort}<->:${socket.remotePort}`);
 
-  sendAction(action) {
-    const messageAsString = JSON.stringify(action);
-    this._log.trace({ data: action }, 'send');
-    this._webSocket.send(messageAsString + '\n ');
-  }
-
-  _onMessage(rawData) {
-    const data = _.isString(rawData) ? rawData : rawData.toString('utf8');
+    this._sessionManager = sessionManager;
+    this._webSocket = webSocket;
     this._log.trace({ data }, 'get');
 
     try {

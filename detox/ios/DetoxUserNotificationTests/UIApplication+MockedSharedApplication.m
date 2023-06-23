@@ -18,3 +18,23 @@ static UIApplicationState __applicationStateOverride;
 - (void)setApplicationState:(UIApplicationState)applicationState
 {
 	__applicationStateOverride = applicationState;
+}
+
+void DTXApplicationMock(NSString * _Nullable principalClassName, NSString * _Nullable delegateClassName)
+{
+	__mockApp = [NSClassFromString(principalClassName ?: @"UIApplication") alloc];
+	__mockAppDelegate = [NSClassFromString(delegateClassName) new];
+	__mockApp.delegate = __mockAppDelegate;
+}
+
+- (UIApplicationState)applicationState
+{
+	return __applicationStateOverride;
+}
+
++ (UIApplication *)sharedApplication
+{
+	return __mockApp;
+}
+
+@end

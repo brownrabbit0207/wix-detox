@@ -18,6 +18,27 @@ function Label({ testID, children }) {
   return (
     <Text testID={testID} style={{ marginBottom: 20 }}>
       {children}
+    </Text>
+  );
+}
+
+export default class LocationScreen extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      locationRequested: false,
+      coordinates: null,
+      error: '',
+    }
+  }
+
+  onLocationReceived = (position) => {
+    this.setState({
+      coordinates: position.coords,
+      error: '',
+    });
+  };
 
   onLocationError = (error) => {
     this.setState({

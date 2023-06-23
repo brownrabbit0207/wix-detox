@@ -18,3 +18,7 @@
 #ifdef __OBJC__
 #import "DTXAssertionHandler.h"
 #import "NSThread+DetoxUtils.h"
+#import "NSArray+Utils.h"
+#endif
+
+#endif /* Detox_pch */

@@ -18,6 +18,27 @@ function assertJestCircus27(maybeProjectConfig) {
       debugInfo: `The test runner powering your configuration is:\n${projectConfig.testRunner}`,
     });
   }
+
+  const circusPackageJson = path.join(path.dirname(projectConfig.testRunner), 'package.json');
+  if (!fs.existsSync(circusPackageJson)) {
+    throw new DetoxRuntimeError({
+      message: 'Check that you have an installed copy of "jest-circus" npm package, exiting.',
+      debugInfo: `Its package.json file is missing: ${circusPackageJson}`,
+    });
+  }
+
+  const jestManifestPath = resolveFrom(process.cwd(), 'jest/package.json');
+  const jestManifest = require(jestManifestPath);
+  assertSupportedVersion(jestManifest.version);
+
+  const circusVersion = require(circusPackageJson).version;
+  if (!circusVersion) {
+    throw new DetoxRuntimeError({
+      message: 'Check that you have an valid copy of "jest-circus" npm package, exiting.',
+      debugInfo: `Its package.json file has no "version" property. See:\n` + circusPackageJson,
+    });
+  }
+
   if (jestManifest.version !== circusVersion) {
     log.warn([
       `jest-circus@${circusVersion} does not match jest@${jestManifest.version}.\n`,

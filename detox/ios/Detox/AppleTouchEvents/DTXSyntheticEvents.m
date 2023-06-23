@@ -18,6 +18,27 @@
 
 #import "DTXAppleInternals.h"
 #import "DTXTouchInjector.h"
+
+#pragma mark - Implementation
+
+@implementation DTXSyntheticEvents
+{
+	/**
+	 *  The touch injector that completes the touch sequence for an event.
+	 */
+	DTXTouchInjector *_touchInjector;
+	
+	/**
+	 *  The last injected touch point.
+	 */
+	NSValue *_lastInjectedTouchPoint;
+	
+	BOOL (^_onTouchCallback)(UITouchPhase);
+}
+
+- (instancetype)initWithOnTouchCallback:(nullable BOOL (^)(UITouchPhase))onTouchCallback
+{
+	self = [super init];
 	if(self)
 	{
 		_onTouchCallback = onTouchCallback;

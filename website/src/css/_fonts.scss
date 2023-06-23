@@ -18,3 +18,8 @@
 }
 
 @mixin h5 {
+  font: 600 24px/30px 'Nunito Sans', sans-serif;
+}
+
+@mixin t1 {
+  font: 400 20px/30px 'Nunito Sans', sans-serif;

@@ -18,6 +18,27 @@ describe('assertNormalized', () => {
   it.each([
     0,
     0.5,
+    1,
+    NaN
+  ])('should pass for %d', (validNumber) => {
+    expect(() => assertNormalized({ validNumber })).not.toThrow();
+  });
+
+  it.each([
+    -0.5,
+    1.01,
+    Infinity,
+    null,
+    undefined,
+    '0.5'
+  ])('should throw for %j', (invalidNumber) => {
+    expect(() => assertNormalized({ invalidNumber })).toThrowErrorMatchingSnapshot();
+  });
+});
+
+describe('assertNumber', () => {
+  const { assertNumber } = assertions;
+
   it.each([
     42,
     NaN,

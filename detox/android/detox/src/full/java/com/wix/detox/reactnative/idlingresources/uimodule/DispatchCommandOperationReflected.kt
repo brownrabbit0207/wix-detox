@@ -23,14 +23,3 @@ class DispatchCommandOperationReflected(val instance: Any?) {
             Reflect.on(instance).field(FIELD_NUM_RETRIES).get<Int>()
         } catch (e: ReflectException) {
             Log.e(DetoxLog.LOG_TAG, "failed to get $FIELD_NUM_RETRIES ", e)
-            0
-        }
-
-    val viewCommand
-        get() = try {
-            Reflect.on(instance).field(FIELD_COMMAND).get<Any>()
-        } catch (e: ReflectException) {
-            Log.e(DetoxLog.LOG_TAG, "failed to get $FIELD_COMMAND ", e)
-            null
-        }
-}
