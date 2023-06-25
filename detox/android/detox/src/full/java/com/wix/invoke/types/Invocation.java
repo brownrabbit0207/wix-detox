@@ -1,4 +1,3 @@
-package com.wix.invoke.types;
 
 import com.wix.invoke.parser.JsonParser;
 

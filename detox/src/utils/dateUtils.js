@@ -1,4 +1,3 @@
-// This is technically a super-lightweight lib to format date/time (which
 // seems to be an issue in JS...). In case more advanced techniques are ever
 // needed, dateFormat v4.5.1 may come in handy as a drop-in replacement.
 

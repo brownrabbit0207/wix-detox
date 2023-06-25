@@ -1,4 +1,3 @@
-const path = require('path');
 const { resolveConfig } = require('detox/internals');
 
 const maxWorkersMap = {

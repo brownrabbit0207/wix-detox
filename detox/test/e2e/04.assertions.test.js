@@ -1,4 +1,3 @@
-const driver = {
   navToScreen: async () => {
     await device.reloadReactNative();
     await element(by.text('Assertions')).tap();

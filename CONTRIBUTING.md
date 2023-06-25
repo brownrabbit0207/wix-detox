@@ -1,4 +1,3 @@
-# Contributing to Detox
 
 'So thrilled to know you want to contribute to Detox! 💙
 

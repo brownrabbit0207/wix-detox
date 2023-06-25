@@ -1,4 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetoxConfigErrorComposer (from composeAppsConfig) .ambiguousAppAndApps should create an error for aliased configuration 1`] = `
 [DetoxConfigError: You can't have both "app" and "apps" defined in the "aliased" configuration.

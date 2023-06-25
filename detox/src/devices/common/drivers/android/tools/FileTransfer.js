@@ -1,4 +1,3 @@
-const path = require('path');
 
 class FileTransfer {
   constructor(adb, destinationDir) {

@@ -1,4 +1,3 @@
-class GenyRecipe {
   constructor(rawRecipe) {
     this.uuid = rawRecipe.uuid;
     this.name = rawRecipe.name || 'Anonymous GMSaaS Recipe';

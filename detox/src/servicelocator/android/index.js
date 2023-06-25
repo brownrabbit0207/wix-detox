@@ -1,4 +1,3 @@
-const AndroidDevicePathBuilder = require('../../artifacts/utils/AndroidDevicePathBuilder');
 const DeviceRegistry = require('../../devices/DeviceRegistry');
 const AAPT = require('../../devices/common/drivers/android/exec/AAPT');
 const ADB = require('../../devices/common/drivers/android/exec/ADB');

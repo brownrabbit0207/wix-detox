@@ -1,4 +1,3 @@
-// @ts-nocheck
 jest.useFakeTimers('modern');
 
 const permaproxy = require('funpermaproxy');
@@ -23,6 +22,32 @@ describe('AsyncWebSocket', () => {
     WebSocket = require('ws');
     WebSocket.CONNECTING = 0;
     WebSocket.OPEN = 1;
+    WebSocket.CLOSING = 2;
+    WebSocket.CLOSED = 3;
+
+    WebSocket.prototype._socket = { localPort: NaN };
+    WebSocket.prototype.readyState = WebSocket.CONNECTING;
+    WebSocket.prototype.mockOpen = function () {
+      this.readyState = WebSocket.OPEN;
+      this.onopen && this.onopen({ target: this });
+    };
+    WebSocket.prototype.mockError = function (error) {
+      this.onerror && this.onerror({ error });
+    };
+    WebSocket.prototype.mockMessage = function (data) {
+      this.onmessage && this.onmessage({ data: JSON.stringify(data) });
+    };
+    WebSocket.prototype.mockClose = function () {
+      this.onclose && this.onclose(null);
+    };
+    WebSocket.prototype.mockCloseError = function (error) {
+      this.close.mockImplementation(() => { throw error; });
+    };
+
+    AsyncWebSocket = require('./AsyncWebSocket');
+    aws = new AsyncWebSocket(config.server);
+    log = require('../utils/logger');
+  });
 
   afterEach(() => {
     jest.clearAllTimers();

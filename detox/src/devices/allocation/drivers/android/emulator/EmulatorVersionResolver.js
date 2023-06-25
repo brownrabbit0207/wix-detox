@@ -1,4 +1,3 @@
-const log = require('../../../../../utils/logger').child({ cat: 'device' });
 const { QueryVersionCommand } = require('../../../../common/drivers/android/emulator/exec/EmulatorExec');
 
 class EmulatorVersionResolver {

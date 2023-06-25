@@ -1,4 +1,3 @@
-package com.wix.detox.adapters.server
 
 import android.util.Log
 import com.wix.detox.common.DetoxLog

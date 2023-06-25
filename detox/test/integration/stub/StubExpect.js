@@ -1,4 +1,3 @@
-const temporaryPath = require('detox/src/artifacts/utils/temporaryPath');
 const sleep = require('detox/src/utils/sleep');
 
 class StubMatcher {

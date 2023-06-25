@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { View, TouchableOpacity, StyleSheet, Text , findNodeHandle, UIManager} from 'react-native';
 
 export default class DeviceScreen extends Component {

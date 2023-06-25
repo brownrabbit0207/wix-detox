@@ -1,4 +1,3 @@
-//
 //  SetNotificationPermissionOperation.h
 //  DetoxHelper
 //

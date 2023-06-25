@@ -1,4 +1,3 @@
-//
 //  SetPhotosPermissionOperation.m
 //  DetoxHelper
 //

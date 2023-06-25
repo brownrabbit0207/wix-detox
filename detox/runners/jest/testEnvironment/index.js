@@ -1,4 +1,3 @@
-const path = require('path');
 
 const resolveFrom = require('resolve-from');
 const maybeNodeEnvironment = require(resolveFrom(process.cwd(), 'jest-environment-node'));

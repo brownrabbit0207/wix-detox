@@ -1,4 +1,3 @@
-//
 //  JPSimulatorHacks.h
 //  JPSimulatorHacks
 //
@@ -23,3 +22,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
+
+#import <Foundation/Foundation.h>
+
+@class ALAsset;
+
+@interface JPSimulatorHacks : NSObject
+
++ (void)setPhotosEnabled:(BOOL)enabled forBundleIdentifier:(NSString*)bundleIdentifier;
++ (void)setCalendarEnabled:(BOOL)enabled forBundleIdentifier:(NSString*)bundleIdentifier;
++ (void)setHomeKitEnabled:(BOOL)enabled forBundleIdentifier:(NSString*)bundleIdentifier;
++ (void)setContactsEnabled:(BOOL)enabled forBundleIdentifier:(NSString*)bundleIdentifier;
++ (void)setLocationEnabled:(BOOL)enabled forBundleIdentifier:(NSString*)bundleIdentifier;
+
+@end

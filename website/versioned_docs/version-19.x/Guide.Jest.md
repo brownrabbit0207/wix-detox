@@ -1,4 +1,3 @@
----
 id: jest
 slug: guide/jest
 title: Jest Setup Guide

@@ -1,4 +1,3 @@
-describe('StressTests', () => {
   beforeEach(async () => {
     await device.reloadReactNative();
     await element(by.text('Stress')).tap();

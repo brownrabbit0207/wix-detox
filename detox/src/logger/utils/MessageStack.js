@@ -1,4 +1,3 @@
-const getMainCategory = require('./getMainCategory');
 
 class MessageStack {
   constructor() {
@@ -23,3 +22,13 @@ class MessageStack {
     }
 
     return stack.pop();
+  }
+
+  _hash(context) {
+    const cat = getMainCategory(context.cat);
+    const tid = context.tid;
+    return `${cat}:${tid}`;
+  }
+}
+
+module.exports = MessageStack;

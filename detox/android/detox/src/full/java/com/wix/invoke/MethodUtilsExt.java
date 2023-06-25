@@ -1,4 +1,3 @@
-package com.wix.invoke;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.reflect.MethodUtils;

@@ -1,4 +1,3 @@
----
 id: debugging-in-xcode
 slug: guide/debugging-in-xcode
 title: Debugging in Xcode During Detox Tests

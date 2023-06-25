@@ -1,4 +1,3 @@
-const { WaitForInteraction } = require('../interactions/native');
 const matchers = require('../matchers/native');
 
 class NativeWaitFor {

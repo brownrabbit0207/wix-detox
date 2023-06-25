@@ -1,4 +1,3 @@
-// @ts-nocheck
 const _ = require('lodash');
 
 const detox = require('../../../..');
@@ -23,6 +22,32 @@ class DetoxCoreListener {
     if (detoxInternals.config.behavior.init.exposeGlobals) {
       this._env.global.expect = detox.expect;
     }
+  }
+
+  async run_describe_start({ describeBlock }) {
+    if (describeBlock.children.length) {
+      log.trace.begin(describeBlock.parent ? describeBlock.name : 'run the tests');
+      await detoxInternals.onRunDescribeStart({
+        name: describeBlock.name,
+      });
+    }
+  }
+
+  async run_describe_finish({ describeBlock }) {
+    if (describeBlock.children.length) {
+      await detoxInternals.onRunDescribeFinish({ name: describeBlock.name });
+      log.trace.end();
+    }
+  }
+
+  async test_start({ test }) {
+    const metadata = this._getTestMetadata(test);
+    if (metadata.status === 'failed') {
+      this._testsFailedBeforeStart.add(test);
+    }
+
+    log.trace.begin({
+      context: 'test',
       status: metadata.status,
       fullName: metadata.fullName,
       invocations: metadata.invocations,

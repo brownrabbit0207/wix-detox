@@ -1,4 +1,3 @@
-//
 //  UISlider+DetoxUtils.h
 //  Detox
 //

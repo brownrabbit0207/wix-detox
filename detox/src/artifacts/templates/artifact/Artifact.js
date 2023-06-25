@@ -1,4 +1,3 @@
-// @ts-nocheck
 const log = require('../../../utils/logger').child({ cat: 'artifact' });
 
 class Artifact {
@@ -23,6 +22,32 @@ class Artifact {
         this.doSave = save.bind(template);
       }
 
+      if (typeof discard === 'function') {
+        this.doDiscard = discard.bind(template);
+      }
+    }
+
+    this._startPromise = null;
+    this._stopPromise = null;
+    this._savePromise = null;
+    this._discardPromise = null;
+    this.logger = log.child({ class: this.name });
+  }
+
+  get name() {
+    return this._name || this.constructor.name;
+  }
+
+  start(...args) {
+    this.logger.trace({ event: 'ARTIFACT_START' }, `starting ${this.name}`, ...args);
+
+    if (this._savePromise) {
+      this._startPromise = this._savePromise.then(() => this.doStart(...args));
+    } else if (this._discardPromise) {
+      this._startPromise = this._discardPromise.then(() => this.doStart(...args));
+    } else if (this._startPromise || this._stopPromise) {
+      this._startPromise = this.stop().then(() => this.doStart(...args));
+    } else {
       this._startPromise = this.doStart(...args);
     }
 

@@ -1,4 +1,3 @@
-const isValidWebsocketURL = require('./isValidWebsocketURL');
 
 describe('isValidWebsocketURL', () => {
   it.each([

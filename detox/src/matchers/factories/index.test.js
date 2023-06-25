@@ -1,4 +1,3 @@
-describe('Matchers factories', () => {
   let factories;
   beforeEach(() => {
     factories = require('./index');

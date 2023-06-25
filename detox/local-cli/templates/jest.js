@@ -1,4 +1,3 @@
-const firstTestContent = require('./firstTestContent');
 
 const runnerConfig = `\
 /** @type {import('@jest/types').Config.InitialOptions} */

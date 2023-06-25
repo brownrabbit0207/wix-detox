@@ -1,4 +1,3 @@
-const collectCliConfig = require('../src/configuration/collectCliConfig');
 const composeLoggerConfig = require('../src/configuration/composeLoggerConfig');
 const { DetoxRuntimeError } = require('../src/errors');
 const DetoxServer = require('../src/server/DetoxServer');

@@ -1,4 +1,3 @@
-describe('External allocator factory', () => {
   describe('validation', () => {
     const path = '../fake/module/path';
 

@@ -1,4 +1,3 @@
-package com.wix.detox.espresso.action.common
 
 import android.os.SystemClock
 import android.view.InputDevice

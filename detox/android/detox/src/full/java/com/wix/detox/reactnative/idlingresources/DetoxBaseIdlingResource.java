@@ -1,4 +1,3 @@
-package com.wix.detox.reactnative.idlingresources;
 
 import com.wix.detox.espresso.idlingresources.DescriptiveIdlingResource;
 

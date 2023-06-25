@@ -1,4 +1,3 @@
-const Deferred = require('../../../../utils/Deferred');
 
 // @ts-nocheck
 describe('Android driver', () => {

@@ -1,4 +1,3 @@
-package com.wix.detox.reactnative.ui
 
 import android.view.View
 import android.widget.TextView
@@ -23,3 +22,15 @@ private fun collectAccessibilityLabelsFromHierarchy(
         getRawAccessibilityLabel(view)?.let { rawLabel ->
             subLabels.add(rawLabel)
             false
+        } ?: true
+
+    }
+    return subLabels
+}
+
+private fun getRawAccessibilityLabel(view: View): CharSequence? =
+    if (view.contentDescription != null) {
+        view.contentDescription
+    } else if (view is TextView) {
+        view.text
+    } else null

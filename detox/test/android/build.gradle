@@ -1,4 +1,3 @@
-buildscript {
     apply from: './rninfo.gradle'
 
     def androidGradlePluginVersion =

@@ -1,4 +1,3 @@
-// @ts-nocheck
 describe('Genymotion-Cloud instance launcher', () => {
   const recipeName = 'mock-recipe-name';
 
@@ -23,6 +22,32 @@ describe('Genymotion-Cloud instance launcher', () => {
     const instance = anOfflineInstance();
     instance.isOnline.mockReturnValue(true);
     return instance;
+  };
+
+  const aDisconnectedInstance = anOnlineInstance;
+  const aFullyConnectedInstance = () => {
+    const instance = anOnlineInstance();
+    instance.isAdbConnected.mockReturnValue(true);
+    instance.adbName = 'localhost:1234';
+    return instance;
+  };
+
+  const givenInstanceQueryResult = (instance) => instanceLookupService.getInstance.mockResolvedValue(instance);
+  const givenAnInstanceDeletionError = () => instanceLifecycleService.deleteInstance.mockRejectedValue(new Error());
+  const givenInstanceConnectResult = (instance) => instanceLifecycleService.adbConnectInstance.mockResolvedValue(instance);
+  const givenInstanceConnectError = () => instanceLifecycleService.adbConnectInstance.mockRejectedValue(new Error());
+
+  const expectDeviceBootEvent = (instance, coldBoot) =>
+    expect(eventEmitter.emit).toHaveBeenCalledWith('bootDevice', {
+      coldBoot,
+      deviceId: instance.adbName,
+      type: recipeName,
+    });
+  const expectNoDeviceBootEvent = () => expect(eventEmitter.emit).not.toHaveBeenCalled();
+
+  let retry;
+  let eventEmitter;
+  let deviceCleanupRegistry;
   let instanceLookupService;
   let instanceLifecycleService;
   let GenyInstance;

@@ -1,4 +1,3 @@
-const AndroidInstrumentsPlugin = require('./AndroidInstrumentsPlugin');
 
 describe('AndroidInstrumentsPlugin', () => {
   const testSummary = 'SomeTestSummary';

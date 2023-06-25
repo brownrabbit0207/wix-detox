@@ -1,4 +1,3 @@
-const t = require('@babel/types');
 const template = require('@babel/template').default;
 const { generateTypeCheck, generateIsOneOfCheck } = require('babel-generate-guard-clauses');
 

@@ -1,4 +1,3 @@
-const { forEachSeries } = require('p-iteration');
 
 describe(':android: UIDevice', () => {
   beforeEach(async () => {

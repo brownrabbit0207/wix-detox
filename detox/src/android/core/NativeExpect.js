@@ -1,4 +1,3 @@
-const { expectDescription } = require('../../utils/invocationTraceDescriptions');
 const { MatcherAssertionInteraction } = require('../interactions/native');
 const matchers = require('../matchers/native');
 

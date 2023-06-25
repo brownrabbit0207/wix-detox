@@ -1,4 +1,3 @@
-const _ = require('lodash');
 
 const { encodeBase64 } = require('../../../../../utils/encoding');
 
@@ -23,3 +22,10 @@ function prepareInstrumentationArgs(args) {
 
   return {
     args: preparedLaunchArgs,
+    usedReservedArgs,
+  };
+}
+
+module.exports = {
+  prepareInstrumentationArgs,
+};

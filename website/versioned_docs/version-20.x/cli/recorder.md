@@ -1,4 +1,3 @@
-# detox recorder
 
 :::danger Warning
 

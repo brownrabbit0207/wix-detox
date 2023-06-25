@@ -1,4 +1,3 @@
-import React, {useCallback, useState} from 'react';
 import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 const BadgeButton = ({ testID, icon, text }) => {

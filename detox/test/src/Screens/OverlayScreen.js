@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { View, ScrollView, TouchableOpacity, StyleSheet, Text, NativeModules, Dimensions, Alert } from 'react-native';
 
 const { NativeModule } = NativeModules;

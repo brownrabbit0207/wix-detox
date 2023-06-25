@@ -1,4 +1,3 @@
-# Dealing With Problems With Building the App & Detox
 
 This page is about issues related to building the app, typically triggered when running `detox build` (and not `detox test`, for example).
 

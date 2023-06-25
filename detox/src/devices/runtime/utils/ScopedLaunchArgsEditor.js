@@ -1,4 +1,3 @@
-const Storage = require('./Storage');
 
 class ScopedLaunchArgsEditor {
   constructor() {

@@ -1,4 +1,3 @@
-//
 //  NSObject+DontCrash.h
 //  ExampleApp
 //

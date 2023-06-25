@@ -1,4 +1,3 @@
-/* eslint @typescript-eslint/no-unused-vars: ["error", { "args": "none" }] */
 const ArtifactPlugin = require('./ArtifactPlugin');
 
 /***

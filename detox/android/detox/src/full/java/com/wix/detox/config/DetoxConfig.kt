@@ -1,4 +1,3 @@
-package com.wix.detox.config
 
 class DetoxConfig {
     @JvmField var idlePolicyConfig: DetoxIdlePolicyConfig = DetoxIdlePolicyConfig()

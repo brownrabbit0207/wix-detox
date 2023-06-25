@@ -1,4 +1,3 @@
-const isUndefined = (x) => x === undefined;
 
 class ThreadDispatcher {
   /**

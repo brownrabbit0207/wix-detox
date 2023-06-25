@@ -1,4 +1,3 @@
-describe('string', () => {
   let string;
 
   beforeEach(() => {

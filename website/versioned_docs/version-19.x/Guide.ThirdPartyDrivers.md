@@ -1,4 +1,3 @@
----
 id: third-party-drivers
 slug: guide/third-party-drivers
 title: Third-Party Drivers

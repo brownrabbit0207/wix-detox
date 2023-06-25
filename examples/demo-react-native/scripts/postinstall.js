@@ -1,4 +1,3 @@
-const rnVersion = function() {
   const rnPackageJson = require('react-native/package.json');
   return rnPackageJson.version;
 }();

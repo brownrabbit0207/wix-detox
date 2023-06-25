@@ -1,4 +1,3 @@
-const scrollViewDriver = {
   byId: () => by.id('FSScrollActions.scrollView'),
   element: () => element(scrollViewDriver.byId()),
   listItem: (index) => element(by.text(`Text${index}`)),

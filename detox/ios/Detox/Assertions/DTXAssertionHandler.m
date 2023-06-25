@@ -1,4 +1,3 @@
-//
 //  DTXAssertionHandler.m
 //  Detox
 //

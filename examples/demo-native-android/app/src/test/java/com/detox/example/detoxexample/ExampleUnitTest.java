@@ -1,4 +1,3 @@
-package com.detox.example.detoxexample;
 
 import org.junit.Test;
 

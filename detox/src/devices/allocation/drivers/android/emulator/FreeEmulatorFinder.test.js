@@ -1,4 +1,3 @@
-const { emulator5556, localhost5555, mockAvdName } = require('../../../../common/drivers/android/tools/__mocks__/handles');
 
 describe('FreeEmulatorFinder', () => {
   const mockAdb = { devices: jest.fn() };

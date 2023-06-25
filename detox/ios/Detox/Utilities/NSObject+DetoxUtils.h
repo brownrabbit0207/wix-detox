@@ -1,4 +1,3 @@
-//
 //  NSObject+DetoxUtils.h
 //  Detox
 //

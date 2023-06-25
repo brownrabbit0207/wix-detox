@@ -1,4 +1,3 @@
-@startuml
 
 title "jest --runInBand"
 actor User

@@ -1,4 +1,3 @@
-const Artifact = require('../templates/artifact/Artifact');
 
 class InstrumentsArtifactRecording extends Artifact {
   constructor({ client, userConfig, temporaryRecordingPath }) {

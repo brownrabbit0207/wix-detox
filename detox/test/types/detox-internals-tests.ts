@@ -1,4 +1,3 @@
-import { Event } from 'trace-event-lib';
 
 declare function random<T>(): T
 declare function assert<T>(x: T): void;

@@ -1,4 +1,3 @@
-const path = require('path');
 
 function toSimplePath(filePath, cwd = process.cwd()) {
   const relativePath = path.relative(cwd, filePath);

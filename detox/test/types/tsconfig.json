@@ -1,4 +1,3 @@
-{
   "extends": "..",
   "include": ["*.ts"],
   "exclude": [],

@@ -1,4 +1,3 @@
-const DeviceCookie = require('./DeviceCookie');
 
 class AndroidDeviceCookie extends DeviceCookie {
   /**

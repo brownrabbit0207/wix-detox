@@ -1,4 +1,3 @@
-const MockServer = require('../mock-server/mock-server');
 
 describe('Network Synchronization', () => {
   const mockServer = new MockServer();

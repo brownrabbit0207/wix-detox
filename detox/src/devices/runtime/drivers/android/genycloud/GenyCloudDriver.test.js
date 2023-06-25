@@ -1,4 +1,3 @@
-describe('Genymotion-cloud driver', () => {
   const anInstance = () => ({
     uuid: 'mock-instance-uuid',
     name: 'mock-instance-name',

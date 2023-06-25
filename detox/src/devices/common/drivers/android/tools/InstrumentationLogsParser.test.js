@@ -1,4 +1,3 @@
-describe('Instrumentation logs parser', () => {
   describe('stack trace parser', () => {
     let uut;
     beforeEach(() => {

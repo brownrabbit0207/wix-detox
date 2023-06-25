@@ -1,4 +1,3 @@
-const Deferred = require('../../utils/Deferred');
 const FakeClient = jest.genMockFromModule('../Client');
 
 FakeClient.setInfiniteConnect = () => {

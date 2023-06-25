@@ -1,4 +1,3 @@
-  - wait: ~
     continue_on_failure: true
   - label: "Post-processing: Test coverage"
     command:

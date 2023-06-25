@@ -1,4 +1,3 @@
-const { inspect } = require('util');
 
 const { DetoxRuntimeError } = require('../../errors');
 const invoke = require('../../invoke');

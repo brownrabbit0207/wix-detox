@@ -1,4 +1,3 @@
-package com.example.detox.purenative
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

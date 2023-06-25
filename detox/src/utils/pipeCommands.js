@@ -1,4 +1,3 @@
-const {
   escapeInDoubleQuotedRegexp,
   escapeInDoubleQuotedString,
   isRunningInCMDEXE,

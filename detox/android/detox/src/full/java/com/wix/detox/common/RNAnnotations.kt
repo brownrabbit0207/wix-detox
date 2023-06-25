@@ -1,4 +1,3 @@
-package com.wix.detox.common
 
 import kotlin.annotation.AnnotationTarget.*
 

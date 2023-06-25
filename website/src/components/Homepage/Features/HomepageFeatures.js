@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './HomepageFeatures.module.scss';
 import FeatureList from './FeatureList';
 import Features from './Features';

@@ -1,4 +1,3 @@
-jest.unmock('../DetoxLogger');
 
 const path = require('path');
 const { PassThrough } = require('stream');

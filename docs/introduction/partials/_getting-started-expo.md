@@ -1,4 +1,3 @@
-<!-- markdownlint-configure-file { "first-line-h1": 0 } -->
 
 :::caution Note
 

@@ -1,4 +1,3 @@
-# Mocking User Notifications
 
 <!-- markdownlint-configure-file { "header-increment": 0 } -->
 

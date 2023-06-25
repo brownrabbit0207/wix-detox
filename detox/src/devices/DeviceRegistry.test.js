@@ -1,4 +1,3 @@
-const fs = require('fs-extra');
 const tempfile = require('tempfile');
 
 const environment = require('../utils/environment');

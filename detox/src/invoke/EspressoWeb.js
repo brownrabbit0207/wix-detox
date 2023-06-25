@@ -1,4 +1,3 @@
-const target = {
   type: 'Class',
   value: 'androidx.test.espresso.web.sugar.Web'
 };

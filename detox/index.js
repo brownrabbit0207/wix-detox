@@ -1,4 +1,3 @@
-function create() {
   if (process.env.DETOX_CONFIG_SNAPSHOT_PATH) {
     return require('./src/realms/secondary');
   } else {
