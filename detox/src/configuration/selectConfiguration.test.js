@@ -1,13 +1,8 @@
+const DetoxConfigErrorComposer = require('../errors/DetoxConfigErrorComposer');
 
 const { androidEmulator, apkWithBinary } = require('./configurations.mock');
 
 describe('selectConfiguration', () => {
-  let selectConfiguration;
-  /** @type {DetoxConfigErrorComposer} */
-  let errorComposer;
-  let configLocation, globalConfig, cliConfig;
-
-  beforeEach(() => {
     configLocation = '/etc/detox/config.js';
     globalConfig = {};
     cliConfig = {};

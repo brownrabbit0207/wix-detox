@@ -1,3 +1,4 @@
+module.exports = {
   "maxWorkers": 1,
   "testMatch": ["<rootDir>/*.test.js"],
   "testTimeout": 120000,

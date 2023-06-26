@@ -1,13 +1,8 @@
+// @ts-nocheck
 const AndroidDriver = require('../AndroidDriver');
 
 /**
  * @typedef { AndroidDriverDeps } EmulatorDriverDeps
- */
-
-/**
- * @typedef { AndroidDriverProps } EmulatorDriverProps
- * @property avdName { String }
- * @property forceAdbInstall { Boolean }
  */
 
 // TODO Unit test coverage

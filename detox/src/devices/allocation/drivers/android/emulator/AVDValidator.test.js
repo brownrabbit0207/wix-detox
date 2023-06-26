@@ -1,13 +1,8 @@
+describe('AVD validator', () => {
   let logger;
   let environment;
   let avdsResolver;
   let versionResolver;
-  let uut;
-  beforeEach(() => {
-    jest.mock('../../../../../utils/logger');
-    logger = require('../../../../../utils/logger');
-
-    jest.mock('../../../../../utils/environment');
     environment = require('../../../../../utils/environment');
 
     const AVDsResolver = jest.genMockFromModule('./AVDsResolver');

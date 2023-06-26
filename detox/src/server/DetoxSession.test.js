@@ -1,13 +1,8 @@
+// @ts-nocheck
 describe('DetoxSession', () => {
   /**
    * @type {typeof require('./DetoxSession')}
    */
-  let DetoxSession;
-  /**
-   * @type {typeof require('./DetoxConnection')}
-   */
-  let DetoxConnection;
-  /**
    * @type {DetoxSession}
    */
   let session;

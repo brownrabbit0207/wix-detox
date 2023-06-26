@@ -1,13 +1,8 @@
+/* global by, device, element */
 const _ = require('lodash');
 
 // Note: Android-only as, according to Leo, on iOS there's no added value here compared to
 // existing tests that check deep-link URLs. Combined with the fact that we do not yet
-// support complex args on iOS -- no point in testing it out.
-describe(':android: Launch arguments', () => {
-  const defaultArgs = Object.freeze({
-    app: 'le',
-    goo: 'gle?',
-    micro: 'soft'
   });
 
   beforeEach(async () => {

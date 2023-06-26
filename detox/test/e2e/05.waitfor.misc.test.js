@@ -1,3 +1,4 @@
+const { scrollViewDriver } = require('./drivers/fs-scroll-driver');
 const { expectToThrow } = require('./utils/custom-expects');
 
 /**

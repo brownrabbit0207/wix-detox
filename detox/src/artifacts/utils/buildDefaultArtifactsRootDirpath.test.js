@@ -1,3 +1,4 @@
+jest.useFakeTimers();
 
 const path = require('path');
 

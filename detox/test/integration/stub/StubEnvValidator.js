@@ -1,3 +1,4 @@
+class StubEnvValidator {
   validate() {}
 }
 

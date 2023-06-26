@@ -1,13 +1,8 @@
+package com.wix.detox.reactnative.idlingresources.uimodule
 
 import android.util.Log
 import android.view.View
 import com.facebook.react.uimanager.IllegalViewOperationException
-import com.wix.detox.common.DetoxLog.Companion.LOG_TAG
-import com.wix.detox.reactnative.ReactNativeInfo
-import java.lang.ref.WeakReference
-
-private const val NUM_TIMES_BEFORE_NOTIFY_IDLE = 10
-private const val SET_NATIVE_VALUE = "setNativeValue"
 private const val CLASS_REACT_SWITCH = "com.facebook.react.views.switchview.ReactSwitch"
 
 class RN66Workaround {

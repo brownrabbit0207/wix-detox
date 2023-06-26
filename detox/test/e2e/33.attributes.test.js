@@ -1,3 +1,4 @@
+const { device, element, by } = require('detox');
 const expect = require('expect').default;
 
 describe('Attributes', () => {

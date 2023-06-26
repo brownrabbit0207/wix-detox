@@ -1,3 +1,4 @@
+#!/bin/bash -e
 
 source $(dirname "$0")/logger.sh
 source $(dirname "$0")/install.sh

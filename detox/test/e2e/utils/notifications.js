@@ -1,13 +1,8 @@
+const userNotificationPushTrigger = {
   "trigger": {
     "type": "push"
   },
   "title": "From push",
-  "subtitle": "Subtitle",
-  "body": "Body",
-  "badge": 1,
-  "payload": {
-    "key1": "value1",
-    "key2": "value2"
   },
   "category": "com.example.category",
   "content-available": 0,

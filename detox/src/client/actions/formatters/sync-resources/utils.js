@@ -1,3 +1,4 @@
+function makeResourceTitle(string) {
   return `• ${string}`;
 }
 

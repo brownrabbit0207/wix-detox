@@ -1,13 +1,8 @@
+// @ts-nocheck
 const WholeTestRecorderPlugin = require('../templates/plugin/WholeTestRecorderPlugin');
 
 class InstrumentsArtifactPlugin extends WholeTestRecorderPlugin {
   constructor({ api }) {
-    super({ api });
-  }
-
-  async onBeforeUninstallApp(event) {
-    await super.onBeforeUninstallApp(event);
-    await this._stopRecordingIfExists();
   }
 
   async onBeforeTerminateApp(event) {

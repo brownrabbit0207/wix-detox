@@ -1,13 +1,8 @@
+const path = require('path');
 
 const _ = require('lodash');
 
 const { DetoxInternalError, DetoxError } = require('../errors');
-const { shortFormat } = require('../utils/dateUtils');
-const { isPromiseLike } = require('../utils/isPromise');
-
-const BunyanLogger = require('./utils/BunyanLogger');
-const CategoryThreadDispatcher = require('./utils/CategoryThreadDispatcher');
-const MessageStack = require('./utils/MessageStack');
 const customConsoleLogger = require('./utils/customConsoleLogger');
 const sanitizeBunyanContext = require('./utils/sanitizeBunyanContext');
 

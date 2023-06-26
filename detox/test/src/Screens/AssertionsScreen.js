@@ -1,13 +1,8 @@
+import React, { Component } from 'react';
 import {
   Text,
   View,
   Switch,
-} from 'react-native';
-
-export default class AssertionsScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
       switchValue: false
     }
   }

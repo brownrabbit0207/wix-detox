@@ -1,13 +1,8 @@
+package com.wix.detox.actions
 
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.action.GeneralClickAction
 import androidx.test.espresso.action.GeneralLocation
-import androidx.test.espresso.action.Press
-import androidx.test.espresso.action.ViewActions.actionWithAssertions
-import com.wix.detox.action.common.MOTION_DIR_DOWN
-import com.wix.detox.action.common.MOTION_DIR_LEFT
-import com.wix.detox.action.common.MOTION_DIR_RIGHT
-import com.wix.detox.action.common.MOTION_DIR_UP
 import com.wix.detox.espresso.action.DetoxMultiTap
 import com.wix.detox.espresso.scroll.DetoxScrollAction
 

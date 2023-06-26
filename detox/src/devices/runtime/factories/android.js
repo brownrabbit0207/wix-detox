@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-unused-vars: ["error", { "args": "none" }] */
 const RuntimeDeviceFactory = require('./base');
 
 class RuntimeDriverFactoryAndroid extends RuntimeDeviceFactory {

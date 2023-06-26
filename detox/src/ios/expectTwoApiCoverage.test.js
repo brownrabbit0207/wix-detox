@@ -1,13 +1,8 @@
+// @ts-nocheck
 describe('expectTwo API Coverage', () => {
   let e;
 
   beforeEach(() => {
-    const IosExpect = require('./expectTwo');
-
-    e = new IosExpect({
-      invocationManager: new MockExecutor(),
-    });
-  });
 
   describe('Matchers', () => {
     it(`by.accessibilityLabel`, async () => {

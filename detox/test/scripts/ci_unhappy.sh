@@ -1,13 +1,8 @@
+#!/usr/bin/env bash
 
 set -e
 
 export DISABLE_JUNIT_REPORTER=1
-export DETOX_RETRIES=0
-
-platform=$1
-
-copy_coverage_to() {
-    if [ -n "$CI" ]; then
       cp coverage/lcov.info "$1"
     fi
 }

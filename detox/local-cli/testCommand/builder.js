@@ -1,13 +1,8 @@
+module.exports = {
   C: {
     alias: 'config-path',
     group: 'Configuration:',
     describe: 'Specify Detox config file path. If not supplied, detox searches for .detoxrc[.js] or "detox" section in package.json',
-  },
-  c: {
-    alias: ['configuration'],
-    group: 'Configuration:',
-    describe:
-      'Select a device configuration from your defined configurations, if not supplied, and there\'s only one configuration, detox will default to it',
   },
   l: {
     alias: 'loglevel',

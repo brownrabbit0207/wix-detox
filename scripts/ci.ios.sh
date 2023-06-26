@@ -1,3 +1,4 @@
+#!/bin/bash -ex
 
 UPLOAD_ARTIFACT="$(pwd)/scripts/upload_artifact.sh"
 trap "$UPLOAD_ARTIFACT" EXIT

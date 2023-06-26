@@ -1,13 +1,8 @@
+//
 //  CustomKeyboardViewController.m
 //  example
 //
 //  Created by Tyrone Trevorrow on 26/4/21.
-//  Copyright © 2021 Wix. All rights reserved.
-//
-
-#import "CustomKeyboardViewController.h"
-
-@class CustomKeyboardView;
 @protocol CustomKeyboardDelegate
 - (void) customKeyboardTappedButton: (CustomKeyboardView*) sender;
 @end

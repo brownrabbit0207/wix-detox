@@ -1,13 +1,8 @@
+describe('Genymotion-cloud driver', () => {
   const anInstance = () => ({
     uuid: 'mock-instance-uuid',
     name: 'mock-instance-name',
     adbName: 'mock-instance-adb-name',
-    toString: () => 'mock-instance-toString()',
-  });
-
-  let aapt;
-  let eventEmitter;
-  let invocationManager;
   let appInstallHelper;
   let apkValidator;
   let instrumentation;

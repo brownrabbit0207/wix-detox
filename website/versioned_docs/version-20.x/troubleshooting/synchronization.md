@@ -1,13 +1,8 @@
+# Dealing With Synchronization Issues in Tests
 
 <!-- markdownlint-configure-file { "header-increment": 0 } -->
 
 Traditionally, one of the most difficult aspects of E2E testing is synchronizing the test scenario with the app. Complex operations inside the app (like accessing servers or performing animations) often take variable amount of time to complete. We can’t continue the test until they’ve completed. How can we synchronize the test with these operations?
-
-Synchronizing manually with `sleep()` commands is a bad idea. It’s flaky, complicates the tests, behaves differently on different machines and makes tests needlessly slow.
-
-Instead, Detox tries to synchronize the test with the app completely _automatically_.
-
-When this works it’s like magic. You simply execute actions one after the other without worrying about timing, and Detox waits for the app to stabilize before moving to the next test line. If there’s an in-flight request to a server, for example, the test will not move forward until the request completes.
 
 ### What operations do we try to synchronize with automatically
 

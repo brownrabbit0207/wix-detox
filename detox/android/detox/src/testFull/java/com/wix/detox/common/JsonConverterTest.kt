@@ -1,3 +1,4 @@
+package com.wix.detox.common
 
 import org.assertj.core.api.Assertions.assertThat
 import org.json.JSONArray

@@ -1,3 +1,4 @@
+jest.setTimeout(1000);
 jest.mock('../utils/logger');
 
 const IPCClient = require('./IPCClient');

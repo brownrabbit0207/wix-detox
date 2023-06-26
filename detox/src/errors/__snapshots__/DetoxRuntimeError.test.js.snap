@@ -1,13 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetoxRuntimeError should be created with empty object 1`] = `[DetoxRuntimeError]`;
 
 exports[`DetoxRuntimeError should be created with message with "Command failed" error 1`] = `
-[DetoxRuntimeError: Cannot run Detox due to an internal error
-
-Command failed: jest runMyTests]
-`;
-
-exports[`DetoxRuntimeError should be created with message with debug info 1`] = `
 [DetoxRuntimeError: no filename was given to constructSafeFilename()
 
 the arguments were: {

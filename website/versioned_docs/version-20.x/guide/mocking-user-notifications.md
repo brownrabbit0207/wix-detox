@@ -1,13 +1,8 @@
+# Mocking User Notifications
 
 <!-- markdownlint-configure-file { "header-increment": 0 } -->
 
 Detox supports mocking user notifications.
-
-> **Note:** The mocking mechanism will not mimic the UI of a user notification. Instead, it will only simulate a user interaction with the notification - namely, the "opening" of it (equivalent to a user’s tap/swipe on it in the notification center).
-
-### Mocking App Launch With a Notification
-
-`launchApp()` with custom parameters (i.e. `userNotification`) will trigger the mocking mechanism.
 
 ```js
 await device.launchApp({newInstance: true, userNotification: notification});

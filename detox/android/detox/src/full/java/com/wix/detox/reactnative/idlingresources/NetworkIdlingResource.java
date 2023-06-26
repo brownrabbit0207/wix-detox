@@ -1,13 +1,8 @@
+package com.wix.detox.reactnative.idlingresources;
 
 import android.util.Log;
 import android.view.Choreographer;
 
-import com.facebook.react.bridge.ReactContext;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;

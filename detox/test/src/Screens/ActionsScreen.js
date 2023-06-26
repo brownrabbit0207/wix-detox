@@ -1,13 +1,8 @@
+import React, { Component } from 'react';
 import {
   Text,
   BackHandler,
   View,
-  TouchableOpacity,
-  ScrollView,
-  RefreshControl,
-  Platform,
-  Dimensions,
-  StyleSheet,
   Slider as LegacySlider,
   SafeAreaView,
   requireNativeComponent,

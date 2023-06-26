@@ -1,13 +1,8 @@
+jest.mock('../../../utils/logger');
 const logger = jest.requireMock('../../../utils/logger');
 const testSummaries = require('../../__mocks__/testSummaries.mock');
 const FileArtifact = require('../artifact/FileArtifact');
 
-const ArtifactPlugin = require('./ArtifactPlugin');
-const testSuite = require('./__mocks__/testSuite.mock');
-
-class TestArtifactPlugin extends ArtifactPlugin {}
-
-describe('ArtifactPlugin', () => {
   let api;
   let plugin;
 

@@ -1,3 +1,4 @@
+@file:JvmName("ViewMatchers")
 
 package com.wix.detox.espresso.matcher
 

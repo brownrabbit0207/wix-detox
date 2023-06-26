@@ -1,12 +1,7 @@
+const { URL } = require('url');
 
 const fs = require('fs-extra');
 const onSignalExit = require('signal-exit');
-
-const temporary = require('../artifacts/utils/temporaryPath');
-const { DetoxRuntimeError } = require('../errors');
-const SessionState = require('../ipc/SessionState');
-const { getCurrentCommand } = require('../utils/argparse');
-const uuid = require('../utils/uuid');
 
 const DetoxContext = require('./DetoxContext');
 const symbols = require('./symbols');

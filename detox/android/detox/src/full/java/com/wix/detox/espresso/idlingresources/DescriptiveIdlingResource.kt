@@ -1,3 +1,4 @@
+package com.wix.detox.espresso.idlingresources
 
 import androidx.test.espresso.IdlingResource
 

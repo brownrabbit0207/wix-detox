@@ -1,13 +1,8 @@
+---
 title: Getting Started
 ---
 
 ## Getting Started
-
-**Welcome to Detox!**
-
-In this guide, we will walk you through setting Detox up in your project, one step at a time.
-
-You will find that some steps are longer than the others: some are just one-paragraph long, while for others we have a dedicated multistep guide worked out. Bear with us - it is all necessary, and once set-up, it is easy to move forward with writing tests very rapidly.
 
 ## Step 1: Environment Setup
 

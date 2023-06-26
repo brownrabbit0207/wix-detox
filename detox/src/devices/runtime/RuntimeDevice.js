@@ -1,13 +1,8 @@
+const DetoxRuntimeError = require('../../errors/DetoxRuntimeError');
 const debug = require('../../utils/debug'); // debug utils, leave here even if unused
 const log = require('../../utils/logger').child({ cat: 'device' });
 const traceMethods = require('../../utils/traceMethods');
 const wrapWithStackTraceCutter = require('../../utils/wrapWithStackTraceCutter');
-
-const LaunchArgsEditor = require('./utils/LaunchArgsEditor');
-
-class RuntimeDevice {
-  constructor({
-    appsConfig,
     behaviorConfig,
     deviceConfig,
     eventEmitter,

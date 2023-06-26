@@ -1,13 +1,8 @@
+const exec = require('shell-utils').exec;
 const {log, logSection, getVersionSafe, getReleaseNpmTag, getReleaseVersionType} = require('./utils/releaseArgs');
 
 function run() {
   logSection('Initializing');
-  exec.execSync('lerna bootstrap --no-ci');
-
-  const versionType = getReleaseVersionType();
-  logSection(`Pre-calculating future version... (versionType=${versionType})`);
-
-  const npmTag = getReleaseNpmTag();
   const preid = npmTag === 'latest'? '': `--preid=${npmTag}`;
   exec.execSync(`lerna version --yes ${versionType} ${preid} --no-git-tag-version --no-push`);
   const futureVersion = getVersionSafe();

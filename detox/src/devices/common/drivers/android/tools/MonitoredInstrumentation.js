@@ -1,13 +1,8 @@
+// @ts-nocheck
 const _ = require('lodash');
 
 const DetoxRuntimeError = require('../../../../../errors/DetoxRuntimeError');
 const Deferred = require('../../../../../utils/Deferred');
-const logger = require('../../../../../utils/logger');
-
-const Instrumentation = require('./Instrumentation');
-const { InstrumentationLogsParser } = require('./InstrumentationLogsParser');
-
-class MonitoredInstrumentation {
   constructor(adb) {
     this.instrumentationLogsParser = null;
     this.instrumentationStackTrace = '';

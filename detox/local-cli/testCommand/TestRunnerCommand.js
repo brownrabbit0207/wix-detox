@@ -1,13 +1,8 @@
+const cp = require('child_process');
 
 const _ = require('lodash');
 const parser = require('yargs-parser');
 const unparse = require('yargs-unparser');
-
-const detox = require('../../internals');
-const log = detox.log.child({ cat: ['lifecycle', 'cli'] });
-const { printEnvironmentVariables, prependNodeModulesBinToPATH } = require('../../src/utils/envUtils');
-const { toSimplePath } = require('../../src/utils/pathUtils');
-const { escapeSpaces, useForwardSlashes } = require('../../src/utils/shellUtils');
 const sleep = require('../../src/utils/sleep');
 const AppStartCommand = require('../startCommand/AppStartCommand');
 const { markErrorAsLogged } = require('../utils/cliErrorHandling');

@@ -1,3 +1,4 @@
+const DeviceLauncher = require('../../../common/drivers/DeviceLauncher');
 
 class SimulatorLauncher extends DeviceLauncher {
   constructor({ applesimutils, eventEmitter }) {

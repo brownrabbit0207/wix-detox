@@ -1,3 +1,4 @@
+const internals = () => require('../../../../../../../internals');
 
 class GenyInstanceNaming {
   generateName() {

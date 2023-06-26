@@ -1,13 +1,8 @@
+#!/bin/bash -e
 
 UPLOAD_ARTIFACT="$(pwd)/scripts/upload_artifact.sh"
 trap "$UPLOAD_ARTIFACT" EXIT
 
-# Approve unapproved SDK licenses
-yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
-
-SCRIPTS_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-
-source $SCRIPTS_PATH/demo-projects.sh
 
 pushd detox
 run_f "npm run build:android"
