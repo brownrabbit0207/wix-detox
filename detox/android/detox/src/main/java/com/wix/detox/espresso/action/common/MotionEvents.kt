@@ -3,6 +3,12 @@ package com.wix.detox.espresso.action.common
 import android.os.SystemClock
 import android.view.InputDevice
 import android.view.MotionEvent
+import androidx.test.espresso.UiController
+import androidx.test.espresso.action.MotionEvents
+
+private val PRECISION = floatArrayOf(16f, 16f)
+
+class MotionEvents {
     fun obtainMoveEvent(downEvent: MotionEvent, eventTime: Long, x: Float, y: Float): MotionEvent
             = MotionEvents.obtainMovement(downEvent.downTime, eventTime, floatArrayOf(x, y))!!
 

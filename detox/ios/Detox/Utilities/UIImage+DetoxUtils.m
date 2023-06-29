@@ -3,6 +3,12 @@
 //  Detox
 //
 //  Created by Leo Natan on 9/13/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
+
+#import "UIImage+DetoxUtils.h"
+
+@implementation UIImage (DetoxUtils)
 
 - (UIImage *)dtx_imageByCroppingInRect:(CGRect)rect
 {

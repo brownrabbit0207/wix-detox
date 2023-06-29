@@ -4,6 +4,12 @@ const parse = require('yargs-parser');
 
 const deviceAppTypes = require('./utils/deviceAppTypes');
 
+const CLI_PARSER_OPTIONS = {
+  configuration: {
+    'short-option-groups': false,
+  },
+};
+
 /**
  * @param {DetoxConfigErrorComposer} opts.errorComposer
  * @param {Detox.DetoxConfig} opts.globalConfig

@@ -3,6 +3,12 @@ import {
   Text,
   View,
   ScrollView,
+  StyleSheet,
+  SafeAreaView
+} from 'react-native';
+
+export default class VisibilityScreen extends Component {
+  constructor(props) {
     super(props);
 
     this.state = {};

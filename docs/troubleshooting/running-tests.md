@@ -4,6 +4,12 @@ This page is about issues related to executing your Detox tests, typically trigg
 
 ## Trace Mode
 
+It’s a good idea to get as much information as possible about what’s going on. We can enable trace mode during tests by running our tests with:
+
+```bash
+detox test --loglevel trace
+```
+
 ## No simulators found (iOS)
 
 In order to run tests on a simulator, you need to have simulator images installed on your machine. This process is performed by Xcode itself. You can list all available simulators using `simctl` by typing `xcrun simctl list` in terminal.

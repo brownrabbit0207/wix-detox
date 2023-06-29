@@ -3,6 +3,12 @@ id: uninstalling
 slug: guide/uninstalling
 title: Uninstalling Detox
 sidebar_label: Uninstalling Detox
+---
+
+## Uninstalling Detox
+
+Installing and using Detox implies certain side effects: cloned devices, cache files, state files, temporary files, etc.
+
 This checklist might come in handy whenever you have to make a clean uninstallation after using Detox.
 
 ### Detox Framework Cache

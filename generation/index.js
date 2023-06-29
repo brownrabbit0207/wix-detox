@@ -3,6 +3,12 @@ const generateAndroidAdapters = require('./adapters/android');
 const downloadEspressoFileByClass = require('./utils/downloadEspresso');
 const downloadFile = require('./utils/downloadFile');
 
+const espressoFilesToDownload = {
+  'androidx.test.espresso.action.ViewActions': '../detox/src/android/espressoapi/ViewActions.js'
+};
+
+const externalFilesToDownload = {
+  // TODO replace this with the non-deprecated version of UiDevice (i.e. released as uiautomator under androidx).
   // This is pending because the new code doesn't seem to exist online (not even on android/android-test on Github).
   // Note: for now, it appears that the 'new' (androidx) and 'old' versions are identical (except for the package name, obviously).
 

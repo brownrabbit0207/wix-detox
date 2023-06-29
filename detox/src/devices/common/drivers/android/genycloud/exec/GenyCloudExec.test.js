@@ -3,6 +3,12 @@ const aResponse = (exit_code = 0, exit_code_desc = 'NO_ERROR') => ({
   exit_code,
   exit_code_desc,
 });
+const anErrorResponse = (exit_code, exit_code_desc, error_desc) => ({
+  ...aResponse(exit_code, exit_code_desc),
+  error: {
+    message: `API return unexpected code: ${exit_code}. Error: {"code":"${error_desc}","message":"Oh no, mocked error has occurred!"}`,
+    details: '',
+  }
 });
 
 describe('Genymotion-cloud executable', () => {

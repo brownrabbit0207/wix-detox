@@ -3,6 +3,12 @@ describe('Simulator launcher (helper)', () => {
 
   let eventEmitter;
   let applesimutils;
+  let uut;
+  beforeEach(() => {
+    const AsyncEmitter = jest.genMockFromModule('../../../../utils/AsyncEmitter');
+    eventEmitter = new AsyncEmitter();
+
+    const AppleSimUtils = jest.genMockFromModule('../../../common/drivers/ios/tools/AppleSimUtils');
     applesimutils = new AppleSimUtils();
 
     const SimulatorLauncher = require('./SimulatorLauncher');

@@ -3,6 +3,12 @@ const custom = require('./utils/custom-it');
 describe('Actions - Scroll', () => {
   beforeEach(async () => {
     await device.reloadReactNative();
+    await element(by.text('Actions')).tap();
+  });
+
+  custom.it.withFailureIf.android('should scroll for a small amount in direction', async () => {
+    await expect(element(by.text('Text1'))).toBeVisible();
+    await expect(element(by.text('Text4'))).not.toBeVisible();
     await expect(element(by.id('ScrollView161'))).toBeVisible();
     await element(by.id('ScrollView161')).scroll(100, 'down');
     await expect(element(by.text('Text1'))).not.toBeVisible();

@@ -3,6 +3,12 @@ const path = require('path');
 const envUtils = require('./envUtils');
 
 describe('envUtils', () => {
+  describe('printEnvironmentVariables', () => {
+    it('should print environment variables', () => {
+      const env = { A: 1, B: '2', C: null, D: '' };
+      expect(envUtils.printEnvironmentVariables(env)).toBe('A=1 B="2" ');
+    });
+  });
 
   describe('prependNodeModulesBinToPATH', () => {
     it('should not mutate the env object if PATH does not exist', () => {

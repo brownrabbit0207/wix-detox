@@ -3,6 +3,12 @@
 As the number of your end-to-end tests grows, the overall test session duration might easily surpass an hour or two.
 A good idea first would be to parallelize the test execution using your test runner (e.g. for Jest that
 would be forwarding `--maxWorkers <N>`), but this approach has its limitations. Indeed, an average build agent would handle
+running a few virtual devices at once, but running a dozen devices at once would make it slow and unreliable.
+
+In other words, if you're experiencing scaling issues or struggling with managing local Android emulators,
+a good idea would be to migrate to SaaS platforms, where you can start and stop devices on demand at any scale.
+At the moment, Detox can offer you a first-class integration with
+[Genymotion SaaS], the platform that offers cloud-based Android Virtual Devices.
 
 ## Prerequisites
 

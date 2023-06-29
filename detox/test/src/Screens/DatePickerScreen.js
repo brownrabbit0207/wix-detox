@@ -4,6 +4,12 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Button, Platform } from 'react-native';
 import { default as DatePicker } from "@react-native-community/datetimepicker";
 
+const shouldHideDatePicker = Platform.OS === 'android';
+
+export default class DatePickerScreen extends Component {
+  constructor(props) {
+    super(props);
+
     this.state = {
       chosenDate: new Date(),
       datePickerVisible: !shouldHideDatePicker,

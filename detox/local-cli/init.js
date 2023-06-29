@@ -3,6 +3,12 @@ const path = require('path');
 const util = require('util');
 
 const detox = require('../internals');
+
+const jestTemplates = require('./templates/jest');
+
+let exitCode = 0;
+
+module.exports.command = 'init';
 module.exports.desc = 'Creates template files to get you started with Detox';
 module.exports.builder = {};
 

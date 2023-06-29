@@ -3,6 +3,12 @@ const WholeTestRecorderPlugin = require('../templates/plugin/WholeTestRecorderPl
 
 class InstrumentsArtifactPlugin extends WholeTestRecorderPlugin {
   constructor({ api }) {
+    super({ api });
+  }
+
+  async onBeforeUninstallApp(event) {
+    await super.onBeforeUninstallApp(event);
+    await this._stopRecordingIfExists();
   }
 
   async onBeforeTerminateApp(event) {

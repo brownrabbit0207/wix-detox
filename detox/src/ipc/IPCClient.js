@@ -3,6 +3,12 @@ const { IPC } = require('node-ipc');
 const { DetoxInternalError } = require('../errors');
 const { serializeObjectWithError } = require('../utils/errorUtils');
 
+class IPCClient {
+  constructor({ id, logger, sessionState }) {
+    this._id = id;
+    /** @type {import('../logger/DetoxLogger')} logger */
+    this._logger = logger.child({ cat: 'ipc' });
+    /** @type {import('./SessionState')} */
     this._sessionState = sessionState;
 
     this._ipc = null;

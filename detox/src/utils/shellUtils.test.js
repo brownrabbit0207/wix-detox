@@ -3,6 +3,12 @@ const {
   escapeInDoubleQuotedRegexp,
   escapeInDoubleQuotedString,
   escapeWithDoubleQuotedString,
+  escapeWithSingleQuotedString,
+  hasUnsafeChars,
+  isRunningInCMDEXE,
+  useForwardSlashes,
+} = require('./shellUtils');
+
 describe('shellUtils', function() {
   describe('escapeInDoubleQuotedString', () => {
     test.each([

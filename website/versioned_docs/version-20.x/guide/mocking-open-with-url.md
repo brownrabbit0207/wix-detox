@@ -4,6 +4,12 @@
 
 You can mock opening the app from URL to test your app’s deep link handling mechanism.
 
+### Mocking App Launch With a URL
+
+```js
+await device.launchApp({newInstance: true, url, sourceApp: bundleId}); // sourceApp is an optional iOS-only argument
+```
+
 #### Example
 
 ```js

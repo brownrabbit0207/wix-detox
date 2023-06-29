@@ -3,6 +3,12 @@
 title "jest --runInBand"
 actor User
 boundary "Jest (main)" as Jest0
+participant "jest.config.js" as jestConfig
+participant "globalSetup" as globalSetup
+participant "reporters" as jestReporter
+participant "globalTeardown.js" as globalTeardown
+
+User -> Jest0 : jest ...
 activate Jest0
 Jest0 -> jestConfig: import
 activate jestConfig

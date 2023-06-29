@@ -3,6 +3,12 @@ const fs = require('fs');
 const os = require('os');
 
 const _ = require('lodash');
+
+const DetoxConfigErrorComposer = require('./DetoxConfigErrorComposer');
+
+describe('DetoxConfigErrorComposer', () => {
+  /** @type DetoxConfigErrorComposer */
+  let builder;
   let build;
   let config;
 

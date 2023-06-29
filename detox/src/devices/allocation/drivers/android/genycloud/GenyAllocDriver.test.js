@@ -3,6 +3,12 @@ describe('Allocation driver for Genymotion SaaS emulators', () => {
     device: {
       query: 'mock',
     },
+  };
+
+  let recipeQuerying;
+  let allocationHelper;
+  let instanceLauncher;
+  let GenyInstance;
   let adb;
 
   beforeEach(() => {

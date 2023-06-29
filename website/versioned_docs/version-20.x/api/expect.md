@@ -3,6 +3,12 @@
 Detox uses [matchers](matchers.md) to match UI elements in your app and expectations to verify those elements are in the expected state.
 
 Use [actions](actions.md) to simulate use interaction with elements.
+
+## Methods
+
+- [`.toBeVisible()`](#tobevisible)
+- [`.toExist()`](#toexist)
+- [`.toBeFocused()`](#tobefocused)
 - [`.toHaveText()`](#tohavetexttext)
 - [`.toHaveLabel()`](#tohavelabellabel)
 - [`.toHaveId()`](#tohaveidid)

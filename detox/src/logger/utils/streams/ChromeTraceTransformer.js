@@ -3,6 +3,12 @@ const { AbstractEventBuilder } = require('trace-event-lib');
 const getMainCategory = require('../getMainCategory');
 
 const JSONLStringer = require('./JSONLStringer');
+const { flatMapTransform } = require('./transformers');
+
+class ChromeTraceTransformer {
+  constructor() {
+    /** @type {Map<string, number>} */
+    this._globalThreadMap = null;
   }
 
   /**

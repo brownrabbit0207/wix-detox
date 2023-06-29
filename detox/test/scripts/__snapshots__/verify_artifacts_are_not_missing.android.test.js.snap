@@ -3,6 +3,12 @@
 exports[` 1`] = `
 Array [
   "",
+  ".",
+  "./✓ Actions should clear text in an element",
+  "./✓ Actions should clear text in an element/afterEach.png",
+  "./✓ Actions should clear text in an element/beforeEach.png",
+  "./✓ Actions should clear text in an element/test.log",
+  "./✓ Actions should long press on an element",
   "./✓ Actions should long press on an element/afterEach.png",
   "./✓ Actions should long press on an element/beforeEach.png",
   "./✓ Actions should long press on an element/test.log",

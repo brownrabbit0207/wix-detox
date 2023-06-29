@@ -3,6 +3,12 @@ import {
   View,
   Text,
   NativeModules
+} from 'react-native';
+
+const CalendarManager = NativeModules.CalendarManager;
+
+export default class Permissions extends Component {
+
   constructor(props) {
     super(props);
     this.state = {status: "nothing yet"};

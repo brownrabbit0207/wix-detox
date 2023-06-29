@@ -3,6 +3,12 @@ const _ = require('lodash');
 const DetoxError = require('./DetoxError');
 
 /**
+ * @typedef DetoxRuntimeErrorOptions
+ * @property [message] { String }
+ * @property [hint] { String }
+ * @property [debugInfo] { * }
+ * @property [noStack] { Boolean }
+ * @property [inspectOptions] { Object }
  */
 
 class DetoxRuntimeError extends DetoxError {

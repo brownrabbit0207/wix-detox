@@ -3,6 +3,12 @@ const _ = require('lodash');
 
 const detox = require('../../../..');
 const detoxInternals = require('../../../../internals');
+const { getFullTestName, hasTimedOut } = require('../utils');
+
+const RETRY_TIMES = Symbol.for('RETRY_TIMES');
+
+const log = detoxInternals.log.child({ cat: 'lifecycle,jest-environment' });
+
 class DetoxCoreListener {
   constructor({ env }) {
     this._startedTests = new Set();

@@ -3,6 +3,12 @@ const _ = require('lodash');
 const environment = require('../../../../../utils/environment');
 
 const latestInstanceOf = (clazz) => _.last(clazz.mock.instances);
+
+describe('Genymotion-cloud device-registries factory', () => {
+  let DeviceRegistry;
+  let GenyDeviceRegistryFactory;
+  beforeEach(() => {
+    jest.mock('../../../../DeviceRegistry');
     DeviceRegistry = require('../../../../DeviceRegistry');
 
     GenyDeviceRegistryFactory = require('./GenyDeviceRegistryFactory');

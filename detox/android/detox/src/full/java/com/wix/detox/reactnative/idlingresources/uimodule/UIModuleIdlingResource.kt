@@ -3,6 +3,12 @@ package com.wix.detox.reactnative.idlingresources.uimodule
 import android.util.Log
 import android.view.Choreographer
 import androidx.test.espresso.IdlingResource.ResourceCallback
+import com.facebook.react.bridge.ReactContext
+import com.wix.detox.reactnative.helpers.RNHelpers
+import com.wix.detox.reactnative.idlingresources.DetoxBaseIdlingResource
+import org.joor.ReflectException
+
+/**
  * Espresso IdlingResource for React Native's UI Module.
  * Hooks up to React Native internals to grab the pending ui operations from it.
  */

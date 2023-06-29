@@ -3,6 +3,12 @@ const _ = require('lodash');
 
 describe('Global-context lifecycle handler for Genymotion SaaS emulators', () => {
   const anInstance = () => {
+    const instance = new GenyInstance();
+    instance.uuid = 'mock-instance-uuid';
+    instance.name = 'mock-instance-name';
+    instance.toString = () => 'mock-instance-toString()';
+    return instance;
+  };
 
   let GenyInstance;
   let logger;

@@ -3,6 +3,12 @@
 package com.wix.detox.espresso.scroll
 
 import android.annotation.SuppressLint
+import android.view.View
+import android.widget.AbsListView
+import com.wix.detox.action.common.*
+
+// TODO ViewPager?
+fun getScrollableProbe(view: View, @MotionDir direction: Int): ScrollableProbe {
     if (view is AbsListView) {
         @SuppressLint("SwitchIntDef")
         when (direction) {

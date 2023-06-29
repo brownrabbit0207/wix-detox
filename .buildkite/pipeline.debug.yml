@@ -3,6 +3,12 @@ steps:
     prompt: "Detox your mind"
     if: 'build.message =~ /^debug\$/i'
     fields:
+      - select: "Ingridients"
+        key: "debug-builds"
+        multiple: true
+        hint: "hey Chef, what are we cooking today?"
+        options:
+          - label: "iOS RN 68"
             value: "ios_rn_68"
           - label: "iOS RN 69"
             value: "ios_rn_69"

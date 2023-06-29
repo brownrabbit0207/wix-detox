@@ -3,6 +3,12 @@
 
 /**
  * @typedef DeallocOptions
+ * @property shutdown { Boolean }
+ */
+
+class AllocationDriverBase {
+  /**
+   * @param deviceConfig { Object }
    * @return {Promise<DeviceCookie>}
    */
   async allocate(deviceConfig) {}

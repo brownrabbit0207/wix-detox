@@ -3,6 +3,12 @@ description: Ask a general how-to question
 labels: ["user: need help"]
 body:
   - type: markdown
+    attributes:
+      value: If you have issues running Detox or setting it up, please use one of the [bug templates](https://github.com/wix/Detox/issues/new/choose) instead.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
       description: A clear and concise description of what you need help with.
     validations:
       required: true

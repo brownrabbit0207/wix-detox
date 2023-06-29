@@ -3,6 +3,12 @@ const bodyParser = require('body-parser');
 
 class Mockserver {
   constructor() {
+    this.app = express();
+    this.server = null;
+    this.port = process.env.PORT || 9001;
+  }
+
+  init() {
     this.app.use(bodyParser.urlencoded({extended: true}));
     this.app.use(bodyParser.json());
 

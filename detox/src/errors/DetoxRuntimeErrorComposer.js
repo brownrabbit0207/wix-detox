@@ -3,6 +3,12 @@ const _ = require('lodash');
 const DetoxRuntimeError = require('./DetoxRuntimeError');
 
 const J = s => JSON.stringify(s);
+
+class DetoxRuntimeErrorComposer {
+  constructor({ appsConfig }) {
+    this.appsConfig = appsConfig;
+  }
+
   abortedDetoxInit() {
     return new DetoxRuntimeError({
       message: 'Aborted detox.init() execution, and now running detox.cleanup()',

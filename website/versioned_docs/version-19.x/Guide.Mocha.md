@@ -3,6 +3,12 @@ id: mocha
 slug: guide/mocha
 title: Mocha Setup Guide
 sidebar_label: Mocha Setup Guide
+---
+
+## Mocha Setup Guide
+
+This guide describes how to install [Mocha](https://mochajs.org) as a test runner to be used by Detox for running the E2E tests.
+
 Note that while Mocha is lightweight and easy to set up, we nevertheless encourage usage of [Jest](Guide.Jest.md) instead, for 2 main reasons:
 
 1. Mocha does not support parallel-test execution (i.e. splitting the test suites between concurrently running test devices/emulators).

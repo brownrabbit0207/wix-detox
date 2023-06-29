@@ -3,6 +3,12 @@ const aaptMockResults = require('./__mocks__/aapt-results');
 describe('AAPT', () => {
   const mockAPKPath = 'path/to/app.apk';
   const mockAAPTPath = 'mockSdk/build-tools/30.0.0/aapt';
+  const mockEscapeFunc = (source) => `escaped(${source})`;
+
+  const givenAAPTResult = (result) => {
+    exec.mockResolvedValue({
+      stdout: result,
+    });
   };
   const execCommand = () => exec.mock.calls[0][0];
 

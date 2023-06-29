@@ -3,6 +3,12 @@ const invoke = require('../../invoke');
 const { NativeMatcher } = require('../core/NativeMatcher');
 const DetoxMatcherApi = require('../espressoapi/DetoxMatcher');
 
+class LabelMatcher extends NativeMatcher {
+  constructor(value) {
+    super();
+    this._call = invoke.callDirectly(DetoxMatcherApi.matcherForAccessibilityLabel(value));
+  }
+}
 
 class ShallowLabelMatcher extends NativeMatcher {
   constructor(value) {

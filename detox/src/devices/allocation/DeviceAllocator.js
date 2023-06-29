@@ -3,6 +3,12 @@ const log = require('../../utils/logger').child({ cat: 'device' });
 const traceMethods = require('../../utils/traceMethods');
 
 class DeviceAllocator {
+  /**
+   * @param allocationDriver { AllocationDriverBase }
+   */
+  constructor(allocationDriver) {
+    this._driver = allocationDriver;
+    traceMethods(log, this, ['allocate', 'postAllocate', 'free']);
   }
 
   /**

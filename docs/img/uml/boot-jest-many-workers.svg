@@ -3,6 +3,12 @@
 
 actor User
 boundary "Jest (main)" as Jest0
+participant "DetoxPrimaryContext" as Pri
+boundary "Jest (worker N)" as JestN
+participant "DetoxSecondaryContext.N" as Sec
+participant "DetoxCircusEnvironment.N" as Env
+
+User -> Jest0: jest - -maxWorkers N
 activate Jest0
 Jest0 -> Pri: require('detox')
 activate Pri

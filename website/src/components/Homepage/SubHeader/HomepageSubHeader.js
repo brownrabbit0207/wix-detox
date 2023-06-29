@@ -3,6 +3,12 @@ import styles from './HomepageSubHeader.module.scss';
 
 const HomepageSubHeader = () => {
   return (
+    <div className={styles.subHeader}>
+      <div className="container">
+        <div className="row">
+          <div className="col col--4">
+            <div className={styles.subText}>
+              Follow us on <strong>social networks:</strong>
             </div>
           </div>
           <div className="col col--8 flex-jc-fe">

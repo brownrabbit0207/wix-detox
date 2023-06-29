@@ -3,6 +3,12 @@
     {
       "type": "category",
       "label": "Introduction",
+      "items": [
+        "introduction/getting-started",
+        "introduction/project-setup",
+        "introduction/your-first-test",
+        "introduction/debugging",
+        "introduction/preparing-for-ci"
       ]
     },
     {

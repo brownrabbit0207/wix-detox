@@ -3,6 +3,12 @@
 import FlavorizedCodeBlock from '@site/src/components/FlavorizedCodeBlock';
 
 Open your Detox config and replace `YOUR_APP` placeholder with the actual app name, e.g.:
+
+<FlavorizedCodeBlock
+  language="diff"
+  title={'.detoxrc.js'}
+  header={'   apps: {\n'}
+  flavors={['Debug', 'Release']}
 >
   {(conf) => `\
      'ios.${conf.toLowerCase()}': {

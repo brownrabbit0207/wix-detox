@@ -3,6 +3,12 @@ package com.wix.detox.common
 import android.view.MotionEvent
 import com.wix.detox.espresso.action.common.MotionEvents
 import com.wix.detox.espresso.action.common.TapEvents
+import org.assertj.core.api.Assertions.assertThat
+import org.mockito.kotlin.*
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
+
+private fun dontCareCoordinates() = FloatArray(2) { 0f }
 private fun dontCarePrecision() = FloatArray(2) { 0f }
 private fun fancyCoordinates() = FloatArray(2) { index -> ((index + 1) * 100).toFloat() }
 private fun fancyPrecision() = FloatArray(2) { index -> ((index + 1) * 1000).toFloat() }

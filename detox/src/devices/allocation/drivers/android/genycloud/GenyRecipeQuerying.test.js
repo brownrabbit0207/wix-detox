@@ -3,6 +3,12 @@ describe('Genymotion-cloud recipe-query', () => {
   let recipesService;
   let uut;
   beforeEach(() => {
+    const RecipesService = jest.genMockFromModule('../../../../common/drivers/android/genycloud/services/GenyRecipesService');
+    recipesService = new RecipesService();
+
+    const DeviceQueryHelper = require('./GenyRecipeQuerying');
+    uut = new DeviceQueryHelper(recipesService);
+  });
 
   const aRecipe = () => ({
     uuid: 'mock-recipe-uuid',

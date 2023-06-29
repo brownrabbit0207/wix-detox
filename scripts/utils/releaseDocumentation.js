@@ -3,6 +3,12 @@ const exec = shellUtils.exec;
 const fs = require('fs');
 const includes = require('lodash/includes');
 
+const docsPath = `${process.cwd()}/website`;
+const docsVersionsJsonPath = `${docsPath}/versions.json`;
+
+function buildDocsForVersion(version) {
+  console.log(`Publishing documentation version: ${version}.`);
+  const originalDir = process.cwd();
 
   try {
     process.chdir(docsPath);

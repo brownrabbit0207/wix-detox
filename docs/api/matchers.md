@@ -3,6 +3,12 @@
 Detox uses [matchers](matchers.md) to match UI elements in your app.
 
 Use [actions](actions.md) to simulate use interaction with elements and [expectations](expect.md) to verify element states.
+
+**Note:** For best results, it is recommended to match elements by unique identifiers. Matching by text or labels can introduce test flakiness when your app’s text change or when changing your app’s localization.
+
+## Methods
+
+- [`by.id()`](#byidid)
 - [`by.label()`](#bylabellabel)
 - [`by.text()`](#bytexttext)
 - [`by.type()`](#bytypeclassname)

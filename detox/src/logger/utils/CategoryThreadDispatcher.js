@@ -3,6 +3,12 @@ const getMainCategory = require('./getMainCategory');
 
 class CategoryThreadDispatcher {
   constructor() {
+    /** @type {Record<string, ThreadDispatcher>} */
+    this._dispatchers = {};
+  }
+
+  /**
+   * @param {'B' | 'E' | 'i'} ph
    * @param {string[] | undefined} cat
    * @param {string | number} id
    * @returns {number}

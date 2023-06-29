@@ -3,6 +3,12 @@ package com.wix.detox.instruments.reflected;
 import com.wix.detox.instruments.DetoxInstrumentsException;
 import com.wix.detox.instruments.InstrumentsRecording;
 
+import java.lang.reflect.Method;
+
+public class InstrumentsRecordingReflected implements InstrumentsRecording {
+    private static Method methodStopRecording;
+    private static Method methodEventBeginInterval;
+    private static Method methodEventEndInterval;
     private static Method methodEventMark;
 
     static {

@@ -3,6 +3,12 @@ id: jest
 slug: guide/jest
 title: Jest Setup Guide
 sidebar_label: Jest Setup Guide
+---
+
+## Jest Setup Guide
+
+> **NOTE: This article previously focused on deprecated `jest-jasmine2` runner setup, and if you nevertheless need to access it, [follow this Git history link](https://github.com/wix/Detox/blob/ef466822129a4befcda71111d02b1a334539889b/docs/Guide.Jest.md).**
+
 This guide describes how to install [Jest](https://jestjs.io) as a test runner to be used by Detox for running the E2E tests.
 
 ### Introduction

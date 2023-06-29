@@ -3,6 +3,12 @@ package com.wix.detox.espresso.action
 import android.view.MotionEvent
 import androidx.test.espresso.UiController
 import androidx.test.espresso.action.Tapper
+import com.wix.detox.common.DetoxLog
+import com.wix.detox.common.DetoxLog.Companion.LOG_TAG
+import com.wix.detox.common.collect.PairsIterator
+import com.wix.detox.common.proxy.CallInfo
+import com.wix.detox.espresso.UiControllerSpy
+import com.wix.detox.espresso.action.common.DetoxViewConfigurations.getDoubleTapMinTime
 import com.wix.detox.espresso.action.common.DetoxViewConfigurations.getLongTapMinTime
 import com.wix.detox.espresso.action.common.DetoxViewConfigurations.getPostTapCoolDownTime
 import com.wix.detox.espresso.action.common.TapEvents

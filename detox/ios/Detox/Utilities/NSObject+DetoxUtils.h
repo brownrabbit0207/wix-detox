@@ -3,6 +3,12 @@
 //  Detox
 //
 //  Created by Leo Natan on 11/12/20.
+//  Copyright © 2020 Wix. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 BOOL __DTXDoulbeEqualToDouble(double a, double b);
 BOOL __DTXPointEqualToPoint(CGPoint a, CGPoint b);

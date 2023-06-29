@@ -3,6 +3,12 @@
 		"type": "location",
 		"region": {
 			"identifier": "my-id",
+			"center": {
+				"latitude": 123.31,
+				"longitude": 21.31
+			},
+			"radius": 15.5,
+			"notifyOnEntry": true,
 			"notifyOnExit": false
 		},
 		"repeats": true

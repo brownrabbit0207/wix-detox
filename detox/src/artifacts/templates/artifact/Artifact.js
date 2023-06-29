@@ -3,6 +3,12 @@ const log = require('../../../utils/logger').child({ cat: 'artifact' });
 
 class Artifact {
   constructor(template) {
+    defineNonEnumerableProperties(this, Artifact.nonEnumerableProperties);
+
+    if (template) {
+      const { name, start, stop, save, discard, ...misc } = template;
+
+      Object.assign(this, misc);
       this._name = name;
 
       if (typeof start === 'function') {

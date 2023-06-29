@@ -3,6 +3,12 @@ id: ios-dev-env
 slug: introduction/ios-dev-env
 title: Setting Up an iOS Development & Testing Environment
 sidebar_label: Setting Up an iOS Development & Testing Environment
+---
+
+## Setting Up an iOS Development & Testing Environment
+
+This guide sums up the tools required for an environment for running automated UI tests using iOS simulators (using Detox, in particular).
+
 ### Prerequisites
 
 Running Detox (on iOS) requires the following:
